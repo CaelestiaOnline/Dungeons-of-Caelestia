@@ -31,7 +31,7 @@ main_menu[1] = "Options";
 main_menu[2] = "Credits"
 main_menu[3] = "Return to Earth"
 
-space = 64;
+space = 80;
 menupos  = 0;
 </string>
           </argument>
@@ -91,17 +91,17 @@ if(push == 1) scr_main_menu();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_halign(fa_left);
-draw_set_valign(fa_middle);
-draw_set_font(fnt_main_menu);
-draw_set_colour(c_white);
+            <string>//draw_set_halign(fa_left);
+//draw_set_valign(fa_middle);
+//draw_set_font(fnt_main_menu);
+//draw_set_colour(c_white);
 
-var m;
-for (m = 0; m &lt; array_length_1d(main_menu); m+= 1) {
-    draw_text(x + (room_width/2-100), y + (room_height/2-100) +(m * space), string(main_menu[m]));
-}
-
-draw_sprite(sprite_index, 0, x + (room_width/2-200), y + (room_height/2-100) + (menupos * space));
+//var m;
+//for (m = 0; m &lt; array_length_1d(main_menu); m+= 1) {
+//    draw_text(x + (room_width/2-100), y + (room_height/2-100) +(m * space), string(main_menu[m]));
+//}
+draw_sprite(spr_menu_text, 0, room_width/2, room_height/2);
+draw_sprite(sprite_index, 0, x + ((room_width/2)-(sprite_get_width(spr_menu_text)/2)-50), y + ((room_height/2)-(sprite_get_height(spr_menu_text)/2)+20) + (menupos * space));
 </string>
           </argument>
         </arguments>

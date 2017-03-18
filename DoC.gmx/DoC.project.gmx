@@ -8,6 +8,7 @@
   <sprites name="sprites">
     <sprites name="Buttons">
       <sprite>sprites\spr_button_arrow</sprite>
+      <sprite>sprites\spr_menu_text</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background"/>
