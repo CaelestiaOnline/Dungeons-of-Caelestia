@@ -6,12 +6,24 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprites name="Buttons">
-      <sprite>sprites\spr_button_arrow</sprite>
-      <sprite>sprites\spr_menu_text</sprite>
+    <sprites name="Menu">
+      <sprites name="Main_Menu">
+        <sprite>sprites\spr_menu_text</sprite>
+        <sprite>sprites\spr_button_arrow</sprite>
+        <sprite>sprites\spr_menu_title</sprite>
+      </sprites>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <backgrounds name="Menu">
+      <background>background\bg_main_menu</background>
+    </backgrounds>
+    <backgrounds name="Ebene">
+      <backgrounds name="Wald">
+        <background>background\bg_forest</background>
+      </backgrounds>
+    </backgrounds>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Menu">
@@ -24,11 +36,8 @@
     </fonts>
   </fonts>
   <objects name="objects">
-    <objects name="Buttons">
+    <objects name="Menu">
       <object>objects\obj_button_menu</object>
-    </objects>
-    <objects name="Admins">
-      <object>objects\obj_admin_menu</object>
     </objects>
   </objects>
   <rooms name="rooms">
