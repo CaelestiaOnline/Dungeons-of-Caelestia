@@ -39,7 +39,9 @@
     <objects name="Menu">
       <object>objects\obj_button_menu</object>
     </objects>
-    <object>objects\obj_charakter</object>
+    <objects name="entity">
+      <object>objects\obj_charakter</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
