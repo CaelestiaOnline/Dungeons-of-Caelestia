@@ -47,7 +47,13 @@
     </objects>
     <object>objects\obj_charakter</object>
     <objects name="loading_screen">
-      <object>objects\obj_loading_screen_admin</object>
+      <object>objects\obj_sidefade</object>
+    </objects>
+    <objects name="test">
+      <object>objects\obj_test</object>
+    </objects>
+    <objects name="admin">
+      <object>objects\obj_admin</object>
     </objects>
   </objects>
   <rooms name="rooms">
