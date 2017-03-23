@@ -25,13 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Bewegung
+            <string>//Höhe und Breite des Sprite
+spr_hoehe=sprite_get_height(spr_charakter)/2;
+spr_breite=sprite_get_width(spr_charakter)/2;
+//Bewegung
 move_right=1;
 move_left=1;
 move_down=1;
 move_up=1;
 //Nahkampfangriff
 countdown_erzeugen=0;
+schlagrichtung = 0;
 </string>
           </argument>
         </arguments>
@@ -127,13 +131,50 @@ if(keyboard_check(ord("W"))=false)
         move_up=0;
     }
 }
+//Bewegung über Rand verhindern
+if(x-spr_breite&lt;0)
+{
+    x=spr_breite;
+}
+if(y-spr_hoehe&lt;0)
+{
+    y=spr_hoehe;
+}
+if(x+spr_breite&gt;room_width)
+{
+    x=room_width-spr_breite;
+}
+if(y+spr_hoehe&gt;room_height)
+{
+    y=room_height-spr_hoehe;
+}
 //Nahkampfangriff
-if(keyboard_check(vk_space))
+if(keyboard_check_pressed(ord("D")))
+{
+    schlagrichtung=0;
+}
+if(keyboard_check_pressed(ord("A")))
+{
+    schlagrichtung=1;
+}
+if(keyboard_check(vk_space) &amp;&amp; schlagrichtung=0)
 {
     countdown_erzeugen--;
     if(countdown_erzeugen==0)
     {
-        instance_create(x+32,y,obj_hitbox_nahkampf);
+        instance_create(x+spr_breite,y,obj_hitbox_nahkampf);
+    }
+    if(countdown_erzeugen&lt;0)
+    {
+        countdown_erzeugen=20;
+    }
+}
+if(keyboard_check(vk_space) &amp;&amp; schlagrichtung=1)
+{
+    countdown_erzeugen--;
+    if(countdown_erzeugen==0)
+    {
+        instance_create(x-spr_breite-sprite_get_width(spr_Hitbox),y,obj_hitbox_nahkampf);
     }
     if(countdown_erzeugen&lt;0)
     {
