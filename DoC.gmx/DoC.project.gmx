@@ -34,6 +34,9 @@
     <scripts name="loading_screen">
       <script>scripts\scr_loading_screen.gml</script>
     </scripts>
+    <scripts name="test">
+      <script>scripts\scr_test_feature.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <fonts name="Menu">
@@ -43,14 +46,11 @@
   </fonts>
   <objects name="objects">
     <objects name="Menu">
-      <object>objects\obj_button_menu</object>
+      <object>objects\obj_main_menu</object>
     </objects>
     <object>objects\obj_charakter</object>
     <objects name="loading_screen">
       <object>objects\obj_sidefade</object>
-    </objects>
-    <objects name="test">
-      <object>objects\obj_test</object>
     </objects>
     <objects name="admin">
       <object>objects\obj_admin</object>
@@ -61,6 +61,7 @@
       <room>rooms\rm_main_menu</room>
       <room>rooms\rm_options_menu</room>
       <room>rooms\rm_credits</room>
+      <room>rooms\rm_multiplayer</room>
     </rooms>
     <rooms name="Hub">
       <room>rooms\rm_main_hub</room>

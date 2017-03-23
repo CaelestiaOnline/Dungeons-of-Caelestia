@@ -2,8 +2,8 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
-  <depth>0</depth>
+  <visible>-1</visible>
+  <depth>-1</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -60,42 +60,40 @@ stagetwo = false;
             <string>///Slide-Effekt
 
 draw_set_colour(c_black);
+draw_set_alpha(1);
 
 //Ecken
 var x1, x2, y1, y2;
 
-x1 = view_xview + left;
-x2 = view_xview + right;
-y1 = view_yview;
-y2 = view_yview + view_hview;
+x1 = view_xview[0] + left;
+x2 = view_xview[0] + right;
+y1 = view_yview[0];
+y2 = view_yview[0] + view_hview[0];
 
 //Bewegung (Dynamischer Geschwindigkeits An- /Abstieg der Überblendung)
 right += xfactor;
-/*
+
 if(right &lt; view_wview/2 &amp;&amp; stagetwo == false) {
     xfactor += 1;
 }
-else {
-    xfactor -= 1;
-}
-*/
+
 left += xfactor * stagetwo;
-/*
-if(left &lt; view_wview/2 &amp;&amp; stagetwo == true) {
-    xfactor += 1;
-}
-else {
+
+if(left &gt; view_wview/2 &amp;&amp; stagetwo == true) {
+    if(xfactor &gt; 10) {
     xfactor -= 1;
+    }
 }
-*/
+
+
 draw_rectangle(x1,y1,x2,y2,0);
 
-if((right &gt; view_wview + 50) &amp;&amp; (stagetwo == false)) {
+if((right &gt; view_wview[0] + 50) &amp;&amp; (stagetwo == false)) {
     stagetwo = true;
     room_goto(loading_screen);
 } 
 
-if(left &gt; view_wview +50) instance_destroy();
+if(left &gt; view_wview[0] + 50) instance_destroy();
 </string>
           </argument>
         </arguments>

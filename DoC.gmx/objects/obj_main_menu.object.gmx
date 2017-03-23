@@ -28,16 +28,38 @@
             <string>///Menü-Array + Rest
 
 //Anzahl der Auswahlmöglichkeiten
-menulength = 4;
+menulength = 5;
 
 //Pixel in y-Richtung zwischen den Auswahlmöglichkeiten
 yspace = 80;
 
-//Abstand zwischen Pfeil und Auswahlmöglichkeiten in Pixel in x-Richtung 
+//Abstand zwischen Pfeil und Mitte der View[0] in Pixel in - x-Richtung 
 xspace = 50;
 
 //Aktuelle Position des Menüpfeils
 menupos  = 0;
+
+//Auswahlmöglichkeiten
+menu[0] = "Start Game"
+menu[1] = "Test Feature"
+menu[2] = "Multiplayer"
+menu[3] = "Options"
+menu[4] = "Return to Earth"
+
+wtext = max(
+    string_width(menu[0]),
+    string_width(menu[1]),
+    string_width(menu[2]),
+    string_width(menu[3]),
+    string_width(menu[4]),
+    );
+    
+//Farben der Auswahlmöglichkeiten
+colour[0] = "c_white";
+colour[1] = "c_white";
+colour[2] = "c_white";
+colour[3] = "c_white";
+colour[4] = "c_white";
 </string>
           </argument>
         </arguments>
@@ -98,17 +120,43 @@ if(push == 1) scr_main_menu();
             <kind>1</kind>
             <string>///Zeichne Auswahlmöglichkeiten + Titel
 draw_set_colour(c_white);
+var n;
+for(n = 0; n &lt; array_length_1d(colour); n++) {
+    colour[n] = "c_white";
+}
 
 //Überschrift
 draw_set_font(fnt_main_menu_heading);
 draw_set_halign(fa_center);
 draw_text(room_width/2, room_height/4-100, "Dungeons of Cælestia");
 
+draw_set_alpha(0.5);
+draw_text(room_width/2+1, room_height/4-100+1, "Dungeons of Cælestia");
+
+colour[menupos] = "c_red";
+
 //Auswahlmöglichkeiten
-draw_sprite(spr_menu_text, 0, room_width/2, room_height/2);
+draw_set_alpha(1);
+draw_set_font(fnt_main_menu);
+draw_set_halign(fa_left);
+
+var m;
+for(m = 0; m &lt; array_length_1d(menu); m++) {
+    draw_set_colour(colour[m]);
+    draw_text(
+        view_wview[0]/2 - wtext/2,
+        view_hview[0]/2 - 100 + (m * yspace),
+        menu[m],
+        );
+}
 
 //Pfeil
-draw_sprite(sprite_index, 0, x + ((room_width/2)-(sprite_get_width(spr_menu_text)/2)-xspace), y + ((room_height/2)-(sprite_get_height(spr_menu_text)/2)+20) + (menupos * yspace));
+draw_sprite(
+    sprite_index,
+    0,
+    ((view_wview[0]/2) - wtext/2 - xspace),
+    ((view_hview[0]/2) - 100 + sprite_get_height(sprite_index)) + (menupos * yspace)
+    );
 </string>
           </argument>
         </arguments>

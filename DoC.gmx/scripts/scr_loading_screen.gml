@@ -3,7 +3,6 @@
 
 var admin;
 admin = instance_create(0, 0, obj_sidefade);
-admin.time = argument0;
-admin.goal = argument1;
+//admin.time = argument0;
+//admin.goal = argument1;
 
-test = instance_create(0, 0, obj_test);

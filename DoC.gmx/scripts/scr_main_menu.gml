@@ -4,14 +4,18 @@ switch(menupos) {
         break;
     }
     case 1: {
-        room_goto(rm_options_menu);
+        scr_test_feature();
         break;
     }
     case 2: {
-        room_goto(rm_credits);
+        room_goto(rm_multiplayer);
         break;
     }
     case 3: {
+        room_goto(rm_options_menu);
+        break;
+    }
+    case 4: {
         game_end();
         break;
     }
