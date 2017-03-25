@@ -8,8 +8,9 @@
   <sprites name="sprites">
     <sprites name="Menu">
       <sprites name="Main_Menu">
-        <sprite>sprites\spr_menu_text</sprite>
-        <sprite>sprites\spr_button_arrow</sprite>
+        <sprite>sprites\spr_menu_arrow</sprite>
+        <sprite>sprites\spr_planet</sprite>
+        <sprite>sprites\spr_cael_orb</sprite>
       </sprites>
     </sprites>
   </sprites>
@@ -30,9 +31,12 @@
   <scripts name="scripts">
     <scripts name="Menu">
       <script>scripts\scr_main_menu.gml</script>
+      <script>scripts\scr_options_menu.gml</script>
+      <script>scripts\scr_credits_menu.gml</script>
+      <script>scripts\scr_multiplayer_menu.gml</script>
     </scripts>
     <scripts name="loading_screen">
-      <script>scripts\scr_loading_screen.gml</script>
+      <script>scripts\scr_sidefade.gml</script>
     </scripts>
     <scripts name="test">
       <script>scripts\scr_test_feature.gml</script>
@@ -43,17 +47,36 @@
       <font>fonts\fnt_main_menu</font>
       <font>fonts\fnt_main_menu_heading</font>
     </fonts>
+    <fonts name="System">
+      <font>fonts\fnt_fps</font>
+    </fonts>
   </fonts>
   <objects name="objects">
     <objects name="Menu">
-      <object>objects\obj_main_menu</object>
+      <object>objects\obj_menu</object>
+      <objects name="main_menu">
+        <object>objects\obj_main_menu</object>
+        <object>objects\obj_planet</object>
+      </objects>
+      <objects name="options_menu">
+        <object>objects\obj_options_menu</object>
+      </objects>
+      <objects name="multiplayer_menu">
+        <object>objects\obj_multiplayer_menu</object>
+      </objects>
+      <objects name="credits_menu">
+        <object>objects\obj_credits_menu</object>
+      </objects>
     </objects>
-    <object>objects\obj_charakter</object>
     <objects name="loading_screen">
       <object>objects\obj_sidefade</object>
+      <object>objects\obj_loading_screen</object>
     </objects>
     <objects name="admin">
       <object>objects\obj_admin</object>
+    </objects>
+    <objects name="Hub">
+      <object>objects\obj_hub</object>
     </objects>
   </objects>
   <rooms name="rooms">

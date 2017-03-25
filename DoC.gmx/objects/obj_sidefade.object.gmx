@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Variablen
-time = 0;
 goal = "";
 
 left = 0;
@@ -35,6 +34,8 @@ right = 0;
 xfactor = 20;
 
 stagetwo = false;
+
+colour = c_black;
 </string>
           </argument>
         </arguments>
@@ -59,7 +60,7 @@ stagetwo = false;
             <kind>1</kind>
             <string>///Slide-Effekt
 
-draw_set_colour(c_black);
+draw_set_colour(colour);
 draw_set_alpha(1);
 
 //Ecken
@@ -74,14 +75,14 @@ y2 = view_yview[0] + view_hview[0];
 right += xfactor;
 
 if(right &lt; view_wview/2 &amp;&amp; stagetwo == false) {
-    xfactor += 1;
+    xfactor += 2;
 }
 
 left += xfactor * stagetwo;
 
 if(left &gt; view_wview/2 &amp;&amp; stagetwo == true) {
     if(xfactor &gt; 10) {
-    xfactor -= 1;
+    xfactor -= 2;
     }
 }
 
@@ -90,7 +91,7 @@ draw_rectangle(x1,y1,x2,y2,0);
 
 if((right &gt; view_wview[0] + 50) &amp;&amp; (stagetwo == false)) {
     stagetwo = true;
-    room_goto(loading_screen);
+    room_goto(goal);
 } 
 
 if(left &gt; view_wview[0] + 50) instance_destroy();

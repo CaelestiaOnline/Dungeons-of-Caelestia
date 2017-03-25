@@ -40,14 +40,14 @@ xspace = 50;
 menupos  = 0;
 
 //Überschrift
-heading = "Dungeons of Cælestia";
+heading = "Optionen";
 
 //Auswahlmöglichkeiten
-menu[0] = "Start Game"
-menu[1] = "Test Feature"
-menu[2] = "Multiplayer"
-menu[3] = "Options"
-menu[4] = "Return to Earth"
+menu[0] = "Coming soon..."
+menu[1] = ".............."
+menu[2] = ".............."
+menu[3] = "Credits"
+menu[4] = "Back to the Fut... Main Menu"
 
 draw_set_font(fnt_main_menu);
 
@@ -70,10 +70,10 @@ colour[4] = c_white;
 shadow = 3;
 
 //Farbe
-menucolour = c_green;
+menucolour = c_red;
 
-//Planet
-planet = instance_create(view_wview[0]/8, view_hview[0]*0.8, obj_planet);
+//Script
+script = 0;
 </string>
           </argument>
         </arguments>
@@ -109,7 +109,7 @@ if(move != 0) {
 
 var push;
 push = max(global.kb_enter_pressed, global.kb_space_pressed, 0);
-if(push == 1) scr_main_menu();
+if(push == 1) script_execute(script);
 
 </string>
           </argument>
@@ -137,29 +137,15 @@ if(push == 1) scr_main_menu();
 draw_set_colour(c_white);
 
 //Überschrift
+draw_set_font(fnt_main_menu);
 draw_set_alpha(1);
-draw_set_font(fnt_main_menu_heading);
 draw_set_halign(fa_center);
-draw_text(view_wview[0]/2, view_hview[0]/8 - 60, heading);
+draw_text(view_wview[0]/2,  view_hview[0]/4, heading);
 
 //Schatten
 draw_set_alpha(0.5);
 draw_set_colour(c_white);
-draw_text(view_wview[0]/2 + shadow*2, view_hview[0]/8 - 60 + shadow*2, heading);
-
-//Schatten2
-draw_set_alpha(0.3);
-draw_set_colour(c_white);
-draw_text(view_wview[0]/2 + shadow*4, view_hview[0]/8 - 60 + shadow*4, heading);
-
-//Cael-Orb
-draw_set_alpha(1);
-draw_sprite(
-    spr_cael_orb,
-    0,
-    view_wview[0]/2 - string_width(heading)/2 - 50,
-    view_hview[0]/8,
-);
+draw_text(view_wview[0]/2 + shadow*2, view_hview[0]/4 + shadow*2, heading);
 
 //Auswahlmöglichkeiten
 draw_set_alpha(1);
@@ -187,7 +173,7 @@ for(m = 0; m &lt; array_length_1d(menu); m++) {
 }
 
 draw_set_colour(c_white);
-
+/*
 //Pfeil
 draw_sprite(
     sprite_index,
@@ -203,7 +189,7 @@ draw_sprite(
     ((view_wview[0]/2) - wtext/2 - xspace + shadow/2),
     ((view_hview[0]/2) - 100 + sprite_get_height(sprite_index)/2) + (menupos * yspace) + shadow/2
     );
-
+*/
 //Linie
 draw_set_font(fnt_main_menu);
 var yvalue = (view_hview[0]/2) - 100 + string_height(menu[menupos]) + (menupos * yspace);
@@ -216,7 +202,6 @@ draw_line_width_colour(
     c_white,
     c_white
     );
-    
 </string>
           </argument>
         </arguments>
