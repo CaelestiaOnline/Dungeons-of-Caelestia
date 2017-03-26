@@ -13,6 +13,13 @@
         <sprite>sprites\spr_menu_title</sprite>
       </sprites>
     </sprites>
+    <sprites name="Einheit">
+      <sprite>sprites\spr_Tainingspuppe</sprite>
+      <sprite>sprites\spr_charakter</sprite>
+    </sprites>
+    <sprites name="Waffen">
+      <sprite>sprites\spr_Hitbox</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -36,10 +43,22 @@
     </fonts>
   </fonts>
   <objects name="objects">
+    <objects name="Waffen">
+      <objects name="Projektile">
+        <object>objects\obj_hitbox_nahkampf</object>
+      </objects>
+    </objects>
     <objects name="Menu">
       <object>objects\obj_button_menu</object>
     </objects>
-    <object>objects\obj_charakter</object>
+    <objects name="entity">
+      <objects name="Charakter">
+        <object>objects\obj_charakter</object>
+      </objects>
+      <objects name="enimy">
+        <object>objects\obj_trainingspuppe</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
