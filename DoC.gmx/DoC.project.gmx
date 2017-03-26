@@ -13,6 +13,15 @@
         <sprite>sprites\spr_cael_orb</sprite>
       </sprites>
     </sprites>
+    <sprites name="Einheit">
+      <sprite>sprites\spr_Tainingspuppe</sprite>
+      <sprite>sprites\spr_charakter</sprite>
+    </sprites>
+    <sprites name="Waffen">
+      <sprite>sprites\spr_Hitbox</sprite>
+      <sprite>sprites\spr_bullet</sprite>
+    </sprites>
+    <sprite>sprites\spr_stein</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -52,6 +61,13 @@
     </fonts>
   </fonts>
   <objects name="objects">
+    <objects name="Waffen">
+      <objects name="Projektile">
+        <object>objects\obj_hitbox_nahkampf</object>
+        <object>objects\obj_bullet</object>
+        <object>objects\obj_bullet2</object>
+      </objects>
+    </objects>
     <objects name="Menu">
       <object>objects\obj_menu</object>
       <objects name="main_menu">
@@ -78,8 +94,19 @@
     <objects name="Hub">
       <object>objects\obj_hub</object>
     </objects>
-    <objects name="Einheiten"/>
-    <objects name="Gegenstände"/>
+    <objects name="Einheiten">
+      <objects name="Charakter">
+        <object>objects\obj_charakter</object>
+      </objects>
+      <objects name="Gegner">
+        <object>objects\obj_trainingspuppe</object>
+      </objects>
+    </objects>
+    <objects name="Gegenstände">
+      <objects name="Hindernis">
+        <object>objects\obj_Stein</object>
+      </objects>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
