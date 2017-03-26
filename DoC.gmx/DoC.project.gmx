@@ -78,6 +78,8 @@
     <objects name="Hub">
       <object>objects\obj_hub</object>
     </objects>
+    <objects name="Einheiten"/>
+    <objects name="Gegenstände"/>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
