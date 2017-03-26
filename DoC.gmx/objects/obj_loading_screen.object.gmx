@@ -7,7 +7,117 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ladeanzeige
+orbit = 40;
+
+angle[0] = 0;
+angle[1] = 45;
+angle[2] = 90;
+angle[3] = 135;
+angle[4] = 180;
+
+orbit_speed = 1;
+
+center_x = view_wview[0]/2;
+center_y = view_hview[0]/2;
+
+orbit_x[0] = 0;
+orbit_x[1] = 0;
+orbit_x[2] = 0;
+orbit_x[3] = 0;
+orbit_x[4] = 0;
+
+orbit_y[0] = 0;
+orbit_y[1] = 0;
+orbit_y[2] = 0;
+orbit_y[3] = 0;
+orbit_y[4] = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>var n;
+for(n = 0; n &lt; (array_length_1d(angle)); n++) {
+    angle[n] += orbit_speed;
+    if(angle[n] &gt;= 360) angle[n] -= 360;
+}
+
+var m;
+for(m = 0; m &lt; (array_length_1d(angle)); m++) {
+    orbit_x[m] = lengthdir_x(orbit, angle[m]) + center_x;
+    orbit_y[m] = lengthdir_y(orbit, angle[m]) + center_y;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_colour(c_white);
+draw_set_alpha(1);
+var i;
+for(i = 0; i &lt; array_length_1d(angle); i++) {
+    draw_circle(orbit_x[i], orbit_y[i], 5, 0);
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

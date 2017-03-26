@@ -245,13 +245,26 @@ if(room == rm_main_menu) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Zeichne FPS
+            <string>///Zeichne FPS + Zeit
 draw_set_font(fnt_fps);
 draw_text(16, 16, "FPS: " + string(real(fps_real)));
 
 //Zeit
-minute = string(date_get_minute(date_current_datetime()));
-hour = string(date_get_hour(date_current_datetime()));
+//Minute
+if(string_length(string(date_get_minute(date_current_datetime()))) &gt; 1) {
+    minute = string(date_get_minute(date_current_datetime()));
+}
+else {
+    minute = string(0) + string(date_get_minute(date_current_datetime()));
+}
+//Stunde
+if(string_length(string(date_get_hour(date_current_datetime()))) &gt; 1) {
+    hour = string(date_get_hour(date_current_datetime()));
+}
+else {
+    hour = string(0) + string(date_get_hour(date_current_datetime()));
+}
+
 time = hour + ":" + minute; 
 draw_text(view_wview[0] - string_width(time) - 16,
     16,

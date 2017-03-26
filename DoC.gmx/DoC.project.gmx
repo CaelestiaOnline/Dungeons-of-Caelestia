@@ -93,7 +93,7 @@
       <room>rooms\rm_testroom1</room>
     </rooms>
     <rooms name="loading_screen">
-      <room>rooms\loading_screen</room>
+      <room>rooms\rm_loading_screen</room>
     </rooms>
   </rooms>
   <help>

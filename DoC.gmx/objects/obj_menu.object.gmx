@@ -74,6 +74,10 @@ menucolour = c_red;
 
 //Script
 script = 0;
+
+//Bewegter Hintergrund
+background_hspeed[0] = 0.5;
+background_vspeed[0] = 0.1;
 </string>
           </argument>
         </arguments>

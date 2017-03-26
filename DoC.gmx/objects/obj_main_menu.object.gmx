@@ -74,6 +74,10 @@ menucolour = c_green;
 
 //Planet
 planet = instance_create(view_wview[0]/8, view_hview[0]*0.8, obj_planet);
+
+//Bewegter Hintergrund
+background_hspeed[0] = 5;
+background_vspeed[0] = 0.5;
 </string>
           </argument>
         </arguments>
