@@ -174,7 +174,7 @@ loading_percent = 0;
             <kind>1</kind>
             <string>///Überschrift
 loading_screen_heading = global.admin.loading_screen_heading;
-if(loading_screen_heading == "") loading_screen_heading = "Loading"
+if(loading_screen_heading == "") loading_screen_heading = "LOADING"
 points = "";
 </string>
           </argument>
@@ -407,7 +407,7 @@ draw_line_width(orbit_x[4], orbit_y[4], orbit_x[0], orbit_y[0], line_width);
           <argument>
             <kind>1</kind>
             <string>///Pro-Tip
-draw_set_font(fnt_pro_tip);
+draw_set_font(fnt_pixel1);
 draw_set_halign(fa_left);
 draw_text(100, view_hview[0]/2, pro_tip);
 </string>
@@ -431,7 +431,7 @@ draw_text(100, view_hview[0]/2, pro_tip);
           <argument>
             <kind>1</kind>
             <string>///Prozentanzeige
-draw_set_font(fnt_main_menu);
+draw_set_font(fnt_pixel1);
 draw_set_halign(fa_center);
 draw_text(view_wview[0]/2, view_hview[0]/2 + 100, loading_percent + "%");
 
@@ -462,7 +462,7 @@ draw_set_alpha(1);
           <argument>
             <kind>1</kind>
             <string>///Überschrift
-draw_set_font(fnt_main_menu);
+draw_set_font(fnt_pixel1);
 draw_set_colour(c_white);
 draw_set_halign(fa_left);
 

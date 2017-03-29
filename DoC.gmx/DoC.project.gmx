@@ -85,7 +85,7 @@
       <font>fonts\fnt_fps</font>
     </fonts>
     <fonts name="loading_screen">
-      <font>fonts\fnt_pro_tip</font>
+      <font>fonts\fnt_pixel1</font>
     </fonts>
   </fonts>
   <objects name="objects">
