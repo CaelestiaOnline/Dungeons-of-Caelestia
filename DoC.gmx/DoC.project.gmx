@@ -3,16 +3,46 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafiles number="1" name="Textdateien">
+      <datafile>
+        <name>pro_tip.txt</name>
+        <exists>-1</exists>
+        <size>7</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>pro_tip.txt</filename>
+      </datafile>
+    </datafiles>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="Menu">
       <sprites name="Main_Menu">
-        <sprite>sprites\spr_menu_text</sprite>
-        <sprite>sprites\spr_button_arrow</sprite>
-        <sprite>sprites\spr_menu_title</sprite>
+        <sprite>sprites\spr_menu_arrow</sprite>
+        <sprite>sprites\spr_planet</sprite>
+        <sprite>sprites\spr_cael_orb</sprite>
       </sprites>
     </sprites>
+    <sprites name="Einheit">
+      <sprite>sprites\spr_Tainingspuppe</sprite>
+      <sprite>sprites\spr_charakter</sprite>
+    </sprites>
+    <sprites name="Waffen">
+      <sprite>sprites\spr_Hitbox</sprite>
+      <sprite>sprites\spr_bullet</sprite>
+    </sprites>
+    <sprite>sprites\spr_stein</sprite>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -23,35 +53,108 @@
         <background>background\bg_forest</background>
       </backgrounds>
     </backgrounds>
+    <backgrounds name="loading_screen">
+      <background>background\bg_loading_screen_1</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Menu">
       <script>scripts\scr_main_menu.gml</script>
+      <script>scripts\scr_options_menu.gml</script>
+      <script>scripts\scr_credits_menu.gml</script>
+      <script>scripts\scr_multiplayer_menu.gml</script>
+    </scripts>
+    <scripts name="test">
+      <script>scripts\scr_test_feature.gml</script>
+    </scripts>
+    <scripts name="Übergänge">
+      <script>scripts\scr_sidefade.gml</script>
+      <script>scripts\scr_circlefade.gml</script>
+    </scripts>
+    <scripts name="loading_screen">
+      <script>scripts\scr_loading_screen.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <fonts name="Menu">
       <font>fonts\fnt_main_menu</font>
+      <font>fonts\fnt_main_menu_heading</font>
+    </fonts>
+    <fonts name="System">
+      <font>fonts\fnt_fps</font>
+    </fonts>
+    <fonts name="loading_screen">
+      <font>fonts\fnt_pro_tip</font>
     </fonts>
   </fonts>
   <objects name="objects">
-    <objects name="Menu">
-      <object>objects\obj_button_menu</object>
+    <objects name="Waffen">
+      <objects name="Projektile">
+        <object>objects\obj_hitbox_nahkampf</object>
+        <object>objects\obj_bullet</object>
+        <object>objects\obj_bullet2</object>
+      </objects>
     </objects>
-    <object>objects\obj_charakter</object>
+    <objects name="Menu">
+      <object>objects\obj_menu</object>
+      <objects name="main_menu">
+        <object>objects\obj_main_menu</object>
+        <object>objects\obj_planet</object>
+      </objects>
+      <objects name="options_menu">
+        <object>objects\obj_options_menu</object>
+      </objects>
+      <objects name="multiplayer_menu">
+        <object>objects\obj_multiplayer_menu</object>
+      </objects>
+      <objects name="credits_menu">
+        <object>objects\obj_credits_menu</object>
+      </objects>
+    </objects>
+    <objects name="loading_screen">
+      <object>objects\obj_loading_screen</object>
+    </objects>
+    <objects name="admin">
+      <object>objects\obj_admin</object>
+    </objects>
+    <objects name="Hub">
+      <object>objects\obj_hub</object>
+    </objects>
+    <objects name="Einheiten">
+      <objects name="Charakter">
+        <object>objects\obj_charakter</object>
+      </objects>
+      <objects name="Gegner">
+        <object>objects\obj_trainingspuppe</object>
+      </objects>
+    </objects>
+    <objects name="Gegenstände">
+      <objects name="Hindernis">
+        <object>objects\obj_Stein</object>
+      </objects>
+    </objects>
+    <objects name="Übergänge">
+      <object>objects\obj_sidefade</object>
+      <object>objects\obj_circlefade</object>
+      <object>objects\obj_fade</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
       <room>rooms\rm_main_menu</room>
       <room>rooms\rm_options_menu</room>
       <room>rooms\rm_credits</room>
+      <room>rooms\rm_multiplayer</room>
     </rooms>
     <rooms name="Hub">
       <room>rooms\rm_main_hub</room>
     </rooms>
     <rooms name="Testrooms">
       <room>rooms\rm_testroom1</room>
+    </rooms>
+    <rooms name="loading_screen">
+      <room>rooms\rm_loading_screen</room>
     </rooms>
   </rooms>
   <help>
