@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-10</depth>
   <persistent>-1</persistent>
   <parentName>obj_fade</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,16 +26,21 @@
           <argument>
             <kind>1</kind>
             <string>///Variablen
-goal = "";
-
-left = 0;
-right = 0;
-
-xfactor = 20;
-
 stagetwo = false;
 
+xfactor = 5;
+
 colour = c_black;
+
+goal = "";
+
+pre_x1 = 0;
+pre_y1 = 0;
+
+pre_x2 = view_wview[0];
+pre_y2 = view_hview[0];
+
+radius = 0;
 </string>
           </argument>
         </arguments>
@@ -58,43 +63,28 @@ colour = c_black;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Slide-Effekt
+            <string>//Circlefade Effekt
 
 draw_set_colour(colour);
 draw_set_alpha(1);
 
-//Ecken
-var x1, x2, y1, y2;
 
-x1 = view_xview[0] + left;
-x2 = view_xview[0] + right;
-y1 = view_yview[0];
-y2 = view_yview[0] + view_hview[0];
-
-//Bewegung (Dynamischer Geschwindigkeits An- /Abstieg der Überblendung)
-right += xfactor;
-
-if(right &lt; view_wview/2 &amp;&amp; stagetwo == false) {
-    xfactor += 2;
+if(stagetwo = false) {
+    radius += xfactor;
+    draw_circle(pre_x1, pre_y1, radius, 0);
+}
+else {
+    radius -= xfactor;
+    draw_circle(pre_x2, pre_y2, radius, 0);
 }
 
-left += xfactor * stagetwo;
-
-if(left &gt; view_wview/2 &amp;&amp; stagetwo == true) {
-    if(xfactor &gt; 10) {
-    xfactor -= 2;
-    }
-}
-
-
-draw_rectangle(x1,y1,x2,y2,0);
-
-if((right &gt; view_wview[0] + 50) &amp;&amp; (stagetwo == false)) {
+if(radius &gt; sqrt(power(view_wview[0], 2) + power(view_hview[0], 2)) + 50 &amp;&amp; (stagetwo == false)) {
     stagetwo = true;
     room_goto(goal);
+    radius = sqrt(power(view_wview[0], 2) + power(view_hview[0], 2)) + 50;
 } 
 
-if(left &gt; view_wview[0] + 50) instance_destroy();
+if(radius &lt;= 0 &amp;&amp; (stagetwo == true)) instance_destroy();
 </string>
           </argument>
         </arguments>
