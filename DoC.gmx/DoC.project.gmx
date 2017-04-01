@@ -3,6 +3,44 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="2" name="datafiles">
+    <datafiles number="2" name="Textdateien">
+      <datafile>
+        <name>pro_tip.txt</name>
+        <exists>-1</exists>
+        <size>7</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>pro_tip.txt</filename>
+      </datafile>
+      <datafile>
+        <name>splash_screen.txt</name>
+        <exists>-1</exists>
+        <size>7</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>splash_screen.txt</filename>
+      </datafile>
+    </datafiles>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -11,6 +49,7 @@
         <sprite>sprites\spr_menu_arrow</sprite>
         <sprite>sprites\spr_planet</sprite>
         <sprite>sprites\spr_cael_orb</sprite>
+        <sprite>sprites\spr_asteroid</sprite>
       </sprites>
     </sprites>
     <sprites name="Einheit">
@@ -33,7 +72,21 @@
       </backgrounds>
     </backgrounds>
     <backgrounds name="loading_screen">
-      <background>background\loading_screen_1</background>
+      <background>background\bg_loading_screen1</background>
+      <background>background\bg_loading_screen2</background>
+      <background>background\bg_loading_screen3</background>
+      <background>background\bg_loading_screen4</background>
+      <background>background\bg_loading_screen5</background>
+      <background>background\bg_loading_screen6</background>
+      <background>background\bg_loading_screen7</background>
+      <background>background\bg_loading_screen8</background>
+      <background>background\bg_loading_screen9</background>
+      <background>background\bg_loading_screen10</background>
+      <background>background\bg_loading_screen11</background>
+      <background>background\bg_loading_screen12</background>
+      <background>background\bg_loading_screen13</background>
+      <background>background\bg_loading_screen14</background>
+      <background>background\bg_loading_screen15</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -43,12 +96,17 @@
       <script>scripts\scr_options_menu.gml</script>
       <script>scripts\scr_credits_menu.gml</script>
       <script>scripts\scr_multiplayer_menu.gml</script>
-    </scripts>
-    <scripts name="loading_screen">
-      <script>scripts\scr_sidefade.gml</script>
+      <script>scripts\scr_game_end.gml</script>
     </scripts>
     <scripts name="test">
       <script>scripts\scr_test_feature.gml</script>
+    </scripts>
+    <scripts name="Übergänge">
+      <script>scripts\scr_sidefade.gml</script>
+      <script>scripts\scr_circlefade.gml</script>
+    </scripts>
+    <scripts name="loading_screen">
+      <script>scripts\scr_loading_screen.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -58,6 +116,11 @@
     </fonts>
     <fonts name="System">
       <font>fonts\fnt_fps</font>
+    </fonts>
+    <fonts name="loading_screen">
+      <font>fonts\fnt_pixel1</font>
+      <font>fonts\fnt_pixel2</font>
+      <font>fonts\fnt_pixel3</font>
     </fonts>
   </fonts>
   <objects name="objects">
@@ -88,9 +151,11 @@
       <objects name="credits_menu">
         <object>objects\obj_credits_menu</object>
       </objects>
+      <objects name="game_end">
+        <object>objects\obj_game_end</object>
+      </objects>
     </objects>
     <objects name="loading_screen">
-      <object>objects\obj_sidefade</object>
       <object>objects\obj_loading_screen</object>
     </objects>
     <objects name="admin">
@@ -113,6 +178,11 @@
         <object>objects\obj_Kaktus</object>
       </objects>
     </objects>
+    <objects name="Übergänge">
+      <object>objects\obj_sidefade</object>
+      <object>objects\obj_circlefade</object>
+      <object>objects\obj_fade</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
@@ -120,6 +190,7 @@
       <room>rooms\rm_options_menu</room>
       <room>rooms\rm_credits</room>
       <room>rooms\rm_multiplayer</room>
+      <room>rooms\rm_game_end</room>
     </rooms>
     <rooms name="Hub">
       <room>rooms\rm_main_hub</room>

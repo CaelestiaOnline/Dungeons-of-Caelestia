@@ -44,7 +44,7 @@ heading = "Dungeons of Cælestia";
 
 //Auswahlmöglichkeiten
 menu[0] = "Start Game"
-menu[1] = "Test Feature"
+menu[1] = "Access PTR"
 menu[2] = "Multiplayer"
 menu[3] = "Options"
 menu[4] = "Return to Earth"
@@ -73,12 +73,156 @@ shadow = 3;
 menucolour = c_green;
 
 //Planet
-planet = instance_create(view_wview[0]/8, view_hview[0]*0.8, obj_planet);
+planet = instance_create(view_wview[0]/8, view_hview[0]*0.6, obj_planet);
 
 //Bewegter Hintergrund
-background_hspeed[0] = 5;
-background_vspeed[0] = 0.5;
+background_hspeed[0] = choose(random(3)* -1, random(3));
+background_vspeed[0] = choose(random(3)* -1, random(3));
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Splash-Screen
+splash_screen_file_length = 47;
+splash_screen_index = irandom(splash_screen_file_length -1);
+
+splash_screen_file = file_text_open_read(working_directory + "Textdateien\" + "splash_screen.txt");
+
+var n;
+for(n = 0; n &lt;= splash_screen_index; n++) {
+    splash_screen = file_text_read_string(splash_screen_file);
+    file_text_readln(splash_screen_file);
+
+}
+
+file_text_close(splash_screen_file);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///alarm0
+alarm_set(0, room_speed);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Splash-Alpha
+splash_alpha = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Move
+move = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm1</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm0</string>
           </argument>
         </arguments>
       </action>
@@ -101,7 +245,8 @@ background_vspeed[0] = 0.5;
           <argument>
             <kind>1</kind>
             <string>///Tasteneingaben bzw. menupos
-var move = 0;
+move = 0;
+
 move -= max(global.kb_up_pressed, global.kb_w_pressed, 0);
 move += max(global.kb_down_pressed, global.kb_s_pressed, 0);
 
@@ -109,12 +254,73 @@ if(move != 0) {
     menupos += move;
     if(menupos &lt; 0) menupos = menulength - 1;
     if(menupos &gt; menulength - 1) menupos = 0;
+    alarm_set(1, room_speed/4);
+}
+
+if(global.kb_up_pressed  == false &amp;&amp; global.kb_w_pressed == false) move -= max(global.kb_up, global.kb_w, 0);
+if(global.kb_down_pressed  == false &amp;&amp; global.kb_s_pressed == false) move += max(global.kb_down, global.kb_s, 0);
+
+if(move != 0) {
+    if(alarm_get(1) == -1) alarm_set(1, room_speed/4);
+    if(alarm_get(1) == 0) {
+    menupos += move;
+    if(menupos &lt; 0) menupos = menulength - 1;
+    if(menupos &gt; menulength - 1) menupos = 0;
+    }
 }
 
 var push;
 push = max(global.kb_enter_pressed, global.kb_space_pressed, 0);
 if(push == 1) scr_main_menu();
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///alarm0
+if(alarm_get(0) == -1) alarm_set(0, room_speed);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Splash-Alpha
+if(alarm_get(0) &gt; room_speed/2) splash_alpha -=  0.04;
+if(alarm_get(0) &lt; room_speed/2) splash_alpha +=  0.04;
+
+if(splash_alpha &gt; 1) splash_alpha = 1;
+if(splash_alpha &lt; 0) splash_alpha = 0;
 </string>
           </argument>
         </arguments>
@@ -191,7 +397,7 @@ for(m = 0; m &lt; array_length_1d(menu); m++) {
 }
 
 draw_set_colour(c_white);
-
+/*
 //Pfeil
 draw_sprite(
     sprite_index,
@@ -207,7 +413,7 @@ draw_sprite(
     ((view_wview[0]/2) - wtext/2 - xspace + shadow/2),
     ((view_hview[0]/2) - 100 + sprite_get_height(sprite_index)/2) + (menupos * yspace) + shadow/2
     );
-
+*/
 //Linie
 draw_set_font(fnt_main_menu);
 var yvalue = (view_hview[0]/2) - 100 + string_height(menu[menupos]) + (menupos * yspace);
@@ -221,6 +427,45 @@ draw_line_width_colour(
     c_white
     );
     
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Splash-Screen-Text
+draw_set_font(fnt_pixel3);
+draw_set_alpha(splash_alpha);
+draw_text(
+    view_wview[0] - max(string_width(splash_screen) + 20, 800),
+    view_hview[0]/8 + 100,
+    splash_screen
+);
+
+//Schatten
+draw_set_alpha(splash_alpha/2);
+draw_text(
+    view_wview[0] - max(string_width(splash_screen) + 20, 800) + 3,
+    view_hview[0]/8 + 100 + 3,
+    splash_screen
+);
+draw_set_alpha(1);
+
+
 </string>
           </argument>
         </arguments>
