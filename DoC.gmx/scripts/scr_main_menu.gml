@@ -1,6 +1,6 @@
 switch(menupos) {
     case 0: {
-        room_goto(rm_main_hub);
+        scr_sidefade(rm_main_hub, 60);
         break;
     }
     case 1: {
@@ -16,7 +16,7 @@ switch(menupos) {
         break;
     }
     case 4: {
-        game_end();
+        scr_sidefade(rm_game_end, 120);
         break;
     }
     default: {

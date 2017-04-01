@@ -26,15 +26,26 @@
           <argument>
             <kind>1</kind>
             <string>///Ladeanzeige
-orbit = 40;
+orbit = 60;
 
-angle[0] = 0;
-angle[1] = 45;
-angle[2] = 90;
-angle[3] = 135;
-angle[4] = 180;
+angle[0] = 360/5*0;
+angle[1] = 360/5*1;
+angle[2] = 360/5*2;
+angle[3] = 360/5*3;
+angle[4] = 360/5*4;
 
-orbit_speed = 1;
+pre_angle[0] = 360/5*0;
+pre_angle[1] = 360/5*1;
+pre_angle[2] = 360/5*2;
+pre_angle[3] = 360/5*3;
+pre_angle[4] = 360/5*4;
+
+orbit_acc = 0.2;
+orbit_speed[0] = 1;
+orbit_speed[1] = 1;
+orbit_speed[2] = 1;
+orbit_speed[3] = 1;
+orbit_speed[4] = 1;
 
 center_x = view_wview[0]/2;
 center_y = view_hview[0]/2;
@@ -50,7 +61,207 @@ orbit_y[1] = 0;
 orbit_y[2] = 0;
 orbit_y[3] = 0;
 orbit_y[4] = 0;
+
+radius = 5;
+
+line_width = 3;
+
+alarm_set(0, room_speed*2);
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pro-Tip
+pro_tip_file_length = 20;
+pro_tip_index = irandom(pro_tip_file_length -1);
+
+pro_tip_file = file_text_open_read(working_directory + "Textdateien\" + "pro_tip.txt");
+
+var n;
+for(n = 0; n &lt;= pro_tip_index; n++) {
+    pro_tip = file_text_read_string(pro_tip_file);
+    file_text_readln(pro_tip_file);
+
+}
+
+file_text_close(pro_tip_file);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Script-Variblen
+
+pre_loading_screen_time = global.admin.loading_screen_time;
+
+loading_screen_time = global.admin.loading_screen_time;
+
+alarm_set(1, loading_screen_time);
+
+goal =  global.admin.loading_screen_goal;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Prozentanzeige
+
+pre_loading_percent = 0;
+loading_percent = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Überschrift
+loading_screen_heading = global.admin.loading_screen_heading;
+if(loading_screen_heading == "") loading_screen_heading = "LOADING"
+points = "";
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hintergrund
+background_index[0] = choose(
+    bg_loading_screen1,
+    bg_loading_screen2, 
+    bg_loading_screen3, 
+    bg_loading_screen4,
+    bg_loading_screen5,
+    bg_loading_screen6,
+    bg_loading_screen7,
+    bg_loading_screen8,
+    bg_loading_screen9,
+    bg_loading_screen10,
+    bg_loading_screen11,
+    bg_loading_screen12,
+    bg_loading_screen13,
+    bg_loading_screen14,
+    bg_loading_screen15
+    );
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm1</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm0</string>
           </argument>
         </arguments>
       </action>
@@ -72,17 +283,110 @@ orbit_y[4] = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var n;
+            <string>///Ladeanzeige
+//Orbit Speed
+var n;
 for(n = 0; n &lt; (array_length_1d(angle)); n++) {
-    angle[n] += orbit_speed;
-    if(angle[n] &gt;= 360) angle[n] -= 360;
+    angle[n] += orbit_speed[n];
+    if(angle[n] &gt;= pre_angle[n] + 360) angle[n] -= 360;
 }
 
+//Orbit Speed Beschleunigung
+var b;
+for(b = 0; b &lt; (array_length_1d(angle)); b++) {
+    if(angle[b] &lt; pre_angle[b]+180 &amp;&amp; angle[b] &gt;= pre_angle[b]+0) {
+        if(orbit_speed[b] &lt; 20) {
+            orbit_speed[b] += orbit_acc;
+        }
+        else {
+            orbit_speed[b] = 20;
+        }
+    }
+    if(angle[b] &gt;= pre_angle[b]+180 &amp;&amp; angle[b] &lt; pre_angle[b]+360) {
+        if(orbit_speed[b] &gt; orbit_acc) {
+            orbit_speed[b] -= orbit_acc;
+        }
+        else {
+            orbit_speed[b] = 0;
+        }
+    }
+}
+
+//Setze x und y Variablen
 var m;
 for(m = 0; m &lt; (array_length_1d(angle)); m++) {
-    orbit_x[m] = lengthdir_x(orbit, angle[m]) + center_x;
-    orbit_y[m] = lengthdir_y(orbit, angle[m]) + center_y;
+    orbit_x[m] = lengthdir_x(orbit, angle[m] + 90) + center_x;
+    orbit_y[m] = lengthdir_y(orbit, angle[m] + 90) + center_y;
 }
+
+//Alarm
+if(alarm_get(0) == -1) alarm_set(0, room_speed*2);
+/*
+if(alarm_get(0) &gt; room_speed) orbit += 0.2;
+if(alarm_get(0) &lt; room_speed) orbit -= 0.2;
+*/
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Script
+
+if(alarm_get(1) == 0) scr_circlefade(goal, 60);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Prozentanzeige
+var alarmtime;
+alarmtime = alarm_get(1);
+if(alarm_get(1) == -1) alarmtime = 0;
+if(alarm_get(1) == -2) alarmtime = 100;
+
+
+
+pre_loading_percent = string(int64(
+    100 - (alarmtime/pre_loading_screen_time)*100)
+);
+
+loading_percent = pre_loading_percent;
+
+if(string_length(pre_loading_percent) == 1) loading_percent = "00" + loading_percent;
+if(string_length(pre_loading_percent) == 2) loading_percent = "0" + loading_percent;
+if(string_length(loading_percent) &gt; 3) loading_percent = pre_loading_percent;
+
+if(loading_percent &gt; 100) loading_percent = 100;
 </string>
           </argument>
         </arguments>
@@ -105,13 +409,190 @@ for(m = 0; m &lt; (array_length_1d(angle)); m++) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_colour(c_white);
+            <string>///Ladeanzeige
+
+//Kreis
+draw_set_alpha(0.8);
+draw_set_colour(global.co_blue_gray_800);
+draw_circle(center_x, center_y, 80, 0);
+draw_set_alpha(1);
+
+/*
+//Punkte
+draw_set_colour(c_white);
 draw_set_alpha(1);
 var i;
 for(i = 0; i &lt; array_length_1d(angle); i++) {
-    draw_circle(orbit_x[i], orbit_y[i], 5, 0);
+    draw_circle(orbit_x[i], orbit_y[i], radius, 0);
 }
+*/
+draw_set_colour(c_white);
+//Linien
+//Pentagramm
+draw_line_width(orbit_x[0], orbit_y[0], orbit_x[2], orbit_y[2], line_width);
+draw_line_width(orbit_x[0], orbit_y[0], orbit_x[3], orbit_y[3], line_width);
+draw_line_width(orbit_x[3], orbit_y[3], orbit_x[1], orbit_y[1], line_width);
+draw_line_width(orbit_x[1], orbit_y[1], orbit_x[4], orbit_y[4], line_width);
+draw_line_width(orbit_x[4], orbit_y[4], orbit_x[2], orbit_y[2], line_width);
 
+//Außenlinie
+draw_line_width(orbit_x[0], orbit_y[0], orbit_x[1], orbit_y[1], line_width);
+draw_line_width(orbit_x[1], orbit_y[1], orbit_x[2], orbit_y[2], line_width);
+draw_line_width(orbit_x[2], orbit_y[2], orbit_x[3], orbit_y[3], line_width);
+draw_line_width(orbit_x[3], orbit_y[3], orbit_x[4], orbit_y[4], line_width);
+draw_line_width(orbit_x[4], orbit_y[4], orbit_x[0], orbit_y[0], line_width);
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Pro-Tip
+//Hintergrund
+draw_set_colour(global.co_blue_gray_800);
+draw_set_alpha(0.8);
+draw_roundrect(
+    -50,
+    view_hview[0]/2 - 75,    
+    view_wview[0]/2 - 150,
+    view_hview[0]/2 + 75,
+    0
+);
+
+//Rechteck
+draw_set_colour(c_gray);
+draw_rectangle(
+    25 - 5,
+    view_hview[0]/2 - 25,
+    25 + 5,
+    view_hview[0]/2 + 50,
+    0    
+);
+
+
+
+//Text
+draw_set_font(fnt_pixel1);
+draw_set_halign(fa_left);
+draw_set_colour(c_white);
+draw_set_alpha(1);
+//Tipp
+draw_text(25, view_hview[0]/2 - 60, "TIPP " + string(pro_tip_index+1) + ":")
+//Tipp-Text
+draw_text_ext(50, view_hview[0]/2 - 25, pro_tip, 30, view_wview[0]/2 - 200 - 40);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Prozentanzeige
+//Hintergrund
+draw_set_font(fnt_pixel2);
+draw_set_alpha(0.8);
+draw_set_colour(global.co_blue_gray_800);
+draw_roundrect(
+    view_wview[0]/2 - string_width("&gt; 000")/2 - 20,
+    view_hview[0]/2 + 200,    
+    view_wview[0]/2 + string_width("&gt; 000")/2 + 20,
+    view_hview[0]/2 + 200 + string_height("&gt; 000") + 20,
+    0
+);
+
+//Prozent
+draw_set_alpha(1);
+draw_set_halign(fa_left);
+draw_set_colour(c_white);
+draw_text(view_wview[0]/2 - string_width("&gt; 000")/2, view_hview[0]/2 + 200, "&gt; " + loading_percent);
+
+//Schatten
+draw_set_alpha(0.5);
+draw_text(view_wview[0]/2 - string_width("&gt; 000")/2 + 3, view_hview[0]/2 + 200 + 3, "&gt; " + loading_percent);
+
+draw_set_alpha(1);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Überschrift
+draw_set_font(fnt_pixel2);
+draw_set_colour(c_white);
+draw_set_halign(fa_left);
+
+var heading;
+if(alarm[0] == ((room_speed*2)/4)*3) points += ".";
+if(alarm[0] == ((room_speed*2)/4)*2) points += ".";
+if(alarm[0] == ((room_speed*2)/4)*1) points += ".";
+if(alarm[0] == 0) {
+    points = "";
+    heading = loading_screen_heading;
+}
+heading = loading_screen_heading + points;
+
+draw_text(
+    view_wview[0]/2 - string_width(loading_screen_heading + "...")/2,
+    view_hview[0]/2 - 200,
+    heading
+ );
+
+//Schatten
+draw_set_alpha(0.5);
+draw_text(
+    view_wview[0]/2 - string_width(loading_screen_heading + "...")/2 + 3,
+    view_hview[0]/2 - 200 + 3,
+    heading
+ );
+
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
