@@ -25,11 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hit=instance_place(x,y,obj_trainingspuppe);
-if(hit!=noone)
+            <string>///Überprüfung eines Treffers
+hit = instance_place(x,y,obj_trainingspuppe);
+if(hit != noone)
 {
-    hit.hp--;
+    hit.hp -= obj_Nahkampf.damage;
 }
+
+//Zerstörung
 instance_destroy();
 </string>
           </argument>
