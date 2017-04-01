@@ -30,7 +30,7 @@ stagetwo = false;
 
 xfactor = 5;
 
-colour = c_black;
+colour = global.co_blue_gray_800;
 
 goal = "";
 
@@ -63,7 +63,7 @@ radius = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Circlefade Effekt
+            <string>///Circlefade Effekt
 
 draw_set_colour(colour);
 draw_set_alpha(1);

@@ -1,1 +1,2 @@
-scr_loading_screen(rm_main_menu, -1, "");
+scr_loading_screen(rm_loading_screen, 6, "TESTING");
+

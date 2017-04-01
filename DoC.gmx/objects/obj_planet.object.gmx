@@ -28,15 +28,61 @@
             <string>///Orbit um Planeten
 orbit = 50 + sprite_get_width(sprite_index)/2;
 
-angle = 0;
+angle = irandom(359);
 
-orbit_speed = -0.2;
+orbit_speed = choose(-random(2), random(2))
 
 center_x = x;
 center_y = y;
 
 orbit_x = 0;
 orbit_y = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Asteroid-Angle
+asteroid_speed = random(5);
+asteroid_angle = irandom(359);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sprite-Angle
+sprite_angle = random(0.3);
+image_angle = irandom(359);
 </string>
           </argument>
         </arguments>
@@ -60,7 +106,7 @@ orbit_y = 0;
           <argument>
             <kind>1</kind>
             <string>///Drehe Sprite
-image_angle += 0.1;
+image_angle += sprite_angle;
 
 </string>
           </argument>
@@ -93,6 +139,30 @@ orbit_y = lengthdir_y(orbit, angle) + center_y;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Asteroid-Angle
+asteroid_angle += asteroid_speed;
+
+if(asteroid_angle &gt;= +360) asteroid_angle -= 360;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -113,7 +183,7 @@ orbit_y = lengthdir_y(orbit, angle) + center_y;
             <kind>1</kind>
             <string>///Zeichne Orbit_Objekt
 draw_self();
-draw_sprite_ext(spr_cael_orb, 0, orbit_x, orbit_y, 0.3, 0.3, angle - 90, c_white, 1);
+draw_sprite_ext(spr_asteroid, 0, orbit_x, orbit_y, 0.3, 0.3, -asteroid_angle, c_white, 1);
 
 </string>
           </argument>

@@ -197,6 +197,56 @@ admin_fps = "60";
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Farben
+//Blue Gray
+global.co_blue_gray_500 = make_colour_hsv(55, 30, 45);
+global.co_blue_gray_800 = make_colour_hsv(55, 32, 21);
+//Amber
+global.co_amber_500 = make_colour_rgb(255, 193, 7);
+//Indigo
+global.co_indigo_500 = make_colour_hsv(64, 65, 70);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Kreis-Precision
+draw_set_circle_precision(64);
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -368,6 +418,28 @@ if(alarm_get(0) == -1) alarm_set(0, room_speed);
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///FPS
+if(alarm_get(0) == 0) admin_fps = string(int64(fps_real));
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -390,8 +462,8 @@ if(alarm_get(0) == -1) alarm_set(0, room_speed);
 draw_set_font(fnt_fps);
 draw_set_colour(c_white);
 draw_set_halign(fa_left);
+draw_set_alpha(1);
 
-if(alarm_get(0) == 0) admin_fps = string(int64(fps_real));
 draw_text(view_xview[0] + 32, view_yview[0] + 16, "FPS: " + admin_fps);
 
 //Zeit
