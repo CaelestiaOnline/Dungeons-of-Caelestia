@@ -65,7 +65,12 @@
       <objects name="Projektile">
         <object>objects\obj_hitbox_nahkampf</object>
         <object>objects\obj_bullet</object>
-        <object>objects\obj_bullet2</object>
+      </objects>
+      <objects name="Nahkampfwaffen">
+        <object>objects\obj_Nahkampf</object>
+      </objects>
+      <objects name="Fernkampfwaffen">
+        <object>objects\obj_Fernkampf</object>
       </objects>
     </objects>
     <objects name="Menu">
@@ -105,6 +110,7 @@
     <objects name="Gegenstände">
       <objects name="Hindernis">
         <object>objects\obj_Stein</object>
+        <object>objects\obj_Kaktus</object>
       </objects>
     </objects>
   </objects>

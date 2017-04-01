@@ -25,8 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//bewegung
-speed=8;
+            <string>///Bewegungsvariablen
+//Bewegungsgeschwindigkeit
+speed = 8;
+
+//Distanz
+travel=80;
+time=80;
 </string>
           </argument>
         </arguments>
@@ -49,11 +54,21 @@ speed=8;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//aus dem Raum
-if(x&lt;0 || x&gt;room_width)
+            <string>///Zerstörung
+//aus dem Raum
+if(x &lt; 0 || x &gt; room_width)
 {
     instance_destroy();
 }
+
+//Zerstörung nach Distanz
+time--;
+if(time == 0)
+{
+    instance_destroy();
+    time = travel;
+}
+
 </string>
           </argument>
         </arguments>
@@ -76,7 +91,8 @@ if(x&lt;0 || x&gt;room_width)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>///Zerstörung bei Kollision mit Hindernis
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -99,8 +115,12 @@ if(x&lt;0 || x&gt;room_width)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_trainingspuppe.hp--;
+            <string>///Kollision mit Trainingspuppe
+//Zerstörung
 instance_destroy();
+
+//Verminderung der Hp
+other.hp -= obj_Fernkampf.damage;
 </string>
           </argument>
         </arguments>
