@@ -54,56 +54,9 @@
     <instance objName="obj_charakter" x="800" y="608" name="inst_C0557D79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_trainingspuppe" x="960" y="1056" name="inst_5D546379" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_Stein" x="1056" y="448" name="inst_C9622BD8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="896" y="1056" name="inst_6BDA3A53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="832" y="1056" name="inst_E88DFDE8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="768" y="1056" name="inst_946D51FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="960" y="864" name="inst_8549B17E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="960" y="928" name="inst_EE6D8D96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="960" y="992" name="inst_DF2EB2A8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="384" name="inst_63EF63AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="320" name="inst_E17DEFC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="256" name="inst_848D1531" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="192" name="inst_26F7FB0D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1120" y="192" name="inst_EFA3CF66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1184" y="192" name="inst_AE05F396" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1248" y="192" name="inst_8216E16D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1248" y="256" name="inst_48BCB548" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1312" y="256" name="inst_912079A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1312" y="320" name="inst_A3AC3761" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1312" y="384" name="inst_17503337" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1312" y="448" name="inst_7041C0FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1664" y="1024" name="inst_B77ACB06" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1376" y="1280" name="inst_4C2A2321" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1920" y="1216" name="inst_EC0D6BAE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1536" y="640" name="inst_DFDEB671" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="2752" y="1184" name="inst_1D073920" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="2400" y="640" name="inst_66EA8599" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="3200" y="576" name="inst_76BFCC25" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="2912" y="1504" name="inst_541D600F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1984" y="1664" name="inst_DAA28BE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="2368" y="1088" name="inst_22F93C47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="896" y="1792" name="inst_E081B9A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="224" y="1728" name="inst_ABA6BF4A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="512" y="1024" name="inst_5CC63615" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="416" y="384" name="inst_0EEAD780" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="576" y="1408" name="inst_ABC378D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="832" y="1568" name="inst_7511E3FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="1504" y="1760" name="inst_0B12DCFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="1632" y="1408" name="inst_3B68AA67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="2048" y="672" name="inst_58CD3C44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="1792" y="352" name="inst_290B76F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="2496" y="288" name="inst_9BABBEC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="3136" y="960" name="inst_449CE5B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="3264" y="1728" name="inst_DE35C171" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe" x="2784" y="1856" name="inst_D7A99398" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="512" name="inst_5BDB9D90" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="576" name="inst_83761D7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="640" name="inst_89C21116" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="704" name="inst_87DE9049" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="768" name="inst_B5F4C492" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="832" name="inst_1A7CB6A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1056" y="1280" name="inst_4B52663F" locked="0" code="" scaleX="1" scaleY="13" colour="4294967295" rotation="0"/>
-    <instance objName="obj_Stein" x="1344" y="992" name="inst_06EB754A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Kaktus" x="480" y="288" name="inst_28166107" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trainingspuppe" x="512" y="608" name="inst_59210361" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Fernkampf" x="256" y="224" name="inst_B0DB5E3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_forest" x="224" y="224" w="64" h="64" xo="0" yo="0" id="10000001" name="inst_0AC8013E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

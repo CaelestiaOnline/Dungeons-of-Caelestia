@@ -98,9 +98,6 @@ global.kb_left_pressed = 0;
 //Taste: right
 global.kb_right = 0;
 global.kb_right_pressed = 0;
-
-
-
 </string>
           </argument>
         </arguments>
