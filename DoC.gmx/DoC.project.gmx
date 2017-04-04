@@ -108,6 +108,9 @@
     <scripts name="loading_screen">
       <script>scripts\scr_loading_screen.gml</script>
     </scripts>
+    <scripts name="Raumauswahl">
+      <script>scripts\scr_random_room.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <fonts name="Menu">
@@ -170,6 +173,9 @@
       </objects>
       <objects name="Gegner">
         <object>objects\obj_trainingspuppe</object>
+        <objects name="Bewegung">
+          <object>objects\obj_grid</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Gegenstände">
@@ -182,6 +188,9 @@
       <object>objects\obj_sidefade</object>
       <object>objects\obj_circlefade</object>
       <object>objects\obj_fade</object>
+    </objects>
+    <objects name="Tür">
+      <object>objects\obj_tuer</object>
     </objects>
   </objects>
   <rooms name="rooms">
