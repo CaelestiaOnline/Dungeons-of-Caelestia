@@ -55,12 +55,17 @@
     <sprites name="Einheit">
       <sprite>sprites\spr_Tainingspuppe</sprite>
       <sprite>sprites\spr_charakter</sprite>
+      <sprite>sprites\spr_gesicht</sprite>
     </sprites>
     <sprites name="Waffen">
       <sprite>sprites\spr_Hitbox</sprite>
       <sprite>sprites\spr_bullet</sprite>
     </sprites>
-    <sprite>sprites\spr_stein</sprite>
+    <sprites name="Hindernis">
+      <sprite>sprites\spr_stein</sprite>
+      <sprite>sprites\spr_kaktus</sprite>
+      <sprite>sprites\spr_wall</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -172,6 +177,8 @@
         <object>objects\obj_charakter</object>
       </objects>
       <objects name="Gegner">
+        <object>objects\obj_gegner</object>
+        <object>objects\obj_gesicht</object>
         <object>objects\obj_trainingspuppe</object>
         <objects name="Bewegung">
           <object>objects\obj_grid</object>
@@ -182,6 +189,8 @@
       <objects name="Hindernis">
         <object>objects\obj_Stein</object>
         <object>objects\obj_Kaktus</object>
+        <object>objects\obj_hindernis</object>
+        <object>objects\obj_wall</object>
       </objects>
     </objects>
     <objects name="Übergänge">

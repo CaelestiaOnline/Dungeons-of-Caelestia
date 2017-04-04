@@ -1,2 +1,2 @@
-scr_loading_screen(rm_loading_screen, 6, "TESTING");
+scr_loading_screen(rm_testroom1, 6, "");
 

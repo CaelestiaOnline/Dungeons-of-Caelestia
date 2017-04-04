@@ -35,7 +35,7 @@ var Anzahl_b = room_width div breite;
 global.grid = mp_grid_create (0, 0, Anzahl_b, Anzahl_h, breite, hoehe);
 
 //Steine hinzufügen
-mp_grid_add_instances(global.grid, obj_Stein, 1);
+mp_grid_add_instances(global.grid, obj_hindernis, 1);
 </string>
           </argument>
         </arguments>
