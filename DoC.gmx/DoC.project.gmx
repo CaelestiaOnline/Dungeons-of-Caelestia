@@ -55,12 +55,17 @@
     <sprites name="Einheit">
       <sprite>sprites\spr_Tainingspuppe</sprite>
       <sprite>sprites\spr_charakter</sprite>
+      <sprite>sprites\spr_gegner</sprite>
     </sprites>
     <sprites name="Waffen">
       <sprite>sprites\spr_Hitbox</sprite>
       <sprite>sprites\spr_bullet</sprite>
     </sprites>
-    <sprite>sprites\spr_stein</sprite>
+    <sprites name="Hindernis">
+      <sprite>sprites\spr_stein</sprite>
+      <sprite>sprites\spr_kaktus</sprite>
+      <sprite>sprites\spr_wall</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -97,8 +102,9 @@
       <script>scripts\scr_credits_menu.gml</script>
       <script>scripts\scr_multiplayer_menu.gml</script>
       <script>scripts\scr_game_end.gml</script>
+      <script>scripts\scr_ptr_menu.gml</script>
     </scripts>
-    <scripts name="test">
+    <scripts name="PTR">
       <script>scripts\scr_test_feature.gml</script>
     </scripts>
     <scripts name="Übergänge">
@@ -110,6 +116,10 @@
     </scripts>
     <scripts name="Raumauswahl">
       <script>scripts\scr_random_room.gml</script>
+    </scripts>
+    <scripts name="Angriff">
+      <script>scripts\scr_kollisionsschaden_solid.gml</script>
+      <script>scripts\scr_kollisionsschaden_nonsolid.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -157,6 +167,9 @@
       <objects name="game_end">
         <object>objects\obj_game_end</object>
       </objects>
+      <objects name="PTR-Auswahl">
+        <object>objects\obj_ptr_menu</object>
+      </objects>
     </objects>
     <objects name="loading_screen">
       <object>objects\obj_loading_screen</object>
@@ -172,16 +185,27 @@
         <object>objects\obj_charakter</object>
       </objects>
       <objects name="Gegner">
-        <object>objects\obj_trainingspuppe</object>
+        <object>objects\obj_gegner</object>
         <objects name="Bewegung">
           <object>objects\obj_grid</object>
+        </objects>
+        <objects name="Children">
+          <object>objects\obj_gesicht</object>
+          <object>objects\obj_trainingspuppe</object>
         </objects>
       </objects>
     </objects>
     <objects name="Gegenstände">
       <objects name="Hindernis">
-        <object>objects\obj_Stein</object>
-        <object>objects\obj_Kaktus</object>
+        <object>objects\obj_hindernis</object>
+        <objects name="Children">
+          <object>objects\obj_wall</object>
+          <objects name="Breakable">
+            <object>objects\obj_hindernis_breakable</object>
+            <object>objects\obj_Kaktus</object>
+            <object>objects\obj_Stein</object>
+          </objects>
+        </objects>
       </objects>
     </objects>
     <objects name="Übergänge">
@@ -192,6 +216,9 @@
     <objects name="Tür">
       <object>objects\obj_tuer</object>
     </objects>
+    <objects name="HUD">
+      <object>objects\obj_hud</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="Menu">
@@ -200,12 +227,15 @@
       <room>rooms\rm_credits</room>
       <room>rooms\rm_multiplayer</room>
       <room>rooms\rm_game_end</room>
+      <room>rooms\rm_ptr_menu</room>
     </rooms>
     <rooms name="Hub">
       <room>rooms\rm_main_hub</room>
     </rooms>
     <rooms name="Testrooms">
       <room>rooms\rm_testroom1</room>
+      <room>rooms\rm_testroom2</room>
+      <room>rooms\rm_testroom3</room>
     </rooms>
     <rooms name="loading_screen">
       <room>rooms\rm_loading_screen</room>
