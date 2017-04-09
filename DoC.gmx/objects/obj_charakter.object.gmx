@@ -51,10 +51,14 @@ beschleunigung = 0.2;
 abbremsung = 0.5;
 
 //Angriffsauswahl
-angriff = 1;
+angriff = 0;
 
 //Fernkampf
 fernkampf = instance_create(0, 0, obj_Fernkampf);
+nahkampf = instance_create(0, 0, obj_Nahkampf);
+
+//HUD
+hud = instance_create(0, 0, obj_hud);
 </string>
           </argument>
         </arguments>
@@ -77,9 +81,7 @@ fernkampf = instance_create(0, 0, obj_Fernkampf);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Aktionen des Charakters
-
-//Bewegung
+            <string>///Bewegung
 //Beschleunigung
 if(global.kb_d) 
 {
@@ -155,8 +157,27 @@ if(global.kb_w = false)
         move_up = 0;
     }
 }
-
-//Bewegung über Rand verhindern
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bewegung über Rand verhindern
 if(x - spr_breite &lt; 0)
 {
     x = spr_breite;
@@ -173,8 +194,27 @@ if(y + spr_hoehe &gt; room_height)
 {
     y = room_height - spr_hoehe;
 }
-
-//Angriff
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Angriff
 //Angriffsrichtung
 if(global.kb_d)
 {
@@ -185,7 +225,37 @@ if(global.kb_a)
     schlagrichtung = 1;
 }
 
-//Kollision mit Hindernissen
+//Umschalten zwischen Nah + Fernkampf
+if(global.kb_q_pressed) {
+    if(angriff == 1) {
+        angriff = 0;
+    }
+    else {
+        angriff = 1;
+    }
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Kollision mit Hindernissen
 if(place_meeting(x,y - move_up,obj_hindernis))
 {
     while(!place_meeting(x,y - 1,obj_hindernis))
@@ -218,18 +288,10 @@ if(place_meeting(x + move_right,y,obj_hindernis))
     }
     move_right = 0;
 }
-
-//Tod
-if(hp &lt;= 0)
-{
-    room_restart();
-}
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -246,9 +308,11 @@ if(hp &lt;= 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///HP
-draw_self();
-draw_text(view_xview[0] + 100, view_yview[0] + 16, "HP: " + string(hp));
+            <string>///Tod
+if(hp &lt;= 0)
+{
+    room_restart();
+}
 </string>
           </argument>
         </arguments>

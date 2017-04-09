@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_hindernis</parentName>
+  <parentName>obj_hindernis_breakable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -32,7 +32,29 @@ damage = 2;
 
 //Zeitl. Schadensabschnitt
 time = 0;
-abschnitt = 5;
+countdown = 5;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///HP
+hp = 25;
 </string>
           </argument>
         </arguments>
@@ -56,21 +78,53 @@ abschnitt = 5;
           <argument>
             <kind>1</kind>
             <string>///Schaden an Charakter
-if(place_meeting(x - 1,y,obj_charakter) || place_meeting(x + 1,y,obj_charakter) || place_meeting(x,y - 1,obj_charakter) || place_meeting (x,y + 1,obj_charakter))
+scr_kollisionsschaden_solid(self, obj_charakter, damage);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schaden an Gegner
+scr_kollisionsschaden_solid(self, obj_gegner, damage);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Zerstörung bei 0 Hp
+if(hp &lt;= 0)
 {
-    if(time == 0)
-    {
-        obj_charakter.hp -= damage;
-    }
-}
-
-//Zeit erhöhen
-time++;
-
-//Zeit zurücksetzen
-if(time &gt; abschnitt)
-{
-    time = 0;
+    instance_destroy();
 }
 </string>
           </argument>
