@@ -7,7 +7,7 @@ scr_kollisionsschaden(
 */
 var object_self = argument0;
 var object_other = argument1;
-var schaden = argument2; 
+var damage = argument2; 
 
 if(instance_exists(object_self)) {
 ///Schaden an Objekt
@@ -15,7 +15,8 @@ if(place_meeting(object_self.x, object_self.y, object_other))
 {
     if(object_self.time == 0)
     {
-        object_other.hp -= damage;
+        if(object_other == obj_player) scr_deal_player_damage(damage);
+        else scr_deal_damage(object_other, damage);
     }
 }
 

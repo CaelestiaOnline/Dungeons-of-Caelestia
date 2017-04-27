@@ -88,7 +88,7 @@ alarm_set(0, room_speed*2);
           <argument>
             <kind>1</kind>
             <string>///Pro-Tip
-pro_tip_file_length = 114;
+pro_tip_file_length = 138;
 pro_tip_index = irandom(pro_tip_file_length -1);
 
 pro_tip_file = file_text_open_read(working_directory + "Textdateien\" + "pro_tip.txt");

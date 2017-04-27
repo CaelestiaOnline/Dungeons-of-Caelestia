@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///HP 
-hp = 100;
+hp = 7;
+scr_set_depth();
 </string>
           </argument>
         </arguments>

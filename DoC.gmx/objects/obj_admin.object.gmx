@@ -83,6 +83,18 @@ global.kb_i_pressed = 0;
 global.kb_e = 0;
 global.kb_e_pressed = 0;
 
+//Taste: J
+global.kb_j = 0;
+global.kb_j_pressed = 0;
+
+//Taste: L
+global.kb_l = 0;
+global.kb_l_pressed = 0;
+
+//Taste: K
+global.kb_k = 0;
+global.kb_k_pressed = 0;
+
 //Taste: up
 global.kb_up = 0;
 global.kb_up_pressed = 0;
@@ -98,6 +110,96 @@ global.kb_left_pressed = 0;
 //Taste: right
 global.kb_right = 0;
 global.kb_right_pressed = 0;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Mouse-Variablen
+global.m_left = 0;
+global.m_left_pressed = 0;
+
+global.m_right = 0;
+global.m_right_pressed = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tasten zuordnen
+///Tasten zuordnen
+//Move up
+up_key = 0;
+up_key_pressed = 0;
+
+//Move down
+down_key = 0;
+down_key_pressed = 0;
+
+//Move left
+left_key = 0;
+left_key_pressed = 0;
+
+//Move right
+right_key = 0;
+right_key_pressed = 0;
+
+//primary Attack
+prim_attack_key = 0;
+prim_attack_key_pressed = 0;
+
+//secondary Attack
+sec_attack_key = 0;
+sec_attack_key_pressed = 0;
+
+//magic
+magic_key = 0;
+magic_key_pressed = 0;
+
+//Sprint
+sprint_key = 0;
+sprint_key_pressed = 0;
+
+//Interagieren
+action_key = 0;
+action_key_pressed = 0;
+
+//Inventar
+inventory_key = 0;
+inventory_key_pressed = 0;
+
+
 </string>
           </argument>
         </arguments>
@@ -218,6 +320,10 @@ global.co_blue_gray_800 = make_colour_hsv(55, 32, 21);
 global.co_amber_500 = make_colour_rgb(255, 193, 7);
 //Indigo
 global.co_indigo_500 = make_colour_hsv(64, 65, 70);
+//Brown
+global.co_brown_500 = make_colour_hsv(4, 40, 47);
+
+random_colour = c_green;
 
 
 
@@ -243,6 +349,28 @@ global.co_indigo_500 = make_colour_hsv(64, 65, 70);
             <kind>1</kind>
             <string>///Kreis-Precision
 draw_set_circle_precision(64);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///in-game
+in_game = false;
 </string>
           </argument>
         </arguments>
@@ -311,7 +439,7 @@ global.kb_space_pressed = keyboard_check_pressed(vk_space);
 
 //Taste: Left-Shift
 global.kb_lshift = keyboard_check(vk_shift);
-global.kb_lshift_prssed = keyboard_check_pressed(vk_shift);
+global.kb_lshift_pressed = keyboard_check_pressed(vk_shift);
 
 //Taste: Left-Ctrl
 global.kb_lctrl = keyboard_check(vk_control);
@@ -345,6 +473,18 @@ global.kb_i_pressed = keyboard_check_pressed(ord("I"));
 global.kb_e = keyboard_check(ord("E"));
 global.kb_e_pressed = keyboard_check_pressed(ord("E"));
 
+//Taste: J
+global.kb_j = keyboard_check(ord("J"));
+global.kb_j_pressed = keyboard_check_pressed(ord("J"));
+
+//Taste: L
+global.kb_l = keyboard_check(ord("L"));
+global.kb_l_pressed = keyboard_check_pressed(ord("L"));
+
+//Taste: K
+global.kb_k = keyboard_check(ord("K"));
+global.kb_k_pressed = keyboard_check_pressed(ord("K"));
+
 //Taste: up
 global.kb_up = keyboard_check(vk_up);
 global.kb_up_pressed = keyboard_check_pressed(vk_up);
@@ -359,6 +499,118 @@ global.kb_left_pressed = keyboard_check_pressed(vk_left);
 //Taste: right
 global.kb_right = keyboard_check(vk_right);
 global.kb_right_pressed = keyboard_check_pressed(vk_right);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Initialisiere Mouse-Eingaben
+global.m_left = mouse_check_button(mb_left);
+global.m_left_pressed = mouse_check_button_pressed(mb_left);
+
+global.m_right = mouse_check_button(mb_right);
+global.m_right_pressed = mouse_check_button_pressed(mb_right);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tasten zuordnen
+//Move up
+up_key = global.kb_w;
+up_key_pressed = global.kb_w_pressed;
+
+//Move down
+down_key = global.kb_s;
+down_key_pressed = global.kb_s_pressed;
+
+//Move left
+left_key = global.kb_a;
+left_key_pressed = global.kb_a_pressed;
+
+//Move right
+right_key = global.kb_d;
+right_key_pressed = global.kb_d_pressed;
+
+//primary Attack
+prim_attack_key = global.kb_space;
+prim_attack_key_pressed = global.kb_space_pressed;
+
+//secondary Attack
+sec_attack_key = global.kb_f;
+sec_attack_key_pressed = global.kb_f_pressed;
+
+//magic
+magic_key = global.kb_q;
+magic_key_pressed = global.kb_q_pressed;
+
+//Sprint
+sprint_key = global.kb_lshift;
+sprint_key_pressed = global.kb_lshift_pressed;
+
+//Interagieren
+action_key = global.kb_e;
+action_key_pressed = global.kb_e_pressed;
+
+//Inventar
+inventory_key = global.kb_i;
+inventory_key_pressed = global.kb_i_pressed;
+
+//Pickup-Leiste
+//Scroll left
+pickup_menu_left_key = global.kb_j;
+pickup_menu_left_key_pressed = global.kb_j_pressed;
+
+//Scroll right
+pickup_menu_right_key = global.kb_l;
+pickup_menu_right_key_pressed = global.kb_l_pressed;
+
+//Bestätigen
+pickup_menu_confirm_key = global.kb_k;
+pickup_menu_confirm_key_pressed = global.kb_k_pressed;
+
+
+//Left-Click
+left_click = global.m_left;
+left_click_pressed = global.m_left_pressed;
+
+//Right-Click
+right_click = global.m_right;
+right_click_pressed = global.m_right_pressed;
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -436,6 +688,59 @@ if(alarm_get(0) == -1) alarm_set(0, room_speed);
             <kind>1</kind>
             <string>///FPS
 if(alarm_get(0) == 0) admin_fps = string(int64(fps_real));
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Random Colour
+random_colour = make_colour_hsv(
+    random_range(0, 255),
+    random_range(255*0.75, 255),
+    random_range(255*0.25, 255)
+    );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///in_game
+
+if(instance_exists(obj_player)) {
+    in_game = true;
+} else {
+    in_game = false;
+}
 </string>
           </argument>
         </arguments>
@@ -533,6 +838,11 @@ draw_text(
             <kind>1</kind>
             <string>///Test
 
+if(instance_exists(obj_player)) {
+
+}
+
+//draw_text(100, 300, string(instance_exists(obj_hindernis)));
 
 </string>
           </argument>

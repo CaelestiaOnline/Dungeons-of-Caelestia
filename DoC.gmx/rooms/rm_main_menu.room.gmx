@@ -10,8 +10,7 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>0</showcolour>
-  <code>if(!instance_exists(obj_admin)) global.admin = instance_create(0, 0, obj_admin);
-instance_create(0, 0, obj_main_menu);</code>
+  <code>instance_create(0, 0, obj_main_menu);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

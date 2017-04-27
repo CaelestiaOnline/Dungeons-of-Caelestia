@@ -53,18 +53,52 @@
       </sprites>
     </sprites>
     <sprites name="Einheit">
-      <sprite>sprites\spr_Tainingspuppe</sprite>
+      <sprite>sprites\spr_trainingspuppe</sprite>
+      <sprite>sprites\spr_trainingspuppe_dead</sprite>
+      <sprite>sprites\spr_trainingspuppe_ext</sprite>
       <sprite>sprites\spr_charakter</sprite>
       <sprite>sprites\spr_gegner</sprite>
+      <sprite>sprites\spr_gegner_dead</sprite>
+      <sprite>sprites\spr_health_bar_enemy</sprite>
     </sprites>
     <sprites name="Waffen">
-      <sprite>sprites\spr_Hitbox</sprite>
+      <sprite>sprites\spr_hitbox</sprite>
       <sprite>sprites\spr_bullet</sprite>
+      <sprite>sprites\spr_explosion</sprite>
+      <sprite>sprites\spr_mana_bullet</sprite>
     </sprites>
     <sprites name="Hindernis">
       <sprite>sprites\spr_stein</sprite>
       <sprite>sprites\spr_kaktus</sprite>
+      <sprite>sprites\spr_wall_noc</sprite>
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_tree</sprite>
+    </sprites>
+    <sprites name="HUD">
+      <sprite>sprites\spr_health_bar</sprite>
+      <sprite>sprites\spr_health_bar_damage</sprite>
+      <sprite>sprites\spr_health_bar_outline</sprite>
+      <sprite>sprites\spr_stamina_bar</sprite>
+      <sprite>sprites\spr_mana_bar</sprite>
+    </sprites>
+    <sprites name="Heal-Field">
+      <sprite>sprites\spr_heal_field</sprite>
+    </sprites>
+    <sprites name="Inventory">
+      <sprite>sprites\spr_inv_border</sprite>
+      <sprite>sprites\spr_inv_border_gui_highlight</sprite>
+      <sprite>sprites\spr_inv_border_gui_countdown</sprite>
+      <sprite>sprites\spr_inv_border_drop</sprite>
+      <sprite>sprites\spr_inv_border_del</sprite>
+      <sprite>sprites\spr_inv_border_old</sprite>
+      <sprite>sprites\spr_items</sprite>
+      <sprite>sprites\spr_inv_exit</sprite>
+      <sprite>sprites\spr_undefined</sprite>
+      <sprite>sprites\spr_inv_circle</sprite>
+      <sprite>sprites\spr_inv_border_gui_arrow</sprite>
+    </sprites>
+    <sprites name="Mouse">
+      <sprite>sprites\spr_mouse_icon</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -117,9 +151,80 @@
     <scripts name="Raumauswahl">
       <script>scripts\scr_random_room.gml</script>
     </scripts>
-    <scripts name="Angriff">
-      <script>scripts\scr_kollisionsschaden_solid.gml</script>
-      <script>scripts\scr_kollisionsschaden_nonsolid.gml</script>
+    <scripts name="Game">
+      <scripts name="Heal">
+        <script>scripts\scr_player_heal.gml</script>
+      </scripts>
+      <scripts name="Angriff">
+        <script>scripts\scr_kollisionsschaden_solid.gml</script>
+        <script>scripts\scr_kollisionsschaden_nonsolid.gml</script>
+        <script>scripts\scr_deal_damage.gml</script>
+        <script>scripts\scr_deal_damage_hindernis.gml</script>
+        <script>scripts\scr_deal_player_damage.gml</script>
+      </scripts>
+      <scripts name="Mana">
+        <script>scripts\scr_player_add_mana.gml</script>
+        <script>scripts\scr_player_rem_mana.gml</script>
+      </scripts>
+      <scripts name="Reset Stats">
+        <script>scripts\scr_reset_stats.gml</script>
+      </scripts>
+      <scripts name="Inventory">
+        <scripts name="Draw">
+          <script>scripts\scr_draw_inv_gui.gml</script>
+          <script>scripts\scr_draw_buttons.gml</script>
+          <script>scripts\scr_draw_inv.gml</script>
+          <script>scripts\scr_draw_count.gml</script>
+        </scripts>
+        <scripts name="Überarbeiten">
+          <script>scripts\scr_inventory_add_item_slot_empty_old.gml</script>
+          <script>scripts\scr_inventory_add_item_slot_old.gml</script>
+          <script>scripts\scr_inventory_add_item____.gml</script>
+        </scripts>
+        <scripts name="Fertig">
+          <script>scripts\scr_inventory_add_item_slot.gml</script>
+          <script>scripts\scr_inventory_add_item_slot_empty.gml</script>
+          <script>scripts\scr_inventory_add_item_object.gml</script>
+          <script>scripts\scr_inventory_rem_item_object.gml</script>
+          <script>scripts\scr_inventory_search_item.gml</script>
+          <script>scripts\scr_inventory_add_item.gml</script>
+          <script>scripts\scr_check_item_inv_type.gml</script>
+          <script>scripts\scr_inventory_rem_item_slot.gml</script>
+          <script>scripts\scr_inventory_rem_item_slot_count.gml</script>
+          <script>scripts\scr_inventory_rem_item.gml</script>
+          <script>scripts\scr_inventory_drop_item.gml</script>
+          <script>scripts\scr_inventory_drop_item_place_count.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Initialise">
+        <script>scripts\scr_initialise_game.gml</script>
+      </scripts>
+      <scripts name="Items">
+        <scripts name="prim">
+          <scripts name="Nahkampf">
+            <script>scripts\scr_melee_attack.gml</script>
+            <script>scripts\scr_create_hitbox.gml</script>
+          </scripts>
+          <scripts name="Fernkampf">
+            <script>scripts\scr_bullet_attack.gml</script>
+            <script>scripts\scr_create_bullet.gml</script>
+          </scripts>
+        </scripts>
+        <scripts name="sec">
+          <script>scripts\scr_bullet_attack_sec.gml</script>
+        </scripts>
+        <scripts name="mag">
+          <script>scripts\scr_bullet_attack_mag.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Enemy">
+        <script>scripts\scr_draw_dealt_damage.gml</script>
+        <script>scripts\scr_draw_dealt_heal.gml</script>
+        <script>scripts\scr_draw_death_enemy.gml</script>
+      </scripts>
+      <scripts name="depth">
+        <script>scripts\scr_set_depth.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -129,26 +234,28 @@
     </fonts>
     <fonts name="System">
       <font>fonts\fnt_fps</font>
+      <font>fonts\fnt_hud</font>
     </fonts>
     <fonts name="loading_screen">
       <font>fonts\fnt_pixel1</font>
       <font>fonts\fnt_pixel2</font>
       <font>fonts\fnt_pixel3</font>
     </fonts>
+    <fonts name="Game">
+      <fonts name="Inv-Count">
+        <font>fonts\fnt_inv_count</font>
+      </fonts>
+      <fonts name="Inv-Stats">
+        <font>fonts\fnt_inv_stats</font>
+        <fonts name="Item-Stats">
+          <font>fonts\fnt_item_stats</font>
+          <font>fonts\fnt_item_stats_title</font>
+        </fonts>
+      </fonts>
+    </fonts>
   </fonts>
   <objects name="objects">
-    <objects name="Waffen">
-      <objects name="Projektile">
-        <object>objects\obj_hitbox_nahkampf</object>
-        <object>objects\obj_bullet</object>
-      </objects>
-      <objects name="Nahkampfwaffen">
-        <object>objects\obj_Nahkampf</object>
-      </objects>
-      <objects name="Fernkampfwaffen">
-        <object>objects\obj_Fernkampf</object>
-      </objects>
-    </objects>
+    <object>objects\obj_test2</object>
     <objects name="Menu">
       <object>objects\obj_menu</object>
       <objects name="main_menu">
@@ -171,6 +278,20 @@
         <object>objects\obj_ptr_menu</object>
       </objects>
     </objects>
+    <objects name="Gegenstände">
+      <objects name="Hindernis">
+        <object>objects\obj_hindernis</object>
+        <objects name="Children">
+          <object>objects\obj_wall</object>
+          <object>objects\obj_wall_noc</object>
+          <objects name="Breakable">
+            <object>objects\obj_hindernis_breakable</object>
+            <object>objects\obj_Kaktus</object>
+            <object>objects\obj_Stein</object>
+          </objects>
+        </objects>
+      </objects>
+    </objects>
     <objects name="loading_screen">
       <object>objects\obj_loading_screen</object>
     </objects>
@@ -182,30 +303,27 @@
     </objects>
     <objects name="Einheiten">
       <objects name="Charakter">
-        <object>objects\obj_charakter</object>
+        <object>objects\obj_player</object>
+        <object>objects\obj_player_stats</object>
       </objects>
       <objects name="Gegner">
         <object>objects\obj_gegner</object>
+        <object>objects\obj_enemy_body</object>
         <objects name="Bewegung">
           <object>objects\obj_grid</object>
         </objects>
         <objects name="Children">
           <object>objects\obj_gesicht</object>
+          <object>objects\obj_trainingspuppe_ext</object>
           <object>objects\obj_trainingspuppe</object>
         </objects>
-      </objects>
-    </objects>
-    <objects name="Gegenstände">
-      <objects name="Hindernis">
-        <object>objects\obj_hindernis</object>
-        <objects name="Children">
-          <object>objects\obj_wall</object>
-          <objects name="Breakable">
-            <object>objects\obj_hindernis_breakable</object>
-            <object>objects\obj_Kaktus</object>
-            <object>objects\obj_Stein</object>
-          </objects>
+        <objects name="Damage-Indikator">
+          <object>objects\obj_damage_ind</object>
+          <object>objects\obj_heal_ind</object>
         </objects>
+      </objects>
+      <objects name="Heilungsfeld">
+        <object>objects\obj_heal_field</object>
       </objects>
     </objects>
     <objects name="Übergänge">
@@ -219,8 +337,87 @@
     <objects name="HUD">
       <object>objects\obj_hud</object>
     </objects>
+    <objects name="Inventory">
+      <object>objects\obj_inventory</object>
+      <object>objects\obj_inv_main</object>
+      <objects name="sub_inventories">
+        <object>objects\obj_inv_storage</object>
+        <object>objects\obj_inv_items</object>
+        <object>objects\obj_inv_pickups</object>
+        <objects name="inv_psm">
+          <object>objects\obj_inv_prim</object>
+          <object>objects\obj_inv_sec</object>
+          <object>objects\obj_inv_mag</object>
+        </objects>
+      </objects>
+      <objects name="Items">
+        <object>objects\obj_items</object>
+      </objects>
+      <objects name="Buttons">
+        <object>objects\obj_inv_button</object>
+        <object>objects\obj_inv_button_delete</object>
+        <object>objects\obj_inv_button_drop</object>
+        <object>objects\obj_inv_button_exit</object>
+      </objects>
+      <objects name="Mouse">
+        <object>objects\obj_mouse_ind</object>
+      </objects>
+      <objects name="Ground-Item">
+        <object>objects\obj_ground_item</object>
+      </objects>
+    </objects>
+    <objects name="Explosion">
+      <object>objects\obj_explosion</object>
+    </objects>
+    <objects name="Items">
+      <objects name="prim">
+        <objects name="nahkampf">
+          <object>objects\obj_fist</object>
+          <object>objects\obj_stone_sword</object>
+          <object>objects\obj_master_sword</object>
+          <objects name="Hitbox">
+            <object>objects\obj_hitbox_melee</object>
+          </objects>
+        </objects>
+        <objects name="fernkampf">
+          <objects name="Pistol">
+            <object>objects\obj_pistol</object>
+            <object>objects\obj_pistol_bullet</object>
+          </objects>
+          <objects name="Bullet">
+            <object>objects\obj_bullet</object>
+          </objects>
+          <object>objects\obj_machine_gun</object>
+        </objects>
+      </objects>
+      <objects name="sec">
+        <objects name="Shuriken">
+          <object>objects\obj_shuriken</object>
+          <object>objects\obj_shuriken_bullet</object>
+        </objects>
+      </objects>
+      <objects name="mag">
+        <objects name="Mana-Orb">
+          <object>objects\obj_mana_orb</object>
+          <object>objects\obj_mana_bullet</object>
+        </objects>
+      </objects>
+      <objects name="item">
+        <object>objects\obj_swift_orb</object>
+      </objects>
+      <objects name="pickup">
+        <object>objects\obj_heal_potion</object>
+        <object>objects\obj_mana_potion</object>
+      </objects>
+    </objects>
+    <objects name="Test">
+      <object>objects\obj_test</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <rooms name="initalise_room">
+      <room>rooms\rm_initialise</room>
+    </rooms>
     <rooms name="Menu">
       <room>rooms\rm_main_menu</room>
       <room>rooms\rm_options_menu</room>
@@ -236,6 +433,7 @@
       <room>rooms\rm_testroom1</room>
       <room>rooms\rm_testroom2</room>
       <room>rooms\rm_testroom3</room>
+      <room>rooms\rm_testroom4</room>
     </rooms>
     <rooms name="loading_screen">
       <room>rooms\rm_loading_screen</room>

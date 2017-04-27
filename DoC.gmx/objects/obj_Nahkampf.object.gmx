@@ -28,7 +28,7 @@
             <string>///Schaden
 damage = 10;
 countdown_erzeugen = 0;
-angriffsgeschwindigkeit = 20;
+attack_speed = player_stats.attack_speed;
 </string>
           </argument>
         </arguments>
@@ -54,37 +54,40 @@ angriffsgeschwindigkeit = 20;
             <string>///Angrif und Position
 
 //Position
-x = obj_charakter.x
-y = obj_charakter.y
+x = obj_player.x
+y = obj_player.y
 
 //Nahkampfangriff
-if(obj_charakter.angriff = 0)
+if(obj_player.attack = 0)
 {
-    if(global.kb_space &amp;&amp; obj_charakter.schlagrichtung = 0)
+    if(admin.prim_attack_key)
     {
-        if(countdown_erzeugen == 0)
+        if(obj_player.attack_axis = 1)
         {
-           instance_create(x + obj_charakter.spr_breite/2 + sprite_get_width(spr_Hitbox)/2,y,obj_hitbox_nahkampf);
-           obj_hitbox_nahkampf.image_xscale = 3;
+            if(countdown_erzeugen == 0)
+            {
+            instance_create(x + obj_player.spr_width/2 + sprite_get_width(spr_hitbox)/2,y,obj_hitbox_nahkampf);
+            instance_create(x + obj_player.spr_width/2 + sprite_get_width(spr_explosion)/2,y,obj_explosion);
+            }
+            if(countdown_erzeugen &lt; 0)
+            {
+                countdown_erzeugen = attack_speed;
+            }
+            countdown_erzeugen--;
         }
-        if(countdown_erzeugen &lt; 0)
+        if(obj_player.attack_axis = -1)
         {
-            countdown_erzeugen = angriffsgeschwindigkeit;
+            if(countdown_erzeugen == 0)
+            {
+                instance_create(x - obj_player.spr_width/2 - sprite_get_width(spr_hitbox)/2,y,obj_hitbox_nahkampf);
+                instance_create(x - obj_player.spr_width/2 - sprite_get_width(spr_explosion)/2,y,obj_explosion);
+            }
+            if(countdown_erzeugen &lt; 0)
+            {
+                countdown_erzeugen = attack_speed;
+            }
+            countdown_erzeugen--;
         }
-        countdown_erzeugen--;
-    }
-    if(global.kb_space &amp;&amp; obj_charakter.schlagrichtung = 1)
-    {
-        if(countdown_erzeugen == 0)
-        {
-            instance_create(x - obj_charakter.spr_breite/2 - sprite_get_width(spr_Hitbox)/2,y,obj_hitbox_nahkampf);
-            obj_hitbox_nahkampf.image_xscale = -3;
-        }
-       if(countdown_erzeugen &lt; 0)
-        {
-            countdown_erzeugen = angriffsgeschwindigkeit;
-        }
-        countdown_erzeugen--;
     }
 }
 

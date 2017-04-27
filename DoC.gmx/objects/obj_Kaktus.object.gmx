@@ -33,6 +33,9 @@ damage = 2;
 //Zeitl. Schadensabschnitt
 time = 0;
 countdown = 5;
+
+//depth
+scr_set_depth();
 </string>
           </argument>
         </arguments>
@@ -54,7 +57,7 @@ countdown = 5;
           <argument>
             <kind>1</kind>
             <string>///HP
-hp = 25;
+hp = 5;
 </string>
           </argument>
         </arguments>
@@ -78,7 +81,7 @@ hp = 25;
           <argument>
             <kind>1</kind>
             <string>///Schaden an Charakter
-scr_kollisionsschaden_solid(self, obj_charakter, damage);
+scr_kollisionsschaden_solid(self, obj_player, damage);
 </string>
           </argument>
         </arguments>
