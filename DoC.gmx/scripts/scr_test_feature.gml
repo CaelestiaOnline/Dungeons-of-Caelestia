@@ -1,2 +1,2 @@
-scr_loading_screen(rm_loading_screen, 6, "TESTING");
+scr_sidefade(rm_ptr_menu, 60);
 

@@ -1,18 +1,18 @@
 switch(menupos) {
     case 0: {
-        scr_loading_screen(rm_loading_screen, 10, "");
+        scr_sidefade(rm_testroom1, 60);
         break;
     }
     case 1: {
-        scr_loading_screen(rm_loading_screen, 20, "");
+        scr_sidefade(rm_testroom2, 60);
         break;
     }
     case 2: {
-        scr_loading_screen(rm_loading_screen, 40, "");
+        scr_sidefade(rm_testroom3, 60);
         break;
     }
     case 3: {
-        scr_loading_screen(rm_loading_screen, -2, "");
+        scr_sidefade(rm_testroom4, 60);
         break;
     }
     case 4: {

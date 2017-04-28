@@ -30,8 +30,10 @@
 speed = 8;
 
 //Distanz
-travel=80;
-time=80;
+travel = 80;
+time = 80;
+
+damage = obj_gegner_fernkampf.damage;
 </string>
           </argument>
         </arguments>
@@ -98,7 +100,7 @@ instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_gegner">
+    <event eventtype="4" ename="obj_charakter">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -115,12 +117,12 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Kollision mit Trainingspuppe
+            <string>///Kollision mit Charakter
 //Zerstörung
 instance_destroy();
 
 //Verminderung der Hp
-other.hp -= obj_Fernkampf.damage;
+other.hp -= damage;
 </string>
           </argument>
         </arguments>

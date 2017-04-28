@@ -26,10 +26,16 @@
           <argument>
             <kind>1</kind>
             <string>///Überprüfung eines Treffers
-hit = instance_place(x,y,obj_trainingspuppe);
+var hit = instance_place(x, y, obj_gegner);
 if(hit != noone)
 {
     hit.hp -= obj_Nahkampf.damage;
+}
+
+var hit_object = instance_place(x, y, obj_hindernis_breakable);
+if(hit_object != noone)
+{
+    hit_object.hp -= obj_Nahkampf.damage;
 }
 
 //Zerstörung
