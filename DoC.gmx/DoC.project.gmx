@@ -120,6 +120,7 @@
     <scripts name="Angriff">
       <script>scripts\scr_kollisionsschaden_solid.gml</script>
       <script>scripts\scr_kollisionsschaden_nonsolid.gml</script>
+      <script>scripts\scr_fernkampfangriff_enimy.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -141,6 +142,7 @@
       <objects name="Projektile">
         <object>objects\obj_hitbox_nahkampf</object>
         <object>objects\obj_bullet</object>
+        <object>objects\obj_bullet_gegner</object>
       </objects>
       <objects name="Nahkampfwaffen">
         <object>objects\obj_Nahkampf</object>
@@ -190,8 +192,9 @@
           <object>objects\obj_grid</object>
         </objects>
         <objects name="Children">
-          <object>objects\obj_gesicht</object>
+          <object>objects\obj_gegner_nahkampf</object>
           <object>objects\obj_trainingspuppe</object>
+          <object>objects\obj_gegner_fernkampf</object>
         </objects>
       </objects>
     </objects>
