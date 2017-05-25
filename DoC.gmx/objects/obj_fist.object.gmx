@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Stats
 damage = player_stats.root_damage;
+damage_crit = player_stats.root_damage + int64(player_stats.root_damage/4);
 
 </string>
           </argument>
@@ -74,7 +75,7 @@ damage = player_stats.root_damage;
             <kind>1</kind>
             <string>///Angriff
 
-scr_melee_attack(damage);
+scr_melee_attack(damage, damage_crit);
 </string>
           </argument>
         </arguments>

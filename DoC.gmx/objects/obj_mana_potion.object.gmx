@@ -25,12 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Addiere HP
+            <string>///Addiere Mana
+index = items.mana_potion;
 if(player_stats.mana != player_stats.max_mana) {
 var success = scr_inventory_rem_item_slot_count(inventory.inv_pickups, inventory.menupos, 1);
 if(!success) instance_destroy();
 else {
-    mana = player_stats.max_mana/4;
+    mana = item_stats[index, item_stats_pickup.ability_strength];
     count = 0;
     count_speed = 1;
     alarm_set(0, count_speed);

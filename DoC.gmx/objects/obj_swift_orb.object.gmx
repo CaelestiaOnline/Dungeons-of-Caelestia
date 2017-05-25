@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Speed-Multiplier
-speed_mult = 1.5;
-player_stats.speed_mult = speed_mult;
-show_debug_message("Orb erzeugt");
+index = items.swift_orb;
+speed_mult = item_stats[index, item_stats_item.ability_strength];
+player_stats.speed_mult_item += speed_mult;
 </string>
           </argument>
         </arguments>
@@ -52,8 +52,7 @@ show_debug_message("Orb erzeugt");
           <argument>
             <kind>1</kind>
             <string>///Reset Speed-Mult
-player_stats.speed_mult = 1;
-show_debug_message("Orb zerstört");
+player_stats.speed_mult_item -= speed_mult;
 </string>
           </argument>
         </arguments>

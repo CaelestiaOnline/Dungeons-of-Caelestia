@@ -14,6 +14,9 @@ globalvar mouse_ind;
 mouse_ind = instance_create(0, 0, obj_mouse_ind);
 //Player
 globalvar player;
+//Erzeuge Item_stats
+globalvar item_stats_object;
+item_stats_object = instance_create(0, 0, obj_item_stats);
 //Erzeuge Items
 globalvar item_object;
 item_object = instance_create(0, 0, obj_items);
@@ -30,6 +33,12 @@ inventory.inv_mag = instance_create(0, 0, obj_inv_mag);
 //HUD
 globalvar hud;
 hud = instance_create(0, 0, obj_hud);
+//Inventory-HUD
+globalvar inv_hud;
+inv_hud = instance_create(0, 0, obj_hud_inv);
+//In game Menu
+globalvar menu_in_game;
+menu_in_game = instance_create(0, 0, obj_menu_in_game);
 //Test-Inventory
 instance_create(0, 0, obj_test);
 

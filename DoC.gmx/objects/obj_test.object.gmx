@@ -26,23 +26,17 @@
           <argument>
             <kind>1</kind>
             <string>///Füge items hinzu
-scr_inventory_add_item(inventory.inv_storage, items.heal_potion, 1);
+scr_inventory_add_item(inventory.inv_pickups, items.heal_potion, 8);
+scr_inventory_add_item(inventory.inv_pickups, items.mana_potion, 8);
 
-scr_inventory_add_item(inventory.inv_pickups, items.mana_potion, 1);
-scr_inventory_add_item(inventory.inv_pickups, items.heal_potion, 1);
-scr_inventory_add_item(inventory.inv_pickups, items.mana_potion, 5);
-
-scr_inventory_add_item(inventory.inv_prim, items.stone_sword, 1);
-scr_inventory_rem_item(inventory.inv_prim, items.stone_sword, 1);
 scr_inventory_add_item(inventory.inv_prim, items.pistol, 1);
-scr_inventory_add_item(inventory.inv_storage, items.stone_sword, 1);
-scr_inventory_add_item(inventory.inv_items, items.heal_potion, 2);
 
-scr_inventory_add_item(inventory.inv_sec, items.pistol, 1);
+scr_inventory_add_item(inventory.inv_sec, items.shuriken, 1);
 
-scr_inventory_add_item(inventory.inv_sec, items.shuriken, 18);
+scr_inventory_add_item(inventory.inv_mag, items.mana_orb, 1);
 
-instance_destroy();
+scr_inventory_add_item(inventory.inv_storage, items.swift_orb, 1);
+
 
 </string>
           </argument>

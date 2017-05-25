@@ -19,10 +19,16 @@ draw_set_alpha(1);
 
 //Gehe durch alle Slots
 for(i = 0; i < max_item_slots; i++) {
+    //Zur besseren Erkennung
+    draw_sprite(spr_inv_border_gui_highlight,
+        0,
+        inv_x + (i*width*2 + inventory.inv_slot_dist*i),
+        inv_y
+    );
     //Rahmen der Slots
     draw_sprite(spr_inv_border,
     0,
-    inv_x + (i*width*2 + inventory.inv_slot_dist),
+    inv_x + (i*width*2 + inventory.inv_slot_dist*i),
     inv_y
     );
     //Index des Items NOTE: nur zu Testzwecken, später entfernen!!!

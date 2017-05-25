@@ -70,7 +70,7 @@ colour[4] = c_white;
 shadow = 3;
 
 //Farbe
-menucolour = c_teal;
+menucolour = admin.random_colour;
 
 //Script
 script = scr_multiplayer_menu;

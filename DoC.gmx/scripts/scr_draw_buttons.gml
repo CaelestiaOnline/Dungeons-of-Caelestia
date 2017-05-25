@@ -16,7 +16,7 @@ var width = sprite_get_width(spr_inv_border)/2;
 for(i = 0; i < inventory_type.max_item_slots; i++) {
     if(inventory_type.button[i] == 0) {
     inventory_type.button[i] = instance_create(
-        button_x + (i*width*2 + inventory.inv_slot_dist),
+        button_x + (i*width*2 + inventory.inv_slot_dist*i),
         button_y,
         obj_inv_button);
     inventory_type.button[i].inventory_type = inventory_type;

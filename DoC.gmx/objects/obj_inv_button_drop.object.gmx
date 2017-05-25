@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-500</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -58,7 +58,7 @@ draw_set_alpha(1);
 
 if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
     //Rechteck bei Hovern
-    draw_set_alpha(0.5);
+    draw_set_alpha(0.8);
     draw_rectangle(
         x - (width-2),
         y - (width-2),
@@ -76,6 +76,7 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
     }
 }
 
+draw_sprite(spr_inv_border_2, 0, x, y);
 draw_sprite(spr_inv_border_drop, 0, x, y);
 </string>
           </argument>

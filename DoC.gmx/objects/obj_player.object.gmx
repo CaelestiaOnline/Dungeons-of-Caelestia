@@ -168,72 +168,7 @@ old_dealt_heal = dealt_heal;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Test for show-inv
-if(inventory.show_inv) exit;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Bewegung
-//Beschleunigung
-/*
-if(admin.right_key) 
-{
-    x += move_x;
-    move_x += player_stats.player_acc;
-    if(move_x &gt; player_stats.player_speed)
-    {
-        move_x = player_stats.player_speed;
-    }
-}
-
-if(admin.left_key) 
-{
-    x -= move_x;
-    move_x += player_stats.player_acc;
-    if(move_x &gt; player_stats.player_speed)
-    {
-        move_x = player_stats.player_speed;
-    }
-}
-
-
-if(global.kb_s)
-{
-    y += move_down;
-    move_down += beschleunigung;
-    if(move_down &gt; geschwindigkeit)
-    {
-        move_down = geschwindigkeit;
-    }
-}
-if(global.kb_w)
-{
-    y -= move_up;
-    move_up += beschleunigung;
-    if(move_up &gt; geschwindigkeit)
-    {
-        move_up = geschwindigkeit;
-    }
-}
-*/
-
 //X-Achse (+ für rechts und - für links)
 x_axis = -admin.left_key + admin.right_key;
 //Keine Taste wird gedrückt: Achse bekommt Vorzeichen des vorherigen move_x
@@ -336,48 +271,6 @@ if(y_axis == -1) {
     }
 }
 
-
-
-
-/*
-//Abbremsung
-if(global.kb_d=false) 
-{
-    x += move_right;
-    move_right -= abbremsung;
-    if(move_right &lt; 0)
-    {
-        move_right = 0;
-    }
-}
-if(global.kb_a = false) 
-{
-    x -= move_left;
-    move_left -= abbremsung;
-    if(move_left &lt; 0)
-    {
-        move_left = 0;
-    }
-}
-if(global.kb_s = false) 
-{
-    y += move_down;
-    move_down -= abbremsung;
-    if(move_down &lt; 0)
-    {
-        move_down = 0;
-    }
-}
-if(global.kb_w = false) 
-{
-    y -= move_up;
-    move_up -= abbremsung;
-    if(move_up &lt; 0)
-    {
-        move_up = 0;
-    }
-}
-*/
 </string>
           </argument>
         </arguments>
@@ -508,8 +401,10 @@ if(place_meeting(x, y + move_y, obj_hindernis))
           <argument>
             <kind>1</kind>
             <string>///Addiere Move-Variablen
+if(!admin.game_paused) {
 x += move_x;
 y += move_y;
+}
 </string>
           </argument>
         </arguments>
@@ -560,7 +455,7 @@ y = max(y, spr_height);
 
 isSprinting = false;
 if(admin.sprint_key &amp;&amp; player_stats.stamina &gt; 0) {
-    if(admin.left_key ||admin.right_key ||admin.up_key ||admin.down_key) {
+    if(move_x != 0 || move_y != 0) {
         isSprinting = true;
     }
 }
@@ -733,11 +628,13 @@ scr_set_depth();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Spieglung des Sprites an den Achsen
+            <string>///Sprite-Ausrichtung
 if(x_axis == 1) image_xscale = 1;
 if(x_axis == -1) image_xscale = -1;
 
-//Animation
+//Vorder + Hinterseite
+if(y_axis == 1) sprite_index = spr_charakter;
+if(y_axis == -1) sprite_index = spr_charakter_back;
 </string>
           </argument>
         </arguments>
@@ -761,8 +658,7 @@ if(x_axis == -1) image_xscale = -1;
             <string>///Tod
 if(player_stats.hp &lt;= 0)
 {
-    scr_reset_stats();
-    room_restart();
+    scr_draw_death_player(x, y, spr_charakter_dead);
 }
 
 </string>

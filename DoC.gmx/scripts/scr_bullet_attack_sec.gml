@@ -6,10 +6,14 @@ scr_bullet_attack_sec(
     attack_speed
     );
 */
-var damage = argument0;
-var type = argument1;
-var bullet_speed = argument2;
-var attack_speed = argument3;
+var damage_normal = argument0;
+var damage_crit = argument1;
+var type = argument2;
+var bullet_speed = argument3;
+var attack_speed = argument4;
+var chance_crit = player_stats.chance_crit;
+
+var damage = scr_crit_attack(damage_normal, damage_crit, chance_crit);
 
 
 ///Angriff

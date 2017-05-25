@@ -3,7 +3,11 @@ scr_melee_attack(
     damage
     );
 */
-var damage = argument0;
+var damage_normal = argument0;
+var damage_crit = argument1;
+var chance_crit = player_stats.chance_crit;
+
+var damage = scr_crit_attack(damage_normal, damage_crit, chance_crit);
 
 ///Angriff
 

@@ -26,11 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///Addiere HP
+index = items.heal_potion;
 if(player_stats.hp != player_stats.max_hp) {
 var success = scr_inventory_rem_item_slot_count(inventory.inv_pickups, inventory.menupos, 1);
 if(!success) instance_destroy();
 else {
-    heal = player_stats.max_hp/4;
+    heal = item_stats[index, item_stats_pickup.ability_strength];
     count = 0;
     count_speed = 1;
     alarm_set(0, count_speed);

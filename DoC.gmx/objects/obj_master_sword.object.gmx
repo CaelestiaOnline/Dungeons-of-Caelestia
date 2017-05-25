@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-damage = 666;
+index = items.master_sword;
+damage = item_stats[index, item_stats_prim.damage];
 
 </string>
           </argument>
@@ -74,7 +75,7 @@ damage = 666;
             <kind>1</kind>
             <string>///Angriff
 
-scr_melee_attack(damage);
+scr_melee_attack(damage, damage);
 </string>
           </argument>
         </arguments>

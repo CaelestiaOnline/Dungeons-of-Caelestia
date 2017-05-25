@@ -33,6 +33,9 @@ button_item = -1;
 button_count = 0;
 
 width = 0;
+
+//Depth
+scr_set_depth_inv_button();
 </string>
           </argument>
         </arguments>
@@ -71,6 +74,7 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
         if(mouse_ind.mouse_item == -1) {
             inventory.item_stats_title = item[button_item, 0];
             inventory.item_stats_desc = item[button_item, 1];
+            scr_draw_item_stats(button_item);
         }
     }
     //Rechteck bei Hovern
@@ -150,6 +154,9 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
         }
     }
 }
+
+draw_sprite(spr_inv_border_2, 0, x, y);
+draw_sprite(spr_inv_border, 0, x, y);
 </string>
           </argument>
         </arguments>

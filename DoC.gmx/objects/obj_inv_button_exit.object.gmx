@@ -51,28 +51,44 @@ width = 0;
             <kind>1</kind>
             <string>///Drag &amp; Drop System
 var click = mouse_check_button_released(mb_left);
+var click_hold = mouse_check_button(mb_left);
 width = sprite_get_width(spr_inv_exit)/2;
 
-draw_set_colour(c_white);
 draw_set_alpha(1);
 
-draw_sprite(spr_inv_exit, 0, x, y);
-
 if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
-    //Rechteck bei Hovern
-    draw_set_alpha(0.5);
-    draw_rectangle(
-        x - width,
-        y - width,
-        x + width,
-        y + width,
-        0
-    );
-    draw_set_alpha(1);
+    if(!click_hold) {
+        //Rechteck bei Hovern
+        draw_set_colour(c_white);
+        draw_set_alpha(0.7);
+        draw_rectangle(
+            x - width,
+            y - width,
+            x + width,
+            y + width,
+            0
+        );
+        draw_set_alpha(1);
+    } else {
+        //Rechteck bei Halten
+        draw_set_colour(c_red);
+        draw_set_alpha(0.7);
+        draw_rectangle(
+            x - width,
+            y - width,
+            x + width,
+            y + width,
+            0
+        );
+        draw_set_colour(c_white);
+        draw_set_alpha(1);
+    }
     if(click) {
-        inventory.show_inv = false;
+        scr_invfade(false, "");
     }
 }
+
+draw_sprite(spr_inv_exit, 0, x, y);
 </string>
           </argument>
         </arguments>

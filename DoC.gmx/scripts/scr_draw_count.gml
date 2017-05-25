@@ -16,7 +16,7 @@ if(count > 1) {
         draw_circle(
             inv_x - width,
             inv_y + width,
-            8,
+            9,
             0
             );
         draw_set_colour(c_black);
@@ -31,3 +31,5 @@ if(count > 1) {
         draw_set_halign(fa_left);
         draw_set_valign(fa_top);
         }
+        
+draw_set_colour(c_white);

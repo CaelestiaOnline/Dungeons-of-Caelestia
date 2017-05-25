@@ -41,7 +41,7 @@ path = path_add();
 if(!instance_exists(obj_grid)) grid = instance_create(0, 0, obj_grid);
 
 //Schaden
-damage = 5;
+damage = 25;
 countdown = 20;
 time = 0;
 

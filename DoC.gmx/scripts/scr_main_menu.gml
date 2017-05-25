@@ -1,6 +1,5 @@
 switch(menupos) {
     case 0: {
-        scr_sidefade(rm_main_hub, 60);
         break;
     }
     case 1: {

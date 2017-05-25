@@ -67,8 +67,8 @@ for(i = 0; i &lt; max_item_slots; i++) {
 gui_inv_x = 800;
 gui_inv_y = inventory.inv_storage.gui_inv_y;
 
-inv_x = inventory.inv_bg_x2 - (max_item_slots*inventory.width*2 + inventory.inv_slot_dist);
-inv_y = inventory.inv_storage.inv_y - inventory.width*2 - inventory.inv_slot_dist;
+inv_x = 0;
+inv_y = 0;
 </string>
           </argument>
         </arguments>

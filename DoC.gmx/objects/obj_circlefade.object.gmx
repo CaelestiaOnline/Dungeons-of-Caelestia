@@ -37,8 +37,8 @@ goal = "";
 pre_x1 = 0;
 pre_y1 = 0;
 
-pre_x2 = view_wview[0];
-pre_y2 = view_hview[0];
+pre_x2 = window_get_width();
+pre_y2 = window_get_height();
 
 radius = 0;
 </string>
@@ -46,7 +46,7 @@ radius = 0;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="0">
+    <event eventtype="8" enumb="75">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -78,10 +78,10 @@ else {
     draw_circle(pre_x2, pre_y2, radius, 0);
 }
 
-if(radius &gt; sqrt(power(view_wview[0], 2) + power(view_hview[0], 2)) + 50 &amp;&amp; (stagetwo == false)) {
+if(radius &gt; sqrt(power(window_get_width(), 2) + power(window_get_height(), 2)) + 50 &amp;&amp; (stagetwo == false)) {
     stagetwo = true;
     room_goto(goal);
-    radius = sqrt(power(view_wview[0], 2) + power(view_hview[0], 2)) + 50;
+    radius = sqrt(power(window_get_width(), 2) + power(window_get_height(), 2)) + 50;
 } 
 
 if(radius &lt;= 0 &amp;&amp; (stagetwo == true)) instance_destroy();

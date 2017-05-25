@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
+
+//Name
+name = "Subjekt \#41";
 //HP
 hp = 100;
 max_hp = hp;
@@ -50,6 +53,7 @@ stamina_reg = 0.2;
 //Angriff
 //Schaden, der auf Waffenschaden addiert wird
 root_damage = 5;
+chance_crit = 0.15;
 //Angriffsgeschwindigkeit
 attack_speed = 20;
 
@@ -58,6 +62,8 @@ player_speed = 1;
 max_player_speed = 5;
 old_max_player_speed = max_player_speed;
 speed_mult = 1;
+speed_mult_item = 1;
+speed_mult_prim = 1;
 
 //Beschleunigung
 player_acc = 0.4;
@@ -72,6 +78,7 @@ old_player_sprint_acc = player_acc;
 //Reibung
 player_friction = 0.4;
 old_player_friction = player_friction;
+
 </string>
           </argument>
         </arguments>
@@ -170,6 +177,8 @@ old_hp = hp;
           <argument>
             <kind>1</kind>
             <string>///Speed-Multiplier
+speed_mult = speed_mult_item * speed_mult_prim;
+
 if(instance_exists(obj_player)) {
     if(!obj_player.isSprinting) {
         max_player_speed = old_max_player_speed * speed_mult;

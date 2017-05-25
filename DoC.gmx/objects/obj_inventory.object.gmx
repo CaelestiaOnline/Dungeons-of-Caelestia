@@ -25,6 +25,30 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Konstanten
+inv_slot_dist = 16;
+
+width = sprite_get_width(spr_inv_border)/2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Sub-Inventoríes
 inv_storage = 0;
 inv_items = 0;
@@ -52,62 +76,8 @@ inv_mag = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Koordianten des Inventar-Hintergrunds
-
-inv_bg_x1 = 1920/2 - 300;
-inv_bg_x2 = 1920/2 + 300;
-
-inv_bg_y1 = 1080/2 - 200;
-inv_bg_y2 = 1080/2 + 200;
-
-inv_slot_dist = 16;
-
-width = sprite_get_width(spr_inv_border)/2;
-
-//Charakter-Stats
-inv_char_bg_x1 = inv_bg_x1 + inv_slot_dist;
-inv_char_bg_x2 = inv_char_bg_x1 + 200;
-
-inv_char_bg_y2 = inv_bg_y2 - inv_slot_dist;
-inv_char_bg_y1 = inv_char_bg_y2 - 200;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Show Inv
 show_inv = false;
-
-//Del-Button
-del_button = 0;
-del_button_x = inv_bg_x2 - inv_slot_dist - width*2;
-del_button_y = inv_bg_y1 + inv_slot_dist + width*2;
-
-//Exit_button
-exit_button = 0;
-exit_button_x = inv_bg_x2 - inv_slot_dist;
-exit_button_y = inv_bg_y1 + inv_slot_dist;
-
-//Drop-Button
-drop_button = 0;
-drop_button_x = del_button_x - width*2 - inv_slot_dist;
-drop_button_y = del_button_y;
 </string>
           </argument>
         </arguments>
@@ -157,28 +127,6 @@ menupos = 0;
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Charakter_stats
-circle_dir = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="2" enumb="1">
       <action>
@@ -221,58 +169,13 @@ circle_dir = 0;
             <kind>1</kind>
             <string>///Inventory-Key
 if(admin.inventory_key_pressed) {
-    show_inv = 1 - show_inv;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Show inv
-if(show_inv) {
-    if(del_button == 0) {
-        del_button = instance_create(del_button_x, del_button_y, obj_inv_button_delete);
-    }
-    if(exit_button = 0) {
-        exit_button = instance_create(exit_button_x, exit_button_y, obj_inv_button_exit);
-    }
-    if(drop_button = 0) {
-        drop_button = instance_create(drop_button_x, drop_button_y, obj_inv_button_drop);
-    }
-} else {
-    with(del_button) {
-        instance_destroy();
-    }
-    del_button = 0;
-    with(exit_button) {
-        instance_destroy();
-    }
-    exit_button = 0;
-    with(drop_button) {
-        instance_destroy();
-    }
-    drop_button = 0;
+    scr_invfade(1 - show_inv, "inv");
 }
 
 if(admin.in_game == false) {
     show_inv = false;
 }
+
 </string>
           </argument>
         </arguments>
@@ -409,7 +312,6 @@ for(i = 0; i &lt; inv_mag.max_item_slots; i++) {
             }
         }
         if(!instance_exists(inv_mag.item_object[i])) {
-            show_debug_message("Mag object erzeugt");
             inv_mag.real_item_object[i] = instance_create(0, 0, inv_mag.item_object[i]);
         }
     } else {
@@ -477,236 +379,6 @@ if(push == 1) {
         instance_create(0, 0, item[inv_pickups.inv[menupos], 2]);
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Hintergrund
-if(!show_inv) exit; 
-
-draw_set_colour(global.co_blue_gray_800);
-draw_set_alpha(1);
-draw_roundrect_ext(
-    inv_bg_x1,
-    inv_bg_y1,
-    inv_bg_x2,
-    inv_bg_y2,
-    16,
-    16,
-    0
-);
-draw_set_alpha(1);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Charakter-Stats
-//Hintergrund
-draw_set_colour(c_white);
-draw_set_alpha(1);
-draw_roundrect_ext(
-    inv_char_bg_x1,
-    inv_char_bg_y1,
-    inv_char_bg_x2,
-    inv_char_bg_y2,
-    16,
-    16,
-    0
-);
-draw_set_alpha(1);
-
-var mwidth = (inv_char_bg_x1+inv_char_bg_x2)/2;
-var mheight = (inv_char_bg_y1+inv_char_bg_y2)/2;
-var radius = 75;
-
-//Linien
-draw_set_colour(c_gray);
-var health_x = mwidth + lengthdir_x(radius - 5, 85);
-var health_y = mheight + lengthdir_y(radius - 5, 85);
-var health_end_x = 900; 
-var health_end_y = 450; 
-draw_line_width(health_x, health_y, health_end_x , health_end_y, 5);
-draw_line_width(health_end_x - 2, health_end_y, health_end_x + 130, health_end_y, 5);
-
-var mana_x = mwidth + lengthdir_x(radius - 5, 35);
-var mana_y = mheight + lengthdir_y(radius - 5, 35);
-var mana_end_y = health_end_y + 75;
-draw_line_width(mana_x, mana_y, health_end_x, mana_end_y, 5);
-draw_line_width(health_end_x - 2, mana_end_y, health_end_x + 130, mana_end_y, 5);
-
-var stamina_x = mwidth + lengthdir_x(radius - 5, 360 - 25);
-var stamina_y = mheight + lengthdir_y(radius - 5, 360 - 25);
-var stamina_end_y = mana_end_y + 75;
-draw_line_width(stamina_x, stamina_y, health_end_x, stamina_end_y, 5);
-draw_line_width(health_end_x - 2, stamina_end_y, health_end_x + 130, stamina_end_y, 5);
-
-//Kreis
-circle_dir += 1;
-if(circle_dir &gt;= 360) circle_dir = 0;
-draw_sprite_ext(spr_inv_circle, 0, mwidth, mheight, 1, 1, circle_dir, c_white, 1);
-
-//Stats
-draw_set_font(fnt_inv_stats);
-draw_set_halign(fa_left);
-draw_set_colour(make_colour_hsv(0, 240, 200));
-draw_text(health_end_x + 10, health_end_y - 30, "HP: " + string(int64(player_stats.hp)) + " / " + string(player_stats.max_hp));
-draw_set_colour(make_colour_hsv(120, 240, 200));
-draw_text(health_end_x + 10, mana_end_y - 30, "MANA: " + string(int64(player_stats.mana)) + " / " + string(player_stats.max_mana));
-draw_set_colour(make_colour_hsv(147, 240, 200));
-draw_text(health_end_x + 10, stamina_end_y - 30, "STAMINA: " + string(int64(player_stats.stamina)) + " / " + string(player_stats.max_stamina));
-draw_set_colour(c_white);
-
-//Char
-draw_sprite(spr_charakter, 0, mwidth, mheight);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Item-Stats
-
-//Hintergrund
-var x1, x2, y1, y1;
-x1 = 1920 - 400;
-y1 = 1080 - 350;
-
-x2 = 1920;
-y2 = 1080;
-
-draw_set_colour(global.co_blue_gray_800);
-draw_roundrect(x1, y1, x2, y2,0);
-
-//Hintegrund 2
-draw_set_colour(c_gray);
-draw_roundrect_ext(x1 + 8, y1 + 8, x2 - 8, y1 + 64, 10, 10, 0);
-
-draw_set_colour(c_white);
-
-//Titel
-draw_set_font(fnt_item_stats_title);
-draw_text_ext(x1 + 16, y1 + 28, item_stats_title, 15, 380);
-
-//Beschreibung
-draw_set_font(fnt_item_stats);
-draw_text_ext(x1 + 16, y1 + 80, item_stats_desc, 20, 300);
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Slot-Beschreibung
-draw_set_font(fnt_hud);
-draw_set_colour(c_white);
-//Storage
-var storage_text = "STORAGE";
-var storage_x = inv_storage.inv_x - string_width(storage_text) - 16;
-var storage_y = inv_storage.inv_y;
-
-draw_text(storage_x, storage_y, storage_text); 
-
-//Pickups
-var pickups_text = "PICKUPS";
-var pickups_x = inv_pickups.inv_x - string_width(pickups_text) - 16;
-var pickups_y = inv_pickups.inv_y;
-
-draw_text(pickups_x, pickups_y, pickups_text); 
-
-//Items
-var items_text = "ITEMS";
-var items_x = inv_items.inv_x;
-var items_y = inv_items.inv_y  - string_height(items_text) - width - 8;
-
-draw_text(items_x, items_y, items_text);
-
-//Magie
-var mag_text = "MAGIE";
-var mag_x = inv_mag.inv_x + width + 24;
-var mag_y = inv_mag.inv_y;
-
-draw_text(mag_x, mag_y, mag_text);
-
-//Sekundärwaffe
-var sec_text = "SEC WEAPON";
-var sec_x = inv_sec.inv_x + 16;
-var sec_y = inv_sec.inv_y  + width + 8;
-
-draw_text(sec_x, sec_y, sec_text);
-
-//Primärwaffe
-var prim_text = "PRIM WEAPON";
-var prim_x = inv_prim.inv_x - width;
-var prim_y = inv_prim.inv_y  + width + 8;
-
-draw_text(prim_x, prim_y, prim_text);
-
-
 </string>
           </argument>
         </arguments>

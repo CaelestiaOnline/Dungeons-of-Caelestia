@@ -92,6 +92,7 @@ x += 0.2;
 y -= 0.5;
 
 draw_set_alpha(1);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>

@@ -26,11 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-damage = player_stats.root_damage + 15;
+index = items.mana_orb;
+damage = player_stats.root_damage + item_stats[index, item_stats_mag.ability_strength];
 type = obj_mana_bullet;
 bullet_speed = 4;
-mana = 25;
-show_debug_message("Mana orb erzeugt");
+mana = item_stats[index, item_stats_mag.mana_usage];
 
 </string>
           </argument>

@@ -4,6 +4,7 @@ scr_draw_inv(
     x,
     y
 */
+
 var inventory_type = argument0;
 var max_item_slots = inventory_type.max_item_slots;
 var inv_x = argument1;

@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-damage = 1;
+index = items.machine_gun;
+damage = round(player_stats.root_damage/5);
+damage_crit = round(player_stats.root_damage/5 + player_stats.root_damage/10);
 type = obj_pistol_bullet;
 bullet_speed = 8;
 attack_speed = player_stats.attack_speed/4;
@@ -77,7 +79,7 @@ attack_speed = player_stats.attack_speed/4;
             <kind>1</kind>
             <string>///Angriff
 
-scr_bullet_attack(damage, type, bullet_speed, attack_speed);
+scr_bullet_attack(damage, damage_crit, type, bullet_speed, attack_speed);
 </string>
           </argument>
         </arguments>
