@@ -81,6 +81,7 @@ draw_circle(pre_x1, pre_y1, radius, 0);
 if(radius &gt; sqrt(power(window_get_width()/2  - 100, 2) + power(window_get_height()/2, 2)) + 200 &amp;&amp; !stagetwo) {
     stagetwo = true;
     admin.game_paused = status;
+    player_stats.player_freeze = status;
     switch(type) {
         case "inv": 
             inventory.show_inv = status;

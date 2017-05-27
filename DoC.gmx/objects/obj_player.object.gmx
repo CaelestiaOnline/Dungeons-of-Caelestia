@@ -39,9 +39,13 @@ move_x = 1;
 move_y = 1;
 
 isSprinting = false;
+is_crouching = false;
 
 //Achse
 attack_axis = 1;
+
+x_axis_old = 1;
+y_axis_old = 1;
 
 //damage
 dealt_damage = 0;
@@ -52,6 +56,13 @@ old_dealt_damage = 0;
 dealt_heal = 0;
 heal_count = 0;
 old_dealt_heal = 0;
+
+//Sprites
+sprite_front = spr_charakter;
+sprite_back = spr_charakter_back;
+
+sprite_front_old = sprite_front;
+sprite_back_old = sprite_back;
 
 
 </string>
@@ -301,6 +312,25 @@ if(admin.left_key)
 {
     attack_axis = -1;
 }
+if(admin.left_key &amp;&amp; admin.right_key) {
+    if(move_x != 0) {
+        attack_axis = sign(move_x);
+    } else attack_axis = image_xscale;
+}
+x_axis_old = attack_axis;
+
+//Y-Axis
+if(admin.down_key)
+{
+    y_axis_old = 1;
+}
+if(admin.up_key)
+{
+    y_axis_old = -1;
+}
+if(admin.down_key &amp;&amp; admin.up_key) {
+    y_axis_old = sign(move_y);
+}
 
 
 </string>
@@ -401,10 +431,8 @@ if(place_meeting(x, y + move_y, obj_hindernis))
           <argument>
             <kind>1</kind>
             <string>///Addiere Move-Variablen
-if(!admin.game_paused) {
 x += move_x;
 y += move_y;
-}
 </string>
           </argument>
         </arguments>
@@ -451,10 +479,52 @@ y = max(y, spr_height);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Crouching
+is_crouching = false;
+if(admin.crouch_key) {
+    is_crouching = true;
+    isSprinting = false;
+}
+
+if(is_crouching) {
+    //Speed
+    player_stats.player_acc = player_stats.player_crouch_acc;
+    player_stats.max_player_speed = player_stats.max_player_crouch_speed;
+    //Sprite
+    sprite_front = spr_charakter_crouch;
+    sprite_back = spr_charakter_crouch_back;
+}
+
+if(admin.crouch_key_released) {
+    sprite_front = sprite_front_old;
+    sprite_back = sprite_back_old;
+    player_stats.player_acc = player_stats.old_player_acc;
+    player_stats.max_player_speed = player_stats.old_max_player_speed;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Sprinten
 
 isSprinting = false;
-if(admin.sprint_key &amp;&amp; player_stats.stamina &gt; 0) {
+if(admin.sprint_key &amp;&amp; player_stats.stamina &gt; 0 &amp;&amp; !is_crouching) {
     if(move_x != 0 || move_y != 0) {
         isSprinting = true;
     }
@@ -464,7 +534,8 @@ if(isSprinting) {
     player_stats.player_acc = player_stats.player_sprint_acc;
     player_stats.max_player_speed = player_stats.max_player_sprint_speed;
 }
-else {
+
+if(admin.sprint_key_released) {
     player_stats.player_acc = player_stats.old_player_acc;
     player_stats.max_player_speed = player_stats.old_max_player_speed;
 }
@@ -480,6 +551,8 @@ else {
     player_stats.stamina += player_stats.stamina_reg;
     if(player_stats.stamina &gt; player_stats.max_stamina) player_stats.stamina = player_stats.max_stamina;
 }
+
+
 
 </string>
           </argument>
@@ -629,12 +702,34 @@ scr_set_depth();
           <argument>
             <kind>1</kind>
             <string>///Sprite-Ausrichtung
-if(x_axis == 1) image_xscale = 1;
-if(x_axis == -1) image_xscale = -1;
+switch (x_axis) {
+    case 1: 
+        image_xscale = 1;
+        break;
+    case -1:
+        image_xscale = -1;
+        break;
+    case 0:
+        image_xscale = x_axis_old;
+}
 
 //Vorder + Hinterseite
-if(y_axis == 1) sprite_index = spr_charakter;
-if(y_axis == -1) sprite_index = spr_charakter_back;
+switch (y_axis) {
+    case 1: 
+        sprite_index = sprite_front;
+        break;
+    case -1:
+        sprite_index = sprite_back;
+        break;
+    case 0:
+        switch (y_axis_old) {
+            case 1:
+                sprite_index = sprite_front;
+                break;
+            case -1:
+                sprite_index = sprite_back;
+        }
+}
 </string>
           </argument>
         </arguments>

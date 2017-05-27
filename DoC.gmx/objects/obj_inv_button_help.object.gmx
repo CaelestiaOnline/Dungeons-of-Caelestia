@@ -57,6 +57,32 @@ alarm_set(0, -2);
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="75">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Erklärung
+
+var expl_text = "Help"
+scr_trigger_expl(expl_text);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -114,41 +140,6 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
 }
 
 draw_sprite(spr_undefined, 0, x, y);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Erklärung
-
-var expl_text = "Fuer dich gibt es hier keine Hilfe!"
-var display = false;
-
-if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
-    if(alarm_get(0) == -2) alarm_set(0, room_speed);
-    if(alarm_get(0) == -1) display = true; 
-    
-    if(display) scr_explanation(x, y, expl_text);
-
-} else {
-    display = false;
-    alarm_set(0, -2);
-}
 </string>
           </argument>
         </arguments>

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-10</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -149,13 +149,14 @@ if(admin.game_paused) {
             <kind>1</kind>
             <string>///Abhängigkeiten
 
-if(admin.in_game == false) {
+if(!admin.in_game) {
     admin.game_paused = false;
 }
 
-if(admin.game_paused == false) {
+if(!admin.game_paused) {
     inventory.show_inv = false;
 }
+
 </string>
           </argument>
         </arguments>
@@ -178,7 +179,15 @@ if(admin.game_paused == false) {
             <kind>1</kind>
             <string>///Pause Key
 if(admin.pause_menu_key_pressed) {
-    scr_invfade(1 - admin.game_paused, "");
+    if(inventory.show_inv) {
+        scr_invfade(false, "inv");
+    } else {
+        scr_menufade(1 - admin.game_paused);
+    }
+}
+
+if(global.kb_enter_pressed &amp;&amp; admin.game_paused) {
+    scr_sidefade(rm_ptr_menu, 40);
 }
 </string>
           </argument>

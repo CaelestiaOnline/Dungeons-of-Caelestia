@@ -99,7 +99,7 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
         draw_set_alpha(1);
     }
     if(click) {
-        inventory.show_inv = 1 - inventory.show_inv;
+        scr_menu_to_inv_fade(1 - inventory.show_inv, "inv");
     }
 }
 
