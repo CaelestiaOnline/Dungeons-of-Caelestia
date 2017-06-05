@@ -32,8 +32,8 @@ xfactor = 5;
 
 colour = global.co_blue_gray_800;
 
-pre_x1 = window_get_width()/2 - 100;
-pre_y1 = window_get_height()/2;
+pre_x1 = display_get_gui_width()/2 - 100;
+pre_y1 =  display_get_gui_height()/2;
 
 radius = 0;
 
@@ -78,16 +78,17 @@ else {
 
 draw_circle(pre_x1, pre_y1, radius, 0);
 
-if(radius &gt; sqrt(power(window_get_width()/2  - 100, 2) + power(window_get_height()/2, 2)) + 200 &amp;&amp; !stagetwo) {
+if(radius &gt; sqrt(power( display_get_gui_width()/2  - 100, 2) + power( display_get_gui_height()/2, 2)) + 200 &amp;&amp; !stagetwo) {
     stagetwo = true;
     admin.game_paused = status;
+    player_stats.player_freeze = status;
     switch(type) {
         case "inv": 
             inventory.show_inv = status;
             break;
     }
     
-    radius = sqrt(power(window_get_width()/2  - 100, 2) + power(window_get_height()/2, 2)) + 200;
+    radius = sqrt(power( display_get_gui_width()/2  - 100, 2) + power( display_get_gui_height()/2, 2)) + 200;
 } 
 
 if(alpha &lt;= 0 &amp;&amp; stagetwo) instance_destroy();

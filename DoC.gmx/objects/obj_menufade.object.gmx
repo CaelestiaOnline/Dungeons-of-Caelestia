@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
-  <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <depth>-10</depth>
+  <persistent>-1</persistent>
+  <parentName>obj_fade</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,13 +26,33 @@
           <argument>
             <kind>1</kind>
             <string>///Variablen
-width = 0;
+stagetwo = false;
+
+xfactor = 5;
+
+colour = global.co_blue_gray_800;
+
+pre_x1 = 0;
+pre_y1 = 0;
+
+pre_x2 = menu_in_game.inv_menu_x2 + 50;
+pre_y2 = menu_in_game.inv_menu_y2 + 50;
+
+radius = 0;
+
+status = 0;
+
+alpha = 1;
+
+alpha_bg = 0;
+
+draw_bg = true;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="75">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -49,61 +69,75 @@ width = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Drag &amp; Drop System
-var click = mouse_check_button_released(mb_left);
-var click_hold = mouse_check_button(mb_left);
-width = sprite_get_width(spr_inv_exit)/2;
+            <string>///BG
+if(draw_bg) {
+draw_set_colour(colour);
+
+var value;
+if(status) value = 0.05;
+else value = -0.05; 
+alpha_bg += value;
+alpha_bg = clamp(alpha_bg, 0, inv_hud.alpha_bbg);
+draw_set_alpha(alpha_bg);
+
+draw_rectangle(
+    inv_hud.inv_bg_x1,
+    inv_hud.inv_bg_y1,
+    inv_hud.inv_bg_x2,
+    inv_hud.inv_bg_y2,
+    0
+);
+}
+draw_set_alpha(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Circlefade Effekt
+
+draw_set_colour(colour);
+
+//Kreis
+draw_set_alpha(alpha);
+
+
+if(!stagetwo) {
+    radius += xfactor;
+}
+else {
+    alpha -= 0.05;
+}
+
+draw_circle(pre_x1, pre_y1, radius, 0);
+
+if(radius &gt; sqrt(power(pre_x2, 2) + power(pre_y2, 2)) + 100 &amp;&amp; !stagetwo) {
+    draw_bg = false;
+    stagetwo = true;
+    admin.game_paused = status;
+    player_stats.player_freeze = status;
+    radius = sqrt(power(pre_x2, 2) + power(pre_y2, 2)) + 100;
+} 
+
+if(alpha &lt;= 0 &amp;&amp; stagetwo) instance_destroy();
 
 draw_set_alpha(1);
 
-if(inventory.show_inv) {
-//Rechteck bei geöffnetem Inv
-        draw_set_colour(c_red);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_colour(c_white);
-        draw_set_alpha(1);      
-}
-
-if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
-    if(!click_hold) {
-        //Rechteck bei Hovern
-        draw_set_colour(c_white);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_alpha(1);
-    } else {
-        //Rechteck bei Halten
-        draw_set_colour(c_white);
-        draw_set_alpha(0.9);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_colour(c_white);
-        draw_set_alpha(1);
-    }
-    if(click) {
-        scr_menu_to_inv_fade(1 - inventory.show_inv, "inv");
-    }
-}
-
-draw_sprite(spr_inventory, 0, x, y);
 </string>
           </argument>
         </arguments>

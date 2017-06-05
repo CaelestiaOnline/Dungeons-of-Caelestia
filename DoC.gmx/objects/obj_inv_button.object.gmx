@@ -3,8 +3,8 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-500</depth>
-  <persistent>-1</persistent>
+  <depth>-2</depth>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -34,8 +34,6 @@ button_count = 0;
 
 width = 0;
 
-//Depth
-scr_set_depth_inv_button();
 </string>
           </argument>
         </arguments>
@@ -87,7 +85,7 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
         0
     );
     draw_set_alpha(1);
-    if(click) {
+    if(click &amp;&amp; !right_click) {
         //Wenn der Button ein Item enthält
         if(button_item != -1) {
             if(scr_check_item_inv_type(inventory_type, mouse_ind.mouse_item)) {
@@ -129,7 +127,7 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
         }
     }
     //Rechtsklick
-    if(right_click) {
+    if(right_click &amp;&amp; !click) {
         if(mouse_ind.mouse_item == -1 &amp;&amp; button_item != -1 &amp;&amp; button_count != 1) {
             var button_divide = button_count/2;
             var mouse_divide;

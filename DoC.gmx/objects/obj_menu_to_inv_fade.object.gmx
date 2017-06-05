@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
-  <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <depth>-5</depth>
+  <persistent>-1</persistent>
+  <parentName>obj_fade</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,24 @@
           <argument>
             <kind>1</kind>
             <string>///Variablen
-width = 0;
+stagetwo = false;
+
+xfactor = 5;
+
+colour = global.co_blue_gray_800;
+
+pre_x1 = menu_in_game.inv_menu_x1;
+pre_y1 = menu_in_game.inv_menu_y2;
+
+pre_x2 = display_get_gui_width();
+pre_y2 =  display_get_gui_height();
+
+radius = 0;
+
+status = 0;
+alpha = 1;
+
+type = "";
 </string>
           </argument>
         </arguments>
@@ -49,61 +66,35 @@ width = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Drag &amp; Drop System
-var click = mouse_check_button_released(mb_left);
-var click_hold = mouse_check_button(mb_left);
-width = sprite_get_width(spr_inv_exit)/2;
+            <string>///Circlefade Effekt
+
+draw_set_colour(colour);
+draw_set_alpha(alpha);
+
+
+if(!stagetwo) {
+    radius += xfactor;
+}
+else {
+    alpha -= 0.05;
+}
+
+draw_circle(pre_x1, pre_y1, radius, 0);
+
+if(radius &gt; sqrt(power(display_get_gui_width(), 2) + power(display_get_gui_height(), 2)) + 50 &amp;&amp; !stagetwo) {
+    stagetwo = true;
+    switch(type) {
+        case "inv": 
+            inventory.show_inv = status;
+            break;
+    }
+    
+    radius = sqrt(power(display_get_gui_width(), 2) + power(display_get_gui_height(), 2)) + 50;
+} 
+
+if(alpha &lt;= 0 &amp;&amp; stagetwo) instance_destroy();
 
 draw_set_alpha(1);
-
-if(inventory.show_inv) {
-//Rechteck bei geöffnetem Inv
-        draw_set_colour(c_red);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_colour(c_white);
-        draw_set_alpha(1);      
-}
-
-if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
-    if(!click_hold) {
-        //Rechteck bei Hovern
-        draw_set_colour(c_white);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_alpha(1);
-    } else {
-        //Rechteck bei Halten
-        draw_set_colour(c_white);
-        draw_set_alpha(0.9);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_colour(c_white);
-        draw_set_alpha(1);
-    }
-    if(click) {
-        scr_menu_to_inv_fade(1 - inventory.show_inv, "inv");
-    }
-}
-
-draw_sprite(spr_inventory, 0, x, y);
 </string>
           </argument>
         </arguments>

@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Sprite
+            <string>///Stats
+//Sprite
 sprite = 0;
 
 //Alarm
@@ -38,8 +39,10 @@ scr_set_depth();
 alpha = 1;
 
 alpha_bg = 0;
-
+view_object[0] = self;
 obj_player.visible = false;
+
+effect_create_below(ef_explosion, x, y, 2, c_red);
 </string>
           </argument>
         </arguments>
@@ -62,7 +65,8 @@ obj_player.visible = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_player.visible = true;
+            <string>view_object[0] = obj_player;
+obj_player.visible = true;
 scr_reset_stats();
 room_restart();
 instance_destroy();

@@ -60,9 +60,13 @@
       </sprites>
       <sprites name="Charakter">
         <sprite>sprites\spr_charakter</sprite>
+        <sprite>sprites\spr_charakter_crouch</sprite>
+        <sprite>sprites\spr_charakter_ghost</sprite>
         <sprite>sprites\spr_charakter_dead</sprite>
         <sprite>sprites\spr_charakter_no_eyes</sprite>
+        <sprite>sprites\spr_charakter_crouch_back</sprite>
         <sprite>sprites\spr_charakter_back</sprite>
+        <sprite>sprites\spr_charakter_ghost_back</sprite>
       </sprites>
       <sprites name="Gegner">
         <sprite>sprites\spr_gegner</sprite>
@@ -121,6 +125,9 @@
     <sprites name="Mouse">
       <sprite>sprites\spr_mouse_icon</sprite>
     </sprites>
+    <sprites name="Hub">
+      <sprite>sprites\spr_hub_terminal</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -166,6 +173,8 @@
       <script>scripts\scr_sidefade.gml</script>
       <script>scripts\scr_circlefade.gml</script>
       <script>scripts\scr_invfade.gml</script>
+      <script>scripts\scr_menufade.gml</script>
+      <script>scripts\scr_menu_to_inv_fade.gml</script>
     </scripts>
     <scripts name="loading_screen">
       <script>scripts\scr_loading_screen.gml</script>
@@ -269,6 +278,7 @@
       </scripts>
       <scripts name="in game menu">
         <script>scripts\scr_explanation.gml</script>
+        <script>scripts\scr_trigger_expl.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -313,14 +323,14 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_test2</object>
+    <objects name="admin">
+      <object>objects\obj_admin</object>
+    </objects>
     <objects name="Explosion">
       <object>objects\obj_explosion</object>
     </objects>
     <objects name="Hub">
-      <object>objects\obj_hub</object>
-    </objects>
-    <objects name="admin">
-      <object>objects\obj_admin</object>
+      <object>objects\obj_hub_terminal</object>
     </objects>
     <objects name="HUD">
       <object>objects\obj_hud</object>
@@ -457,6 +467,8 @@
       <object>objects\obj_sidefade</object>
       <object>objects\obj_circlefade</object>
       <object>objects\obj_invfade</object>
+      <object>objects\obj_menufade</object>
+      <object>objects\obj_menu_to_inv_fade</object>
       <object>objects\obj_fade</object>
     </objects>
     <objects name="Menu">
@@ -494,6 +506,7 @@
     </objects>
     <objects name="in-game-menu">
       <object>objects\obj_menu_in_game</object>
+      <object>objects\obj_help_in_game</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -510,6 +523,7 @@
     </rooms>
     <rooms name="Hub">
       <room>rooms\rm_main_hub</room>
+      <room>rooms\rm_sec_hub</room>
     </rooms>
     <rooms name="Testrooms">
       <room>rooms\rm_testroom1</room>

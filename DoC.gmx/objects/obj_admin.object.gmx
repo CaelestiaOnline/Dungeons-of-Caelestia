@@ -25,6 +25,70 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Window
+//Caption
+window_set_caption("Dungeons of Caelestia");
+
+//Window 
+//X
+window_set_max_width(1920);
+window_set_min_width(1280);
+//Y
+window_set_max_height(640);
+window_set_min_height(360);
+
+/*
+1920 * 1080
+1600 * 900
+1360 * 765
+1280 * 720
+*/
+
+var window_height = 0;
+var window_width = 0;
+
+if(display_get_width() &lt; 1280) window_width = 640;
+if(display_get_height() &lt; 720) window_width = 360;
+
+if(display_get_width() &gt;= 1280) window_width = 1280;
+if(display_get_height() &gt;= 720) window_width = 720;
+
+if(display_get_width() &gt;= 1360) window_width = 1360;
+if(display_get_height() &gt;= 765) window_width = 765;
+
+if(display_get_width() &gt;= 1600) window_width = 1600;
+if(display_get_height() &gt;= 900) window_width = 900;
+
+if(display_get_width() &gt;= 1920) window_width = 1920;
+if(display_get_height() &gt;= 1080) window_width = 1080;
+
+var window_x = 0;
+var window_y = 0;
+
+window_set_rectangle(window_x, window_y, window_width, window_height);
+
+//GUI
+display_set_gui_size(1920, 1080);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Keyboard Variablen
 
 //Taste: W
@@ -385,6 +449,28 @@ game_paused = false;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///is_ghost
+is_ghost = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="0">
       <action>
@@ -556,6 +642,7 @@ global.m_right_pressed = mouse_check_button_pressed(mb_right);
           <argument>
             <kind>1</kind>
             <string>///Tasten zuordnen
+if(!player_stats.player_freeze) {
 //Move up
 up_key = global.kb_w;
 up_key_pressed = global.kb_w_pressed;
@@ -587,14 +674,16 @@ magic_key_pressed = global.kb_q_pressed;
 //Sprint
 sprint_key = global.kb_lshift;
 sprint_key_pressed = global.kb_lshift_pressed;
+sprint_key_released = keyboard_check_released(vk_shift);
+
+//Crouch
+crouch_key = global.kb_lctrl;
+crouch_key_pressed = global.kb_lctrl_pressed;
+crouch_key_released = keyboard_check_released(vk_control);
 
 //Interagieren
 action_key = global.kb_e;
 action_key_pressed = global.kb_e_pressed;
-
-//Inventar
-inventory_key = global.kb_i;
-inventory_key_pressed = global.kb_i_pressed;
 
 //Pickup-Leiste
 //Scroll left
@@ -608,6 +697,59 @@ pickup_menu_right_key_pressed = global.kb_l_pressed;
 //Bestätigen
 pickup_menu_confirm_key = global.kb_k;
 pickup_menu_confirm_key_pressed = global.kb_k_pressed;
+} else {
+//Move up
+up_key = 0;
+up_key_pressed = 0;
+
+//Move down
+down_key = 0;
+down_key_pressed = 0;
+
+//Move left
+left_key = 0;
+left_key_pressed = 0;
+
+//Move right
+right_key = 0;
+right_key_pressed = 0;
+//primary Attack
+prim_attack_key = 0;
+prim_attack_key_pressed = 0;
+
+//secondary Attack
+sec_attack_key = 0;
+sec_attack_key_pressed = 0;
+//magic
+magic_key = 0;
+magic_key_pressed = 0;
+
+//Sprint
+sprint_key = 0;
+sprint_key_pressed = 0;
+sprint_key_released = 0;
+
+//Crouch
+crouch_key = 0;
+crouch_key_pressed = 0;
+crouch_key_released = 0;
+//Interagieren
+action_key = 0;
+action_key_pressed = 0;
+
+//Pickup-Leiste
+//Scroll left
+pickup_menu_left_key = 0;
+pickup_menu_left_key_pressed = 0;
+
+//Scroll right
+pickup_menu_right_key = 0;
+pickup_menu_right_key_pressed = 0;
+
+//Bestätigen
+pickup_menu_confirm_key = 0;
+pickup_menu_confirm_key_pressed = 0;
+}
 
 
 //Left-Click
@@ -622,7 +764,9 @@ right_click_pressed = global.m_right_pressed;
 pause_menu_key = global.kb_esc;
 pause_menu_key_pressed = global.kb_esc_pressed;
 
-
+//Inventar
+inventory_key = global.kb_i;
+inventory_key_pressed = global.kb_i_pressed;
 
 
 </string>
@@ -657,7 +801,7 @@ if(room == rm_main_menu) {
 
 //Back to Menu
 if(room != rm_main_menu) {
-    if(keyboard_check_pressed(vk_f12)) scr_sidefade(rm_main_menu, 40);
+    if(keyboard_check_pressed(vk_f12)) scr_sidefade(rm_main_menu, 120);
 }
 
 if(room == rm_main_menu) {
@@ -666,6 +810,17 @@ if(room == rm_main_menu) {
 
 //Room-Refresh
 if(keyboard_check_pressed(vk_f11)) room_restart();
+
+//Ghost
+if(instance_exists(obj_player)) {
+if(keyboard_check_pressed(vk_f9)) is_ghost = 1 - is_ghost;
+if(is_ghost) {
+    obj_player.image_alpha = 0.5;
+} else {
+    obj_player.image_alpha = 1;
+}
+
+}
 </string>
           </argument>
         </arguments>
@@ -767,54 +922,8 @@ if(instance_exists(obj_player)) {
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///GUI
-display_set_gui_size(window_get_width(), window_get_height());
-display_set_gui_maximise(window_get_width()/1920, window_get_height()/1080, 0, 0);
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Setze GUI
-display_set_gui_maximise(-1, -1);
-display_set_gui_size(-1, -1);
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -837,7 +946,7 @@ draw_set_colour(c_white);
 draw_set_halign(fa_left);
 draw_set_alpha(1);
 
-draw_text(window_get_width() - 200, 16, admin_fps + " FPS");
+draw_text(display_get_gui_width() - 200, 16, admin_fps + " FPS");
 
 //Zeit
 //Minute
@@ -857,10 +966,12 @@ else {
 
 time = hour + ":" + minute;
 draw_text(
-    window_get_width() - string_width(time) - 64,
+    display_get_gui_width() - string_width(time) - 64,
     16,
     time
     );
+    
+draw_text(display_get_gui_width() - 400, 16, string(instance_count));
 </string>
           </argument>
         </arguments>
@@ -884,11 +995,9 @@ draw_text(
             <string>///Test
 
 if(instance_exists(obj_player)) {
-
 }
 
 //draw_text(100, 300, string(instance_exists(obj_hindernis)));
-
 </string>
           </argument>
         </arguments>

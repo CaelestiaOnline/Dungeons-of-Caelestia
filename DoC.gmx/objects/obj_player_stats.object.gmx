@@ -64,6 +64,7 @@ old_max_player_speed = max_player_speed;
 speed_mult = 1;
 speed_mult_item = 1;
 speed_mult_prim = 1;
+speed_mult_effect = 1;
 
 //Beschleunigung
 player_acc = 0.4;
@@ -73,12 +74,20 @@ old_player_acc = player_acc;
 max_player_sprint_speed = max_player_speed * 1.5;
 old_max_player_sprint_speed = max_player_sprint_speed;
 player_sprint_acc = player_acc * 2;
-old_player_sprint_acc = player_acc;
+old_player_sprint_acc = player_sprint_acc;
 
 //Reibung
 player_friction = 0.4;
 old_player_friction = player_friction;
 
+//Crouching
+max_player_crouch_speed = max_player_speed * 0.5;
+old_max_player_crouch_speed = max_player_crouch_speed;
+player_crouch_acc = player_acc * 0.5;
+old_player_crouch_acc = player_crouch_acc;
+
+//Freeze
+player_freeze = false;
 </string>
           </argument>
         </arguments>
@@ -177,13 +186,20 @@ old_hp = hp;
           <argument>
             <kind>1</kind>
             <string>///Speed-Multiplier
-speed_mult = speed_mult_item * speed_mult_prim;
+speed_mult = speed_mult_item * speed_mult_prim * speed_mult_effect;
 
 if(instance_exists(obj_player)) {
-    if(!obj_player.isSprinting) {
+    if(!obj_player.isSprinting &amp;&amp; !obj_player.is_crouching) {
         max_player_speed = old_max_player_speed * speed_mult;
     }
-    max_player_sprint_speed = old_max_player_sprint_speed * speed_mult;
+    //Sprint
+    //if(obj_player.isSprinting) {
+        max_player_sprint_speed = old_max_player_sprint_speed * speed_mult;
+    //}
+    //Crouch
+    //if(obj_player.is_crouching) {
+        max_player_crouch_speed = old_max_player_crouch_speed * speed_mult;
+    //}
 }
 </string>
           </argument>
