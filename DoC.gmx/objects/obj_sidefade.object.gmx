@@ -69,18 +69,18 @@ var x1, x2, y1, y2;
 x1 = 0 + left;
 x2 = 0 + right;
 y1 = 0;
-y2 = 0 + window_get_height();
+y2 = 0 +  display_get_gui_height();
 
 //Bewegung (Dynamischer Geschwindigkeits An- /Abstieg der Überblendung)
 right += xfactor;
 
-if(right &lt; window_get_width()/2 &amp;&amp; stagetwo == false) {
+if(right &lt; display_get_gui_width()/2 &amp;&amp; stagetwo == false) {
     xfactor += 2;
 }
 
 left += xfactor * stagetwo;
 
-if(left &gt; window_get_width()/2 &amp;&amp; stagetwo == true) {
+if(left &gt;  display_get_gui_width()/2 &amp;&amp; stagetwo == true) {
     if(xfactor &gt; 10) {
     xfactor -= 2;
     }
@@ -89,12 +89,12 @@ if(left &gt; window_get_width()/2 &amp;&amp; stagetwo == true) {
 
 draw_rectangle(x1,y1,x2,y2,0);
 
-if((right &gt; window_get_width() + 50) &amp;&amp; (stagetwo == false)) {
+if((right &gt;  display_get_gui_width() + 50) &amp;&amp; (stagetwo == false)) {
     stagetwo = true;
     room_goto(goal);
 } 
 
-if(left &gt; window_get_width() + 50) instance_destroy();
+if(left &gt;  display_get_gui_width() + 50) instance_destroy();
 </string>
           </argument>
         </arguments>

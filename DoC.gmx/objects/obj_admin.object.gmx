@@ -25,6 +25,70 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Window
+//Caption
+window_set_caption("Dungeons of Caelestia");
+
+//Window 
+//X
+window_set_max_width(1920);
+window_set_min_width(1280);
+//Y
+window_set_max_height(640);
+window_set_min_height(360);
+
+/*
+1920 * 1080
+1600 * 900
+1360 * 765
+1280 * 720
+*/
+
+var window_height = 0;
+var window_width = 0;
+
+if(display_get_width() &lt; 1280) window_width = 640;
+if(display_get_height() &lt; 720) window_width = 360;
+
+if(display_get_width() &gt;= 1280) window_width = 1280;
+if(display_get_height() &gt;= 720) window_width = 720;
+
+if(display_get_width() &gt;= 1360) window_width = 1360;
+if(display_get_height() &gt;= 765) window_width = 765;
+
+if(display_get_width() &gt;= 1600) window_width = 1600;
+if(display_get_height() &gt;= 900) window_width = 900;
+
+if(display_get_width() &gt;= 1920) window_width = 1920;
+if(display_get_height() &gt;= 1080) window_width = 1080;
+
+var window_x = 0;
+var window_y = 0;
+
+window_set_rectangle(window_x, window_y, window_width, window_height);
+
+//GUI
+display_set_gui_size(1920, 1080);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Keyboard Variablen
 
 //Taste: W
@@ -858,54 +922,8 @@ if(instance_exists(obj_player)) {
           </argument>
         </arguments>
       </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///GUI
-display_set_gui_size(window_get_width(), window_get_height());
-display_set_gui_maximise(window_get_width()/1920, window_get_height()/1080, 0, 0);
-</string>
-          </argument>
-        </arguments>
-      </action>
     </event>
     <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Setze GUI
-display_set_gui_maximise(-1, -1);
-display_set_gui_size(-1, -1);
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -928,7 +946,7 @@ draw_set_colour(c_white);
 draw_set_halign(fa_left);
 draw_set_alpha(1);
 
-draw_text(window_get_width() - 200, 16, admin_fps + " FPS");
+draw_text(display_get_gui_width() - 200, 16, admin_fps + " FPS");
 
 //Zeit
 //Minute
@@ -948,10 +966,12 @@ else {
 
 time = hour + ":" + minute;
 draw_text(
-    window_get_width() - string_width(time) - 64,
+    display_get_gui_width() - string_width(time) - 64,
     16,
     time
     );
+    
+draw_text(display_get_gui_width() - 400, 16, string(instance_count));
 </string>
           </argument>
         </arguments>
@@ -978,7 +998,6 @@ if(instance_exists(obj_player)) {
 }
 
 //draw_text(100, 300, string(instance_exists(obj_hindernis)));
-
 </string>
           </argument>
         </arguments>

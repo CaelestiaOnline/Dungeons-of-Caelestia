@@ -26,12 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///Koordianten des Inventar-Hintergrunds
-
 inv_bg_x1 = 0;
-inv_bg_x2 = window_get_width();
+inv_bg_x2 = display_get_gui_width();
 
 inv_bg_y1 = 0;
-inv_bg_y2 = window_get_height();
+inv_bg_y2 = display_get_gui_height();
 
 inv_slot_dist = 16;
 
@@ -64,8 +63,8 @@ inventory.inv_mag.inv_x = inv_slots_x1 + width + width*2*4 + inv_slot_dist*4;
 inventory.inv_mag.inv_y = inv_slots_y1 + width;
 
 //Charakter-Stats
-inv_char_bg_x1 = window_get_width() - 100 - 500;
-inv_char_bg_x2 = window_get_width() - 200;
+inv_char_bg_x1 = display_get_gui_width() - 100 - 500;
+inv_char_bg_x2 = display_get_gui_width() - 200;
 
 inv_char_bg_y1 = inv_slots_y1;
 inv_char_bg_y2 = inv_slots_y1 + 450;
@@ -193,6 +192,7 @@ colour_font = global.co_indigo_50;
 colour_heading = global.co_indigo_500;
 colour_trans = global.co_blue_gray_1000;
 alpha_bg = 0.5;
+alpha_bbg = 0.8;
 </string>
           </argument>
         </arguments>
@@ -241,8 +241,8 @@ orbit_speed[3] = 1;
 orbit_speed[4] = 1;
 orbit_speed[5] = 1;
 */
-center_x = window_get_width()/2 - 100;
-center_y = window_get_height()/2;
+center_x = display_get_gui_width()/2 - 100;
+center_y = display_get_gui_height()/2;
 
 orbit_x[0] = 0;
 /*
@@ -333,6 +333,32 @@ if(inventory.show_inv) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Dynamisches Window
+inv_bg_x1 = 0;
+inv_bg_x2 = display_get_gui_width();
+
+inv_bg_y1 = 0;
+inv_bg_y2 = display_get_gui_height();
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>
@@ -351,19 +377,9 @@ if(inventory.show_inv) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Hintergrund
+            <string>///Exit
 if(!inventory.show_inv) exit;
 
-draw_set_colour(c_black);
-draw_set_alpha(0.8);
-draw_rectangle(
-    inv_bg_x1,
-    inv_bg_y1,
-    inv_bg_x2,
-    inv_bg_y2,
-    0
-);
-draw_set_alpha(1);
 
 </string>
           </argument>
@@ -870,8 +886,8 @@ for(var i = 0; i &lt; array_length_1d(item_stats_array); i++) {
             <kind>1</kind>
             <string>///Char
 //Hintergrund
-var middle_x = window_get_width()/2 - 100;
-var middle_y = window_get_height()/2;
+var middle_x = display_get_gui_width()/2 - 100;
+var middle_y = display_get_gui_height()/2;
 draw_set_colour(colour_trans);
 draw_set_alpha(alpha_bg);
 draw_set_colour(colour_font);

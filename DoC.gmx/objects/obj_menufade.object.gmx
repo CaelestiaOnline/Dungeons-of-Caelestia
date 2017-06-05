@@ -43,6 +43,10 @@ radius = 0;
 status = 0;
 
 alpha = 1;
+
+alpha_bg = 0;
+
+draw_bg = true;
 </string>
           </argument>
         </arguments>
@@ -65,9 +69,51 @@ alpha = 1;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///BG
+if(draw_bg) {
+draw_set_colour(colour);
+
+var value;
+if(status) value = 0.05;
+else value = -0.05; 
+alpha_bg += value;
+alpha_bg = clamp(alpha_bg, 0, inv_hud.alpha_bbg);
+draw_set_alpha(alpha_bg);
+
+draw_rectangle(
+    inv_hud.inv_bg_x1,
+    inv_hud.inv_bg_y1,
+    inv_hud.inv_bg_x2,
+    inv_hud.inv_bg_y2,
+    0
+);
+}
+draw_set_alpha(1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Circlefade Effekt
 
 draw_set_colour(colour);
+
+//Kreis
 draw_set_alpha(alpha);
 
 
@@ -81,6 +127,7 @@ else {
 draw_circle(pre_x1, pre_y1, radius, 0);
 
 if(radius &gt; sqrt(power(pre_x2, 2) + power(pre_y2, 2)) + 100 &amp;&amp; !stagetwo) {
+    draw_bg = false;
     stagetwo = true;
     admin.game_paused = status;
     player_stats.player_freeze = status;
@@ -90,6 +137,7 @@ if(radius &gt; sqrt(power(pre_x2, 2) + power(pre_y2, 2)) + 100 &amp;&amp; !stage
 if(alpha &lt;= 0 &amp;&amp; stagetwo) instance_destroy();
 
 draw_set_alpha(1);
+
 </string>
           </argument>
         </arguments>

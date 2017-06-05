@@ -12,7 +12,7 @@ switch(menupos) {
         break;
     }
     case 3: {
-        scr_sidefade(rm_main_hub, 60);
+        scr_sidefade(rm_sec_hub, 60);
         break;
     }
     case 4: {
