@@ -85,13 +85,15 @@ else {
 
 
 if(!inventory.show_inv) {
-    if(mouse_item != -1) {
-        repeat(mouse_count) {
-            scr_inventory_drop_item(mouse_item);
+    if(admin.in_game) {
+        if(mouse_item != -1) {
+            repeat(mouse_count) {
+                scr_inventory_drop_item(mouse_item);
+            }
         }
-        mouse_item = -1;
-        mouse_count = 0;
     }
+    mouse_item = -1;
+    mouse_count = 0;
 }
 </string>
           </argument>
@@ -172,8 +174,8 @@ var width = sprite_get_width(spr_inv_border)/2;
 if(is_visible) {
     draw_set_font(fnt_fps);
     draw_set_colour(c_white);
-    draw_text(150, 16, string(x) + "/" + string(window_get_width()));
-    draw_text(250, 16, string(y) + "/" + string(window_get_height()));
+    draw_text(150, 12, string(x) + "/" + string(display_get_gui_width()));
+    draw_text(150, 32, string(y) + "/" + string(display_get_gui_height()));
     //draw_text(100, 500, string(mouse_item));
     //draw_text(100, 550, string(mouse_count));
 

@@ -193,13 +193,13 @@ if(instance_exists(obj_player)) {
         max_player_speed = old_max_player_speed * speed_mult;
     }
     //Sprint
-    if(obj_player.isSprinting) {
+    //if(obj_player.isSprinting) {
         max_player_sprint_speed = old_max_player_sprint_speed * speed_mult;
-    }
+    //}
     //Crouch
-    if(obj_player.is_crouching) {
+    //if(obj_player.is_crouching) {
         max_player_crouch_speed = old_max_player_crouch_speed * speed_mult;
-    }
+    //}
 }
 </string>
           </argument>

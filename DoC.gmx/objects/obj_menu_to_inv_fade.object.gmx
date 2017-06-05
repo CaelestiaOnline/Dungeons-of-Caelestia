@@ -35,8 +35,8 @@ colour = global.co_blue_gray_800;
 pre_x1 = menu_in_game.inv_menu_x1;
 pre_y1 = menu_in_game.inv_menu_y2;
 
-pre_x2 = window_get_width();
-pre_y2 = window_get_height();
+pre_x2 = display_get_gui_width();
+pre_y2 =  display_get_gui_height();
 
 radius = 0;
 
@@ -81,7 +81,7 @@ else {
 
 draw_circle(pre_x1, pre_y1, radius, 0);
 
-if(radius &gt; sqrt(power(window_get_width(), 2) + power(window_get_height(), 2)) + 50 &amp;&amp; !stagetwo) {
+if(radius &gt; sqrt(power(display_get_gui_width(), 2) + power(display_get_gui_height(), 2)) + 50 &amp;&amp; !stagetwo) {
     stagetwo = true;
     switch(type) {
         case "inv": 
@@ -89,7 +89,7 @@ if(radius &gt; sqrt(power(window_get_width(), 2) + power(window_get_height(), 2)
             break;
     }
     
-    radius = sqrt(power(window_get_width(), 2) + power(window_get_height(), 2)) + 50;
+    radius = sqrt(power(display_get_gui_width(), 2) + power(display_get_gui_height(), 2)) + 50;
 } 
 
 if(alpha &lt;= 0 &amp;&amp; stagetwo) instance_destroy();

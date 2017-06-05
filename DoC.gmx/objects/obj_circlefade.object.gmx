@@ -78,10 +78,10 @@ else {
     draw_circle(pre_x2, pre_y2, radius, 0);
 }
 
-if(radius &gt; sqrt(power(window_get_width(), 2) + power(window_get_height(), 2)) + 50 &amp;&amp; (stagetwo == false)) {
+if(radius &gt; sqrt(power( display_get_gui_width(), 2) + power( display_get_gui_height(), 2)) + 50 &amp;&amp; (stagetwo == false)) {
     stagetwo = true;
     room_goto(goal);
-    radius = sqrt(power(window_get_width(), 2) + power(window_get_height(), 2)) + 50;
+    radius = sqrt(power( display_get_gui_width(), 2) + power( display_get_gui_height(), 2)) + 50;
 } 
 
 if(radius &lt;= 0 &amp;&amp; (stagetwo == true)) instance_destroy();

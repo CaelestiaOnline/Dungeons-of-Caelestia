@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Menu Koordinaten
 inv_menu_x1 = 0;
-inv_menu_x2 = window_get_width()/2 + 100;
+inv_menu_x2 = display_get_gui_width()/2 + 100;
 
 inv_menu_y1 = 0;
 inv_menu_y2 = 64;
@@ -194,6 +194,41 @@ if(global.kb_enter_pressed &amp;&amp; admin.game_paused) {
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="74">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hintergrund
+if(!admin.game_paused) exit;
+draw_set_colour(inv_hud.colour_trans);
+
+draw_set_alpha(1);
+draw_set_alpha(inv_hud.alpha_bbg);
+draw_rectangle(
+    inv_hud.inv_bg_x1,
+    inv_hud.inv_bg_y1,
+    inv_hud.inv_bg_x2,
+    inv_hud.inv_bg_y2,
+    0
+);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -214,7 +249,7 @@ if(global.kb_enter_pressed &amp;&amp; admin.game_paused) {
             <string>///Zeichne Menu
 if(!admin.game_paused) exit;
 draw_set_colour(inv_hud.colour_trans);
-draw_set_alpha(1);
+
 draw_rectangle(
     inv_menu_x1,
     inv_menu_y1,
@@ -236,6 +271,28 @@ draw_text(
 );
 draw_set_valign(fa_top);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//draw_set_colour(c_white);
+//draw_rectangle(0, 0, display_get_gui_width(), display_get_gui_height(), 0)
 </string>
           </argument>
         </arguments>

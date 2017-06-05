@@ -323,14 +323,14 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_test2</object>
+    <objects name="admin">
+      <object>objects\obj_admin</object>
+    </objects>
     <objects name="Explosion">
       <object>objects\obj_explosion</object>
     </objects>
     <objects name="Hub">
       <object>objects\obj_hub_terminal</object>
-    </objects>
-    <objects name="admin">
-      <object>objects\obj_admin</object>
     </objects>
     <objects name="HUD">
       <object>objects\obj_hud</object>
@@ -523,6 +523,7 @@
     </rooms>
     <rooms name="Hub">
       <room>rooms\rm_main_hub</room>
+      <room>rooms\rm_sec_hub</room>
     </rooms>
     <rooms name="Testrooms">
       <room>rooms\rm_testroom1</room>
