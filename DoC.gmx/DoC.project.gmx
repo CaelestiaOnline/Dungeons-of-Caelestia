@@ -280,6 +280,9 @@
         <script>scripts\scr_explanation.gml</script>
         <script>scripts\scr_trigger_expl.gml</script>
       </scripts>
+      <scripts name="effect">
+        <script>scripts\scr_poison_enimy.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -507,6 +510,9 @@
     <objects name="in-game-menu">
       <object>objects\obj_menu_in_game</object>
       <object>objects\obj_help_in_game</object>
+    </objects>
+    <objects name="effect">
+      <object>objects\obj_poison_enimy</object>
     </objects>
   </objects>
   <rooms name="rooms">
