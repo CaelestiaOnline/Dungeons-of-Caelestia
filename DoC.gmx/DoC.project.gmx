@@ -308,6 +308,8 @@
         <script>scripts\scr_explanation.gml</script>
         <script>scripts\scr_trigger_expl.gml</script>
       </scripts>
+      <scripts name="effect">
+        <script>scripts\scr_poison_enimy.gml</script>
       <scripts name="Interaktion">
         <script>scripts\scr_interaction.gml</script>
       </scripts>
@@ -560,6 +562,8 @@
       <object>objects\obj_menu_in_game</object>
       <object>objects\obj_help_in_game</object>
     </objects>
+    <objects name="effect">
+      <object>objects\obj_poison_enimy</object>
     <objects name="Progress">
       <object>objects\obj_progress</object>
       <objects name="XP">

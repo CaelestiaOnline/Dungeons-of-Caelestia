@@ -3,7 +3,7 @@ scr_bullet_attack_enemy(
     schaden
     zu erzeugendes Objekt
     Objekt, das angreift
-)
+    )
 */
 var damage = argument0;
 var object_create = argument1;
