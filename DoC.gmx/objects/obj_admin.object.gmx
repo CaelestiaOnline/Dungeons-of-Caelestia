@@ -733,6 +733,7 @@ sprint_key_released = 0;
 crouch_key = 0;
 crouch_key_pressed = 0;
 crouch_key_released = 0;
+
 //Interagieren
 action_key = 0;
 action_key_pressed = 0;

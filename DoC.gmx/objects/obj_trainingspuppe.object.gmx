@@ -104,7 +104,9 @@ if(hp &lt;= 0)
 {
     instance_destroy();
     scr_draw_dealt_damage(x, y - sprite_get_height(sprite_index)/2 - 30, dealt_damage);
-    scr_draw_death_enemy(x, y, spr_trainingspuppe_dead);
+    scr_draw_death_enemy(x, y, spr_trainingspuppe_dead); 
+    scr_xp_drop(x, y, 64);
+    scr_money_drop(x, y, 5);
 }
 
 </string>

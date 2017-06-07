@@ -42,7 +42,11 @@
     </datafiles>
   </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="Music">
+      <sound>sound\snd_music_elevator</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Menu">
       <sprites name="Main_Menu">
@@ -78,6 +82,7 @@
       <sprite>sprites\spr_bullet</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_mana_bullet</sprite>
+      <sprite>sprites\spr_shuriken_bullet</sprite>
     </sprites>
     <sprites name="Hindernis">
       <sprite>sprites\spr_stein</sprite>
@@ -127,6 +132,29 @@
     </sprites>
     <sprites name="Hub">
       <sprite>sprites\spr_hub_terminal</sprite>
+    </sprites>
+    <sprites name="Progress">
+      <sprites name="Money">
+        <sprite>sprites\spr_money_blank</sprite>
+        <sprite>sprites\spr_money_1</sprite>
+        <sprite>sprites\spr_money_5</sprite>
+        <sprite>sprites\spr_money_10</sprite>
+        <sprite>sprites\spr_money_20</sprite>
+        <sprite>sprites\spr_money_50</sprite>
+        <sprite>sprites\spr_money_100</sprite>
+        <sprite>sprites\spr_money_500</sprite>
+        <sprite>sprites\spr_money_1000</sprite>
+      </sprites>
+      <sprites name="XP">
+        <sprite>sprites\spr_xp_1</sprite>
+        <sprite>sprites\spr_xp_5</sprite>
+        <sprite>sprites\spr_xp_10</sprite>
+        <sprite>sprites\spr_xp_20</sprite>
+        <sprite>sprites\spr_xp_50</sprite>
+        <sprite>sprites\spr_xp_100</sprite>
+        <sprite>sprites\spr_xp_500</sprite>
+        <sprite>sprites\spr_xp_1000</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -282,6 +310,24 @@
       </scripts>
       <scripts name="effect">
         <script>scripts\scr_poison_enimy.gml</script>
+      <scripts name="Interaktion">
+        <script>scripts\scr_interaction.gml</script>
+      </scripts>
+      <scripts name="Hub">
+        <script>scripts\scr_enter_hub_menu.gml</script>
+        <script>scripts\scr_leave_hub_menu.gml</script>
+      </scripts>
+      <scripts name="Progress">
+        <scripts name="XP">
+          <script>scripts\scr_xp_add_player.gml</script>
+          <script>scripts\scr_xp_drop.gml</script>
+          <script>scripts\scr_xp_select_sprite.gml</script>
+        </scripts>
+        <scripts name="Money">
+          <script>scripts\scr_money_add_player.gml</script>
+          <script>scripts\scr_money_drop.gml</script>
+          <script>scripts\scr_money_select_sprite.gml</script>
+        </scripts>
       </scripts>
     </scripts>
   </scripts>
@@ -334,6 +380,11 @@
     </objects>
     <objects name="Hub">
       <object>objects\obj_hub_terminal</object>
+      <object>objects\obj_hub_menu_mouse</object>
+      <object>objects\obj_hub</object>
+      <objects name="Buttons">
+        <object>objects\obj_hub_button_exit</object>
+      </objects>
     </objects>
     <objects name="HUD">
       <object>objects\obj_hud</object>
@@ -513,6 +564,14 @@
     </objects>
     <objects name="effect">
       <object>objects\obj_poison_enimy</object>
+    <objects name="Progress">
+      <object>objects\obj_progress</object>
+      <objects name="XP">
+        <object>objects\obj_xp_orb</object>
+      </objects>
+      <objects name="Money">
+        <object>objects\obj_coin</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -529,7 +588,9 @@
     </rooms>
     <rooms name="Hub">
       <room>rooms\rm_main_hub</room>
-      <room>rooms\rm_sec_hub</room>
+      <rooms name="Hub-menu">
+        <room>rooms\rm_hub_main_menu</room>
+      </rooms>
     </rooms>
     <rooms name="Testrooms">
       <room>rooms\rm_testroom1</room>
