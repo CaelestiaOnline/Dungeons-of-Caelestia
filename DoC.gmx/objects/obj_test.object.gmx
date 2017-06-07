@@ -2,13 +2,13 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="8" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,9 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(object_exists(obj_sidefade) == true) {
-    draw_text(500, 500, "HMMM");
-}
+            <string>///Füge items hinzu
+scr_inventory_add_item(inventory.inv_pickups, items.heal_potion, 8);
+scr_inventory_add_item(inventory.inv_pickups, items.mana_potion, 8);
+
+scr_inventory_add_item(inventory.inv_prim, items.pistol, 1);
+
+scr_inventory_add_item(inventory.inv_sec, items.shuriken, 1);
+
+scr_inventory_add_item(inventory.inv_mag, items.mana_orb, 1);
+
+scr_inventory_add_item(inventory.inv_storage, items.swift_orb, 1);
+
+
 </string>
           </argument>
         </arguments>

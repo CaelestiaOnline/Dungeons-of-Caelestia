@@ -40,7 +40,7 @@ pre_angle[2] = 360/5*2;
 pre_angle[3] = 360/5*3;
 pre_angle[4] = 360/5*4;
 
-orbit_acc = 0.4;
+orbit_acc = 0.2;
 orbit_speed[0] = 1;
 orbit_speed[1] = 1;
 orbit_speed[2] = 1;
@@ -88,13 +88,15 @@ alarm_set(0, room_speed*2);
           <argument>
             <kind>1</kind>
             <string>///Pro-Tip
-pro_tip_file_length = 6;
+pro_tip_file_length = 138;
+pro_tip_index = irandom(pro_tip_file_length -1);
 
 pro_tip_file = file_text_open_read(working_directory + "Textdateien\" + "pro_tip.txt");
 
 var n;
-for(n = 0; n &lt;= irandom(pro_tip_file_length); n++) {
-    pro_tip = file_text_readln(pro_tip_file);
+for(n = 0; n &lt;= pro_tip_index; n++) {
+    pro_tip = file_text_read_string(pro_tip_file);
+    file_text_readln(pro_tip_file);
 
 }
 
@@ -151,6 +153,7 @@ goal =  global.admin.loading_screen_goal;
             <kind>1</kind>
             <string>///Prozentanzeige
 
+pre_loading_percent = 0;
 loading_percent = 0;
 </string>
           </argument>
@@ -174,8 +177,46 @@ loading_percent = 0;
             <kind>1</kind>
             <string>///Überschrift
 loading_screen_heading = global.admin.loading_screen_heading;
-if(loading_screen_heading == "") loading_screen_heading = "Loading"
+if(loading_screen_heading == "") loading_screen_heading = "LOADING"
 points = "";
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hintergrund
+background_index[0] = choose(
+    bg_loading_screen1,
+    bg_loading_screen2, 
+    bg_loading_screen3, 
+    bg_loading_screen4,
+    bg_loading_screen5,
+    bg_loading_screen6,
+    bg_loading_screen7,
+    bg_loading_screen8,
+    bg_loading_screen9,
+    bg_loading_screen10,
+    bg_loading_screen11,
+    bg_loading_screen12,
+    bg_loading_screen13,
+    bg_loading_screen14,
+    bg_loading_screen15
+    );
 </string>
           </argument>
         </arguments>
@@ -280,9 +321,10 @@ for(m = 0; m &lt; (array_length_1d(angle)); m++) {
 
 //Alarm
 if(alarm_get(0) == -1) alarm_set(0, room_speed*2);
-
+/*
 if(alarm_get(0) &gt; room_speed) orbit += 0.2;
 if(alarm_get(0) &lt; room_speed) orbit -= 0.2;
+*/
 </string>
           </argument>
         </arguments>
@@ -305,7 +347,7 @@ if(alarm_get(0) &lt; room_speed) orbit -= 0.2;
             <kind>1</kind>
             <string>///Script
 
-if(alarm_get(1) == 0) scr_sidefade(goal, 60);
+if(alarm_get(1) == 0) scr_circlefade(goal, 60);
 </string>
           </argument>
         </arguments>
@@ -329,13 +371,20 @@ if(alarm_get(1) == 0) scr_sidefade(goal, 60);
             <string>///Prozentanzeige
 var alarmtime;
 alarmtime = alarm_get(1);
-if(alarm_get(1) &lt; 0) alarmtime = 0;
+if(alarm_get(1) == -1) alarmtime = 0;
+if(alarm_get(1) == -2) alarmtime = 100;
 
 
 
-loading_percent = string(int64(
+pre_loading_percent = string(int64(
     100 - (alarmtime/pre_loading_screen_time)*100)
 );
+
+loading_percent = pre_loading_percent;
+
+if(string_length(pre_loading_percent) == 1) loading_percent = "00" + loading_percent;
+if(string_length(pre_loading_percent) == 2) loading_percent = "0" + loading_percent;
+if(string_length(loading_percent) &gt; 3) loading_percent = pre_loading_percent;
 
 if(loading_percent &gt; 100) loading_percent = 100;
 </string>
@@ -361,6 +410,13 @@ if(loading_percent &gt; 100) loading_percent = 100;
           <argument>
             <kind>1</kind>
             <string>///Ladeanzeige
+
+//Kreis
+draw_set_alpha(0.8);
+draw_set_colour(global.co_blue_gray_800);
+draw_circle(center_x, center_y, 80, 0);
+draw_set_alpha(1);
+
 /*
 //Punkte
 draw_set_colour(c_white);
@@ -370,7 +426,7 @@ for(i = 0; i &lt; array_length_1d(angle); i++) {
     draw_circle(orbit_x[i], orbit_y[i], radius, 0);
 }
 */
-
+draw_set_colour(c_white);
 //Linien
 //Pentagramm
 draw_line_width(orbit_x[0], orbit_y[0], orbit_x[2], orbit_y[2], line_width);
@@ -385,6 +441,8 @@ draw_line_width(orbit_x[1], orbit_y[1], orbit_x[2], orbit_y[2], line_width);
 draw_line_width(orbit_x[2], orbit_y[2], orbit_x[3], orbit_y[3], line_width);
 draw_line_width(orbit_x[3], orbit_y[3], orbit_x[4], orbit_y[4], line_width);
 draw_line_width(orbit_x[4], orbit_y[4], orbit_x[0], orbit_y[0], line_width);
+
+
 
 </string>
           </argument>
@@ -407,9 +465,39 @@ draw_line_width(orbit_x[4], orbit_y[4], orbit_x[0], orbit_y[0], line_width);
           <argument>
             <kind>1</kind>
             <string>///Pro-Tip
-draw_set_font(fnt_pro_tip);
+//Hintergrund
+draw_set_colour(global.co_blue_gray_800);
+draw_set_alpha(0.8);
+draw_roundrect(
+    -50,
+    view_hview[0]/2 - 75,    
+    view_wview[0]/2 - 150,
+    view_hview[0]/2 + 75,
+    0
+);
+
+//Rechteck
+draw_set_colour(c_gray);
+draw_rectangle(
+    25 - 5,
+    view_hview[0]/2 - 25,
+    25 + 5,
+    view_hview[0]/2 + 50,
+    0    
+);
+
+
+
+//Text
+draw_set_font(fnt_pixel1);
 draw_set_halign(fa_left);
-draw_text(100, view_hview[0]/2, pro_tip);
+draw_set_colour(c_white);
+draw_set_alpha(1);
+//Tipp
+draw_text(25, view_hview[0]/2 - 60, "TIPP " + string(pro_tip_index+1) + ":")
+//Tipp-Text
+draw_text_ext(50, view_hview[0]/2 - 25, pro_tip, 30, view_wview[0]/2 - 200 - 40);
+
 </string>
           </argument>
         </arguments>
@@ -431,13 +519,27 @@ draw_text(100, view_hview[0]/2, pro_tip);
           <argument>
             <kind>1</kind>
             <string>///Prozentanzeige
-draw_set_font(fnt_main_menu);
-draw_set_halign(fa_center);
-draw_text(view_wview[0]/2, view_hview[0]/2 + 100, loading_percent + "%");
+//Hintergrund
+draw_set_font(fnt_pixel2);
+draw_set_alpha(0.8);
+draw_set_colour(global.co_blue_gray_800);
+draw_roundrect(
+    view_wview[0]/2 - string_width("&gt; 000")/2 - 20,
+    view_hview[0]/2 + 200,    
+    view_wview[0]/2 + string_width("&gt; 000")/2 + 20,
+    view_hview[0]/2 + 200 + string_height("&gt; 000") + 20,
+    0
+);
+
+//Prozent
+draw_set_alpha(1);
+draw_set_halign(fa_left);
+draw_set_colour(c_white);
+draw_text(view_wview[0]/2 - string_width("&gt; 000")/2, view_hview[0]/2 + 200, "&gt; " + loading_percent);
 
 //Schatten
 draw_set_alpha(0.5);
-draw_text(view_wview[0]/2 + 3, view_hview[0]/2 + 100 + 3, loading_percent + "%");
+draw_text(view_wview[0]/2 - string_width("&gt; 000")/2 + 3, view_hview[0]/2 + 200 + 3, "&gt; " + loading_percent);
 
 draw_set_alpha(1);
 
@@ -462,7 +564,7 @@ draw_set_alpha(1);
           <argument>
             <kind>1</kind>
             <string>///Überschrift
-draw_set_font(fnt_main_menu);
+draw_set_font(fnt_pixel2);
 draw_set_colour(c_white);
 draw_set_halign(fa_left);
 
@@ -475,7 +577,6 @@ if(alarm[0] == 0) {
     heading = loading_screen_heading;
 }
 heading = loading_screen_heading + points;
-
 
 draw_text(
     view_wview[0]/2 - string_width(loading_screen_heading + "...")/2,

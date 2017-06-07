@@ -70,7 +70,7 @@ colour[4] = c_white;
 shadow = 3;
 
 //Farbe
-menucolour = c_blue;
+menucolour = admin.random_colour;
 
 //Script
 script = scr_credits_menu;

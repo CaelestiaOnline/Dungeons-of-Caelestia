@@ -1,1 +1,2 @@
-scr_loading_screen(rm_main_menu, -1, "");
+scr_sidefade(rm_ptr_menu, 60);
+

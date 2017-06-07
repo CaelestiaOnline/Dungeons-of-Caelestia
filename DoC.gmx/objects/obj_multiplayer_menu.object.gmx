@@ -47,7 +47,7 @@ menu[0] = "Kamtschatka"
 menu[1] = "Europe"
 menu[2] = "USA"
 menu[3] = "Asia"
-menu[4] = "--&gt; Main Menu"
+menu[4] = "&gt;&gt;&gt; Main Menu"
 
 draw_set_font(fnt_main_menu);
 
@@ -70,7 +70,7 @@ colour[4] = c_white;
 shadow = 3;
 
 //Farbe
-menucolour = c_teal;
+menucolour = admin.random_colour;
 
 //Script
 script = scr_multiplayer_menu;
@@ -78,6 +78,162 @@ script = scr_multiplayer_menu;
 //Bewegter Hintergrund
 background_hspeed[0] = 0.5;
 background_vspeed[0] = 0.1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ping
+ping[0] = "(" + string(irandom(500) + 500) + "ms)";
+ping[1] = "(" + string(irandom(100) + 5) + "ms)";
+ping[2] = "(" + string(irandom(200) + 5) + "ms)";
+ping[3] = "(" + string(irandom(200) + 50) + "ms)";
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ping
+draw_set_font(fnt_main_menu);
+
+var m;
+for(m = 0; m &lt; array_length_1d(ping); m++) {
+    draw_set_colour(c_white);
+    draw_set_alpha(1);
+    draw_text(
+        view_wview[0]/2 + 200,
+        view_hview[0]/2 - 100 + (m * yspace),
+        ping[m],
+        );
+//Schatten
+    draw_set_alpha(0.5);
+    draw_text(
+        view_wview[0]/2 + 200 + shadow,
+        view_hview[0]/2 - 100 + (m * yspace) + shadow,
+        ping[m],
+        );
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Zeichne Auswahlmöglichkeiten + Titel
+draw_set_colour(c_white);
+
+//Überschrift
+draw_set_font(fnt_main_menu);
+draw_set_alpha(1);
+draw_set_halign(fa_center);
+draw_text(view_wview[0]/2,  view_hview[0]/4, heading);
+
+//Schatten
+draw_set_alpha(0.5);
+draw_set_colour(c_white);
+draw_text(view_wview[0]/2 + shadow*2, view_hview[0]/4 + shadow*2, heading);
+
+//Auswahlmöglichkeiten
+draw_set_alpha(1);
+draw_set_font(fnt_main_menu);
+draw_set_halign(fa_left);
+colour[menupos] = menucolour;
+
+var m;
+for(m = 0; m &lt; array_length_1d(menu); m++) {
+    draw_set_colour(colour[m]);
+    draw_set_alpha(1);
+    draw_text(
+        view_wview[0]/2 - wtext/2,
+        view_hview[0]/2 - 100 + (m * yspace),
+        menu[m],
+        );
+//Schatten
+    draw_set_alpha(0.5);
+    draw_text(
+        view_wview[0]/2 - wtext/2 + shadow,
+        view_hview[0]/2 - 100 + (m * yspace) + shadow,
+        menu[m],
+        );
+        colour[m] = c_white;
+}
+
+draw_set_colour(c_white);
+/*
+//Pfeil
+draw_sprite(
+    sprite_index,
+    0,
+    ((view_wview[0]/2) - wtext/2 - xspace),
+    ((view_hview[0]/2) - 100 + sprite_get_height(sprite_index)/2) + (menupos * yspace)
+    );
+    
+//Schatten des Pfeils
+draw_sprite(
+    sprite_index,
+    0,
+    ((view_wview[0]/2) - wtext/2 - xspace + shadow/2),
+    ((view_hview[0]/2) - 100 + sprite_get_height(sprite_index)/2) + (menupos * yspace) + shadow/2
+    );
+*/
+//Linie
+draw_set_font(fnt_main_menu);
+var yvalue = (view_hview[0]/2) - 100 + string_height(menu[menupos]) + (menupos * yspace);
+draw_line_width_colour(
+    (view_wview[0]/2) - wtext/2,
+    yvalue,
+    (view_wview[0]/2) - wtext/2 + string_width(menu[menupos]),
+    yvalue,
+    8,
+    c_white,
+    c_white
+    );
 </string>
           </argument>
         </arguments>
