@@ -39,6 +39,13 @@ inv_hud = instance_create(0, 0, obj_hud_inv);
 //In game Menu
 globalvar menu_in_game;
 menu_in_game = instance_create(0, 0, obj_menu_in_game);
+//Progress
+globalvar progress;
+progress = instance_create(0, 0, obj_progress);
+//Hub object
+globalvar hub;
+hub = instance_create(0, 0, obj_hub);
+
 //Test-Inventory
 instance_create(0, 0, obj_test);
 

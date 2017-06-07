@@ -76,6 +76,13 @@ inv_item_stats_bg_x2 = inv_char_bg_x2;
 inv_item_stats_bg_y1 = inv_char_bg_y2 + 50;
 inv_item_stats_bg_y2 = inv_item_stats_bg_y1 + 350;
 
+//Level
+inv_level_x1 = inv_slots_x1;
+inv_level_x2 = inv_level_x1 + 400;
+
+inv_level_y1 = inv_slots_y2 + 70;
+inv_level_y2 = inv_level_y1 + 150;
+
 
 
 
@@ -1053,6 +1060,135 @@ var prim_y = inventory.inv_prim.inv_y  + width + 8;
 draw_text(prim_x, prim_y, prim_text);
 
 draw_set_halign(fa_left);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Level
+//Hintergrund
+draw_set_colour(colour_trans);
+draw_set_alpha(alpha_bg);
+draw_rectangle(
+    inv_level_x1,
+    inv_level_y1,
+    inv_level_x2,
+    inv_level_y2,
+    0
+);
+draw_set_alpha(1);
+
+//Heading
+draw_set_colour(colour_heading);
+draw_set_valign(fa_middle);
+draw_rectangle(
+    inv_level_x1,
+    inv_level_y1 - 8 - 32,
+    inv_level_x2,
+    inv_level_y1 - 8,
+    0
+);
+
+draw_set_colour(colour_font);
+draw_set_font(fnt_inv_heading);
+draw_text(
+    inv_level_x1 + 8,
+    inv_level_y1 - 8 - 16,
+    "PROGRESS"
+);
+draw_set_valign(fa_top);
+
+//Level, XP, Prozent
+var text1_y = inv_level_y1 + 32;
+draw_set_colour(colour_font);
+draw_set_font(fnt_inv_stats);
+draw_set_halign(fa_left);
+draw_set_alpha(1);
+
+//Level
+draw_text(
+    inv_level_x1 + 32,
+    text1_y,
+    "Level " + string(progress.level)
+    );
+//XP
+draw_text(
+    (inv_level_x1 + inv_level_x2)/2 - 32,
+    text1_y,
+    "XP: " + string(progress.xp) + " / " + string(progress.level_up_xp)
+    );
+
+//Prozent
+var percent_text = string((progress.xp / progress.level_up_xp)*100) + "%";
+draw_text(
+    inv_level_x2 - string_width(percent_text) - 32,
+    text1_y,
+    percent_text
+    );
+    
+//Bar
+var bar_buffer = 32;
+var bar2_y = text1_y + 32;
+var bar_height = 32;
+var bar_width = inv_level_x2 - inv_level_x1 - bar_buffer - bar_buffer;
+var bar_x = inv_level_x1 + bar_buffer;
+var buffer = 2;
+
+var xp_scale;
+xp_scale = progress.xp / progress.level_up_xp;
+if(xp_scale &lt; 0) xp_scale = 0;
+
+//Hintergrund
+draw_set_colour(colour_trans);
+draw_set_alpha(alpha_bbg);
+draw_rectangle(bar_x, bar2_y, bar_x + bar_width, bar2_y + bar_height, 0);
+draw_set_alpha(1);
+
+//Bar
+draw_set_colour(colour_font);
+draw_set_alpha(1);
+draw_rectangle(bar_x + buffer, bar2_y + buffer, bar_x + ((bar_width - buffer) * xp_scale), bar2_y + bar_height - buffer, 0);
+
+//Geld
+var text3_y = (bar2_y + bar_height) + 16;
+draw_set_colour(colour_font);
+draw_set_font(fnt_inv_stats);
+draw_set_halign(fa_left);
+draw_set_alpha(1);
+
+//Geld
+var money_value = string(progress.run_money) + ".00";
+var money_text = "Balance: " + money_value + " RM";
+draw_text(
+    inv_level_x1 + 32,
+    text3_y,
+    money_text
+    );
+
+
+
+
+
+
+
+
 
 
 </string>
