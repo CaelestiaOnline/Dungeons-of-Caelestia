@@ -33,7 +33,7 @@ hud_bg_y1 = display_get_gui_height() - 150 - 16;
 hud_bg_y2 = display_get_gui_height() - 16;
 
 //Bars
-health_bar_y = hud_bg_y1 + 32;
+health_bar_y = hud_bg_y1 + 16;
 mana_bar_y = health_bar_y + 32; 
 stamina_bar_y = mana_bar_y + 32;
 

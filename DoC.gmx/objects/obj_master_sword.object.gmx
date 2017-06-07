@@ -74,7 +74,6 @@ damage = item_stats[index, item_stats_prim.damage];
           <argument>
             <kind>1</kind>
             <string>///Angriff
-
 scr_melee_attack(damage, damage);
 </string>
           </argument>
