@@ -70,7 +70,7 @@ colour[4] = c_white;
 shadow = 3;
 
 //Farbe
-menucolour = admin.random_colour;
+menucolour = scr_get_random_colour();
 
 //Planet
 planet = instance_create(view_wview[0]/8, view_hview[0]*0.6, obj_planet);

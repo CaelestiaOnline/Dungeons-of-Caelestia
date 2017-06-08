@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -30,17 +30,39 @@
 poison_damage = 0;
 poison_time = 0;
 poison_speed = 0;
-poison_object = null;
+poison_object = 0;
 
 //Anzahl der Zeitabschnitte
-poison_number = poison_time div poison_speed;
-
-//Schaden pro Zeitabschnitt
-poison_damage_time = poison_damage div poison_number;
+poison_count = 0;
 
 //Variablen
 w = 0;
 u = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Giftschaden an Objekt
+if(poison_object == obj_player) scr_deal_player_damage(poison_damage);
+else scr_deal_damage(poison_object, poison_damage);
 </string>
           </argument>
         </arguments>
@@ -63,48 +85,15 @@ u = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schaden über Zeit
-v = poison_speed*60;
-if(poison_time != 0)
-{
-    if(v*u == w)
-    {
-        poison_object.hp -= poison_damage_time;
-        u++;
+            <string>///Count
+if(!instance_exists(poison_object)) instance_destroy();
+if(poison_time &gt; 0) {
+    if(alarm_get(0) == -1) {
+        alarm_set(0, poison_speed);
     }
-    w++;
-}
-else
-{
-    instance_destroy();
-}
-if(w &gt;= poison_time*60)
-{
-    instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Position
-x = poison_object.x;
-y = poison_object.y;
+    poison_time--;
+} else instance_destroy();
+
 </string>
           </argument>
         </arguments>

@@ -1,5 +1,6 @@
 switch(menupos) {
     case 0: {
+        scr_enter_game(false);
         break;
     }
     case 1: {

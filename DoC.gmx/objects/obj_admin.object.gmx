@@ -396,8 +396,6 @@ global.co_brown_500 = make_colour_hsv(4, 40, 47);
 //Red
 global.co_red_A700 = make_colour_rgb(213, 0, 0);
 
-random_colour = c_green;
-
 
 
 </string>
@@ -802,7 +800,7 @@ if(room == rm_main_menu) {
 
 //Back to Menu
 if(room != rm_main_menu) {
-    if(keyboard_check_pressed(vk_f12)) scr_sidefade(rm_main_menu, 120);
+    if(keyboard_check_pressed(vk_f12)) scr_leave_game();
 }
 
 if(room == rm_main_menu) {
@@ -810,7 +808,11 @@ if(room == rm_main_menu) {
 }
 
 //Room-Refresh
-if(keyboard_check_pressed(vk_f11)) room_restart();
+if(keyboard_check_pressed(vk_f11)) {
+    room_restart();
+    obj_player.x = 0;
+    obj_player.y = 0;
+}
 
 //Ghost
 if(instance_exists(obj_player)) {
@@ -866,59 +868,6 @@ if(alarm_get(0) == -1) alarm_set(0, room_speed);
             <kind>1</kind>
             <string>///FPS
 if(alarm_get(0) == 0) admin_fps = string(int64(fps_real));
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Random Colour
-random_colour = make_colour_hsv(
-    random_range(0, 255),
-    random_range(255*0.75, 255),
-    random_range(255*0.25, 255)
-    );
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///in_game
-
-if(instance_exists(obj_player)) {
-    in_game = true;
-} else {
-    in_game = false;
-}
 </string>
           </argument>
         </arguments>
