@@ -1,8 +1,8 @@
 /*
 scr_loading_screen(
-Raum der nach der Überblendung betreten wird,
-Ladezeit in Sekunden,
-Ladetext
+    Raum der nach der Überblendung betreten wird,
+    Ladezeit in Sekunden,
+    Ladetext
 );
 */
 

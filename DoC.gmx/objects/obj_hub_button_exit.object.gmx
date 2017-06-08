@@ -131,6 +131,7 @@ if(abs(hub.hub_menu_mouse.x - x) &lt; width &amp;&amp; (abs(hub.hub_menu_mouse.y
         draw_set_alpha(1);
     }
     if(click) {
+        instance_destroy();
         scr_leave_hub_menu();
     }
 }

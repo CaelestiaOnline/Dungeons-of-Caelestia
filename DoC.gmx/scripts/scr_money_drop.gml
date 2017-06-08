@@ -15,7 +15,6 @@ var range = 32;
 if(money <= 0) exit;
 else {
     while(money > 0) {
-        show_debug_message("GELD: " + string(money));
         var current_money = choose(1, 5, 10, 20, 50, 100, 500, 1000);
         if((money - current_money) < 0) continue; 
         else {
