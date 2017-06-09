@@ -186,9 +186,6 @@ if(admin.pause_menu_key_pressed) {
     }
 }
 
-if(global.kb_enter_pressed &amp;&amp; admin.game_paused) {
-    scr_sidefade(rm_ptr_menu, 40);
-}
 </string>
           </argument>
         </arguments>

@@ -61,7 +61,7 @@ colour[1] = c_white;
 shadow = 3;
 
 //Farbe
-menucolour = admin.random_colour;
+menucolour = scr_get_random_colour();
 
 //Script
 script = scr_game_end;

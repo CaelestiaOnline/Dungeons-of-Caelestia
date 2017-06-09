@@ -16,7 +16,6 @@ switch(menupos) {
         break;
     }
     case 4: {
-        scr_sidefade(rm_main_menu, 60);
         break;
     }
     default: {

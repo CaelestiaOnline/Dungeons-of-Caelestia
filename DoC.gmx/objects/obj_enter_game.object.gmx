@@ -4,11 +4,11 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
-  <parentName>obj_menu</parentName>
+  <persistent>-1</persistent>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,59 +25,19 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Menü-Array + Rest
-
-//Anzahl der Auswahlmöglichkeiten
-menulength = 5;
-
-//Pixel in y-Richtung zwischen den Auswahlmöglichkeiten
-yspace = 80;
-
-//Abstand zwischen Pfeil und Mitte der View[0] in Pixel in - x-Richtung 
-xspace = 50;
-
-//Aktuelle Position des Menüpfeils
-menupos  = 0;
-
-//Überschrift
-heading = "Optionen";
-
-//Auswahlmöglichkeiten
-menu[0] = "Coming soon..."
-menu[1] = "Lautstaerke: 100"
-menu[2] = "Sprache: Deutsch/Englisch"
-menu[3] = "Credits"
-menu[4] = "&gt;&gt;&gt; Main Menu"
-
-draw_set_font(fnt_main_menu);
-
-wtext = max(
-    string_width(menu[0]),
-    string_width(menu[1]),
-    string_width(menu[2]),
-    string_width(menu[3]),
-    string_width(menu[4]),
-    );
-    
-//Farben der Auswahlmöglichkeiten
-colour[0] = c_white;
-colour[1] = c_white;
-colour[2] = c_white;
-colour[3] = c_white;
-colour[4] = c_white;
-
-//Schatten
-shadow = 3;
-
-//Farbe
-menucolour = scr_get_random_colour();
-
-//Script
-script = scr_options_menu;
-
-//Bewegter Hintergrund
-background_hspeed[0] = 0.5;
-background_vspeed[0] = 0.1;
+            <string>///Initialisiere
+if(room == rm_main_hub) {
+    admin.in_game = true;
+    hub.in_hub = true;
+    if(!instance_exists(obj_player)) {
+        instance_create(0, 0, obj_player);
+    }
+    obj_player.x = hub.start_x;
+    obj_player.y = hub.start_y;
+    obj_player.persistent = true;
+    if(!admin.game_paused) player_stats.player_freeze = false;
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>

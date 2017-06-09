@@ -90,6 +90,7 @@
       <sprite>sprites\spr_wall_noc</sprite>
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_tree</sprite>
+      <sprite>sprites\spr_invisible</sprite>
     </sprites>
     <sprites name="HUD">
       <sprites name="Bar">
@@ -132,6 +133,9 @@
     </sprites>
     <sprites name="Hub">
       <sprite>sprites\spr_hub_terminal</sprite>
+      <sprite>sprites\spr_hub_desk</sprite>
+      <sprite>sprites\spr_hub_desk2</sprite>
+      <sprite>sprites\spr_hub_terminal2</sprite>
     </sprites>
     <sprites name="Progress">
       <sprites name="Money">
@@ -183,6 +187,9 @@
       <background>background\bg_loading_screen14</background>
       <background>background\bg_loading_screen15</background>
     </backgrounds>
+    <backgrounds name="Hub">
+      <background>background\bg_main_hub</background>
+    </backgrounds>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -206,6 +213,9 @@
     </scripts>
     <scripts name="loading_screen">
       <script>scripts\scr_loading_screen.gml</script>
+    </scripts>
+    <scripts name="Colour">
+      <script>scripts\scr_get_random_colour.gml</script>
     </scripts>
     <scripts name="Raumauswahl">
       <script>scripts\scr_random_room.gml</script>
@@ -309,8 +319,10 @@
         <script>scripts\scr_trigger_expl.gml</script>
       </scripts>
       <scripts name="effect">
-        <script>scripts\scr_poison_enimy.gml</script>
+        <script>scripts\scr_effect_poison.gml</script>
+      </scripts>
       <scripts name="Interaktion">
+        <script>scripts\scr_hub_interaction.gml</script>
         <script>scripts\scr_interaction.gml</script>
       </scripts>
       <scripts name="Hub">
@@ -328,6 +340,11 @@
           <script>scripts\scr_money_drop.gml</script>
           <script>scripts\scr_money_select_sprite.gml</script>
         </scripts>
+      </scripts>
+      <scripts name="Allgemein">
+        <script>scripts\scr_enter_game.gml</script>
+        <script>scripts\scr_leave_game.gml</script>
+        <script>scripts\scr_enter_game_room.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -380,11 +397,15 @@
     </objects>
     <objects name="Hub">
       <object>objects\obj_hub_terminal</object>
+      <object>objects\obj_hub_desk</object>
+      <object>objects\obj_hub_terminal2</object>
       <object>objects\obj_hub_menu_mouse</object>
       <object>objects\obj_hub</object>
       <objects name="Buttons">
         <object>objects\obj_hub_button_exit</object>
       </objects>
+      <object>objects\obj_player_persistent</object>
+      <object>objects\obj_enter_game</object>
     </objects>
     <objects name="HUD">
       <object>objects\obj_hud</object>
@@ -498,6 +519,7 @@
           <object>objects\obj_bullet_enemy</object>
           <object>objects\obj_pistol_bullet_enemy</object>
         </objects>
+        <object>objects\obj_enemy_stats</object>
       </objects>
       <objects name="Heilungsfeld">
         <object>objects\obj_heal_field</object>
@@ -508,6 +530,7 @@
         <object>objects\obj_hindernis</object>
         <objects name="non-breakable">
           <object>objects\obj_wall</object>
+          <object>objects\obj_invisible_wall</object>
           <object>objects\obj_wall_noc</object>
         </objects>
         <objects name="Breakable">
@@ -563,7 +586,8 @@
       <object>objects\obj_help_in_game</object>
     </objects>
     <objects name="effect">
-      <object>objects\obj_poison_enimy</object>
+      <object>objects\obj_poison</object>
+    </objects>
     <objects name="Progress">
       <object>objects\obj_progress</object>
       <objects name="XP">

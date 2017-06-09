@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>-20</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -133,7 +133,11 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
         draw_set_alpha(1);
     }
     if(click) {
-        scr_sidefade(rm_ptr_menu, 40);
+        if(room != rm_main_hub) {
+            scr_sidefade(rm_main_hub, 60);
+        } else {
+            scr_leave_game();
+        }
     }
 }
 
