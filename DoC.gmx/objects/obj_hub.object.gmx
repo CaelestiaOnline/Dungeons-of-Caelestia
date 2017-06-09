@@ -51,8 +51,8 @@ hub_menu_mouse = 0;
           <argument>
             <kind>1</kind>
             <string>///Startkoordinaten
-start_x = 64;
-start_y = 64;
+start_x =  500;
+start_y = 500;
 </string>
           </argument>
         </arguments>
