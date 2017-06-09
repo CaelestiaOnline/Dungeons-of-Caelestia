@@ -90,6 +90,7 @@
       <sprite>sprites\spr_wall_noc</sprite>
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_tree</sprite>
+      <sprite>sprites\spr_invisible</sprite>
     </sprites>
     <sprites name="HUD">
       <sprites name="Bar">
@@ -529,6 +530,7 @@
         <object>objects\obj_hindernis</object>
         <objects name="non-breakable">
           <object>objects\obj_wall</object>
+          <object>objects\obj_invisible_wall</object>
           <object>objects\obj_wall_noc</object>
         </objects>
         <objects name="Breakable">

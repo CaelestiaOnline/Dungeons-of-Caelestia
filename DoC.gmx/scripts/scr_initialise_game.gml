@@ -13,7 +13,7 @@ player_stats = instance_create(0, 0, obj_player_stats);
 globalvar mouse_ind;
 mouse_ind = instance_create(0, 0, obj_mouse_ind);
 //Player
-globalvar player;
+//globalvar player;
 //Erzeuge Item_stats
 globalvar item_stats_object;
 item_stats_object = instance_create(0, 0, obj_item_stats);

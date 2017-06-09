@@ -810,8 +810,6 @@ if(room == rm_main_menu) {
 //Room-Refresh
 if(keyboard_check_pressed(vk_f11)) {
     room_restart();
-    obj_player.x = 0;
-    obj_player.y = 0;
 }
 
 //Ghost
