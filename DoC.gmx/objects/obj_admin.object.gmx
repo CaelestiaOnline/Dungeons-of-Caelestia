@@ -443,6 +443,7 @@ draw_set_circle_precision(64);
             <string>///in-game + game_paused
 in_game = false;
 game_paused = false;
+playing = false;
 </string>
           </argument>
         </arguments>

@@ -106,7 +106,7 @@ if(dealt_damage &gt; 0) {
           <argument>
             <kind>1</kind>
             <string>///exit
-if(!admin.in_game) exit;
+if(!admin.playing) exit;
 </string>
           </argument>
         </arguments>

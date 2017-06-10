@@ -130,7 +130,6 @@ if(radius &gt; sqrt(power(pre_x2, 2) + power(pre_y2, 2)) + 100 &amp;&amp; !stage
     draw_bg = false;
     stagetwo = true;
     admin.game_paused = status;
-    player_stats.player_freeze = status;
     radius = sqrt(power(pre_x2, 2) + power(pre_y2, 2)) + 100;
 } 
 

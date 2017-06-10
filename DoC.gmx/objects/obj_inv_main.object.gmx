@@ -48,7 +48,7 @@
           <argument>
             <kind>1</kind>
             <string>///Zeichne Inventar
-if(admin.in_game) {
+if(admin.playing) {
     //Zeichne Seitenleiste
     scr_draw_inv_gui(self, gui_inv_x, gui_inv_y);
     //Eigentliches Inventar
