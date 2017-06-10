@@ -12,7 +12,7 @@ var object = argument2;
 var slow = instance_create (0, 0, obj_slow_speed);
 
 slow.multipl = multipl;
-slow.time = time*60;
+slow.time = time*room_speed;
 slow.object = object;
 
 //Maximale Gesw. des Objekts
