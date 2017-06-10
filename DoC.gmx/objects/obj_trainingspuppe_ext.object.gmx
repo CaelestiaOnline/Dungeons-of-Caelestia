@@ -26,15 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-hp = 100;
-max_hp = hp; 
-
-dealt_damage = 0;
-old_dealt_damage = 0;
-damage_count = 0;
-
-//Depth
-scr_set_depth();
+scr_initialise_enemy_main(100, 0, 0, 0, spr_trainingspuppe_dead, 128, 20);
 </string>
           </argument>
         </arguments>

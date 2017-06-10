@@ -778,7 +778,7 @@ if(player_stats.hp &lt;= 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Kreis
+            <string>///Schatten
 
 var width = 32;
 var height = 16;

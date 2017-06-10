@@ -303,6 +303,8 @@
       </scripts>
       <scripts name="Enemy">
         <script>scripts\scr_draw_death_enemy.gml</script>
+        <script>scripts\scr_initialise_enemy_main.gml</script>
+        <script>scripts\scr_death_enemy.gml</script>
       </scripts>
       <scripts name="depth">
         <script>scripts\scr_set_depth.gml</script>
@@ -591,6 +593,7 @@
     <objects name="effect">
       <object>objects\obj_poison</object>
       <object>objects\obj_slow_speed</object>
+      <object>objects\obj_effect</object>
     </objects>
     <objects name="Progress">
       <object>objects\obj_progress</object>

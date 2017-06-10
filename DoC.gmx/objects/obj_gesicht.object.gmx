@@ -26,64 +26,18 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-hp = 30;
-max_hp = hp; 
-
-dealt_damage = 0;
-old_dealt_damage = 0;
-damage_count = 0;
-
-//Depth
-scr_set_depth();
+scr_initialise_enemy_main(25, 20, 20, 2, spr_gegner_dead, 128, 15);
 
 //Weg erzeugen
 path = path_add();
 if(!instance_exists(obj_grid)) grid = instance_create(0, 0, obj_grid);
 
-//Schaden
-damage = 25;
-countdown = 20;
-time = 0;
-
-//Geschwindigkeit
-move = 0;
-acc = 0.05;
-max_speed = 2;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
     <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Zerstörung bei 0 Hp
-if(hp &lt;= 0)
-{
-    instance_destroy();
-    scr_draw_death_enemy(x, y, spr_gegner_dead);
-}
-
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
