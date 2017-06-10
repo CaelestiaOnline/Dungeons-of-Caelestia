@@ -168,8 +168,10 @@ menupos = 0;
           <argument>
             <kind>1</kind>
             <string>///Inventory-Key
+if(admin.playing) {
 if(admin.inventory_key_pressed) {
     scr_invfade(1 - show_inv, "inv");
+}
 }
 
 if(admin.in_game == false) {
@@ -232,8 +234,6 @@ for(i = 0; i &lt; inv_prim.max_item_slots; i++) {
         inv_prim.item_object[i] = item[inv_prim.inv[i], 2];
     } else inv_prim.item_object[i] = 0;
 }
-
-//Objekte erzeugen
 
 //Objekte erzeugen
 for(i = 0; i &lt; inv_prim.max_item_slots; i++) {

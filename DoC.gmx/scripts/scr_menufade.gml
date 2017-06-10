@@ -6,6 +6,8 @@
 if(instance_exists(obj_fade)) exit;
 if(!admin.in_game) exit;
 
+player_stats.player_freeze = argument0;
+
 var circlefade;
 circlefade = instance_create(0, 0, obj_menufade);
 circlefade.status = argument0;

@@ -284,6 +284,7 @@
       <scripts name="Items">
         <scripts name="prim">
           <scripts name="Nahkampf">
+            <script>scripts\scr_melee_attack_old.gml</script>
             <script>scripts\scr_melee_attack.gml</script>
             <script>scripts\scr_create_hitbox.gml</script>
           </scripts>
@@ -298,6 +299,7 @@
         <scripts name="mag">
           <script>scripts\scr_bullet_attack_mag.gml</script>
         </scripts>
+        <script>scripts\scr_attack_cooldown.gml</script>
       </scripts>
       <scripts name="Enemy">
         <script>scripts\scr_draw_death_enemy.gml</script>
