@@ -7,6 +7,7 @@ in_game ist nun false
 */
 
 admin.in_game = false;
+admin.playing = false;
 hub.in_hub = false;
 
 obj_player.persistent = false;

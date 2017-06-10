@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -31,7 +31,6 @@ damage = player_stats.root_damage + item_stats[index, item_stats_prim.damage];
 damage_crit = player_stats.root_damage + item_stats[index, item_stats_prim.damage_crit];
 type = obj_pistol_bullet;
 bullet_speed = 8;
-
 </string>
           </argument>
         </arguments>
@@ -77,7 +76,6 @@ bullet_speed = 8;
           <argument>
             <kind>1</kind>
             <string>///Angriff
-
 scr_bullet_attack(damage, damage_crit, type, bullet_speed, player_stats.attack_speed);
 </string>
           </argument>

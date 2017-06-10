@@ -153,6 +153,14 @@ if(!admin.in_game) {
     admin.game_paused = false;
 }
 
+if(!admin.in_game) {
+    admin.playing = false;
+}
+
+if(!admin.playing) {
+    admin.game_paused = false;
+}
+
 if(!admin.game_paused) {
     inventory.show_inv = false;
 }
@@ -178,12 +186,14 @@ if(!admin.game_paused) {
           <argument>
             <kind>1</kind>
             <string>///Pause Key
+if(admin.playing) {
 if(admin.pause_menu_key_pressed) {
     if(inventory.show_inv) {
         scr_invfade(false, "inv");
     } else {
         scr_menufade(1 - admin.game_paused);
     }
+}
 }
 
 </string>
