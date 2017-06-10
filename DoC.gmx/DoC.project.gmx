@@ -322,6 +322,7 @@
       </scripts>
       <scripts name="effect">
         <script>scripts\scr_effect_poison.gml</script>
+        <script>scripts\scr_slow_speed.gml</script>
       </scripts>
       <scripts name="Interaktion">
         <script>scripts\scr_hub_interaction.gml</script>
@@ -589,6 +590,7 @@
     </objects>
     <objects name="effect">
       <object>objects\obj_poison</object>
+      <object>objects\obj_slow_speed</object>
     </objects>
     <objects name="Progress">
       <object>objects\obj_progress</object>

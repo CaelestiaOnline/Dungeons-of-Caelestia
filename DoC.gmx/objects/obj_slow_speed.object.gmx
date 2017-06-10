@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,37 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Giftschaden
-//Schaden über Zeit
-poison_damage = 0;
-poison_time = 0;
-poison_speed = 0;
-poison_object = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Giftschaden an Objekt
-if(poison_object == obj_player) scr_deal_player_damage(poison_damage);
-else scr_deal_damage(poison_object, poison_damage);
+            <string>///Verlangsamung/Beschleunigung der Bewegungsgeschwindigkeit
+multipl = 0;
+time = 0;
+object = 0;
+max_speed = 0;
 </string>
           </argument>
         </arguments>
@@ -78,15 +52,19 @@ else scr_deal_damage(poison_object, poison_damage);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Count
-if(!instance_exists(poison_object)) instance_destroy();
-if(poison_time &gt; 0) {
-    if(alarm_get(0) == -1) {
-        alarm_set(0, poison_speed);
-    }
-    poison_time--;
-} else instance_destroy();
-
+            <string>///Verlangsamung
+if(time&gt;0)
+{
+    if(object == obj_player) obj_player_stats.max_player_speed = max_speed * multipl;
+    else max_speed = object.max_speed = max_speed * multipl;
+    time--;
+}
+else
+{
+    if(object == obj_player) obj_player_stats.max_player_speed = max_speed;
+    else max_speed = object.max_speed = max_speed;
+    instance_destroy();  
+}
 </string>
           </argument>
         </arguments>
