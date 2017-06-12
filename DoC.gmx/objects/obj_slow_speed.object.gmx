@@ -56,13 +56,13 @@ max_speed = 0;
 if(time&gt;0)
 {
     if(object == obj_player) obj_player_stats.max_player_speed = max_speed * multipl;
-    else max_speed = object.max_speed = max_speed * multipl;
+    else object.max_speed = max_speed * multipl;
     time--;
 }
 else
 {
     if(object == obj_player) obj_player_stats.max_player_speed = max_speed;
-    else max_speed = object.max_speed = max_speed;
+    else object.max_speed = max_speed;
     instance_destroy();  
 }
 </string>
