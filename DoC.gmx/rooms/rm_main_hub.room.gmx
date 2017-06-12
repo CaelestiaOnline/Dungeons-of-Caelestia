@@ -66,7 +66,7 @@
     <instance objName="obj_trainingspuppe" x="1408" y="512" name="inst_764C35CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_terminal" x="736" y="224" name="inst_38B0DD77" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_terminal" x="1248" y="224" name="inst_B1057F72" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hub_terminal" x="992" y="448" name="inst_7B5CC0C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hub_terminal" x="640" y="768" name="inst_7B5CC0C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_terminal" x="1472" y="768" name="inst_63F99574" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="224" y="608" name="inst_B6F1BDCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="96" y="608" name="inst_ED7BA6EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -147,7 +147,9 @@
     <instance objName="obj_invisible_wall" x="1824" y="384" name="inst_646D9434" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1888" y="384" name="inst_053C8046" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="32" y="608" name="inst_3ED449C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_hub_terminal2" x="640" y="608" name="inst_C0B8C787" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_hub_terminal2" x="896" y="640" name="inst_C0B8C787" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Kaktus" x="1760" y="512" name="inst_73BCF4FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Kaktus" x="96" y="512" name="inst_CDE5C5D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

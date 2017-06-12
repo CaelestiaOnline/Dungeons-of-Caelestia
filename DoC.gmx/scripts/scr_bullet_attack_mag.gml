@@ -28,7 +28,8 @@ if(admin.magic_key_pressed || admin.magic_key) {
             obj_player.y,
             damage,
             type,
-            bullet_speed
+            bullet_speed,
+            false
             );
     }
     if(obj_player.attack_axis = -1) {
@@ -38,7 +39,8 @@ if(admin.magic_key_pressed || admin.magic_key) {
             obj_player.y,
             damage,
             type,
-            bullet_speed * -1
+            bullet_speed * -1,
+            false
             );
     }
     }

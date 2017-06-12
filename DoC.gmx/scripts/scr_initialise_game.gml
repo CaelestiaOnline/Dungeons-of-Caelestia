@@ -6,6 +6,9 @@ Initialisiert das Spiel bzw erzeugt alle benötigten Objekte
 //Erzeuge Admin-Objekt
 globalvar admin;
 admin = instance_create(0, 0, obj_admin);
+//Stats
+globalvar stats;
+stats = instance_create(0, 0, obj_stats);
 //Erzeuge player_stats
 globalvar player_stats;
 player_stats = instance_create(0, 0, obj_player_stats);

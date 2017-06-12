@@ -23,7 +23,7 @@ scr_set_depth();
 
 //Schaden
 damage = argument1;
-countdown = argument2;
+attack_speed = argument2;
 time = 0;
 
 //Geschwindigkeit

@@ -55,9 +55,10 @@ max_speed = 0;
           <argument>
             <kind>1</kind>
             <string>///Effekt läuft aus
-if(!instance_exists(object)) instance_destroy();
+if(instance_exists(object)) { 
 if(object == obj_player) player_stats.speed_mult_effect = 1;
 else object.speed_mult = 1;
+}
 instance_destroy();  
 </string>
           </argument>

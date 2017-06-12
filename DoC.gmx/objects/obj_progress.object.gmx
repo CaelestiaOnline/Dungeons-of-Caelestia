@@ -33,7 +33,7 @@ run_money = 0;
 hub_money = 0;
 
 //Levelsystem
-level_up_xp = 1000;
+level_up_xp = 1024;
 //XP
 xp = 0;
 

@@ -36,6 +36,8 @@ enum items {
     mana_orb = 6,
     master_sword = 7,
     machine_gun = 8,
+    mana_potion_small = 9,
+    heal_potion_small = 10,
 }
 
 
@@ -221,6 +223,28 @@ item_stats[items.machine_gun, item_stats_prim.ability_chance] = 0;
 item_stats[items.machine_gun, item_stats_prim.ability_strength] = 0;
 item_stats[items.machine_gun, item_stats_prim.speed_bonus] = 1;
 item_stats[items.machine_gun, item_stats_prim.misc] = "";
+
+//Mana Trank Klein (9)
+item[items.mana_potion_small, 0] = "Kleiner Mana-Trank";
+item[items.mana_potion_small, 1] = "Stellt einen Wert an Mana bei Gebrauch wieder her!";
+item[items.mana_potion_small, 2] = obj_mana_potion_small;
+item[items.mana_potion_small, 3] = "pickup";
+item[items.mana_potion_small, 4] = 8;
+
+item_stats[items.mana_potion_small, item_stats_pickup.ability] = "mana";
+item_stats[items.mana_potion_small, item_stats_pickup.ability_strength] = player_stats.max_mana/8;
+item_stats[items.mana_potion_small, item_stats_pickup.misc] = "";
+
+//Heilungs Trank Klein(10)
+item[items.heal_potion_small, 0] = "Kleiner Heilungs-Trank";
+item[items.heal_potion_small, 1] = "Stellt einen Wert an HP bei Gebrauch wieder her!";
+item[items.heal_potion_small, 2] = obj_heal_potion_small;
+item[items.heal_potion_small, 3] = "pickup";
+item[items.heal_potion_small, 4] = 8;
+
+item_stats[items.heal_potion_small, item_stats_pickup.ability] = "heal";
+item_stats[items.heal_potion_small, item_stats_pickup.ability_strength] = player_stats.max_hp/8;
+item_stats[items.heal_potion_small, item_stats_pickup.misc] = "";
 </string>
           </argument>
         </arguments>

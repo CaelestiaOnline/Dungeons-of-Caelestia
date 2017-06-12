@@ -36,6 +36,16 @@ radius = sprite_get_width(obj_player.sprite_index) + 16;
 xp_speed = 4;
 
 follow = false;
+
+//Schweben
+height = 0;
+max_height = 4;
+
+y_old = y - max_height/2;
+y_item = y_old;
+
+count = 0;
+max_count = 360;
 </string>
           </argument>
         </arguments>
@@ -74,6 +84,35 @@ if(follow) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schweben
+if(count == max_count) {
+    count -= 360;
+}
+height = sin(count) * max_height;
+y_item = y_old + height;
+count += 0.02;
+
+y_old = y - max_height/2;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_player">
       <action>
@@ -92,7 +131,8 @@ if(follow) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_xp_drop(xp);
+            <string>scr_xp_add_player(xp);
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -133,7 +173,7 @@ draw_ellipse(x1, y1, x2, y2, 0);
 draw_set_colour(c_white);
 draw_set_alpha(1);
 
-draw_self();
+draw_sprite(sprite_index, 0, x, y_item);
 
 </string>
           </argument>

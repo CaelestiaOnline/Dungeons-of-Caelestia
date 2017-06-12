@@ -91,6 +91,50 @@ image_speed = 8;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Rauch Alarm
+alarm_set(2, 1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm2</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="2" enumb="1">
       <action>
@@ -778,6 +822,34 @@ if(player_stats.hp &lt;= 0)
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Rauch
+if(alarm_get(2) == -1) {
+if(move_x != 0 || move_y =! 0) {
+    effect_create_below(ef_smoke, x, y, choose(0, 1,), c_gray);
+    alarm_set(2, irandom(15) + 1);
+}
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Schatten
 
 var width = 32;
@@ -798,6 +870,33 @@ draw_set_colour(c_white);
 draw_set_alpha(1);
 
 draw_self();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_alpha(1);
+draw_set_font(fnt_fps);
+draw_set_colour(c_blue);
+
+draw_text(x, y + 50, string(alarm_get(2)));
+
+draw_set_colour(c_white);
 </string>
           </argument>
         </arguments>

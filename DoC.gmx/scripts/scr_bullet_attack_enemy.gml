@@ -9,6 +9,7 @@ var damage = argument0;
 var object_create = argument1;
 var object_self = argument2;
 var bullet_speed = 8;
+
 //Angriff
 if(alarm_get(0) == -1) {
     if(obj_player.x > object_self.x) {
@@ -18,7 +19,8 @@ if(alarm_get(0) == -1) {
             object_self.y,
             damage,
             object_create,
-            bullet_speed
+            bullet_speed,
+            false
             );
     }
     if(obj_player.x < object_self.x) {
@@ -28,7 +30,8 @@ if(alarm_get(0) == -1) {
             object_self.y,
             damage,
             object_create,
-            bullet_speed * -1
+            bullet_speed * -1,
+            false
             );
     }
     alarm_set(0, attack_speed);

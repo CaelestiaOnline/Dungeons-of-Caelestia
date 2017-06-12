@@ -9,8 +9,12 @@ if(!admin.playing) exit;
 var damage_normal = argument0;
 var damage_crit = argument1;
 var chance_crit = player_stats.chance_crit;
+var is_crit = false;
+var damage = 0;
 
-var damage = scr_crit_attack(damage_normal, damage_crit, chance_crit);
+var is_crit = scr_crit_attack(chance_crit);
+if(is_crit) damage = damage_crit;
+else damage = damage_normal; 
 
 ///Angriff
 
@@ -21,7 +25,8 @@ if(admin.prim_attack_key_pressed || admin.prim_attack_key) {
         scr_create_hitbox(
             obj_player.x + obj_player.spr_width/2 + sprite_get_width(spr_hitbox)/2,
             obj_player.y,
-            damage
+            damage,
+            is_crit
             );
         //Explosion rechts
         instance_create(
@@ -35,7 +40,8 @@ if(admin.prim_attack_key_pressed || admin.prim_attack_key) {
         scr_create_hitbox(
             obj_player.x - obj_player.spr_width/2 - sprite_get_width(spr_hitbox)/2,
             obj_player.y,
-            damage
+            damage,
+            is_crit
             );
         //Explosion links
         instance_create(

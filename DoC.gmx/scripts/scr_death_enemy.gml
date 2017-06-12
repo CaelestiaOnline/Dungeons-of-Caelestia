@@ -14,5 +14,6 @@ scr_draw_death_enemy(x, y, sprite_death);
 //Loot
 scr_xp_drop(x, y, drop_xp);
 scr_money_drop(x, y, drop_money);
+scr_heal_orb_drop(x, y);
 
 
