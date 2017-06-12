@@ -24,6 +24,8 @@ scr_set_depth();
 //Schaden
 damage = argument1;
 attack_speed = argument2;
+attack_speed_old = attack_speed;
+attack_speed_mult = 1;
 time = 0;
 
 //Geschwindigkeit
