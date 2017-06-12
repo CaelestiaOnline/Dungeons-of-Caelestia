@@ -16,7 +16,7 @@ attackspeed.time = time*room_speed;
 attackspeed.object = object;
 
 //Maximale Gesw. des Objekts
-if(object == obj_player) var max_speed = obj_player_stats.attack_speed;
+if(object == obj_player) var max_speed = player_stats.attack_speed;
 else var max_speed = object.attack_speed;
 
 attackspeed.max_speed = max_speed;
