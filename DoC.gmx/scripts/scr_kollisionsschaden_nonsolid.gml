@@ -24,7 +24,7 @@ if(place_meeting(object_self.x, object_self.y, object_other))
 object_self.time++;
 
 //Zeit zurücksetzen
-if(object_self.time > object_self.countdown)
+if(object_self.time > object_self.attack_speed)
 {
     object_self.time = 0;
 }

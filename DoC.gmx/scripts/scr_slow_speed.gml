@@ -1,7 +1,7 @@
 /*
 scr_slow/speed(
 Verlangsamungs- (>0; <1) / Beschleunigungsmultiplikator (>1);
-Dauer in sek;
+Dauer in steps;
 Objekt, das beeinflusst wird;
 )
 */
@@ -12,11 +12,8 @@ var object = argument2;
 var slow = instance_create (0, 0, obj_slow_speed);
 
 slow.multipl = multipl;
-slow.time = time*room_speed;
+slow.alarm[0] = time;
 slow.object = object;
 
-//Maximale Gesw. des Objekts
-if(object == obj_player) var max_speed = obj_player_stats.max_player_speed;
-else var max_speed = object.max_speed;
-
-slow.max_speed = max_speed;
+if(object == obj_player) player_stats.speed_mult_effect = multipl;
+else object.speed_mult = multipl;

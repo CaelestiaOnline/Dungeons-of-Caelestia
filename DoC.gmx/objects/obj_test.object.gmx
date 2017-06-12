@@ -37,6 +37,8 @@ scr_inventory_add_item(inventory.inv_mag, items.mana_orb, 1);
 
 scr_inventory_add_item(inventory.inv_storage, items.swift_orb, 1);
 
+scr_inventory_add_item(inventory.inv_storage, items.heal_potion_small, 8);
+scr_inventory_add_item(inventory.inv_storage, items.mana_potion_small, 8);
 
 </string>
           </argument>

@@ -26,29 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-hp = 30;
-max_hp = hp; 
-
-dealt_damage = 0;
-old_dealt_damage = 0;
-damage_count = 0;
-
-//Depth
-scr_set_depth();
+scr_initialise_enemy_main(25, 20, 20, 2, spr_gegner_dead, 128, 15);
 
 //Weg erzeugen
 path = path_add();
 if(!instance_exists(obj_grid)) grid = instance_create(0, 0, obj_grid);
-
-//Schaden
-damage = 25;
-attack_speed = 20;
-time = 0;
-
-//Geschwindigkeit
-move = 0;
-acc = 0.05;
-max_speed = 2;
 
 //Alarm
 alarm_set(0, attack_speed);
@@ -99,14 +81,6 @@ scr_kollisionsschaden_nonsolid(self, obj_player, damage);
           <argument>
             <kind>1</kind>
             <string>///Zerstörung bei 0 Hp
-if(hp &lt;= 0)
-{
-    instance_destroy();
-    scr_draw_death_enemy(x, y, spr_gegner_dead);
-}
-
-
-
 </string>
           </argument>
         </arguments>

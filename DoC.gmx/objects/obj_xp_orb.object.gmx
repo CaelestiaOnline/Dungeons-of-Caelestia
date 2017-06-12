@@ -33,7 +33,19 @@ scr_set_depth();
 
 radius = sprite_get_width(obj_player.sprite_index) + 16;
 
-xp_speed = 3;
+xp_speed = 4;
+
+follow = false;
+
+//Schweben
+height = 0;
+max_height = 4;
+
+y_old = y - max_height/2;
+y_item = y_old;
+
+count = 0;
+max_count = 360;
 </string>
           </argument>
         </arguments>
@@ -59,15 +71,110 @@ xp_speed = 3;
             <string>///Aufheben des Orbs
 var width = sprite_get_width(sprite_index);
 if(abs(obj_player.x - x) &lt; radius &amp;&amp; (abs(obj_player.y - y) &lt; radius)) {
+    follow = true;
+}
+
+if(follow) {
     if(x &lt; obj_player.x) x += xp_speed;
     else x -= xp_speed;
     if(y &lt; obj_player.y) y += xp_speed;
     else y -= xp_speed;
-    if(abs(obj_player.x - x) &lt; width &amp;&amp; (abs(obj_player.y - y) &lt; width)) {
-        scr_xp_add_player(xp);
-        instance_destroy();
-    }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schweben
+if(count == max_count) {
+    count -= 360;
+}
+height = sin(count) * max_height;
+y_item = y_old + height;
+count += 0.02;
+
+y_old = y - max_height/2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_xp_add_player(xp);
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schatten
+var width = 8;
+var height = 4;
+var y_offset = y + 8;
+
+
+var x1 = x - width;
+var x2 = x + width;
+
+var y1 = y_offset + height;
+var y2 = y_offset - height; 
+
+draw_set_colour(c_black);
+draw_set_alpha(0.6);
+draw_ellipse(x1, y1, x2, y2, 0);
+draw_set_colour(c_white);
+draw_set_alpha(1);
+
+draw_sprite(sprite_index, 0, x, y_item);
+
 </string>
           </argument>
         </arguments>

@@ -27,6 +27,16 @@
             <kind>1</kind>
             <string>///Variablen
 ground_item = -1;
+radius = 48;
+
+height = 0;
+max_height = 4;
+
+y_old = y - max_height/2;
+y_item = y_old;
+
+count = 0;
+max_count = 360;
 
 //Depth
 scr_set_depth();
@@ -54,12 +64,39 @@ scr_set_depth();
             <kind>1</kind>
             <string>///Aufheben des Items
 var pickup = admin.action_key_pressed;
-if(abs(obj_player.x - x) &lt; inventory.width &amp;&amp; (abs(obj_player.y - y) &lt; inventory.width)) {
+if(abs(obj_player.x - x) &lt; radius &amp;&amp; (abs(obj_player.y - y) &lt; radius)) {
     if(pickup) {
         var success = scr_inventory_add_item(inventory.inv_storage, ground_item, 1);
         if(success) instance_destroy();
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schweben
+if(count == max_count) {
+    count -= 360;
+}
+height = sin(count) * max_height;
+y_item = y_old + height;
+count += 0.02;
 </string>
           </argument>
         </arguments>
@@ -83,12 +120,54 @@ if(abs(obj_player.x - x) &lt; inventory.width &amp;&amp; (abs(obj_player.y - y) 
           <argument>
             <kind>1</kind>
             <string>///Draw Sprite
+//Schatten
+var width = 14;
+var height = 6;
+var y_offset = y + 14;
+
+
+var x1 = x - width;
+var x2 = x + width;
+
+var y1 = y_offset + height;
+var y2 = y_offset - height; 
+
+draw_set_colour(c_black);
+draw_set_alpha(0.6);
+draw_ellipse(x1, y1, x2, y2, 0);
+draw_set_colour(c_white);
+draw_set_alpha(1);
+
+//Sprite
+var scale = 0.7;
 if(ground_item != -1) {
-    draw_sprite(spr_items, ground_item, x, y);
+    draw_sprite_ext(spr_items, ground_item, x, y_item, scale, scale, 0, c_white, 1);
 }
 else {
-    draw_sprite(spr_undefinded, 0, x, y);
+    draw_sprite_ext(spr_undefined, ground_item, x, y_item, scale, scale, 0, c_white, 1);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Test
+
 </string>
           </argument>
         </arguments>

@@ -91,6 +91,10 @@ scr_inventory_drop_item_place_count(items.machine_gun, 1200, 500, 1);</code>
     <instance objName="obj_wall_noc" x="1280" y="128" name="inst_0198861D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_noc" x="1280" y="64" name="inst_A847BC61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_noc" x="1280" y="0" name="inst_B5334AC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gesicht" x="992" y="736" name="inst_7C838F2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gesicht" x="1120" y="704" name="inst_0637AEFE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gesicht_bullet" x="1376" y="704" name="inst_1D343F15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gesicht_bullet" x="1440" y="608" name="inst_B7B82AC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

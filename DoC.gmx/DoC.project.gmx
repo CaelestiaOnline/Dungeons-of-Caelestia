@@ -133,9 +133,14 @@
     </sprites>
     <sprites name="Hub">
       <sprite>sprites\spr_hub_terminal</sprite>
+      <sprite>sprites\spr_hub_terminal2</sprite>
       <sprite>sprites\spr_hub_desk</sprite>
       <sprite>sprites\spr_hub_desk2</sprite>
-      <sprite>sprites\spr_hub_terminal2</sprite>
+      <sprite>sprites\spr_hub_portal_blue</sprite>
+      <sprite>sprites\spr_hub_portal_red</sprite>
+      <sprite>sprites\spr_hub_portal_green</sprite>
+      <sprite>sprites\spr_hub_portal_yellow</sprite>
+      <sprite>sprites\spr_hub_chair</sprite>
     </sprites>
     <sprites name="Progress">
       <sprites name="Money">
@@ -159,6 +164,7 @@
         <sprite>sprites\spr_xp_500</sprite>
         <sprite>sprites\spr_xp_1000</sprite>
       </sprites>
+      <sprite>sprites\spr_heal_orb</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -284,7 +290,6 @@
       <scripts name="Items">
         <scripts name="prim">
           <scripts name="Nahkampf">
-            <script>scripts\scr_melee_attack_old.gml</script>
             <script>scripts\scr_melee_attack.gml</script>
             <script>scripts\scr_create_hitbox.gml</script>
           </scripts>
@@ -303,6 +308,8 @@
       </scripts>
       <scripts name="Enemy">
         <script>scripts\scr_draw_death_enemy.gml</script>
+        <script>scripts\scr_initialise_enemy_main.gml</script>
+        <script>scripts\scr_death_enemy.gml</script>
       </scripts>
       <scripts name="depth">
         <script>scripts\scr_set_depth.gml</script>
@@ -344,6 +351,7 @@
           <script>scripts\scr_money_drop.gml</script>
           <script>scripts\scr_money_select_sprite.gml</script>
         </scripts>
+        <script>scripts\scr_heal_orb_drop.gml</script>
       </scripts>
       <scripts name="Allgemein">
         <script>scripts\scr_enter_game.gml</script>
@@ -388,6 +396,9 @@
       </fonts>
       <fonts name="Explanation">
         <font>fonts\fnt_explanation</font>
+      </fonts>
+      <fonts name="Indicator">
+        <font>fonts\fnt_indicator</font>
       </fonts>
     </fonts>
   </fonts>
@@ -487,7 +498,9 @@
       </objects>
       <objects name="pickup">
         <object>objects\obj_heal_potion</object>
+        <object>objects\obj_heal_potion_small</object>
         <object>objects\obj_mana_potion</object>
+        <object>objects\obj_mana_potion_small</object>
       </objects>
     </objects>
     <objects name="Einheiten">
@@ -503,6 +516,7 @@
         </objects>
         <objects name="Damage-Indikator">
           <object>objects\obj_damage_ind</object>
+          <object>objects\obj_text_ind</object>
           <object>objects\obj_heal_ind</object>
         </objects>
         <objects name="Tod">
@@ -592,6 +606,7 @@
     <objects name="effect">
       <object>objects\obj_poison</object>
       <object>objects\obj_slow_speed</object>
+      <object>objects\obj_effect</object>
       <object>objects\obj_attackspeed</object>
     </objects>
     <objects name="Progress">
@@ -602,6 +617,13 @@
       <objects name="Money">
         <object>objects\obj_coin</object>
       </objects>
+      <object>objects\obj_heal_orb</object>
+    </objects>
+    <objects name="Stats">
+      <object>objects\obj_stats</object>
+    </objects>
+    <objects name="Room">
+      <object>objects\obj_room_stats</object>
     </objects>
   </objects>
   <rooms name="rooms">

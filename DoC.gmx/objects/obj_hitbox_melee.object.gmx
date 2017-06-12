@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///damage
 damage = 0;
+is_crit = false;
 </string>
           </argument>
         </arguments>
@@ -54,7 +55,7 @@ var hit = instance_place(x, y, obj_gegner);
 if(hit != noone)
 {
     scr_deal_damage(hit, damage);
-    scr_effect_poison(1, 300, 60, hit);
+    scr_draw_crit(hit, is_crit);
 }
 
 var hit_object = instance_place(x, y, obj_hindernis_breakable);
