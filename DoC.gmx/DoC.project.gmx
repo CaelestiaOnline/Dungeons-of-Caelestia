@@ -330,6 +330,7 @@
       <scripts name="effect">
         <script>scripts\scr_effect_poison.gml</script>
         <script>scripts\scr_slow_speed.gml</script>
+        <script>scripts\scr_attackspeed.gml</script>
       </scripts>
       <scripts name="Interaktion">
         <script>scripts\scr_hub_interaction.gml</script>
@@ -606,6 +607,7 @@
       <object>objects\obj_poison</object>
       <object>objects\obj_slow_speed</object>
       <object>objects\obj_effect</object>
+      <object>objects\obj_attackspeed</object>
     </objects>
     <objects name="Progress">
       <object>objects\obj_progress</object>

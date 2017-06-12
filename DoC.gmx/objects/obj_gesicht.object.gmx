@@ -32,6 +32,32 @@ scr_initialise_enemy_main(25, 20, 20, 2, spr_gegner_dead, 128, 15);
 path = path_add();
 if(!instance_exists(obj_grid)) grid = instance_create(0, 0, obj_grid);
 
+//Alarm
+alarm_set(0, attack_speed);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schaden an Charakter
+scr_kollisionsschaden_nonsolid(self, obj_player, damage);
 </string>
           </argument>
         </arguments>
@@ -54,8 +80,7 @@ if(!instance_exists(obj_grid)) grid = instance_create(0, 0, obj_grid);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schaden an Charakter
-scr_kollisionsschaden_nonsolid(self, obj_player, damage);
+            <string>///Zerstörung bei 0 Hp
 </string>
           </argument>
         </arguments>
@@ -87,6 +112,28 @@ if(mp_grid_path(global.grid, path, x, y, obj_player.x, obj_player.y, 1))
     path_start(path, move, path_action_stop, false);
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Alarm setzen
+if(alarm_get(0) == -1) alarm_set(0, attack_speed);
 </string>
           </argument>
         </arguments>
