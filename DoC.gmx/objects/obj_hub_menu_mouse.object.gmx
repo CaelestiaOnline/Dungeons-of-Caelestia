@@ -88,8 +88,8 @@ else {
 if(is_visible) {
     draw_set_font(fnt_fps);
     draw_set_colour(c_white);
-    draw_text(150, 12, string(x) + "/" + string(display_get_gui_width()));
-    draw_text(150, 32, string(y) + "/" + string(display_get_gui_height()));
+    draw_text(300, 12, string(x) + "/" + string(display_get_gui_width()));
+    draw_text(300, 24, string(y) + "/" + string(display_get_gui_height()));
     draw_sprite(spr_mouse_icon, 0, x, y);
 }
 </string>

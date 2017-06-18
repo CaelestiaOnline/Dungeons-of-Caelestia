@@ -28,6 +28,7 @@
             <string>///Initialisiere
 if(instance_exists(obj_player)) {
     obj_player.persistent = true;
+    admin.playing = true;
     instance_destroy();
 }
 </string>

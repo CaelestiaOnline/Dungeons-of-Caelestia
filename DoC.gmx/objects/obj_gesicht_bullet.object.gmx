@@ -26,11 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-scr_initialise_enemy_main(25, 25, room_speed, 2, spr_gegner_dead, 128, 15);
+scr_initialise_enemy_main(25, 25, room_speed, 4, spr_gegner_dead, 128, 15);
 
 //Weg erzeugen
 path = path_add();
-if(!instance_exists(obj_grid)) grid = instance_create(0, 0, obj_grid);
 
 distance = 500;
 

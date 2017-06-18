@@ -28,6 +28,8 @@
             <string>///HP 
 hp = 7;
 scr_set_depth();
+
+draw_shadow = true;
 </string>
           </argument>
         </arguments>

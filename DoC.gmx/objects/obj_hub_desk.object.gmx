@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>///Depth
 scr_set_depth();
+
+draw_shadow = false;
 </string>
           </argument>
         </arguments>

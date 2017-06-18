@@ -33,7 +33,7 @@ scr_set_depth();
 
 radius = sprite_get_width(obj_player.sprite_index) + 16;
 
-xp_speed = 4;
+xp_speed = 8;
 
 follow = false;
 
@@ -75,10 +75,8 @@ if(abs(obj_player.x - x) &lt; radius &amp;&amp; (abs(obj_player.y - y) &lt; radi
 }
 
 if(follow) {
-    if(x &lt; obj_player.x) x += xp_speed;
-    else x -= xp_speed;
-    if(y &lt; obj_player.y) y += xp_speed;
-    else y -= xp_speed;
+    mp_potential_settings(180, 5, 5, 0);
+    mp_potential_step_object(obj_player.x, obj_player.y, xp_speed, noone);
 }
 </string>
           </argument>
@@ -156,22 +154,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Schatten
-var width = 8;
-var height = 4;
-var y_offset = y + 8;
-
-
-var x1 = x - width;
-var x2 = x + width;
-
-var y1 = y_offset + height;
-var y2 = y_offset - height; 
-
-draw_set_colour(c_black);
-draw_set_alpha(0.6);
-draw_ellipse(x1, y1, x2, y2, 0);
-draw_set_colour(c_white);
-draw_set_alpha(1);
+scr_draw_shadow(8, 4, 8);
 
 draw_sprite(sprite_index, 0, x, y_item);
 

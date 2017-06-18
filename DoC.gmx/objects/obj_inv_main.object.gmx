@@ -49,8 +49,6 @@
             <kind>1</kind>
             <string>///Zeichne Inventar
 if(admin.playing) {
-    //Zeichne Seitenleiste
-    scr_draw_inv_gui(self, gui_inv_x, gui_inv_y);
     //Eigentliches Inventar
     if(inventory.show_inv) {
         scr_draw_buttons(self, inv_x, inv_y);  

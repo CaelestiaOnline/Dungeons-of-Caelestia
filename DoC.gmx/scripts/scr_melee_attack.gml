@@ -28,11 +28,11 @@ if(admin.prim_attack_key_pressed || admin.prim_attack_key) {
             damage,
             is_crit
             );
-        //Explosion rechts
-        instance_create(
-        obj_player.x + obj_player.spr_width/2 + sprite_get_width(spr_explosion)/2,
-        obj_player.y,
-        obj_explosion
+        scr_create_hitmark(
+            obj_player.x + obj_player.spr_width/2 + sprite_get_width(spr_hitbox)/2,
+            obj_player.y,
+            is_crit,
+            1
         );
     }
     if(obj_player.attack_axis = -1) {
@@ -44,10 +44,11 @@ if(admin.prim_attack_key_pressed || admin.prim_attack_key) {
             is_crit
             );
         //Explosion links
-        instance_create(
-        obj_player.x - obj_player.spr_width/2 - sprite_get_width(spr_explosion)/2,
-        obj_player.y,
-        obj_explosion
+        scr_create_hitmark(
+            obj_player.x - obj_player.spr_width/2 - sprite_get_width(spr_hitbox)/2,
+            obj_player.y,
+            is_crit,
+            -1
         );
     }
     scr_attack_cooldown();

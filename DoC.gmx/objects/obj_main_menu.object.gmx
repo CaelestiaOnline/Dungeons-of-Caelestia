@@ -252,6 +252,7 @@ move += max(global.kb_down_pressed, global.kb_s_pressed, 0);
 
 if(move != 0) {
     menupos += move;
+    audio_play_sound(snd_click, 0, false);
     if(menupos &lt; 0) menupos = menulength - 1;
     if(menupos &gt; menulength - 1) menupos = 0;
     alarm_set(1, room_speed/4);
@@ -264,6 +265,7 @@ if(move != 0) {
     if(alarm_get(1) == -1) alarm_set(1, room_speed/4);
     if(alarm_get(1) == 0) {
     menupos += move;
+    audio_play_sound(snd_click, 0, false);
     if(menupos &lt; 0) menupos = menulength - 1;
     if(menupos &gt; menulength - 1) menupos = 0;
     }
@@ -271,7 +273,10 @@ if(move != 0) {
 
 var push;
 push = max(global.kb_enter_pressed, global.kb_space_pressed, 0);
-if(push == 1) scr_main_menu();
+if(push == 1) {
+    scr_main_menu();
+    audio_play_sound(snd_click, 0, false);
+}
 
 </string>
           </argument>

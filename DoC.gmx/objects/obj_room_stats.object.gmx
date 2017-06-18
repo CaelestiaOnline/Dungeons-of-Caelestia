@@ -34,6 +34,8 @@ Für i &gt; 1:
 room_stats[rm_xxxx, 2*i] = x-Koordinate eines Eingangs
 room_stats[rm_xxxx, (2*i) +1] = y-Koordinate eines Eingangs
 */ 
+
+globalvar room_stats;
 </string>
           </argument>
         </arguments>
@@ -59,6 +61,9 @@ room_stats[rm_xxxx, (2*i) +1] = y-Koordinate eines Eingangs
 //Initialise
 room_stats[rm_initialise, 0] = "!game";
 
+//Splash - Screen
+room_stats[rm_splash_screen, 0] = "!game";
+
 //Loading Screen
 room_stats[rm_loading_screen, 0] = "!game";
 
@@ -83,8 +88,8 @@ room_stats[rm_ptr_menu, 0] = "menu";
 //Main Hub
 room_stats[rm_main_hub, 0] = "game";
 room_stats[rm_main_hub, 1] = "hub";
-room_stats[rm_main_hub, 2] = 0;
-room_stats[rm_main_hub, 3] = 0;
+room_stats[rm_main_hub, 2] = 480;
+room_stats[rm_main_hub, 3] = 200;
 
 //Hub Main Menu
 room_stats[rm_hub_main_menu, 0] = "menu";
@@ -92,14 +97,14 @@ room_stats[rm_hub_main_menu, 0] = "menu";
 //Testroom1
 room_stats[rm_testroom1, 0] = "game";
 room_stats[rm_testroom1, 1] = "testroom";
-room_stats[rm_testroom1, 2] = 0;
-room_stats[rm_testroom1, 3] = 0;
+room_stats[rm_testroom1, 2] = 100;
+room_stats[rm_testroom1, 3] = 100;
 
 //Testroom2
 room_stats[rm_testroom2, 0] = "game";
 room_stats[rm_testroom2, 1] = "testroom";
-room_stats[rm_testroom2, 2] = 0;
-room_stats[rm_testroom2, 3] = 0;
+room_stats[rm_testroom2, 2] = 100;
+room_stats[rm_testroom2, 3] = 480;
 
 //Testroom3
 room_stats[rm_testroom3, 0] = "game";

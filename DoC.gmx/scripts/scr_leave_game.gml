@@ -9,8 +9,9 @@ in_game ist nun false
 admin.in_game = false;
 admin.playing = false;
 hub.in_hub = false;
+hub.in_menu = false;
 
-obj_player.persistent = false;
+if(instance_exists(obj_player)) obj_player.persistent = false;
 
 scr_sidefade(rm_main_menu, 60);
 

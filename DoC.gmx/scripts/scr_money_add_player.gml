@@ -8,3 +8,5 @@ scr_money_add_player(
 var money = argument0;
 
 progress.run_money += money;
+progress.dealt_run_money += money;
+hud.money_scale += money;
