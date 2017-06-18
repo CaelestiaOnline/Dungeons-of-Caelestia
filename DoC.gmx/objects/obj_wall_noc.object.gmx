@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>depth = -1;
+
+draw_shadow = false;
 </string>
           </argument>
         </arguments>

@@ -28,6 +28,9 @@
             <string>///Sitzungsübergreifende Stats
 //Run - Geld
 run_money = 0;
+dealt_run_money = 0;
+dealt_run_money_old = 0;
+run_money_count = 0;
 
 //Spielübergreifendes Geld
 hub_money = 0;
@@ -36,9 +39,38 @@ hub_money = 0;
 level_up_xp = 1024;
 //XP
 xp = 0;
+dealt_xp = 0;
+dealt_xp_old = 0;
+xp_count = 0;
 
 //Level
 level = 0; 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Überprüfe, ob sich xp/geld ändern
+dealt_run_money_old = dealt_run_money;
+
+dealt_xp_old = dealt_xp;
 </string>
           </argument>
         </arguments>
@@ -66,6 +98,51 @@ if(xp &gt;= level_up_xp) {
     level += 1;
     xp -= level_up_xp;
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///XP + Geld Indicator
+//Geld
+if(dealt_run_money &gt; 0) {
+    if(run_money_count &gt; 20) {
+        if(dealt_run_money_old == dealt_run_money) {
+            scr_draw_dealt_run_money(dealt_run_money);
+            dealt_run_money = 0;
+        }
+        run_money_count = 0;
+    }
+    run_money_count++;
+}
+
+//xp
+if(dealt_xp &gt; 0) {
+    if(xp_count &gt; 20) {
+        if(dealt_xp_old == dealt_xp) {
+            scr_draw_dealt_xp(dealt_xp);
+            dealt_xp = 0;
+        }
+        xp_count = 0;
+    }
+    xp_count++;
+}
+
 </string>
           </argument>
         </arguments>

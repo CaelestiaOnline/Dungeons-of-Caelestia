@@ -128,6 +128,28 @@ menupos = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm2</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="1">
       <action>
         <libid>1</libid>
@@ -375,8 +397,13 @@ if(move != 0) {
 var push;
 push = max(admin.pickup_menu_confirm_key_pressed, 0);
 if(push == 1) {
+    if(alarm_get(2) == -1) {
     if(inv_pickups.inv[menupos] != -1) {
-        instance_create(0, 0, item[inv_pickups.inv[menupos], 2]);
+        var pickup_item = inv_pickups.inv[menupos];
+        instance_create(0, 0, item[pickup_item, 2]);
+        scr_draw_dealt_pickup(hud.slots_x[menupos], hud.slots_y[menupos], pickup_item);
+        alarm_set(2, 20);
+    }
     }
 }
 </string>

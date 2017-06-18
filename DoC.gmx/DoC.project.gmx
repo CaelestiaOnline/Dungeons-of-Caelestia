@@ -46,6 +46,9 @@
     <sounds name="Music">
       <sound>sound\snd_music_elevator</sound>
     </sounds>
+    <sounds name="Menu">
+      <sound>sound\snd_click</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Menu">
@@ -54,6 +57,9 @@
         <sprite>sprites\spr_planet</sprite>
         <sprite>sprites\spr_cael_orb</sprite>
         <sprite>sprites\spr_asteroid</sprite>
+      </sprites>
+      <sprites name="Splash-Screen">
+        <sprite>sprites\spr_cael_orb_highres</sprite>
       </sprites>
     </sprites>
     <sprites name="Einheit">
@@ -83,6 +89,8 @@
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_mana_bullet</sprite>
       <sprite>sprites\spr_shuriken_bullet</sprite>
+      <sprite>sprites\spr_hit</sprite>
+      <sprite>sprites\spr_hit_crit</sprite>
     </sprites>
     <sprites name="Hindernis">
       <sprite>sprites\spr_stein</sprite>
@@ -212,6 +220,7 @@
     </scripts>
     <scripts name="Übergänge">
       <script>scripts\scr_sidefade.gml</script>
+      <script>scripts\scr_viewfade.gml</script>
       <script>scripts\scr_circlefade.gml</script>
       <script>scripts\scr_invfade.gml</script>
       <script>scripts\scr_menufade.gml</script>
@@ -292,6 +301,7 @@
           <scripts name="Nahkampf">
             <script>scripts\scr_melee_attack.gml</script>
             <script>scripts\scr_create_hitbox.gml</script>
+            <script>scripts\scr_create_hitmark.gml</script>
           </scripts>
           <scripts name="Fernkampf">
             <script>scripts\scr_bullet_attack.gml</script>
@@ -317,8 +327,11 @@
       </scripts>
       <scripts name="Indicator">
         <script>scripts\scr_draw_dealt_damage.gml</script>
+        <script>scripts\scr_draw_dealt_pickup.gml</script>
         <script>scripts\scr_draw_crit.gml</script>
         <script>scripts\scr_draw_dealt_heal.gml</script>
+        <script>scripts\scr_draw_dealt_run_money.gml</script>
+        <script>scripts\scr_draw_dealt_xp.gml</script>
       </scripts>
       <scripts name="Player">
         <script>scripts\scr_draw_death_player.gml</script>
@@ -338,8 +351,12 @@
         <script>scripts\scr_interaction.gml</script>
       </scripts>
       <scripts name="Hub">
-        <script>scripts\scr_enter_hub_menu.gml</script>
-        <script>scripts\scr_leave_hub_menu.gml</script>
+        <scripts name="Hub_menu">
+          <script>scripts\scr_leave_hub_menu.gml</script>
+          <script>scripts\scr_enter_hub_menu.gml</script>
+        </scripts>
+        <script>scripts\scr_enter_hub.gml</script>
+        <script>scripts\scr_leave_hub.gml</script>
       </scripts>
       <scripts name="Progress">
         <scripts name="XP">
@@ -357,7 +374,10 @@
       <scripts name="Allgemein">
         <script>scripts\scr_enter_game.gml</script>
         <script>scripts\scr_leave_game.gml</script>
-        <script>scripts\scr_enter_game_room.gml</script>
+        <script>scripts\scr_leave_current_room.gml</script>
+      </scripts>
+      <scripts name="Schatten">
+        <script>scripts\scr_draw_shadow.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -402,6 +422,10 @@
         <font>fonts\fnt_indicator</font>
       </fonts>
     </fonts>
+    <fonts name="Splash-Screen">
+      <font>fonts\fnt_splash</font>
+      <font>fonts\fnt_splash_big</font>
+    </fonts>
   </fonts>
   <objects name="objects">
     <object>objects\obj_test2</object>
@@ -409,12 +433,15 @@
       <object>objects\obj_admin</object>
     </objects>
     <objects name="Explosion">
-      <object>objects\obj_explosion</object>
+      <object>objects\obj_hit_mark</object>
     </objects>
     <objects name="Hub">
+      <object>objects\obj_hub_chair</object>
       <object>objects\obj_hub_terminal</object>
       <object>objects\obj_hub_desk</object>
-      <object>objects\obj_hub_terminal2</object>
+      <object>objects\obj_hub_portal_testroom1</object>
+      <object>objects\obj_hub_portal_testroom2</object>
+      <object>objects\obj_hub_portal_hub</object>
       <object>objects\obj_hub_menu_mouse</object>
       <object>objects\obj_hub</object>
       <objects name="Buttons">
@@ -422,9 +449,13 @@
       </objects>
       <object>objects\obj_player_persistent</object>
       <object>objects\obj_enter_game</object>
+      <objects name="Menu">
+        <object>objects\obj_hub_main_menu</object>
+      </objects>
     </objects>
     <objects name="HUD">
       <object>objects\obj_hud</object>
+      <object>objects\obj_pickup_ind</object>
     </objects>
     <objects name="Inventory">
       <object>objects\obj_hud_inv</object>
@@ -518,6 +549,8 @@
         <objects name="Damage-Indikator">
           <object>objects\obj_damage_ind</object>
           <object>objects\obj_text_ind</object>
+          <object>objects\obj_xp_ind</object>
+          <object>objects\obj_money_ind</object>
           <object>objects\obj_heal_ind</object>
         </objects>
         <objects name="Tod">
@@ -561,6 +594,7 @@
     </objects>
     <objects name="Übergänge">
       <object>objects\obj_sidefade</object>
+      <object>objects\obj_viewfade</object>
       <object>objects\obj_circlefade</object>
       <object>objects\obj_invfade</object>
       <object>objects\obj_menufade</object>
@@ -626,11 +660,18 @@
     </objects>
     <objects name="Room">
       <object>objects\obj_room_stats</object>
+      <object>objects\obj_room_placer</object>
+    </objects>
+    <objects name="Splash-Screen">
+      <object>objects\obj_splash_screen</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="initalise_room">
       <room>rooms\rm_initialise</room>
+    </rooms>
+    <rooms name="Splash-Screen">
+      <room>rooms\rm_splash_screen</room>
     </rooms>
     <rooms name="Menu">
       <room>rooms\rm_main_menu</room>

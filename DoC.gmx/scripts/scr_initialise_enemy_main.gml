@@ -30,7 +30,7 @@ time = 0;
 
 //Geschwindigkeit
 move = 0;
-acc = 0.05;
+acc = 0.1;
 max_speed = argument3;
 max_speed_old = max_speed;
 speed_mult = 1;

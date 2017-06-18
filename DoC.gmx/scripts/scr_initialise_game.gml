@@ -33,6 +33,9 @@ inventory.inv_items = instance_create(0, 0, obj_inv_items);
 inventory.inv_prim = instance_create(0, 0, obj_inv_prim);
 inventory.inv_sec = instance_create(0, 0, obj_inv_sec);
 inventory.inv_mag = instance_create(0, 0, obj_inv_mag);
+//Room_stats
+globalvar room_stats_object;
+room_stats_object = instance_create(0, 0, obj_room_stats);
 //HUD
 globalvar hud;
 hud = instance_create(0, 0, obj_hud);
@@ -48,6 +51,9 @@ progress = instance_create(0, 0, obj_progress);
 //Hub object
 globalvar hub;
 hub = instance_create(0, 0, obj_hub);
+//Grid
+globalvar grid;
+grid = instance_create(0, 0, obj_grid);
 
 //Test-Inventory
 instance_create(0, 0, obj_test);

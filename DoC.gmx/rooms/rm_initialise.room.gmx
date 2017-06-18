@@ -11,7 +11,8 @@
   <colour>0</colour>
   <showcolour>-1</showcolour>
   <code>scr_initialise_game();
-room_goto(rm_main_menu);</code>
+if(admin.display_splash_screen) room_goto(rm_splash_screen);
+else room_goto(rm_main_menu);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>

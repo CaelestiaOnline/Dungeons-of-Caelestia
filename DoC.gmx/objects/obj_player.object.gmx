@@ -823,12 +823,15 @@ if(player_stats.hp &lt;= 0)
           <argument>
             <kind>1</kind>
             <string>///Rauch
+var smoke_colour = choose(c_dkgray, c_gray);
+if(isSprinting) smoke_colour = c_black; 
 if(alarm_get(2) == -1) {
-if(move_x != 0 || move_y =! 0) {
-    effect_create_below(ef_smoke, x, y, choose(0, 1,), c_gray);
+if(move_x != 0 || move_y != 0) {
+    effect_create_below(ef_smoke, x, y + 20, choose(0, 1), smoke_colour);
     alarm_set(2, irandom(15) + 1);
 }
 }
+
 
 </string>
           </argument>
@@ -852,22 +855,7 @@ if(move_x != 0 || move_y =! 0) {
             <kind>1</kind>
             <string>///Schatten
 
-var width = 32;
-var height = 16;
-var y_offset = y + 26;
-
-
-var x1 = x - width;
-var x2 = x + width;
-
-var y1 = y_offset + height;
-var y2 = y_offset - height; 
-
-draw_set_colour(c_black);
-draw_set_alpha(0.6);
-draw_ellipse(x1, y1, x2, y2, 0);
-draw_set_colour(c_white);
-draw_set_alpha(1);
+scr_draw_shadow(32, 14, 28);
 
 draw_self();
 </string>

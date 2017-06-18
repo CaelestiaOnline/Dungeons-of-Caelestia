@@ -97,6 +97,9 @@ scr_trigger_expl(expl_text);
           <argument>
             <kind>1</kind>
             <string>///Drag &amp; Drop System
+
+if(!instance_exists(hub.hub_menu_mouse)) exit;
+
 var click = mouse_check_button_released(mb_left);
 var click_hold = mouse_check_button(mb_left);
 width = sprite_get_width(spr_inv_exit)/2;
