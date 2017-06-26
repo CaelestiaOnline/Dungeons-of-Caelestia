@@ -854,7 +854,6 @@ if(move_x != 0 || move_y != 0) {
           <argument>
             <kind>1</kind>
             <string>///Schatten
-
 scr_draw_shadow(32, 14, 28);
 
 draw_self();

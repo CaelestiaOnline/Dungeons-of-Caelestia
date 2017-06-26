@@ -401,7 +401,7 @@ if(push == 1) {
     if(inv_pickups.inv[menupos] != -1) {
         var pickup_item = inv_pickups.inv[menupos];
         instance_create(0, 0, item[pickup_item, 2]);
-        scr_draw_dealt_pickup(hud.slots_x[menupos], hud.slots_y[menupos], pickup_item);
+        scr_draw_dealt_pickup(hud_pickups.slots_x[menupos], hud_pickups.slots_y[menupos], pickup_item);
         alarm_set(2, 20);
     }
     }

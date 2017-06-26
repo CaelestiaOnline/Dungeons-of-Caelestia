@@ -64,7 +64,7 @@ money_bar_y = 0;
 money_bar_angle = 360/5 * 4;
 money_scale = 0;
 
-orbit_speed = 0.1;
+orbit_speed = 0.01;
 
 bar_buffer = 85;
 line_buffer = 110;
@@ -112,74 +112,6 @@ colour_money = make_colour_rgb(255, 193, 7);
 //Dealt-damage
 dealt_damage_scale = 0;
 old_hp = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Koordinaten Pickups
-//Hintergrund
-hud_pickups_bg_x1 = display_get_gui_width() - 150 - 50;
-hud_pickups_bg_x2 = display_get_gui_width() - 50;
-hud_pickups_bg_y1 = display_get_gui_height() - 150 - 50;
-hud_pickups_bg_y2 = display_get_gui_height() - 50;
-
-hud_pickups_bg_x = (hud_pickups_bg_x1 + hud_pickups_bg_x2)/2;
-hud_pickups_bg_y = (hud_pickups_bg_y1 + hud_pickups_bg_y2)/2;
-
-pickups_radius_bg = 128;
-
-//Bars
-slots_x[0] = 0;
-slots_x[1] = 0;
-slots_x[2] = 0;
-slots_x[3] = 0;
-
-slots_y[0] = 0;
-slots_y[1] = 0;
-slots_y[2] = 0;
-slots_y[3] = 0;
-
-slots_angle[0] = 0;
-slots_angle[1] = 90;
-slots_angle[2] = 180;
-slots_angle[3] = 270;
-
-pickups_orbit_speed = 6;
-
-real_orbit_speed = 0;
-
-pickups_bar_buffer = 72;
-
-pickups_radius = 32;
-
-number_buffer = 32;
-
-numbers_x[0] = 0;
-numbers_x[1] = 0;
-numbers_x[2] = 0;
-numbers_x[3] = 0;
-
-numbers_y[0] = 0;
-numbers_y[1] = 0;
-numbers_y[2] = 0;
-numbers_y[3] = 0;
-
 </string>
           </argument>
         </arguments>
@@ -262,70 +194,6 @@ for(var i = 0; i &lt; array_length_1d(line_angle); i++) {
     if(line_angle[i] &gt; 360) line_angle[i] -= 360;
     line_angle[i] += orbit_speed;  
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Drehung Pickups
-real_orbit_speed = 0;
-if(slots_angle[inventory.menupos] &gt; 0 &amp;&amp; slots_angle[inventory.menupos] &lt; 180) real_orbit_speed = -pickups_orbit_speed;
-else if(slots_angle[inventory.menupos] &gt;= 180 &amp;&amp; slots_angle[inventory.menupos] &lt; 360) real_orbit_speed = pickups_orbit_speed;
-else real_orbit_speed = 0;
-
-for(var i = 0; i &lt; array_length_1d(slots_angle); i++) {
-    slots_x[i] = lengthdir_x(pickups_bar_buffer, slots_angle[i] + 90) + hud_pickups_bg_x;
-    slots_y[i] = lengthdir_y(pickups_bar_buffer, slots_angle[i] + 90) + hud_pickups_bg_y;
-    numbers_x[i] = lengthdir_x(number_buffer, slots_angle[i] + 90) + hud_pickups_bg_x;
-    numbers_y[i] = lengthdir_y(number_buffer, slots_angle[i] + 90) + hud_pickups_bg_y;
-    if(sign(real_orbit_speed) == -1) {
-        if(slots_angle[i] &lt; 0) slots_angle[i] += 360;
-    } 
-    if(sign(real_orbit_speed) == 1) {
-        if(slots_angle[i] &gt; 360) slots_angle[i] -= 360;
-    }
-    //slots_angle[i] += orbit_speed;
-}
-
-if(slots_angle[inventory.menupos] != 0) {
-    for(var i = 0; i &lt; array_length_1d(slots_angle); i++) {
-        slots_angle[i] += real_orbit_speed;
-    }
-}
-
-
-/*
-var pos = inventory.menupos;
-
-slots_angle[pos] = 90;
-
-if((pos+1) &gt; 3) pos -= 3; 
-else pos++;
-slots_angle[pos] = 180;
-
-if((pos+1) &gt; 3) pos -= 3; 
-else pos++;
-slots_angle[pos] = 270;
-
-if((pos+1) &gt; 3) pos -= 3; 
-else pos++;
-slots_angle[pos] = 0;  
-*/
 </string>
           </argument>
         </arguments>
@@ -570,6 +438,7 @@ draw_sprite_ext(
 var health_scale;
 health_scale = player_stats.hp / player_stats.max_hp;
 if(health_scale &lt; 0) health_scale = 0;
+if(health_scale &lt; 0.25) health_scale += random_range(-0.04, 0.04);
 
 //Hintergrund
 draw_set_colour(colour_circle_bg);
@@ -852,118 +721,6 @@ draw_text(
     
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Hintergrund Pickups
-///Hintergrund
-draw_set_colour(inv_hud.colour_trans);
-draw_set_alpha(inv_hud.alpha_bbg);
-
-draw_circle(
-    hud_pickups_bg_x,
-    hud_pickups_bg_y,
-    pickups_radius_bg,
-    0
-    );
-    
-draw_set_colour(global.co_blue_gray_900);
-draw_set_alpha(inv_hud.alpha_bbg);
-
-draw_circle(
-    hud_pickups_bg_x,
-    hud_pickups_bg_y,
-    pickups_radius_bg - buffer,
-    0
-    );
-    
-draw_set_alpha(1);
-draw_set_colour(c_white);
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw Pickup Slots
-//Linien
-draw_set_alpha(0.8);
-draw_set_colour(colour_circle_bg);
-
-draw_line_width(slots_x[0], slots_y[0], slots_x[1], slots_y[1], line_width);
-draw_line_width(slots_x[1], slots_y[1], slots_x[2], slots_y[2], line_width);
-draw_line_width(slots_x[2], slots_y[2], slots_x[3], slots_y[3], line_width);
-draw_line_width(slots_x[0], slots_y[0], slots_x[3], slots_y[3], line_width);
-
-//Kreis
-draw_circle(hud_pickups_bg_x, hud_pickups_bg_y, 20, 0);
-
-for(var i = 0; i &lt; array_length_1d(slots_angle); i++) {
-//Hintergrund
-draw_set_colour(colour_circle_bg);
-draw_set_alpha(inv_hud.alpha_bbg);
-draw_circle(slots_x[i], slots_y[i], pickups_radius, 0);
-draw_set_alpha(1);
-
-if(i == inventory.menupos) {
-    draw_set_alpha(0.8);
-    draw_set_colour(c_white);
-    draw_circle(slots_x[i], slots_y[i], pickups_radius - buffer, 0);
-}
-draw_set_alpha(1);
-if(inventory.inv_pickups.inv[i] != -1) {
-    draw_sprite(spr_items, inventory.inv_pickups.inv[i], slots_x[i], slots_y[i]);
-}
-scr_draw_count(inventory.inv_pickups.count[i], slots_x[i], slots_y[i]);
-
-draw_set_alpha(0.8);
-draw_set_colour(colour_circle_bg);
-draw_circle(numbers_x[i], numbers_y[i], 10, 0);
-
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-draw_set_alpha(1);
-draw_set_font(fnt_hud);
-draw_set_colour(c_white);
-draw_text(numbers_x[i], numbers_y[i], string(i+1));
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
-}
-
-
 
 </string>
           </argument>

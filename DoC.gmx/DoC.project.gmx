@@ -328,6 +328,7 @@
       <scripts name="Indicator">
         <script>scripts\scr_draw_dealt_damage.gml</script>
         <script>scripts\scr_draw_dealt_pickup.gml</script>
+        <script>scripts\scr_draw_picked_item.gml</script>
         <script>scripts\scr_draw_crit.gml</script>
         <script>scripts\scr_draw_dealt_heal.gml</script>
         <script>scripts\scr_draw_dealt_run_money.gml</script>
@@ -345,6 +346,13 @@
         <script>scripts\scr_slow_speed.gml</script>
         <script>scripts\scr_attack_speed.gml</script>
         <script>scripts\scr_attackspeed_old.gml</script>
+        <script>scripts\scr_effect_fire.gml</script>
+        <script>scripts\scr_effect_regeneration.gml</script>
+        <script>scripts\scr_effect_mana_regeneration.gml</script>
+        <script>scripts\scr_effect_absorption.gml</script>
+        <script>scripts\scr_effect_resistance.gml</script>
+        <script>scripts\scr_effect_strength.gml</script>
+        <script>scripts\scr_effect_stun.gml</script>
       </scripts>
       <scripts name="Interaktion">
         <script>scripts\scr_hub_interaction.gml</script>
@@ -456,6 +464,10 @@
     <objects name="HUD">
       <object>objects\obj_hud</object>
       <object>objects\obj_pickup_ind</object>
+      <object>objects\obj_hud_pickups</object>
+      <object>objects\obj_hud_storage</object>
+      <object>objects\obj_hud_items</object>
+      <object>objects\obj_hud_psm</object>
     </objects>
     <objects name="Inventory">
       <object>objects\obj_hud_inv</object>

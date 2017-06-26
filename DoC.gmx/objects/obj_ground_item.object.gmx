@@ -38,6 +38,8 @@ y_item = y_old;
 count = 0;
 max_count = 360;
 
+scale = 0.7;
+
 //Depth
 scr_set_depth();
 </string>
@@ -67,7 +69,10 @@ var pickup = admin.action_key_pressed;
 if(abs(obj_player.x - x) &lt; radius &amp;&amp; (abs(obj_player.y - y) &lt; radius)) {
     if(pickup) {
         var success = scr_inventory_add_item(inventory.inv_storage, ground_item, 1);
-        if(success) instance_destroy();
+        if(success) {
+        instance_destroy();
+        scr_draw_picked_item(x, y, ground_item);
+        }
     }
 }
 </string>
@@ -139,7 +144,6 @@ draw_set_colour(c_white);
 draw_set_alpha(1);
 
 //Sprite
-var scale = 0.7;
 if(ground_item != -1) {
     draw_sprite_ext(spr_items, ground_item, x, y_item, scale, scale, 0, c_white, 1);
 }

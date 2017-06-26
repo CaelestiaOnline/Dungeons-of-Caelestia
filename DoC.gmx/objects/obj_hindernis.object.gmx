@@ -48,7 +48,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(draw_shadow) {
+            <string>///Schatten
+if(draw_shadow) {
 scr_draw_shadow(
     sprite_get_width(sprite_index)/2 + 10,
     8,

@@ -793,7 +793,7 @@ inventory_key_pressed = global.kb_i_pressed;
             <kind>1</kind>
             <string>///Kontrolltasten
 //Escape-Taste
-if(room != rm_main_menu &amp;&amp; !in_game) {
+if(room != rm_main_menu &amp;&amp; room_stats[room, 0] == "menu") {
     if(global.kb_esc_pressed &amp;&amp; !instance_exists(obj_fade)) scr_sidefade(rm_main_menu, 40);
 }
 
