@@ -200,15 +200,6 @@ if(dealt_damage &gt; 0) {
             <kind>1</kind>
             <string>///HP
 
-var shadow_width = sprite_get_width(sprite_index) * 0.375;
-shadow_width = clamp(shadow_width, 24, 1000);
-
-scr_draw_shadow(
-    shadow_width,
-    8,
-    sprite_get_height(sprite_index)/2
-    );
-
 draw_self();
 
 var health_scale;
@@ -226,6 +217,37 @@ draw_sprite_ext(
     1);
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schatten
+var shadow_width = sprite_get_width(sprite_index) * 0.375;
+shadow_width = clamp(shadow_width, 24, 1000);
+
+scr_draw_shadow(
+    shadow_width,
+    8,
+    sprite_get_height(sprite_index)/2
+    );
+    
+draw_self();
 </string>
           </argument>
         </arguments>

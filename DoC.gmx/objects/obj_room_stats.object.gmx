@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///ERKLÄRUNG
 /*
-room_stats[rm_xxxx, 0] = Typ (game, menu, !game)
+room_stats[rm_xxxx, 0] = Typ (game, menu, !game, hub_menu)
 room_stats[rm_xxxx, 1] = Typ des Game-Rooms (shop, boss, miniboss, default, extra, hub, testroom)
 
 Für i &gt; 1:
@@ -92,7 +92,7 @@ room_stats[rm_main_hub, 2] = 480;
 room_stats[rm_main_hub, 3] = 200;
 
 //Hub Main Menu
-room_stats[rm_hub_main_menu, 0] = "menu";
+room_stats[rm_hub_main_menu, 0] = "hub_menu";
 
 //Testroom1
 room_stats[rm_testroom1, 0] = "game";

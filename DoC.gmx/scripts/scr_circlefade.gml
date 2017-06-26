@@ -4,6 +4,8 @@ Geschwindigkeit, mit der sich die Überblendung ausbreitet
 );
 */
 
+if(instance_exists(obj_fade)) exit;
+
 var circlefade;
 circlefade = instance_create(0, 0, obj_circlefade);
 circlefade.pre_x2 = choose(0, window_get_width());

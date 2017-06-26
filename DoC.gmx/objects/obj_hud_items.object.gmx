@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,83 +25,58 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
-//Sprite
-sprite = 0;
+            <string>///Koordinaten
+//Hintergrund
+hud_bg_x1 = 700;
+hud_bg_x2 = 400;
+hud_bg_y1 = display_get_gui_height() - 0;
+hud_bg_y2 = display_get_gui_height() + 10;
 
-//Alarm
-time = room_speed*3;
-alarm_set(0, time);
+hud_circle_bg_x = (hud_bg_x1 + hud_bg_x2)/2;
+hud_circle_bg_y = (hud_bg_y1 + hud_bg_y2)/2;
 
-//Depth
-scr_set_depth();
+steps = 3;
+radius = 170;
+slots_radius = 90;
 
-alpha = 1;
+slots_bg_radius = 32;
 
-alpha_bg = 0;
-view_object[0] = self;
-obj_player.visible = false;
-player_stats.player_freeze = true;
-admin.playing = false;
+buffer = 6;
 
-effect_create_below(ef_explosion, x, y, 2, c_red);
+y_buffer = 42;
 
-//Erhöhe Stats
-stats.death_count += 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_enter_hub();
-view_object[0] = obj_player;
-obj_player.visible = true;
-player_stats.player_freeze = false;
-admin.playing = true;
-scr_reset_stats();
-instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>obj_player.x = 0;
-obj_player.y = 0;
+line_width = 8;
 
+//Slots
+slots_x[0] = 0;
+slots_x[1] = 0;
+slots_x[2] = 0;
+
+slots_y[0] = 0;
+slots_y[1] = 0;
+slots_y[2] = 0;
+
+//Ecken
+point_radius[0] = radius;
+point_radius[1] = radius * 1.1;
+point_radius[2] = radius;
+
+
+point_angle[0] = 180*3/steps;
+point_angle[1] = 180*1.5/steps;
+point_angle[2] = 180*0/steps;
+
+point_x[0] = 0;
+point_x[1] = 0;
+point_x[2] = 0;
+
+point_y[0] = 0;
+point_y[1] = 0;
+point_y[2] = 0;
+
+//Farben
+colour_circle_bg = global.co_blue_gray_800; 
+colour_font = c_white;
 
 
 </string>
@@ -126,26 +101,12 @@ obj_player.y = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Death-Message
-draw_set_colour(c_black);
-draw_set_alpha(alpha_bg);
-draw_rectangle(0, 0, window_get_width(), window_get_height(), 0);
-
-draw_set_alpha(1);
-var colour_font = c_red;
-draw_set_font(fnt_death_message);
-draw_set_halign(fa_center);
-
-draw_text_colour(window_get_width()/2, window_get_height()/2 - 200, "YOU DIED", colour_font, colour_font, colour_font, colour_font, alpha);
-
-draw_set_halign(fa_left);
-draw_set_colour(c_white);
+            <string>///exit
+if(!admin.playing) exit;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -162,15 +123,131 @@ draw_set_colour(c_white);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///zeichne damage
-alpha = alarm_get(0) / time;
+            <string>///Hintergrund
+var hud_bg_y = hud_circle_bg_y - buffer;
 
-alpha_bg =  1 - (alarm_get(0) / time);
+for(var i = 0; i &lt; steps; i += 1) {
+    point_x[i] = hud_circle_bg_x + lengthdir_x(point_radius[i], point_angle[i]);
+    point_y[i] = hud_bg_y + lengthdir_y(point_radius[i], point_angle[i]);
+    
+    point_x_bg[i] = hud_circle_bg_x + lengthdir_x(point_radius[i] + buffer, point_angle[i]);
+    point_y_bg[i] = hud_bg_y + lengthdir_y(point_radius[i] + buffer, point_angle[i]);
+}
 
-scr_draw_shadow(24, 12, 16);
+//Hintergrund 2
+draw_set_colour(inv_hud.colour_trans);
+draw_set_alpha(inv_hud.alpha_bbg);
 
-draw_sprite_ext(sprite, 0, x, y, 1, 1, 0, c_white, alpha);
+draw_primitive_begin(pr_trianglefan);
+draw_vertex(hud_circle_bg_x, hud_bg_y);
+for(i = 0; i &lt; steps; i += 1) {
+    draw_vertex(point_x_bg[i], point_y_bg[i]);
+}
+draw_primitive_end();
 
+
+//Hintergrund
+draw_set_colour(global.co_blue_gray_900);
+draw_set_alpha(inv_hud.alpha_bbg);
+
+draw_primitive_begin(pr_trianglefan);
+draw_vertex(hud_circle_bg_x, hud_circle_bg_y);
+for(i = 0; i &lt; steps; i += 1) {
+    draw_vertex(point_x[i], point_y[i]);
+}
+draw_primitive_end();
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Linien
+//Linien
+draw_set_alpha(0.8);
+draw_set_colour(colour_circle_bg);
+
+draw_line_width(slots_x[0], slots_y[0], slots_x[1], slots_y[1], line_width);
+draw_line_width(slots_x[1], slots_y[1], slots_x[2], slots_y[2], line_width);
+draw_line_width(slots_x[0], slots_y[0], slots_x[2], slots_y[2], line_width);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Slots
+for (var i = 0; i &lt; array_length_1d(slots_x); i++) {
+    slots_x[i] = hud_circle_bg_x + lengthdir_x(slots_radius, point_angle[i]);
+    slots_y[i] = hud_circle_bg_y - y_buffer + lengthdir_y(slots_radius, point_angle[i]);
+};
+
+//Hintergrund
+for (var i = 0; i &lt; array_length_1d(slots_x); i++) {
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(inv_hud.alpha_bbg);
+draw_circle(slots_x[i], slots_y[i], slots_bg_radius, 0);
+draw_set_alpha(1);
+if(inventory.inv_items.inv[i] != -1) {
+    draw_sprite(spr_items, inventory.inv_items.inv[i], slots_x[i], slots_y[i]);
+}
+scr_draw_count(inventory.inv_items.count[i], slots_x[i], slots_y[i]);
+
+var width = sprite_get_width(spr_inv_border)/2;
+
+draw_set_alpha(0.8);
+draw_set_colour(colour_circle_bg);
+draw_circle(
+    slots_x[i] + width,
+    slots_y[i] + width,
+    10,
+    0
+    );
+draw_set_alpha(1);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_colour(c_white);
+draw_set_font(fnt_hud);
+draw_text(
+    slots_x[i] + width,
+    slots_y[i] + width,
+    string(i+1)
+    );
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+}
 </string>
           </argument>
         </arguments>
