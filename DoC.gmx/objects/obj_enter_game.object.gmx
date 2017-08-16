@@ -33,10 +33,11 @@ if(room == rm_main_hub) {
     if(!instance_exists(obj_player)) {
         instance_create(0, 0, obj_player);
     }
-    obj_player.x = room_stats[rm_main_hub, 2]
-    obj_player.y = room_stats[rm_main_hub, 3]
-    obj_player.persistent = true;
-    if(!admin.game_paused) player_stats.player_freeze = false;
+    obj_player.x = room_stats[rm_main_hub, 2];
+    obj_player.y = room_stats[rm_main_hub, 3];
+    scr_player_set_persistent(true);
+    if(!admin.game_paused) scr_keylock_ingamemenu(false);
+    scr_update_grid();
     instance_destroy();
 }
 </string>

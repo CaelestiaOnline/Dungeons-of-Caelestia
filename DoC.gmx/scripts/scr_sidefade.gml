@@ -12,3 +12,4 @@ sidefade = instance_create(0, 0, obj_sidefade);
 sidefade.goal = argument0;
 sidefade.xfactor = argument1;
 
+

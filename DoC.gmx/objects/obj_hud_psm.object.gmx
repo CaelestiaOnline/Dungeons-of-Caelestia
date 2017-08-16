@@ -237,7 +237,7 @@ draw_set_alpha(1);
 if(i == 0) {
     if(instance_exists(inventory.inv_sec.real_item_object[0])) {
         var countdown;
-        countdown = inventory.inv_sec.real_item_object[0].alarm[0] / inventory.inv_sec.real_item_object[0].attack_speed;
+        countdown = inventory.inv_sec.real_item_object[0].alarm[0] / item_stats[inventory.inv_sec.inv[0], item_stats_sec.cooldown];
         var countdown_alpha = countdown;
         countdown = clamp(countdown, 0, 1);
         

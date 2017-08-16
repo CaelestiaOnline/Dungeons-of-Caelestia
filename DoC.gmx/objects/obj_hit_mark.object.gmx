@@ -28,6 +28,9 @@
             <string>///Setze Alarm
 alarm_set(0, image_number - 1);
 image_speed = 1;
+
+//Goal Object
+goal_object = 0;
 </string>
           </argument>
         </arguments>
@@ -74,14 +77,16 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(image_xscale == 1) {
-    x = obj_player.x + sprite_get_width(obj_player.sprite_index)/2 + sprite_get_width(sprite_index)/2 + 20;
+            <string>if(instance_exists(goal_object)) {
+if(image_xscale == 1) {
+    x = goal_object.x + sprite_get_width(goal_object.sprite_index)/2 + sprite_get_width(sprite_index)/2 + 20;
 } 
 if(image_xscale == -1) {
-    x = obj_player.x - sprite_get_width(obj_player.sprite_index)/2 - sprite_get_width(sprite_index)/2 - 20;
+    x = goal_object.x - sprite_get_width(goal_object.sprite_index)/2 - sprite_get_width(sprite_index)/2 - 20;
 }
 
-y = obj_player.y;
+y = goal_object.y;
+} else instance_destroy();
 </string>
           </argument>
         </arguments>

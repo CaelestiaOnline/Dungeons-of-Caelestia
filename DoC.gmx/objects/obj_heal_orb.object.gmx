@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_ground_item_collision_box</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -31,11 +31,15 @@ heal = 0;
 //Depth
 scr_set_depth();
 
+//Schatten
+shadow_object = scr_init_shadow(self, 14, 6, 16);
+
 //Schweben
 height = 0;
-max_height = 4;
+max_height = 2;
+y_offset = 16;
 
-y_old = y - max_height/2;
+y_old = y - max_height/2 - y_offset;
 y_item = y_old;
 
 count = 0;
@@ -118,9 +122,7 @@ if(player_stats.hp != player_stats.max_hp) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schatten
-scr_draw_shadow(12, 8, 8);
-
+            <string>///Draw Self
 draw_sprite(sprite_index, 0, x, y_item);
 
 </string>

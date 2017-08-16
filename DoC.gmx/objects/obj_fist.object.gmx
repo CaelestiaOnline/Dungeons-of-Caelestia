@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
+index = -10;
 damage = player_stats.root_damage;
-damage_crit = player_stats.root_damage + int64(player_stats.root_damage/4);
+damage_crit = player_stats.root_damage + round(player_stats.root_damage/4);
 
 </string>
           </argument>
@@ -74,8 +75,7 @@ damage_crit = player_stats.root_damage + int64(player_stats.root_damage/4);
           <argument>
             <kind>1</kind>
             <string>///Angriff
-
-scr_melee_attack(damage, damage_crit);
+scr_prim_attack_melee(damage, damage_crit, scr_melee_attack);
 </string>
           </argument>
         </arguments>

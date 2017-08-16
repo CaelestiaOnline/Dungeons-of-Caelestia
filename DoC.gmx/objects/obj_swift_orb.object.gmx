@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>///Speed-Multiplier
 index = items.swift_orb;
-speed_mult = item_stats[index, item_stats_item.ability_strength];
+scr_init_ability(item_stats[index, item_stats_item.ability], item_stats[index, item_stats_item.ability_strength]);
+
 player_stats.speed_mult_item += speed_mult;
 </string>
           </argument>

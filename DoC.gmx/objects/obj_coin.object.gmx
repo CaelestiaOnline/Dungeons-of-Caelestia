@@ -31,11 +31,15 @@ money = 0;
 //Depth
 scr_set_depth();
 
+//Schatten
+shadow_object = scr_init_shadow(self, 8, 4, 12);
+
 //Schweben
 height = 0;
-max_height = 4;
+max_height = 2;
+y_offset = 12;
 
-y_old = y - max_height/2;
+y_old = y - max_height/2 - y_offset;
 y_item = y_old;
 
 count = 0;
@@ -116,9 +120,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schatten
-scr_draw_shadow(8, 4, 8);
-
+            <string>///Draw Self
 draw_sprite(sprite_index, 0, x, y_item);
 
 </string>

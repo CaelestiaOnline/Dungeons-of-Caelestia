@@ -86,11 +86,13 @@ else {
             <kind>1</kind>
             <string>///Draw Sprite
 if(is_visible) {
-    draw_set_font(fnt_fps);
+    draw_set_font(fnt_debug);
+    draw_set_alpha(0.8);
     draw_set_colour(c_white);
-    draw_text(300, 12, string(x) + "/" + string(display_get_gui_width()));
-    draw_text(300, 24, string(y) + "/" + string(display_get_gui_height()));
+    draw_text(x + 20, y - 20, string(x) + "/" + string(display_get_gui_width()));
+    draw_text(x + 20, y - 10, string(y) + "/" + string(display_get_gui_height()));
     draw_sprite(spr_mouse_icon, 0, x, y);
+    draw_set_alpha(1);
 }
 </string>
           </argument>

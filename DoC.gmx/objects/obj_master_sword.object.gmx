@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -28,7 +28,35 @@
             <string>///Stats
 index = items.master_sword;
 damage = item_stats[index, item_stats_prim.damage];
+damage_crit = item_stats[index, item_stats_prim.damage_crit];
 
+speed_mult = item_stats[index, item_stats_prim.speed_bonus];
+
+player_stats.speed_mult_item += speed_mult;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>player_stats.speed_mult_item -= speed_mult;
 </string>
           </argument>
         </arguments>
@@ -74,7 +102,7 @@ damage = item_stats[index, item_stats_prim.damage];
           <argument>
             <kind>1</kind>
             <string>///Angriff
-scr_melee_attack(damage, damage);
+scr_prim_attack_melee(damage, damage_crit, scr_melee_attack);
 </string>
           </argument>
         </arguments>

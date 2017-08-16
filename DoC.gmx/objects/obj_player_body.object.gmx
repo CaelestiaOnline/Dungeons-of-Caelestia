@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
+
+//Schatten
+shadow_object = scr_init_shadow(self, 32, 14, 28);
+
 //Sprite
 sprite = 0;
 
@@ -166,8 +170,6 @@ draw_set_colour(c_white);
 alpha = alarm_get(0) / time;
 
 alpha_bg =  1 - (alarm_get(0) / time);
-
-scr_draw_shadow(24, 12, 16);
 
 draw_sprite_ext(sprite, 0, x, y, 1, 1, 0, c_white, alpha);
 

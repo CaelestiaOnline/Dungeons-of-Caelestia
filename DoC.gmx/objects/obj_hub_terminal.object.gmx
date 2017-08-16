@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_hindernis</parentName>
+  <parentName>obj_hindernis_interaction</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Depth
-scr_set_depth();
+            <string>///Init
+scr_initialise_obstacle_main(-1, false, -1);
+scr_init_interaction();
 
-draw_shadow = false;
 </string>
           </argument>
         </arguments>
@@ -51,7 +51,12 @@ draw_shadow = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_hub_interaction(rm_hub_main_menu);
+            <string>scr_interaction("Hub Main Menu betreten?");
+
+if(confirmed) {
+    scr_enter_hub_menu(rm_hub_main_menu);
+    confirmed = -1;
+}
 </string>
           </argument>
         </arguments>

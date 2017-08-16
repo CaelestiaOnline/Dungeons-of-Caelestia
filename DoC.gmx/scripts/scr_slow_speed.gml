@@ -10,6 +10,7 @@ var time = argument1;
 var object = argument2;
 
 var slow = instance_create (0, 0, obj_slow_speed);
+object.effects[effects.slowness] = slow;
 
 slow.multipl = multipl;
 slow.alarm[0] = time;

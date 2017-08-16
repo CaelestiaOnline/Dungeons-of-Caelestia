@@ -18,6 +18,6 @@ var bullet;
 
 bullet = instance_create(bullet_x, bullet_y, type);
 bullet.damage = damage;
-if(dir != 0) bullet.hspeed = dir;
-bullet.image_xscale = sign(dir);
+bullet.hspeed = bullet.hspeed*dir;
+bullet.image_xscale = dir;
 bullet.is_crit = is_crit;

@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_shadow = true;
+            <string>///Stats
 </string>
           </argument>
         </arguments>
@@ -48,16 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schatten
-if(draw_shadow) {
-scr_draw_shadow(
-    sprite_get_width(sprite_index)/2 + 10,
-    8,
-    sprite_get_height(sprite_index)/2 - 5
-    );
-}
-
+            <string>///Draw self
 draw_self();
+
+if(admin.show_hitbox) scr_draw_hitbox();
 </string>
           </argument>
         </arguments>

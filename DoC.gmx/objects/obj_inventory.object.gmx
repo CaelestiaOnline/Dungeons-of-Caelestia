@@ -394,8 +394,14 @@ if(move != 0) {
     }
 }
 
+if(keyboard_check_pressed(ord("1"))) menupos = 0;
+if(keyboard_check_pressed(ord("2"))) menupos = 1;
+if(keyboard_check_pressed(ord("3"))) menupos = 2;
+if(keyboard_check_pressed(ord("4"))) menupos = 3;
+
 var push;
 push = max(admin.pickup_menu_confirm_key_pressed, 0);
+if(instance_exists(obj_box_confirm)) push = false;
 if(push == 1) {
     if(alarm_get(2) == -1) {
     if(inv_pickups.inv[menupos] != -1) {
