@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,337 +25,112 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Window
-//Caption
-window_set_caption("Dungeons of Caelestia");
-
-//Window 
-//X
-window_set_max_width(1920);
-window_set_min_width(1280);
-//Y
-window_set_max_height(640);
-window_set_min_height(360);
-
-/*
-1920 * 1080
-1600 * 900
-1360 * 765
-1280 * 720
-*/
-
-var window_height = 0;
-var window_width = 0;
-
-if(display_get_width() &lt; 1280) window_width = 640;
-if(display_get_height() &lt; 720) window_width = 360;
-
-if(display_get_width() &gt;= 1280) window_width = 1280;
-if(display_get_height() &gt;= 720) window_width = 720;
-
-if(display_get_width() &gt;= 1360) window_width = 1360;
-if(display_get_height() &gt;= 765) window_width = 765;
-
-if(display_get_width() &gt;= 1600) window_width = 1600;
-if(display_get_height() &gt;= 900) window_width = 900;
-
-if(display_get_width() &gt;= 1920) window_width = 1920;
-if(display_get_height() &gt;= 1080) window_width = 1080;
-
-var window_x = 0;
-var window_y = 0;
-
-window_set_rectangle(window_x, window_y, window_width, window_height);
-
-//GUI
-display_set_gui_size(1920, 1080);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Keyboard Variablen
-
-//Taste: W
-global.kb_w = 0;
-global.kb_w_pressed = 0;
-
-//Taste: A
-global.kb_a = 0;
-global.kb_a_pressed = 0;
-
-//Taste: S
-global.kb_s = 0;
-global.kb_s_pressed = 0;
-
-//Taste: D
-global.kb_d = 0;
-global.kb_d_pressed = 0;
-
-//Taste: Space
-global.kb_space = 0;
-global.kb_space_pressed = 0;
-
-//Taste: Left-Shift
-global.kb_lshift = 0;
-global.kb_lshift_prssed = 0;
-
-//Taste: Left-Ctrl
-global.kb_lctrl = 0;
-global.kb_lctrl_pressed = 0;
-
-//Taste: Enter
-global.kb_enter = 0;
-global.kb_enter_pressed = 0;
-
-//Taste: Tab
-global.kb_tab = 0;
-global.kb_tab_pressed = 0;
-
-//Taste: Esc
-global.kb_esc = 0;
-global.kb_esc_pressed = 0;
-
-//Taste: F
-global.kb_f = 0;
-global.kb_f_pressed = 0;
-
-//Taste: Q
-global.kb_q = 0;
-global.kb_q_pressed = 0;
-
-//Taste: I
-global.kb_i = 0;
-global.kb_i_pressed = 0;
-
-//Taste: E
-global.kb_e = 0;
-global.kb_e_pressed = 0;
-
-//Taste: J
-global.kb_j = 0;
-global.kb_j_pressed = 0;
-
-//Taste: L
-global.kb_l = 0;
-global.kb_l_pressed = 0;
-
-//Taste: K
-global.kb_k = 0;
-global.kb_k_pressed = 0;
-
-//Taste: up
-global.kb_up = 0;
-global.kb_up_pressed = 0;
-
-//Taste: down
-global.kb_down = 0;
-global.kb_down_pressed = 0;
-
-//Taste: left
-global.kb_left = 0;
-global.kb_left_pressed = 0;
-
-//Taste: right
-global.kb_right = 0;
-global.kb_right_pressed = 0;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Mouse-Variablen
-global.m_left = 0;
-global.m_left_pressed = 0;
-
-global.m_right = 0;
-global.m_right_pressed = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Tasten zuordnen
-///Tasten zuordnen
 //Move up
 up_key = 0;
 up_key_pressed = 0;
+up_key_char = ord("W");
+up_key_locked = false;
 
 //Move down
 down_key = 0;
 down_key_pressed = 0;
+down_key_char = ord("S");
+down_key_locked = false;
 
 //Move left
 left_key = 0;
 left_key_pressed = 0;
+left_key_char = ord("A");
+left_key_locked = false;
 
 //Move right
 right_key = 0;
 right_key_pressed = 0;
+right_key_char = ord("D");
+right_key_locked = false;
 
 //primary Attack
 prim_attack_key = 0;
 prim_attack_key_pressed = 0;
+prim_attack_key_char = vk_space;
+prim_attack_key_locked = false;
 
 //secondary Attack
 sec_attack_key = 0;
 sec_attack_key_pressed = 0;
+sec_attack_key_char = ord("F");
+sec_attack_key_locked = false;
 
 //magic
 magic_key = 0;
 magic_key_pressed = 0;
+magic_key_char = ord("Q");
+magic_key_locked = false;
 
 //Sprint
 sprint_key = 0;
 sprint_key_pressed = 0;
+sprint_key_char = vk_shift;
+sprint_key_locked = false;
+
+//Sprint
+crouch_key = 0;
+crouch_key_pressed = 0;
+crouch_key_char = vk_control;
+crouch_key_locked = false;
 
 //Interagieren
 action_key = 0;
 action_key_pressed = 0;
+action_key_char = ord("E");
+action_key_locked = false;
 
 //Inventar
 inventory_key = 0;
 inventory_key_pressed = 0;
+inventory_key_char = ord("I");
+inventory_key_locked = false;
+
+//Pickup-Leiste
+//Scroll left
+pickup_menu_left_key = 0;
+pickup_menu_left_key_pressed = 0;
+pickup_menu_left_key_char = ord("J");
+pickup_menu_left_key_locked = false;
+
+//Scroll right
+pickup_menu_right_key = 0;
+pickup_menu_right_key_pressed = 0;
+pickup_menu_right_key_char = ord("L");
+pickup_menu_right_key_locked = false;
+
+//Bestätigen
+pickup_menu_confirm_key = 0;
+pickup_menu_confirm_key_pressed = 0;
+pickup_menu_confirm_key_char = ord("K");
+pickup_menu_confirm_key_locked = false;
+
+//Mouse
+//Left-Click
+left_click = 0;
+left_click_pressed = 0;
+left_click_char = mb_left;
+left_click_locked = false;
+
+//Right-Click
+right_click = 0;
+right_click_pressed = 0;
+right_click_char = mb_right;
+right_click_locked = false;
+
+//Pause Menu
+pause_menu_key = 0;
+pause_menu_key_pressed = 0;
+pause_menu_key_char = vk_escape;
+pause_menu_key_locked = false;
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Randomize
-randomize();
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Loading_screen
-
-loading_screen_time = 0;
-loading_screen_goal = "";
-loading_screen_heading = "";
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///alarm0
-
-alarm_set(0, room_speed);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///FPS
-admin_fps = "60";
 </string>
           </argument>
         </arguments>
@@ -418,33 +193,12 @@ global.co_red_A700 = make_colour_rgb(213, 0, 0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Kreis-Precision
-draw_set_circle_precision(64);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///in-game + game_paused
+            <string>///in-game + game_paused + playing
 in_game = false;
 game_paused = false;
 playing = false;
 
+//Splash - Screen
 display_splash_screen = false;
 </string>
           </argument>
@@ -466,22 +220,23 @@ display_splash_screen = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///is_ghost
+            <string>///is_ghost + show_hitbox
+
 is_ghost = 0;
+
+show_hitbox = 0;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
@@ -490,7 +245,8 @@ is_ghost = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm0</string>
+            <string>///Test
+</string>
           </argument>
         </arguments>
       </action>
@@ -512,263 +268,181 @@ is_ghost = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialisiere Keyboard-Variablen
-
-//Taste: W
-global.kb_w = keyboard_check(ord("W"));
-global.kb_w_pressed = keyboard_check_pressed(ord("W"));
-
-//Taste: A
-global.kb_a = keyboard_check(ord("A"));
-global.kb_a_pressed = keyboard_check_pressed(ord("A"));
-
-//Taste: S
-global.kb_s = keyboard_check(ord("S"));
-global.kb_s_pressed = keyboard_check_pressed(ord("S"));
-
-//Taste: D
-global.kb_d = keyboard_check(ord("D"));
-global.kb_d_pressed = keyboard_check_pressed(ord("D"));
-
-//Taste: Space
-global.kb_space = keyboard_check(vk_space);
-global.kb_space_pressed = keyboard_check_pressed(vk_space);
-
-//Taste: Left-Shift
-global.kb_lshift = keyboard_check(vk_shift);
-global.kb_lshift_pressed = keyboard_check_pressed(vk_shift);
-
-//Taste: Left-Ctrl
-global.kb_lctrl = keyboard_check(vk_control);
-global.kb_lctrl_pressed = keyboard_check_pressed(vk_control);
-
-//Taste: Enter
-global.kb_enter = keyboard_check(vk_enter);
-global.kb_enter_pressed = keyboard_check_pressed(vk_enter);
-
-//Taste: Tab
-global.kb_tab = keyboard_check(vk_tab);
-global.kb_tab_pressed = keyboard_check_pressed(vk_tab);
-
-//Taste: Esc
-global.kb_esc = keyboard_check(vk_escape);
-global.kb_esc_pressed = keyboard_check_pressed(vk_escape);
-
-//Taste: F
-global.kb_f = keyboard_check(ord("F"));
-global.kb_f_pressed = keyboard_check_pressed(ord("F"));
-
-//Taste: Q
-global.kb_q = keyboard_check(ord("Q"));
-global.kb_q_pressed = keyboard_check_pressed(ord("Q"));
-
-//Taste: I
-global.kb_i = keyboard_check(ord("I"));
-global.kb_i_pressed = keyboard_check_pressed(ord("I"));
-
-//Taste: E
-global.kb_e = keyboard_check(ord("E"));
-global.kb_e_pressed = keyboard_check_pressed(ord("E"));
-
-//Taste: J
-global.kb_j = keyboard_check(ord("J"));
-global.kb_j_pressed = keyboard_check_pressed(ord("J"));
-
-//Taste: L
-global.kb_l = keyboard_check(ord("L"));
-global.kb_l_pressed = keyboard_check_pressed(ord("L"));
-
-//Taste: K
-global.kb_k = keyboard_check(ord("K"));
-global.kb_k_pressed = keyboard_check_pressed(ord("K"));
-
-//Taste: up
-global.kb_up = keyboard_check(vk_up);
-global.kb_up_pressed = keyboard_check_pressed(vk_up);
-//Taste: down
-global.kb_down = keyboard_check(vk_down);
-global.kb_down_pressed = keyboard_check_pressed(vk_down);
-
-//Taste: left
-global.kb_left = keyboard_check(vk_left);
-global.kb_left_pressed = keyboard_check_pressed(vk_left);
-
-//Taste: right
-global.kb_right = keyboard_check(vk_right);
-global.kb_right_pressed = keyboard_check_pressed(vk_right);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Initialisiere Mouse-Eingaben
-global.m_left = mouse_check_button(mb_left);
-global.m_left_pressed = mouse_check_button_pressed(mb_left);
-
-global.m_right = mouse_check_button(mb_right);
-global.m_right_pressed = mouse_check_button_pressed(mb_right);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Tasten zuordnen
-if(!player_stats.player_freeze) {
 //Move up
-up_key = global.kb_w;
-up_key_pressed = global.kb_w_pressed;
-
-//Move down
-down_key = global.kb_s;
-down_key_pressed = global.kb_s_pressed;
-
-//Move left
-left_key = global.kb_a;
-left_key_pressed = global.kb_a_pressed;
-
-//Move right
-right_key = global.kb_d;
-right_key_pressed = global.kb_d_pressed;
-
-//primary Attack
-prim_attack_key = global.kb_space;
-prim_attack_key_pressed = global.kb_space_pressed;
-
-//secondary Attack
-sec_attack_key = global.kb_f;
-sec_attack_key_pressed = global.kb_f_pressed;
-
-//magic
-magic_key = global.kb_q;
-magic_key_pressed = global.kb_q_pressed;
-
-//Sprint
-sprint_key = global.kb_lshift;
-sprint_key_pressed = global.kb_lshift_pressed;
-sprint_key_released = keyboard_check_released(vk_shift);
-
-//Crouch
-crouch_key = global.kb_lctrl;
-crouch_key_pressed = global.kb_lctrl_pressed;
-crouch_key_released = keyboard_check_released(vk_control);
-
-//Interagieren
-action_key = global.kb_e;
-action_key_pressed = global.kb_e_pressed;
-
-//Pickup-Leiste
-//Scroll left
-pickup_menu_left_key = global.kb_l;
-pickup_menu_left_key_pressed = global.kb_l_pressed;
-
-//Scroll right
-pickup_menu_right_key = global.kb_j;
-pickup_menu_right_key_pressed = global.kb_j_pressed;
-
-//Bestätigen
-pickup_menu_confirm_key = global.kb_k;
-pickup_menu_confirm_key_pressed = global.kb_k_pressed;
+if(!up_key_locked) {
+    up_key = keyboard_check(up_key_char);
+    up_key_pressed = keyboard_check_pressed(up_key_char);
 } else {
-//Move up
-up_key = 0;
-up_key_pressed = 0;
-
-//Move down
-down_key = 0;
-down_key_pressed = 0;
-
-//Move left
-left_key = 0;
-left_key_pressed = 0;
-
-//Move right
-right_key = 0;
-right_key_pressed = 0;
-//primary Attack
-prim_attack_key = 0;
-prim_attack_key_pressed = 0;
-
-//secondary Attack
-sec_attack_key = 0;
-sec_attack_key_pressed = 0;
-//magic
-magic_key = 0;
-magic_key_pressed = 0;
-
-//Sprint
-sprint_key = 0;
-sprint_key_pressed = 0;
-sprint_key_released = 0;
-
-//Crouch
-crouch_key = 0;
-crouch_key_pressed = 0;
-crouch_key_released = 0;
-
-//Interagieren
-action_key = 0;
-action_key_pressed = 0;
-
-//Pickup-Leiste
-//Scroll left
-pickup_menu_left_key = 0;
-pickup_menu_left_key_pressed = 0;
-
-//Scroll right
-pickup_menu_right_key = 0;
-pickup_menu_right_key_pressed = 0;
-
-//Bestätigen
-pickup_menu_confirm_key = 0;
-pickup_menu_confirm_key_pressed = 0;
+    keyboard_clear(up_key_char);
+    up_key = 0;
+    up_key_pressed = 0;
 }
 
+//Move down
+if(!down_key_locked) {
+    down_key = keyboard_check(down_key_char);
+    down_key_pressed = keyboard_check_pressed(down_key_char);
+} else {
+    keyboard_clear(down_key_char);
+    down_key = 0;
+    down_key_pressed = 0;
+}
+
+//Move left
+if(!left_key_locked) {
+    left_key = keyboard_check(left_key_char);
+    left_key_pressed = keyboard_check_pressed(left_key_char);
+} else {
+    keyboard_clear(left_key_char);
+    left_key = 0;
+    left_key_pressed = 0;
+}
+
+//Move right
+if(!right_key_locked) {
+    right_key = keyboard_check(right_key_char);
+    right_key_pressed = keyboard_check_pressed(right_key_char);
+} else {
+    keyboard_clear(right_key_char);
+    right_key = 0;
+    right_key_pressed = 0;
+}
+
+//primary Attack
+if(!prim_attack_key_locked) {
+    prim_attack_key = keyboard_check(prim_attack_key_char);
+    prim_attack_key_pressed = keyboard_check_pressed(prim_attack_key_char);
+} else {
+    keyboard_clear(prim_attack_key_char);
+    prim_attack_key = 0;
+    prim_attack_key_pressed = 0;
+}
+
+//secondary Attack
+if(!sec_attack_key_locked) {
+    sec_attack_key = keyboard_check(sec_attack_key_char);
+    sec_attack_key_pressed = keyboard_check_pressed(sec_attack_key_char);
+} else {
+    keyboard_clear(sec_attack_key_char);
+    sec_attack_key = 0;
+    sec_attack_key_pressed = 0;
+}
+
+//magic
+if(!magic_key_locked) {
+    magic_key = keyboard_check(magic_key_char);
+    magic_key_pressed = keyboard_check_pressed(magic_key_char);
+} else {
+    keyboard_clear(magic_key_char);
+    magic_key = 0;
+    magic_key_pressed = 0;
+}
+
+//Sprint
+if(!sprint_key_locked) {
+    sprint_key = keyboard_check(sprint_key_char);
+    sprint_key_pressed = keyboard_check_pressed(sprint_key_char);
+    sprint_key_released = keyboard_check_released(sprint_key_char);
+} else {
+    keyboard_clear(sprint_key_char);
+    sprint_key = 0;
+    sprint_key_pressed = 0;
+    sprint_key_released = 0;
+}
+
+//Crouch
+if(!crouch_key_locked) {
+    crouch_key = keyboard_check(crouch_key_char);
+    crouch_key_pressed = keyboard_check_pressed(crouch_key_char);
+    crouch_key_released = keyboard_check_released(crouch_key_char);
+} else {
+    keyboard_clear(crouch_key_char);
+    crouch_key = 0;
+    crouch_key_pressed = 0;
+    crouch_key_released = 0;
+}
+
+//Interagieren
+if(!action_key_locked) {
+    action_key = keyboard_check(action_key_char);
+    action_key_pressed = keyboard_check_pressed(action_key_char);
+} else {
+    keyboard_clear(action_key_char);
+    action_key = 0;
+    action_key_pressed = 0;
+}
+
+//Pickup-Leiste
+//Scroll left
+if(!pickup_menu_left_key_locked) {
+    pickup_menu_left_key = keyboard_check(pickup_menu_left_key_char);
+    pickup_menu_left_key_pressed = keyboard_check_pressed(pickup_menu_left_key_char);
+} else {
+    keyboard_clear(pickup_menu_left_key_char);
+    pickup_menu_left_key = 0;
+    pickup_menu_left_key_pressed = 0;
+}
+
+//Scroll right
+if(!pickup_menu_right_key_locked) {
+    pickup_menu_right_key = keyboard_check(pickup_menu_right_key_char);
+    pickup_menu_right_key_pressed = keyboard_check_pressed(pickup_menu_right_key_char);
+} else {
+    keyboard_clear(pickup_menu_right_key_char);
+    pickup_menu_right_key = 0;
+    pickup_menu_right_key_pressed = 0;
+}
+
+//Bestätigen
+if(!pickup_menu_confirm_key_locked) {
+    pickup_menu_confirm_key = keyboard_check(pickup_menu_confirm_key_char);
+    pickup_menu_confirm_key_pressed = keyboard_check_pressed(pickup_menu_confirm_key_char);
+} else {
+    keyboard_clear(pickup_menu_confirm_key_char);
+    pickup_menu_confirm_key = 0;
+    pickup_menu_confirm_key_pressed = 0;
+}
 
 //Left-Click
-left_click = global.m_left;
-left_click_pressed = global.m_left_pressed;
+if(!left_click_locked) {
+    left_click = mouse_check_button(left_click_char);
+    left_click_pressed = mouse_check_button_pressed(left_click_char);
+} else {
+    mouse_clear(left_click_char);
+    left_click = 0;
+    left_click_pressed = 0;
+}
 
 //Right-Click
-right_click = global.m_right;
-right_click_pressed = global.m_right_pressed;
+if(!right_click_locked) {
+    right_click = mouse_check_button(right_click_char);
+    right_click_pressed = mouse_check_button_pressed(right_click_char);
+} else {
+    keyboard_clear(right_click_char);
+    right_click = 0;
+    right_click_pressed = 0;
+}
 
 //Pause Menu
-pause_menu_key = global.kb_esc;
-pause_menu_key_pressed = global.kb_esc_pressed;
+if(!pause_menu_key_locked) {
+    pause_menu_key = keyboard_check(pause_menu_key_char);
+    pause_menu_key_pressed = keyboard_check_pressed(pause_menu_key_char);
+} else {
+    keyboard_clear(pause_menu_key_char);
+    pause_menu_key = 0;
+    pause_menu_key_pressed = 0;
+}
 
 //Inventar
-inventory_key = global.kb_i;
-inventory_key_pressed = global.kb_i_pressed;
+if(!inventory_key_locked) {
+    inventory_key = keyboard_check(inventory_key_char);
+    inventory_key_pressed = keyboard_check_pressed(inventory_key_char);
+} else {
+    keyboard_clear(inventory_key_char);
+    inventory_key = 0;
+    inventory_key_pressed = 0;
+}
 
 
 </string>
@@ -794,11 +468,11 @@ inventory_key_pressed = global.kb_i_pressed;
             <string>///Kontrolltasten
 //Escape-Taste
 if(room != rm_main_menu &amp;&amp; room_stats[room, 0] == "menu") {
-    if(global.kb_esc_pressed &amp;&amp; !instance_exists(obj_fade)) scr_sidefade(rm_main_menu, 40);
+    if(keyboard_check_pressed(vk_escape) &amp;&amp; !instance_exists(obj_fade)) scr_sidefade(rm_main_menu, 40);
 }
 
 if(room == rm_main_menu) {
-    if(global.kb_esc_pressed) obj_main_menu.menupos = obj_main_menu.menulength - 1;
+    if(keyboard_check_pressed(vk_escape)) obj_main_menu.menupos = obj_main_menu.menulength - 1;
 }
 
 //Back to Menu
@@ -823,62 +497,23 @@ if(keyboard_check_pressed(vk_f11)) {
 if(instance_exists(obj_player)) {
 if(keyboard_check_pressed(vk_f9)) is_ghost = 1 - is_ghost;
 if(is_ghost) {
-    obj_player.image_alpha = 0.5;
+    obj_player.image_alpha = 0.3;
+    player_stats.invincible = true;
 } else {
     obj_player.image_alpha = 1;
+    player_stats.invincible = false;
 }
 
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///alarm0
-if(alarm_get(0) == -1) alarm_set(0, room_speed);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///FPS
-if(alarm_get(0) == 0) admin_fps = string(int64(fps_real));
+
+//Hitbox
+if(keyboard_check_pressed(vk_f8) &amp;&amp; playing) show_hitbox = 1 - show_hitbox;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -895,66 +530,11 @@ if(alarm_get(0) == 0) admin_fps = string(int64(fps_real));
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Zeichne FPS + Zeit
-draw_set_font(fnt_fps);
-draw_set_colour(c_white);
-draw_set_halign(fa_left);
+            <string>/*
+draw_set_alpha(0.1);
+mp_grid_draw(global.grid);
 draw_set_alpha(1);
-
-draw_text(display_get_gui_width() - 200, 16, admin_fps + " FPS");
-
-//Zeit
-//Minute
-if(string_length(string(date_get_minute(date_current_datetime()))) &gt; 1) {
-    minute = string(date_get_minute(date_current_datetime()));
-}
-else {
-    minute = string(0) + string(date_get_minute(date_current_datetime()));
-}
-//Stunde
-if(string_length(string(date_get_hour(date_current_datetime()))) &gt; 1) {
-    hour = string(date_get_hour(date_current_datetime()));
-}
-else {
-    hour = string(0) + string(date_get_hour(date_current_datetime()));
-}
-
-time = hour + ":" + minute;
-draw_text(
-    display_get_gui_width() - string_width(time) - 64,
-    16,
-    time
-    );
-    
-draw_text(display_get_gui_width() - 400, 16, string(instance_count));
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Test
-
-if(instance_exists(obj_player)) {
-}
-
-//draw_text(100, 200, string(view_xview[0]));
-
-//draw_text(100, 300, string(instance_exists(obj_hindernis)));
+*/
 </string>
           </argument>
         </arguments>

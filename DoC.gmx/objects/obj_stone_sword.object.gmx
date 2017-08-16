@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Stats
 index = items.stone_sword;
-damage = player_stats.root_damage + item_stats[index, item_stats_prim.damage];
-damage_crit = player_stats.root_damage + item_stats[index, item_stats_prim.damage_crit];
+damage = item_stats[index, item_stats_prim.damage];
+damage_crit = item_stats[index, item_stats_prim.damage_crit];
 
 </string>
           </argument>
@@ -75,7 +75,7 @@ damage_crit = player_stats.root_damage + item_stats[index, item_stats_prim.damag
           <argument>
             <kind>1</kind>
             <string>///Angriff
-scr_melee_attack(damage, damage_crit);
+scr_prim_attack_melee(damage, damage_crit, scr_melee_attack);
 </string>
           </argument>
         </arguments>

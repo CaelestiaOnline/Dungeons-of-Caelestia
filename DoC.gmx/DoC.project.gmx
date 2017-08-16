@@ -65,40 +65,101 @@
     <sprites name="Einheit">
       <sprites name="Trainingspuppe">
         <sprite>sprites\spr_trainingspuppe</sprite>
-        <sprite>sprites\spr_trainingspuppe_dead</sprite>
         <sprite>sprites\spr_trainingspuppe_ext</sprite>
+        <sprite>sprites\spr_trainingspuppe_unbreakable</sprite>
+        <sprites name="Hitbox">
+          <sprite>sprites\spr_obj_trainingspuppe_colbox</sprite>
+          <sprite>sprites\spr_obj_trainingspuppe_ext_colbox</sprite>
+          <sprite>sprites\spr_obj_trainingspuppe_unbreakable_colbox</sprite>
+        </sprites>
+        <sprites name="old">
+          <sprite>sprites\spr_trainingspuppe_dead</sprite>
+          <sprite>sprites\spr_trainingspuppe_unbreakable_old</sprite>
+          <sprite>sprites\spr_trainingspuppe_old</sprite>
+          <sprite>sprites\spr_trainingspuppe_ext_old</sprite>
+        </sprites>
+        <sprites name="Dead">
+          <sprite>sprites\spr_obj_trainingspuppe_dead</sprite>
+          <sprite>sprites\spr_obj_trainingspuppe_ext_dead</sprite>
+          <sprite>sprites\spr_obj_trainingspuppe_unbreakable_dead</sprite>
+        </sprites>
       </sprites>
       <sprites name="Charakter">
-        <sprite>sprites\spr_charakter</sprite>
-        <sprite>sprites\spr_charakter_crouch</sprite>
-        <sprite>sprites\spr_charakter_ghost</sprite>
-        <sprite>sprites\spr_charakter_dead</sprite>
-        <sprite>sprites\spr_charakter_no_eyes</sprite>
-        <sprite>sprites\spr_charakter_crouch_back</sprite>
-        <sprite>sprites\spr_charakter_back</sprite>
-        <sprite>sprites\spr_charakter_ghost_back</sprite>
+        <sprites name="old">
+          <sprite>sprites\spr_charakter_ghost_back</sprite>
+          <sprite>sprites\spr_charakter_dead</sprite>
+          <sprite>sprites\spr_charakter_crouch</sprite>
+          <sprite>sprites\spr_charakter</sprite>
+          <sprite>sprites\spr_charakter_ghost</sprite>
+          <sprite>sprites\spr_charakter_no_eyes</sprite>
+          <sprite>sprites\spr_charakter_crouch_back</sprite>
+          <sprite>sprites\spr_charakter_back</sprite>
+          <sprite>sprites\spr_charakter_collision_box</sprite>
+        </sprites>
+        <sprites name="Mage">
+          <sprite>sprites\spr_mage2</sprite>
+          <sprite>sprites\spr_mage</sprite>
+        </sprites>
       </sprites>
       <sprites name="Gegner">
         <sprite>sprites\spr_gegner</sprite>
         <sprite>sprites\spr_gegner_dead</sprite>
+        <sprites name="ForestPenguin">
+          <sprite>sprites\spr_forest_penguin_bullet</sprite>
+          <sprite>sprites\spr_forest_penguin</sprite>
+          <sprite>sprites\spr_forest_penguin_small</sprite>
+          <sprites name="ColBox">
+            <sprite>sprites\spr_obj_forest_penguin_colbox</sprite>
+            <sprite>sprites\spr_obj_forest_penguin_small_colbox</sprite>
+            <sprite>sprites\spr_obj_forest_penguin_bullet_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_forest_penguin_bullet_dead</sprite>
+            <sprite>sprites\spr_obj_forest_penguin_dead</sprite>
+            <sprite>sprites\spr_obj_forest_penguin_small_dead</sprite>
+          </sprites>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Waffen">
       <sprite>sprites\spr_hitbox</sprite>
+      <sprite>sprites\spr_hitbox_enemy</sprite>
       <sprite>sprites\spr_bullet</sprite>
+      <sprite>sprites\spr_mini_bullet</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_mana_bullet</sprite>
       <sprite>sprites\spr_shuriken_bullet</sprite>
       <sprite>sprites\spr_hit</sprite>
       <sprite>sprites\spr_hit_crit</sprite>
+      <sprite>sprites\spr_bullet_collision_box</sprite>
     </sprites>
     <sprites name="Hindernis">
-      <sprite>sprites\spr_stein</sprite>
       <sprite>sprites\spr_kaktus</sprite>
       <sprite>sprites\spr_wall_noc</sprite>
-      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_tree_stump</sprite>
       <sprite>sprites\spr_tree</sprite>
       <sprite>sprites\spr_invisible</sprite>
+      <sprites name="Rock">
+        <sprite>sprites\spr_rock1</sprite>
+        <sprite>sprites\spr_rock2</sprite>
+        <sprite>sprites\spr_rock3</sprite>
+        <sprite>sprites\spr_rock4</sprite>
+        <sprite>sprites\spr_rock5</sprite>
+        <sprite>sprites\spr_rock6</sprite>
+      </sprites>
+      <sprites name="Bush">
+        <sprite>sprites\spr_bush1</sprite>
+        <sprite>sprites\spr_bush2</sprite>
+        <sprite>sprites\spr_bush3</sprite>
+        <sprite>sprites\spr_bush4</sprite>
+        <sprite>sprites\spr_bush5</sprite>
+        <sprite>sprites\spr_bush6</sprite>
+      </sprites>
+      <sprites name="Tree">
+        <sprite>sprites\spr_dead_tree_black</sprite>
+        <sprite>sprites\spr_dead_tree_blue</sprite>
+        <sprite>sprites\spr_dead_tree_white</sprite>
+      </sprites>
     </sprites>
     <sprites name="HUD">
       <sprites name="Bar">
@@ -134,7 +195,10 @@
         <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_undefined</sprite>
         <sprite>sprites\spr_back</sprite>
+        <sprite>sprites\spr_triggered</sprite>
+        <sprite>sprites\spr_dead</sprite>
       </sprites>
+      <sprite>sprites\spr_ground_item_collision_box</sprite>
     </sprites>
     <sprites name="Mouse">
       <sprite>sprites\spr_mouse_icon</sprite>
@@ -142,13 +206,13 @@
     <sprites name="Hub">
       <sprite>sprites\spr_hub_terminal</sprite>
       <sprite>sprites\spr_hub_terminal2</sprite>
-      <sprite>sprites\spr_hub_desk</sprite>
-      <sprite>sprites\spr_hub_desk2</sprite>
       <sprite>sprites\spr_hub_portal_blue</sprite>
       <sprite>sprites\spr_hub_portal_red</sprite>
       <sprite>sprites\spr_hub_portal_green</sprite>
       <sprite>sprites\spr_hub_portal_yellow</sprite>
       <sprite>sprites\spr_hub_chair</sprite>
+      <sprite>sprites\spr_hub_shop</sprite>
+      <sprite>sprites\spr_hub_terminal3</sprite>
     </sprites>
     <sprites name="Progress">
       <sprites name="Money">
@@ -173,6 +237,15 @@
         <sprite>sprites\spr_xp_1000</sprite>
       </sprites>
       <sprite>sprites\spr_heal_orb</sprite>
+      <sprite>sprites\spr_progress_collision_box</sprite>
+    </sprites>
+    <sprites name="Box">
+      <sprite>sprites\spr_box</sprite>
+      <sprite>sprites\spr_question_box</sprite>
+      <sprite>sprites\spr_info_box</sprite>
+      <sprite>sprites\spr_sign_box</sprite>
+      <sprite>sprites\spr_button_accept</sprite>
+      <sprite>sprites\spr_button_decline</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -181,7 +254,8 @@
     </backgrounds>
     <backgrounds name="Ebene">
       <backgrounds name="Wald">
-        <background>background\bg_forest</background>
+        <background>background\bg_forest_tileset</background>
+        <background>background\bg_forest2</background>
       </backgrounds>
     </backgrounds>
     <backgrounds name="loading_screen">
@@ -203,6 +277,9 @@
     </backgrounds>
     <backgrounds name="Hub">
       <background>background\bg_main_hub</background>
+    </backgrounds>
+    <backgrounds name="Test">
+      <background>background\bg_grid</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -245,8 +322,8 @@
         <script>scripts\scr_deal_damage.gml</script>
         <script>scripts\scr_deal_damage_hindernis.gml</script>
         <script>scripts\scr_deal_player_damage.gml</script>
-        <script>scripts\scr_bullet_attack_enemy.gml</script>
         <script>scripts\scr_crit_attack.gml</script>
+        <script>scripts\instance_place_list.gml</script>
       </scripts>
       <scripts name="Mana">
         <script>scripts\scr_player_add_mana.gml</script>
@@ -292,6 +369,7 @@
           </scripts>
         </scripts>
         <script>scripts\scr_roman_number.gml</script>
+        <script>scripts\scr_ability_string.gml</script>
       </scripts>
       <scripts name="Initialise">
         <script>scripts\scr_initialise_game.gml</script>
@@ -302,17 +380,19 @@
             <script>scripts\scr_melee_attack.gml</script>
             <script>scripts\scr_create_hitbox.gml</script>
             <script>scripts\scr_create_hitmark.gml</script>
+            <script>scripts\scr_prim_attack_melee.gml</script>
           </scripts>
           <scripts name="Fernkampf">
-            <script>scripts\scr_bullet_attack.gml</script>
             <script>scripts\scr_create_bullet.gml</script>
+            <script>scripts\scr_bullet_attack.gml</script>
+            <script>scripts\scr_prim_attack_bullet.gml</script>
           </scripts>
         </scripts>
         <scripts name="sec">
-          <script>scripts\scr_bullet_attack_sec.gml</script>
+          <script>scripts\scr_sec_attack_bullet.gml</script>
         </scripts>
         <scripts name="mag">
-          <script>scripts\scr_bullet_attack_mag.gml</script>
+          <script>scripts\scr_mag_attack_bullet.gml</script>
         </scripts>
         <script>scripts\scr_attack_cooldown.gml</script>
       </scripts>
@@ -320,6 +400,15 @@
         <script>scripts\scr_draw_death_enemy.gml</script>
         <script>scripts\scr_initialise_enemy_main.gml</script>
         <script>scripts\scr_death_enemy.gml</script>
+        <script>scripts\scr_trigger_enemy.gml</script>
+        <script>scripts\scr_draw_trigger_enemy.gml</script>
+        <script>scripts\scr_draw_sign_box.gml</script>
+        <script>scripts\scr_bullet_attack_enemy.gml</script>
+        <script>scripts\scr_melee_attack_enemy.gml</script>
+        <script>scripts\scr_pathfinding_enemy.gml</script>
+        <script>scripts\scr_pathfinding_enemy_old.gml</script>
+        <script>scripts\scr_create_hitbox_enemy.gml</script>
+        <script>scripts\scr_reset_enemy.gml</script>
       </scripts>
       <scripts name="depth">
         <script>scripts\scr_set_depth.gml</script>
@@ -336,6 +425,7 @@
       </scripts>
       <scripts name="Player">
         <script>scripts\scr_draw_death_player.gml</script>
+        <script>scripts\scr_player_set_persistent.gml</script>
       </scripts>
       <scripts name="in game menu">
         <script>scripts\scr_explanation.gml</script>
@@ -353,15 +443,26 @@
         <script>scripts\scr_effect_resistance.gml</script>
         <script>scripts\scr_effect_strength.gml</script>
         <script>scripts\scr_effect_stun.gml</script>
+        <scripts name="Ability">
+          <script>scripts\scr_init_ability.gml</script>
+        </scripts>
+        <script>scripts\scr_init_effects.gml</script>
       </scripts>
       <scripts name="Interaktion">
         <script>scripts\scr_hub_interaction.gml</script>
+        <script>scripts\scr_interaction_old.gml</script>
         <script>scripts\scr_interaction.gml</script>
+        <script>scripts\scr_show_question.gml</script>
+        <script>scripts\scr_show_info.gml</script>
+        <script>scripts\scr_init_interaction.gml</script>
       </scripts>
       <scripts name="Hub">
         <scripts name="Hub_menu">
           <script>scripts\scr_leave_hub_menu.gml</script>
           <script>scripts\scr_enter_hub_menu.gml</script>
+          <scripts name="Shop">
+            <script>scripts\scr_create_shop_button.gml</script>
+          </scripts>
         </scripts>
         <script>scripts\scr_enter_hub.gml</script>
         <script>scripts\scr_leave_hub.gml</script>
@@ -386,7 +487,28 @@
       </scripts>
       <scripts name="Schatten">
         <script>scripts\scr_draw_shadow.gml</script>
+        <script>scripts\scr_init_shadow.gml</script>
       </scripts>
+      <scripts name="Hindernis">
+        <script>scripts\scr_initialise_obstacle_main.gml</script>
+      </scripts>
+      <scripts name="KeyLock">
+        <script>scripts\scr_keylock_ingamemenu.gml</script>
+        <scripts name="General">
+          <script>scripts\scr_keylock_movement.gml</script>
+          <script>scripts\scr_keylock_abilities.gml</script>
+          <script>scripts\scr_keylock_pickupmenu.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Hitbox">
+        <script>scripts\scr_draw_hitbox.gml</script>
+      </scripts>
+      <scripts name="Grid">
+        <script>scripts\scr_update_grid.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="Window">
+      <script>scripts\scr_set_window.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -397,6 +519,7 @@
     <fonts name="System">
       <font>fonts\fnt_fps</font>
       <font>fonts\fnt_hud</font>
+      <font>fonts\fnt_debug</font>
     </fonts>
     <fonts name="loading_screen">
       <font>fonts\fnt_pixel1</font>
@@ -429,6 +552,11 @@
       <fonts name="Indicator">
         <font>fonts\fnt_indicator</font>
       </fonts>
+      <fonts name="Textbox">
+        <font>fonts\fnt_textbox_heading</font>
+        <font>fonts\fnt_questionbox_heading</font>
+        <font>fonts\fnt_questionbox_text</font>
+      </fonts>
     </fonts>
     <fonts name="Splash-Screen">
       <font>fonts\fnt_splash</font>
@@ -436,38 +564,22 @@
     </fonts>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_test2</object>
-    <objects name="admin">
-      <object>objects\obj_admin</object>
-    </objects>
-    <objects name="Explosion">
-      <object>objects\obj_hit_mark</object>
-    </objects>
-    <objects name="Hub">
-      <object>objects\obj_hub_chair</object>
-      <object>objects\obj_hub_terminal</object>
-      <object>objects\obj_hub_desk</object>
-      <object>objects\obj_hub_portal_testroom1</object>
-      <object>objects\obj_hub_portal_testroom2</object>
-      <object>objects\obj_hub_portal_hub</object>
-      <object>objects\obj_hub_menu_mouse</object>
-      <object>objects\obj_hub</object>
-      <objects name="Buttons">
-        <object>objects\obj_hub_button_exit</object>
-      </objects>
-      <object>objects\obj_player_persistent</object>
-      <object>objects\obj_enter_game</object>
-      <objects name="Menu">
-        <object>objects\obj_hub_main_menu</object>
-      </objects>
-    </objects>
+    <object>objects\obj_placeholder</object>
     <objects name="HUD">
       <object>objects\obj_hud</object>
       <object>objects\obj_pickup_ind</object>
+      <object>objects\obj_picked_item</object>
       <object>objects\obj_hud_pickups</object>
       <object>objects\obj_hud_storage</object>
       <object>objects\obj_hud_items</object>
       <object>objects\obj_hud_psm</object>
+    </objects>
+    <objects name="loading_screen">
+      <object>objects\obj_loading_screen</object>
+      <object>objects\obj_loading_screen_stats</object>
+    </objects>
+    <objects name="Splash-Screen">
+      <object>objects\obj_splash_screen</object>
     </objects>
     <objects name="Inventory">
       <object>objects\obj_hud_inv</object>
@@ -502,6 +614,7 @@
       </objects>
       <objects name="Ground-Item">
         <object>objects\obj_ground_item</object>
+        <object>objects\obj_ground_item_holder</object>
       </objects>
     </objects>
     <objects name="Items">
@@ -523,6 +636,7 @@
             <object>objects\obj_bullet</object>
           </objects>
           <object>objects\obj_machine_gun</object>
+          <object>objects\obj_machine_gun_bullet</object>
         </objects>
       </objects>
       <objects name="sec">
@@ -547,71 +661,29 @@
         <object>objects\obj_mana_potion_small</object>
       </objects>
     </objects>
-    <objects name="Einheiten">
-      <objects name="Charakter">
-        <object>objects\obj_player</object>
-        <object>objects\obj_player_stats</object>
-        <object>objects\obj_player_body</object>
+    <objects name="Hub">
+      <object>objects\obj_hub_chair</object>
+      <object>objects\obj_hub_terminal</object>
+      <object>objects\obj_hub_shop</object>
+      <object>objects\obj_hub_clear</object>
+      <object>objects\obj_hub_portal_testroom1</object>
+      <object>objects\obj_hub_portal_testroom2</object>
+      <object>objects\obj_hub_portal_hub</object>
+      <object>objects\obj_hub_item_place</object>
+      <object>objects\obj_hub_menu_mouse</object>
+      <object>objects\obj_hub</object>
+      <objects name="Buttons">
+        <object>objects\obj_hub_button_exit</object>
+        <object>objects\obj_hub_button_item_shop</object>
       </objects>
-      <objects name="Gegner">
-        <object>objects\obj_gegner</object>
-        <objects name="Bewegung">
-          <object>objects\obj_grid</object>
-        </objects>
-        <objects name="Damage-Indikator">
-          <object>objects\obj_damage_ind</object>
-          <object>objects\obj_text_ind</object>
-          <object>objects\obj_xp_ind</object>
-          <object>objects\obj_money_ind</object>
-          <object>objects\obj_heal_ind</object>
-        </objects>
-        <objects name="Tod">
-          <object>objects\obj_enemy_body</object>
-        </objects>
-        <objects name="Nahkampf">
-          <object>objects\obj_gesicht</object>
-        </objects>
-        <objects name="Fernkampf">
-          <object>objects\obj_gesicht_bullet</object>
-        </objects>
-        <objects name="Training">
-          <object>objects\obj_trainingspuppe</object>
-          <object>objects\obj_trainingsspuppe_unbreakable</object>
-          <object>objects\obj_trainingspuppe_ext</object>
-        </objects>
-        <objects name="Waffen">
-          <object>objects\obj_bullet_enemy</object>
-          <object>objects\obj_pistol_bullet_enemy</object>
-        </objects>
-        <object>objects\obj_enemy_stats</object>
+      <object>objects\obj_leave_hub_menu</object>
+      <object>objects\obj_enter_game</object>
+      <objects name="Menu">
+        <object>objects\obj_hub_main_menu</object>
+        <object>objects\obj_hub_shop_menu</object>
       </objects>
-      <objects name="Heilungsfeld">
-        <object>objects\obj_heal_field</object>
-      </objects>
-    </objects>
-    <objects name="Gegenstände">
-      <objects name="Hindernis">
-        <object>objects\obj_hindernis</object>
-        <objects name="non-breakable">
-          <object>objects\obj_wall</object>
-          <object>objects\obj_invisible_wall</object>
-          <object>objects\obj_wall_noc</object>
-        </objects>
-        <objects name="Breakable">
-          <object>objects\obj_hindernis_breakable</object>
-          <object>objects\obj_Kaktus</object>
-          <object>objects\obj_Stein</object>
-        </objects>
-      </objects>
-    </objects>
-    <objects name="Übergänge">
-      <object>objects\obj_sidefade</object>
-      <object>objects\obj_viewfade</object>
-      <object>objects\obj_circlefade</object>
-      <object>objects\obj_invfade</object>
-      <object>objects\obj_menufade</object>
-      <object>objects\obj_menu_to_inv_fade</object>
-      <object>objects\obj_fade</object>
+      <object>objects\obj_hindernis_interaction</object>
+      <object>objects\obj_floor_interaction</object>
     </objects>
     <objects name="Menu">
       <objects name="main_menu">
@@ -637,8 +709,96 @@
         <object>objects\obj_menu</object>
       </objects>
     </objects>
-    <objects name="loading_screen">
-      <object>objects\obj_loading_screen</object>
+    <objects name="admin">
+      <object>objects\obj_admin</object>
+      <object>objects\obj_draw_fps</object>
+    </objects>
+    <objects name="Einheiten">
+      <objects name="Charakter">
+        <object>objects\obj_player</object>
+        <object>objects\obj_player_stats</object>
+        <object>objects\obj_player_body</object>
+      </objects>
+      <objects name="Gegner">
+        <object>objects\obj_gegner</object>
+        <objects name="Damage-Indikator">
+          <object>objects\obj_damage_ind</object>
+          <object>objects\obj_text_ind</object>
+          <object>objects\obj_xp_ind</object>
+          <object>objects\obj_money_ind</object>
+          <object>objects\obj_heal_ind</object>
+        </objects>
+        <objects name="Tod">
+          <object>objects\obj_enemy_body</object>
+        </objects>
+        <objects name="Nahkampf">
+          <object>objects\obj_forest_penguin_small</object>
+          <object>objects\obj_forest_penguin</object>
+        </objects>
+        <objects name="Fernkampf">
+          <object>objects\obj_forest_penguin_bullet</object>
+        </objects>
+        <objects name="Training">
+          <object>objects\obj_trainingspuppe</object>
+          <object>objects\obj_trainingspuppe_unbreakable</object>
+          <object>objects\obj_trainingspuppe_ext</object>
+          <object>objects\obj_create_trainingspuppe</object>
+        </objects>
+        <objects name="Waffen">
+          <object>objects\obj_pistol_bullet_enemy</object>
+          <object>objects\obj_bullet_enemy</object>
+          <object>objects\obj_hitbox_melee_enemy</object>
+        </objects>
+        <object>objects\obj_enemy_stats</object>
+      </objects>
+      <objects name="Heilungsfeld">
+        <object>objects\obj_heal_field</object>
+      </objects>
+    </objects>
+    <objects name="Gegenstände">
+      <objects name="Hindernis">
+        <object>objects\obj_hindernis</object>
+        <objects name="non-breakable">
+          <object>objects\obj_hindernis_non_breakable</object>
+          <object>objects\obj_tree_stump</object>
+          <object>objects\obj_invisible_wall</object>
+          <object>objects\obj_wall_old</object>
+          <objects name="Rock">
+            <object>objects\obj_rock1</object>
+            <object>objects\obj_rock2</object>
+            <object>objects\obj_rock3</object>
+            <object>objects\obj_rock4</object>
+            <object>objects\obj_rock6</object>
+            <object>objects\obj_rock5</object>
+          </objects>
+          <objects name="Bush">
+            <object>objects\obj_bush1</object>
+            <object>objects\obj_bush2</object>
+            <object>objects\obj_bush3</object>
+            <object>objects\obj_bush4</object>
+            <object>objects\obj_bush5</object>
+            <object>objects\obj_bush6</object>
+          </objects>
+          <objects name="DeadTree">
+            <object>objects\obj_dead_tree_black</object>
+            <object>objects\obj_dead_tree_blue</object>
+            <object>objects\obj_dead_tree_white</object>
+          </objects>
+        </objects>
+        <objects name="Breakable">
+          <object>objects\obj_hindernis_breakable</object>
+          <object>objects\obj_cactus</object>
+        </objects>
+      </objects>
+    </objects>
+    <objects name="Übergänge">
+      <object>objects\obj_sidefade</object>
+      <object>objects\obj_viewfade</object>
+      <object>objects\obj_circlefade</object>
+      <object>objects\obj_invfade</object>
+      <object>objects\obj_menufade</object>
+      <object>objects\obj_menu_to_inv_fade</object>
+      <object>objects\obj_fade</object>
     </objects>
     <objects name="Tür">
       <object>objects\obj_tuer</object>
@@ -654,8 +814,9 @@
       <object>objects\obj_poison</object>
       <object>objects\obj_slow_speed</object>
       <object>objects\obj_attack_speed</object>
-      <object>objects\obj_effect</object>
       <object>objects\obj_attack_speed_old</object>
+      <object>objects\obj_effect</object>
+      <object>objects\obj_effect_stats</object>
     </objects>
     <objects name="Progress">
       <object>objects\obj_progress</object>
@@ -674,8 +835,18 @@
       <object>objects\obj_room_stats</object>
       <object>objects\obj_room_placer</object>
     </objects>
-    <objects name="Splash-Screen">
-      <object>objects\obj_splash_screen</object>
+    <objects name="HitMark">
+      <object>objects\obj_hit_mark</object>
+    </objects>
+    <objects name="Shadow">
+      <object>objects\obj_draw_shadow</object>
+    </objects>
+    <objects name="Box">
+      <object>objects\obj_sign_box</object>
+      <object>objects\obj_info_box</object>
+      <object>objects\obj_mecha_hand</object>
+      <object>objects\obj_question_box</object>
+      <object>objects\obj_box_confirm</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -697,6 +868,7 @@
       <room>rooms\rm_main_hub</room>
       <rooms name="Hub-menu">
         <room>rooms\rm_hub_main_menu</room>
+        <room>rooms\rm_hub_shop_menu</room>
       </rooms>
     </rooms>
     <rooms name="Testrooms">

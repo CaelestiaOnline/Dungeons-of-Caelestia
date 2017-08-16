@@ -56,6 +56,7 @@ hub_menu_y2 = 64;
 exit_button_x = hub_menu_x2 - 8*1 - 24 - 48*0;
 exit_button_y = hub_menu_y1 + 32;
 exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit);
+
 </string>
           </argument>
         </arguments>

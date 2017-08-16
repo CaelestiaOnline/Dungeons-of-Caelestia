@@ -3,9 +3,26 @@ scr_initialise_game();
 Initialisiert das Spiel bzw erzeugt alle benötigten Objekte
 */
 
+//Window
+scr_set_window();
+
+//Randomize
+randomize();
+
+//Circle Precision
+draw_set_circle_precision(64);
+
+//Grid
+scr_update_grid();
+
+//Objekte
 //Erzeuge Admin-Objekt
 globalvar admin;
 admin = instance_create(0, 0, obj_admin);
+
+//Erzeuge Admin-Objekt
+globalvar fps_object;
+fps_object = instance_create(0, 0, obj_draw_fps);
 
 //Stats
 globalvar stats;
@@ -42,6 +59,10 @@ inventory.inv_mag = instance_create(0, 0, obj_inv_mag);
 globalvar room_stats_object;
 room_stats_object = instance_create(0, 0, obj_room_stats);
 
+//Enemy_stats
+globalvar enemy_stats_object;
+enemy_stats_object = instance_create(0, 0, obj_enemy_stats);
+
 //HUD
 globalvar hud;
 hud = instance_create(0, 0, obj_hud);
@@ -73,11 +94,6 @@ progress = instance_create(0, 0, obj_progress);
 //Hub object
 globalvar hub;
 hub = instance_create(0, 0, obj_hub);
-
-//Grid
-globalvar grid;
-grid = instance_create(0, 0, obj_grid);
-
 
 //Test-Inventory
 instance_create(0, 0, obj_test);

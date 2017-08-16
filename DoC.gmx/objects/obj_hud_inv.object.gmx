@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1</depth>
+  <depth>-5</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -74,7 +74,7 @@ inv_item_stats_bg_x1 = inv_char_bg_x1;
 inv_item_stats_bg_x2 = inv_char_bg_x2;
 
 inv_item_stats_bg_y1 = inv_char_bg_y2 + 50;
-inv_item_stats_bg_y2 = inv_item_stats_bg_y1 + 350;
+inv_item_stats_bg_y2 = inv_item_stats_bg_y1 + 400;
 
 //Level
 inv_level_x1 = inv_slots_x1;
@@ -143,11 +143,11 @@ drop_button_y = inventory.inv_pickups.inv_y;
           <argument>
             <kind>1</kind>
             <string>///Item - Stats
-for(var i = 0; i &lt; 7; i++) {
+for(var i = 0; i &lt; 8; i++) {
     item_stats_heading_array[i] = 0;
 }
 
-for(var i = 0; i &lt; 7; i++) {
+for(var i = 0; i &lt; 8; i++) {
     item_stats_array[i] = 0;
 }
 </string>
@@ -695,7 +695,7 @@ draw_text(
 draw_text(
     inv_char_bg_x2 - 100,
     inv_char_speed_stats_y1 + 32,
-    string(player_stats.max_player_speed * room_speed) + "px/s"
+    string(int64(player_stats.max_player_speed * room_speed)) + "px/s"
     );
 //Sprinten
 draw_text(
@@ -707,7 +707,7 @@ draw_text(
 draw_text(
     inv_char_bg_x2 - 100,
     inv_char_speed_stats_y1 + 64,
-    string(player_stats.max_player_sprint_speed*room_speed) + "px/s"
+    string(int64(player_stats.max_player_sprint_speed*room_speed)) + "px/s"
     );
 //Beschleunigung
 draw_text(
@@ -849,7 +849,7 @@ for(var i = 0; i &lt; array_length_1d(item_stats_heading_array); i++) {
     if(item_stats_heading_array[i] != 0) {
     draw_text(
     inv_item_stats_bg_x1 + 32,
-    inv_item_stats_bg_y1 + 32*3 + 24 + 32*i,
+    inv_item_stats_bg_y1 + 32*3 + 48 + 32*i,
     item_stats_heading_array[i]
     );
     }
@@ -861,8 +861,8 @@ for(var i = 0; i &lt; array_length_1d(item_stats_array); i++) {
         item_stats_array[i] = "-/-";
     }
     draw_text(
-    inv_item_stats_bg_x2 - 100,
-    inv_item_stats_bg_y1 + 32*3 + 24 + 32*i,
+    inv_item_stats_bg_x2 - 200,
+    inv_item_stats_bg_y1 + 32*3 + 48 + 32*i,
     item_stats_array[i]
     );
     }

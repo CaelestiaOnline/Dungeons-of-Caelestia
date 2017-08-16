@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-
+scr_initialise_enemy_main();
 </string>
           </argument>
         </arguments>
@@ -52,6 +52,50 @@
             <string>///Death
 scr_death_enemy();
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm1</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm0</string>
           </argument>
         </arguments>
       </action>
@@ -209,7 +253,7 @@ draw_sprite_ext(
     spr_health_bar_enemy,
     0,
     x - sprite_get_width(spr_health_bar_enemy)/2,
-    y - sprite_get_height(sprite_index)/2 - 20,
+    y - sprite_get_height(sprite_index) - 20,
     health_scale,
     1,
     0,
@@ -237,17 +281,19 @@ draw_sprite_ext(
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schatten
-var shadow_width = sprite_get_width(sprite_index) * 0.375;
-shadow_width = clamp(shadow_width, 24, 1000);
-
-scr_draw_shadow(
-    shadow_width,
-    8,
-    sprite_get_height(sprite_index)/2
-    );
-    
+            <string>///Draw self    
 draw_self();
+
+if(admin.show_hitbox) {
+    scr_draw_hitbox();
+    draw_set_alpha(1);
+    draw_set_colour(c_green);
+    draw_set_font(fnt_fps);
+    draw_text(x + 20, y - sprite_get_height(sprite_index) - 40, string(alarm_get(0)));
+
+    draw_set_colour(c_red);
+    draw_text(x - 20, y - sprite_get_height(sprite_index) - 40, string(alarm_get(1)));
+}
 </string>
           </argument>
         </arguments>

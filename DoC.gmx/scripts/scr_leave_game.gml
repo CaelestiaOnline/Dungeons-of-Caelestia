@@ -1,5 +1,5 @@
 /*
-scr_enter_game(
+scr_leave_game(
     
 );
 Verlässt das Spiel und bereitet es auf das Hauptmenü vor; der Tag
@@ -10,8 +10,9 @@ admin.in_game = false;
 admin.playing = false;
 hub.in_hub = false;
 hub.in_menu = false;
+scr_keylock_ingamemenu(false);
 
-if(instance_exists(obj_player)) obj_player.persistent = false;
+scr_player_set_persistent(false);
 
 scr_sidefade(rm_main_menu, 60);
 

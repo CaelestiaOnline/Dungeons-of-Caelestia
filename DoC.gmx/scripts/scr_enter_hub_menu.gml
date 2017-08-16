@@ -6,7 +6,7 @@ scr_enter_hub_menu(
 
 var hub_room = argument0;
 
-obj_player.persistent = false;
+scr_player_set_persistent(false);
 
 scr_sidefade(hub_room, 60);
 hub.in_menu = true;

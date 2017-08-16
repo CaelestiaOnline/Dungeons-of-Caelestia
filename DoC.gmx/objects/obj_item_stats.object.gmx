@@ -35,6 +35,7 @@ prim:
         - Aktivierungschance der Fähigkeit
         - Stärke der Fähigkeit (Vergiftung, Feuer)
     - Schnelligkeit
+    - Angriffsgeschwindigkeit
     - Sonstiges
 */
 
@@ -43,6 +44,8 @@ sec:
     - Schaden
     - Kritischer Schaden
     - Fähigkeit
+        - Aktivierungschance der Fähigkeit
+        - Stärke der Fähigkeit (Vergiftung, Feuer)
     - Cooldown
     - Sonstiges
 */
@@ -52,6 +55,7 @@ mag:
     - Fähigkeit
     - Stärke der Fähigkeit (Schaden, Heilung)
     - Mana-Verbrauch
+    - Cooldown
     - Sonstiges
 */
 
@@ -100,7 +104,8 @@ enum item_stats_prim {
     ability_chance = 3,
     ability_strength = 4,
     speed_bonus = 5,
-    misc = 6
+    attack_speed = 6,
+    misc = 7
 };
 
 //sec
@@ -108,8 +113,10 @@ enum item_stats_sec {
     damage = 0,
     damage_crit = 1,
     ability = 2,
-    cooldown = 3,
-    misc = 4
+    ability_chance = 3,
+    ability_strength = 4,
+    cooldown = 5,
+    misc = 6
 };
 
 //mag
@@ -117,7 +124,8 @@ enum item_stats_mag {
     ability = 0,
     ability_strength = 1,
     mana_usage = 2,
-    misc = 3
+    cooldown = 3,
+    misc = 4
 };
 
 //item
@@ -165,12 +173,15 @@ item_stats[items.xxxx, item_stats_prim.ability] = "";
 item_stats[items.xxxx, item_stats_prim.ability_chance] = 0;
 item_stats[items.xxxx, item_stats_prim.ability_strength] = 0;
 item_stats[items.xxxx, item_stats_prim.speed_bonus] = 1;
+item_stats[items.xxxx, item_stats_prim.attack_speed] = 30;
 item_stats[items.xxxx, item_stats_prim.misc] = "";
 
 //sec
 item_stats[items.xxxx, item_stats_sec.damage] = 0;
 item_stats[items.xxxx, item_stats_sec.damage_crit] = 0;
 item_stats[items.xxxx, item_stats_sec.ability] = "";
+item_stats[items.xxxx, item_stats_sec.ability_chance] = 0;
+item_stats[items.xxxx, item_stats_sec.ability_strength] = 0;
 item_stats[items.xxxx, item_stats_sec.cooldown] = 0;
 item_stats[items.xxxx, item_stats_sec.misc] = "";
 
@@ -178,6 +189,7 @@ item_stats[items.xxxx, item_stats_sec.misc] = "";
 item_stats[items.xxxx, item_stats_mag.ability] = "";
 item_stats[items.xxxx, item_stats_mag.ability_strength] = 0;
 item_stats[items.xxxx, item_stats_mag.mana_usage] = 0;
+item_stats[items.xxxx, item_stats_mag.cooldown] = 0;
 item_stats[items.xxxx, item_stats_mag.misc] = "";
 
 //item

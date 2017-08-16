@@ -54,7 +54,8 @@ if(!instance_exists(obj_player)) exit;
 if(room == goal) {
     obj_player.x = room_stats[goal, (2 * number)];
     obj_player.y = room_stats[goal, (2 * number)+1];
-    player_stats.player_freeze = false;
+    scr_keylock_ingamemenu(false);
+    scr_update_grid();
     instance_destroy();
 }
 </string>

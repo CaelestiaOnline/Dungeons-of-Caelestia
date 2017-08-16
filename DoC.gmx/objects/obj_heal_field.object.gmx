@@ -27,9 +27,7 @@
             <kind>1</kind>
             <string>///Heilungseffekt
 heal = 0.5;
-scr_set_depth();
-
-draw_shadow = true;
+scr_initialise_obstacle_main(-1, true, -1);
 </string>
           </argument>
         </arguments>

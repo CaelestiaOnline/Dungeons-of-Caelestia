@@ -51,18 +51,27 @@ is_crit = false;
           <argument>
             <kind>1</kind>
             <string>///Überprüfung eines Treffers
-var hit = instance_place(x, y, obj_gegner);
-if(hit != noone)
-{
-    scr_deal_damage(hit, damage);
-    scr_draw_crit(hit, is_crit);
+var hit_list = instance_place_list(x, y, obj_gegner);
+if(hit_list != noone) {
+    var n = 0;
+    while(n &lt; ds_list_size(hit_list)) {
+        scr_deal_damage(hit_list[| n], damage);
+        scr_draw_crit(hit_list[| n], is_crit);
+        n++;
+    }
+    ds_list_destroy(hit_list);
 }
 
-var hit_object = instance_place(x, y, obj_hindernis_breakable);
-if(hit_object != noone)
-{
-    scr_deal_damage_hindernis(hit_object, 1);
+var hit_object_list = instance_place_list(x, y, obj_hindernis);
+if(hit_object_list != noone) {
+    var n = 0;
+    while(n &lt; ds_list_size(hit_object_list)) {
+        scr_deal_damage_hindernis(hit_object_list[| n], 1);
+        n++;
+    }
+    ds_list_destroy(hit_object_list);
 }
+
 //Zerstörung
 instance_destroy();
 </string>

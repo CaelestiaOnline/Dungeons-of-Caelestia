@@ -12,5 +12,6 @@ hp_copy = hp_copy - damage;
 if(hp_copy < 0) hp_copy = 0;
 
 object.dealt_damage += damage;
+stats.damage_done += damage;
 
 object.hp = hp_copy;

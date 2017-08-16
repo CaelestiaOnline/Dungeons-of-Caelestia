@@ -27,11 +27,9 @@
             <kind>1</kind>
             <string>///Stats
 index = items.shuriken;
-damage = player_stats.root_damage + item_stats[index, item_stats_sec.damage];
-damage_crit = player_stats.root_damage + item_stats[index, item_stats_sec.damage_crit];
+damage = item_stats[index, item_stats_sec.damage];
+damage_crit = item_stats[index, item_stats_sec.damage_crit];
 type = obj_shuriken_bullet;
-bullet_speed = 10;
-attack_speed = item_stats[index, item_stats_sec.cooldown];
 
 </string>
           </argument>
@@ -78,8 +76,7 @@ attack_speed = item_stats[index, item_stats_sec.cooldown];
           <argument>
             <kind>1</kind>
             <string>///Angriff
-
-scr_bullet_attack_sec(damage, damage_crit, type, bullet_speed, attack_speed);
+scr_sec_attack_bullet(damage, damage_crit, type, scr_bullet_attack);
 </string>
           </argument>
         </arguments>

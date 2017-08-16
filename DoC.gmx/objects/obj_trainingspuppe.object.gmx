@@ -6,9 +6,9 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>obj_gegner</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_obj_trainingspuppe_colbox</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,8 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
-scr_initialise_enemy_main(30, 0, 0, 0, spr_trainingspuppe_dead, 64, 10);
+            <string>///Death
+event_inherited();
+instance_create(x, y, obj_create_trainingspuppe);
 </string>
           </argument>
         </arguments>

@@ -12,3 +12,5 @@ var sprite = argument2;
 
 var body = instance_create(body_x, body_y, obj_enemy_body);
 body.sprite = sprite;
+
+scr_draw_sign_box(spr_dead, -1, body);

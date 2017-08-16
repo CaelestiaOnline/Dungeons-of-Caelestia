@@ -94,23 +94,32 @@ room_stats[rm_main_hub, 3] = 200;
 //Hub Main Menu
 room_stats[rm_hub_main_menu, 0] = "hub_menu";
 
+//Hub Shop Menu
+room_stats[rm_hub_shop_menu, 0] = "hub_menu";
+
 //Testroom1
 room_stats[rm_testroom1, 0] = "game";
 room_stats[rm_testroom1, 1] = "testroom";
-room_stats[rm_testroom1, 2] = 100;
+room_stats[rm_testroom1, 2] = 3680;
 room_stats[rm_testroom1, 3] = 100;
 
 //Testroom2
 room_stats[rm_testroom2, 0] = "game";
 room_stats[rm_testroom2, 1] = "testroom";
 room_stats[rm_testroom2, 2] = 100;
-room_stats[rm_testroom2, 3] = 480;
+room_stats[rm_testroom2, 3] = 580;
 
 //Testroom3
 room_stats[rm_testroom3, 0] = "game";
 room_stats[rm_testroom3, 1] = "testroom";
-room_stats[rm_testroom3, 2] = 0;
-room_stats[rm_testroom3, 3] = 0;
+room_stats[rm_testroom3, 2] = 100;
+room_stats[rm_testroom3, 3] = 100;
+
+//Testroom4
+room_stats[rm_testroom4, 0] = "game";
+room_stats[rm_testroom4, 1] = "testroom";
+room_stats[rm_testroom4, 2] = 100;
+room_stats[rm_testroom4, 3] = 100;
 
 </string>
           </argument>

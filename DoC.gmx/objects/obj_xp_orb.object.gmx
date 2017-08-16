@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_progress_collision_box</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -31,6 +31,9 @@ xp = 1;
 //Depth
 scr_set_depth();
 
+//Schatten
+shadow_object = scr_init_shadow(self, 8, 4, 12);
+
 radius = sprite_get_width(obj_player.sprite_index) + 16;
 
 xp_speed = 8;
@@ -39,9 +42,10 @@ follow = false;
 
 //Schweben
 height = 0;
-max_height = 4;
+max_height = 2;
+y_offset = 12;
 
-y_old = y - max_height/2;
+y_old = y - max_height/2 - y_offset;
 y_item = y_old;
 
 count = 0;
@@ -103,7 +107,7 @@ if(count == max_count) {
     count -= 360;
 }
 height = sin(count) * max_height;
-y_item = y_old + height;
+y_item = y_old - height - y_offset;
 count += 0.02;
 
 y_old = y - max_height/2;
@@ -153,9 +157,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schatten
-scr_draw_shadow(8, 4, 8);
-
+            <string>///Draw self
 draw_sprite(sprite_index, 0, x, y_item);
 
 </string>
