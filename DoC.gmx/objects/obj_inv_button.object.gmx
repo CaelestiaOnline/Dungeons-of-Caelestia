@@ -183,6 +183,10 @@ if(inventory_type.inv[slot] != -1) {
 
 //Anzahl der Item in den Slots
 scr_draw_count(inventory_type.count[slot], x, y);
+
+if(!scr_check_item_inv_type(inventory_type, mouse_ind.mouse_item)) {
+    draw_sprite(spr_exit, 0, x, y);
+}
 </string>
           </argument>
         </arguments>

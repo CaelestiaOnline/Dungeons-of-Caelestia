@@ -293,7 +293,13 @@ if(admin.show_hitbox) {
 
     draw_set_colour(c_red);
     draw_text(x - 20, y - sprite_get_height(sprite_index) - 40, string(alarm_get(1)));
+    
+    if(movable) {
+    draw_path(path, x, y, false);
+    }
 }
+
+
 </string>
           </argument>
         </arguments>

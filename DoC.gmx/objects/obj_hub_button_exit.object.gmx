@@ -97,16 +97,13 @@ scr_trigger_expl(expl_text);
           <argument>
             <kind>1</kind>
             <string>///Drag &amp; Drop System
-
-if(!instance_exists(hub.hub_menu_mouse)) exit;
-
 var click = mouse_check_button_released(mb_left);
 var click_hold = mouse_check_button(mb_left);
 width = sprite_get_width(spr_inv_exit)/2;
 
 draw_set_alpha(1);
 
-if(abs(hub.hub_menu_mouse.x - x) &lt; width &amp;&amp; (abs(hub.hub_menu_mouse.y - y) &lt; width)) {
+if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
     if(!click_hold) {
         //Rechteck bei Hovern
         draw_set_colour(c_white);

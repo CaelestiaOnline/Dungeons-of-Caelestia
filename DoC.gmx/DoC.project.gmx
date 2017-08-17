@@ -192,6 +192,7 @@
       </sprites>
       <sprites name="Symbole">
         <sprite>sprites\spr_inv_exit</sprite>
+        <sprite>sprites\spr_exit</sprite>
         <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_undefined</sprite>
         <sprite>sprites\spr_back</sprite>
@@ -345,6 +346,7 @@
           <script>scripts\scr_draw_slots.gml</script>
           <script>scripts\scr_draw_count.gml</script>
           <script>scripts\scr_draw_item_stats.gml</script>
+          <script>scripts\scr_draw_slot_cooldown.gml</script>
         </scripts>
         <scripts name="Interaktion">
           <scripts name="add">
@@ -426,6 +428,7 @@
       <scripts name="Player">
         <script>scripts\scr_draw_death_player.gml</script>
         <script>scripts\scr_player_set_persistent.gml</script>
+        <script>scripts\scr_player_death.gml</script>
       </scripts>
       <scripts name="in game menu">
         <script>scripts\scr_explanation.gml</script>
@@ -494,6 +497,7 @@
       </scripts>
       <scripts name="KeyLock">
         <script>scripts\scr_keylock_ingamemenu.gml</script>
+        <script>scripts\scr_keylock_all.gml</script>
         <scripts name="General">
           <script>scripts\scr_keylock_movement.gml</script>
           <script>scripts\scr_keylock_abilities.gml</script>
@@ -610,7 +614,7 @@
         <object>objects\obj_inv_button_main_menu</object>
       </objects>
       <objects name="Mouse">
-        <object>objects\obj_mouse_ind</object>
+        <object>objects\obj_mouse_ind_inv</object>
       </objects>
       <objects name="Ground-Item">
         <object>objects\obj_ground_item</object>
@@ -670,16 +674,18 @@
       <object>objects\obj_hub_portal_testroom2</object>
       <object>objects\obj_hub_portal_hub</object>
       <object>objects\obj_hub_item_place</object>
-      <object>objects\obj_hub_menu_mouse</object>
+      <object>objects\obj_mouse_ind_hub</object>
       <object>objects\obj_hub</object>
       <objects name="Buttons">
         <object>objects\obj_hub_button_exit</object>
-        <object>objects\obj_hub_button_item_shop</object>
+        <object>objects\obj_hub_button_shop_getitem</object>
+        <object>objects\obj_hub_button_shop_dropitem</object>
       </objects>
       <object>objects\obj_leave_hub_menu</object>
       <object>objects\obj_enter_game</object>
       <objects name="Menu">
         <object>objects\obj_hub_main_menu</object>
+        <object>objects\obj_hub_death_menu</object>
         <object>objects\obj_hub_shop_menu</object>
       </objects>
       <object>objects\obj_hindernis_interaction</object>
@@ -717,7 +723,10 @@
       <objects name="Charakter">
         <object>objects\obj_player</object>
         <object>objects\obj_player_stats</object>
-        <object>objects\obj_player_body</object>
+        <objects name="Tod">
+          <object>objects\obj_player_body</object>
+          <object>objects\obj_player_death</object>
+        </objects>
       </objects>
       <objects name="Gegner">
         <object>objects\obj_gegner</object>
@@ -848,6 +857,9 @@
       <object>objects\obj_question_box</object>
       <object>objects\obj_box_confirm</object>
     </objects>
+    <objects name="Mouse">
+      <object>objects\obj_mouse</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="initalise_room">
@@ -868,6 +880,7 @@
       <room>rooms\rm_main_hub</room>
       <rooms name="Hub-menu">
         <room>rooms\rm_hub_main_menu</room>
+        <room>rooms\rm_hub_death_menu</room>
         <room>rooms\rm_hub_shop_menu</room>
       </rooms>
     </rooms>

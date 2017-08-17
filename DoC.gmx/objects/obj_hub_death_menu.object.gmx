@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-2</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,13 +25,62 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Variablen
+            <string>///Menu Koordinaten
+hub_menu_x1 = 0;
+hub_menu_x2 = display_get_gui_width();
 
-button_item = -1;
-button_count = 0;
+hub_menu_y1 = 0;
+hub_menu_y2 = 64;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Button Koordinaten
+//Exit_button
+exit_button_x = hub_menu_x2 - 8*1 - 24 - 48*0;
+exit_button_y = hub_menu_y1 + 32;
+exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit);
 
-width = 0;
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Kontrolltasten
+if(admin.pause_menu_key_pressed) scr_leave_hub_menu(); 
 </string>
           </argument>
         </arguments>
@@ -54,73 +103,29 @@ width = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Drag &amp; Drop System
+            <string>///Menüleiste
+draw_set_colour(inv_hud.colour_trans);
 
-if(!instance_exists(hub.hub_menu_mouse)) exit;
-
-var click = admin.left_click_pressed;
-var right_click = admin.right_click_pressed;
-width = sprite_get_width(spr_inv_border)/2;
-var mouse = hub.hub_menu_mouse;
-
-draw_set_colour(c_white);
+draw_rectangle(
+    hub_menu_x1,
+    hub_menu_y1,
+    hub_menu_x2,
+    hub_menu_y2,
+    0
+);
 draw_set_alpha(1);
 
-if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
-    //Item-Stats
-    if(button_item != -1) {
-        inventory.item_stats_title = item[button_item, 0];
-        inventory.item_stats_desc = item[button_item, 1];
-    }
-    //Rechteck bei Hovern
-    draw_set_alpha(0.5);
-    draw_rectangle(
-        x - (width-2),
-        y - (width-2),
-        x + (width-2),
-        y + (width-2),
-        0
-    );
-    draw_set_alpha(1);
-    if(click &amp;&amp; !right_click) {
-        //Wenn der Button ein Item enthält
-        if(button_item != -1) {
-            scr_inventory_drop_item_place_count(button_item, 900, 500, button_count);
-        }
-    }
-
-}
-
-draw_sprite(spr_inv_border_2, 0, x, y);
-draw_sprite(spr_inv_border, 0, x, y);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw Sprite + Anzahl
-
-if(button_item != -1) {
-    draw_sprite(spr_items, button_item, x, y);
-}
-
-//Anzahl der Item in den Slots
-scr_draw_count(button_count, x, y);
+draw_set_valign(fa_middle);
+draw_set_halign(fa_left);
+draw_set_colour(inv_hud.colour_font);
+draw_set_font(fnt_inv_heading_prim);
+draw_set_alpha(1);
+draw_text(
+    hub_menu_x1 + 16,
+    hub_menu_y2 - 32,
+    "DEATH MENU"
+);
+draw_set_valign(fa_top);
 </string>
           </argument>
         </arguments>

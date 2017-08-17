@@ -73,7 +73,7 @@ is_visible = false;
           <argument>
             <kind>1</kind>
             <string>///Setze is_visible
-is_visible = admin.game_paused;
+is_visible = hub.in_menu;
 if(is_visible) {
     visible = true;
     x = device_mouse_x_to_gui(0);
@@ -81,49 +81,8 @@ if(is_visible) {
 }
 else {
     visible = false;
-    x = 0;
-    y = 0;
 }
 
-
-if(!inventory.show_inv) {
-    if(admin.in_game) {
-        if(mouse_item != -1) {
-            repeat(mouse_count) {
-                scr_inventory_drop_item(mouse_item);
-            }
-        }
-    }
-    mouse_item = -1;
-    mouse_count = 0;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Item-Stats
-
-if(mouse_item != -1) {
-    inventory.item_stats_title = item[mouse_item, 0];
-    inventory.item_stats_desc = item[mouse_item, 1];
-    scr_draw_item_stats(mouse_item);
-}
 </string>
           </argument>
         </arguments>
@@ -170,14 +129,11 @@ if(mouse_item == -1) mouse_count = 0;
           <argument>
             <kind>1</kind>
             <string>///Draw Sprite
-
 draw_set_colour(c_white);
 var width = sprite_get_width(spr_inv_border)/2;
 if(is_visible) {
     draw_set_font(fnt_fps);
     draw_set_colour(c_white);
-    draw_text(150, 12, string(x) + "/" + string(display_get_gui_width()));
-    draw_text(150, 32, string(y) + "/" + string(display_get_gui_height()));
     //draw_text(100, 500, string(mouse_item));
     //draw_text(100, 550, string(mouse_count));
 
@@ -197,7 +153,6 @@ if(is_visible) {
         draw_sprite(spr_items, mouse_item, x, y);
         scr_draw_count(mouse_count, x, y);
     }
-    draw_sprite(spr_mouse_icon, 0, x, y);
 }
 </string>
           </argument>

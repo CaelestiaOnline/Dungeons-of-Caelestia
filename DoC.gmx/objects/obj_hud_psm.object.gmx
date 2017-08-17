@@ -237,26 +237,44 @@ draw_set_alpha(1);
 if(i == 0) {
     if(instance_exists(inventory.inv_sec.real_item_object[0])) {
         var countdown;
-        countdown = inventory.inv_sec.real_item_object[0].alarm[0] / item_stats[inventory.inv_sec.inv[0], item_stats_sec.cooldown];
+         if(player_stats.attack_speed &gt; item_stats[inventory.inv_sec.inv[0], item_stats_sec.cooldown]) {
+            countdown = player_stats.alarm[1] / player_stats.attack_speed;
+        } else {
+            countdown = inventory.inv_sec.real_item_object[0].alarm[0] / item_stats[inventory.inv_sec.inv[0], item_stats_sec.cooldown];
+        }
         var countdown_alpha = countdown;
         countdown = clamp(countdown, 0, 1);
         
-        draw_set_colour(c_white);
-        draw_set_alpha(countdown_alpha);
-        draw_circle(slots_x[i], slots_y[i], (slots_bg_radius - buffer), 0);
-        draw_set_alpha(1);
+        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i]);
     }
-
-} else {
-    var countdown;
-    countdown = player_stats.alarm[1] / player_stats.attack_speed;
-    var countdown_alpha = countdown;
-    countdown = clamp(countdown, 0, 1);
-    
-    draw_set_colour(c_white);
-    draw_set_alpha(countdown_alpha);
-    draw_circle(slots_x[i], slots_y[i], (slots_bg_radius - buffer), 0);
-    draw_set_alpha(1);
+}
+if(i == 1) {
+    if(instance_exists(inventory.inv_prim.real_item_object[0])) {
+        var countdown;
+        if(player_stats.attack_speed &gt; item_stats[inventory.inv_prim.inv[0], item_stats_prim.attack_speed]) {
+            countdown = player_stats.alarm[1] / player_stats.attack_speed;
+        } else {
+            countdown = inventory.inv_prim.real_item_object[0].alarm[0] / item_stats[inventory.inv_prim.inv[0], item_stats_prim.attack_speed];
+        }
+        var countdown_alpha = countdown;
+        countdown = clamp(countdown, 0, 1);
+        
+        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i]);
+    }
+}
+if(i == 2) {
+    if(instance_exists(inventory.inv_mag.real_item_object[0])) {
+        var countdown;
+            if(player_stats.attack_speed &gt; item_stats[inventory.inv_mag.inv[0], item_stats_mag.cooldown]) {
+            countdown = player_stats.alarm[1] / player_stats.attack_speed;
+        } else {
+            countdown = inventory.inv_mag.real_item_object[0].alarm[0] / item_stats[inventory.inv_mag.inv[0], item_stats_mag.cooldown];
+        }
+        var countdown_alpha = countdown;
+        countdown = clamp(countdown, 0, 1);
+        
+        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i]);
+    }
 }
 
 

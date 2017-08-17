@@ -15,7 +15,7 @@ if(button_item != -1) {
     button_count = item[button_item, 4];
 } else button_count = 0;
 
-var shop_button = instance_create(button_x, button_y, obj_hub_button_item_shop);
+var shop_button = instance_create(button_x, button_y, obj_hub_button_shop_getitem);
 shop_button.button_item = button_item;
 shop_button.button_count = button_count;
 
