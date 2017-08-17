@@ -866,7 +866,7 @@ switch (y_axis) {
             <string>///Tod
 if(player_stats.hp &lt;= 0)
 {
-    scr_draw_death_player(x, y, spr_charakter_dead);
+    scr_player_death();
 }
 
 </string>

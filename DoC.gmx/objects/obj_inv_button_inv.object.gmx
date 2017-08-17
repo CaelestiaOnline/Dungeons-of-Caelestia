@@ -71,7 +71,7 @@ if(inventory.show_inv) {
         draw_set_alpha(1);      
 }
 
-if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
+if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
     if(!click_hold) {
         //Rechteck bei Hovern
         draw_set_colour(c_white);

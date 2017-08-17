@@ -29,6 +29,7 @@
 if(instance_exists(obj_player)) {
     scr_player_set_persistent(true);
     admin.playing = true;
+    scr_keylock_ingamemenu(false);
     instance_destroy();
 }
 </string>

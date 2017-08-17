@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>-1001</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,22 +25,25 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Variablen
-width = 0;
+            <string>///is_visible
+is_visible = false;
+
+mouse_icon_normal = spr_mouse_icon;
+mouse_icon = mouse_icon_normal;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
@@ -49,7 +52,17 @@ width = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm0</string>
+            <string>///Setze is_visible
+is_visible = max(admin.game_paused, hub.in_menu, 0);
+if(is_visible) {
+    visible = true;
+    x = device_mouse_x_to_gui(0);
+    y = device_mouse_y_to_gui(0);
+}
+else {
+    visible = false;
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -71,76 +84,18 @@ width = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Erklärung
-
-var expl_text = "Close Pause Menu"
-scr_trigger_expl(expl_text);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Drag &amp; Drop System
-var click = mouse_check_button_released(mb_left);
-var click_hold = mouse_check_button(mb_left);
-width = sprite_get_width(spr_inv_exit)/2;
-
-draw_set_alpha(1);
-
-if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
-    if(!click_hold) {
-        //Rechteck bei Hovern
+            <string>///Draw Mouse Icon
+if(is_visible) {
+    draw_sprite(mouse_icon, 0, x, y);
+    if(admin.show_hitbox) {
+        draw_set_font(fnt_debug);
+        draw_set_alpha(0.8);
         draw_set_colour(c_white);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
+        draw_text(x + 20, y - 20, string(x) + "/" + string(display_get_gui_width()));
+        draw_text(x + 20, y - 10, string(y) + "/" + string(display_get_gui_height()));
         draw_set_alpha(1);
-    } else {
-        //Rechteck bei Halten
-        draw_set_colour(c_red);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_colour(c_white);
-        draw_set_alpha(1);
-    }
-    if(click) {
-        if(inventory.show_inv) {
-            scr_invfade(false, "");
-        } else {
-            scr_menufade(false);
-        }
     }
 }
-
-draw_sprite(spr_inv_exit, 0, x, y);
 </string>
           </argument>
         </arguments>

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>-1000</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,22 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Variablen
-width = 0;
+            <string>///Item-Transport
+mouse_item = -1;
+mouse_count = 0;
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
@@ -49,7 +48,104 @@ width = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm0</string>
+            <string>///is_visible
+is_visible = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Setze is_visible
+is_visible = inventory.show_inv;
+if(is_visible) {
+    visible = true;
+    x = device_mouse_x_to_gui(0);
+    y = device_mouse_y_to_gui(0);
+}
+else {
+    visible = false;
+}
+
+
+if(!inventory.show_inv) {
+    if(admin.in_game) {
+        if(mouse_item != -1) {
+            repeat(mouse_count) {
+                scr_inventory_drop_item(mouse_item);
+            }
+        }
+    }
+    mouse_item = -1;
+    mouse_count = 0;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Item-Stats
+
+if(mouse_item != -1) {
+    inventory.item_stats_title = item[mouse_item, 0];
+    inventory.item_stats_desc = item[mouse_item, 1];
+    scr_draw_item_stats(mouse_item);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Count + Item Debug
+if(mouse_count == 0) mouse_item = -1;
+if(mouse_item == -1) mouse_count = 0;
+</string>
           </argument>
         </arguments>
       </action>
@@ -71,76 +167,33 @@ width = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Erklärung
+            <string>///Draw Sprite
 
-var expl_text = "Close Pause Menu"
-scr_trigger_expl(expl_text);
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Drag &amp; Drop System
-var click = mouse_check_button_released(mb_left);
-var click_hold = mouse_check_button(mb_left);
-width = sprite_get_width(spr_inv_exit)/2;
+draw_set_colour(c_white);
+var width = sprite_get_width(spr_inv_border)/2;
+if(is_visible) {
+    draw_set_font(fnt_fps);
+    draw_set_colour(c_white);
+    //draw_text(100, 500, string(mouse_item));
+    //draw_text(100, 550, string(mouse_count));
 
-draw_set_alpha(1);
-
-if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
-    if(!click_hold) {
-        //Rechteck bei Hovern
-        draw_set_colour(c_white);
-        draw_set_alpha(0.7);
-        draw_rectangle(
+    if(mouse_item != -1) {
+        //Rechteck
+        draw_set_alpha(0.5);
+        draw_roundrect_ext(
             x - width,
             y - width,
             x + width,
-            y + width,
+            y + width, 
+            15,
+            15,
             0
         );
-        draw_set_alpha(1);
-    } else {
-        //Rechteck bei Halten
-        draw_set_colour(c_red);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_colour(c_white);
-        draw_set_alpha(1);
-    }
-    if(click) {
-        if(inventory.show_inv) {
-            scr_invfade(false, "");
-        } else {
-            scr_menufade(false);
-        }
+    draw_set_alpha(1);
+        draw_sprite(spr_items, mouse_item, x, y);
+        scr_draw_count(mouse_count, x, y);
     }
 }
-
-draw_sprite(spr_inv_exit, 0, x, y);
 </string>
           </argument>
         </arguments>

@@ -13,6 +13,7 @@ randomize();
 draw_set_circle_precision(64);
 
 //Grid
+global.grid = 0;
 scr_update_grid();
 
 //Objekte
@@ -33,8 +34,16 @@ globalvar player_stats;
 player_stats = instance_create(0, 0, obj_player_stats);
 
 //Mouse-Indikator
+globalvar mouse;
+mouse = instance_create(0, 0, obj_mouse);
+
+//Mouse-Indikator
 globalvar mouse_ind;
-mouse_ind = instance_create(0, 0, obj_mouse_ind);
+mouse_ind = instance_create(0, 0, obj_mouse_ind_inv);
+
+//Mouse-Indikator
+globalvar mouse_ind_hub;
+mouse_ind_hub = instance_create(0, 0, obj_mouse_ind_hub);
 
 //Erzeuge Item_stats
 globalvar item_stats_object;

@@ -494,7 +494,7 @@ if(keyboard_check_pressed(vk_f11)) {
 }
 
 //Ghost
-if(instance_exists(obj_player)) {
+if(playing) {
 if(keyboard_check_pressed(vk_f9)) is_ghost = 1 - is_ghost;
 if(is_ghost) {
     obj_player.image_alpha = 0.3;
@@ -503,11 +503,11 @@ if(is_ghost) {
     obj_player.image_alpha = 1;
     player_stats.invincible = false;
 }
-
 }
 
 //Hitbox
-if(keyboard_check_pressed(vk_f8) &amp;&amp; playing) show_hitbox = 1 - show_hitbox;
+if(keyboard_check_pressed(vk_f8)) show_hitbox = 1 - show_hitbox;
+show_debug_overlay(show_hitbox);
 </string>
           </argument>
         </arguments>
@@ -535,6 +535,8 @@ draw_set_alpha(0.1);
 mp_grid_draw(global.grid);
 draw_set_alpha(1);
 */
+
+
 </string>
           </argument>
         </arguments>

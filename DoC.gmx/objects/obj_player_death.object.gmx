@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-20</depth>
+  <depth>0</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,8 +25,46 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Variablen
-width = 0;
+            <string>/*
+scr_keylock_all(false);
+obj_player.visible = true;
+admin.playing = true;
+scr_reset_stats();
+instance_destroy();
+scr_enter_hub();
+*/
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gehe ins Hub
+hub.in_hub = true;
+scr_keylock_all(true);
+scr_reset_stats();
+obj_player.visible = false;
+
+alarm_set(0, room_speed * 3);
+
+var room_placer = instance_create(0, 0, obj_room_placer);
+room_placer.goal = rm_main_hub;
 </string>
           </argument>
         </arguments>
@@ -53,8 +91,6 @@ width = 0;
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="8" enumb="75">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -71,16 +107,15 @@ width = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Erklärung
-
-var expl_text = "Close Pause Menu"
-scr_trigger_expl(expl_text);
+            <string>room_goto(rm_main_hub);
+obj_player.visible = true;
+player_stats.invincible = false;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -97,50 +132,13 @@ scr_trigger_expl(expl_text);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Drag &amp; Drop System
-var click = mouse_check_button_released(mb_left);
-var click_hold = mouse_check_button(mb_left);
-width = sprite_get_width(spr_inv_exit)/2;
-
-draw_set_alpha(1);
-
-if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
-    if(!click_hold) {
-        //Rechteck bei Hovern
-        draw_set_colour(c_white);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_alpha(1);
-    } else {
-        //Rechteck bei Halten
-        draw_set_colour(c_red);
-        draw_set_alpha(0.7);
-        draw_rectangle(
-            x - width,
-            y - width,
-            x + width,
-            y + width,
-            0
-        );
-        draw_set_colour(c_white);
-        draw_set_alpha(1);
-    }
-    if(click) {
-        if(inventory.show_inv) {
-            scr_invfade(false, "");
-        } else {
-            scr_menufade(false);
-        }
+            <string>///Gehe ins Todesmenü
+if(alarm_get(0) == -1) {
+    if(room == rm_main_hub) {
+        scr_enter_hub_menu(rm_hub_death_menu);
+        instance_destroy();
     }
 }
-
-draw_sprite(spr_inv_exit, 0, x, y);
 </string>
           </argument>
         </arguments>

@@ -55,6 +55,10 @@ count = 0;
             <kind>1</kind>
             <string>if(admin.playing &amp;&amp; count &gt; 0 &amp;&amp; drop_item != -1) {
     repeat(count) {
+    if(drop_x == -1 &amp;&amp; drop_y == -1) {
+        drop_x = obj_player.x + random_range(-10, 10);
+        drop_y = obj_player.y + random_range(-10, 10);
+    } 
         ground_item = instance_create(drop_x, drop_y, obj_ground_item);
         ground_item.ground_item = drop_item;
     }
