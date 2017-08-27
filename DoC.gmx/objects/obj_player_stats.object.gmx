@@ -98,6 +98,9 @@ attack_ready = true;
 //Invincible
 invincible = false;
 
+//Effekte
+scr_init_effects();
+
 
 </string>
           </argument>

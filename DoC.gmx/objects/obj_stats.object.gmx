@@ -154,21 +154,8 @@ damage_taken = 0;
           <argument>
             <kind>1</kind>
             <string>///Reset Stats
-if(keyboard_check_pressed(vk_f8)) {
-    death_count = 0;
-    pxl_travelled = 0;
-    pxl_walked = 0;
-    pxl_sprinted = 0;
-    pxl_crouched = 0;
-    damage_done = 0;
-    attacks_done = 0;
-    prim_attacks_done = 0;
-    melee_attacks_done = 0;
-    bullet_attacks_done = 0;
-    sec_attacks_done = 0;
-    mag_attacks_done = 0;
-    hp_healed = 0;
-    damage_taken = 0;
+if(keyboard_check_pressed(vk_f11)) {
+    
 }
 </string>
           </argument>

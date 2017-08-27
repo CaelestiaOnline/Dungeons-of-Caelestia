@@ -26,11 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>///Giftschaden
+index = effect.poison;
+
 //Schaden über Zeit
 poison_damage = 0;
 poison_time = 0;
 poison_speed = 0;
-poison_object = 0;
+goal_object = 0;
+
+alarm_set(0, -1);
 </string>
           </argument>
         </arguments>
@@ -54,8 +58,8 @@ poison_object = 0;
           <argument>
             <kind>1</kind>
             <string>///Giftschaden an Objekt
-if(poison_object == obj_player) scr_deal_player_damage(poison_damage);
-else scr_deal_damage(poison_object, poison_damage);
+if(goal_object == obj_player) scr_deal_player_damage(poison_damage);
+else scr_deal_damage(goal_object, poison_damage);
 </string>
           </argument>
         </arguments>
@@ -79,7 +83,7 @@ else scr_deal_damage(poison_object, poison_damage);
           <argument>
             <kind>1</kind>
             <string>///Count
-if(!instance_exists(poison_object)) instance_destroy();
+if(!instance_exists(goal_object)) instance_destroy();
 if(poison_time &gt; 0) {
     if(alarm_get(0) == -1) {
         alarm_set(0, poison_speed);

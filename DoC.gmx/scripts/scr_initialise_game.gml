@@ -72,6 +72,10 @@ room_stats_object = instance_create(0, 0, obj_room_stats);
 globalvar enemy_stats_object;
 enemy_stats_object = instance_create(0, 0, obj_enemy_stats);
 
+//Enemy_stats
+globalvar effect_stats_object;
+effect_stats_object = instance_create(0, 0, obj_effect_stats);
+
 //HUD
 globalvar hud;
 hud = instance_create(0, 0, obj_hud);
