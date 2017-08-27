@@ -28,6 +28,8 @@
             <string>///damage
 damage = 0;
 is_crit = false;
+
+origin_object = 0;
 </string>
           </argument>
         </arguments>
@@ -52,6 +54,8 @@ is_crit = false;
             <kind>1</kind>
             <string>///Überprüfung eines Treffers
 var hit_list = instance_place_list(x, y, obj_gegner);
+origin_object.hit_list = hit_list;
+show_debug_message(string(hit_list));
 if(hit_list != noone) {
     var n = 0;
     while(n &lt; ds_list_size(hit_list)) {
@@ -59,7 +63,6 @@ if(hit_list != noone) {
         scr_draw_crit(hit_list[| n], is_crit);
         n++;
     }
-    ds_list_destroy(hit_list);
 }
 
 var hit_object_list = instance_place_list(x, y, obj_hindernis);

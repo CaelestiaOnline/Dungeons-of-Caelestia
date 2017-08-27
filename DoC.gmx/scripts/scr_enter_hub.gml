@@ -7,7 +7,7 @@ scr_enter_hub(
 var game_room = rm_main_hub;
 
 hub.in_hub = true;
-admin.playing = false;
+admin.playing = true;
 scr_keylock_all(true);
 scr_sidefade(game_room, 60);
 

@@ -1,5 +1,5 @@
 /*
-scr_create_hitbox(
+scr_create_bullet(
     x,
     y,
     damage,
@@ -13,6 +13,7 @@ var damage = argument2;
 var type = argument3;
 var dir = argument4;
 var is_crit = argument5;
+var origin_object = self;
 
 var bullet;
 
@@ -21,3 +22,4 @@ bullet.damage = damage;
 bullet.hspeed = bullet.hspeed*dir;
 bullet.image_xscale = dir;
 bullet.is_crit = is_crit;
+bullet.origin_object = origin_object;

@@ -499,6 +499,16 @@ if(place_meeting(x, y + move_y, obj_hindernis))
     }
     move_y = 0;
 }
+
+//Schräg 1
+if(place_meeting(x + move_x, y + move_y, obj_hindernis))
+{
+    while(!place_meeting(x + sign(move_x),y,obj_hindernis))
+    {
+        x += sign(move_x);
+    }
+    move_x = 0;
+}
 }
 //mask_index = battle_mask;
 </string>
