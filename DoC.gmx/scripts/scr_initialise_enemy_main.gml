@@ -11,6 +11,9 @@ max_hp = hp;
 dealt_damage = 0;
 old_dealt_damage = 0;
 damage_count = 0;
+dealt_heal = 0;
+old_dealt_heal = 0;
+heal_count = 0;
 
 //Depth
 scr_set_depth();
