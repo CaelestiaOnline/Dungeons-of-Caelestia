@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_charakter_collision_box</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -27,6 +27,15 @@
             <kind>1</kind>
             <string>///Stats
 
+//Schatten
+//Schatten
+shadow_object = scr_init_shadow(
+    self,
+    sprite_get_width(sprite_index)/2,
+    sprite_get_width(sprite_index)/5,
+    sprite_get_height(sprite_index)/2 - 3,
+    );
+
 //Höhe und Breite des Sprite
 spr_height = sprite_get_height(sprite_index)/2;
 spr_width = sprite_get_width(sprite_index)/2;
@@ -35,8 +44,8 @@ spr_width = sprite_get_width(sprite_index)/2;
 x_axis = 0;
 y_axis = 0;
 
-move_x = 1;
-move_y = 1;
+move_x = 0;
+move_y = 0;
 
 isSprinting = false;
 is_crouching = false;
@@ -44,8 +53,8 @@ is_crouching = false;
 //Achse
 attack_axis = 1;
 
-x_axis_old = 1;
-y_axis_old = 1;
+x_axis_old = 0;
+y_axis_old = 0;
 
 //damage
 dealt_damage = 0;
@@ -63,6 +72,10 @@ sprite_back = spr_charakter_back;
 
 sprite_front_old = sprite_front;
 sprite_back_old = sprite_back;
+
+//y_offset
+y_bullet_offset = 30;
+y_melee_offset = 30;
 
 
 </string>
@@ -88,6 +101,73 @@ sprite_back_old = sprite_back;
             <string>///Setze Animations-Speed
 image_speed = 8;
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Rauch Alarm
+alarm_set(2, 1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Kollisionsmasken
+collision_mask = spr_charakter_collision_box;
+battle_mask = spr_charakter;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm2</string>
           </argument>
         </arguments>
       </action>
@@ -201,6 +281,8 @@ if(admin.right_key) {
 //Friciton
 if(!admin.left_key &amp;&amp; !admin.right_key) {
     move_x -= player_stats.player_friction * x_axis;
+        if(sign(move_x) == -1 &amp;&amp; x_axis == 1) move_x = 0;
+        if(sign(move_x) == 1 &amp;&amp; x_axis == -1) move_x = 0;
 }
 //Maxspeed
 if(x_axis == 1) {    
@@ -219,16 +301,21 @@ if(x_axis == -1) {
 if(x_axis == 1) {    
     if(move_x &lt; 0)
     {
-        move_x -= player_stats.player_acc;
-        if(move_x &lt; 0) move_x = 0;
+        //move_x -= player_stats.player_acc;
+        //if(move_x &lt; 0) move_x = 0;
+        move_x = 0;
     }
 }
 if(x_axis == -1) {    
     if(move_x &gt; 0)
     {
-        move_x += player_stats.player_acc;
-        if(move_x &gt; 0) move_x = 0;
+        //move_x += player_stats.player_acc;
+        //if(move_x &gt; 0) move_x = 0;
+        move_x = 0;
     }
+}
+if(x_axis == 0) {
+    move_x = 0;
 }
 
 //Y-Achse (+ für rechts und - für links)
@@ -252,6 +339,8 @@ if(admin.up_key) {
 //Friciton
 if(!admin.up_key &amp;&amp; !admin.down_key) {
     move_y -= player_stats.player_friction * y_axis;
+    if(sign(move_y) == -1 &amp;&amp; y_axis == 1) move_y = 0;
+    if(sign(move_y) == 1 &amp;&amp; y_axis == -1) move_y = 0;
 }
 //Maxspeed
 if(y_axis == 1) {    
@@ -281,7 +370,6 @@ if(y_axis == -1) {
         if(move_y &gt; 0) move_y = 0;
     }
 }
-
 </string>
           </argument>
         </arguments>
@@ -391,7 +479,8 @@ if(place_meeting(x + move_x,y,obj_hindernis))
     move_x = 0;
 }
 */
-
+mask_index = collision_mask;
+if(!admin.is_ghost) {
 if(place_meeting(x + move_x, y, obj_hindernis))
 {
     while(!place_meeting(x + sign(move_x),y,obj_hindernis))
@@ -410,6 +499,8 @@ if(place_meeting(x, y + move_y, obj_hindernis))
     }
     move_y = 0;
 }
+}
+//mask_index = battle_mask;
 </string>
           </argument>
         </arguments>
@@ -433,6 +524,21 @@ if(place_meeting(x, y + move_y, obj_hindernis))
             <string>///Addiere Move-Variablen
 x += move_x;
 y += move_y;
+
+//Stats
+stats.pxl_travelled += sqrt(sqr(move_x) + sqr(move_y));
+
+if(!obj_player.isSprinting &amp;&amp; !obj_player.is_crouching) {
+    stats.pxl_walked += sqrt(sqr(move_x) + sqr(move_y));
+}
+
+if(obj_player.isSprinting) {
+    stats.pxl_sprinted += sqrt(sqr(move_x) + sqr(move_y));
+}
+
+if(obj_player.is_crouching) {
+    stats.pxl_crouched += sqrt(sqr(move_x) + sqr(move_y));
+}
 </string>
           </argument>
         </arguments>
@@ -681,6 +787,8 @@ if(dealt_heal &gt; 0) {
             <kind>1</kind>
             <string>///Set depth
 scr_set_depth();
+
+
 </string>
           </argument>
         </arguments>
@@ -713,7 +821,10 @@ switch (x_axis) {
         image_xscale = x_axis_old;
 }
 
+
+sprite_index = sprite_front;
 //Vorder + Hinterseite
+/*
 switch (y_axis) {
     case 1: 
         sprite_index = sprite_front;
@@ -730,6 +841,8 @@ switch (y_axis) {
                 sprite_index = sprite_back;
         }
 }
+*/
+
 </string>
           </argument>
         </arguments>
@@ -753,7 +866,7 @@ switch (y_axis) {
             <string>///Tod
 if(player_stats.hp &lt;= 0)
 {
-    scr_draw_death_player(x, y, spr_charakter_dead);
+    scr_player_death();
 }
 
 </string>
@@ -778,26 +891,41 @@ if(player_stats.hp &lt;= 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Kreis
+            <string>///Rauch
+var smoke_colour = choose(c_dkgray, c_gray);
+if(isSprinting) smoke_colour = c_black; 
+if(alarm_get(2) == -1) {
+if(move_x != 0 || move_y != 0) {
+    effect_create_below(ef_smoke, x, y + 20, choose(0, 1), smoke_colour);
+    alarm_set(2, irandom(15) + 1);
+}
+}
 
-var width = 32;
-var height = 16;
-var y_offset = y + 26;
 
-
-var x1 = x - width;
-var x2 = x + width;
-
-var y1 = y_offset + height;
-var y2 = y_offset - height; 
-
-draw_set_colour(c_black);
-draw_set_alpha(0.6);
-draw_ellipse(x1, y1, x2, y2, 0);
-draw_set_colour(c_white);
-draw_set_alpha(1);
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw self
 draw_self();
+
+if(admin.show_hitbox) scr_draw_hitbox();
 </string>
           </argument>
         </arguments>

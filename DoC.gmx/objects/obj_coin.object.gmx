@@ -30,6 +30,49 @@ money = 0;
 
 //Depth
 scr_set_depth();
+
+//Schatten
+shadow_object = scr_init_shadow(self, 8, 4, 12);
+
+//Schweben
+height = 0;
+max_height = 2;
+y_offset = 12;
+
+y_old = y - max_height/2 - y_offset;
+y_item = y_old;
+
+count = 0;
+max_count = 360;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schweben
+if(count == max_count) {
+    count -= 360;
+}
+height = sin(count) * max_height;
+y_item = y_old + height;
+count += 0.02;
 </string>
           </argument>
         </arguments>
@@ -55,6 +98,31 @@ scr_set_depth();
             <string>///Aufheben
 scr_money_add_player(money);
 instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Self
+draw_sprite(sprite_index, 0, x, y_item);
+
 </string>
           </argument>
         </arguments>

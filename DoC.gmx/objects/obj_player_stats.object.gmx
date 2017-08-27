@@ -28,7 +28,7 @@
             <string>///Stats
 
 //Name
-name = "Subjekt \#41";
+name = "Subjekt \#" + string(stats.death_count);
 //HP
 hp = 100;
 max_hp = hp;
@@ -47,7 +47,7 @@ mana_reg_time = room_speed/4;
 //Stamina
 stamina = 25;
 max_stamina = stamina;
-stamina_usage = 1;
+stamina_usage = 0.5;
 stamina_reg = 0.2;
 
 //Angriff
@@ -56,10 +56,13 @@ root_damage = 5;
 chance_crit = 0.15;
 //Angriffsgeschwindigkeit
 attack_speed = 20;
+attack_speed_old = attack_speed;
+attack_speed_mult = 1;
+attack_speed_mult_effect = 1;
 
 //Speed
 player_speed = 1;
-max_player_speed = 5;
+max_player_speed = 4;
 old_max_player_speed = max_player_speed;
 speed_mult = 1;
 speed_mult_item = 1;
@@ -71,9 +74,9 @@ player_acc = 0.4;
 old_player_acc = player_acc;
 
 //Sprinten
-max_player_sprint_speed = max_player_speed * 1.5;
+max_player_sprint_speed = max_player_speed * 1.8;
 old_max_player_sprint_speed = max_player_sprint_speed;
-player_sprint_acc = player_acc * 2;
+player_sprint_acc = player_acc * 1.8;
 old_player_sprint_acc = player_sprint_acc;
 
 //Reibung
@@ -91,6 +94,11 @@ player_freeze = false;
 
 //Attack ready
 attack_ready = true;
+
+//Invincible
+invincible = false;
+
+
 </string>
           </argument>
         </arguments>
@@ -227,6 +235,53 @@ if(instance_exists(obj_player)) {
         max_player_crouch_speed = old_max_player_crouch_speed * speed_mult;
     //}
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///AttackSpeed-Multiplier
+attack_speed_mult = 1 * attack_speed_mult_effect;
+
+attack_speed = attack_speed_old * attack_speed_mult;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Name aktualisieren
+name = "Subjekt \#" + string(stats.death_count);
 </string>
           </argument>
         </arguments>

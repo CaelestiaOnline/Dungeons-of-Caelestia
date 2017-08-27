@@ -27,23 +27,87 @@
             <kind>1</kind>
             <string>///Koordinaten
 //Hintergrund
-hud_bg_x1 = 16;
-hud_bg_x2 = 250;
-hud_bg_y1 = display_get_gui_height() - 150 - 16;
-hud_bg_y2 = display_get_gui_height() - 16;
+hud_bg_x1 = 0;
+hud_bg_x2 = 300;
+hud_bg_y1 = display_get_gui_height() - 300;
+hud_bg_y2 = display_get_gui_height() - 0;
+
+hud_circle_bg_x = (hud_bg_x1 + hud_bg_x2)/2;
+hud_circle_bg_y = (hud_bg_y1 + hud_bg_y2)/2;
+
+radius_bg = 140;
 
 //Bars
-health_bar_y = hud_bg_y1 + 16;
-mana_bar_y = health_bar_y + 32; 
-stamina_bar_y = mana_bar_y + 32;
+//Health
+health_bar_x = 0;
+health_bar_y = 0;
+health_bar_angle = 360/5 * 0;
 
-bar_buffer = 16;
-bar_x = hud_bg_x1 + bar_buffer;
+//Mana
+mana_bar_x = 0;
+mana_bar_y = 0;
+mana_bar_angle = 360/5 * 1;
 
-width = hud_bg_x2 - hud_bg_x1 - bar_buffer - bar_buffer;
-height = 24;
+//Stamina
+stamina_bar_x = 0;
+stamina_bar_y = 0;
+stamina_bar_angle = 360/5 * 2;
 
-buffer = 2;
+//Xp
+xp_bar_x = 0;
+xp_bar_y = 0;
+xp_bar_angle = 360/5 * 3;
+
+//Money
+money_bar_x = 0;
+money_bar_y = 0;
+money_bar_angle = 360/5 * 4;
+money_scale = 0;
+
+orbit_speed = 0.01;
+
+bar_buffer = 85;
+line_buffer = 110;
+
+radius = 20;
+
+inner_radius = 16;
+
+buffer = 4;
+
+line_width = 6;
+
+circle_radius = 15;
+
+//Linien
+line_angle[0] = 360/5 * 0 + 360/10;
+line_angle[1] = 360/5 * 1 + 360/10;
+line_angle[2] = 360/5 * 2 + 360/10;
+line_angle[3] = 360/5 * 3 + 360/10;
+line_angle[4] = 360/5 * 4 + 360/10;
+
+line_x[0] = 0;
+line_x[1] = 0;
+line_x[2] = 0;
+line_x[3] = 0;
+line_x[4] = 0;
+
+line_y[0] = 0;
+line_y[1] = 0;
+line_y[2] = 0;
+line_y[3] = 0;
+line_y[4] = 0;
+
+
+//Farben
+colour_circle_bg = global.co_blue_gray_800; 
+colour_font = c_white;
+
+colour_health = make_colour_rgb(213, 0, 0);
+colour_mana = make_colour_rgb(24, 255, 255);
+colour_stamina = make_colour_rgb(26, 35, 126);
+colour_xp = make_colour_rgb(24, 145, 31);
+colour_money = make_colour_rgb(255, 193, 7);
 
 //Dealt-damage
 dealt_damage_scale = 0;
@@ -70,19 +134,66 @@ old_hp = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//damage
-/*
-if(dealt_damage &gt; 0) {
-    if(damage_count &gt; 10) {
-        if(old_dealt_damage == dealt_damage) {
-            
-            dealt_damage = 0;
-        }
-        damage_count = 0;
-    }
-    damage_count++;
+            <string>///Drehung
+
+//Health
+health_bar_x = lengthdir_x(bar_buffer, health_bar_angle) + hud_circle_bg_x;
+health_bar_y = lengthdir_y(bar_buffer, health_bar_angle) + hud_circle_bg_y;
+if(health_bar_angle &gt; 360) health_bar_angle -= 360;
+health_bar_angle += orbit_speed;
+
+//Mana
+mana_bar_x = lengthdir_x(bar_buffer, mana_bar_angle) + hud_circle_bg_x;
+mana_bar_y = lengthdir_y(bar_buffer, mana_bar_angle) + hud_circle_bg_y;
+if(mana_bar_angle &gt; 360) mana_bar_angle -= 360;
+mana_bar_angle += orbit_speed;
+
+//Stamina
+stamina_bar_x = lengthdir_x(bar_buffer, stamina_bar_angle) + hud_circle_bg_x;
+stamina_bar_y = lengthdir_y(bar_buffer, stamina_bar_angle) + hud_circle_bg_y;
+if(stamina_bar_angle &gt; 360) stamina_bar_angle -= 360;
+stamina_bar_angle += orbit_speed;
+
+//XP
+xp_bar_x = lengthdir_x(bar_buffer, xp_bar_angle) + hud_circle_bg_x;
+xp_bar_y = lengthdir_y(bar_buffer, xp_bar_angle) + hud_circle_bg_y;
+if(xp_bar_angle &gt; 360) xp_bar_angle -= 360;
+xp_bar_angle += orbit_speed;
+
+//Geld
+money_bar_x = lengthdir_x(bar_buffer, money_bar_angle) + hud_circle_bg_x;
+money_bar_y = lengthdir_y(bar_buffer, money_bar_angle) + hud_circle_bg_y;
+if(money_bar_angle &gt; 360) money_bar_angle -= 360;
+money_bar_angle += orbit_speed;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Liniendrehung
+
+for(var i = 0; i &lt; array_length_1d(line_angle); i++) {
+    line_x[i] = lengthdir_x(line_buffer, line_angle[i]) + hud_circle_bg_x;
+    line_y[i] = lengthdir_y(line_buffer, line_angle[i]) + hud_circle_bg_y;
+    if(line_angle[i] &gt; 360) line_angle[i] -= 360;
+    line_angle[i] += orbit_speed;  
 }
-*/
 </string>
           </argument>
         </arguments>
@@ -131,13 +242,23 @@ if(!admin.playing) exit;
 draw_set_colour(inv_hud.colour_trans);
 draw_set_alpha(inv_hud.alpha_bbg);
 
-draw_rectangle(
-    hud_bg_x1,
-    hud_bg_y1,
-    hud_bg_x2,
-    hud_bg_y2,
+draw_circle(
+    hud_circle_bg_x,
+    hud_circle_bg_y,
+    radius_bg,
     0
     );
+    
+draw_set_colour(global.co_blue_gray_900);
+draw_set_alpha(inv_hud.alpha_bbg);
+
+draw_circle(
+    hud_circle_bg_x,
+    hud_circle_bg_y,
+    radius_bg - buffer,
+    0
+    );
+    
 draw_set_alpha(1);
 draw_set_colour(c_white);
 
@@ -161,7 +282,87 @@ draw_set_colour(c_white);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Linien
+
+
+draw_set_alpha(0.8);
+draw_set_colour(colour_circle_bg);
+
+draw_line_width(line_x[0], line_y[0], line_x[2], line_y[2], line_width);
+draw_line_width(line_x[0], line_y[0], line_x[3], line_y[3], line_width);
+draw_line_width(line_x[1], line_y[1], line_x[3], line_y[3], line_width);
+draw_line_width(line_x[1], line_y[1], line_x[4], line_y[4], line_width);
+draw_line_width(line_x[2], line_y[2], line_x[4], line_y[4], line_width);
+
+
+draw_line_width(line_x[0], line_y[0], line_x[1], line_y[1], line_width);
+draw_line_width(line_x[1], line_y[1], line_x[2], line_y[2], line_width);
+draw_line_width(line_x[2], line_y[2], line_x[3], line_y[3], line_width);
+draw_line_width(line_x[3], line_y[3], line_x[4], line_y[4], line_width);
+draw_line_width(line_x[0], line_y[0], line_x[4], line_y[4], line_width);
+
+draw_set_colour(c_black);
+draw_line_width(line_x[1], line_y[1], health_bar_x, health_bar_y, line_width);
+draw_line_width(line_x[2], line_y[2], mana_bar_x, mana_bar_y, line_width);
+draw_line_width(line_x[3], line_y[3], stamina_bar_x, stamina_bar_y, line_width);
+draw_line_width(line_x[4], line_y[4], xp_bar_x, xp_bar_y, line_width);
+draw_line_width(line_x[0], line_y[0], money_bar_x, money_bar_y, line_width);
+
+draw_set_colour(colour_health);
+draw_line_width(line_x[4], line_y[4], health_bar_x, health_bar_y, line_width);
+draw_set_colour(colour_mana);
+draw_line_width(line_x[0], line_y[0], mana_bar_x, mana_bar_y, line_width);
+draw_set_colour(colour_stamina);
+draw_line_width(line_x[1], line_y[1], stamina_bar_x, stamina_bar_y, line_width);
+draw_set_colour(colour_xp);
+draw_line_width(line_x[2], line_y[2], xp_bar_x, xp_bar_y, line_width);
+draw_set_colour(colour_money);
+draw_line_width(line_x[3], line_y[3], money_bar_x, money_bar_y, line_width);
+
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(1);
+
+draw_circle(line_x[0], line_y[0], circle_radius, 0);
+draw_circle(line_x[1], line_y[1], circle_radius, 0);
+draw_circle(line_x[2], line_y[2], circle_radius, 0);
+draw_circle(line_x[3], line_y[3], circle_radius, 0);
+draw_circle(line_x[4], line_y[4], circle_radius, 0);
+
+draw_set_colour(c_white);
+draw_set_font(fnt_hud);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_text(line_x[0], line_y[0], "MA");
+draw_text(line_x[1], line_y[1], "ST");
+draw_text(line_x[2], line_y[2], "XP");
+draw_text(line_x[3], line_y[3], "$");
+draw_text(line_x[4], line_y[4], "HP");
+
+draw_set_alpha(1);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Überschrift
+/*
 draw_set_colour(inv_hud.colour_heading);
 draw_set_valign(fa_middle);
 draw_rectangle(
@@ -200,73 +401,90 @@ draw_set_valign(fa_top);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Charakter
+draw_sprite_ext(
+    spr_charakter,
+    0,
+    hud_circle_bg_x,
+    hud_circle_bg_y - sprite_get_height(spr_charakter)/2,
+    0.5,
+    0.5,
+    0,
+    c_white,
+    1
+    );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///HP des Charakters
 //Health-Bar
 var health_scale;
 health_scale = player_stats.hp / player_stats.max_hp;
 if(health_scale &lt; 0) health_scale = 0;
+if(health_scale &lt; 0.25) health_scale += random_range(-0.04, 0.04);
 
 //Hintergrund
-draw_set_colour(inv_hud.colour_trans);
+draw_set_colour(colour_circle_bg);
 draw_set_alpha(inv_hud.alpha_bbg);
-draw_rectangle(bar_x, health_bar_y, bar_x + width, health_bar_y + height, 0);
+draw_circle(health_bar_x, health_bar_y, radius + buffer + inner_radius, 0);
 draw_set_alpha(1);
 
 //Dealt-Damage Bar
+/*
 draw_set_colour(c_yellow);
 draw_set_alpha(1);
 draw_rectangle(bar_x + buffer, health_bar_y + buffer, bar_x + ((width - buffer) * health_scale), health_bar_y + height - buffer, 0);
+*/
 
 //Bar
-draw_set_colour(c_red);
+draw_set_colour(colour_health);
 draw_set_alpha(1);
-draw_rectangle(bar_x + buffer, health_bar_y + buffer, bar_x + ((width - buffer) * health_scale), health_bar_y + height - buffer, 0);
+draw_circle(health_bar_x, health_bar_y, (radius * health_scale) + inner_radius, 0);
+
+//Text BG
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(1);
+draw_circle(health_bar_x, health_bar_y, inner_radius, 0);
 
 //Health-Text
 draw_set_font(fnt_hud);
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_alpha(1);
-draw_set_colour(c_white);
+draw_set_colour(colour_font);
 draw_text(
-    bar_x + 10,
-    (health_bar_y + (health_bar_y+height))/2 - buffer,
+    health_bar_x,
+    health_bar_y,
     string(int64(player_stats.hp))
     );
     
+/*
 draw_text(
     bar_x + width - string_width(string(player_stats.max_hp)) - 10,
     (health_bar_y + (health_bar_y+height))/2 - buffer,
     string(player_stats.max_hp)
     );
-    
-draw_set_valign(fa_top);
-    
-
-
-
-
-
-/*
-if(obj_player.dealt_damage &gt; 0) {
-
-dealt_damage_scale = obj_player.dealt_damage/100;
-
-} else dealt_damage_scale = 0;
-draw_sprite_ext(
-    spr_health_bar_damage,
-    0,
-    25 + old_hp,
-    health_bar_y,
-    dealt_damage_scale,
-    1,
-    0,
-    c_white,
-    1
-    );
-dealt_damage_scale -= 0.2;
-dealt_damage_scale = clamp(dealt_damage_scale, 0, player_stats.max_hp);
 */
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
+
 </string>
           </argument>
         </arguments>
@@ -294,35 +512,41 @@ mana_scale = player_stats.mana / player_stats.max_mana;
 if(mana_scale &lt; 0) mana_scale = 0;
 
 //Hintergrund
-draw_set_colour(inv_hud.colour_trans);
+draw_set_colour(colour_circle_bg);
 draw_set_alpha(inv_hud.alpha_bbg);
-draw_rectangle(bar_x, mana_bar_y, bar_x + width, mana_bar_y + height, 0);
+draw_circle(mana_bar_x, mana_bar_y, radius + buffer + inner_radius, 0);
 draw_set_alpha(1);
 
 //Bar
-draw_set_colour(c_aqua);
+draw_set_colour(colour_mana);
 draw_set_alpha(1);
-draw_rectangle(bar_x + buffer, mana_bar_y + buffer, bar_x + ((width - buffer) * mana_scale), mana_bar_y + height - buffer, 0);
+draw_circle(mana_bar_x, mana_bar_y, (radius * mana_scale) + inner_radius, 0);
+
+//Text BG
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(1);
+draw_circle(mana_bar_x, mana_bar_y, inner_radius, 0);
 
 //Health-Text
 draw_set_font(fnt_hud);
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_alpha(1);
-draw_set_colour(c_white);
+draw_set_colour(colour_font);
 draw_text(
-    bar_x + 10,
-    (mana_bar_y + (mana_bar_y+height))/2 - buffer,
+    mana_bar_x,
+    mana_bar_y,
     string(int64(player_stats.mana))
     );
-    
+/*
 draw_text(
     bar_x + width - string_width(string(player_stats.max_mana)) - 10,
     (mana_bar_y + (mana_bar_y+height))/2 - buffer,
     string(player_stats.max_mana)
     );
-    
+*/  
 draw_set_valign(fa_top);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>
@@ -350,35 +574,154 @@ stamina_scale = player_stats.stamina / player_stats.max_stamina;
 if(stamina_scale &lt; 0) stamina_scale = 0;
 
 //Hintergrund
-draw_set_colour(inv_hud.colour_trans);
+draw_set_colour(colour_circle_bg);
 draw_set_alpha(inv_hud.alpha_bbg);
-draw_rectangle(bar_x, stamina_bar_y, bar_x + width, stamina_bar_y + height, 0);
+draw_circle(stamina_bar_x, stamina_bar_y, radius + buffer + inner_radius, 0);
 draw_set_alpha(1);
 
 //Bar
-draw_set_colour(c_blue);
+draw_set_colour(colour_stamina);
 draw_set_alpha(1);
-draw_rectangle(bar_x + buffer, stamina_bar_y + buffer, bar_x + ((width - buffer) * stamina_scale), stamina_bar_y + height - buffer, 0);
+draw_circle(stamina_bar_x, stamina_bar_y, (radius * stamina_scale) + inner_radius, 0);
+
+//Text BG
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(1);
+draw_circle(stamina_bar_x, stamina_bar_y, inner_radius, 0);
 
 //Health-Text
 draw_set_font(fnt_hud);
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_alpha(1);
-draw_set_colour(c_white);
+draw_set_colour(colour_font);
 draw_text(
-    bar_x + 10,
-    (stamina_bar_y + (stamina_bar_y+height))/2 - buffer,
+    stamina_bar_x,
+    stamina_bar_y,
     string(int64(player_stats.stamina))
     );
-    
+/*
 draw_text(
     bar_x + width - string_width(string(player_stats.max_stamina)) - 10,
     (stamina_bar_y + (stamina_bar_y+height))/2 - buffer,
     string(player_stats.max_stamina)
     );
+*/  
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///XP des Charakters
+//XP-Bar
+var xp_scale;
+xp_scale = progress.xp / progress.level_up_xp;
+xp_scale = clamp(xp_scale, 0, 1);
+
+//Hintergrund
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(inv_hud.alpha_bbg);
+draw_circle(xp_bar_x, xp_bar_y, radius + buffer + inner_radius, 0);
+draw_set_alpha(1);
+
+//Bar
+draw_set_colour(colour_xp);
+draw_set_alpha(1);
+draw_circle(xp_bar_x, xp_bar_y, (radius * xp_scale) + inner_radius, 0);
+
+//Text BG
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(1);
+draw_circle(xp_bar_x, xp_bar_y, inner_radius, 0);
+
+//Health-Text
+draw_set_font(fnt_hud);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_alpha(1);
+draw_set_colour(colour_font);
+draw_text(
+    xp_bar_x,
+    xp_bar_y,
+    string(int64(progress.level))
+    );
     
 draw_set_valign(fa_top);
+draw_set_halign(fa_left);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Geld des Charakters
+//Geld-Bar
+money_scale = clamp(money_scale, 0, radius);
+money_scale -= 0.2;
+
+//Hintergrund
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(inv_hud.alpha_bbg);
+draw_circle(money_bar_x, money_bar_y, radius + inner_radius + buffer, 0);
+draw_set_alpha(1);
+
+//Bar
+draw_set_colour(colour_money);
+draw_set_alpha(1);
+draw_circle(money_bar_x, money_bar_y, inner_radius + money_scale + buffer, 0);
+
+//Text BG
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(1);
+draw_circle(money_bar_x, money_bar_y, inner_radius, 0);
+
+//Health-Text
+draw_set_font(fnt_hud);
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+draw_set_alpha(1);
+draw_set_colour(colour_font);
+draw_text(
+    money_bar_x,
+    money_bar_y,
+    string(int64(progress.run_money))
+    );
+    
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
+
 </string>
           </argument>
         </arguments>

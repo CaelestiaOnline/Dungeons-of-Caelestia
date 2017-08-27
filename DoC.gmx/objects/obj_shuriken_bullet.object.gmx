@@ -25,16 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-///Geschwindigkeit
-hspeed = 0;
-damage = 0;
-
-//Zeit
-time = 80;
-
-alarm_set(0, time);
+            <string>///Geschwindigkeit
+event_inherited();
+hspeed = 10;
 
 angle = 0;
 </string>
@@ -59,11 +52,8 @@ angle = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///out of room
-if(x &lt; 0 || x &gt; room_width)
-{
-    instance_destroy();
-}
+            <string>///Drehung
+event_inherited();
 angle += 10;
 if(angle &gt; 360) angle -= 360;
 image_angle = angle;

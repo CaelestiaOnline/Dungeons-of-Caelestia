@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_ground_item_collision_box</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -27,9 +27,25 @@
             <kind>1</kind>
             <string>///Variablen
 ground_item = -1;
+radius = 48;
+
+height = 0;
+max_height = 2;
+y_offset = 16;
+
+y_old = y - max_height/2 - y_offset;
+y_item = y_old;
+
+count = 0;
+max_count = 360;
+
+scale = 0.7;
 
 //Depth
 scr_set_depth();
+
+//Schatten
+scr_init_shadow(self, 14, 6, 16);
 </string>
           </argument>
         </arguments>
@@ -53,12 +69,73 @@ scr_set_depth();
           <argument>
             <kind>1</kind>
             <string>///Aufheben des Items
-var pickup = admin.action_key_pressed;
-if(abs(obj_player.x - x) &lt; inventory.width &amp;&amp; (abs(obj_player.y - y) &lt; inventory.width)) {
+var pickup = admin.action_key_pressed &amp;&amp; obj_player.is_crouching;
+if(place_meeting(x, y, obj_player)) {
+    shadow_object.colour = c_red;
     if(pickup) {
         var success = scr_inventory_add_item(inventory.inv_storage, ground_item, 1);
-        if(success) instance_destroy();
+        if(success) {
+        instance_destroy();
+        scr_draw_picked_item(x, y, ground_item);
+        }
     }
+} else shadow_object.colour = c_black;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Schweben
+if(count == max_count) {
+    count -= 360;
+}
+height = sin(count) * max_height;
+y_old = y - max_height/2 - y_offset;
+y_item = y_old + height;
+count += 0.02;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Abstoßen
+var push_speed = 2;
+var collision = instance_place(x, y, obj_ground_item);
+if(collision) {
+    var distance_x = sign(x - collision.x) * push_speed;
+    if(!place_meeting(x + distance_x, y, obj_hindernis)) x += distance_x;
+    var distance_y = sign(y - collision.y) * push_speed;
+    if(!place_meeting(x, y + distance_y, obj_hindernis)) y += distance_y;
 }
 </string>
           </argument>
@@ -83,12 +160,38 @@ if(abs(obj_player.x - x) &lt; inventory.width &amp;&amp; (abs(obj_player.y - y) 
           <argument>
             <kind>1</kind>
             <string>///Draw Sprite
+
+//Sprite
 if(ground_item != -1) {
-    draw_sprite(spr_items, ground_item, x, y);
+    draw_sprite_ext(spr_items, ground_item, x, y_item, scale, scale, 0, c_white, 1);
 }
 else {
-    draw_sprite(spr_undefinded, 0, x, y);
+    draw_sprite_ext(spr_undefined, ground_item, x, y_item, scale, scale, 0, c_white, 1);
 }
+
+if(admin.show_hitbox) scr_draw_hitbox();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Test
+
 </string>
           </argument>
         </arguments>

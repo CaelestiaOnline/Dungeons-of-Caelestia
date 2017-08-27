@@ -1,49 +1,32 @@
 /*
 scr_melee_attack(
-    damage
+    damage,
+    is_crit
     );
 */
 
-if(!admin.playing) exit;
+var damage = argument0;
+var is_crit = argument1;
 
-var damage_normal = argument0;
-var damage_crit = argument1;
-var chance_crit = player_stats.chance_crit;
+var hit_x;
+if(obj_player.attack_axis = 1) hit_x = obj_player.x + sprite_get_width(obj_player.sprite_index)/2 - 10;
+if(obj_player.attack_axis = -1) hit_x = obj_player.x - sprite_get_width(obj_player.sprite_index)/2 - sprite_get_width(spr_hitbox) + 10;
 
-var damage = scr_crit_attack(damage_normal, damage_crit, chance_crit);
+//Hitbox
+scr_create_hitbox(
+    hit_x,
+    obj_player.y,
+    damage,
+    is_crit
+);
+            
+//Hitmark
+scr_create_hitmark(
+    hit_x,
+    obj_player.y,
+    is_crit,
+    obj_player.attack_axis,
+    obj_player
+);
 
-///Angriff
 
-if(admin.prim_attack_key_pressed || admin.prim_attack_key) {
-    if(player_stats.alarm[1] == -1) {
-    if(obj_player.attack_axis = 1) {
-        //Hitbox rechts
-        scr_create_hitbox(
-            obj_player.x + obj_player.spr_width/2 + sprite_get_width(spr_hitbox)/2,
-            obj_player.y,
-            damage
-            );
-        //Explosion rechts
-        instance_create(
-        obj_player.x + obj_player.spr_width/2 + sprite_get_width(spr_explosion)/2,
-        obj_player.y,
-        obj_explosion
-        );
-    }
-    if(obj_player.attack_axis = -1) {
-        //Hitbox links
-        scr_create_hitbox(
-            obj_player.x - obj_player.spr_width/2 - sprite_get_width(spr_hitbox)/2,
-            obj_player.y,
-            damage
-            );
-        //Explosion links
-        instance_create(
-        obj_player.x - obj_player.spr_width/2 - sprite_get_width(spr_explosion)/2,
-        obj_player.y,
-        obj_explosion
-        );
-    }
-    scr_attack_cooldown();
-    }
-}

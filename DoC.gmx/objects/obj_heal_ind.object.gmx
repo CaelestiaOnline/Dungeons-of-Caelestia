@@ -83,7 +83,7 @@ draw_set_alpha(alpha);
 
 draw_set_colour(c_green);
 draw_set_halign(fa_center);
-draw_set_font(fnt_fps);
+draw_set_font(fnt_indicator);
 
 draw_text(x + 10, y, "+"+string(round(heal)));
 

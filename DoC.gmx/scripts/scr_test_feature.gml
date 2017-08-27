@@ -1,2 +1,2 @@
-scr_sidefade(rm_ptr_menu, 60);
+obj_main_menu.menupos = 0;
 

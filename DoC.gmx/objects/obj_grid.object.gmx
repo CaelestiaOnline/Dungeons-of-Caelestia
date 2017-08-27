@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -26,16 +26,41 @@
           <argument>
             <kind>1</kind>
             <string>///Grid erzeugen
-var hoehe = 64;
-var breite = 64;
+var hoehe = 32;
+var breite = 32;
 
 var Anzahl_h = room_height div hoehe;
 var Anzahl_b = room_width div breite;
 
-global.grid = mp_grid_create (0, 0, Anzahl_b, Anzahl_h, breite, hoehe);
+global.grid = mp_grid_create(0, 0, Anzahl_b, Anzahl_h, breite, hoehe);
 
 //Hindernisse hinzufügen
-mp_grid_add_instances(global.grid, obj_hindernis, 1);
+mp_grid_add_instances(global.grid, obj_hindernis, true);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Hindernisse hinzufügen
+mp_grid_add_instances(global.grid, obj_hindernis, true);
 </string>
           </argument>
         </arguments>
@@ -60,6 +85,31 @@ mp_grid_add_instances(global.grid, obj_hindernis, 1);
             <kind>1</kind>
             <string>///Zerstören
 mp_grid_destroy(global.grid);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_set_alpha(0.4);
+mp_grid_draw(global.grid);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

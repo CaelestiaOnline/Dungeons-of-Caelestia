@@ -27,10 +27,9 @@
             <kind>1</kind>
             <string>///Stats
 index = items.pistol;
-damage = player_stats.root_damage + item_stats[index, item_stats_prim.damage];
-damage_crit = player_stats.root_damage + item_stats[index, item_stats_prim.damage_crit];
+damage = item_stats[index, item_stats_prim.damage];
+damage_crit = item_stats[index, item_stats_prim.damage_crit];
 type = obj_pistol_bullet;
-bullet_speed = 8;
 </string>
           </argument>
         </arguments>
@@ -76,7 +75,7 @@ bullet_speed = 8;
           <argument>
             <kind>1</kind>
             <string>///Angriff
-scr_bullet_attack(damage, damage_crit, type, bullet_speed, player_stats.attack_speed);
+scr_prim_attack_bullet(damage, damage_crit, type, scr_bullet_attack);
 </string>
           </argument>
         </arguments>

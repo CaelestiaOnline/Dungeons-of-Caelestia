@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
+
+//Schatten
+shadow_object = scr_init_shadow(self, 32, 14, 28);
+
 //Sprite
 sprite = 0;
 
@@ -38,11 +42,12 @@ scr_set_depth();
 
 alpha = 1;
 
-alpha_bg = 0;
-view_object[0] = self;
-obj_player.visible = false;
-
 effect_create_below(ef_explosion, x, y, 2, c_red);
+
+alpha_bg = 0;
+
+
+
 </string>
           </argument>
         </arguments>
@@ -65,72 +70,9 @@ effect_create_below(ef_explosion, x, y, 2, c_red);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>view_object[0] = obj_player;
-obj_player.visible = true;
-scr_reset_stats();
-room_restart();
+            <string>///Destroy
 instance_destroy();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>obj_player.x = 0;
-obj_player.y = 0;
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Death-Message
-draw_set_colour(c_black);
-draw_set_alpha(alpha_bg);
-draw_rectangle(0, 0, window_get_width(), window_get_height(), 0);
-
-draw_set_alpha(1);
-var colour_font = c_red;
-draw_set_font(fnt_death_message);
-draw_set_halign(fa_center);
-
-draw_text_colour(window_get_width()/2, window_get_height()/2 - 200, "YOU DIED", colour_font, colour_font, colour_font, colour_font, alpha);
-
-draw_set_halign(fa_left);
-draw_set_colour(c_white);
 </string>
           </argument>
         </arguments>
@@ -153,12 +95,11 @@ draw_set_colour(c_white);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///zeichne damage
+            <string>///zeichne Todessprite
 alpha = alarm_get(0) / time;
-
-alpha_bg =  1 - (alarm_get(0) / time);
-
 draw_sprite_ext(sprite, 0, x, y, 1, 1, 0, c_white, alpha);
+
+shadow_object.alpha = alpha;
 
 </string>
           </argument>

@@ -88,7 +88,7 @@ alarm_set(0, room_speed*2);
           <argument>
             <kind>1</kind>
             <string>///Pro-Tip
-pro_tip_file_length = 138;
+pro_tip_file_length = 141;
 pro_tip_index = irandom(pro_tip_file_length -1);
 
 pro_tip_file = file_text_open_read(working_directory + "Textdateien\" + "pro_tip.txt");
@@ -122,37 +122,7 @@ file_text_close(pro_tip_file);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Script-Variblen
-
-pre_loading_screen_time = global.admin.loading_screen_time;
-
-loading_screen_time = global.admin.loading_screen_time;
-
-alarm_set(1, loading_screen_time);
-
-goal =  global.admin.loading_screen_goal;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Prozentanzeige
-
 pre_loading_percent = 0;
 loading_percent = 0;
 </string>
@@ -175,9 +145,20 @@ loading_percent = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Überschrift
-loading_screen_heading = global.admin.loading_screen_heading;
-if(loading_screen_heading == "") loading_screen_heading = "LOADING"
+            <string>///Skript Variablen
+
+//Goal
+goal = obj_loading_screen_stats.loading_screen_goal;
+
+//Time
+loading_screen_time = obj_loading_screen_stats.loading_screen_time;
+pre_loading_screen_time = loading_screen_time;
+alarm_set(1, loading_screen_time);
+
+//Heading
+loading_screen_heading = obj_loading_screen_stats.loading_screen_heading;
+if(loading_screen_heading == "") loading_screen_heading = "LOADING";
+
 points = "";
 </string>
           </argument>
@@ -240,6 +221,28 @@ background_index[0] = choose(
           <argument>
             <kind>1</kind>
             <string>alarm1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Übergang Goal
+scr_circlefade(goal, 60);
+</string>
           </argument>
         </arguments>
       </action>
@@ -325,29 +328,6 @@ if(alarm_get(0) == -1) alarm_set(0, room_speed*2);
 if(alarm_get(0) &gt; room_speed) orbit += 0.2;
 if(alarm_get(0) &lt; room_speed) orbit -= 0.2;
 */
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Script
-
-if(alarm_get(1) == 0) scr_circlefade(goal, 60);
 </string>
           </argument>
         </arguments>

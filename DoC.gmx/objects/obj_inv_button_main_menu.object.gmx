@@ -105,7 +105,7 @@ width = sprite_get_width(spr_inv_exit)/2;
 
 draw_set_alpha(1);
 
-if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
+if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
     if(!click_hold) {
         //Rechteck bei Hovern
         draw_set_colour(c_white);
@@ -133,11 +133,7 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
         draw_set_alpha(1);
     }
     if(click) {
-        if(room != rm_main_hub) {
-            scr_sidefade(rm_main_hub, 60);
-        } else {
-            scr_leave_game();
-        }
+        scr_leave_current_room();
     }
 }
 

@@ -19,13 +19,4 @@ if(place_meeting(object_self.x, object_self.y, object_other))
         else scr_deal_damage(object_other, damage);
     }
 }
-
-//Zeit erhöhen
-object_self.time++;
-
-//Zeit zurücksetzen
-if(object_self.time > object_self.countdown)
-{
-    object_self.time = 0;
-}
 }

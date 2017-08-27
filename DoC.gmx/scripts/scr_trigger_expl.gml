@@ -7,9 +7,9 @@ scr_trigger_expl(
 ///Erklärung
 var expl_text = argument0;
 var display = false;
-var time = room_speed*2;
+var time = room_speed;
 
-if(abs(mouse_ind.x - x) < width && (abs(mouse_ind.y - y) < width)) {
+if(abs(mouse.x - x) < width && (abs(mouse.y - y) < width)) {
     if(alarm_get(0) == -2) alarm_set(0, time);
     if(alarm_get(0) == -1) display = true; 
     

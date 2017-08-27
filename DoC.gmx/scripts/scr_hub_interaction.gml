@@ -5,6 +5,8 @@ scr_hub_interaction(
 */
 var object_self = self;
 var object_other = obj_player;
+var hub_menu = argument0;
+
 if(instance_exists(object_self)) {
 if(
     place_meeting(object_self.x - 1, object_self.y, object_other)
@@ -13,7 +15,7 @@ if(
     || place_meeting (object_self.x, object_self.y + 1, object_other))
 {
     if(admin.action_key_pressed) {
-        scr_enter_hub_menu(rm_hub_main_menu);
+        scr_enter_hub_menu(hub_menu);
     }
 }
 }
