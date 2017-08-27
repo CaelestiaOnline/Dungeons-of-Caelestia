@@ -75,8 +75,8 @@ show_debug_message("Button (" + string(i) + "/" + string(j) + ")" + " mit Index 
 }
 
 //Shop Button DropItem
-shop_button_dropitem_x = display_get_gui_width() - 64;
-shop_button_dropitem_y = display_get_gui_height() - 64;
+shop_button_dropitem_x = shop_button_x[max_slots-1, max_slots-1] + 64;
+shop_button_dropitem_y = shop_button_y[0, 0];
 shop_button_dropitem = instance_create(shop_button_dropitem_x, shop_button_dropitem_y, obj_hub_button_shop_dropitem);
 </string>
           </argument>

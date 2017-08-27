@@ -7,6 +7,7 @@ scr_leave_hub(
 var game_room = argument0;
 
 hub.in_hub = false;
+admin.playing = true;
 scr_keylock_ingamemenu(true);
 scr_sidefade(game_room, 60);
 

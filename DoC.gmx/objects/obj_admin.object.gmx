@@ -193,10 +193,11 @@ global.co_red_A700 = make_colour_rgb(213, 0, 0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///in-game + game_paused + playing
+            <string>///in-game + game_paused + playing + in_run
 in_game = false;
 game_paused = false;
 playing = false;
+in_run = false;
 
 //Splash - Screen
 display_splash_screen = false;
@@ -246,6 +247,7 @@ show_hitbox = 0;
           <argument>
             <kind>1</kind>
             <string>///Test
+show_debug_message(string(effect.count));
 </string>
           </argument>
         </arguments>
