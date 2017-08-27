@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>goal_object.effects[index] = -1;
+            <string>if(!instance_exists(goal_object)) exit;
+goal_object.effects[index] = -1;
 </string>
           </argument>
         </arguments>

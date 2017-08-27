@@ -30,6 +30,10 @@ index = items.stone_sword;
 damage = item_stats[index, item_stats_prim.damage];
 damage_crit = item_stats[index, item_stats_prim.damage_crit];
 
+confirmed = false;
+
+hit_list = noone;
+
 </string>
           </argument>
         </arguments>
@@ -75,7 +79,23 @@ damage_crit = item_stats[index, item_stats_prim.damage_crit];
           <argument>
             <kind>1</kind>
             <string>///Angriff
-scr_prim_attack_melee(damage, damage_crit, scr_melee_attack);
+///Angriff
+var real_damage = scr_prim_attack(damage, damage_crit);
+
+if(confirmed) {
+    scr_melee_attack(real_damage, is_crit);
+    confirmed = false;
+}
+
+if(hit_list != noone) {
+    var n = 0;
+    while(n &lt; ds_list_size(hit_list)) {
+        //scr_effect(effect.xxxx, xxxx, hit_list[| n]);
+        n++;
+    }
+    ds_list_destroy(hit_list);
+    hit_list = noone;
+}
 </string>
           </argument>
         </arguments>

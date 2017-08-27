@@ -385,7 +385,7 @@
             <script>scripts\scr_melee_attack.gml</script>
             <script>scripts\scr_create_hitbox.gml</script>
             <script>scripts\scr_create_hitmark.gml</script>
-            <script>scripts\scr_prim_attack_melee.gml</script>
+            <script>scripts\scr_prim_attack.gml</script>
           </scripts>
           <scripts name="Fernkampf">
             <script>scripts\scr_create_bullet.gml</script>
@@ -394,10 +394,10 @@
           </scripts>
         </scripts>
         <scripts name="sec">
-          <script>scripts\scr_sec_attack_bullet.gml</script>
+          <script>scripts\scr_sec_attack.gml</script>
         </scripts>
         <scripts name="mag">
-          <script>scripts\scr_mag_attack_bullet.gml</script>
+          <script>scripts\scr_mag_attack.gml</script>
         </scripts>
         <script>scripts\scr_attack_cooldown.gml</script>
       </scripts>
