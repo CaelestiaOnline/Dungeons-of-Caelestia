@@ -72,6 +72,7 @@ scr_init_shadow(self, 14, 6, 16);
 var pickup = admin.action_key_pressed &amp;&amp; obj_player.is_crouching;
 if(place_meeting(x, y, obj_player)) {
     shadow_object.colour = c_red;
+    if(obj_player.is_crouching) shadow_object.colour = c_green;
     if(pickup) {
         var success = scr_inventory_add_item(inventory.inv_storage, ground_item, 1);
         if(success) {

@@ -31,6 +31,14 @@ hub_menu_x2 = display_get_gui_width();
 
 hub_menu_y1 = 0;
 hub_menu_y2 = 64;
+
+death_menu_circle_bg_x = display_get_gui_width()/2;
+death_menu_circle_bg_y = display_get_gui_height()/2;
+
+death_menu_circle_bg_radius = 250;
+
+//Farben
+colour_bg = global.co_blue_gray_900;
 </string>
           </argument>
         </arguments>
@@ -126,6 +134,32 @@ draw_text(
     "DEATH MENU"
 );
 draw_set_valign(fa_top);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Kreis
+
+draw_set_colour(colour_bg);
+draw_set_alpha(1);
+
+draw_circle(death_menu_circle_bg_x, death_menu_circle_bg_y, death_menu_circle_bg_radius, 0);
 </string>
           </argument>
         </arguments>

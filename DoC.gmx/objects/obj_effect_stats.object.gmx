@@ -38,7 +38,30 @@ enum effect {
     resistance = 7,
     strength = 8,
     stun = 9,
+    poison = 10,
+    heal = 11,
+    mana = 12,
+    count
 }
+
+//Namen
+globalvar effects_name;
+
+effects_name[effect.speed] = "speed";
+effects_name[effect.slowness] = "slowness";
+effects_name[effect.attack_speed] = "attack_speed";
+effects_name[effect.fire] = "fire";
+effects_name[effect.regeneration] = "regeneration";
+effects_name[effect.mana_regeneration] = "mana_regeneration";
+effects_name[effect.absorption] = "absorption";
+effects_name[effect.resistance] = "resistance";
+effects_name[effect.strength] = "strength";
+effects_name[effect.stun] = "stun";
+effects_name[effect.poison] = "poison";
+effects_name[effect.heal] = "heal";
+effects_name[effect.mana] = "mana";
+
+
 </string>
           </argument>
         </arguments>

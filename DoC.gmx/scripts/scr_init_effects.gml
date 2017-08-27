@@ -4,9 +4,9 @@ scr_init_effects(
 );
 */
 
-var effect_number = 8;
+var effect_number = effect.count;
 
-for(var i = 0; i > effect_number; i++) {
+for(var i = 0; i < effect_number; i++) {
     effects[i] = -1;
 }
 

@@ -170,6 +170,7 @@
         <sprite>sprites\spr_health_bar</sprite>
         <sprite>sprites\spr_health_bar_damage</sprite>
       </sprites>
+      <sprite>sprites\spr_slot_cooldown</sprite>
     </sprites>
     <sprites name="Heal-Field">
       <sprite>sprites\spr_heal_field</sprite>
@@ -211,6 +212,7 @@
       <sprite>sprites\spr_hub_portal_red</sprite>
       <sprite>sprites\spr_hub_portal_green</sprite>
       <sprite>sprites\spr_hub_portal_yellow</sprite>
+      <sprite>sprites\spr_hub_portal_light_blue</sprite>
       <sprite>sprites\spr_hub_chair</sprite>
       <sprite>sprites\spr_hub_shop</sprite>
       <sprite>sprites\spr_hub_terminal3</sprite>
@@ -331,7 +333,7 @@
         <script>scripts\scr_player_rem_mana.gml</script>
       </scripts>
       <scripts name="Reset Stats">
-        <script>scripts\scr_reset_stats.gml</script>
+        <script>scripts\scr_reset_player_stats.gml</script>
       </scripts>
       <scripts name="Inventory">
         <scripts name="old">
@@ -436,8 +438,8 @@
       </scripts>
       <scripts name="effect">
         <script>scripts\scr_effect_poison.gml</script>
-        <script>scripts\scr_slow_speed.gml</script>
-        <script>scripts\scr_attack_speed.gml</script>
+        <script>scripts\scr_effect_slow_speed.gml</script>
+        <script>scripts\scr_effect_attack_speed.gml</script>
         <script>scripts\scr_attackspeed_old.gml</script>
         <script>scripts\scr_effect_fire.gml</script>
         <script>scripts\scr_effect_regeneration.gml</script>
@@ -450,6 +452,7 @@
           <script>scripts\scr_init_ability.gml</script>
         </scripts>
         <script>scripts\scr_init_effects.gml</script>
+        <script>scripts\scr_effect.gml</script>
       </scripts>
       <scripts name="Interaktion">
         <script>scripts\scr_hub_interaction.gml</script>
@@ -469,6 +472,10 @@
         </scripts>
         <script>scripts\scr_enter_hub.gml</script>
         <script>scripts\scr_leave_hub.gml</script>
+        <scripts name="Run">
+          <script>scripts\scr_start_run.gml</script>
+          <script>scripts\scr_leave_run.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Progress">
         <scripts name="XP">
@@ -509,6 +516,9 @@
       </scripts>
       <scripts name="Grid">
         <script>scripts\scr_update_grid.gml</script>
+      </scripts>
+      <scripts name="Stats">
+        <script>scripts\scr_reset_stats.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -673,7 +683,8 @@
       <object>objects\obj_hub_portal_testroom1</object>
       <object>objects\obj_hub_portal_testroom2</object>
       <object>objects\obj_hub_portal_hub</object>
-      <object>objects\obj_hub_item_place</object>
+      <object>objects\obj_hub_start_run</object>
+      <object>objects\obj_hub_enter_menu</object>
       <object>objects\obj_mouse_ind_hub</object>
       <object>objects\obj_hub</object>
       <objects name="Buttons">
@@ -892,6 +903,12 @@
     </rooms>
     <rooms name="loading_screen">
       <room>rooms\rm_loading_screen</room>
+    </rooms>
+    <rooms name="Run">
+      <rooms name="Forest">
+        <room>rooms\rm_run_forest01</room>
+        <room>rooms\rm_run_forest_init</room>
+      </rooms>
     </rooms>
   </rooms>
   <help>

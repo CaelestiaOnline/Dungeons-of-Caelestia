@@ -124,6 +124,12 @@ room_stats[rm_testroom4, 1] = "testroom";
 room_stats[rm_testroom4, 2] = 100;
 room_stats[rm_testroom4, 3] = 100;
 
+//Forest Init
+room_stats[rm_run_forest_init, 0] = "game";
+room_stats[rm_run_forest_init, 1] = "default";
+room_stats[rm_run_forest_init, 2] = 100;
+room_stats[rm_run_forest_init, 3] = 100;
+
 </string>
           </argument>
         </arguments>

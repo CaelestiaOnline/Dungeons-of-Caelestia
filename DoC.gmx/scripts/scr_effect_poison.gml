@@ -6,17 +6,20 @@ scr_effect_poison(
     Objekt, an dem der Schaden verursacht wird;
 )
 */
-var idamage = argument0;
+var damage = argument0;
 var time = argument1;
 var pspeed = argument2;
-var object = argument3;
-var damage = idamage div (time div pspeed)
+var goal_object = argument3;
+var effect_index = effect.poison;
 
-if(object == obj_player) object = player_stats;
+if(goal_object.effects[effect.poison] != -1) {
+    goal_object.effects[effect.poison].poison_time += time;
+    exit;
+}
 
-var poison = instance_create(object.x, object.y, obj_poison);
+var poison = instance_create(0, 0, obj_poison);
 
 poison.poison_damage = damage;
 poison.poison_time = time;
 poison.poison_speed = pspeed;
-poison.poison_object = object;
+poison.goal_object = goal_object;

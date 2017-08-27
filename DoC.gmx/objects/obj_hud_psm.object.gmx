@@ -229,11 +229,6 @@ if(i == 0) inventory_type = inventory.inv_sec;
 if(i == 1) inventory_type = inventory.inv_prim;
 if(i == 2) inventory_type = inventory.inv_mag;
 
-draw_set_colour(colour_circle_bg);
-draw_set_alpha(inv_hud.alpha_bbg);
-draw_circle(slots_x[i], slots_y[i], slots_bg_radius, 0);
-draw_set_alpha(1);
-
 if(i == 0) {
     if(instance_exists(inventory.inv_sec.real_item_object[0])) {
         var countdown;
@@ -277,6 +272,10 @@ if(i == 2) {
     }
 }
 
+draw_set_colour(colour_circle_bg);
+draw_set_alpha(inv_hud.alpha_bbg);
+draw_circle(slots_x[i], slots_y[i], slots_bg_radius, 0);
+draw_set_alpha(1);
 
 if(inventory_type.inv[0] != -1) {
     draw_sprite(spr_items, inventory_type.inv[0], slots_x[i], slots_y[i]);
