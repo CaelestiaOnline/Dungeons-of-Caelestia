@@ -318,6 +318,7 @@
     <scripts name="Game">
       <scripts name="Heal">
         <script>scripts\scr_player_heal.gml</script>
+        <script>scripts\scr_heal.gml</script>
       </scripts>
       <scripts name="Angriff">
         <script>scripts\scr_kollisionsschaden_solid.gml</script>
@@ -832,6 +833,9 @@
     </objects>
     <objects name="effect">
       <object>objects\obj_poison</object>
+      <object>objects\obj_fire</object>
+      <object>objects\obj_regeneration</object>
+      <object>objects\obj_mana_regeneration</object>
       <object>objects\obj_slow_speed</object>
       <object>objects\obj_attack_speed</object>
       <object>objects\obj_attack_speed_old</object>
