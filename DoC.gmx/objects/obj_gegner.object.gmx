@@ -187,6 +187,7 @@ attack_speed = attack_speed_old * attack_speed_mult;
             <kind>1</kind>
             <string>///Überprüfe, ob sich erlittener damage/heal ändern
 old_dealt_damage = dealt_damage;
+old_dealt_heal = dealt_heal;
 </string>
           </argument>
         </arguments>
