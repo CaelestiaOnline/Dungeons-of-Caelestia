@@ -28,7 +28,7 @@
             <string>///Regeneration
 index = effect.mana_regeneration;
 
-//Schaden über Zeit
+//Variablen
 mregeneration_heal = 0;
 mregeneration_time = 0;
 mregeneration_speed = 0;
