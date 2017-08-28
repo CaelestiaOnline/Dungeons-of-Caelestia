@@ -60,6 +60,14 @@ attack_speed_old = attack_speed;
 attack_speed_mult = 1;
 attack_speed_mult_effect = 1;
 
+//Resistenz
+resistance_mult = 1;
+resistance_mult_effect = 1;
+
+//Stärke
+strength_mult = 1;
+strength_mult_effect = 1;
+
 //Speed
 player_speed = 1;
 max_player_speed = 4;
@@ -263,6 +271,52 @@ attack_speed_mult = 1 * attack_speed_mult_effect;
 
 attack_speed = attack_speed_old * attack_speed_mult;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Resistance Multiplictor
+
+resistance_mult = 1 * resistance_mult_effect;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Strength Multiplictor
+
+strength_mult = 1 * strength_mult_effect;
 </string>
           </argument>
         </arguments>

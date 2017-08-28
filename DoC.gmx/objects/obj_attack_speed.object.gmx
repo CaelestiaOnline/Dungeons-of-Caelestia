@@ -26,9 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///Verlangsamung/Beschleunigung der Bewegungsgeschwindigkeit
+
+index = effect.attack_speed;
+
 multipl = 0;
 time = 0;
-object = 0;
+goal_object = 0;
 max_speed = 0;
 
 
@@ -55,9 +58,9 @@ max_speed = 0;
           <argument>
             <kind>1</kind>
             <string>///Effekt läuft aus
-if(instance_exists(object)) { 
-if(object == obj_player) player_stats.attack_speed_mult_effect = 1;
-else object.attack_speed_mult = 1;
+if(instance_exists(goal_object)) { 
+if(goal_object == obj_player) player_stats.attack_speed_mult_effect = 1;
+else goal_object.attack_speed_mult = 1;
 }
 instance_destroy();  
 </string>

@@ -12,12 +12,13 @@ var pspeed = argument2;
 var goal_object = argument3;
 var effect_index = effect.poison;
 
-if(goal_object.effects[effect.poison] != -1) {
-    goal_object.effects[effect.poison].poison_time += time;
+if(goal_object.effects[effect_index] != -1) {
+    goal_object.effects[effect_index].poison_time += time;
     exit;
 }
 
 var poison = instance_create(0, 0, obj_poison);
+goal_object.effects[effect_index] = poison;
 
 poison.poison_damage = damage;
 poison.poison_time = time;

@@ -55,7 +55,7 @@ alarm_set(0, resistance_time);
           <argument>
             <kind>1</kind>
             <string>///Resistenzfaktor erhöhen
-if (this.goal_object == obj_player) obj_player_stats.resistance_mult_effect += resistance_multiplicator;
+if (this.goal_object == obj_player) player_stats.resistance_mult_effect += resistance_multiplicator;
 else this.goal_object.resistance_mult_effect += resistance_multiplicator;
 </string>
           </argument>
@@ -80,7 +80,7 @@ else this.goal_object.resistance_mult_effect += resistance_multiplicator;
           <argument>
             <kind>1</kind>
             <string>///Resistenzfaktor zurücksetzen
-if(goal_object == obj_player) obj_player_stats.resistance_mult_effect -= resistance_multiplicator;
+if(goal_object == obj_player) player_stats.resistance_mult_effect -= resistance_multiplicator;
 else this.goal_object.resistance_mult_effect -= resistance_multiplicator;
 
 instance_destroy();
