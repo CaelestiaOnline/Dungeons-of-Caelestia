@@ -55,7 +55,7 @@ alarm_set(0, strength_time);
           <argument>
             <kind>1</kind>
             <string>///Stärkefaktor erhöhen
-if (this.goal_object == obj_player) obj_player_stats.strength_mult_effect += strength_multiplicator;
+if (this.goal_object == obj_player) player_stats.strength_mult_effect += strength_multiplicator;
 else this.goal_object.strength_mult_effect += strength_multiplicator;
 </string>
           </argument>
@@ -80,7 +80,7 @@ else this.goal_object.strength_mult_effect += strength_multiplicator;
           <argument>
             <kind>1</kind>
             <string>///Stärkefaktor zurücksetzen
-if(goal_object == obj_player) obj_player_stats.strength_mult_effect -= strength_multiplicator;
+if(goal_object == obj_player) player_stats.strength_mult_effect -= strength_multiplicator;
 else this.goal_object.strength_mult_effect -= strength_multiplicator;
 
 instance_destroy();

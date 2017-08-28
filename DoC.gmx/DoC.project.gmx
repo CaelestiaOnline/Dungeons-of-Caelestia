@@ -441,7 +441,6 @@
         <script>scripts\scr_effect_poison.gml</script>
         <script>scripts\scr_effect_slow_speed.gml</script>
         <script>scripts\scr_effect_attack_speed.gml</script>
-        <script>scripts\scr_attackspeed_old.gml</script>
         <script>scripts\scr_effect_fire.gml</script>
         <script>scripts\scr_effect_regeneration.gml</script>
         <script>scripts\scr_effect_mana_regeneration.gml</script>
@@ -841,7 +840,6 @@
       <object>objects\obj_stun</object>
       <object>objects\obj_slow_speed</object>
       <object>objects\obj_attack_speed</object>
-      <object>objects\obj_attack_speed_old</object>
       <object>objects\obj_effect</object>
       <object>objects\obj_effect_stats</object>
     </objects>

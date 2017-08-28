@@ -41,7 +41,7 @@ switch(effect_index) {
         scr_effect_strength(1 + strength_mult, effect_time, goal_object);
         break;
     case effect.stun:
-        scr_effect_stun(effect_time);
+        scr_effect_stun(effect_time, goal_object);
         break;
     case effect.poison:
         scr_effect_poison(poison_damage, effect_time, poison_speed, goal_object);

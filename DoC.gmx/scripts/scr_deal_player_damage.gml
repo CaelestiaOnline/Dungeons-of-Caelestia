@@ -8,6 +8,8 @@ if(player_stats.invincible) exit;
 var damage = argument0;
 var hp_copy = player_stats.hp;
 
+damage *= player_stats.resistance_mult;
+
 hp_copy = hp_copy - damage;
 if(hp_copy < 0) hp_copy = 0;
 
