@@ -30,6 +30,10 @@ index = items.pistol;
 damage = item_stats[index, item_stats_prim.damage];
 damage_crit = item_stats[index, item_stats_prim.damage_crit];
 type = obj_pistol_bullet;
+
+confirmed = false;
+
+hit_list = noone;
 </string>
           </argument>
         </arguments>
@@ -75,7 +79,16 @@ type = obj_pistol_bullet;
           <argument>
             <kind>1</kind>
             <string>///Angriff
-scr_prim_attack_bullet(damage, damage_crit, type, scr_bullet_attack);
+var real_damage = scr_prim_attack(damage, damage_crit);
+
+if(confirmed) {
+    scr_bullet_attack(real_damage, is_crit, type);
+    confirmed = false;
+}
+
+if(hit_list != noone) {
+    //scr_effect(effect.xxxx, xxxx, hit_list);
+}
 </string>
           </argument>
         </arguments>

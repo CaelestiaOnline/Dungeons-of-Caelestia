@@ -1,12 +1,14 @@
 /*
 scr_melee_attack(
     damage,
-    is_crit
+    is_crit,
     );
 */
 
 var damage = argument0;
 var is_crit = argument1;
+
+stats.melee_attacks_done += 1;
 
 var hit_x;
 if(obj_player.attack_axis = 1) hit_x = obj_player.x + sprite_get_width(obj_player.sprite_index)/2 - 10;

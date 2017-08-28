@@ -29,7 +29,7 @@ switch(effect_index) {
         scr_effect_regeneration(reg_heal, effect_time, reg_speed, goal_object);
         break;
     case effect.mana_regeneration:
-        scr_effect_mana_regeneration(mana_reg_mana, effect_time, mana_reg_speed, goal_object);
+        scr_effect_mana_regeneration(mana_reg_mana, effect_time, mana_reg_speed);
         break;
     case effect.absorption:
         scr_effect_absorption(absorption_hp, effect_time, goal_object);
@@ -41,7 +41,7 @@ switch(effect_index) {
         scr_effect_strength(1 + strength_mult, effect_time, goal_object);
         break;
     case effect.stun:
-        scr_effect_stun(effect_time);
+        scr_effect_stun(effect_time, goal_object);
         break;
     case effect.poison:
         scr_effect_poison(poison_damage, effect_time, poison_speed, goal_object);

@@ -41,6 +41,8 @@ scr_set_depth();
 //Shadow
 scr_init_shadow(self, sprite_get_width(sprite_index)/2, 4, 0);
 
+origin_object = 0;
+
 </string>
           </argument>
         </arguments>
@@ -169,6 +171,8 @@ instance_destroy();
 //Verminderung der Hp
 scr_deal_damage(other, damage);
 scr_draw_crit(other, is_crit);
+
+origin_object.hit_list = other;
 </string>
           </argument>
         </arguments>

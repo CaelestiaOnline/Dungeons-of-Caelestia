@@ -34,6 +34,9 @@ speed_mult = item_stats[index, item_stats_prim.speed_bonus];
 
 player_stats.speed_mult_item += speed_mult;
 
+confirmed = false;
+
+hit_list = noone;
 </string>
           </argument>
         </arguments>
@@ -102,7 +105,22 @@ player_stats.speed_mult_item += speed_mult;
           <argument>
             <kind>1</kind>
             <string>///Angriff
-scr_prim_attack_melee(damage, damage_crit, scr_melee_attack);
+var real_damage = scr_prim_attack(damage, damage_crit);
+
+if(confirmed) {
+    scr_melee_attack(real_damage, is_crit);
+    confirmed = false;
+}
+
+if(hit_list != noone) {
+    var n = 0;
+    while(n &lt; ds_list_size(hit_list)) {
+        //scr_effect(effect.xxxx, xxxx, hit_list[| n]);
+        n++;
+    }
+    ds_list_destroy(hit_list);
+    hit_list = noone;
+}
 </string>
           </argument>
         </arguments>

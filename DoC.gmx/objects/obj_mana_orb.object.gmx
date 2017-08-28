@@ -31,6 +31,9 @@ scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, it
 type = obj_mana_bullet;
 mana = item_stats[index, item_stats_mag.mana_usage];
 
+confirmed = false;
+
+hit_list = noone;
 </string>
           </argument>
         </arguments>
@@ -76,7 +79,16 @@ mana = item_stats[index, item_stats_mag.mana_usage];
           <argument>
             <kind>1</kind>
             <string>///Angriff
-scr_mag_attack_bullet(damage, type, scr_bullet_attack);
+var real_damage = scr_mag_attack(damage);
+
+if(confirmed) {
+    scr_bullet_attack(real_damage, is_crit, type);
+    confirmed = false;
+}
+
+if(hit_list != noone) {
+    //scr_effect(effect.xxxx, xxxx, hit_list);
+}
 </string>
           </argument>
         </arguments>
