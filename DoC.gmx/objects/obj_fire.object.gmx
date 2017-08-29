@@ -30,7 +30,7 @@ index = effect.fire;
 
 //Schaden über Zeit
 fire_damage = 0;
-fire_time = 0;
+effect_time = 0;
 fire_speed = 0;
 goal_object = 0;
 
@@ -84,11 +84,11 @@ else scr_deal_damage(goal_object, fire_damage);
             <kind>1</kind>
             <string>///Count
 if(!instance_exists(goal_object)) instance_destroy();
-if(fire_time &gt; 0) {
+if(effect_time &gt; 0) {
     if(alarm_get(0) == -1) {
         alarm_set(0, fire_speed);
     }
-    fire_time--;
+    effect_time--;
 } else instance_destroy();
 
 </string>

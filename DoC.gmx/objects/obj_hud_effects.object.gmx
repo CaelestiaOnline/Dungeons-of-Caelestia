@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>obj_effect</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,19 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stun
-index = effect.stun;
+            <string>///Effekt Coordinates
 
-//Variablen
-effect_time = 0;
-goal_object = 0;
+effect_hud_effects_x_old = display_get_gui_width() - 64;
+effect_hud_effects_y_old = 64;
+
+for(var i = 0; i &lt; effect.count; i++) {
+    effect_hud_effects_x[i] = effect_hud_effects_x_old;
+    effect_hud_effects_y[i] = effect_hud_effects_y_old + (i*64);
+}
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -54,10 +57,38 @@ goal_object = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stun beenden
-if(goal_object == player_stats) scr_keylock_ingamemenu(false);
+            <string>///exit
+if(!admin.playing) exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Slots
 
-instance_destroy();
+for(var i = 0; i &lt; effect.count; i++) {
+draw_sprite(
+    spr_effect_slot,
+    0,
+    hud_effects.effect_hud_effects_x[i],
+    hud_effects.effect_hud_effects_y[i],
+    );
+}
 </string>
           </argument>
         </arguments>

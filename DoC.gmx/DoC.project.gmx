@@ -250,6 +250,24 @@
       <sprite>sprites\spr_button_accept</sprite>
       <sprite>sprites\spr_button_decline</sprite>
     </sprites>
+    <sprites name="Effects">
+      <sprite>sprites\spr_effect_slot</sprite>
+      <sprites name="Effect-Symbole">
+        <sprite>sprites\spr_effect_speed</sprite>
+        <sprite>sprites\spr_effect_slowness</sprite>
+        <sprite>sprites\spr_effect_attack_speed</sprite>
+        <sprite>sprites\spr_effect_fire</sprite>
+        <sprite>sprites\spr_effect_regeneration</sprite>
+        <sprite>sprites\spr_effect_mana_regeneration</sprite>
+        <sprite>sprites\spr_effect_absorption</sprite>
+        <sprite>sprites\spr_effect_resistance</sprite>
+        <sprite>sprites\spr_effect_strength</sprite>
+        <sprite>sprites\spr_effect_stun</sprite>
+        <sprite>sprites\spr_effect_poison</sprite>
+        <sprite>sprites\spr_effect_heal</sprite>
+        <sprite>sprites\spr_effect_mana</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -574,6 +592,9 @@
         <font>fonts\fnt_questionbox_heading</font>
         <font>fonts\fnt_questionbox_text</font>
       </fonts>
+      <fonts name="Effects">
+        <font>fonts\fnt_effects</font>
+      </fonts>
     </fonts>
     <fonts name="Splash-Screen">
       <font>fonts\fnt_splash</font>
@@ -590,6 +611,7 @@
       <object>objects\obj_hud_storage</object>
       <object>objects\obj_hud_items</object>
       <object>objects\obj_hud_psm</object>
+      <object>objects\obj_hud_effects</object>
     </objects>
     <objects name="loading_screen">
       <object>objects\obj_loading_screen</object>

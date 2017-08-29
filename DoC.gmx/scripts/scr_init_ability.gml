@@ -37,6 +37,7 @@ switch(ability) {
                 break;
             case 2:
                 speed_mult = -0.5;
+                break;
             case 10:
                 speed_mult = -1.0;
                 break;
@@ -122,6 +123,9 @@ switch(ability) {
             case 2:
                 resistance_mult = -0.3;
                 break;
+            case 10:
+                resistance_mult = -1.0;
+                break;
         }
     //Strength
     case "strength":
@@ -138,6 +142,7 @@ switch(ability) {
     case "stun":
         effect_time = room_speed;
         //switch(ability_strength) {}
+        break;
     //Poison
     case "poison":
         switch(ability_strength) {

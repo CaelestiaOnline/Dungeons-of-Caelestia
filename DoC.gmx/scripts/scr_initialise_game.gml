@@ -91,6 +91,9 @@ hud_items = instance_create(0, 0, obj_hud_items);
 //HUD PSM
 globalvar hud_psm;
 hud_psm = instance_create(0, 0, obj_hud_psm);
+//HUD Effects
+globalvar hud_effects;
+hud_effects = instance_create(0, 0, obj_hud_effects);
 
 //Inventory-HUD
 globalvar inv_hud;

@@ -12,6 +12,7 @@ var goal_object = argument2;
 var effect_index = effect.attack_speed;
 
 if(!instance_exists(goal_object)) exit;
+if(goal_object == obj_player) goal_object = player_stats;
 
 if(goal_object.effects[effect_index] != -1) {
     goal_object.effects[effect_index].alarm[0] += time;
@@ -25,5 +26,5 @@ attack_speed.multipl = multipl;
 attack_speed.alarm[0] = time - 1;
 attack_speed.goal_object = goal_object;
 
-if(goal_object == obj_player) player_stats.attack_speed_mult_effect = multipl;
+if(goal_object == player_stats) player_stats.attack_speed_mult_effect = multipl;
 else goal_object.attack_speed_mult = multipl;
