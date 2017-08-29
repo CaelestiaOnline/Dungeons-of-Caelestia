@@ -27,43 +27,15 @@
             <kind>1</kind>
             <string>///Addiere Mana
 index = items.mana_potion;
-if(player_stats.mana != player_stats.max_mana) {
-var success = scr_inventory_rem_item_slot_count(inventory.inv_pickups, inventory.menupos, 1);
-if(!success) instance_destroy();
-else {
-    scr_init_ability(item_stats[index, item_stats_pickup.ability], item_stats[index, item_stats_pickup.ability_strength]);
-    count = 0;
-    count_speed = 1;
-    alarm_set(0, count_speed);
-}
-} else instance_destroy();
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_player_add_mana(1);
-alarm_set(0 , count_speed);
-count++;
-if(count &gt;= mana) instance_destroy();
+var success = scr_inventory_rem_item_slot_count(inventory.inv_pickups, inventory.menupos, 1);
+
+if(success) {
+    scr_effect(scr_effect_index(item_stats[index, item_stats_pickup.ability]), item_stats[index, item_stats_pickup.ability_strength], obj_player);
+}
+
+instance_destroy();
+
 </string>
           </argument>
         </arguments>

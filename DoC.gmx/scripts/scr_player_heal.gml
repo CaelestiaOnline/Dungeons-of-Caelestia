@@ -17,5 +17,6 @@ obj_player.dealt_heal += heal;
 stats.hp_healed += heal;
 
 player_stats.hp = hp_copy;
+
 return true;
 

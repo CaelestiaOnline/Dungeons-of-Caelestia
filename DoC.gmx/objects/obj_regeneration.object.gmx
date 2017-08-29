@@ -58,8 +58,8 @@ alarm_set(0, -1);
           <argument>
             <kind>1</kind>
             <string>///Regeneration an Objekt
-if(goal_object == obj_player) scr_player_heal(regeneration_heal);
-else scr_heal(goal_object, fire_damage);
+if(goal_object == player_stats) scr_player_heal(regeneration_heal);
+else scr_heal(goal_object, regeneration_heal - 1);
 </string>
           </argument>
         </arguments>
@@ -90,6 +90,7 @@ if(regeneration_time &gt; 0) {
     }
     regeneration_time--;
 } else instance_destroy();
+
 
 </string>
           </argument>

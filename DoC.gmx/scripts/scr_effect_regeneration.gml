@@ -1,16 +1,19 @@
 /*
 scr_effect_regeneration(
     Hp, die pro Zeiteinheit regeneriert werden,
-    Zeiteinheit in steps,
     Dauer in Steps,
+    Zeiteinheit in steps,
     Objekt, das beeinflusst wird
 );
 */
+
 var hp = argument0;
-var rspeed = argument1;
-var time = argument2;
+var time = argument1;
+var rspeed = argument2;
 var goal_object = argument3;
 var effect_index = effect.regeneration;
+
+if(!instance_exists(goal_object)) exit;
 
 if(goal_object.effects[effect_index] != -1) {
     goal_object.effects[effect_index].regeneration_time += time;
@@ -22,5 +25,5 @@ goal_object.effects[effect_index] = regeneration;
 
 regeneration.regeneration_heal = hp;
 regeneration.regeneration_time = time;
-regeneration.regeneration_speed = rspeed;
+regeneration.regeneration_speed = rspeed - 1;
 regeneration.goal_object = goal_object;

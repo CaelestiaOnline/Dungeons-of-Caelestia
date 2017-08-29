@@ -58,7 +58,7 @@ alarm_set(0, -1);
           <argument>
             <kind>1</kind>
             <string>///Regeneration an Objekt
-if(goal_object == obj_player) scr_player_add_mana(mregeneration_heal);
+if(goal_object == player_stats) scr_player_add_mana(mregeneration_heal);
 </string>
           </argument>
         </arguments>

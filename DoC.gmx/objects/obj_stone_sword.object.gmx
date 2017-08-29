@@ -91,7 +91,6 @@ if(hit_list != noone) {
     var n = 0;
     while(n &lt; ds_list_size(hit_list)) {
         //scr_effect(effect.xxxx, xxxx, hit_list[| n]);
-        scr_effect(effect.stun, 1, hit_list[| n]);
         n++;
     }
     ds_list_destroy(hit_list);

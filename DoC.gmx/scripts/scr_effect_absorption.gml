@@ -5,3 +5,5 @@ scr_effect_absorption(
     Objekt, das beeinflusst wird
 );
 */
+
+if(!instance_exists(goal_object)) exit;

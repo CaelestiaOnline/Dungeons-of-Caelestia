@@ -5,10 +5,13 @@ Dauer in steps;
 Objekt, das beeinflusst wird;
 )
 */
+
 var multipl = argument0;
 var time = argument1;
 var goal_object = argument2;
 var effect_index = effect.slowness;
+
+if(!instance_exists(goal_object)) exit;
 
 if(sign(multipl) <= 1) effect_index = effect.slowness;
 else effect_index = effect.speed;
@@ -22,7 +25,7 @@ var slow = instance_create(0, 0, obj_slow_speed);
 goal_object.effects[effect_index] = slow;
 
 slow.multipl = multipl;
-slow.alarm[0] = time;
+slow.alarm[0] = time - 1;
 slow.goal_object = goal_object;
 slow.index = effect_index;
 
