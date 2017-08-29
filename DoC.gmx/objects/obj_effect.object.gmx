@@ -68,6 +68,7 @@ draw_set_valign(fa_middle);
 var effect_length = -1;
 if(effect_time &gt; alarm_get(0)) effect_length = effect_time;
 else effect_length = alarm_get(0);
+if(effect_length == -2) effect_length = 0; 
 
 draw_text(
     hud_effects.effect_hud_effects_x[index],

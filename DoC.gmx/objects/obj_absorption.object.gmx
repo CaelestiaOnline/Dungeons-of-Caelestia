@@ -29,10 +29,9 @@
 index = effect.absorption;
 
 //Variablen
-absorption_time = 0;
+effect_time = 0;
 goal_object = 0;
 
-alarm_set(0, absorption_time);
 </string>
           </argument>
         </arguments>
@@ -60,6 +59,29 @@ if(goal_object == player_stats) player_stats.absorption_hp = 0;
 else goal_object.absorption_hp = 0;
 
 instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(player_stats.absorption_hp == 0) instance_destroy();
 </string>
           </argument>
         </arguments>
