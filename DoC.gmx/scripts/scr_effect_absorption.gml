@@ -13,14 +13,15 @@ var effect_index = effect.absorption;
 if(!instance_exists(goal_object)) exit;
 
 if(goal_object.effects[effect_index] != -1) {
-    goal_object.effects[effect_index].absorption_time += time;
+    if(goal_object == player_stats && player_stats.absorption_hp <= 100) player_stats.absorption_hp += hp;
+    else if(goal_object.absorption_hp <= 100) goal_object.absorption_hp += hp;
     exit;
 }
 
 var absorption = instance_create(0, 0, obj_absorption);
 goal_object.effects[effect_index] = absorption;
 
-absorption.absorption_time = time - 1;
+absorption.alarm[0] = time - 1;
 absorption.goal_object = goal_object;
 
 ///Resistenzfaktor erhöhen
