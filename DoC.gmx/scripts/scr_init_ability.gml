@@ -43,6 +43,7 @@ switch(ability) {
                 break;
         
         }
+        break;
     //Attack Speed
     case "attack_speed":
         effect_time = room_speed * 10;
@@ -60,6 +61,7 @@ switch(ability) {
                 attack_speed_mult = +0.5;
                 break;
         }
+        break;
     //Feuer
     case "fire":
         switch(ability_strength) {
@@ -74,6 +76,7 @@ switch(ability) {
                 fire_speed = room_speed / 3;
                 break;
         }
+        break;
     //Regeneration
     case "regeneration":
         switch(ability_strength) {
@@ -88,6 +91,7 @@ switch(ability) {
                 reg_speed = room_speed / 6;
                 break;
         }
+        break;
     //Mana Regeneration
     case "mana_regeneration":
         switch(ability_strength) {
@@ -101,19 +105,20 @@ switch(ability) {
                 effect_time = room_speed * 5;
                 mana_reg_speed = room_speed / 6;
         }
+        break;
     //Absorption
     case "absorption":
+        effect_time = -2;
         switch(ability_strength) {
             case 1:
                 absorption_hp = round(player_stats.max_hp/8);
-                effect_time = room_speed * 20;
                 break;
             case 2:
                 absorption_hp = round(player_stats.max_hp/4);
-                effect_time = room_speed * 20;
                 break;
         }
-    //Reistance
+        break;
+    //Resistance
     case "resistance":
         effect_time = room_speed * 10;
         switch(ability_strength) {
@@ -127,6 +132,7 @@ switch(ability) {
                 resistance_mult = -1.0;
                 break;
         }
+        break;
     //Strength
     case "strength":
         effect_time = room_speed * 10;
@@ -138,6 +144,7 @@ switch(ability) {
                 strength_mult = +0.4;
                 break;
         }
+        break;
     //Stun?
     case "stun":
         effect_time = room_speed;
@@ -155,6 +162,7 @@ switch(ability) {
                 effect_time = room_speed * 10;
                 poison_speed = room_speed;
         }
+        break;
     //Insta-Heilung
     case "heal":
         switch(ability_strength) {

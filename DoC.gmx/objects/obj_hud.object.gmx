@@ -453,6 +453,11 @@ draw_set_alpha(1);
 draw_rectangle(bar_x + buffer, health_bar_y + buffer, bar_x + ((width - buffer) * health_scale), health_bar_y + height - buffer, 0);
 */
 
+//Bar Absorption
+draw_set_colour(colour_money);
+draw_set_alpha(1);
+draw_circle(health_bar_x, health_bar_y, (radius * health_scale) + inner_radius + player_stats.absorption_hp/4, 0);
+
 //Bar
 draw_set_colour(colour_health);
 draw_set_alpha(1);
@@ -472,7 +477,7 @@ draw_set_colour(colour_font);
 draw_text(
     health_bar_x,
     health_bar_y,
-    string(int64(player_stats.hp))
+    string(int64(player_stats.hp)) + "|" + string(int64(player_stats.absorption_hp))
     );
     
 /*

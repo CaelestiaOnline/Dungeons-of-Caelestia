@@ -140,7 +140,7 @@ item[items.heal_potion, 2] = obj_heal_potion;
 item[items.heal_potion, 3] = "pickup";
 item[items.heal_potion, 4] = 4;
 
-item_stats[items.heal_potion, item_stats_pickup.ability] = "heal";
+item_stats[items.heal_potion, item_stats_pickup.ability] = "absorption";
 item_stats[items.heal_potion, item_stats_pickup.ability_strength] = 2;
 item_stats[items.heal_potion, item_stats_pickup.misc] = "";
 
