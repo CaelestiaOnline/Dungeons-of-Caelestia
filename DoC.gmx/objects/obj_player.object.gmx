@@ -757,9 +757,6 @@ if(dealt_damage &gt; 0) {
     damage_count++;
 }
 
-
-
-
 //heal
 if(dealt_heal &gt; 0) {
     if(heal_count &gt; 10) {

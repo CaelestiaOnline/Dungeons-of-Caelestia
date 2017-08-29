@@ -57,7 +57,7 @@ max_speed = 0;
             <kind>1</kind>
             <string>///Effekt läuft aus
 if(instance_exists(goal_object)) { 
-if(goal_object == obj_player) player_stats.speed_mult_effect = 1;
+if(goal_object == player_stats) player_stats.speed_mult_effect = 1;
 else goal_object.speed_mult = 1;
 }
 instance_destroy();  

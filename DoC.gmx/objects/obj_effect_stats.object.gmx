@@ -62,6 +62,7 @@ effects_name[effect.heal] = "heal";
 effects_name[effect.mana] = "mana";
 
 
+
 </string>
           </argument>
         </arguments>

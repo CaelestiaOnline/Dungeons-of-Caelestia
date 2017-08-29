@@ -58,7 +58,7 @@ alarm_set(0, -1);
           <argument>
             <kind>1</kind>
             <string>///Feuerschaden an Objekt
-if(goal_object == obj_player) scr_deal_player_damage(fire_damage);
+if(goal_object == player_stats) scr_deal_player_damage(fire_damage);
 else scr_deal_damage(goal_object, fire_damage);
 </string>
           </argument>
