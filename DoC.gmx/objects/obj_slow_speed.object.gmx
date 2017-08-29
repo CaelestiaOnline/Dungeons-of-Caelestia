@@ -30,7 +30,7 @@
 multipl = 0;
 time = 0;
 goal_object = 0;
-max_speed = 0;
+effect_time = 0;
 
 
 </string>

@@ -30,7 +30,7 @@ index = effect.regeneration;
 
 //Variablen
 regeneration_heal = 0;
-regeneration_time = 0;
+effect_time = 0;
 regeneration_speed = 0;
 goal_object = 0;
 
@@ -84,11 +84,11 @@ else scr_heal(goal_object, regeneration_heal - 1);
             <kind>1</kind>
             <string>///Count
 if(!instance_exists(goal_object)) instance_destroy();
-if(regeneration_time &gt; 0) {
+if(effect_time &gt; 0) {
     if(alarm_get(0) == -1) {
         alarm_set(0, regeneration_speed);
     }
-    regeneration_time--;
+    effect_time--;
 } else instance_destroy();
 
 

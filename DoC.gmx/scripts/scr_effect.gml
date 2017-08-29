@@ -11,7 +11,6 @@ var effect_strength = argument1;
 var goal_object = argument2;
 
 if(!instance_exists(goal_object)) exit;
-
 if(goal_object == obj_player) goal_object = player_stats;
 
 scr_init_ability(effects_name[effect_index], effect_strength);

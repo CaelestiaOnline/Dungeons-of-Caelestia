@@ -30,7 +30,7 @@ index = effect.poison;
 
 //Schaden über Zeit
 poison_damage = 0;
-poison_time = 0;
+effect_time = 0;
 poison_speed = 0;
 goal_object = 0;
 
@@ -84,11 +84,11 @@ else scr_deal_damage(goal_object, poison_damage);
             <kind>1</kind>
             <string>///Count
 if(!instance_exists(goal_object)) instance_destroy();
-if(poison_time &gt; 0) {
+if(effect_time &gt; 0) {
     if(alarm_get(0) == -1) {
         alarm_set(0, poison_speed);
     }
-    poison_time--;
+    effect_time--;
 } else instance_destroy();
 
 </string>
