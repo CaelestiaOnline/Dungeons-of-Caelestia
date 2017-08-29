@@ -10,6 +10,10 @@ var effect_index = argument0;
 var effect_strength = argument1;
 var goal_object = argument2;
 
+if(!instance_exists(goal_object)) exit;
+
+if(goal_object == obj_player) goal_object = player_stats;
+
 scr_init_ability(effects_name[effect_index], effect_strength);
 
 switch(effect_index) {
@@ -45,6 +49,12 @@ switch(effect_index) {
         break;
     case effect.poison:
         scr_effect_poison(poison_damage, effect_time, poison_speed, goal_object);
+        break;
+    case effect.heal:
+        scr_effect_heal(heal, goal_object);
+        break;
+    case effect.mana:
+        scr_effect_mana(mana, goal_object);
         break;
 }
 

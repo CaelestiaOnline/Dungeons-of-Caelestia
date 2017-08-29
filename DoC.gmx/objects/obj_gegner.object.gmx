@@ -221,6 +221,22 @@ if(dealt_damage &gt; 0) {
     }
     damage_count++;
 }
+
+//heal
+if(dealt_heal &gt; 0) {
+    if(heal_count &gt; 10) {
+        if(old_dealt_heal == dealt_heal) {
+            scr_draw_dealt_heal(x, y - sprite_get_height(sprite_index)/2 - 30, dealt_heal);
+            dealt_heal = 0;
+        }
+        heal_count = 0;
+    }
+    if(dealt_heal &gt;= 10) {
+        scr_draw_dealt_heal(x, y - sprite_get_height(sprite_index)/2 - 30, dealt_heal);
+        dealt_heal = 0;
+    }
+    heal_count++;
+}
 </string>
           </argument>
         </arguments>

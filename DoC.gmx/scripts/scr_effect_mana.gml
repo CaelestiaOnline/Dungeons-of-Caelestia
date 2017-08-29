@@ -1,16 +1,16 @@
 /*
-scr_effect_mana_regeneration(
-    Mana, die pro Zeiteinheit regeneriert werden,
-    Zeiteinheit in steps,
-    Dauer in Steps,
+scr_effect_mana(
+    mana,
+    goal_object
 );
 */
 
 var mana = argument0;
-var mspeed = argument1;
-var time = argument2;
-var goal_object = obj_player;
-var effect_index = effect.mana_regeneration;
+var goal_object = argument1;
+var effect_index = effect.mana;
+var time = room_speed;
+var mregeneration_speed = round(room_speed/20);
+var mregeneration_heal = mana div (1 / (mregeneration_speed / time));
 
 if(!instance_exists(goal_object)) exit;
 
@@ -22,7 +22,8 @@ if(goal_object.effects[effect_index] != -1) {
 var mregeneration = instance_create(0, 0, obj_mana_regeneration);
 goal_object.effects[effect_index] = mregeneration;
 
-mregeneration.mregeneration_heal = mana;
+mregeneration.mregeneration_heal = mregeneration_heal;
 mregeneration.mregeneration_time = time;
-mregeneration.mregeneration_speed = mspeed - 1;
+mregeneration.mregeneration_speed = mregeneration_speed - 1;
 mregeneration.goal_object = goal_object;
+mregeneration.index = effect_index;

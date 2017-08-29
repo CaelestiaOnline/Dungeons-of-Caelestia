@@ -56,7 +56,7 @@ alarm_set(0, stun_time);
           <argument>
             <kind>1</kind>
             <string>///Stun beenden
-if(goal_object == obj_player) scr_keylock_ingamemenu(false);
+if(goal_object == player_stats) scr_keylock_ingamemenu(false);
 
 instance_destroy();
 </string>

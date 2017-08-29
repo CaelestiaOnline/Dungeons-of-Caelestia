@@ -448,11 +448,14 @@
         <script>scripts\scr_effect_resistance.gml</script>
         <script>scripts\scr_effect_strength.gml</script>
         <script>scripts\scr_effect_stun.gml</script>
+        <script>scripts\scr_effect_heal.gml</script>
+        <script>scripts\scr_effect_mana.gml</script>
         <scripts name="Ability">
           <script>scripts\scr_init_ability.gml</script>
         </scripts>
         <script>scripts\scr_init_effects.gml</script>
         <script>scripts\scr_effect.gml</script>
+        <script>scripts\scr_effect_index.gml</script>
       </scripts>
       <scripts name="Interaktion">
         <script>scripts\scr_hub_interaction.gml</script>
