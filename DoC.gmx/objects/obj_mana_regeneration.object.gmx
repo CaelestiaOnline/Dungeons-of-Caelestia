@@ -30,7 +30,7 @@ index = effect.mana_regeneration;
 
 //Variablen
 mregeneration_heal = 0;
-mregeneration_time = 0;
+effect_time = 0;
 mregeneration_speed = 0;
 goal_object = 0;
 
@@ -83,11 +83,11 @@ if(goal_object == player_stats) scr_player_add_mana(mregeneration_heal);
             <kind>1</kind>
             <string>///Count
 if(!instance_exists(goal_object)) instance_destroy();
-if(mregeneration_time &gt; 0) {
+if(effect_time &gt; 0) {
     if(alarm_get(0) == -1) {
         alarm_set(0, mregeneration_speed);
     }
-    mregeneration_time--;
+    effect_time--;
 } else instance_destroy();
 
 </string>

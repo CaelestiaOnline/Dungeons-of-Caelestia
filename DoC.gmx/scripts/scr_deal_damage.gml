@@ -9,7 +9,9 @@ var damage = argument1;
 var hp_copy = object.hp;
 var hp_copy_absorption = object.absorption_hp;
 
-if(self == obj_hitbox_melee && self == obj_bullet) damage *= player_stats.strength_mult;
+if(string(self.object_index) == string(obj_hitbox_melee) || string(self.object_index) == string(obj_bullet) || object_is_ancestor(self.object_index, obj_bullet) ) {
+    damage *= player_stats.strength_mult;
+}
 
 if(hp_copy_absorption > 0) {
     if(hp_copy_absorption < damage) {

@@ -247,7 +247,7 @@ show_hitbox = 0;
           <argument>
             <kind>1</kind>
             <string>///Test
-show_debug_message(string(effect.count));
+
 </string>
           </argument>
         </arguments>

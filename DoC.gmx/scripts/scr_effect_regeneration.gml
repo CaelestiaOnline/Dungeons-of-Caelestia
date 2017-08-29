@@ -14,9 +14,10 @@ var goal_object = argument3;
 var effect_index = effect.regeneration;
 
 if(!instance_exists(goal_object)) exit;
+if(goal_object == obj_player) goal_object = player_stats;
 
 if(goal_object.effects[effect_index] != -1) {
-    goal_object.effects[effect_index].regeneration_time += time;
+    goal_object.effects[effect_index].effect_time += time;
     exit;
 }
 
@@ -24,6 +25,6 @@ var regeneration = instance_create(0, 0, obj_regeneration);
 goal_object.effects[effect_index] = regeneration;
 
 regeneration.regeneration_heal = hp;
-regeneration.regeneration_time = time;
+regeneration.effect_time = time;
 regeneration.regeneration_speed = rspeed - 1;
 regeneration.goal_object = goal_object;
