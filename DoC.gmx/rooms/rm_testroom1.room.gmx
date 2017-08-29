@@ -500,16 +500,16 @@
     <instance objName="obj_forest_penguin_small" x="384" y="576" name="inst_34844E58" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_forest_penguin_small" x="544" y="576" name="inst_3CC379BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_forest_penguin_small" x="704" y="576" name="inst_B9A546C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="96" y="160" name="inst_3F839C82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="96" y="352" name="inst_D1CAF16A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="320" y="160" name="inst_D4F01BEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="320" y="352" name="inst_62A6C3FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="256" y="1248" name="inst_EF22B23E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="544" y="1248" name="inst_27DE3158" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_bullet" x="864" y="96" name="inst_EF132FF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_bullet" x="960" y="96" name="inst_C3224DB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_bullet" x="1056" y="96" name="inst_A94C28B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_bullet" x="2624" y="928" name="inst_1DEFBF96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nahkampf" x="96" y="160" name="inst_3F839C82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nahkampf" x="96" y="352" name="inst_D1CAF16A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nahkampf" x="320" y="160" name="inst_D4F01BEB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nahkampf" x="320" y="352" name="inst_62A6C3FC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nahkampf" x="256" y="1248" name="inst_EF22B23E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_nahkampf" x="544" y="1248" name="inst_27DE3158" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fernkampf" x="864" y="96" name="inst_EF132FF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fernkampf" x="960" y="96" name="inst_C3224DB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fernkampf" x="1056" y="96" name="inst_A94C28B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fernkampf" x="2624" y="928" name="inst_1DEFBF96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_portal_hub" x="3680" y="128" name="inst_BE1C87AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

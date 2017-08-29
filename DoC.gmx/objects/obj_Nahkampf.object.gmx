@@ -2,10 +2,10 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_gegner</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schaden
-damage = 10;
-countdown_erzeugen = 0;
-attack_speed = player_stats.attack_speed;
+            <string>///Stats
+event_inherited();
+
+//Weg erzeugen
+path = path_add();
+
+//Distanz
+max_distance = 100;
+min_distance = 48;
+safety_distance = 200;
+min_distance_factor = 1;
 </string>
           </argument>
         </arguments>
@@ -51,50 +58,35 @@ attack_speed = player_stats.attack_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Angrif und Position
+            <string>///Triggered
+scr_trigger_enemy(-1);
+if(!triggered) exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Angriff + Bewegung
 
-//Position
-x = obj_player.x
-y = obj_player.y
+scr_pathfinding_enemy();
 
-//Nahkampfangriff
-if(obj_player.attack = 0)
-{
-    if(admin.prim_attack_key)
-    {
-        if(obj_player.attack_axis = 1)
-        {
-            if(countdown_erzeugen == 0)
-            {
-            instance_create(x + obj_player.spr_width/2 + sprite_get_width(spr_hitbox)/2,y,obj_hitbox_nahkampf);
-            instance_create(x + obj_player.spr_width/2 + sprite_get_width(spr_explosion)/2,y,obj_explosion);
-            }
-            if(countdown_erzeugen &lt; 0)
-            {
-                countdown_erzeugen = attack_speed;
-            }
-            countdown_erzeugen--;
-        }
-        if(obj_player.attack_axis = -1)
-        {
-            if(countdown_erzeugen == 0)
-            {
-                instance_create(x - obj_player.spr_width/2 - sprite_get_width(spr_hitbox)/2,y,obj_hitbox_nahkampf);
-                instance_create(x - obj_player.spr_width/2 - sprite_get_width(spr_explosion)/2,y,obj_explosion);
-            }
-            if(countdown_erzeugen &lt; 0)
-            {
-                countdown_erzeugen = attack_speed;
-            }
-            countdown_erzeugen--;
-        }
-    }
-}
-
-//Zurücksetzen der Angriffsgeschwindigkeit
-if(keyboard_check_released(vk_space))
-{
-    countdown_erzeugen = 0;
+if(attack_ready) {
+    scr_melee_attack_enemy(damage);
 }
 </string>
           </argument>

@@ -202,7 +202,7 @@ enemy_stats[obj_forest_penguin_small, enemy_stats_normal.max_speed] = 2;
 enemy_stats[obj_forest_penguin_small, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_forest_penguin_small, enemy_stats_normal.money_drop] = 15;
 
-//Waldpinguin Bullet(2)
+//Waldpinguin Bullet(3)
 enemy_stats[obj_forest_penguin_bullet, 0] = "Fernkampf-Waldpinguin";
 enemy_stats[obj_forest_penguin_bullet, 1] = "Die gruene Fernkampf-Gefahr aus dem Unterholz!";
 enemy_stats[obj_forest_penguin_bullet, 2] = true;
@@ -215,6 +215,65 @@ enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.attack_speed] = 100;
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.max_speed] = 1;
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.money_drop] = 15;
+
+//Wandelnder Baum(4)
+enemy_stats[obj_attack_tree, 0] = "Aggressiver Nahkampfbaum";
+enemy_stats[obj_attack_tree, 1] = "Das raumuebergreifende Grossgruen";
+enemy_stats[obj_attack_tree, 2] = true;
+enemy_stats[obj_attack_tree, 3] = true;
+enemy_stats[obj_attack_tree, 4] = "normal";
+
+enemy_stats[obj_attack_tree, enemy_stats_normal.hp] = 70;
+enemy_stats[obj_attack_tree, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_attack_tree, enemy_stats_normal.attack_speed] = 70;
+enemy_stats[obj_attack_tree, enemy_stats_normal.max_speed] = 1.2;
+enemy_stats[obj_attack_tree, enemy_stats_normal.xp_drop] = 254;
+enemy_stats[obj_attack_tree, enemy_stats_normal.money_drop] = 12;
+
+//Blaubeere(5)
+enemy_stats[obj_blueberry, 0] = "Blaubeere";
+enemy_stats[obj_blueberry, 1] = "Das schnelle blaue Rudeltier";
+enemy_stats[obj_blueberry, 2] = true;
+enemy_stats[obj_blueberry, 3] = true;
+enemy_stats[obj_blueberry, 4] = "normal";
+
+enemy_stats[obj_blueberry, enemy_stats_normal.hp] = 20;
+enemy_stats[obj_blueberry, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_blueberry, enemy_stats_normal.attack_speed] = 120;
+enemy_stats[obj_blueberry, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_blueberry, enemy_stats_normal.xp_drop] = 32;
+enemy_stats[obj_blueberry, enemy_stats_normal.money_drop] = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Stats
+event_inherited();
+
+//Weg erzeugen
+path = path_add();
+
+//Distanz
+max_distance = 100;
+min_distance = 48;
+safety_distance = 200;
+min_distance_factor = 1;
 </string>
           </argument>
         </arguments>
