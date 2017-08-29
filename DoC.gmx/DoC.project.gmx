@@ -862,6 +862,7 @@
       <object>objects\obj_mana_regeneration</object>
       <object>objects\obj_strength</object>
       <object>objects\obj_resistance</object>
+      <object>objects\obj_absorption</object>
       <object>objects\obj_stun</object>
       <object>objects\obj_slow_speed</object>
       <object>objects\obj_attack_speed</object>

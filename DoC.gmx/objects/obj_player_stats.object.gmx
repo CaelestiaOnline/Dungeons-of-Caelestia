@@ -33,6 +33,7 @@ name = "Subjekt \#" + string(stats.death_count);
 hp = 100;
 max_hp = hp;
 old_hp = hp;
+absorption_hp = 0;
 
 //Regeneration
 regeneration = 1;
