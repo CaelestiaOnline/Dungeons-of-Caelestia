@@ -2,10 +2,10 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_gegner</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Schaden
-damage = 5;
-countdown_erzeugen = 0;
-attack_speed = player_stats.attack_speed;
+            <string>///Stats
+event_inherited();
+
+//Weg erzeugen
+path = path_add();
+
+//Distanz
+max_distance = 500;
+min_distance = 100;
+safety_distance = 200;
+min_distance_factor = 1;
+
+//Bullet Type
+type = obj_pistol_bullet_enemy;
 </string>
           </argument>
         </arguments>
@@ -51,50 +61,9 @@ attack_speed = player_stats.attack_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Angriff und Position
-
-//Position
-x = obj_player.x;
-y = obj_player.y;
-
-//Angriff
-if(obj_player.attack == 1) {
-    if(admin.prim_attack_key)
-    {
-        if(obj_player.attack_axis = 1) 
-        {
-            if(countdown_erzeugen == 0)
-            {
-                var bullet = instance_create(x + obj_player.spr_width,y,obj_bullet);
-                bullet.direction = 0;
-            }
-            if(countdown_erzeugen &lt; 0)
-            {
-            countdown_erzeugen = attack_speed;
-            }
-            countdown_erzeugen--;
-        }
-        if(obj_player.attack_axis = -1)
-        {
-            if(countdown_erzeugen == 0)
-            {
-                    var bullet2 = instance_create(x - obj_player.spr_width - sprite_get_width(spr_bullet),y,obj_bullet);
-                    bullet2.direction = 180;
-                    bullet2.image_angle = 180;
-            }
-            if(countdown_erzeugen &lt; 0)
-            {
-                countdown_erzeugen = attack_speed;
-            }
-            countdown_erzeugen--;
-        }
-    }
-}
-//Countdown zurücksetzen
-if(keyboard_check_released(vk_space))
-{
-    countdown_erzeugen = 0;
-}
+            <string>///Triggered
+scr_trigger_enemy(-1);
+if(!triggered) exit;
 </string>
           </argument>
         </arguments>
@@ -115,48 +84,12 @@ if(keyboard_check_released(vk_space))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Angriff
-if(admin.magic_key)
-{
-    if(obj_player.attack_axis = 1) 
-    {
-        if(countdown_erzeugen == 0)
-        {
-            var enough_mana = scr_player_rem_mana(50);
-            if(enough_mana) {
-                var bullet = instance_create(x + obj_player.spr_width,y,obj_mana_bullet);
-                bullet.direction = 0;
-            }
-            else scr_player_add_mana(50);
-        }
-        if(countdown_erzeugen &lt; 0)
-        {
-            countdown_erzeugen = attack_speed;
-        }
-        countdown_erzeugen--;
-    }
-    if(obj_player.attack_axis = -1)
-    {
-        if(countdown_erzeugen == 0)
-        {
-            var enough_mana = scr_player_rem_mana(50);
-            if(enough_mana) {
-                var bullet2 = instance_create(x - obj_player.spr_width - sprite_get_width(spr_mana_bullet),y,obj_mana_bullet);
-                bullet2.direction = 180;
-            }
-            else scr_player_add_mana(50); 
-        }
-        if(countdown_erzeugen &lt; 0)
-        {
-            countdown_erzeugen = attack_speed;
-        }
-        countdown_erzeugen--;
-    }
-}
-//Countdown zurücksetzen
-if(keyboard_check_released(vk_space))
-{
-    countdown_erzeugen = 0;
+            <string>///Angriff + Bewegung
+
+scr_pathfinding_enemy();
+
+if(attack_ready) {
+    scr_bullet_attack_enemy(damage, type);
 }
 </string>
           </argument>

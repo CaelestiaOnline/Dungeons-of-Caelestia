@@ -811,9 +811,13 @@
         </objects>
         <objects name="Nahkampf">
           <object>objects\obj_forest_penguin_small</object>
+          <object>objects\obj_attack_tree</object>
+          <object>objects\obj_blueberry</object>
           <object>objects\obj_forest_penguin</object>
+          <object>objects\obj_nahkampf</object>
         </objects>
         <objects name="Fernkampf">
+          <object>objects\obj_fernkampf</object>
           <object>objects\obj_forest_penguin_bullet</object>
         </objects>
         <objects name="Training">
