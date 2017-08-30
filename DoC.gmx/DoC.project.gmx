@@ -346,6 +346,7 @@
         <script>scripts\scr_deal_player_damage.gml</script>
         <script>scripts\scr_crit_attack.gml</script>
         <script>scripts\instance_place_list.gml</script>
+        <script>scripts\scr_enemy_effect.gml</script>
       </scripts>
       <scripts name="Mana">
         <script>scripts\scr_player_add_mana.gml</script>

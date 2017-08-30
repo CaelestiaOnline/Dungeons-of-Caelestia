@@ -28,14 +28,9 @@
             <string>///Stats
 event_inherited();
 
-//Distanz
-max_distance = 500;
-min_distance = 100;
-safety_distance = 200;
-min_distance_factor = 1;
-
-//Bullet Type
-type = obj_pistol_bullet_enemy;
+//Größe der Effektellipse
+max_y = 50;
+max_x = 75;
 </string>
           </argument>
         </arguments>
@@ -61,30 +56,6 @@ type = obj_pistol_bullet_enemy;
             <string>///Triggered
 scr_trigger_enemy(50);
 if(!triggered) exit;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Angriff
-if(attack_ready) {
-    scr_bullet_attack_enemy(damage, type);
-}
 </string>
           </argument>
         </arguments>
