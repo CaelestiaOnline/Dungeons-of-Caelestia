@@ -195,7 +195,7 @@ item_stats[items.shuriken, item_stats_sec.misc] = "";
 
 //Swift-Orb (5)
 item[items.swift_orb, 0] = "Orb der Schnelligkeit";
-item[items.swift_orb, 1] = "Verleiht einen Geschwindigkeits-Boost!";
+item[items.swift_orb, 1] = "Speeeed - Booooooost!";
 item[items.swift_orb, 2] = obj_swift_orb;
 item[items.swift_orb, 3] = "item";
 item[items.swift_orb, 4] = 1;
