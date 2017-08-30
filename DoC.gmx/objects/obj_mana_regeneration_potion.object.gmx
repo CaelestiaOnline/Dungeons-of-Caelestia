@@ -25,8 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Addiere Mana
-index = items.mana_potion;
+            <string>///Mana-Regeneration
+index = items.mana_regeneration_potion;
 
 if(player_stats.mana &lt; player_stats.max_mana) {
 if(scr_inventory_rem_item_slot_count(inventory.inv_pickups, inventory.menupos, 1)) {
