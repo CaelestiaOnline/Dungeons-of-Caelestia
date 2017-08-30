@@ -454,9 +454,12 @@ draw_rectangle(bar_x + buffer, health_bar_y + buffer, bar_x + ((width - buffer) 
 */
 
 //Bar Absorption
+
+var absorption_scale = 15 * player_stats.absorption_hp / player_stats.max_absorption_hp;
+
 draw_set_colour(colour_money);
 draw_set_alpha(1);
-draw_circle(health_bar_x, health_bar_y, (radius * health_scale) + inner_radius + player_stats.absorption_hp/4, 0);
+draw_circle(health_bar_x, health_bar_y, (radius * health_scale) + inner_radius + absorption_scale, 0);
 
 //Bar
 draw_set_colour(colour_health);

@@ -70,7 +70,7 @@ shop_button_y[i, j] = hub_menu_y1 + 128 + 64*j;
 var item_index = i + (max_slots*j);
 if(item_index &gt;= array_height_2d(item)) item_index = -1;
 shop_button[i, j] = scr_create_shop_button(shop_button_x[i, j], shop_button_y[i, j], item_index);
-show_debug_message("Button (" + string(i) + "/" + string(j) + ")" + " mit Index " + string(item_index));
+//show_debug_message("Button (" + string(i) + "/" + string(j) + ")" + " mit Index " + string(item_index));
 }
 }
 

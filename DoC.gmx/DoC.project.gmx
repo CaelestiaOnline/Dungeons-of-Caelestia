@@ -694,10 +694,39 @@
         <object>objects\obj_swift_orb</object>
       </objects>
       <objects name="pickup">
-        <object>objects\obj_heal_potion</object>
-        <object>objects\obj_heal_potion_small</object>
-        <object>objects\obj_mana_potion</object>
-        <object>objects\obj_mana_potion_small</object>
+        <objects name="Heal">
+          <object>objects\obj_heal_potion</object>
+          <object>objects\obj_heal_potion_small</object>
+        </objects>
+        <objects name="Mana">
+          <object>objects\obj_mana_potion</object>
+          <object>objects\obj_mana_potion_small</object>
+        </objects>
+        <objects name="Regeneration">
+          <object>objects\obj_regeneration_potion</object>
+          <object>objects\obj_regeneration_potion_small</object>
+        </objects>
+        <objects name="Absorption">
+          <object>objects\obj_absorption_potion</object>
+          <object>objects\obj_absorption_potion_small</object>
+        </objects>
+        <objects name="Resistenz">
+          <object>objects\obj_resistance_potion</object>
+          <object>objects\obj_resistance_potion_small</object>
+        </objects>
+        <objects name="Stärke">
+          <object>objects\obj_strength_potion</object>
+          <object>objects\obj_strength_potion_small</object>
+        </objects>
+        <objects name="Speed">
+          <object>objects\obj_speed_potion</object>
+          <object>objects\obj_speed_potion_small</object>
+          <object>objects\obj_sanic_potion</object>
+        </objects>
+        <objects name="Mana-Regeneration">
+          <object>objects\obj_mana_regeneration_potion</object>
+          <object>objects\obj_mana_regeneration_potion_small</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Hub">
