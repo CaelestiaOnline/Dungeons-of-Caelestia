@@ -28,7 +28,11 @@
             <string>///Angriff
 event_inherited();
 
-scr_enemy_effect(damage, effect.poison, 1);
+if (attack_ready){
+    scr_enemy_effect(damage, effect.poison, 1);
+    alarm_set(0, attack_speed);
+    attack_ready = false;
+}
 </string>
           </argument>
         </arguments>
