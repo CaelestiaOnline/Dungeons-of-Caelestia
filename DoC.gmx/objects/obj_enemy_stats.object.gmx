@@ -218,20 +218,20 @@ enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.money_drop] = 15;
 
 //Wandelnder Baum(4)
 enemy_stats[obj_attack_tree, 0] = "Aggressiver Nahkampfbaum";
-enemy_stats[obj_attack_tree, 1] = "Das raumuebergreifende Grossgruen";
+enemy_stats[obj_attack_tree, 1] = "Das raumuebergreifende Grossgruen!";
 enemy_stats[obj_attack_tree, 2] = true;
 enemy_stats[obj_attack_tree, 3] = true;
 enemy_stats[obj_attack_tree, 4] = "normal";
 
 enemy_stats[obj_attack_tree, enemy_stats_normal.hp] = 70;
 enemy_stats[obj_attack_tree, enemy_stats_normal.damage] = 5;
-enemy_stats[obj_attack_tree, enemy_stats_normal.attack_speed] = 70;
+enemy_stats[obj_attack_tree, enemy_stats_normal.attack_speed] = 120;
 enemy_stats[obj_attack_tree, enemy_stats_normal.max_speed] = 1.2;
-enemy_stats[obj_attack_tree, enemy_stats_normal.xp_drop] = 254;
+enemy_stats[obj_attack_tree, enemy_stats_normal.xp_drop] = 256;
 enemy_stats[obj_attack_tree, enemy_stats_normal.money_drop] = 12;
 
 //Blaubeere(5)
-enemy_stats[obj_blueberry, 0] = "Blaubeere";
+enemy_stats[obj_blueberry, 0] = "Blaubaere";
 enemy_stats[obj_blueberry, 1] = "Das schnelle blaue Rudeltier";
 enemy_stats[obj_blueberry, 2] = true;
 enemy_stats[obj_blueberry, 3] = true;
@@ -239,7 +239,7 @@ enemy_stats[obj_blueberry, 4] = "normal";
 
 enemy_stats[obj_blueberry, enemy_stats_normal.hp] = 20;
 enemy_stats[obj_blueberry, enemy_stats_normal.damage] = 10;
-enemy_stats[obj_blueberry, enemy_stats_normal.attack_speed] = 120;
+enemy_stats[obj_blueberry, enemy_stats_normal.attack_speed] = 70;
 enemy_stats[obj_blueberry, enemy_stats_normal.max_speed] = 2.5;
 enemy_stats[obj_blueberry, enemy_stats_normal.xp_drop] = 32;
 enemy_stats[obj_blueberry, enemy_stats_normal.money_drop] = 2;

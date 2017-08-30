@@ -52,6 +52,11 @@ enum items {
     mana_regeneration_potion_small = 22,
     sanic_potion = 23,
     mana_heal_orb = 24,
+    katana = 25,
+    battle_axe = 26,
+    war_hammer = 27,
+    chainsaw = 28,
+    lightsaber = 29,
     count
 }
 </string>
@@ -462,6 +467,86 @@ item_stats[items.mana_heal_orb, item_stats_mag.ability_strength] = 1;
 item_stats[items.mana_heal_orb, item_stats_mag.mana_usage] = 50;
 item_stats[items.mana_heal_orb, item_stats_mag.cooldown] = player_stats.attack_speed*6;
 item_stats[items.mana_heal_orb, item_stats_mag.misc] = "";
+
+//Katana (25)
+item[items.katana, 0] = "Katana";
+item[items.katana, 1] = "Besonders hilfreich beim Loesen von Sudokus!"
+item[items.katana, 2] = obj_katana;
+item[items.katana, 3] = "prim";
+item[items.katana, 4] = 1;
+
+item_stats[items.katana, item_stats_prim.damage] = round(player_stats.root_damage*1.2);
+item_stats[items.katana, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.2) + round(player_stats.root_damage/4);
+item_stats[items.katana, item_stats_prim.ability] = "";
+item_stats[items.katana, item_stats_prim.ability_chance] = 0;
+item_stats[items.katana, item_stats_prim.ability_strength] = 0;
+item_stats[items.katana, item_stats_prim.speed_bonus] = +0.2;
+item_stats[items.katana, item_stats_prim.attack_speed] = player_stats.attack_speed * 3/4;
+item_stats[items.katana, item_stats_prim.misc] = "";
+
+//Battle Axe (26)
+item[items.battle_axe, 0] = "Streitaxt";
+item[items.battle_axe, 1] = "Besonders effektiv gegen... Nein. eigentlich ist es gegen alles effektiv!"
+item[items.battle_axe, 2] = obj_battle_axe;
+item[items.battle_axe, 3] = "prim";
+item[items.battle_axe, 4] = 1;
+
+item_stats[items.battle_axe, item_stats_prim.damage] = round(player_stats.root_damage*1.7);
+item_stats[items.battle_axe, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.7) + round(player_stats.root_damage/4);
+item_stats[items.battle_axe, item_stats_prim.ability] = "";
+item_stats[items.battle_axe, item_stats_prim.ability_chance] = 0;
+item_stats[items.battle_axe, item_stats_prim.ability_strength] = 0;
+item_stats[items.battle_axe, item_stats_prim.speed_bonus] = -0.2;
+item_stats[items.battle_axe, item_stats_prim.attack_speed] = player_stats.attack_speed * 5/4;
+item_stats[items.battle_axe, item_stats_prim.misc] = "";
+
+//Kriegshammer (27)
+item[items.war_hammer, 0] = "Kriegshammer";
+item[items.war_hammer, 1] = "Gegner = Matsch. Vielleicht. Wenn du triffst."
+item[items.war_hammer, 2] = obj_war_hammer;
+item[items.war_hammer, 3] = "prim";
+item[items.war_hammer, 4] = 1;
+
+item_stats[items.war_hammer, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.war_hammer, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/2);
+item_stats[items.war_hammer, item_stats_prim.ability] = "";
+item_stats[items.war_hammer, item_stats_prim.ability_chance] = 0;
+item_stats[items.war_hammer, item_stats_prim.ability_strength] = 0;
+item_stats[items.war_hammer, item_stats_prim.speed_bonus] = -0.4;
+item_stats[items.war_hammer, item_stats_prim.attack_speed] = player_stats.attack_speed * 2;
+item_stats[items.war_hammer, item_stats_prim.misc] = "";
+
+//Kettensäge (28)
+item[items.chainsaw, 0] = "Kettensaege";
+item[items.chainsaw, 1] = "Ein forstwirtschaftliches Geraet mit leichtem Oelleck! Hat vielleicht schon den ein oder anderen Waldbrand verursacht";
+item[items.chainsaw, 2] = obj_chainsaw;
+item[items.chainsaw, 3] = "prim";
+item[items.chainsaw, 4] = 1;
+
+item_stats[items.chainsaw, item_stats_prim.damage] = round(player_stats.root_damage*1.5);
+item_stats[items.chainsaw, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.5) + round(player_stats.root_damage/4);
+item_stats[items.chainsaw, item_stats_prim.ability] = "fire";
+item_stats[items.chainsaw, item_stats_prim.ability_chance] = 0.5;
+item_stats[items.chainsaw, item_stats_prim.ability_strength] = 1;
+item_stats[items.chainsaw, item_stats_prim.speed_bonus] = 0;
+item_stats[items.chainsaw, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.chainsaw, item_stats_prim.misc] = "";
+
+//Lichtschwert (29)
+item[items.lightsaber, 0] = "Lichtschwert";
+item[items.lightsaber, 1] = "Zeeaoohhh, Krschhhhht, Psiiiing!"
+item[items.lightsaber, 2] = obj_lightsaber;
+item[items.lightsaber, 3] = "prim";
+item[items.lightsaber, 4] = 1;
+
+item_stats[items.lightsaber, item_stats_prim.damage] = round(player_stats.root_damage*1.5);
+item_stats[items.lightsaber, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.5) + round(player_stats.root_damage/4);
+item_stats[items.lightsaber, item_stats_prim.ability] = "fire";
+item_stats[items.lightsaber, item_stats_prim.ability_chance] = 0.2;
+item_stats[items.lightsaber, item_stats_prim.ability_strength] = 2;
+item_stats[items.lightsaber, item_stats_prim.speed_bonus] = 0;
+item_stats[items.lightsaber, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.lightsaber, item_stats_prim.misc] = "";
 </string>
           </argument>
         </arguments>
