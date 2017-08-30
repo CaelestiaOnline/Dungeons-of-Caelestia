@@ -193,6 +193,7 @@
     <instance objName="obj_attack_tree" x="1888" y="352" name="inst_20F902E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_attack_tree" x="1888" y="736" name="inst_050B66A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_attack_tree" x="2208" y="416" name="inst_E66BA3D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mushroom" x="2496" y="800" name="inst_B9594E5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -13,7 +13,7 @@ var object = collision_ellipse(
     self.x - self.max_x,
     self.y - self.max_y, 
     self.x + self.max_x, 
-    self.y - self.max_y, 
+    self.y + self.max_y, 
     obj_player, 
     false, 
     false);
