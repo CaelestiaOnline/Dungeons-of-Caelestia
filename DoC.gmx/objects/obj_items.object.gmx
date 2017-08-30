@@ -464,8 +464,8 @@ item[items.mana_heal_orb, 4] = 1;
 
 item_stats[items.mana_heal_orb, item_stats_mag.ability] = "heal";
 item_stats[items.mana_heal_orb, item_stats_mag.ability_strength] = 1;
-item_stats[items.mana_heal_orb, item_stats_mag.mana_usage] = 50;
-item_stats[items.mana_heal_orb, item_stats_mag.cooldown] = player_stats.attack_speed*6;
+item_stats[items.mana_heal_orb, item_stats_mag.mana_usage] = 20;
+item_stats[items.mana_heal_orb, item_stats_mag.cooldown] = player_stats.attack_speed*3*5;
 item_stats[items.mana_heal_orb, item_stats_mag.misc] = "";
 
 //Katana (25)
