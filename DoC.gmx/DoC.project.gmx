@@ -800,6 +800,7 @@
       <objects name="Gegner">
         <object>objects\obj_gegner</object>
         <objects name="Fallen / Unbewegliche Objekte">
+          <object>objects\obj_fallen_unbewegliche_objekte</object>
           <object>objects\obj_mushroom</object>
         </objects>
         <objects name="Damage-Indikator">
