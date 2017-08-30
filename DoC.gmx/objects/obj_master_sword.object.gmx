@@ -31,7 +31,6 @@ damage = item_stats[index, item_stats_prim.damage];
 damage_crit = item_stats[index, item_stats_prim.damage_crit];
 
 speed_mult = item_stats[index, item_stats_prim.speed_bonus];
-
 player_stats.speed_mult_item += speed_mult;
 
 confirmed = false;

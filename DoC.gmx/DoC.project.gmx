@@ -119,6 +119,24 @@
             <sprite>sprites\spr_obj_forest_penguin_small_dead</sprite>
           </sprites>
         </sprites>
+        <sprites name="Blaubeere">
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_blueberry_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_blueberry_dead</sprite>
+          </sprites>
+          <sprite>sprites\spr_blueberry</sprite>
+        </sprites>
+        <sprites name="Attack-Tree">
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_attack_tree_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_attack_tree_dead</sprite>
+          </sprites>
+          <sprite>sprites\spr_attack_tree</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Waffen">
@@ -663,6 +681,11 @@
           <object>objects\obj_fist</object>
           <object>objects\obj_stone_sword</object>
           <object>objects\obj_master_sword</object>
+          <object>objects\obj_katana</object>
+          <object>objects\obj_battle_axe</object>
+          <object>objects\obj_war_hammer</object>
+          <object>objects\obj_chainsaw</object>
+          <object>objects\obj_lightsaber</object>
           <objects name="Hitbox">
             <object>objects\obj_hitbox_melee</object>
           </objects>
@@ -814,10 +837,10 @@
           <object>objects\obj_attack_tree</object>
           <object>objects\obj_blueberry</object>
           <object>objects\obj_forest_penguin</object>
-          <object>objects\obj_nahkampf</object>
+          <object>objects\obj_nahkampf_enemy</object>
         </objects>
         <objects name="Fernkampf">
-          <object>objects\obj_fernkampf</object>
+          <object>objects\obj_fernkampf_enemy</object>
           <object>objects\obj_forest_penguin_bullet</object>
         </objects>
         <objects name="Training">
