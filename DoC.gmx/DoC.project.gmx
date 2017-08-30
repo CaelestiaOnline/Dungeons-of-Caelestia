@@ -632,6 +632,42 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_placeholder</object>
+    <objects name="Gegenstände">
+      <objects name="Hindernis">
+        <object>objects\obj_hindernis</object>
+        <objects name="non-breakable">
+          <object>objects\obj_hindernis_non_breakable</object>
+          <object>objects\obj_tree_stump</object>
+          <object>objects\obj_invisible_wall</object>
+          <object>objects\obj_wall_old</object>
+          <objects name="Rock">
+            <object>objects\obj_rock1</object>
+            <object>objects\obj_rock2</object>
+            <object>objects\obj_rock3</object>
+            <object>objects\obj_rock4</object>
+            <object>objects\obj_rock6</object>
+            <object>objects\obj_rock5</object>
+          </objects>
+          <objects name="Bush">
+            <object>objects\obj_bush1</object>
+            <object>objects\obj_bush2</object>
+            <object>objects\obj_bush3</object>
+            <object>objects\obj_bush4</object>
+            <object>objects\obj_bush5</object>
+            <object>objects\obj_bush6</object>
+          </objects>
+          <objects name="DeadTree">
+            <object>objects\obj_dead_tree_black</object>
+            <object>objects\obj_dead_tree_blue</object>
+            <object>objects\obj_dead_tree_white</object>
+          </objects>
+        </objects>
+        <objects name="Breakable">
+          <object>objects\obj_hindernis_breakable</object>
+          <object>objects\obj_cactus</object>
+        </objects>
+      </objects>
+    </objects>
     <objects name="HUD">
       <object>objects\obj_hud</object>
       <object>objects\obj_pickup_ind</object>
@@ -880,42 +916,6 @@
       </objects>
       <objects name="Heilungsfeld">
         <object>objects\obj_heal_field</object>
-      </objects>
-      <objects name="Gegenstände">
-        <objects name="Hindernis">
-          <object>objects\obj_hindernis</object>
-          <objects name="non-breakable">
-            <object>objects\obj_hindernis_non_breakable</object>
-            <object>objects\obj_tree_stump</object>
-            <object>objects\obj_invisible_wall</object>
-            <object>objects\obj_wall_old</object>
-            <objects name="Rock">
-              <object>objects\obj_rock1</object>
-              <object>objects\obj_rock2</object>
-              <object>objects\obj_rock3</object>
-              <object>objects\obj_rock4</object>
-              <object>objects\obj_rock6</object>
-              <object>objects\obj_rock5</object>
-            </objects>
-            <objects name="Bush">
-              <object>objects\obj_bush1</object>
-              <object>objects\obj_bush2</object>
-              <object>objects\obj_bush3</object>
-              <object>objects\obj_bush4</object>
-              <object>objects\obj_bush5</object>
-              <object>objects\obj_bush6</object>
-            </objects>
-            <objects name="DeadTree">
-              <object>objects\obj_dead_tree_black</object>
-              <object>objects\obj_dead_tree_blue</object>
-              <object>objects\obj_dead_tree_white</object>
-            </objects>
-          </objects>
-          <objects name="Breakable">
-            <object>objects\obj_hindernis_breakable</object>
-            <object>objects\obj_cactus</object>
-          </objects>
-        </objects>
       </objects>
     </objects>
     <objects name="Übergänge">
