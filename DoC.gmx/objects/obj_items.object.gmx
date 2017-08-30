@@ -38,9 +38,21 @@ enum items {
     machine_gun = 8,
     mana_potion_small = 9,
     heal_potion_small = 10,
+    absorption_potion = 11,
+    absorption_potion_small = 12,
+    regeneration_potion = 13,
+    regeneration_potion_small = 14,
+    resistance_potion = 15,
+    resistance_potion_small = 16,
+    strength_potion = 17,
+    strength_potion_small = 18,
+    speed_potion = 19,
+    speed_potion_small = 20,
+    mana_regeneration_potion = 21,
+    mana_regeneration_potion_small = 22,
+    sanic_potion = 23,    
+    count
 }
-
-
 </string>
           </argument>
         </arguments>
@@ -140,7 +152,7 @@ item[items.heal_potion, 2] = obj_heal_potion;
 item[items.heal_potion, 3] = "pickup";
 item[items.heal_potion, 4] = 4;
 
-item_stats[items.heal_potion, item_stats_pickup.ability] = "absorption";
+item_stats[items.heal_potion, item_stats_pickup.ability] = "heal";
 item_stats[items.heal_potion, item_stats_pickup.ability_strength] = 2;
 item_stats[items.heal_potion, item_stats_pickup.misc] = "";
 
@@ -252,6 +264,190 @@ item[items.heal_potion_small, 4] = 8;
 item_stats[items.heal_potion_small, item_stats_pickup.ability] = "heal";
 item_stats[items.heal_potion_small, item_stats_pickup.ability_strength] = 1;
 item_stats[items.heal_potion_small, item_stats_pickup.misc] = "";
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items 11 - 20;
+//Absorptions Trank (11)
+item[items.absorption_potion, 0] = "Absorptions-Trank";
+item[items.absorption_potion, 1] = "Laesst eine dicke Hornhaut wachsen!";
+item[items.absorption_potion, 2] = obj_absorption_potion;
+item[items.absorption_potion, 3] = "pickup";
+item[items.absorption_potion, 4] = 4;
+
+item_stats[items.absorption_potion, item_stats_pickup.ability] = "absorption";
+item_stats[items.absorption_potion, item_stats_pickup.ability_strength] = 2;
+item_stats[items.absorption_potion, item_stats_pickup.misc] = "";
+
+//Kleiner Absorptions Trank (12)
+item[items.absorption_potion_small, 0] = "Kleiner Absorptions-Trank";
+item[items.absorption_potion_small, 1] = "Laesst eine nicht ganz so dicke Hornhaut wachsen!";
+item[items.absorption_potion_small, 2] = obj_absorption_potion_small;
+item[items.absorption_potion_small, 3] = "pickup";
+item[items.absorption_potion_small, 4] = 8;
+
+item_stats[items.absorption_potion_small, item_stats_pickup.ability] = "absorption";
+item_stats[items.absorption_potion_small, item_stats_pickup.ability_strength] = 1;
+item_stats[items.absorption_potion_small, item_stats_pickup.misc] = "";
+
+//Regenerations Trank (13)
+item[items.regeneration_potion, 0] = "Regenerations-Trank";
+item[items.regeneration_potion, 1] = "Regeneriert etwas Leben!";
+item[items.regeneration_potion, 2] = obj_regeneration_potion;
+item[items.regeneration_potion, 3] = "pickup";
+item[items.regeneration_potion, 4] = 4;
+
+item_stats[items.regeneration_potion, item_stats_pickup.ability] = "regeneration";
+item_stats[items.regeneration_potion, item_stats_pickup.ability_strength] = 2;
+item_stats[items.regeneration_potion, item_stats_pickup.misc] = "";
+
+//Kleiner Regenerations Trank (14)
+item[items.regeneration_potion_small, 0] = "Kleiner Regenerations-Trank";
+item[items.regeneration_potion_small, 1] = "Regeneriert etwas weniger Leben!";
+item[items.regeneration_potion_small, 2] = obj_regeneration_potion_small;
+item[items.regeneration_potion_small, 3] = "pickup";
+item[items.regeneration_potion_small, 4] = 8;
+
+item_stats[items.regeneration_potion_small, item_stats_pickup.ability] = "regeneration";
+item_stats[items.regeneration_potion_small, item_stats_pickup.ability_strength] = 1;
+item_stats[items.regeneration_potion_small, item_stats_pickup.misc] = "";
+
+//Resistenz Trank (15)
+item[items.resistance_potion, 0] = "Resistenz-Trank";
+item[items.resistance_potion, 1] = "Ein sehr OhmInoeser Effekt!";
+item[items.resistance_potion, 2] = obj_resistance_potion;
+item[items.resistance_potion, 3] = "pickup";
+item[items.resistance_potion, 4] = 4;
+
+item_stats[items.resistance_potion, item_stats_pickup.ability] = "resistance";
+item_stats[items.resistance_potion, item_stats_pickup.ability_strength] = 2;
+item_stats[items.resistance_potion, item_stats_pickup.misc] = "";
+
+//Kleiner Resistenz Trank (16)
+item[items.resistance_potion_small, 0] = "Kleiner Resistenz-Trank";
+item[items.resistance_potion_small, 1] = "Ein etwas weniger sehr OhmInoeser Effekt!";
+item[items.resistance_potion_small, 2] = obj_resistance_potion_small;
+item[items.resistance_potion_small, 3] = "pickup";
+item[items.resistance_potion_small, 4] = 8;
+
+item_stats[items.resistance_potion_small, item_stats_pickup.ability] = "resistance";
+item_stats[items.resistance_potion_small, item_stats_pickup.ability_strength] = 1;
+item_stats[items.resistance_potion_small, item_stats_pickup.misc] = "";
+
+//Stärke-Trank (17)
+item[items.strength_potion, 0] = "Staerke-Trank";
+item[items.strength_potion, 1] = "UNLIMITED POWER!";
+item[items.strength_potion, 2] = obj_strength_potion;
+item[items.strength_potion, 3] = "pickup";
+item[items.strength_potion, 4] = 4;
+
+item_stats[items.strength_potion, item_stats_pickup.ability] = "strength";
+item_stats[items.strength_potion, item_stats_pickup.ability_strength] = 2;
+item_stats[items.strength_potion, item_stats_pickup.misc] = "";
+
+//Kleiner Stärke-Trank (17)
+item[items.strength_potion_small, 0] = "Staerke-Trank";
+item[items.strength_potion_small, 1] = "UNLIMITED POWER!";
+item[items.strength_potion_small, 2] = obj_strength_potion_small;
+item[items.strength_potion_small, 3] = "pickup";
+item[items.strength_potion_small, 4] = 8;
+
+item_stats[items.strength_potion_small, item_stats_pickup.ability] = "strength";
+item_stats[items.strength_potion_small, item_stats_pickup.ability_strength] = 1;
+item_stats[items.strength_potion_small, item_stats_pickup.misc] = "";
+
+//Speed-Trank (18)
+item[items.speed_potion, 0] = "Speed-Trank";
+item[items.speed_potion, 1] = "Gotta gooooh faaaast!11!";
+item[items.speed_potion, 2] = obj_speed_potion;
+item[items.speed_potion, 3] = "pickup";
+item[items.speed_potion, 4] = 4;
+
+item_stats[items.speed_potion, item_stats_pickup.ability] = "speed";
+item_stats[items.speed_potion, item_stats_pickup.ability_strength] = 2;
+item_stats[items.speed_potion, item_stats_pickup.misc] = "";
+
+//Kleiner Speed-Trank (19)
+item[items.speed_potion_small, 0] = "Speed-Trank";
+item[items.speed_potion_small, 1] = "Gotta gooooh faaaast!11!";
+item[items.speed_potion_small, 2] = obj_speed_potion_small;
+item[items.speed_potion_small, 3] = "pickup";
+item[items.speed_potion_small, 4] = 8;
+
+item_stats[items.speed_potion_small, item_stats_pickup.ability] = "speed";
+item_stats[items.speed_potion_small, item_stats_pickup.ability_strength] = 1;
+item_stats[items.speed_potion_small, item_stats_pickup.misc] = "";
+
+//Mana-Regeneration-Trank (20)
+item[items.mana_regeneration_potion, 0] = "Mana-Regeneration-Trank";
+item[items.mana_regeneration_potion, 1] = "Mana ohne Eeeeende!";
+item[items.mana_regeneration_potion, 2] = obj_mana_regeneration_potion;
+item[items.mana_regeneration_potion, 3] = "pickup";
+item[items.mana_regeneration_potion, 4] = 4;
+
+item_stats[items.mana_regeneration_potion, item_stats_pickup.ability] = "mana_regeneration";
+item_stats[items.mana_regeneration_potion, item_stats_pickup.ability_strength] = 2;
+item_stats[items.mana_regeneration_potion, item_stats_pickup.misc] = "";
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items 21 - 30;
+//Kleiner Mana-Regeneration-Trank (21)
+item[items.mana_regeneration_potion_small, 0] = "Mana-Regeneration-Trank";
+item[items.mana_regeneration_potion_small, 1] = "Mana ohne Eeeeende!";
+item[items.mana_regeneration_potion_small, 2] = obj_mana_regeneration_potion_small;
+item[items.mana_regeneration_potion_small, 3] = "pickup";
+item[items.mana_regeneration_potion_small, 4] = 8;
+
+item_stats[items.mana_regeneration_potion_small, item_stats_pickup.ability] = "mana_regeneration";
+item_stats[items.mana_regeneration_potion_small, item_stats_pickup.ability_strength] = 1;
+item_stats[items.mana_regeneration_potion_small, item_stats_pickup.misc] = "";
+
+//Sanic-Trank (22)
+item[items.sanic_potion, 0] = "Sanic Potion";
+item[items.sanic_potion, 1] = "Gotta gooh relli faaaast!";
+item[items.sanic_potion, 2] = obj_sanic_potion;
+item[items.sanic_potion, 3] = "pickup";
+item[items.sanic_potion, 4] = 1;
+
+item_stats[items.sanic_potion, item_stats_pickup.ability] = "speed";
+item_stats[items.sanic_potion, item_stats_pickup.ability_strength] = 10;
+item_stats[items.sanic_potion, item_stats_pickup.misc] = "Pure Sanic Extract";
 </string>
           </argument>
         </arguments>

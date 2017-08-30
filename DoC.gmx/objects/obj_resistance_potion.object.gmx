@@ -25,10 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Addiere Mana
-index = items.mana_potion;
+            <string>///Resistenz
+index = items.resistance_potion;
 
-if(player_stats.mana &lt; player_stats.max_mana) {
+if(true) {
 if(scr_inventory_rem_item_slot_count(inventory.inv_pickups, inventory.menupos, 1)) {
     scr_effect(scr_effect_index(item_stats[index, item_stats_pickup.ability]), item_stats[index, item_stats_pickup.ability_strength], obj_player);
 }

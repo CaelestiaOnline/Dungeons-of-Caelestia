@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>///Effekt Coordinates
 
-effect_hud_effects_x_old = display_get_gui_width() - 64;
-effect_hud_effects_y_old = 64;
+effect_hud_effects_x_old = display_get_gui_width() - 32;
+effect_hud_effects_y_old = 32;
 
 for(var i = 0; i &lt; effect.count; i++) {
     effect_hud_effects_x[i] = effect_hud_effects_x_old;
@@ -80,7 +80,7 @@ if(!admin.playing) exit;
           <argument>
             <kind>1</kind>
             <string>///Draw Slots
-
+/*
 for(var i = 0; i &lt; effect.count; i++) {
 draw_sprite(
     spr_effect_slot,

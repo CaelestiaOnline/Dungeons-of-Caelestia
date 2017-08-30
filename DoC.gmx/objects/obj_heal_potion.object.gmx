@@ -28,10 +28,10 @@
             <string>///Addiere HP
 index = items.heal_potion;
 
-var success = scr_inventory_rem_item_slot_count(inventory.inv_pickups, inventory.menupos, 1);
-
-if(success) {
+if(player_stats.hp &lt; player_stats.max_hp) {
+if(scr_inventory_rem_item_slot_count(inventory.inv_pickups, inventory.menupos, 1)) {
     scr_effect(scr_effect_index(item_stats[index, item_stats_pickup.ability]), item_stats[index, item_stats_pickup.ability_strength], obj_player);
+}
 }
 
 instance_destroy();

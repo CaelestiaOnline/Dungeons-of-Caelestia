@@ -15,7 +15,7 @@ switch(ability) {
     //Effekte
     //Speed-Boost
     case "speed":
-        effect_time = room_speed * 10;
+        effect_time = room_speed * 30;
         switch(ability_strength) {
             case 1:
                 speed_mult = +0.2;
@@ -46,7 +46,7 @@ switch(ability) {
         break;
     //Attack Speed
     case "attack_speed":
-        effect_time = room_speed * 10;
+        effect_time = room_speed * 30;
         switch(ability_strength) {
             case 1:
                 attack_speed_mult = -0.2;
@@ -68,12 +68,12 @@ switch(ability) {
             case 1:
                 fire_damage = 1;
                 effect_time = room_speed * 3;
-                fire_speed = room_speed / 3;
+                fire_speed = room_speed / 2;
                 break;
             case 2:
                 fire_damage = 2;
                 effect_time = room_speed * 5;
-                fire_speed = room_speed / 3;
+                fire_speed = room_speed / 2;
                 break;
         }
         break;
@@ -81,14 +81,14 @@ switch(ability) {
     case "regeneration":
         switch(ability_strength) {
             case 1:
-                reg_heal = 2;
+                reg_heal = 1;
                 effect_time = room_speed * 4;
-                reg_speed = room_speed / 4;
+                reg_speed = room_speed / 2;
                 break;
             case 2:
-                reg_heal = 2;
+                reg_heal = 1;
                 effect_time = room_speed * 5;
-                reg_speed = room_speed / 6;
+                reg_speed = room_speed / 3;
                 break;
         }
         break;
@@ -108,7 +108,7 @@ switch(ability) {
         break;
     //Absorption
     case "absorption":
-        effect_time = -2;
+        effect_time = 30 * room_speed;
         switch(ability_strength) {
             case 1:
                 absorption_hp = round(player_stats.max_hp/8);
@@ -120,7 +120,7 @@ switch(ability) {
         break;
     //Resistance
     case "resistance":
-        effect_time = room_speed * 10;
+        effect_time = room_speed * 30;
         switch(ability_strength) {
             case 1:
                 resistance_mult = -0.15;
@@ -135,7 +135,7 @@ switch(ability) {
         break;
     //Strength
     case "strength":
-        effect_time = room_speed * 10;
+        effect_time = room_speed * 30;
         switch(ability_strength) {
             case 1:
                 strength_mult = +0.2;
