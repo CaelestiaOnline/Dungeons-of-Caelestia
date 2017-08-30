@@ -416,6 +416,7 @@
         </scripts>
         <scripts name="mag">
           <script>scripts\scr_mag_attack.gml</script>
+          <script>scripts\scr_mag_ability.gml</script>
         </scripts>
         <script>scripts\scr_attack_cooldown.gml</script>
       </scripts>
@@ -688,6 +689,9 @@
         <objects name="Mana-Orb">
           <object>objects\obj_mana_orb</object>
           <object>objects\obj_mana_bullet</object>
+        </objects>
+        <objects name="Heal-Orb">
+          <object>objects\obj_mana_heal_orb</object>
         </objects>
       </objects>
       <objects name="item">

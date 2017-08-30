@@ -50,7 +50,8 @@ enum items {
     speed_potion_small = 20,
     mana_regeneration_potion = 21,
     mana_regeneration_potion_small = 22,
-    sanic_potion = 23,    
+    sanic_potion = 23,
+    mana_heal_orb = 24,
     count
 }
 </string>
@@ -363,7 +364,7 @@ item_stats[items.strength_potion, item_stats_pickup.ability] = "strength";
 item_stats[items.strength_potion, item_stats_pickup.ability_strength] = 2;
 item_stats[items.strength_potion, item_stats_pickup.misc] = "";
 
-//Kleiner Stärke-Trank (17)
+//Kleiner Stärke-Trank (18)
 item[items.strength_potion_small, 0] = "Staerke-Trank";
 item[items.strength_potion_small, 1] = "UNLIMITED POWER!";
 item[items.strength_potion_small, 2] = obj_strength_potion_small;
@@ -374,7 +375,7 @@ item_stats[items.strength_potion_small, item_stats_pickup.ability] = "strength";
 item_stats[items.strength_potion_small, item_stats_pickup.ability_strength] = 1;
 item_stats[items.strength_potion_small, item_stats_pickup.misc] = "";
 
-//Speed-Trank (18)
+//Speed-Trank (19)
 item[items.speed_potion, 0] = "Speed-Trank";
 item[items.speed_potion, 1] = "Gotta gooooh faaaast!11!";
 item[items.speed_potion, 2] = obj_speed_potion;
@@ -385,7 +386,7 @@ item_stats[items.speed_potion, item_stats_pickup.ability] = "speed";
 item_stats[items.speed_potion, item_stats_pickup.ability_strength] = 2;
 item_stats[items.speed_potion, item_stats_pickup.misc] = "";
 
-//Kleiner Speed-Trank (19)
+//Kleiner Speed-Trank (20)
 item[items.speed_potion_small, 0] = "Speed-Trank";
 item[items.speed_potion_small, 1] = "Gotta gooooh faaaast!11!";
 item[items.speed_potion_small, 2] = obj_speed_potion_small;
@@ -395,17 +396,6 @@ item[items.speed_potion_small, 4] = 8;
 item_stats[items.speed_potion_small, item_stats_pickup.ability] = "speed";
 item_stats[items.speed_potion_small, item_stats_pickup.ability_strength] = 1;
 item_stats[items.speed_potion_small, item_stats_pickup.misc] = "";
-
-//Mana-Regeneration-Trank (20)
-item[items.mana_regeneration_potion, 0] = "Mana-Regeneration-Trank";
-item[items.mana_regeneration_potion, 1] = "Mana ohne Eeeeende!";
-item[items.mana_regeneration_potion, 2] = obj_mana_regeneration_potion;
-item[items.mana_regeneration_potion, 3] = "pickup";
-item[items.mana_regeneration_potion, 4] = 4;
-
-item_stats[items.mana_regeneration_potion, item_stats_pickup.ability] = "mana_regeneration";
-item_stats[items.mana_regeneration_potion, item_stats_pickup.ability_strength] = 2;
-item_stats[items.mana_regeneration_potion, item_stats_pickup.misc] = "";
 </string>
           </argument>
         </arguments>
@@ -427,7 +417,18 @@ item_stats[items.mana_regeneration_potion, item_stats_pickup.misc] = "";
           <argument>
             <kind>1</kind>
             <string>///Items 21 - 30;
-//Kleiner Mana-Regeneration-Trank (21)
+//Mana-Regeneration-Trank (21)
+item[items.mana_regeneration_potion, 0] = "Mana-Regeneration-Trank";
+item[items.mana_regeneration_potion, 1] = "Mana ohne Eeeeende!";
+item[items.mana_regeneration_potion, 2] = obj_mana_regeneration_potion;
+item[items.mana_regeneration_potion, 3] = "pickup";
+item[items.mana_regeneration_potion, 4] = 4;
+
+item_stats[items.mana_regeneration_potion, item_stats_pickup.ability] = "mana_regeneration";
+item_stats[items.mana_regeneration_potion, item_stats_pickup.ability_strength] = 2;
+item_stats[items.mana_regeneration_potion, item_stats_pickup.misc] = "";
+
+//Kleiner Mana-Regeneration-Trank (22)
 item[items.mana_regeneration_potion_small, 0] = "Mana-Regeneration-Trank";
 item[items.mana_regeneration_potion_small, 1] = "Mana ohne Eeeeende!";
 item[items.mana_regeneration_potion_small, 2] = obj_mana_regeneration_potion_small;
@@ -438,7 +439,7 @@ item_stats[items.mana_regeneration_potion_small, item_stats_pickup.ability] = "m
 item_stats[items.mana_regeneration_potion_small, item_stats_pickup.ability_strength] = 1;
 item_stats[items.mana_regeneration_potion_small, item_stats_pickup.misc] = "";
 
-//Sanic-Trank (22)
+//Sanic-Trank (23)
 item[items.sanic_potion, 0] = "Sanic Potion";
 item[items.sanic_potion, 1] = "Gotta gooh relli faaaast!";
 item[items.sanic_potion, 2] = obj_sanic_potion;
@@ -448,6 +449,19 @@ item[items.sanic_potion, 4] = 1;
 item_stats[items.sanic_potion, item_stats_pickup.ability] = "speed";
 item_stats[items.sanic_potion, item_stats_pickup.ability_strength] = 10;
 item_stats[items.sanic_potion, item_stats_pickup.misc] = "Pure Sanic Extract";
+
+//Heal Orb (24)
+item[items.mana_heal_orb, 0] = "Magisches Heal-Orb";
+item[items.mana_heal_orb, 1] = "Verleiht die Faehigkeit, Geist und Koerper mit Mana zu regenerieren!";
+item[items.mana_heal_orb, 2] = obj_mana_heal_orb;
+item[items.mana_heal_orb, 3] = "mag";
+item[items.mana_heal_orb, 4] = 1;
+
+item_stats[items.mana_heal_orb, item_stats_mag.ability] = "heal";
+item_stats[items.mana_heal_orb, item_stats_mag.ability_strength] = 1;
+item_stats[items.mana_heal_orb, item_stats_mag.mana_usage] = 50;
+item_stats[items.mana_heal_orb, item_stats_mag.cooldown] = player_stats.attack_speed*6;
+item_stats[items.mana_heal_orb, item_stats_mag.misc] = "";
 </string>
           </argument>
         </arguments>
