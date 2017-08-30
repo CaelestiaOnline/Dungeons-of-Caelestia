@@ -295,7 +295,7 @@ enemy_stats[obj_mushroom, 4] = "normal";
 
 enemy_stats[obj_mushroom, enemy_stats_normal.hp] = 200;
 enemy_stats[obj_mushroom, enemy_stats_normal.damage] = 2;
-enemy_stats[obj_mushroom, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_mushroom, enemy_stats_normal.attack_speed] = 600;
 enemy_stats[obj_mushroom, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_mushroom, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_mushroom, enemy_stats_normal.money_drop] = 15;
