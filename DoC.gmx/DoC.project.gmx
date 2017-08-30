@@ -799,6 +799,9 @@
       </objects>
       <objects name="Gegner">
         <object>objects\obj_gegner</object>
+        <objects name="Fallen / Unbewegliche Objekte">
+          <object>objects\obj_mushroom</object>
+        </objects>
         <objects name="Damage-Indikator">
           <object>objects\obj_damage_ind</object>
           <object>objects\obj_text_ind</object>
@@ -813,12 +816,16 @@
           <object>objects\obj_forest_penguin_small</object>
           <object>objects\obj_attack_tree</object>
           <object>objects\obj_blueberry</object>
+          <object>objects\obj_evil_budgerigar_of_the_forest_speed</object>
+          <object>objects\obj_boar</object>
           <object>objects\obj_forest_penguin</object>
           <object>objects\obj_nahkampf</object>
         </objects>
         <objects name="Fernkampf">
           <object>objects\obj_fernkampf</object>
           <object>objects\obj_forest_penguin_bullet</object>
+          <object>objects\obj_evil_budgerigar_of_the_forest</object>
+          <object>objects\obj_native</object>
         </objects>
         <objects name="Training">
           <object>objects\obj_trainingspuppe</object>

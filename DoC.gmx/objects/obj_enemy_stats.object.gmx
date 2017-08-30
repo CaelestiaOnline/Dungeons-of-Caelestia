@@ -243,6 +243,76 @@ enemy_stats[obj_blueberry, enemy_stats_normal.attack_speed] = 120;
 enemy_stats[obj_blueberry, enemy_stats_normal.max_speed] = 2.5;
 enemy_stats[obj_blueberry, enemy_stats_normal.xp_drop] = 32;
 enemy_stats[obj_blueberry, enemy_stats_normal.money_drop] = 2;
+
+//Böse Fernkampf-Wellensittche des Waldes(6)
+enemy_stats[obj_evil_budgerigar_of_the_forest, 0] = "Der böse Wellensittich des Waldes";
+enemy_stats[obj_evil_budgerigar_of_the_forest, 1] = "Die furiose Fernkampfgefahr aus dem fantastischen Wald";
+enemy_stats[obj_evil_budgerigar_of_the_forest, 2] = true;
+enemy_stats[obj_evil_budgerigar_of_the_forest, 3] = true;
+enemy_stats[obj_evil_budgerigar_of_the_forest, 4] = "normal";
+
+enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.hp] = 30;
+enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.money_drop] = 6;
+
+//Böse Nahkampf-Wellensittiche des Waldes(7)
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 0] = "Der böse und schnelle Wellensittich des Waldes";
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 1] = "Die nervige Nahkampfgefahr aus dem nächstgelegenen Wald";
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 2] = true;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 3] = true;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 4] = "normal";
+
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.hp] = 25;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.max_speed] = 2.4;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.money_drop] = 6;
+
+//Ureinwohner(8)
+enemy_stats[obj_native, 0] = "Der gemeingefährliche Ureinwohner";
+enemy_stats[obj_native, 1] = "Vorsicht! Sie haben vergiftete Pfeile!";
+enemy_stats[obj_native, 2] = true;
+enemy_stats[obj_native, 3] = true;
+enemy_stats[obj_native, 4] = "normal";
+
+enemy_stats[obj_native, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_native, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_native, enemy_stats_normal.attack_speed] = 75;
+enemy_stats[obj_native, enemy_stats_normal.max_speed] = 1.8;
+enemy_stats[obj_native, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_native, enemy_stats_normal.money_drop] = 20;
+
+//Pilz(9)
+enemy_stats[obj_mushroom, 0] = "Pilz";
+enemy_stats[obj_mushroom, 1] = "Sie sondern giftiges Gas ab, wenn du ihnen zu nahe kommst!";
+enemy_stats[obj_mushroom, 2] = false;
+enemy_stats[obj_mushroom, 3] = true;
+enemy_stats[obj_mushroom, 4] = "normal";
+
+enemy_stats[obj_mushroom, enemy_stats_normal.hp] = 200;
+enemy_stats[obj_mushroom, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_mushroom, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_mushroom, enemy_stats_normal.max_speed] = 0;
+enemy_stats[obj_mushroom, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_mushroom, enemy_stats_normal.money_drop] = 15;
+
+//Wildschwein(10) Yay ein Gegner-Dingens ist voll!!! Rofl!
+enemy_stats[obj_boar, 0] = "Wildschwein";
+enemy_stats[obj_boar, 1] = "Die Hauer sind spitz!";
+enemy_stats[obj_boar, 2] = true;
+enemy_stats[obj_boar, 3] = true;
+enemy_stats[obj_boar, 4] = "normal";
+
+enemy_stats[obj_boar, enemy_stats_normal.hp] = 40;
+enemy_stats[obj_boar, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_boar, enemy_stats_normal.attack_speed] = 90;
+enemy_stats[obj_boar, enemy_stats_normal.max_speed] = 1.5;
+enemy_stats[obj_boar, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_boar, enemy_stats_normal.money_drop] = 12;
 </string>
           </argument>
         </arguments>
