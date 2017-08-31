@@ -19,7 +19,7 @@ if(multipl > 1) effect_index = effect.speed;
 else effect_index = effect.slowness;
 
 if(goal_object.effects[effect_index] != -1) {
-    goal_object.effects[effect_index].alarm[0] += time;
+    goal_object.effects[effect_index].alarm[0] = time;
     exit;
 }
 

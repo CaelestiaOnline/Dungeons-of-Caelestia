@@ -238,14 +238,21 @@ speed_mult = speed_mult_item * speed_mult_prim * speed_mult_effect;
 if(instance_exists(obj_player)) {
     if(!obj_player.isSprinting &amp;&amp; !obj_player.is_crouching) {
         max_player_speed = old_max_player_speed * speed_mult;
+        player_acc = old_player_acc * speed_mult;
+        player_friction = old_player_friction * speed_mult;
+        
     }
     //Sprint
     //if(obj_player.isSprinting) {
         max_player_sprint_speed = old_max_player_sprint_speed * speed_mult;
+        player_sprint_acc = old_player_sprint_acc * speed_mult;
+        player_friction = old_player_friction * speed_mult;
     //}
     //Crouch
     //if(obj_player.is_crouching) {
         max_player_crouch_speed = old_max_player_crouch_speed * speed_mult;
+        player_crouch_acc = old_player_crouch_acc * speed_mult;
+        player_friction = old_player_friction * speed_mult;
     //}
 }
 </string>

@@ -17,7 +17,7 @@ if(!instance_exists(goal_object)) exit;
 if(goal_object == obj_player) goal_object = player_stats;
 
 if(goal_object.effects[effect_index] != -1) {
-    goal_object.effects[effect_index].effect_time += time;
+    goal_object.effects[effect_index].effect_time = time;
     exit;
 }
 

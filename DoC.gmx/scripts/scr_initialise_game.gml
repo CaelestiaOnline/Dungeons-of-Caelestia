@@ -112,6 +112,6 @@ globalvar hub;
 hub = instance_create(0, 0, obj_hub);
 
 //Test-Inventory
-instance_create(0, 0, obj_test);
+//instance_create(0, 0, obj_test);
 
 
