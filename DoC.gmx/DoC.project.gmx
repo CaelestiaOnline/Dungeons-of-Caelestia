@@ -146,6 +146,44 @@
             <sprite>sprites\spr_obj_mushroom_dead</sprite>
           </sprites>
         </sprites>
+        <sprites name="Budgerigar">
+          <sprites name="Speed">
+            <sprite>sprites\spr_evil_budgerigar_of_the_forest_speed</sprite>
+            <sprites name="Colbox">
+              <sprite>sprites\spr_obj_evil_budgerigar_of_the_forest_speed_colbox</sprite>
+            </sprites>
+            <sprites name="Dead">
+              <sprite>sprites\spr_obj_evil_budgerigar_of_the_forest_speed_dead</sprite>
+            </sprites>
+          </sprites>
+          <sprites name="Bullet">
+            <sprite>sprites\spr_evil_budgerigar_of_the_forest</sprite>
+            <sprites name="Colbox">
+              <sprite>sprites\spr_obj_evil_budgerigar_of_the_forest_colbox</sprite>
+            </sprites>
+            <sprites name="Dead">
+              <sprite>sprites\spr_obj_evil_budgerigar_of_the_forest_dead</sprite>
+            </sprites>
+          </sprites>
+        </sprites>
+        <sprites name="Boar">
+          <sprite>sprites\spr_boar</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_boar_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_boar_dead</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Native">
+          <sprite>sprites\spr_native</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_native_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_native_dead</sprite>
+          </sprites>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Waffen">
@@ -159,6 +197,7 @@
       <sprite>sprites\spr_hit</sprite>
       <sprite>sprites\spr_hit_crit</sprite>
       <sprite>sprites\spr_bullet_collision_box</sprite>
+      <sprite>sprites\spr_sonic_wave</sprite>
     </sprites>
     <sprites name="Hindernis">
       <sprite>sprites\spr_kaktus</sprite>
@@ -909,6 +948,7 @@
         </objects>
         <objects name="Waffen">
           <object>objects\obj_pistol_bullet_enemy</object>
+          <object>objects\obj_sonic_wave_bullet_enemy</object>
           <object>objects\obj_bullet_enemy</object>
           <object>objects\obj_hitbox_melee_enemy</object>
         </objects>

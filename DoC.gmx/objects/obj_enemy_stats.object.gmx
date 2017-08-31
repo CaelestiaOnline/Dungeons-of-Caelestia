@@ -300,7 +300,7 @@ enemy_stats[obj_mushroom, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_mushroom, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_mushroom, enemy_stats_normal.money_drop] = 15;
 
-//Wildschwein(10) Yay ein Gegner-Dingens ist voll!!! Rofl!
+//Wildschwein(10) Yay ein Gegner-Dingens ist voll!!! Rofl! xD Trololol
 enemy_stats[obj_boar, 0] = "Wildschwein";
 enemy_stats[obj_boar, 1] = "Die Hauer sind spitz!";
 enemy_stats[obj_boar, 2] = true;
