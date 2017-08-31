@@ -49,6 +49,9 @@ switch(ability_string) {
     case "attack_mana":
         return "Mana-Attack";
         break;
+    case "attack_mana_fire":
+        return "Mana-Fire-Attack";
+        break;
     default:
         return "-/-";
         break;

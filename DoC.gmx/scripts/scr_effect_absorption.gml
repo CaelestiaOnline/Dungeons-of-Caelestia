@@ -15,7 +15,7 @@ if(!instance_exists(goal_object)) exit;
 if(goal_object.effects[effect_index] != -1) {
     if(goal_object == player_stats && (player_stats.absorption_hp + hp) <= player_stats.max_absorption_hp) {
         player_stats.absorption_hp += hp;
-        goal_object.effects[effect_index].alarm[0] += time;
+        goal_object.effects[effect_index].alarm[0] = time;
     }
     else if(goal_object.absorption_hp + hp <= 100) {
         goal_object.absorption_hp += hp;

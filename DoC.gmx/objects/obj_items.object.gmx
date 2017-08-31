@@ -57,6 +57,12 @@ enum items {
     war_hammer = 27,
     chainsaw = 28,
     lightsaber = 29,
+    throwing_dagger = 30,
+    blowgun = 31,
+    bow = 32,
+    crossbow = 33,
+    lasergun = 34,
+    mana_fire_orb = 35,
     count
 }
 </string>
@@ -547,6 +553,119 @@ item_stats[items.lightsaber, item_stats_prim.ability_strength] = 2;
 item_stats[items.lightsaber, item_stats_prim.speed_bonus] = 0;
 item_stats[items.lightsaber, item_stats_prim.attack_speed] = player_stats.attack_speed;
 item_stats[items.lightsaber, item_stats_prim.misc] = "";
+
+//Wurfmesser (30)
+item[items.throwing_dagger, 0] = "Wurfmesser";
+item[items.throwing_dagger, 1] = "Achtung! Scharfkantig!";
+item[items.throwing_dagger, 2] = obj_throwing_dagger;
+item[items.throwing_dagger, 3] = "sec";
+item[items.throwing_dagger, 4] = 1;
+
+item_stats[items.throwing_dagger, item_stats_sec.damage] = round(player_stats.root_damage*2);
+item_stats[items.throwing_dagger, item_stats_sec.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage);
+item_stats[items.throwing_dagger, item_stats_sec.ability] = "";
+item_stats[items.throwing_dagger, item_stats_sec.ability_chance] = 0;
+item_stats[items.throwing_dagger, item_stats_sec.ability_strength] = 0;
+item_stats[items.throwing_dagger, item_stats_sec.cooldown] = room_speed*4;
+item_stats[items.throwing_dagger, item_stats_sec.misc] = "";
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items 31 - 40;
+//Blasrohr (31)
+item[items.blowgun, 0] = "Blasrohr";
+item[items.blowgun, 1] = "Die lautlose Sterbehilfe!";
+item[items.blowgun, 2] = obj_blowgun;
+item[items.blowgun, 3] = "sec";
+item[items.blowgun, 4] = 1;
+
+item_stats[items.blowgun, item_stats_sec.damage] = round(player_stats.root_damage*1);
+item_stats[items.blowgun, item_stats_sec.damage_crit] = round(player_stats.root_damage*1) + round(player_stats.root_damage/4);
+item_stats[items.blowgun, item_stats_sec.ability] = "poison";
+item_stats[items.blowgun, item_stats_sec.ability_chance] = 1;
+item_stats[items.blowgun, item_stats_sec.ability_strength] = 1;
+item_stats[items.blowgun, item_stats_sec.cooldown] = room_speed*2;
+item_stats[items.blowgun, item_stats_sec.misc] = "";
+
+//Bogen (32)
+item[items.bow, 0] = "Bogen";
+item[items.bow, 1] = "Sehr primitiv. Also wirklich. Du koenntest auch einfach eine Schusswaffe benutzen.";
+item[items.bow, 2] = obj_bow;
+item[items.bow, 3] = "prim";
+item[items.bow, 4] = 1;
+
+item_stats[items.bow, item_stats_prim.damage] = round(player_stats.root_damage*1.5);
+item_stats[items.bow, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.5) + round(player_stats.root_damage/4);
+item_stats[items.bow, item_stats_prim.ability] = "";
+item_stats[items.bow, item_stats_prim.ability_chance] = 0;
+item_stats[items.bow, item_stats_prim.ability_strength] = 0;
+item_stats[items.bow, item_stats_prim.speed_bonus] = 0;
+item_stats[items.bow, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.bow, item_stats_prim.misc] = "";
+
+//Armbrust (33)
+item[items.crossbow, 0] = "Armbrust";
+item[items.crossbow, 1] = "Sehr primitiv. Aber immerhin kommt man damit durch Alufolie. Die Backkartoffeln sollten sich in Acht nehmen.";
+item[items.crossbow, 2] = obj_crossbow;
+item[items.crossbow, 3] = "prim";
+item[items.crossbow, 4] = 1;
+
+item_stats[items.crossbow, item_stats_prim.damage] = round(player_stats.root_damage*3);
+item_stats[items.crossbow, item_stats_prim.damage_crit] = round(player_stats.root_damage*3) + round(player_stats.root_damage/4);
+item_stats[items.crossbow, item_stats_prim.ability] = "";
+item_stats[items.crossbow, item_stats_prim.ability_chance] = 0;
+item_stats[items.crossbow, item_stats_prim.ability_strength] = 0;
+item_stats[items.crossbow, item_stats_prim.speed_bonus] = 0;
+item_stats[items.crossbow, item_stats_prim.attack_speed] = player_stats.attack_speed * 6;
+item_stats[items.crossbow, item_stats_prim.misc] = "";
+
+//Lasergun (34)
+item[items.lasergun, 0] = "Lasergun X3000";
+item[items.lasergun, 1] = "So future, very laser, much gun, wow!";
+item[items.lasergun, 2] = obj_lasergun;
+item[items.lasergun, 3] = "prim";
+item[items.lasergun, 4] = 1;
+
+item_stats[items.lasergun, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.lasergun, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/4);
+item_stats[items.lasergun, item_stats_prim.ability] = "fire";
+item_stats[items.lasergun, item_stats_prim.ability_chance] = 0.1;
+item_stats[items.lasergun, item_stats_prim.ability_strength] = 1;
+item_stats[items.lasergun, item_stats_prim.speed_bonus] = 0;
+item_stats[items.lasergun, item_stats_prim.attack_speed] = player_stats.attack_speed * 3;
+item_stats[items.lasergun, item_stats_prim.misc] = "";
+
+//Fire Orb (35)
+item[items.mana_fire_orb, 0] = "Magisches Fire-Orb";
+item[items.mana_fire_orb, 1] = "Verleiht die Faehigkeit, Mana in eine Kugel zu buendeln und dann in Brand zu setzen!";
+item[items.mana_fire_orb, 2] = obj_mana_fire_orb;
+item[items.mana_fire_orb, 3] = "mag";
+item[items.mana_fire_orb, 4] = 1;
+
+item_stats[items.mana_fire_orb, item_stats_mag.ability] = "attack_mana_fire";
+item_stats[items.mana_fire_orb, item_stats_mag.ability_strength] = 1;
+item_stats[items.mana_fire_orb, item_stats_mag.mana_usage] = 40;
+item_stats[items.mana_fire_orb, item_stats_mag.cooldown] = player_stats.attack_speed*4;
+item_stats[items.mana_fire_orb, item_stats_mag.misc] = "";
+
+
 </string>
           </argument>
         </arguments>

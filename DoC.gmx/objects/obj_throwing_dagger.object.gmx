@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>obj_prim_item_melee</parentName>
+  <parentName>obj_sec_item_bullet</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,9 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-index = items.stone_sword;
+index = items.throwing_dagger;
 
 event_inherited();
+
 </string>
           </argument>
         </arguments>

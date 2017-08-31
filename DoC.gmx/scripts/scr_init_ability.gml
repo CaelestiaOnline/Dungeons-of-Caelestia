@@ -195,6 +195,14 @@ switch(ability) {
                 break;
         }
         break;
+    case "attack_mana_fire":
+        switch(ability_strength) {
+            case 1:
+                damage = round(player_stats.root_damage*3);
+                scr_init_ability("fire", 2);
+                break;
+        }
+        break;
     default:
         show_debug_message("Ability oder Stufe nicht vorhanden:");
         show_debug_message("Ability: " + string(ability));

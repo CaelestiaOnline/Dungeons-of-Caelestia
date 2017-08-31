@@ -51,6 +51,9 @@ scr_initialise_enemy_main();
             <kind>1</kind>
             <string>///Death
 scr_death_enemy();
+
+//Effekte
+scr_effect_rem_all();
 </string>
           </argument>
         </arguments>
