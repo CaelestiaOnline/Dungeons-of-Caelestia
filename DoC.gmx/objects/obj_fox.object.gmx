@@ -57,7 +57,7 @@ event_inherited();
 
 if(hit != noone) {
     scr_effect(effc, stage, obj_player);
-    hit = 0;
+    hit = noone;
 }
 </string>
           </argument>

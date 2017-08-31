@@ -184,6 +184,33 @@
             <sprite>sprites\spr_obj_native_dead</sprite>
           </sprites>
         </sprites>
+        <sprites name="Slug">
+          <sprite>sprites\spr_slug</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_slug_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_slug_dead</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="WalkingSnot">
+          <sprite>sprites\spr_walking_snot</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_walking_snot_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_walking_snot_dead</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Fox">
+          <sprite>sprites\spr_fox</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_fox_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_fox_dead</sprite>
+          </sprites>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Waffen">
