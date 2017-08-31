@@ -25,7 +25,7 @@ attack_speed = enemy_stats[object_index, enemy_stats_normal.attack_speed];
 attack_speed_old = attack_speed;
 attack_speed_mult = 1;
 time = 0;
-hit = 0;
+hit = noone;
 
 //Geschwindigkeit
 move = 0;
