@@ -29,7 +29,7 @@
 event_inherited();
 
 effc = effect.poison;
-stage = 1;
+stage = 2;
 </string>
           </argument>
         </arguments>

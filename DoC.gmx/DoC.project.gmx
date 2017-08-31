@@ -933,12 +933,15 @@
           <object>objects\obj_boar</object>
           <object>objects\obj_forest_penguin</object>
           <object>objects\obj_walking_snot</object>
+          <object>objects\obj_fox</object>
+          <object>objects\obj_walking_blade_of_grass</object>
           <object>objects\obj_nahkampf_enemy</object>
         </objects>
         <objects name="Fernkampf">
           <object>objects\obj_fernkampf_enemy</object>
           <object>objects\obj_forest_penguin_bullet</object>
           <object>objects\obj_evil_budgerigar_of_the_forest</object>
+          <object>objects\obj_slug</object>
           <object>objects\obj_native</object>
         </objects>
         <objects name="Training">
@@ -950,6 +953,7 @@
         <objects name="Waffen">
           <object>objects\obj_pistol_bullet_enemy</object>
           <object>objects\obj_sonic_wave_bullet_enemy</object>
+          <object>objects\obj_slug_snot</object>
           <object>objects\obj_bullet_enemy</object>
           <object>objects\obj_hitbox_melee_enemy</object>
         </objects>
