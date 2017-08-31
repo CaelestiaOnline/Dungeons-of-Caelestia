@@ -52,7 +52,6 @@
   </views>
   <instances>
     <instance objName="obj_tree_stump" x="1376" y="448" name="inst_939DBC7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_tree_stump" x="1248" y="672" name="inst_58E411B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="0" y="0" name="inst_457DD0F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="64" y="0" name="inst_18EACEE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="128" y="0" name="inst_A5A8574C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -186,35 +185,20 @@
     <instance objName="obj_rock3" x="2880" y="192" name="inst_3F721AFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock3" x="2688" y="64" name="inst_2DE5DACA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_portal_hub" x="2816" y="96" name="inst_03188EF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blueberry" x="704" y="352" name="inst_241304FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blueberry" x="928" y="480" name="inst_2D7510FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blueberry" x="832" y="640" name="inst_A7DC90F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_blueberry" x="480" y="576" name="inst_59BDA85B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_attack_tree" x="1888" y="352" name="inst_20F902E1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_attack_tree" x="1888" y="736" name="inst_050B66A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_attack_tree" x="2208" y="416" name="inst_E66BA3D3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_mushroom" x="2496" y="800" name="inst_B9594E5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_small" x="1216" y="224" name="inst_229FB584" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_small" x="1632" y="160" name="inst_4388E993" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_small" x="1504" y="800" name="inst_A7EC070A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_evil_budgerigar_of_the_forest_speed" x="2112" y="768" name="inst_D77C1851" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_evil_budgerigar_of_the_forest_speed" x="2432" y="512" name="inst_6B85C998" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_evil_budgerigar_of_the_forest_speed" x="2624" y="832" name="inst_1A3E0984" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boar" x="928" y="832" name="inst_DA164BFD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boar" x="352" y="224" name="inst_53C72E24" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="1632" y="480" name="inst_B1303402" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="2176" y="96" name="inst_259A7259" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin" x="2592" y="416" name="inst_27EDA904" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_bullet" x="2304" y="608" name="inst_2451A3EF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_bullet" x="2272" y="864" name="inst_8DA6BFB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_forest_penguin_bullet" x="1728" y="928" name="inst_1DF7F877" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_evil_budgerigar_of_the_forest" x="2720" y="640" name="inst_AB0D0AFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_evil_budgerigar_of_the_forest" x="1312" y="832" name="inst_8E186288" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_evil_budgerigar_of_the_forest" x="1440" y="224" name="inst_EBD7D4AC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_evil_budgerigar_of_the_forest" x="1152" y="448" name="inst_16B25433" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_native" x="896" y="160" name="inst_4151091D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_native" x="608" y="768" name="inst_DBD95635" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_native" x="704" y="448" name="inst_8F74C384" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mushroom" x="2784" y="960" name="inst_B9594E5A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_forest_penguin_small" x="2752" y="512" name="inst_E7F3DECE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_attack_tree" x="2112" y="288" name="inst_0FF991CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_blueberry" x="2080" y="800" name="inst_8AE43AEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_evil_budgerigar_of_the_forest_speed" x="1728" y="448" name="inst_A7A04214" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boar" x="2304" y="512" name="inst_466935C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_forest_penguin" x="2400" y="896" name="inst_CAF62343" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_walking_snot" x="1632" y="896" name="inst_234D8DA2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fox" x="1312" y="704" name="inst_2B7CE433" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_walking_blade_of_grass" x="1248" y="192" name="inst_901771D2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_forest_penguin_bullet" x="1024" y="896" name="inst_953A3862" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_evil_budgerigar_of_the_forest" x="864" y="384" name="inst_8A77F5CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_slug" x="576" y="768" name="inst_8C8B957D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_native" x="416" y="352" name="inst_368ED4C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
