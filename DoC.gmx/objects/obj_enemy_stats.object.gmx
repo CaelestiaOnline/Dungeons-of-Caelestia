@@ -333,17 +333,63 @@ enemy_stats[obj_boar, enemy_stats_normal.money_drop] = 12;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
-event_inherited();
+            <string>///Gegner 11-20
 
-//Weg erzeugen
-path = path_add();
+//Wandelnder Rotz(11)
+enemy_stats[obj_walking_snot, 0] = "Wandelnder Rotz";
+enemy_stats[obj_walking_snot, 1] = "Vorsicht ansteckend!";
+enemy_stats[obj_walking_snot, 2] = true;
+enemy_stats[obj_walking_snot, 3] = true;
+enemy_stats[obj_walking_snot, 4] = "normal";
 
-//Distanz
-max_distance = 100;
-min_distance = 48;
-safety_distance = 200;
-min_distance_factor = 1;
+enemy_stats[obj_walking_snot, enemy_stats_normal.hp] = 40;
+enemy_stats[obj_walking_snot, enemy_stats_normal.damage] = 12;
+enemy_stats[obj_walking_snot, enemy_stats_normal.attack_speed] = 75;
+enemy_stats[obj_walking_snot, enemy_stats_normal.max_speed] = 1.7;
+enemy_stats[obj_walking_snot, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_walking_snot, enemy_stats_normal.money_drop] = 17;
+
+//Nacktschnecke(12)
+enemy_stats[obj_slug, 0] = "Nacktschnecke";
+enemy_stats[obj_slug, 1] = "Sie macht auch dich langsam!";
+enemy_stats[obj_slug, 2] = true;
+enemy_stats[obj_slug, 3] = true;
+enemy_stats[obj_slug, 4] = "normal";
+
+enemy_stats[obj_slug, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_slug, enemy_stats_normal.damage] = 15;
+enemy_stats[obj_slug, enemy_stats_normal.attack_speed] = 120;
+enemy_stats[obj_slug, enemy_stats_normal.max_speed] = 1;
+enemy_stats[obj_slug, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_slug, enemy_stats_normal.money_drop] = 11;
+
+//Grashalm(13)
+enemy_stats[obj_walking_blade_of_grass, 0] = "Laufender Grashalm";
+enemy_stats[obj_walking_blade_of_grass, 1] = "Tritt nur in sehr grossen Rudeln auf";
+enemy_stats[obj_walking_blade_of_grass, 2] = true;
+enemy_stats[obj_walking_blade_of_grass, 3] = true;
+enemy_stats[obj_walking_blade_of_grass, 4] = "normal";
+
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.hp] = 15;
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.max_speed] = 3;
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.xp_drop] = 16;
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.money_drop] = 2;
+
+//Fuchs(14)
+enemy_stats[obj_fox, 0] = "Fuchs";
+enemy_stats[obj_fox, 1] = "Er liebt es, die Tollwut zu verbreiten";
+enemy_stats[obj_fox, 2] = true;
+enemy_stats[obj_fox, 3] = true;
+enemy_stats[obj_fox, 4] = "normal";
+
+enemy_stats[obj_fox, enemy_stats_normal.hp] = 65;
+enemy_stats[obj_fox, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_fox, enemy_stats_normal.attack_speed] = 90;
+enemy_stats[obj_fox, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_fox, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_fox, enemy_stats_normal.money_drop] = 19;
 </string>
           </argument>
         </arguments>

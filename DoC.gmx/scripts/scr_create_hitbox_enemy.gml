@@ -14,3 +14,4 @@ var hitbox;
 hitbox = instance_create(hitbox_x, hitbox_y, obj_hitbox_melee_enemy);
 hitbox.damage = damage;
 hitbox.is_crit = is_crit;
+hitbox.origin_object = self;
