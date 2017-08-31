@@ -8,7 +8,7 @@
   <parentName>obj_fallen_unbewegliche_objekte</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,11 +25,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Effekt
+event_inherited();
+
+effc = effect.poison;
+stage = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>obj_mushroom</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Angriff
 event_inherited();
 
 if (attack_ready){
-    scr_enemy_effect(damage, effect.poison, 1);
+    scr_enemy_effect(damage, effc, stage);
     alarm_set(0, attack_speed);
     attack_ready = false;
 }

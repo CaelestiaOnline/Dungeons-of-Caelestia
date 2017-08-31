@@ -932,6 +932,7 @@
           <object>objects\obj_evil_budgerigar_of_the_forest_speed</object>
           <object>objects\obj_boar</object>
           <object>objects\obj_forest_penguin</object>
+          <object>objects\obj_walking_snot</object>
           <object>objects\obj_nahkampf_enemy</object>
         </objects>
         <objects name="Fernkampf">
