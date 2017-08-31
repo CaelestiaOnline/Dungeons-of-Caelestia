@@ -193,11 +193,16 @@
       <sprite>sprites\spr_mini_bullet</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_mana_bullet</sprite>
+      <sprite>sprites\spr_mana_fire_bullet</sprite>
       <sprite>sprites\spr_shuriken_bullet</sprite>
       <sprite>sprites\spr_hit</sprite>
       <sprite>sprites\spr_hit_crit</sprite>
       <sprite>sprites\spr_bullet_collision_box</sprite>
       <sprite>sprites\spr_sonic_wave</sprite>
+      <sprite>sprites\spr_throwing_dagger_bullet</sprite>
+      <sprite>sprites\spr_blowgun_bullet</sprite>
+      <sprite>sprites\spr_bow_bullet</sprite>
+      <sprite>sprites\spr_lasergun_bullet</sprite>
     </sprites>
     <sprites name="Hindernis">
       <sprite>sprites\spr_kaktus</sprite>
@@ -542,6 +547,7 @@
         <script>scripts\scr_init_effects.gml</script>
         <script>scripts\scr_effect.gml</script>
         <script>scripts\scr_effect_index.gml</script>
+        <script>scripts\scr_effect_rem_all.gml</script>
       </scripts>
       <scripts name="Interaktion">
         <script>scripts\scr_hub_interaction.gml</script>
@@ -774,9 +780,13 @@
           <objects name="Hitbox">
             <object>objects\obj_hitbox_melee</object>
           </objects>
-          <object>objects\obj_item_melee</object>
+          <object>objects\obj_prim_item_melee</object>
         </objects>
         <objects name="fernkampf">
+          <object>objects\obj_prim_item_bullet</object>
+          <objects name="Bullet">
+            <object>objects\obj_bullet</object>
+          </objects>
           <objects name="Pistol">
             <object>objects\obj_pistol</object>
             <object>objects\obj_pistol_bullet</object>
@@ -785,16 +795,35 @@
             <object>objects\obj_machine_gun</object>
             <object>objects\obj_machine_gun_bullet</object>
           </objects>
-          <objects name="Bullet">
-            <object>objects\obj_bullet</object>
+          <objects name="Bow">
+            <object>objects\obj_bow</object>
+            <object>objects\obj_bow_bullet</object>
           </objects>
-          <object>objects\obj_item_bullet</object>
+          <objects name="Crossbow">
+            <object>objects\obj_crossbow</object>
+            <object>objects\obj_crossbow_bullet</object>
+          </objects>
+          <objects name="Lasergun">
+            <object>objects\obj_lasergun</object>
+            <object>objects\obj_lasergun_bullet</object>
+          </objects>
         </objects>
       </objects>
       <objects name="sec">
-        <objects name="Shuriken">
-          <object>objects\obj_shuriken</object>
-          <object>objects\obj_shuriken_bullet</object>
+        <objects name="Bullet">
+          <objects name="Shuriken">
+            <object>objects\obj_shuriken</object>
+            <object>objects\obj_shuriken_bullet</object>
+          </objects>
+          <objects name="ThrowingDagger">
+            <object>objects\obj_throwing_dagger</object>
+            <object>objects\obj_throwing_dagger_bullet</object>
+          </objects>
+          <objects name="Blowgun">
+            <object>objects\obj_blowgun</object>
+            <object>objects\obj_blowgun_bullet</object>
+          </objects>
+          <object>objects\obj_sec_item_bullet</object>
         </objects>
       </objects>
       <objects name="mag">
@@ -804,6 +833,10 @@
         </objects>
         <objects name="Heal-Orb">
           <object>objects\obj_mana_heal_orb</object>
+        </objects>
+        <objects name="Fire-Orb">
+          <object>objects\obj_mana_fire_orb</object>
+          <object>objects\obj_mana_fire_bullet</object>
         </objects>
       </objects>
       <objects name="item">
@@ -948,6 +981,7 @@
         </objects>
         <objects name="Waffen">
           <object>objects\obj_pistol_bullet_enemy</object>
+          <object>objects\obj_arrow_bullet_enemy</object>
           <object>objects\obj_sonic_wave_bullet_enemy</object>
           <object>objects\obj_bullet_enemy</object>
           <object>objects\obj_hitbox_melee_enemy</object>

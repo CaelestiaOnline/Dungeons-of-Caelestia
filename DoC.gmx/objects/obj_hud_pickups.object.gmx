@@ -338,6 +338,9 @@ if(i == inventory.menupos) {
     draw_set_alpha(0.8);
     draw_set_colour(c_white);
     draw_circle(slots_x[i], slots_y[i], pickups_radius - buffer, 0);
+    
+    var countdown = inventory.alarm[2] / inventory.pickup_countdown;
+    scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i]);
 }
 draw_set_alpha(1);
 if(inventory.inv_pickups.inv[i] != -1) {
