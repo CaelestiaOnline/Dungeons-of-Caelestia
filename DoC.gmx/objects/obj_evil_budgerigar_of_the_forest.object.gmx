@@ -30,8 +30,6 @@ event_inherited();
 
 type = obj_sonic_wave_bullet_enemy;
 
-effc = effect.slowness;
-stage = 1;
 </string>
           </argument>
         </arguments>
@@ -58,7 +56,7 @@ stage = 1;
 event_inherited();
 
 if(hit != noone) {
-    scr_effect(effc, stage, obj_player);
+    scr_effect(effect.slowness, 1, obj_player);
     hit = noone;
 }
 </string>
