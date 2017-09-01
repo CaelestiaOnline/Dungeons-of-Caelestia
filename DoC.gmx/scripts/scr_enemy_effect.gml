@@ -5,6 +5,7 @@ scr_enemy_effect(
     Effektstufe
     )
 */
+
 var damage = argument0;
 var effc = argument1;
 var stage = argument2;

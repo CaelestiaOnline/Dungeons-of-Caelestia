@@ -55,9 +55,11 @@ type = obj_sonic_wave_bullet_enemy;
             <string>///Verlangsamung
 event_inherited();
 
-if(hit != noone) {
-    scr_effect(effect.slowness, 1, obj_player);
-    hit = noone;
+
+if(hit) {
+    scr_effect(effect.poison, 1, obj_player);
+    hit = false;
+    show_debug_message("TRUE 2");
 }
 </string>
           </argument>

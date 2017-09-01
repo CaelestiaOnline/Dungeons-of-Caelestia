@@ -59,6 +59,7 @@ min_distance_factor = 1;
           <argument>
             <kind>1</kind>
             <string>///Triggered
+event_inherited();
 scr_trigger_enemy(-1);
 if(!triggered) exit;
 </string>

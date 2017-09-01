@@ -12,7 +12,7 @@ var goal_object = argument2;
 var effect_index = effect.attack_speed;
 
 if(!instance_exists(goal_object)) exit;
-if(goal_object == obj_player) goal_object = player_stats;
+if(string(goal_object.object_index) == string(obj_player)) goal_object = player_stats;
 
 if(goal_object.effects[effect_index] != -1) {
     goal_object.effects[effect_index].alarm[0] = time;

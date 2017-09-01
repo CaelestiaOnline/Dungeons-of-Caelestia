@@ -18,13 +18,13 @@ switch(ability) {
         effect_time = room_speed * 30;
         switch(ability_strength) {
             case 1:
-                speed_mult = +0.2;
+                effect_speed_mult = +0.2;
                 break;
             case 2:
-                speed_mult = +1.0;
+                effect_speed_mult = +1.0;
                 break;
             case 10:
-                speed_mult = +10.0;
+                effect_speed_mult = +10.0;
                 break;
         } 
         break;
@@ -33,13 +33,13 @@ switch(ability) {
         effect_time = room_speed * 10;
         switch(ability_strength) {
             case 1:
-                speed_mult = -0.2;
+                effect_speed_mult = -0.2;
                 break;
             case 2:
-                speed_mult = -0.5;
+                effect_speed_mult = -0.5;
                 break;
             case 10:
-                speed_mult = -1.0;
+                effect_speed_mult = -1.0;
                 break;
         
         }
@@ -49,16 +49,16 @@ switch(ability) {
         effect_time = room_speed * 30;
         switch(ability_strength) {
             case 1:
-                attack_speed_mult = -0.2;
+                effect_attack_speed_mult = -0.2;
                 break;
             case 2:
-                attack_speed_mult = -0.5;
+                effect_attack_speed_mult = -0.5;
                 break;
             case -1:
-                attack_speed_mult = +0.2;
+                effect_attack_speed_mult = +0.2;
                 break;
             case -2:
-                attack_speed_mult = +0.5;
+                effect_attack_speed_mult = +0.5;
                 break;
         }
         break;
@@ -155,11 +155,11 @@ switch(ability) {
         switch(ability_strength) {
             case 1:
                 poison_damage = 1;
-                effect_time = room_speed * 10;
+                effect_time = room_speed * 8;
                 poison_speed = room_speed;
             case 2:
                 poison_damage = 2;
-                effect_time = room_speed * 10;
+                effect_time = room_speed * 8;
                 poison_speed = room_speed;
         }
         break;

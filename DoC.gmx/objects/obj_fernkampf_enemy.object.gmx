@@ -62,6 +62,7 @@ type = obj_pistol_bullet_enemy;
           <argument>
             <kind>1</kind>
             <string>///Triggered
+event_inherited();
 scr_trigger_enemy(-1);
 if(!triggered) exit;
 </string>
@@ -91,6 +92,30 @@ scr_pathfinding_enemy();
 if(attack_ready) {
     scr_bullet_attack_enemy(damage, type);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>event_inherited();
+draw_text(x, y - 100, string(move));
 </string>
           </argument>
         </arguments>

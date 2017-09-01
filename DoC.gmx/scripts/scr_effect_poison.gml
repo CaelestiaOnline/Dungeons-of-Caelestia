@@ -14,7 +14,7 @@ var goal_object = argument3;
 var effect_index = effect.poison;
 
 if(!instance_exists(goal_object)) exit;
-if(goal_object == obj_player) goal_object = player_stats;
+if(string(goal_object.object_index) == string(obj_player)) goal_object = player_stats;
 
 if(goal_object.effects[effect_index] != -1) {
     goal_object.effects[effect_index].effect_time = time;
