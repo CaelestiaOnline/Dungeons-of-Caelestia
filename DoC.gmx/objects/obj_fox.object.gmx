@@ -55,9 +55,9 @@ stage = 2;
             <string>///Angriff
 event_inherited();
 
-if(hit != noone) {
+if(hit) {
     scr_effect(effc, stage, obj_player);
-    hit = noone;
+    hit = false;
 }
 </string>
           </argument>
