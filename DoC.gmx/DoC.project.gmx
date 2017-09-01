@@ -225,21 +225,25 @@
     <sprites name="Waffen">
       <sprite>sprites\spr_hitbox</sprite>
       <sprite>sprites\spr_hitbox_enemy</sprite>
-      <sprite>sprites\spr_bullet</sprite>
-      <sprite>sprites\spr_mini_bullet</sprite>
       <sprite>sprites\spr_explosion</sprite>
-      <sprite>sprites\spr_mana_bullet</sprite>
-      <sprite>sprites\spr_mana_fire_bullet</sprite>
-      <sprite>sprites\spr_shuriken_bullet</sprite>
       <sprite>sprites\spr_hit</sprite>
       <sprite>sprites\spr_hit_crit</sprite>
-      <sprite>sprites\spr_bullet_collision_box</sprite>
-      <sprite>sprites\spr_sonic_wave</sprite>
-      <sprite>sprites\spr_throwing_dagger_bullet</sprite>
-      <sprite>sprites\spr_blowgun_bullet</sprite>
-      <sprite>sprites\spr_bow_bullet</sprite>
-      <sprite>sprites\spr_lasergun_bullet</sprite>
-      <sprite>sprites\spr_slug_snot</sprite>
+      <sprite>sprites\spr_bullet</sprite>
+      <sprites name="Bullets">
+        <sprite>sprites\spr_sonic_wave</sprite>
+        <sprite>sprites\spr_slug_snot_bullet</sprite>
+        <sprite>sprites\spr_lasergun_bullet</sprite>
+        <sprite>sprites\spr_bow_bullet</sprite>
+        <sprite>sprites\spr_blowgun_bullet</sprite>
+        <sprite>sprites\spr_throwing_dagger_bullet</sprite>
+        <sprites name="Colbox">
+          <sprite>sprites\spr_bullet_collision_box</sprite>
+        </sprites>
+        <sprite>sprites\spr_shuriken_bullet</sprite>
+        <sprite>sprites\spr_mana_fire_bullet</sprite>
+        <sprite>sprites\spr_mana_bullet</sprite>
+        <sprite>sprites\spr_mini_bullet</sprite>
+      </sprites>
     </sprites>
     <sprites name="Hindernis">
       <sprite>sprites\spr_kaktus</sprite>
