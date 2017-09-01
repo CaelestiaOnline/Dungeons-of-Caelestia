@@ -12,6 +12,8 @@ var effect_index = effect.absorption;
 
 if(!instance_exists(goal_object)) exit;
 
+if(string(goal_object.object_index) == string(obj_player)) goal_object = player_stats;
+
 if(goal_object.effects[effect_index] != -1) {
     if(goal_object == player_stats && (player_stats.absorption_hp + hp) <= player_stats.max_absorption_hp) {
         player_stats.absorption_hp += hp;

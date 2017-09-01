@@ -611,13 +611,13 @@ item[items.bow, 2] = obj_bow;
 item[items.bow, 3] = "prim";
 item[items.bow, 4] = 1;
 
-item_stats[items.bow, item_stats_prim.damage] = round(player_stats.root_damage*1.5);
-item_stats[items.bow, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.5) + round(player_stats.root_damage/4);
+item_stats[items.bow, item_stats_prim.damage] = round(player_stats.root_damage*2.5);
+item_stats[items.bow, item_stats_prim.damage_crit] = round(player_stats.root_damage*2.5) + round(player_stats.root_damage/4);
 item_stats[items.bow, item_stats_prim.ability] = "";
 item_stats[items.bow, item_stats_prim.ability_chance] = 0;
 item_stats[items.bow, item_stats_prim.ability_strength] = 0;
 item_stats[items.bow, item_stats_prim.speed_bonus] = 0;
-item_stats[items.bow, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.bow, item_stats_prim.attack_speed] = player_stats.attack_speed*2;
 item_stats[items.bow, item_stats_prim.misc] = "";
 
 //Armbrust (33)

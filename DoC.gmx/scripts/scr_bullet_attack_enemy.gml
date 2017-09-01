@@ -1,6 +1,6 @@
 /*
 scr_bullet_attack_enemy(
-    schaden
+    schaden,
     zu erzeugendes Objekt
     )
 */

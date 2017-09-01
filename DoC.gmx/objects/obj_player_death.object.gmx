@@ -57,6 +57,7 @@ scr_enter_hub();
             <kind>1</kind>
             <string>///Gehe ins Hub
 hub.in_hub = true;
+scr_effect_rem_all(-1);
 if(admin.in_run) scr_leave_run();
 scr_keylock_all(true);
 obj_player.visible = false;
