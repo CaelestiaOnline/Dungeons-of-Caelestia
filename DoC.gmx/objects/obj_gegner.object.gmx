@@ -145,6 +145,7 @@ old_dealt_heal = dealt_heal;
             <kind>1</kind>
             <string>///Dealt Damage
 if(dealt_damage &gt; 0) {
+    scr_effect(effect.stun, 1, self);
     if(damage_count &gt; 10) {
         if(old_dealt_damage == dealt_damage) {
             scr_draw_dealt_damage(x, y - sprite_get_height(sprite_index)/2 - 30, dealt_damage);

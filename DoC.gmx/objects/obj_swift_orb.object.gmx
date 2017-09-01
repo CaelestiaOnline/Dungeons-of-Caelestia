@@ -29,7 +29,7 @@
 index = items.swift_orb;
 scr_init_ability(item_stats[index, item_stats_item.ability], item_stats[index, item_stats_item.ability_strength]);
 
-player_stats.speed_mult_item += speed_mult;
+player_stats.speed_mult_item += effect_speed_mult;
 </string>
           </argument>
         </arguments>
@@ -53,7 +53,7 @@ player_stats.speed_mult_item += speed_mult;
           <argument>
             <kind>1</kind>
             <string>///Reset Speed-Mult
-player_stats.speed_mult_item -= speed_mult;
+player_stats.speed_mult_item -= effect_speed_mult;
 </string>
           </argument>
         </arguments>
