@@ -55,7 +55,7 @@ instance_destroy();
 scr_deal_player_damage(damage);
 //scr_draw_crit(other, is_crit);
 
-origin_object.hit = obj_player;
+origin_object.hit = true;
 </string>
           </argument>
         </arguments>

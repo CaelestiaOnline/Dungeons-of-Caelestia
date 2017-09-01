@@ -13,7 +13,7 @@ var goal_object = argument2;
 var effect_index = effect.slowness;
 
 if(!instance_exists(goal_object)) exit;
-if(goal_object == obj_player) goal_object = player_stats;
+if(string(goal_object.object_index) == string(obj_player)) goal_object = player_stats;
 
 if(multipl > 1) effect_index = effect.speed;
 else effect_index = effect.slowness;
