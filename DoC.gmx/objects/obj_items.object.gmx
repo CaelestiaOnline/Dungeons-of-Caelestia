@@ -63,6 +63,9 @@ enum items {
     crossbow = 33,
     lasergun = 34,
     mana_fire_orb = 35,
+    ultra_mana_beam_orb = 36,
+    mana_teleport_orb = 37,
+    
     count
 }
 </string>
@@ -524,7 +527,7 @@ item_stats[items.war_hammer, item_stats_prim.misc] = "";
 
 //Kettensäge (28)
 item[items.chainsaw, 0] = "Kettensaege";
-item[items.chainsaw, 1] = "Ein forstwirtschaftliches Geraet mit leichtem Oelleck! Hat vielleicht schon den ein oder anderen Waldbrand verursacht";
+item[items.chainsaw, 1] = "Ein forstwirtschaftliches Geraet mit leichtem Oelleck! Hat vielleicht schon den ein oder anderen Waldbrand verursacht.";
 item[items.chainsaw, 2] = obj_chainsaw;
 item[items.chainsaw, 3] = "prim";
 item[items.chainsaw, 4] = 1;
@@ -664,6 +667,32 @@ item_stats[items.mana_fire_orb, item_stats_mag.ability_strength] = 1;
 item_stats[items.mana_fire_orb, item_stats_mag.mana_usage] = 40;
 item_stats[items.mana_fire_orb, item_stats_mag.cooldown] = player_stats.attack_speed*4;
 item_stats[items.mana_fire_orb, item_stats_mag.misc] = "";
+
+//Ultra Magie Strahl (36)
+item[items.ultra_mana_beam_orb, 0] = "Ultra Magie Strahl (TM)";
+item[items.ultra_mana_beam_orb, 1] = "Alles, was vor deiner Nase steht, steht danach nicht mehr dort.";
+item[items.ultra_mana_beam_orb, 2] = obj_ultra_mana_beam_orb;
+item[items.ultra_mana_beam_orb, 3] = "mag";
+item[items.ultra_mana_beam_orb, 4] = 1;
+
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.ability] = "attack_mana_beam";
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.ability_strength] = 666;
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.mana_usage] = 0;
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.cooldown] = 0//player_stats.attack_speed*3*10;
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.misc] = "";
+
+//Teleport (37)
+item[items.mana_teleport_orb, 0] = "Magisches Teleport-Orb";
+item[items.mana_teleport_orb, 1] = "Der Name sagt eigentlich alles. Vielleicht bleibst du aber auch in der 5. Dimension stecken.";
+item[items.mana_teleport_orb, 2] = obj_mana_teleport_orb;
+item[items.mana_teleport_orb, 3] = "mag";
+item[items.mana_teleport_orb, 4] = 1;
+
+item_stats[items.mana_teleport_orb, item_stats_mag.ability] = "ability_mana_teleport";
+item_stats[items.mana_teleport_orb, item_stats_mag.ability_strength] = 1;
+item_stats[items.mana_teleport_orb, item_stats_mag.mana_usage] = 40;
+item_stats[items.mana_teleport_orb, item_stats_mag.cooldown] = player_stats.attack_speed*6;
+item_stats[items.mana_teleport_orb, item_stats_mag.misc] = "";
 
 
 </string>

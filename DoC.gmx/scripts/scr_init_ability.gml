@@ -186,6 +186,17 @@ switch(ability) {
         }
         break;
     //Magie
+    //Abilites
+    case "ability_mana_teleport":
+        switch(ability_strength) {
+            case 1:
+                max_distance = 300;
+                break;
+            case 2:
+                max_distance = 600;
+                break;
+        }
+        break;
     //Attacken
     //Mana
     case "attack_mana":
@@ -200,6 +211,13 @@ switch(ability) {
             case 1:
                 damage = round(player_stats.root_damage*3);
                 scr_init_ability("fire", 2);
+                break;
+        }
+        break;
+    case "attack_mana_beam":
+        switch(ability_strength) {
+            case 666:
+                damage = round(player_stats.root_damage*10);
                 break;
         }
         break;

@@ -883,6 +883,13 @@
           <object>objects\obj_mana_fire_orb</object>
           <object>objects\obj_mana_fire_bullet</object>
         </objects>
+        <objects name="Ultra-Mana-Beam-Orb">
+          <object>objects\obj_ultra_mana_beam_orb</object>
+          <object>objects\obj_mana_beam_bullet</object>
+        </objects>
+        <objects name="Teleport-Orb">
+          <object>objects\obj_mana_teleport_orb</object>
+        </objects>
       </objects>
       <objects name="item">
         <object>objects\obj_swift_orb</object>
