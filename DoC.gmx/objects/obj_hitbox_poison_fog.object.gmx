@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_gegner</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,19 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
-event_inherited();
+            <string>///Ursprungsobjekt
 
-//Weg erzeugen
-path = path_add();
-
-//Distanz
-max_distance = 100;
-min_distance = 48;
-safety_distance = 200;
-min_distance_factor = 1;
-
-type = obj_hitbox_melee_enemy;
+origin_object = 0;
 </string>
           </argument>
         </arguments>
@@ -60,37 +50,14 @@ type = obj_hitbox_melee_enemy;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Triggered
-event_inherited();
-scr_trigger_enemy(-1);
-if(!triggered) exit;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Angriff + Bewegung
-
-scr_pathfinding_enemy();
-
-if(attack_ready) {
-    scr_melee_attack_enemy(damage, type);
+            <string>///Überprüfung eines Treffers
+var hit = instance_place(x, y, obj_player);
+if(hit != noone){
+    origin_object.hit = true;
 }
+
+//Zerstörung
+instance_destroy();
 </string>
           </argument>
         </arguments>

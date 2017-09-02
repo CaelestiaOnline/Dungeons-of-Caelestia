@@ -546,6 +546,9 @@
         <script>scripts\scr_pathfinding_enemy_old.gml</script>
         <script>scripts\scr_create_hitbox_enemy.gml</script>
         <script>scripts\scr_reset_enemy.gml</script>
+        <scripts name="Boss/Miniboss">
+          <script>scripts\scr_immobile_miniboss_movement.gml</script>
+        </scripts>
       </scripts>
       <scripts name="depth">
         <script>scripts\scr_set_depth.gml</script>
@@ -1037,10 +1040,18 @@
           <object>objects\obj_arrow_bullet_enemy</object>
           <object>objects\obj_sonic_wave_bullet_enemy</object>
           <object>objects\obj_slug_snot_bullet</object>
+          <object>objects\obj_bullet_carnivora</object>
           <object>objects\obj_bullet_enemy</object>
           <object>objects\obj_hitbox_melee_enemy</object>
+          <object>objects\obj_hitboox_carnivora</object>
+          <object>objects\obj_hitbox_poison_fog</object>
         </objects>
         <object>objects\obj_enemy_stats</object>
+        <objects name="Minibosse / Bosse">
+          <object>objects\obj_miniboss</object>
+          <object>objects\obj_boss</object>
+          <object>objects\obj_carnivora</object>
+        </objects>
       </objects>
       <objects name="Heilungsfeld">
         <object>objects\obj_heal_field</object>
