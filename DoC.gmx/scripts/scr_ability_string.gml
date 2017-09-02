@@ -17,7 +17,7 @@ switch(ability_string) {
         return "Attack-Speed-Boost"
         break;
     case "fire":
-        return "Feuer";
+        return "Fire";
         break;
     case "regeneration":
         return "Regeneration";
@@ -29,7 +29,7 @@ switch(ability_string) {
         return "Absorption";
         break;
     case "resistance":
-        return "Resistenz";
+        return "Resistance";
         break;
     case "strength":
         return "Strength";
@@ -38,7 +38,7 @@ switch(ability_string) {
         return "Stun";
         break;
     case "poison":
-        return "Gift";
+        return "Poison";
         break;
     case "heal":
         return "Insta-Heal";
@@ -51,6 +51,9 @@ switch(ability_string) {
         break;
     case "attack_mana_fire":
         return "Mana-Fire-Attack";
+        break;
+    case "ability_mana_teleport":
+        return "Mana-Teleport";
         break;
     default:
         return "-/-";
