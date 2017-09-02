@@ -37,4 +37,10 @@ switch(number) {
     case 10: 
         return "X";
         break;
+    case 666:
+        return "DCLXVI";
+        break;
+    default:
+        return string(number);
+        break;
 }

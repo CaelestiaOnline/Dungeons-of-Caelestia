@@ -45,10 +45,14 @@ switch (item[stats_item, 3]) {
         inv_hud.item_stats_array[1] = string(item_stats[stats_item, item_stats_sec.damage_crit]);
         inv_hud.item_stats_heading_array[2] = "Ability: ";
         inv_hud.item_stats_array[2] = scr_ability_string(item_stats[stats_item, item_stats_sec.ability]);
-        inv_hud.item_stats_heading_array[3] = "Cooldown: "
-        inv_hud.item_stats_array[3] = string((item_stats[stats_item, item_stats_sec.cooldown])/room_speed) + "s";
-        inv_hud.item_stats_heading_array[4] = "Misc: ";
-        inv_hud.item_stats_array[4] = string(item_stats[stats_item, item_stats_sec.misc]);
+        inv_hud.item_stats_heading_array[3] = "Ability chance: ";
+        inv_hud.item_stats_array[3] = string(item_stats[stats_item, item_stats_sec.ability_chance]*100) + "%";
+        inv_hud.item_stats_heading_array[4] = "Ability strength: ";
+        inv_hud.item_stats_array[4] = scr_roman_number(item_stats[stats_item, item_stats_sec.ability_strength]);
+        inv_hud.item_stats_heading_array[5] = "Cooldown: "
+        inv_hud.item_stats_array[5] = string((item_stats[stats_item, item_stats_sec.cooldown])/room_speed) + "s";
+        inv_hud.item_stats_heading_array[6] = "Misc: ";
+        inv_hud.item_stats_array[6] = string(item_stats[stats_item, item_stats_sec.misc]);
         break;
     
     //mag

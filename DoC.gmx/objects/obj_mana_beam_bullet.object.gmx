@@ -5,8 +5,8 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_gegner</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <parentName>&lt;undefined&gt;</parentName>
+  <maskName>spr_bullet_collision_box</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,20 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
-event_inherited();
+            <string>///Geschwindigkeit
+damage = 0;
+is_crit = false;
 
-//Weg erzeugen
-path = path_add();
+//Depth
+scr_set_depth();
 
-//Distanz
-max_distance = 500;
-min_distance = 100;
-safety_distance = 200;
-min_distance_factor = 1;
+origin_object = 0;
 
-//Bullet Type
-type = obj_pistol_bullet_enemy;
 </string>
           </argument>
         </arguments>
@@ -61,14 +56,21 @@ type = obj_pistol_bullet_enemy;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Triggered
-event_inherited();
-scr_trigger_enemy(-1);
-if(!triggered) exit;
+            <string>///Init
+
+//Verminderung der Hp
+scr_deal_damage(other, damage);
+scr_draw_crit(other, is_crit);
+
+if(x &lt; 0 || x &gt; room_width) {
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="4" ename="obj_gegner">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,13 +87,66 @@ if(!triggered) exit;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Angriff + Bewegung
+            <string>///Kollision mit Gegner
 
-scr_pathfinding_enemy();
 
-if(attack_ready) {
-    scr_bullet_attack_enemy(damage, type);
-}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_hindernis">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Kollision mit Hindernis
+//Zerstörung
+instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Bullet
+draw_set_alpha(0.5);
+draw_set_colour(c_blue);
+draw_rectangle(obj_player.x, obj_player.y - 16, x, obj_player.y + 16, 0);
+
+draw_set_alpha(1);
+
+
+if(admin.show_hitbox) scr_draw_hitbox();
 </string>
           </argument>
         </arguments>

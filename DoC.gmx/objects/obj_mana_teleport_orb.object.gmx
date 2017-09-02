@@ -4,8 +4,8 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
-  <parentName>obj_gegner</parentName>
+  <persistent>-1</persistent>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,20 +26,38 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-event_inherited();
+index = items.mana_teleport_orb;
+mana = item_stats[index, item_stats_mag.mana_usage];
+scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
+real_distance = 0;
 
-//Weg erzeugen
-path = path_add();
 
-//Distanz
-max_distance = 500;
-min_distance = 100;
-safety_distance = 200;
-min_distance_factor = 1;
+confirmed = false;
 
-//Bullet Type
-type = obj_pistol_bullet_enemy;
+hit_list = noone;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm0</string>
           </argument>
         </arguments>
       </action>
@@ -61,14 +79,31 @@ type = obj_pistol_bullet_enemy;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Triggered
-event_inherited();
-scr_trigger_enemy(-1);
-if(!triggered) exit;
+            <string>///Angriff
+scr_mag_ability();
+
+
+    real_distance = 0;
+    with(obj_player) {
+    for(var i = 0; i &lt; other.max_distance; i++) {
+        if(place_meeting(obj_player.x + ((i + 1) * obj_player.image_xscale), obj_player.y, obj_hindernis)) {
+            other.real_distance = i * obj_player.image_xscale;
+            break;
+        } else other.real_distance = other.max_distance * obj_player.image_xscale;
+        }
+    }
+
+if(confirmed) {
+    obj_player.x += real_distance;
+    confirmed = false;
+}
+
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -85,13 +120,12 @@ if(!triggered) exit;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Angriff + Bewegung
+            <string>if(!admin.playing) exit;
 
-scr_pathfinding_enemy();
-
-if(attack_ready) {
-    scr_bullet_attack_enemy(damage, type);
-}
+draw_set_alpha(0.5);
+draw_set_colour(c_red);
+draw_arrow(obj_player.x, obj_player.y, obj_player.x + real_distance, obj_player.y, 5);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

@@ -63,7 +63,6 @@ if(!triggered) exit;
 
 if(alarm_get(0) == -1 &amp;&amp; collision_circle(x, y, radius*2, obj_player, false, true) != noone) {
     attack_ready = true;
-    show_debug_message("TRUE");
 }
 </string>
           </argument>
