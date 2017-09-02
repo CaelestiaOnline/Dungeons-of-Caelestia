@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_gegner</parentName>
+  <parentName>obj_miniboss</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,19 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
+            <string>///Variablen
 event_inherited();
 
-//Weg erzeugen
-path = path_add();
+spr_height = sprite_get_height(spr_carnivora);
 
 //Distanz
-max_distance = 100;
-min_distance = 48;
-safety_distance = 200;
-min_distance_factor = 1;
+max_distance = 200;
 
-type = obj_hitbox_melee_enemy;
+//Projektil
+type = obj_bullet_carnivora;
+type2 = obj_hitbox_carnivora
 </string>
           </argument>
         </arguments>
@@ -60,10 +58,9 @@ type = obj_hitbox_melee_enemy;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Triggered
-event_inherited();
-scr_trigger_enemy(-1);
-if(!triggered) exit;
+            <string>///Blickrichrtung
+if(obj_player.x &lt; x) image_xscale = -1;
+if(obj_player.x &lt; x) image_xscale = 1;
 </string>
           </argument>
         </arguments>
@@ -84,12 +81,43 @@ if(!triggered) exit;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Angriff + Bewegung
-
-scr_pathfinding_enemy();
-
-if(attack_ready) {
-    scr_melee_attack_enemy(damage, type);
+            <string>///Bewegung
+scr_immobile_miniboss_movement()
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Angriff
+if(    obj_player.x &lt; x - max_distance 
+    || obj_player.x &gt; x + max_distance){
+    scr_bullet_attack_enemy(damage, type);
+    if(hit){
+        scr_effect(effect.poison, 2, obj_player);
+        hit = false;
+    }
+}
+else{
+    scr_melee_attack_enemy(damage, type2);
+        if(hit){
+        scr_effect_mana(-10, obj_player);
+        hit = false;
+    }
 }
 </string>
           </argument>

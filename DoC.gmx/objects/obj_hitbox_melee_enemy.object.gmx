@@ -54,9 +54,9 @@ origin_object = 0;
             <kind>1</kind>
             <string>///Überprüfung eines Treffers
 var hit = instance_place(x, y, obj_player);
-origin_object.hit = hit;
 if(hit != noone) {
     scr_deal_player_damage(damage);
+    origin_object.hit = true;
     //scr_draw_crit(obj_player, is_crit);
 }
 
