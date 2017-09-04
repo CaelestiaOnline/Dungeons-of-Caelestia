@@ -61,8 +61,8 @@ switch (item[stats_item, 3]) {
         inv_hud.item_stats_array[0] = scr_ability_string(item_stats[stats_item, item_stats_mag.ability]);
         inv_hud.item_stats_heading_array[1] = "Ability strength: ";
         inv_hud.item_stats_array[1] = scr_roman_number(item_stats[stats_item, item_stats_mag.ability_strength]);
-        inv_hud.item_stats_heading_array[2] = "Mana usage: "
-        inv_hud.item_stats_array[2] = string(item_stats[stats_item, item_stats_mag.mana_usage]);
+        inv_hud.item_stats_heading_array[2] = "Mana usage: ";
+        inv_hud.item_stats_array[2] = scr_mana_usage(item_stats[stats_item, item_stats_mag.mana_usage]);
         inv_hud.item_stats_heading_array[3] = "Cooldown: "
         inv_hud.item_stats_array[3] = string((item_stats[stats_item, item_stats_mag.cooldown])/room_speed) + "s";
         inv_hud.item_stats_heading_array[4] = "Misc: ";

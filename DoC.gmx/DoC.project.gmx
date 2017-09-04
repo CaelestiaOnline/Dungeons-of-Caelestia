@@ -100,6 +100,10 @@
           <sprite>sprites\spr_mage2</sprite>
           <sprite>sprites\spr_mage</sprite>
         </sprites>
+        <sprites name="Sanic">
+          <sprite>sprites\spr_sanic</sprite>
+          <sprite>sprites\spr_sanic_gif</sprite>
+        </sprites>
       </sprites>
       <sprites name="Gegner">
         <sprite>sprites\spr_gegner</sprite>
@@ -224,6 +228,7 @@
     </sprites>
     <sprites name="Waffen">
       <sprite>sprites\spr_hitbox</sprite>
+      <sprite>sprites\spr_ultra_mana_beam</sprite>
       <sprite>sprites\spr_hitbox_enemy</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_hit</sprite>
@@ -487,6 +492,7 @@
             <script>scripts\scr_inventory_add_item_slot.gml</script>
             <script>scripts\scr_inventory_add_item_object.gml</script>
             <script>scripts\scr_inventory_add_item.gml</script>
+            <script>scripts\scr_inventory_add_item_auto.gml</script>
             <script>scripts\scr_inventory_add_item_slot_empty.gml</script>
           </scripts>
           <scripts name="rem">
@@ -501,10 +507,12 @@
           </scripts>
           <scripts name="check">
             <script>scripts\scr_check_item_inv_type.gml</script>
+            <script>scripts\scr_inventory_get_item_inv_type.gml</script>
             <script>scripts\scr_inventory_search_item.gml</script>
           </scripts>
         </scripts>
         <script>scripts\scr_roman_number.gml</script>
+        <script>scripts\scr_mana_usage.gml</script>
         <script>scripts\scr_ability_string.gml</script>
       </scripts>
       <scripts name="Initialise">
@@ -885,10 +893,13 @@
         </objects>
         <objects name="Ultra-Mana-Beam-Orb">
           <object>objects\obj_ultra_mana_beam_orb</object>
-          <object>objects\obj_mana_beam_bullet</object>
         </objects>
         <objects name="Teleport-Orb">
           <object>objects\obj_mana_teleport_orb</object>
+          <object>objects\obj_mana_teleport_orb_v2</object>
+        </objects>
+        <objects name="Ability-Hitmark">
+          <object>objects\obj_ability_hitmark</object>
         </objects>
       </objects>
       <objects name="item">

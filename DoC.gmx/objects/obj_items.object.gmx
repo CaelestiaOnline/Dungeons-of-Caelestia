@@ -65,6 +65,7 @@ enum items {
     mana_fire_orb = 35,
     ultra_mana_beam_orb = 36,
     mana_teleport_orb = 37,
+    mana_teleport_orb_v2 = 38,
     
     count
 }
@@ -677,9 +678,9 @@ item[items.ultra_mana_beam_orb, 4] = 1;
 
 item_stats[items.ultra_mana_beam_orb, item_stats_mag.ability] = "attack_mana_beam";
 item_stats[items.ultra_mana_beam_orb, item_stats_mag.ability_strength] = 666;
-item_stats[items.ultra_mana_beam_orb, item_stats_mag.mana_usage] = 0;
-item_stats[items.ultra_mana_beam_orb, item_stats_mag.cooldown] = 0//player_stats.attack_speed*3*10;
-item_stats[items.ultra_mana_beam_orb, item_stats_mag.misc] = "";
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.mana_usage] = -1;
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.cooldown] = player_stats.attack_speed*3*10;
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.misc] = "Staerke von verbrauchtem Mana abhaengig.";
 
 //Teleport (37)
 item[items.mana_teleport_orb, 0] = "Magisches Teleport-Orb";
@@ -693,6 +694,19 @@ item_stats[items.mana_teleport_orb, item_stats_mag.ability_strength] = 1;
 item_stats[items.mana_teleport_orb, item_stats_mag.mana_usage] = 40;
 item_stats[items.mana_teleport_orb, item_stats_mag.cooldown] = player_stats.attack_speed*6;
 item_stats[items.mana_teleport_orb, item_stats_mag.misc] = "";
+
+//Teleport (37)
+item[items.mana_teleport_orb_v2, 0] = "Magisches Teleport-Orb v2";
+item[items.mana_teleport_orb_v2, 1] = "Genau wie der Vorgaenger. Nur besser. Glaube ich jedenfalls.";
+item[items.mana_teleport_orb_v2, 2] = obj_mana_teleport_orb_v2;
+item[items.mana_teleport_orb_v2, 3] = "mag";
+item[items.mana_teleport_orb_v2, 4] = 1;
+
+item_stats[items.mana_teleport_orb_v2, item_stats_mag.ability] = "ability_mana_teleport";
+item_stats[items.mana_teleport_orb_v2, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_teleport_orb_v2, item_stats_mag.mana_usage] = 40;
+item_stats[items.mana_teleport_orb_v2, item_stats_mag.cooldown] = player_stats.attack_speed*6;
+item_stats[items.mana_teleport_orb_v2, item_stats_mag.misc] = "";
 
 
 </string>

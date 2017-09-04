@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,39 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
-index = items.ultra_mana_beam_orb;
-scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
-mana = item_stats[index, item_stats_mag.mana_usage];
-real_distance = 0;
-hitbox_x = 0;
-
-confirmed = false;
-
-hit_list = noone;
+            <string>///Alpha
+alpha = 1;
 </string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>alarm1</string>
           </argument>
         </arguments>
       </action>
@@ -65,12 +35,12 @@ hit_list = noone;
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
@@ -79,7 +49,9 @@ hit_list = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm0</string>
+            <string>///Destroy
+instance_destroy();
+</string>
           </argument>
         </arguments>
       </action>
@@ -101,62 +73,15 @@ hit_list = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Angriff
-if(!admin.playing) exit;
+            <string>///Alarm
 
-real_distance = 0;
-hitbox_x = 0;
-
-var real_damage = scr_mag_attack(damage);
-
-var obstacle = collision_line(
-    obj_player.x + (max_distance * obj_player.image_xscale),
-    obj_player.y,
-    obj_player.x,
-    obj_player.y,
-    obj_hindernis,
-    true,
-    true
-    );
-    
-if(obstacle != noone) {
-    real_distance = point_distance(obj_player.x, obj_player.y, obstacle.x, obstacle.y); 
-} else real_distance = max_distance;
-
-real_distance -= 10;
-hitbox_x = obj_player.x + (10*obj_player.image_xscale);
-
-real_distance *= obj_player.image_xscale;
-
-var x_factor = real_distance / sprite_get_width(spr_hitbox);
-
-if(confirmed) {
-    alarm_set(1, stun_time);
-    scr_keylock_movement(true);
-    confirmed = false;
-
+if(alarm_get(0) &lt;= room_speed) {
+    alpha -= 1 / room_speed;
 }
 
-if(alarm_get(1) == stun_time/2) {
+alpha = clamp(alpha, 0, 1);
 
-    var hitbox = instance_create(hitbox_x, obj_player.y, obj_hitbox_melee);
-    hitbox.damage = real_damage;
-    hitbox.is_crit = is_crit;
-    hitbox.origin_object = self;    
-    hitbox.image_xscale = x_factor;
-    confirmed = false;
-    
-    var ability_hitmark = instance_create(hitbox_x, obj_player.y - obj_player.y_melee_offset , obj_ability_hitmark);
-    ability_hitmark.sprite_index = spr_ultra_mana_beam;
-    ability_hitmark.image_xscale = x_factor;
-    ability_hitmark.alarm[0] = stun_time/2;
-    
-}
-
-if(alarm_get(1) == -1) {
-    scr_keylock_movement(false);
-}
-
+image_alpha = alpha;
 </string>
           </argument>
         </arguments>

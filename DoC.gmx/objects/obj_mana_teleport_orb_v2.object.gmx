@@ -26,11 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-index = items.ultra_mana_beam_orb;
-scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
+index = items.mana_teleport_orb;
 mana = item_stats[index, item_stats_mag.mana_usage];
+scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
 real_distance = 0;
-hitbox_x = 0;
 
 confirmed = false;
 
@@ -104,59 +103,59 @@ hit_list = noone;
             <string>///Angriff
 if(!admin.playing) exit;
 
+scr_mag_ability();
+
 real_distance = 0;
-hitbox_x = 0;
-
-var real_damage = scr_mag_attack(damage);
-
-var obstacle = collision_line(
-    obj_player.x + (max_distance * obj_player.image_xscale),
-    obj_player.y,
-    obj_player.x,
-    obj_player.y,
-    obj_hindernis,
-    true,
-    true
-    );
-    
-if(obstacle != noone) {
-    real_distance = point_distance(obj_player.x, obj_player.y, obstacle.x, obstacle.y); 
-} else real_distance = max_distance;
-
-real_distance -= 10;
-hitbox_x = obj_player.x + (10*obj_player.image_xscale);
-
-real_distance *= obj_player.image_xscale;
-
-var x_factor = real_distance / sprite_get_width(spr_hitbox);
+with(obj_player) {
+    for(var i = other.max_distance; i &gt;= 0; i--) {
+        if(place_meeting(obj_player.x + ((i - 1) * obj_player.image_xscale), obj_player.y, obj_hindernis)) {
+            other.real_distance = i * obj_player.image_xscale;
+            break;
+        }
+    }
+}
 
 if(confirmed) {
     alarm_set(1, stun_time);
     scr_keylock_movement(true);
     confirmed = false;
-
 }
 
 if(alarm_get(1) == stun_time/2) {
-
-    var hitbox = instance_create(hitbox_x, obj_player.y, obj_hitbox_melee);
-    hitbox.damage = real_damage;
-    hitbox.is_crit = is_crit;
-    hitbox.origin_object = self;    
-    hitbox.image_xscale = x_factor;
-    confirmed = false;
-    
-    var ability_hitmark = instance_create(hitbox_x, obj_player.y - obj_player.y_melee_offset , obj_ability_hitmark);
-    ability_hitmark.sprite_index = spr_ultra_mana_beam;
-    ability_hitmark.image_xscale = x_factor;
-    ability_hitmark.alarm[0] = stun_time/2;
-    
+    obj_player.x += real_distance;
 }
-
 if(alarm_get(1) == -1) {
     scr_keylock_movement(false);
 }
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(!admin.playing) exit;
+
+draw_set_alpha(0.5);
+draw_set_colour(c_red);
+draw_arrow(obj_player.x, obj_player.y, obj_player.x + real_distance, obj_player.y, 30);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

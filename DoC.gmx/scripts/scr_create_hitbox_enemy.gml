@@ -9,7 +9,7 @@ var hitbox_x = argument0;
 var hitbox_y = argument1;
 var damage = argument2;
 var is_crit = argument3;
-var type = argument4
+var type = argument4;
 
 var hitbox;
 

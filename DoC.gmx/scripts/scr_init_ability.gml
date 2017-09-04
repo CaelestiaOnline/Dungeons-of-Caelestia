@@ -188,6 +188,7 @@ switch(ability) {
     //Magie
     //Abilites
     case "ability_mana_teleport":
+        stun_time = player_stats.attack_speed;
         switch(ability_strength) {
             case 1:
                 max_distance = 300;
@@ -215,9 +216,11 @@ switch(ability) {
         }
         break;
     case "attack_mana_beam":
+        stun_time = room_speed*2;
         switch(ability_strength) {
             case 666:
                 damage = round(player_stats.root_damage*10);
+                max_distance = 800;
                 break;
         }
         break;

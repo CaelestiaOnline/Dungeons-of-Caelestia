@@ -31,11 +31,32 @@ mana = item_stats[index, item_stats_mag.mana_usage];
 scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
 real_distance = 0;
 
-
 confirmed = false;
 
 hit_list = noone;
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm1</string>
           </argument>
         </arguments>
       </action>
@@ -80,22 +101,31 @@ hit_list = noone;
           <argument>
             <kind>1</kind>
             <string>///Angriff
+if(!admin.playing) exit;
+
 scr_mag_ability();
 
-
-    real_distance = 0;
-    with(obj_player) {
+real_distance = 0;
+with(obj_player) {
     for(var i = 0; i &lt; other.max_distance; i++) {
         if(place_meeting(obj_player.x + ((i + 1) * obj_player.image_xscale), obj_player.y, obj_hindernis)) {
             other.real_distance = i * obj_player.image_xscale;
             break;
         } else other.real_distance = other.max_distance * obj_player.image_xscale;
-        }
     }
+}
 
 if(confirmed) {
-    obj_player.x += real_distance;
+    alarm_set(1, stun_time);
+    scr_keylock_movement(true);
     confirmed = false;
+}
+
+if(alarm_get(1) == stun_time/2) {
+    obj_player.x += real_distance;
+}
+if(alarm_get(1) == -1) {
+    scr_keylock_movement(false);
 }
 
 </string>
@@ -124,7 +154,7 @@ if(confirmed) {
 
 draw_set_alpha(0.5);
 draw_set_colour(c_red);
-draw_arrow(obj_player.x, obj_player.y, obj_player.x + real_distance, obj_player.y, 5);
+draw_arrow(obj_player.x, obj_player.y, obj_player.x + real_distance, obj_player.y, 30);
 draw_set_alpha(1);
 </string>
           </argument>

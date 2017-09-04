@@ -124,6 +124,12 @@ right_click_pressed = 0;
 right_click_char = mb_right;
 right_click_locked = false;
 
+//Shift Key
+shift_key = 0;
+shift_key_pressed = 0;
+shift_key_char = vk_shift;
+shift_key_locked = false;
+
 //Pause Menu
 pause_menu_key = 0;
 pause_menu_key_pressed = 0;
@@ -276,7 +282,6 @@ if(!up_key_locked) {
     up_key = keyboard_check(up_key_char);
     up_key_pressed = keyboard_check_pressed(up_key_char);
 } else {
-    keyboard_clear(up_key_char);
     up_key = 0;
     up_key_pressed = 0;
 }
@@ -286,7 +291,6 @@ if(!down_key_locked) {
     down_key = keyboard_check(down_key_char);
     down_key_pressed = keyboard_check_pressed(down_key_char);
 } else {
-    keyboard_clear(down_key_char);
     down_key = 0;
     down_key_pressed = 0;
 }
@@ -296,7 +300,6 @@ if(!left_key_locked) {
     left_key = keyboard_check(left_key_char);
     left_key_pressed = keyboard_check_pressed(left_key_char);
 } else {
-    keyboard_clear(left_key_char);
     left_key = 0;
     left_key_pressed = 0;
 }
@@ -306,7 +309,6 @@ if(!right_key_locked) {
     right_key = keyboard_check(right_key_char);
     right_key_pressed = keyboard_check_pressed(right_key_char);
 } else {
-    keyboard_clear(right_key_char);
     right_key = 0;
     right_key_pressed = 0;
 }
@@ -347,7 +349,6 @@ if(!sprint_key_locked) {
     sprint_key_pressed = keyboard_check_pressed(sprint_key_char);
     sprint_key_released = keyboard_check_released(sprint_key_char);
 } else {
-    keyboard_clear(sprint_key_char);
     sprint_key = 0;
     sprint_key_pressed = 0;
     sprint_key_released = 0;
@@ -424,6 +425,15 @@ if(!right_click_locked) {
     keyboard_clear(right_click_char);
     right_click = 0;
     right_click_pressed = 0;
+}
+
+//Shift
+if(!shift_key_locked) {
+    shift_key = keyboard_check(shift_key_char);
+    shift_key_pressed = keyboard_check_pressed(shift_key_char);
+} else {
+    shift_key = 0;
+    shift_key_pressed = 0;
 }
 
 //Pause Menu
@@ -537,7 +547,6 @@ draw_set_alpha(0.1);
 mp_grid_draw(global.grid);
 draw_set_alpha(1);
 */
-
 
 </string>
           </argument>

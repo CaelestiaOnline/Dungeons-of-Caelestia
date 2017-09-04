@@ -5,7 +5,7 @@ scr_melee_attack_enemy(
     )
 */
 var damage = argument0;
-var type = argument1
+var type = argument1;
 
 var attack_axis;
 //if(obj_player.x >= self.x) attack_axis = 1;
@@ -13,7 +13,7 @@ var attack_axis;
 
 var hit_x;
 if(self.image_xscale == 1) hit_x = self.x + sprite_get_width(self.sprite_index)/2;
-if(self.image_xscale == -1) hit_x = self.x - sprite_get_width(self.sprite_index)/2 - sprite_get_width(type.sprite_index);
+if(self.image_xscale == -1) hit_x = self.x - sprite_get_width(self.sprite_index)/2 - sprite_get_width(spr_hitbox_enemy);
 
 //Angriff
 if(alarm_get(0) == attack_speed/2) {
