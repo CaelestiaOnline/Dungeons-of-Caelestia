@@ -97,7 +97,7 @@ count += 0.02;
             <kind>1</kind>
             <string>///Aufheben
 if(player_stats.hp != player_stats.max_hp) {
-    scr_player_heal(player_stats.max_hp/4);
+    scr_player_heal(heal);
     instance_destroy();
 }
 </string>
@@ -124,6 +124,8 @@ if(player_stats.hp != player_stats.max_hp) {
             <kind>1</kind>
             <string>///Draw Self
 draw_sprite(sprite_index, 0, x, y_item);
+
+if(admin.show_hitbox) scr_draw_hitbox();
 
 </string>
           </argument>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_hindernis_breakable</parentName>
+  <parentName>obj_hindernis_non_breakable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,14 +27,14 @@
             <kind>1</kind>
             <string>///Stats
 
-scr_initialise_obstacle_main(5, true, 22);
+scr_initialise_obstacle_main(-1, true, 22);
 
 //Verursachter Schaden
 damage = 2;
 
 //Zeitl. Schadensabschnitt
 time = 0;
-countdown = 5;
+countdown = 10;
 
 </string>
           </argument>
@@ -42,6 +42,28 @@ countdown = 5;
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Parent
+event_inherited();
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -82,31 +104,6 @@ scr_kollisionsschaden_solid(self, obj_player, damage);
             <kind>1</kind>
             <string>///Schaden an Gegner
 scr_kollisionsschaden_solid(self, obj_gegner, damage);
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Zerstörung bei 0 Hp
-if(hp &lt;= 0)
-{
-    instance_destroy();
-}
 </string>
           </argument>
         </arguments>

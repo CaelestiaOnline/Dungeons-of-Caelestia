@@ -160,6 +160,10 @@ instance_destroy();
             <string>///Draw self
 draw_sprite(sprite_index, 0, x, y_item);
 
+if(admin.show_hitbox) {
+    scr_draw_hitbox();
+}
+
 </string>
           </argument>
         </arguments>

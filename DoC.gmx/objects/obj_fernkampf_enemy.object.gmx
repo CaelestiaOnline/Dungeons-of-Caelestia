@@ -32,9 +32,9 @@ event_inherited();
 path = path_add();
 
 //Distanz
-max_distance = 500;
-min_distance = 100;
-safety_distance = 200;
+max_distance = 500 + round(random_range(-50, 50));
+min_distance = 100 + round(random_range(-10, 10));
+safety_distance = 200 + round(random_range(50, 0));
 min_distance_factor = 1;
 
 //Bullet Type

@@ -204,9 +204,6 @@ in_game = false;
 game_paused = false;
 playing = false;
 in_run = false;
-
-//Splash - Screen
-display_splash_screen = false;
 </string>
           </argument>
         </arguments>
@@ -503,6 +500,7 @@ if(keyboard_check_pressed(vk_f11)) {
         obj_player.x = room_stats[room, 2];
         obj_player.y = room_stats[room, 3];
     }
+    
 }
 
 //Ghost
@@ -520,6 +518,35 @@ if(is_ghost) {
 //Hitbox
 if(keyboard_check_pressed(vk_f8)) show_hitbox = 1 - show_hitbox;
 show_debug_overlay(show_hitbox);
+
+if(admin.playing &amp;&amp; !window_has_focus() &amp;&amp; !admin.game_paused) admin.pause_menu_key_pressed = 1;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instance_count (DEBUG)
+if(admin.show_hitbox) {
+draw_text(display_get_gui_width() - 400, 16, "Count: "+string(instance_count));
+}
 </string>
           </argument>
         </arguments>

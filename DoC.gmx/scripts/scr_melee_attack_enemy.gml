@@ -1,11 +1,9 @@
 /*
 scr_melee_attack_enemy(
-    schaden
-    Art der Hitbox 
+    schaden 
     )
 */
 var damage = argument0;
-var type = argument1;
 
 var attack_axis;
 //if(obj_player.x >= self.x) attack_axis = 1;
@@ -23,7 +21,6 @@ if(alarm_get(0) == attack_speed/2) {
         self.y,
         damage,
         false,
-        type
     );
                 
     //Hitmark

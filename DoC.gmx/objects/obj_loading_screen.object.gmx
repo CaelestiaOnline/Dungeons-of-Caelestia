@@ -25,6 +25,28 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Epileptic Mode
+epileptic_mode = scr_crit_attack(0.05);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Ladeanzeige
 orbit = 60;
 
@@ -88,7 +110,7 @@ alarm_set(0, room_speed*2);
           <argument>
             <kind>1</kind>
             <string>///Pro-Tip
-pro_tip_file_length = 143;
+pro_tip_file_length = 175;
 pro_tip_index = irandom(pro_tip_file_length -1);
 
 pro_tip_file = file_text_open_read(working_directory + "Textdateien\" + "pro_tip.txt");
@@ -101,6 +123,8 @@ for(n = 0; n &lt;= pro_tip_index; n++) {
 }
 
 file_text_close(pro_tip_file);
+
+if(epileptic_mode) pro_tip = "WENN DU EPILEPSIE HAST KANNST DU DAS HIER SOWIESO NICHT LESEN, ALSO HERZLICHEN GLUECKWUNSCH, DU BIST GESUND!";
 
 </string>
           </argument>
@@ -160,6 +184,8 @@ loading_screen_heading = obj_loading_screen_stats.loading_screen_heading;
 if(loading_screen_heading == "") loading_screen_heading = "LOADING";
 
 points = "";
+
+if(epileptic_mode) loading_screen_heading = "DELETING BRAIN CELLS";
 </string>
           </argument>
         </arguments>
@@ -198,6 +224,8 @@ background_index[0] = choose(
     bg_loading_screen14,
     bg_loading_screen15
     );
+    
+if(epileptic_mode) background_visible[0] = false;
 </string>
           </argument>
         </arguments>
@@ -270,6 +298,28 @@ scr_circlefade(goal, 60);
       </action>
     </event>
     <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Epilepsie-Mode
+if(epileptic_mode) background_colour[0] = scr_get_random_colour();
+</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -452,7 +502,7 @@ draw_roundrect(
     -50,
     view_hview[0]/2 - 75,    
     view_wview[0]/2 - 150,
-    view_hview[0]/2 + 75,
+    view_hview[0]/2 + 100,
     0
 );
 
@@ -462,7 +512,7 @@ draw_rectangle(
     25 - 5,
     view_hview[0]/2 - 25,
     25 + 5,
-    view_hview[0]/2 + 50,
+    view_hview[0]/2 + 75,
     0    
 );
 

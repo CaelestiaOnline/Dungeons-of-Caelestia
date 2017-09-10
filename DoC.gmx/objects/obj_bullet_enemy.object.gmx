@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>obj_bullet</parentName>
-  <maskName>spr_bullet_collision_box</maskName>
+  <maskName>spr_hanzo_bow_bullet_collision_box</maskName>
   <events>
     <event eventtype="4" ename="obj_gegner">
       <action>
@@ -48,14 +48,19 @@
           <argument>
             <kind>1</kind>
             <string>///Kollision mit Spieler
-//Zerstörung
-instance_destroy();
+if(obj_player.is_crouching &amp;&amp; scr_crit_attack(1)) exit;
+
+if(instance_exists(origin_object)) {
+origin_object.hit = true;
+}
 
 //Verminderung der Hp
 scr_deal_player_damage(damage);
 //scr_draw_crit(other, is_crit);
 
-origin_object.hit = true;
+
+//Zerstörung
+instance_destroy();
 </string>
           </argument>
         </arguments>

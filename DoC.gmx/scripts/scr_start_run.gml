@@ -6,6 +6,8 @@ scr_start_run(
 hub.in_hub = false;
 admin.in_run = true;
 admin.playing = true;
+scr_inventory_clear_all();
+scr_effect_rem_all(obj_player);
 
 var game_room = rm_run_forest_init;
 

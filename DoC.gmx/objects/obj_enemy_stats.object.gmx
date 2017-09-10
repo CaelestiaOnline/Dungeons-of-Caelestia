@@ -183,8 +183,8 @@ enemy_stats[obj_forest_penguin, 4] = "normal";
 
 enemy_stats[obj_forest_penguin, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_forest_penguin, enemy_stats_normal.damage] = 12;
-enemy_stats[obj_forest_penguin, enemy_stats_normal.attack_speed] = 60;
-enemy_stats[obj_forest_penguin, enemy_stats_normal.max_speed] = 1.5;
+enemy_stats[obj_forest_penguin, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_forest_penguin, enemy_stats_normal.max_speed] = 1.8;
 enemy_stats[obj_forest_penguin, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_forest_penguin, enemy_stats_normal.money_drop] = 15;
 
@@ -197,8 +197,8 @@ enemy_stats[obj_forest_penguin_small, 4] = "normal";
 
 enemy_stats[obj_forest_penguin_small, enemy_stats_normal.hp] = 25;
 enemy_stats[obj_forest_penguin_small, enemy_stats_normal.damage] = 8;
-enemy_stats[obj_forest_penguin_small, enemy_stats_normal.attack_speed] = 40;
-enemy_stats[obj_forest_penguin_small, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_forest_penguin_small, enemy_stats_normal.attack_speed] = 30;
+enemy_stats[obj_forest_penguin_small, enemy_stats_normal.max_speed] = 2.3;
 enemy_stats[obj_forest_penguin_small, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_forest_penguin_small, enemy_stats_normal.money_drop] = 15;
 
@@ -211,8 +211,8 @@ enemy_stats[obj_forest_penguin_bullet, 4] = "normal";
 
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.damage] = 20;
-enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.attack_speed] = 100;
-enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.max_speed] = 1;
+enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.attack_speed] = 90;
+enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.max_speed] = 1.3;
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.money_drop] = 15;
 
@@ -224,8 +224,8 @@ enemy_stats[obj_attack_tree, 3] = true;
 enemy_stats[obj_attack_tree, 4] = "normal";
 
 enemy_stats[obj_attack_tree, enemy_stats_normal.hp] = 70;
-enemy_stats[obj_attack_tree, enemy_stats_normal.damage] = 5;
-enemy_stats[obj_attack_tree, enemy_stats_normal.attack_speed] = 120;
+enemy_stats[obj_attack_tree, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_attack_tree, enemy_stats_normal.attack_speed] = 100;
 enemy_stats[obj_attack_tree, enemy_stats_normal.max_speed] = 1.2;
 enemy_stats[obj_attack_tree, enemy_stats_normal.xp_drop] = 256;
 enemy_stats[obj_attack_tree, enemy_stats_normal.money_drop] = 12;
@@ -239,8 +239,8 @@ enemy_stats[obj_blueberry, 4] = "normal";
 
 enemy_stats[obj_blueberry, enemy_stats_normal.hp] = 20;
 enemy_stats[obj_blueberry, enemy_stats_normal.damage] = 10;
-enemy_stats[obj_blueberry, enemy_stats_normal.attack_speed] = 70;
-enemy_stats[obj_blueberry, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_blueberry, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_blueberry, enemy_stats_normal.max_speed] = 2.7;
 enemy_stats[obj_blueberry, enemy_stats_normal.xp_drop] = 32;
 enemy_stats[obj_blueberry, enemy_stats_normal.money_drop] = 2;
 
@@ -267,8 +267,8 @@ enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 4] = "normal";
 
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.hp] = 25;
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.damage] = 20;
-enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.attack_speed] = 60;
-enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.max_speed] = 2.4;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.max_speed] = 2.6;
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.money_drop] = 6;
 
@@ -293,9 +293,9 @@ enemy_stats[obj_mushroom, 2] = false;
 enemy_stats[obj_mushroom, 3] = true;
 enemy_stats[obj_mushroom, 4] = "normal";
 
-enemy_stats[obj_mushroom, enemy_stats_normal.hp] = 200;
-enemy_stats[obj_mushroom, enemy_stats_normal.damage] = 2;
-enemy_stats[obj_mushroom, enemy_stats_normal.attack_speed] = 600;
+enemy_stats[obj_mushroom, enemy_stats_normal.hp] = 80;
+enemy_stats[obj_mushroom, enemy_stats_normal.damage] = 8;
+enemy_stats[obj_mushroom, enemy_stats_normal.attack_speed] = 300;
 enemy_stats[obj_mushroom, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_mushroom, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_mushroom, enemy_stats_normal.money_drop] = 15;
@@ -309,8 +309,8 @@ enemy_stats[obj_boar, 4] = "normal";
 
 enemy_stats[obj_boar, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_boar, enemy_stats_normal.damage] = 10;
-enemy_stats[obj_boar, enemy_stats_normal.attack_speed] = 90;
-enemy_stats[obj_boar, enemy_stats_normal.max_speed] = 1.5;
+enemy_stats[obj_boar, enemy_stats_normal.attack_speed] = 80;
+enemy_stats[obj_boar, enemy_stats_normal.max_speed] = 1.7;
 enemy_stats[obj_boar, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_boar, enemy_stats_normal.money_drop] = 12;
 </string>
@@ -371,9 +371,9 @@ enemy_stats[obj_walking_blade_of_grass, 3] = true;
 enemy_stats[obj_walking_blade_of_grass, 4] = "normal";
 
 enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.hp] = 15;
-enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.damage] = 10;
-enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.attack_speed] = 60;
-enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.max_speed] = 3;
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.damage] = 8;
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.attack_speed] = 20;
+enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.max_speed] = 4;
 enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.xp_drop] = 16;
 enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.money_drop] = 2;
 
@@ -386,8 +386,8 @@ enemy_stats[obj_fox, 4] = "normal";
 
 enemy_stats[obj_fox, enemy_stats_normal.hp] = 65;
 enemy_stats[obj_fox, enemy_stats_normal.damage] = 20;
-enemy_stats[obj_fox, enemy_stats_normal.attack_speed] = 90;
-enemy_stats[obj_fox, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_fox, enemy_stats_normal.attack_speed] = 80;
+enemy_stats[obj_fox, enemy_stats_normal.max_speed] = 2.7;
 enemy_stats[obj_fox, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_fox, enemy_stats_normal.money_drop] = 19;
 </string>
@@ -414,7 +414,7 @@ enemy_stats[obj_fox, enemy_stats_normal.money_drop] = 19;
 
 //Flischfressene Pflanze(1)
 enemy_stats[obj_carnivora, 0] = "Fleischfressende Pflanze";
-enemy_stats[obj_carnivora, 1] = "Sie hat mehr als nur einen Angriff";
+enemy_stats[obj_carnivora, 1] = "Sie hat mehr als nur einen Angriff!";
 enemy_stats[obj_carnivora, 2] = false;
 enemy_stats[obj_carnivora, 3] = true;
 enemy_stats[obj_carnivora, 4] = "normal";

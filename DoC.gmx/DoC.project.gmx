@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="2" name="datafiles">
-    <datafiles number="2" name="Textdateien">
+  <datafiles number="3" name="datafiles">
+    <datafiles number="3" name="Textdateien">
       <datafile>
         <name>pro_tip.txt</name>
         <exists>-1</exists>
@@ -17,7 +17,7 @@
         <store>0</store>
         <ConfigOptions>
           <Config name="Default">
-            <CopyToMask>9223372036854775807</CopyToMask>
+            <CopyToMask>1048648</CopyToMask>
           </Config>
         </ConfigOptions>
         <filename>pro_tip.txt</filename>
@@ -38,6 +38,25 @@
           </Config>
         </ConfigOptions>
         <filename>splash_screen.txt</filename>
+      </datafile>
+    </datafiles>
+    <datafiles number="3" name="SaveData">
+      <datafile>
+        <name>savedata.ini</name>
+        <exists>-1</exists>
+        <size>1703</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>1048648</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>savedata.ini</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -238,10 +257,13 @@
         <sprite>sprites\spr_sonic_wave</sprite>
         <sprite>sprites\spr_slug_snot_bullet</sprite>
         <sprite>sprites\spr_lasergun_bullet</sprite>
+        <sprite>sprites\spr_nerfgun_bullet</sprite>
         <sprite>sprites\spr_bow_bullet</sprite>
+        <sprite>sprites\spr_hanzo_bow_bullet</sprite>
         <sprite>sprites\spr_blowgun_bullet</sprite>
         <sprite>sprites\spr_throwing_dagger_bullet</sprite>
         <sprites name="Colbox">
+          <sprite>sprites\spr_hanzo_bow_bullet_collision_box</sprite>
           <sprite>sprites\spr_bullet_collision_box</sprite>
         </sprites>
         <sprite>sprites\spr_shuriken_bullet</sprite>
@@ -273,9 +295,21 @@
         <sprite>sprites\spr_bush6</sprite>
       </sprites>
       <sprites name="Tree">
-        <sprite>sprites\spr_dead_tree_black</sprite>
-        <sprite>sprites\spr_dead_tree_blue</sprite>
-        <sprite>sprites\spr_dead_tree_white</sprite>
+        <sprites name="DeadTree">
+          <sprite>sprites\spr_dead_tree_white</sprite>
+          <sprite>sprites\spr_dead_tree_blue</sprite>
+          <sprite>sprites\spr_dead_tree_black</sprite>
+        </sprites>
+        <sprites name="Tree">
+          <sprite>sprites\spr_tree_green</sprite>
+          <sprite>sprites\spr_tree_yellow</sprite>
+          <sprite>sprites\spr_tree_white</sprite>
+          <sprite>sprites\spr_tree_blue</sprite>
+          <sprite>sprites\spr_tree_red</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Barrel">
+        <sprite>sprites\spr_barrel</sprite>
       </sprites>
     </sprites>
     <sprites name="HUD">
@@ -329,10 +363,15 @@
       <sprite>sprites\spr_hub_portal_red</sprite>
       <sprite>sprites\spr_hub_portal_green</sprite>
       <sprite>sprites\spr_hub_portal_yellow</sprite>
+      <sprite>sprites\spr_hub_portal_orange</sprite>
       <sprite>sprites\spr_hub_portal_light_blue</sprite>
+      <sprite>sprites\spr_hub_portal_violet</sprite>
       <sprite>sprites\spr_hub_chair</sprite>
       <sprite>sprites\spr_hub_shop</sprite>
       <sprite>sprites\spr_hub_terminal3</sprite>
+      <sprite>sprites\spr_hub_terminal4</sprite>
+      <sprite>sprites\spr_hub_terminal5</sprite>
+      <sprite>sprites\spr_wodden_chest</sprite>
     </sprites>
     <sprites name="Progress">
       <sprites name="Money">
@@ -500,6 +539,7 @@
             <script>scripts\scr_inventory_rem_item_object.gml</script>
             <script>scripts\scr_inventory_rem_item.gml</script>
             <script>scripts\scr_inventory_rem_item_slot_count.gml</script>
+            <script>scripts\scr_inventory_clear_all.gml</script>
           </scripts>
           <scripts name="drop">
             <script>scripts\scr_inventory_drop_item_place_count.gml</script>
@@ -524,7 +564,7 @@
             <script>scripts\scr_melee_attack.gml</script>
             <script>scripts\scr_create_hitbox.gml</script>
             <script>scripts\scr_create_hitmark.gml</script>
-            <script>scripts\scr_prim_attack.gml</script>
+            <script>scripts\scr_prim_ability.gml</script>
           </scripts>
           <scripts name="Fernkampf">
             <script>scripts\scr_create_bullet.gml</script>
@@ -533,13 +573,14 @@
           </scripts>
         </scripts>
         <scripts name="sec">
-          <script>scripts\scr_sec_attack.gml</script>
+          <script>scripts\scr_sec_ability.gml</script>
         </scripts>
         <scripts name="mag">
-          <script>scripts\scr_mag_attack.gml</script>
           <script>scripts\scr_mag_ability.gml</script>
+          <script>scripts\scr_mag_damage.gml</script>
         </scripts>
         <script>scripts\scr_attack_cooldown.gml</script>
+        <script>scripts\scr_get_item_damage.gml</script>
       </scripts>
       <scripts name="Enemy">
         <script>scripts\scr_draw_death_enemy.gml</script>
@@ -642,6 +683,7 @@
         <script>scripts\scr_enter_game.gml</script>
         <script>scripts\scr_leave_game.gml</script>
         <script>scripts\scr_leave_current_room.gml</script>
+        <script>scripts\scr_change_run_room.gml</script>
       </scripts>
       <scripts name="Schatten">
         <script>scripts\scr_draw_shadow.gml</script>
@@ -658,6 +700,7 @@
           <script>scripts\scr_keylock_abilities.gml</script>
           <script>scripts\scr_keylock_pickupmenu.gml</script>
         </scripts>
+        <script>scripts\scr_keylock_mag_ability.gml</script>
       </scripts>
       <scripts name="Hitbox">
         <script>scripts\scr_draw_hitbox.gml</script>
@@ -707,6 +750,7 @@
       </fonts>
       <fonts name="Death">
         <font>fonts\fnt_death_message</font>
+        <font>fonts\fnt_death_menu_heading</font>
       </fonts>
       <fonts name="Explanation">
         <font>fonts\fnt_explanation</font>
@@ -759,10 +803,18 @@
             <object>objects\obj_dead_tree_blue</object>
             <object>objects\obj_dead_tree_white</object>
           </objects>
+          <object>objects\obj_cactus</object>
+          <objects name="Tree">
+            <object>objects\obj_tree_green</object>
+            <object>objects\obj_tree_yellow</object>
+            <object>objects\obj_tree_white</object>
+            <object>objects\obj_tree_blue</object>
+            <object>objects\obj_tree_red</object>
+          </objects>
         </objects>
         <objects name="Breakable">
           <object>objects\obj_hindernis_breakable</object>
-          <object>objects\obj_cactus</object>
+          <object>objects\obj_barrel</object>
         </objects>
       </objects>
     </objects>
@@ -817,6 +869,9 @@
       <objects name="Ground-Item">
         <object>objects\obj_ground_item</object>
         <object>objects\obj_ground_item_holder</object>
+        <objects name="Heal-Orb">
+          <object>objects\obj_heal_orb</object>
+        </objects>
       </objects>
     </objects>
     <objects name="Items">
@@ -824,12 +879,21 @@
         <objects name="nahkampf">
           <object>objects\obj_fist</object>
           <object>objects\obj_stone_sword</object>
+          <object>objects\obj_knuckleduster</object>
+          <object>objects\obj_titanium_sword</object>
+          <object>objects\obj_crystal_sword</object>
+          <object>objects\obj_dagger</object>
+          <object>objects\obj_iron_sword</object>
+          <object>objects\obj_wooden_staff</object>
+          <object>objects\obj_iron_staff</object>
+          <object>objects\obj_longsword</object>
           <object>objects\obj_master_sword</object>
           <object>objects\obj_katana</object>
           <object>objects\obj_battle_axe</object>
           <object>objects\obj_war_hammer</object>
           <object>objects\obj_chainsaw</object>
           <object>objects\obj_lightsaber</object>
+          <object>objects\obj_scythe</object>
           <objects name="Hitbox">
             <object>objects\obj_hitbox_melee</object>
           </objects>
@@ -860,6 +924,24 @@
             <object>objects\obj_lasergun</object>
             <object>objects\obj_lasergun_bullet</object>
           </objects>
+          <objects name="Hanzo-Bow">
+            <object>objects\obj_hanzo_bow</object>
+            <object>objects\obj_hanzo_bow_bullet</object>
+          </objects>
+          <objects name="Shotgun">
+            <object>objects\obj_shotgun</object>
+          </objects>
+          <objects name="Railgun">
+            <object>objects\obj_railgun</object>
+            <object>objects\obj_railgun_bullet</object>
+          </objects>
+          <objects name="Nerfgun">
+            <object>objects\obj_nerfgun</object>
+            <object>objects\obj_nerfgun_bullet</object>
+          </objects>
+        </objects>
+        <objects name="misc">
+          <object>objects\obj_tesla_gun</object>
         </objects>
       </objects>
       <objects name="sec">
@@ -901,6 +983,7 @@
         <objects name="Ability-Hitmark">
           <object>objects\obj_ability_hitmark</object>
         </objects>
+        <object>objects\obj_mana_item_ability</object>
       </objects>
       <objects name="item">
         <object>objects\obj_swift_orb</object>
@@ -945,12 +1028,9 @@
       <object>objects\obj_hub_chair</object>
       <object>objects\obj_hub_terminal</object>
       <object>objects\obj_hub_shop</object>
-      <object>objects\obj_hub_clear</object>
-      <object>objects\obj_hub_portal_testroom1</object>
-      <object>objects\obj_hub_portal_testroom2</object>
-      <object>objects\obj_hub_portal_hub</object>
-      <object>objects\obj_hub_start_run</object>
-      <object>objects\obj_hub_enter_menu</object>
+      <object>objects\obj_hub_clear_items</object>
+      <object>objects\obj_hub_clear_inv</object>
+      <object>objects\obj_wooden_chest</object>
       <object>objects\obj_mouse_ind_hub</object>
       <object>objects\obj_hub</object>
       <objects name="Buttons">
@@ -967,6 +1047,15 @@
       </objects>
       <object>objects\obj_hindernis_interaction</object>
       <object>objects\obj_floor_interaction</object>
+      <objects name="Portals">
+        <object>objects\obj_hub_portal_hub</object>
+        <object>objects\obj_hub_start_run</object>
+        <object>objects\obj_portal_run_room</object>
+        <object>objects\obj_hub_portal_testroom1</object>
+        <object>objects\obj_hub_portal_testroom2</object>
+        <object>objects\obj_hub_portal_testroom4</object>
+        <object>objects\obj_hub_enter_menu</object>
+      </objects>
     </objects>
     <objects name="Menu">
       <objects name="main_menu">
@@ -1053,9 +1142,7 @@
           <object>objects\obj_slug_snot_bullet</object>
           <object>objects\obj_bullet_carnivora</object>
           <object>objects\obj_bullet_enemy</object>
-          <object>objects\obj_hitbox_melee_enemy</object>
-          <object>objects\obj_hitboox_carnivora</object>
-          <object>objects\obj_hitbox_poison_fog</object>
+          <object>objects\obj_hitbox_enemy</object>
         </objects>
         <object>objects\obj_enemy_stats</object>
         <objects name="Minibosse / Bosse">
@@ -1103,13 +1190,16 @@
     </objects>
     <objects name="Progress">
       <object>objects\obj_progress</object>
-      <objects name="XP">
-        <object>objects\obj_xp_orb</object>
-      </objects>
+      <object>objects\obj_death_stats</object>
       <objects name="Money">
         <object>objects\obj_coin</object>
       </objects>
-      <object>objects\obj_heal_orb</object>
+      <objects name="XP">
+        <object>objects\obj_xp_orb</object>
+      </objects>
+      <objects name="Achievements">
+        <object>objects\obj_achivements</object>
+      </objects>
     </objects>
     <objects name="Stats">
       <object>objects\obj_stats</object>
@@ -1169,8 +1259,8 @@
     </rooms>
     <rooms name="Run">
       <rooms name="Forest">
-        <room>rooms\rm_run_forest01</room>
         <room>rooms\rm_run_forest_init</room>
+        <room>rooms\rm_run_forest1</room>
       </rooms>
     </rooms>
   </rooms>

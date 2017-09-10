@@ -43,6 +43,8 @@ scr_init_shadow(self, sprite_get_width(sprite_index)/2, 4, 0);
 
 origin_object = 0;
 
+explosion_colour = c_red;
+
 </string>
           </argument>
         </arguments>
@@ -65,7 +67,7 @@ origin_object = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>effect_create_above(ef_explosion, x, y, 0, c_red);
+            <string>effect_create_above(ef_explosion, x, y, 0, explosion_colour);
 </string>
           </argument>
         </arguments>
@@ -171,6 +173,7 @@ origin_object.hit_list = other;
           <argument>
             <kind>1</kind>
             <string>///Kollision mit Hindernis
+scr_deal_damage_hindernis(other, 1);
 //Zerstörung
 instance_destroy();
 </string>

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_mana_teleport_orb</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-index = items.mana_teleport_orb;
+index = items.mana_teleport_orb_v2;
 mana = item_stats[index, item_stats_mag.mana_usage];
 scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
 real_distance = 0;
@@ -34,128 +34,6 @@ real_distance = 0;
 confirmed = false;
 
 hit_list = noone;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>alarm1</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>alarm0</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Angriff
-if(!admin.playing) exit;
-
-scr_mag_ability();
-
-real_distance = 0;
-with(obj_player) {
-    for(var i = other.max_distance; i &gt;= 0; i--) {
-        if(place_meeting(obj_player.x + ((i - 1) * obj_player.image_xscale), obj_player.y, obj_hindernis)) {
-            other.real_distance = i * obj_player.image_xscale;
-            break;
-        }
-    }
-}
-
-if(confirmed) {
-    alarm_set(1, stun_time);
-    scr_keylock_movement(true);
-    confirmed = false;
-}
-
-if(alarm_get(1) == stun_time/2) {
-    obj_player.x += real_distance;
-}
-if(alarm_get(1) == -1) {
-    scr_keylock_movement(false);
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(!admin.playing) exit;
-
-draw_set_alpha(0.5);
-draw_set_colour(c_red);
-draw_arrow(obj_player.x, obj_player.y, obj_player.x + real_distance, obj_player.y, 30);
-draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

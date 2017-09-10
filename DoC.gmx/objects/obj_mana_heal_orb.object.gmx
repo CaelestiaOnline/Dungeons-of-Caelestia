@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_mana_item_ability</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -82,7 +82,6 @@ scr_mag_ability();
 if(confirmed) {
     scr_effect(scr_effect_index(item_stats[index, item_stats_mag.ability]), item_stats[index, item_stats_mag.ability_strength], obj_player);
     confirmed = false;
-    show_debug_message("YES");
 }
 
 </string>

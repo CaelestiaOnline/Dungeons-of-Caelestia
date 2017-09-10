@@ -1,23 +1,10 @@
 /*
-scr_sec_attack(
-    damage,
-    damage_crit
-    type,
+scr_sec_ability(
     );
 */
 
 if(!admin.playing) exit;
 if(!player_stats.attack_ready) exit;
-
-var damage_normal = argument0;
-var damage_crit = argument1;
-var chance_crit = player_stats.chance_crit;
-is_crit = false;
-var damage = 0;
-
-is_crit = scr_crit_attack(chance_crit);
-if(is_crit) damage = damage_crit;
-else damage = damage_normal; 
 
 ///Angriff
 
@@ -31,4 +18,3 @@ if(admin.sec_attack_key_pressed || admin.sec_attack_key) {
     }
 }
 
-return damage;

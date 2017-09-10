@@ -53,6 +53,11 @@ phase2 = false;
           <argument>
             <kind>1</kind>
             <string>//Interaktion
+if(!instance_exists(origin_object)) {
+    instance_destroy();
+    exit;
+}
+
 if(!collision_circle(origin_object.x, origin_object.y, 100, obj_player, false, true)) {
     phase2 = true;
 }
@@ -99,7 +104,7 @@ draw_sprite_ext(spr_info_box, 0, x, y, x_scale, y_scale, 0, c_white, box_alpha);
 
 draw_set_valign(fa_middle);
 draw_set_halign(fa_center);
-draw_text_ext(x, y, text, 15, 100);
+draw_text_ext(x, y - 8, text, 15, 100);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
 draw_set_alpha(1);

@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_interaction("Testroom1 betreten?");
+            <string>scr_interaction("Testroom1 betreten?", "&gt;&gt; Testroom1");
 
 if(confirmed) {
     scr_leave_hub(rm_testroom1);

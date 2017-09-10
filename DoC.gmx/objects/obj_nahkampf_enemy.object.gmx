@@ -34,10 +34,9 @@ path = path_add();
 //Distanz
 max_distance = 100;
 min_distance = 48;
-safety_distance = 200;
+safety_distance = 200 + round(random_range(50, 0));
 min_distance_factor = 1;
 
-type = obj_hitbox_melee_enemy;
 </string>
           </argument>
         </arguments>
@@ -89,7 +88,7 @@ if(!triggered) exit;
 scr_pathfinding_enemy();
 
 if(attack_ready) {
-    scr_melee_attack_enemy(damage, type);
+    scr_melee_attack_enemy(damage);
 }
 </string>
           </argument>

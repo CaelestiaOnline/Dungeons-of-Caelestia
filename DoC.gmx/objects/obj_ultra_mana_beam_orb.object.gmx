@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_mana_item_ability</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -31,6 +31,9 @@ scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, it
 mana = item_stats[index, item_stats_mag.mana_usage];
 real_distance = 0;
 hitbox_x = 0;
+x_factor = 0;
+real_damage = 0;
+old_mana = 0;
 
 confirmed = false;
 
@@ -104,15 +107,16 @@ hit_list = noone;
             <string>///Angriff
 if(!admin.playing) exit;
 
+scr_mag_ability();
+
 real_distance = 0;
 hitbox_x = 0;
-
-var real_damage = scr_mag_attack(damage);
+x_factor = 0;
 
 var obstacle = collision_line(
-    obj_player.x + (max_distance * obj_player.image_xscale),
-    obj_player.y,
     obj_player.x,
+    obj_player.y,
+    obj_player.x + (max_distance * obj_player.image_xscale),
     obj_player.y,
     obj_hindernis,
     true,
@@ -128,25 +132,23 @@ hitbox_x = obj_player.x + (10*obj_player.image_xscale);
 
 real_distance *= obj_player.image_xscale;
 
-var x_factor = real_distance / sprite_get_width(spr_hitbox);
+x_factor = real_distance / sprite_get_width(spr_hitbox);
 
 if(confirmed) {
     alarm_set(1, stun_time);
-    scr_keylock_movement(true);
+    scr_keylock_mag_ability(true);
     confirmed = false;
-
 }
 
 if(alarm_get(1) == stun_time/2) {
-
+    var real_damage = scr_mag_damage(damage);
     var hitbox = instance_create(hitbox_x, obj_player.y, obj_hitbox_melee);
     hitbox.damage = real_damage;
     hitbox.is_crit = is_crit;
     hitbox.origin_object = self;    
     hitbox.image_xscale = x_factor;
-    confirmed = false;
     
-    var ability_hitmark = instance_create(hitbox_x, obj_player.y - obj_player.y_melee_offset , obj_ability_hitmark);
+    var ability_hitmark = instance_create(hitbox_x, obj_player.y - obj_player.y_melee_offset, obj_ability_hitmark);
     ability_hitmark.sprite_index = spr_ultra_mana_beam;
     ability_hitmark.image_xscale = x_factor;
     ability_hitmark.alarm[0] = stun_time/2;
@@ -154,7 +156,8 @@ if(alarm_get(1) == stun_time/2) {
 }
 
 if(alarm_get(1) == -1) {
-    scr_keylock_movement(false);
+    scr_keylock_mag_ability(false);
+    alarm_set(1, -2);
 }
 
 </string>

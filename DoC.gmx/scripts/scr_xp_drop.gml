@@ -20,7 +20,12 @@ else {
         else {
             xp -= current_xp;
         }
-        var xp_orb = instance_create(drop_x + random_range(-range,range), drop_y + random_range(-range,range), obj_xp_orb);
+        var drop_x_inacc = random_range(-range,range);
+        var drop_y_inacc = random_range(-range,range);
+
+        if(instance_place(drop_x + drop_x_inacc, drop_y + drop_y_inacc, obj_hindernis)) continue;
+        
+        var xp_orb = instance_create(drop_x + drop_x_inacc, drop_y + drop_y_inacc, obj_xp_orb);
         xp_orb.xp = current_xp;
         xp_orb.sprite_index = scr_xp_select_sprite(current_xp);
     }
