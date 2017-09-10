@@ -35,7 +35,6 @@ max_distance = 200;
 
 //Projektil
 type = obj_bullet_carnivora;
-type2 = obj_hitbox_carnivora
 </string>
           </argument>
         </arguments>
@@ -113,7 +112,7 @@ if(    obj_player.x &lt; x - max_distance
     }
 }
 else{
-    scr_melee_attack_enemy(damage, type2);
+    scr_melee_attack_enemy(damage);
         if(hit){
         scr_effect_mana(-10, obj_player);
         hit = false;

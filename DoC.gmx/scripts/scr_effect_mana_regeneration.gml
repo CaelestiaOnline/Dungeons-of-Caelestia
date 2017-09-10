@@ -7,8 +7,8 @@ scr_effect_mana_regeneration(
 */
 
 var mana = argument0;
-var mspeed = argument1;
-var time = argument2;
+var time = argument1;
+var mspeed = argument2;
 var goal_object = obj_player;
 var effect_index = effect.mana_regeneration;
 

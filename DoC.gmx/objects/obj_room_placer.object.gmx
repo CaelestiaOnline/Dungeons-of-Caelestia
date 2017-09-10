@@ -56,7 +56,12 @@ if(room == goal) {
     obj_player.y = room_stats[goal, (2 * number)+1];
     scr_keylock_all(false);
     scr_update_grid();
+    
+    //View
     view_object[0] = obj_player;
+    view_hborder[0] = 512;
+    view_vborder[0] = 512;
+    
     instance_destroy();
 }
 </string>

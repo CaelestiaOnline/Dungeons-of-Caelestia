@@ -6,11 +6,12 @@ scr_effect_mana(
 */
 
 var mana = argument0;
+
 var goal_object = argument1;
 var effect_index = effect.mana;
 var time = room_speed;
 var mregeneration_speed = round(room_speed/20);
-var mregeneration_heal = mana div (1 / (mregeneration_speed / time));
+var mregeneration_heal = mana / (time / mregeneration_speed);
 
 if(!instance_exists(goal_object)) exit;
 if(string(goal_object.object_index) == string(obj_player)) goal_object = player_stats;

@@ -124,6 +124,12 @@ right_click_pressed = 0;
 right_click_char = mb_right;
 right_click_locked = false;
 
+//Shift Key
+shift_key = 0;
+shift_key_pressed = 0;
+shift_key_char = vk_shift;
+shift_key_locked = false;
+
 //Pause Menu
 pause_menu_key = 0;
 pause_menu_key_pressed = 0;
@@ -198,9 +204,6 @@ in_game = false;
 game_paused = false;
 playing = false;
 in_run = false;
-
-//Splash - Screen
-display_splash_screen = false;
 </string>
           </argument>
         </arguments>
@@ -276,7 +279,6 @@ if(!up_key_locked) {
     up_key = keyboard_check(up_key_char);
     up_key_pressed = keyboard_check_pressed(up_key_char);
 } else {
-    keyboard_clear(up_key_char);
     up_key = 0;
     up_key_pressed = 0;
 }
@@ -286,7 +288,6 @@ if(!down_key_locked) {
     down_key = keyboard_check(down_key_char);
     down_key_pressed = keyboard_check_pressed(down_key_char);
 } else {
-    keyboard_clear(down_key_char);
     down_key = 0;
     down_key_pressed = 0;
 }
@@ -296,7 +297,6 @@ if(!left_key_locked) {
     left_key = keyboard_check(left_key_char);
     left_key_pressed = keyboard_check_pressed(left_key_char);
 } else {
-    keyboard_clear(left_key_char);
     left_key = 0;
     left_key_pressed = 0;
 }
@@ -306,7 +306,6 @@ if(!right_key_locked) {
     right_key = keyboard_check(right_key_char);
     right_key_pressed = keyboard_check_pressed(right_key_char);
 } else {
-    keyboard_clear(right_key_char);
     right_key = 0;
     right_key_pressed = 0;
 }
@@ -347,7 +346,6 @@ if(!sprint_key_locked) {
     sprint_key_pressed = keyboard_check_pressed(sprint_key_char);
     sprint_key_released = keyboard_check_released(sprint_key_char);
 } else {
-    keyboard_clear(sprint_key_char);
     sprint_key = 0;
     sprint_key_pressed = 0;
     sprint_key_released = 0;
@@ -426,6 +424,15 @@ if(!right_click_locked) {
     right_click_pressed = 0;
 }
 
+//Shift
+if(!shift_key_locked) {
+    shift_key = keyboard_check(shift_key_char);
+    shift_key_pressed = keyboard_check_pressed(shift_key_char);
+} else {
+    shift_key = 0;
+    shift_key_pressed = 0;
+}
+
 //Pause Menu
 if(!pause_menu_key_locked) {
     pause_menu_key = keyboard_check(pause_menu_key_char);
@@ -493,6 +500,7 @@ if(keyboard_check_pressed(vk_f11)) {
         obj_player.x = room_stats[room, 2];
         obj_player.y = room_stats[room, 3];
     }
+    
 }
 
 //Ghost
@@ -510,6 +518,35 @@ if(is_ghost) {
 //Hitbox
 if(keyboard_check_pressed(vk_f8)) show_hitbox = 1 - show_hitbox;
 show_debug_overlay(show_hitbox);
+
+if(admin.playing &amp;&amp; !window_has_focus() &amp;&amp; !admin.game_paused) admin.pause_menu_key_pressed = 1;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instance_count (DEBUG)
+if(admin.show_hitbox) {
+draw_text(display_get_gui_width() - 400, 16, "Count: "+string(instance_count));
+}
 </string>
           </argument>
         </arguments>
@@ -537,7 +574,6 @@ draw_set_alpha(0.1);
 mp_grid_draw(global.grid);
 draw_set_alpha(1);
 */
-
 
 </string>
           </argument>

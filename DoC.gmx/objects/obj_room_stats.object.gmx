@@ -88,8 +88,8 @@ room_stats[rm_ptr_menu, 0] = "menu";
 //Main Hub
 room_stats[rm_main_hub, 0] = "game";
 room_stats[rm_main_hub, 1] = "hub";
-room_stats[rm_main_hub, 2] = 480;
-room_stats[rm_main_hub, 3] = 200;
+room_stats[rm_main_hub, 2] = 512;
+room_stats[rm_main_hub, 3] = 1600;
 
 //Hub Main Menu
 room_stats[rm_hub_main_menu, 0] = "hub_menu";
@@ -127,8 +127,14 @@ room_stats[rm_testroom4, 3] = 100;
 //Forest Init
 room_stats[rm_run_forest_init, 0] = "game";
 room_stats[rm_run_forest_init, 1] = "default";
-room_stats[rm_run_forest_init, 2] = 100;
-room_stats[rm_run_forest_init, 3] = 100;
+room_stats[rm_run_forest_init, 2] = 128;
+room_stats[rm_run_forest_init, 3] = 512;
+
+//Forest 01
+room_stats[rm_run_forest1, 0] = "game";
+room_stats[rm_run_forest1, 1] = "default";
+room_stats[rm_run_forest1, 2] = 128;
+room_stats[rm_run_forest1, 3] = 688;
 
 </string>
           </argument>

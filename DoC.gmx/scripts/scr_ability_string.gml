@@ -46,6 +46,9 @@ switch(ability_string) {
     case "mana":
         return "Insta-Mana";
         break;
+    case "blood":
+        return "Blutung";
+        break;
     case "attack_mana":
         return "Mana-Attack";
         break;

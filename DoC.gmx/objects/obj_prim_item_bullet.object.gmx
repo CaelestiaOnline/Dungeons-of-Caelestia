@@ -106,9 +106,10 @@ player_stats.speed_mult_item -= speed_mult;
           <argument>
             <kind>1</kind>
             <string>///Angriff
-var real_damage = scr_prim_attack(damage, damage_crit);
+scr_prim_ability();
 
 if(confirmed) {
+    var real_damage = scr_get_item_damage(damage, damage_crit);
     scr_bullet_attack(real_damage, is_crit, type);
     confirmed = false;
 }

@@ -41,13 +41,28 @@ menupos  = 0;
 
 //Überschrift
 heading = "Dungeons of Cælestia";
+false_heading = choose("Denguins if Caewlrstia", "Dugnoens off Caestiala");
+
+false_spelling_mode = false;
+
+if(scr_crit_attack(0.05)) false_spelling_mode = true;
+
+if(false_spelling_mode) heading = false_heading;
 
 //Auswahlmöglichkeiten
-menu[0] = "Start Game"
-menu[1] = "Access PTR"
-menu[2] = "Multiplayer"
-menu[3] = "Options"
-menu[4] = "Return to Earth"
+menu[0] = "Start Game";
+menu[1] = "Upgrade to Premium";
+menu[2] = "Multiplayer";
+menu[3] = "Options";
+menu[4] = "Return to Earth";
+
+if(false_spelling_mode) {
+menu[0] = choose("stat gaim", "schdard gem");
+menu[1] = choose("Ubgraid too Bremium", "i need ze moneys pls");
+menu[2] = choose("Maltyplaia", "Bley wif odders");
+menu[3] = choose("Obtschns", "Einsdellungs");
+menu[4] = choose("Ridoern du Oerf", "Schuessi");
+}
 
 draw_set_font(fnt_main_menu);
 
@@ -99,7 +114,7 @@ background_vspeed[0] = choose(random(3)* -1, random(3));
           <argument>
             <kind>1</kind>
             <string>///Splash-Screen
-splash_screen_file_length = 57;
+splash_screen_file_length = 65;
 splash_screen_index = irandom(splash_screen_file_length -1);
 
 splash_screen_file = file_text_open_read(working_directory + "Textdateien\" + "splash_screen.txt");
@@ -112,6 +127,8 @@ for(n = 0; n &lt;= splash_screen_index; n++) {
 }
 
 file_text_close(splash_screen_file);
+
+if(false_spelling_mode) splash_screen = "False Spelling Edition";
 </string>
           </argument>
         </arguments>

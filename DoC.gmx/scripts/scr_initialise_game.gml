@@ -16,6 +16,9 @@ draw_set_circle_precision(64);
 global.grid = 0;
 scr_update_grid();
 
+//Splash - Screen
+global.display_splash_screen = false;
+
 //Objekte
 //Erzeuge Admin-Objekt
 globalvar admin;
@@ -106,6 +109,10 @@ menu_in_game = instance_create(0, 0, obj_menu_in_game);
 //Progress
 globalvar progress;
 progress = instance_create(0, 0, obj_progress);
+
+//Progress
+globalvar death_stats;
+death_stats = instance_create(0, 0, obj_death_stats);
 
 //Hub object
 globalvar hub;

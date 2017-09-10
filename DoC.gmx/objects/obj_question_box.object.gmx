@@ -52,12 +52,17 @@ mecha_hand = 0;
           <argument>
             <kind>1</kind>
             <string>///Tasten
+if(!instance_exists(origin_object)) {
+    mecha_hand.phase2 = true;
+    exit;
+}
+
 if(admin.action_key_pressed) {
     mecha_hand.phase2 = true;
     origin_object.confirmed = false;
 }
 
-if(admin.pickup_menu_confirm_key_pressed) {
+if(admin.pickup_menu_confirm_key_pressed &amp;&amp; !mecha_hand.phase2 &amp;&amp; !admin.inventory_key_pressed &amp;&amp; !admin.pause_menu_key_pressed) {
     mecha_hand.phase2 = true;
     origin_object.confirmed = true;
 }

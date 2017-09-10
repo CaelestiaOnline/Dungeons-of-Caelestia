@@ -68,6 +68,7 @@ level = 0;
           <argument>
             <kind>1</kind>
             <string>///Überprüfe, ob sich xp/geld ändern
+if(!admin.playing) exit;
 dealt_run_money_old = dealt_run_money;
 
 dealt_xp_old = dealt_xp;
@@ -93,32 +94,8 @@ dealt_xp_old = dealt_xp;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Level up
-if(xp &gt;= level_up_xp) {
-    level += 1;
-    xp -= level_up_xp;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///XP + Geld Indicator
+if(!admin.playing) exit;
 //Geld
 if(dealt_run_money &gt; 0) {
     if(run_money_count &gt; 20) {

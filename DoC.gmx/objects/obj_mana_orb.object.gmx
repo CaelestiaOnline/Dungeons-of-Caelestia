@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_mana_item_ability</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -79,9 +79,10 @@ hit_list = noone;
           <argument>
             <kind>1</kind>
             <string>///Angriff
-var real_damage = scr_mag_attack(damage);
+scr_mag_ability();
 
 if(confirmed) {
+    var real_damage = scr_mag_damage(damage);
     scr_bullet_attack(real_damage, is_crit, type);
     confirmed = false;
 }

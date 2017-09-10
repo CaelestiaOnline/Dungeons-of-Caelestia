@@ -20,7 +20,12 @@ else {
         else {
             money -= current_money;
         }
-        var coin = instance_create(drop_x + random_range(-range,range), drop_y + random_range(-range,range), obj_coin);
+        var drop_x_inacc = random_range(-range,range);
+        var drop_y_inacc = random_range(-range,range);
+
+        if(instance_place(drop_x + drop_x_inacc, drop_y + drop_y_inacc, obj_hindernis)) continue;
+        
+        var coin = instance_create(drop_x + drop_x_inacc, drop_y + drop_y_inacc, obj_coin);
         coin.money = current_money;
         coin.sprite_index = scr_money_select_sprite(current_money);
     }
