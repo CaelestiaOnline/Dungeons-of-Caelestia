@@ -244,7 +244,7 @@ if(dealt_damage &gt; 0) {
         }
         damage_count = 0;
     }
-    if(dealt_damage &gt;= 10) {
+    if(dealt_damage &gt;= 20) {
         scr_draw_dealt_damage(x, y - sprite_get_height(sprite_index)/2 - 30, dealt_damage);
     }
     damage_count++;

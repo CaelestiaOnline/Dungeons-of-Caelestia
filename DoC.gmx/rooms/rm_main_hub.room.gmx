@@ -253,9 +253,9 @@
     <instance objName="obj_barrel" x="2112" y="1264" name="inst_67793D45" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="2112" y="1168" name="inst_972C3EA8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="2224" y="1104" name="inst_170607A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wooden_chest" x="1760" y="1488" name="inst_4113C026" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wooden_chest" x="1872" y="1488" name="inst_5165F74D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wooden_chest" x="1984" y="1488" name="inst_8AE6AD81" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_random_type_chest" x="1744" y="1488" name="inst_946169CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_random_type_chest" x="1856" y="1488" name="inst_FD71437E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_random_type_chest" x="1968" y="1488" name="inst_FA91DCB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

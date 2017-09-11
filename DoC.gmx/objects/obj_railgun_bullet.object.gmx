@@ -27,9 +27,40 @@
             <kind>1</kind>
             <string>///Geschwindigkeit
 event_inherited();
-hspeed = 25;
+hspeed = 20;
 
+enemy_count = 3;
 
+time = 50;
+alarm_set(0, time);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Zerstörung bei 3 Gegnern
+
+event_inherited();
+
+if(enemy_count &lt;= 0) instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -60,6 +91,10 @@ scr_deal_damage(other, damage);
 scr_draw_crit(other, is_crit);
 
 origin_object.hit_list = other;
+
+enemy_count--;
+
+x += sign(hspeed) * abs(other.sprite_width);
 </string>
           </argument>
         </arguments>
