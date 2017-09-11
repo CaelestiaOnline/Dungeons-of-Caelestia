@@ -692,7 +692,7 @@ item[items.ultra_mana_beam_orb, 4] = 1;
 item_stats[items.ultra_mana_beam_orb, item_stats_mag.ability] = "attack_mana_beam";
 item_stats[items.ultra_mana_beam_orb, item_stats_mag.ability_strength] = 666;
 item_stats[items.ultra_mana_beam_orb, item_stats_mag.mana_usage] = -1;
-item_stats[items.ultra_mana_beam_orb, item_stats_mag.cooldown] = player_stats.attack_speed*3*30;
+item_stats[items.ultra_mana_beam_orb, item_stats_mag.cooldown] = player_stats.attack_speed*3*10;
 item_stats[items.ultra_mana_beam_orb, item_stats_mag.misc] = "Staerke von verbrauchtem Mana abhaengig.";
 
 //Teleport (37)
@@ -744,8 +744,8 @@ item[items.shotgun, 2] = obj_shotgun;
 item[items.shotgun, 3] = "prim";
 item[items.shotgun, 4] = 1;
 
-item_stats[items.shotgun, item_stats_prim.damage] = round(player_stats.root_damage*3);
-item_stats[items.shotgun, item_stats_prim.damage_crit] = round(player_stats.root_damage*3) + round(player_stats.root_damage/8);
+item_stats[items.shotgun, item_stats_prim.damage] = round(player_stats.root_damage*2.5);
+item_stats[items.shotgun, item_stats_prim.damage_crit] = round(player_stats.root_damage*2.5) + round(player_stats.root_damage/8);
 item_stats[items.shotgun, item_stats_prim.ability] = "";
 item_stats[items.shotgun, item_stats_prim.ability_chance] = 0;
 item_stats[items.shotgun, item_stats_prim.ability_strength] = 0;
@@ -796,8 +796,8 @@ item[items.railgun, 2] = obj_railgun;
 item[items.railgun, 3] = "prim";
 item[items.railgun, 4] = 1;
 
-item_stats[items.railgun, item_stats_prim.damage] = round(player_stats.root_damage*3);
-item_stats[items.railgun, item_stats_prim.damage_crit] = round(player_stats.root_damage*4) + round(player_stats.root_damage/4);
+item_stats[items.railgun, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.railgun, item_stats_prim.damage_crit] = round(player_stats.root_damage*3) + round(player_stats.root_damage/4);
 item_stats[items.railgun, item_stats_prim.ability] = "";
 item_stats[items.railgun, item_stats_prim.ability_chance] = 0;
 item_stats[items.railgun, item_stats_prim.ability_strength] = 0;
@@ -807,19 +807,19 @@ item_stats[items.railgun, item_stats_prim.misc] = "Kritische Treffer sind besond
 
 //Nerfgun (43)
 item[items.nerfgun, 0] = "Nerfgun";
-item[items.nerfgun, 1] = "Ein lustiges Kinderspielzeug und dank der Sicherheitsbestimmungen auch voellig harmlos! Abgesehen von Treffern ins Auge.";
+item[items.nerfgun, 1] = "Ein lustiges Kinderspielzeug und dank der Sicherheitsbestimmungen auch fast harmlos! Abgesehen von Treffern ins Auge.";
 item[items.nerfgun, 2] = obj_nerfgun;
 item[items.nerfgun, 3] = "prim";
 item[items.nerfgun, 4] = 1;
 
-item_stats[items.nerfgun, item_stats_prim.damage] = 0;
+item_stats[items.nerfgun, item_stats_prim.damage] = round(player_stats.root_damage/2);
 item_stats[items.nerfgun, item_stats_prim.damage_crit] = round(player_stats.root_damage*3.5) + round(player_stats.root_damage/4);
 item_stats[items.nerfgun, item_stats_prim.ability] = "";
 item_stats[items.nerfgun, item_stats_prim.ability_chance] = 0;
 item_stats[items.nerfgun, item_stats_prim.ability_strength] = 0;
-item_stats[items.nerfgun, item_stats_prim.speed_bonus] = 0;
+item_stats[items.nerfgun, item_stats_prim.speed_bonus] = 0.3;
 item_stats[items.nerfgun, item_stats_prim.attack_speed] = player_stats.attack_speed*2;
-item_stats[items.nerfgun, item_stats_prim.misc] = "Nur kritische Treffer teilen Schaden aus.";
+item_stats[items.nerfgun, item_stats_prim.misc] = "Nur kritische Treffer teilen viel Schaden aus.";
 
 //Eisenschwert (44)
 item[items.iron_sword, 0] = "Eisenschwert";
@@ -978,13 +978,13 @@ item[items.tesla_gun, 2] = obj_tesla_gun;
 item[items.tesla_gun, 3] = "prim";
 item[items.tesla_gun, 4] = 1;
 
-item_stats[items.tesla_gun, item_stats_prim.damage] = round(player_stats.root_damage/2);
-item_stats[items.tesla_gun, item_stats_prim.damage_crit] = round(player_stats.root_damage/2) + round(player_stats.root_damage/4);
+item_stats[items.tesla_gun, item_stats_prim.damage] = round(player_stats.root_damage/4);
+item_stats[items.tesla_gun, item_stats_prim.damage_crit] = round(player_stats.root_damage/4) + round(player_stats.root_damage/4);
 item_stats[items.tesla_gun, item_stats_prim.ability] = "";
 item_stats[items.tesla_gun, item_stats_prim.ability_chance] = 0;
 item_stats[items.tesla_gun, item_stats_prim.ability_strength] = 0;
 item_stats[items.tesla_gun, item_stats_prim.speed_bonus] = 0;
-item_stats[items.tesla_gun, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.tesla_gun, item_stats_prim.attack_speed] = 5;
 item_stats[items.tesla_gun, item_stats_prim.misc] = "Etwas anderes Bedienkonzept.";
 
 

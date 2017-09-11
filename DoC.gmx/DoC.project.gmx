@@ -253,6 +253,10 @@
       <sprite>sprites\spr_hit</sprite>
       <sprite>sprites\spr_hit_crit</sprite>
       <sprite>sprites\spr_bullet</sprite>
+      <sprites name="Colbox">
+        <sprite>sprites\spr_hanzo_bow_bullet_collision_box</sprite>
+        <sprite>sprites\spr_bullet_collision_box</sprite>
+      </sprites>
       <sprites name="Bullets">
         <sprite>sprites\spr_sonic_wave</sprite>
         <sprite>sprites\spr_slug_snot_bullet</sprite>
@@ -262,14 +266,11 @@
         <sprite>sprites\spr_hanzo_bow_bullet</sprite>
         <sprite>sprites\spr_blowgun_bullet</sprite>
         <sprite>sprites\spr_throwing_dagger_bullet</sprite>
-        <sprites name="Colbox">
-          <sprite>sprites\spr_hanzo_bow_bullet_collision_box</sprite>
-          <sprite>sprites\spr_bullet_collision_box</sprite>
-        </sprites>
         <sprite>sprites\spr_shuriken_bullet</sprite>
         <sprite>sprites\spr_mana_fire_bullet</sprite>
         <sprite>sprites\spr_mana_bullet</sprite>
         <sprite>sprites\spr_mini_bullet</sprite>
+        <sprite>sprites\spr_shotgun_bullet</sprite>
       </sprites>
     </sprites>
     <sprites name="Hindernis">
@@ -357,21 +358,33 @@
       <sprite>sprites\spr_mouse_icon</sprite>
     </sprites>
     <sprites name="Hub">
-      <sprite>sprites\spr_hub_terminal</sprite>
-      <sprite>sprites\spr_hub_terminal2</sprite>
-      <sprite>sprites\spr_hub_portal_blue</sprite>
-      <sprite>sprites\spr_hub_portal_red</sprite>
-      <sprite>sprites\spr_hub_portal_green</sprite>
-      <sprite>sprites\spr_hub_portal_yellow</sprite>
-      <sprite>sprites\spr_hub_portal_orange</sprite>
-      <sprite>sprites\spr_hub_portal_light_blue</sprite>
-      <sprite>sprites\spr_hub_portal_violet</sprite>
-      <sprite>sprites\spr_hub_chair</sprite>
-      <sprite>sprites\spr_hub_shop</sprite>
-      <sprite>sprites\spr_hub_terminal3</sprite>
-      <sprite>sprites\spr_hub_terminal4</sprite>
-      <sprite>sprites\spr_hub_terminal5</sprite>
-      <sprite>sprites\spr_wodden_chest</sprite>
+      <sprites name="Portal">
+        <sprite>sprites\spr_hub_portal_light_blue</sprite>
+        <sprite>sprites\spr_hub_portal_yellow</sprite>
+        <sprite>sprites\spr_hub_portal_green</sprite>
+        <sprite>sprites\spr_hub_portal_blue</sprite>
+        <sprite>sprites\spr_hub_portal_red</sprite>
+        <sprite>sprites\spr_hub_portal_orange</sprite>
+        <sprite>sprites\spr_hub_portal_violet</sprite>
+      </sprites>
+      <sprites name="Terminal">
+        <sprite>sprites\spr_hub_shop</sprite>
+        <sprite>sprites\spr_hub_terminal3</sprite>
+        <sprite>sprites\spr_hub_terminal5</sprite>
+        <sprite>sprites\spr_hub_chair</sprite>
+        <sprite>sprites\spr_hub_terminal4</sprite>
+        <sprite>sprites\spr_hub_terminal</sprite>
+        <sprite>sprites\spr_hub_terminal2</sprite>
+      </sprites>
+      <sprites name="Chests">
+        <sprite>sprites\spr_chest</sprite>
+        <sprite>sprites\spr_chest_random</sprite>
+        <sprite>sprites\spr_chest_pickup</sprite>
+        <sprite>sprites\spr_chest_item</sprite>
+        <sprite>sprites\spr_chest_mag</sprite>
+        <sprite>sprites\spr_chest_sec</sprite>
+        <sprite>sprites\spr_chest_prim</sprite>
+      </sprites>
     </sprites>
     <sprites name="Progress">
       <sprites name="Money">
@@ -930,6 +943,7 @@
           </objects>
           <objects name="Shotgun">
             <object>objects\obj_shotgun</object>
+            <object>objects\obj_shotgun_bullet</object>
           </objects>
           <objects name="Railgun">
             <object>objects\obj_railgun</object>
@@ -1030,7 +1044,6 @@
       <object>objects\obj_hub_shop</object>
       <object>objects\obj_hub_clear_items</object>
       <object>objects\obj_hub_clear_inv</object>
-      <object>objects\obj_wooden_chest</object>
       <object>objects\obj_mouse_ind_hub</object>
       <object>objects\obj_hub</object>
       <objects name="Buttons">
@@ -1055,6 +1068,15 @@
         <object>objects\obj_hub_portal_testroom2</object>
         <object>objects\obj_hub_portal_testroom4</object>
         <object>objects\obj_hub_enter_menu</object>
+      </objects>
+      <objects name="Chests">
+        <object>objects\obj_pickup_chest</object>
+        <object>objects\obj_random_chest</object>
+        <object>objects\obj_item_chest</object>
+        <object>objects\obj_prim_chest</object>
+        <object>objects\obj_sec_chest</object>
+        <object>objects\obj_mag_chest</object>
+        <object>objects\obj_random_type_chest</object>
       </objects>
     </objects>
     <objects name="Menu">
@@ -1163,9 +1185,6 @@
       <object>objects\obj_menufade</object>
       <object>objects\obj_menu_to_inv_fade</object>
       <object>objects\obj_fade</object>
-    </objects>
-    <objects name="Tür">
-      <object>objects\obj_tuer</object>
     </objects>
     <objects name="Test">
       <object>objects\obj_test</object>

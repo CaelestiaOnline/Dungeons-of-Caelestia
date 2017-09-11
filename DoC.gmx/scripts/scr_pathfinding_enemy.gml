@@ -70,7 +70,7 @@ for(var i = real_min_distance; i != 0; i-= sign(x_axis_mirror)) {
 if(mp_grid_path(global.grid, path, x, y, obj_player.x + real_min_distance, obj_player.y, true))
 {
     path_start(path, move, path_action_stop, false);
-} else path_end();
+}
 
 
 

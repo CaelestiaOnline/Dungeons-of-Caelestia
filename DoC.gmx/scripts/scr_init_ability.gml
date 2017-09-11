@@ -135,7 +135,7 @@ switch(ability) {
         break;
     //Strength
     case "strength":
-        effect_time = room_speed * 30;
+        effect_time = room_speed * 10;
         switch(ability_strength) {
             case 1:
                 strength_mult = +0.2;
