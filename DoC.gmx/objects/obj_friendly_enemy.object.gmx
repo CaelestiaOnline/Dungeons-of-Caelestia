@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_gegner</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,33 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Alpha
-alpha = 1;
-scr_set_depth();
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Destroy
-instance_destroy();
+            <string>///Stats
+event_inherited();
+
+//Weg erzeugen
+path = path_add();
+
+//Distanz
+max_distance = 100;
+min_distance = 48;
+safety_distance = 200 + round(random_range(50, 0));
+min_distance_factor = 1;
+
 </string>
           </argument>
         </arguments>
@@ -74,15 +59,13 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Alarm
+            <string>///Angriff + Bewegung
 
-if(alarm_get(0) &lt;= room_speed) {
-    alpha -= 1 / room_speed;
+scr_pathfinding_friendly_enemy();
+
+if(attack_ready) {
+    scr_melee_attack_enemy(damage);
 }
-
-alpha = clamp(alpha, 0, 1);
-
-image_alpha = alpha;
 </string>
           </argument>
         </arguments>

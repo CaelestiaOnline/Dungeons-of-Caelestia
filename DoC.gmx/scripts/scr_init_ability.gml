@@ -214,6 +214,13 @@ switch(ability) {
                 break;
         }
         break;
+    case "ability_mana_invisibility":
+        switch(ability_strength) {
+            case 1:
+                radius = 50;
+                break;
+        }
+        break;
     //Attacken
     //Mana
     case "attack_mana":
@@ -237,6 +244,48 @@ switch(ability) {
             case 666:
                 damage = round(player_stats.root_damage*8);
                 max_distance = 600;
+                break;
+        }
+        break;
+    case "attack_mana_chainbolt":
+        switch(ability_strength) {
+            case 1:
+                damage = round(player_stats.root_damage*3);
+                radius = 200;
+                weakening_mult = 0.25;
+                enemy_count = 5;
+                break;
+        }
+        break;
+    case "attack_mana_black_fire":
+        stun_time = room_speed*2;
+        switch(ability_strength) {
+            case 1:
+                radius = 400;
+                damage = round(player_stats.root_damage*6);
+                
+                break;
+        }
+        break;
+    case "attack_mana_implosion":
+        switch(ability_strength) {
+            case 1:
+                radius = 250;
+                damage = 4;
+                break;
+        }
+        break;
+    case "attack_mana_necromancer":
+        switch(ability_strength) {
+            case 1:
+                nekromancer_count = 1;
+                break;
+        }
+        break;
+    case "attack_mana_enemy_morph":
+        switch(ability_strength) {
+            case 1:
+                max_enemy_hp = 25;
                 break;
         }
         break;

@@ -244,6 +244,15 @@
           </sprites>
         </sprites>
       </sprites>
+      <sprites name="Tiere">
+        <sprite>sprites\spr_sheep</sprite>
+        <sprites name="Colbox">
+          <sprite>sprites\spr_obj_passive_animal_colbox</sprite>
+        </sprites>
+        <sprites name="Dead">
+          <sprite>sprites\spr_obj_passive_animal_dead</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Waffen">
       <sprite>sprites\spr_hitbox</sprite>
@@ -269,9 +278,13 @@
         <sprite>sprites\spr_shuriken_bullet</sprite>
         <sprite>sprites\spr_mana_fire_bullet</sprite>
         <sprite>sprites\spr_mana_bullet</sprite>
+        <sprite>sprites\spr_mana_implosion_bullet</sprite>
+        <sprite>sprites\spr_mana_chainbolt_bullet</sprite>
         <sprite>sprites\spr_mini_bullet</sprite>
         <sprite>sprites\spr_shotgun_bullet</sprite>
       </sprites>
+      <sprite>sprites\spr_pentagram</sprite>
+      <sprite>sprites\spr_black_fire</sprite>
     </sprites>
     <sprites name="Hindernis">
       <sprite>sprites\spr_kaktus</sprite>
@@ -605,6 +618,7 @@
         <script>scripts\scr_bullet_attack_enemy.gml</script>
         <script>scripts\scr_melee_attack_enemy.gml</script>
         <script>scripts\scr_pathfinding_enemy.gml</script>
+        <script>scripts\scr_pathfinding_friendly_enemy.gml</script>
         <script>scripts\scr_pathfinding_enemy_old.gml</script>
         <script>scripts\scr_create_hitbox_enemy.gml</script>
         <script>scripts\scr_reset_enemy.gml</script>
@@ -973,6 +987,10 @@
             <object>objects\obj_blowgun_bullet</object>
           </objects>
           <object>objects\obj_sec_item_bullet</object>
+          <objects name="Tomahawk">
+            <object>objects\obj_tomahawk</object>
+            <object>objects\obj_tomahawk_bullet</object>
+          </objects>
         </objects>
       </objects>
       <objects name="mag">
@@ -998,6 +1016,32 @@
           <object>objects\obj_ability_hitmark</object>
         </objects>
         <object>objects\obj_mana_item_ability</object>
+        <objects name="Chainbolt">
+          <object>objects\obj_mana_chainbolt_orb</object>
+          <object>objects\obj_mana_chainbolt_bullet</object>
+        </objects>
+        <objects name="Black-Fire">
+          <object>objects\obj_mana_black_fire_orb</object>
+        </objects>
+        <objects name="Implosion">
+          <object>objects\obj_mana_implosion_orb</object>
+          <object>objects\obj_mana_implosion_bullet</object>
+          <object>objects\obj_mana_implosion</object>
+        </objects>
+        <objects name="Necromancer">
+          <object>objects\obj_friendly_enemy</object>
+          <object>objects\obj_mana_necromancer_orb</object>
+        </objects>
+        <objects name="Invisibility">
+          <object>objects\obj_mana_invisibility_orb</object>
+        </objects>
+        <objects name="Enemy-Morph">
+          <object>objects\obj_mana_enemy_morph_orb</object>
+          <object>objects\obj_passive_animal</object>
+        </objects>
+        <objects name="Arrow-Rain">
+          <object>objects\obj_mana_arrow_rain_orb</object>
+        </objects>
       </objects>
       <objects name="item">
         <object>objects\obj_swift_orb</object>
