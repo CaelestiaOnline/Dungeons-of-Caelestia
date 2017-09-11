@@ -74,4 +74,3 @@ if(mp_grid_path(global.grid, path, x, y, obj_player.x + real_min_distance, obj_p
 
 
 
-

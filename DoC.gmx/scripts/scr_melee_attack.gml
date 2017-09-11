@@ -12,7 +12,7 @@ stats.melee_attacks_done += 1;
 
 var hit_x;
 if(obj_player.attack_axis = 1) hit_x = obj_player.x + sprite_get_width(obj_player.sprite_index)/2 - 10;
-if(obj_player.attack_axis = -1) hit_x = obj_player.x - sprite_get_width(obj_player.sprite_index)/2 - sprite_get_width(spr_hitbox) + 10;
+if(obj_player.attack_axis = -1) hit_x = obj_player.x - sprite_get_width(obj_player.sprite_index)/2 - sprite_get_width(spr_hitbox)*image_xscale + 10;
 
 //Hitbox
 scr_create_hitbox(

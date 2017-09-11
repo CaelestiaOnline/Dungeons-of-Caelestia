@@ -73,6 +73,7 @@ x_axis_mirror = -1;
 attack_ready = false;
 alarm_set(0, -1);
 alarm_set(1, -1);
+attacked = false;
 
 //Effekte
 scr_init_effects();

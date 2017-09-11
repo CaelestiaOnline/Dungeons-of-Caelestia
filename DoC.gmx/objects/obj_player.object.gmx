@@ -78,6 +78,10 @@ y_bullet_offset = 30;
 y_melee_offset = 30;
 
 
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -570,11 +574,15 @@ if(obj_player.is_crouching) {
           <argument>
             <kind>1</kind>
             <string>///Bewegung über Rand verhindern
+
 x = min(x, room_width - spr_width);
 x = max(x, spr_width);
 
 y = min(y, room_height - spr_height);
 y = max(y, spr_height);
+
+//Test
+//move_wrap(true, false, sprite_width*image_xscale);
 </string>
           </argument>
         </arguments>

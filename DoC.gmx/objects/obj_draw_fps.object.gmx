@@ -121,8 +121,6 @@ draw_text(
     );
 }
 
-//Instance_count (DEBUG)
-draw_text(display_get_gui_width() - 400, 16, string(instance_count));
 </string>
           </argument>
         </arguments>

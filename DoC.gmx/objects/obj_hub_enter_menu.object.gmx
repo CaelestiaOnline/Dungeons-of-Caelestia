@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_interaction("Back to Main Menu?");
+            <string>scr_interaction("Back to Main Menu?", "&gt;&gt; Main Menu");
 
 if(confirmed) {
     scr_leave_game();

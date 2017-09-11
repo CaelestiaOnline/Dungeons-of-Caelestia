@@ -44,8 +44,8 @@ heading = "Credits";
 
 //Auswahlmöglichkeiten
 menu[0] = "Coming soon..."
-menu[1] = "++++++++++++++"
-menu[2] = "++++++++++++++"
+menu[1] = "pixabay.com"
+menu[2] = "shutterstock.com"
 menu[3] = "++++++++++++++"
 menu[4] = "--&gt; Options Menu"
 

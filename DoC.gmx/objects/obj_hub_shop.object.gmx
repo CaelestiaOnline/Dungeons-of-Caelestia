@@ -51,7 +51,7 @@ scr_init_interaction();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_interaction("Hub Shop betreten?");
+            <string>scr_interaction("Hub Shop betreten?", "Hub Shop");
 
 if(confirmed) {
     scr_enter_hub_menu(rm_hub_shop_menu);

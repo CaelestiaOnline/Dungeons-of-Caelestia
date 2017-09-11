@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_interaction("Run starten?");
+            <string>scr_interaction("Planet betreten?", "--&gt; Planet");
 
 if(confirmed) {
     scr_start_run();

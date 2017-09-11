@@ -1,10 +1,13 @@
 /*
 scr_interaction(
-    text
+    text,
+    info-text
 );
 */
 
 var text = argument0;
+var info_text = argument1;
+if(info_text == "") info_text = "...";
 if(text == "") text = "Confirm?";
 
 if(collision_rectangle(intbox[0], intbox[1], intbox[2], intbox[3], obj_player, true, true)) {
@@ -13,7 +16,7 @@ if(collision_rectangle(intbox[0], intbox[1], intbox[2], intbox[3], obj_player, t
     }
 }
 if(collision_circle(x, y, 100, obj_player, false, true)) {
-    scr_show_info("...");
+    scr_show_info(info_text);
 }
 
 

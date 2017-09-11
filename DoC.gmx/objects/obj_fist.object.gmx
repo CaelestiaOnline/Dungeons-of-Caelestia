@@ -79,9 +79,10 @@ hit_list = noone;
           <argument>
             <kind>1</kind>
             <string>///Angriff
-var real_damage = scr_prim_attack(damage, damage_crit);
+scr_prim_ability();
 
 if(confirmed) {
+    var real_damage = scr_get_item_damage(damage, damage_crit);
     scr_melee_attack(real_damage, is_crit);
     confirmed = false;
 }

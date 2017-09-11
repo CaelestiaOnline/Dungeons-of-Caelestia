@@ -21,7 +21,7 @@ switch(ability) {
                 effect_speed_mult = +0.2;
                 break;
             case 2:
-                effect_speed_mult = +1.0;
+                effect_speed_mult = +0.4;
                 break;
             case 10:
                 effect_speed_mult = +10.0;
@@ -87,7 +87,7 @@ switch(ability) {
                 break;
             case 2:
                 reg_heal = 1;
-                effect_time = room_speed * 5;
+                effect_time = room_speed * 6;
                 reg_speed = room_speed / 3;
                 break;
         }
@@ -135,7 +135,7 @@ switch(ability) {
         break;
     //Strength
     case "strength":
-        effect_time = room_speed * 30;
+        effect_time = room_speed * 10;
         switch(ability_strength) {
             case 1:
                 strength_mult = +0.2;
@@ -156,11 +156,11 @@ switch(ability) {
             case 1:
                 poison_damage = 1;
                 effect_time = room_speed * 8;
-                poison_speed = room_speed;
+                poison_speed = room_speed * 3/4;
             case 2:
                 poison_damage = 2;
                 effect_time = room_speed * 8;
-                poison_speed = room_speed;
+                poison_speed = room_speed * 3/4;
         }
         break;
     //Insta-Heilung
@@ -185,15 +185,39 @@ switch(ability) {
                 break;
         }
         break;
+    case "blood":
+        switch(ability_strength) {
+            case 1:
+                poison_damage = 1;
+                effect_time = room_speed * 15;
+                poison_speed = room_speed;
+                break;
+            case 2:
+                poison_damage = 1;
+                effect_time = room_speed * 30;
+                poison_speed = room_speed;
+                break;
+        }
+        break;
     //Magie
     //Abilites
     case "ability_mana_teleport":
+        stun_time = player_stats.attack_speed;
         switch(ability_strength) {
             case 1:
                 max_distance = 300;
+                min_distance = 64;
                 break;
             case 2:
-                max_distance = 600;
+                max_distance = 400;
+                min_distance = 32;
+                break;
+        }
+        break;
+    case "ability_mana_invisibility":
+        switch(ability_strength) {
+            case 1:
+                radius = 50;
                 break;
         }
         break;
@@ -215,9 +239,53 @@ switch(ability) {
         }
         break;
     case "attack_mana_beam":
+        stun_time = room_speed*2;
         switch(ability_strength) {
             case 666:
-                damage = round(player_stats.root_damage*10);
+                damage = round(player_stats.root_damage*8);
+                max_distance = 600;
+                break;
+        }
+        break;
+    case "attack_mana_chainbolt":
+        switch(ability_strength) {
+            case 1:
+                damage = round(player_stats.root_damage*3);
+                radius = 200;
+                weakening_mult = 0.25;
+                enemy_count = 5;
+                break;
+        }
+        break;
+    case "attack_mana_black_fire":
+        stun_time = room_speed*2;
+        switch(ability_strength) {
+            case 1:
+                radius = 400;
+                damage = round(player_stats.root_damage*6);
+                
+                break;
+        }
+        break;
+    case "attack_mana_implosion":
+        switch(ability_strength) {
+            case 1:
+                radius = 250;
+                damage = 4;
+                break;
+        }
+        break;
+    case "attack_mana_necromancer":
+        switch(ability_strength) {
+            case 1:
+                nekromancer_count = 1;
+                break;
+        }
+        break;
+    case "attack_mana_enemy_morph":
+        switch(ability_strength) {
+            case 1:
+                max_enemy_hp = 25;
                 break;
         }
         break;

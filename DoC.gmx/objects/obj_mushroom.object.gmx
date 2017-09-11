@@ -28,6 +28,11 @@
             <string>///Effekt
 event_inherited();
 
+radius = 300;
+
+max_y = 150;
+max_x = 250;
+
 effc = effect.poison;
 stage = 1;
 </string>

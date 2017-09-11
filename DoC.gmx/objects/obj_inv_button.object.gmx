@@ -61,6 +61,7 @@ button_item = inventory_type.inv[slot];
 button_count = inventory_type.count[slot];
 var click = admin.left_click_pressed;
 var right_click = admin.right_click_pressed;
+var shift = admin.shift_key;
 width = sprite_get_width(spr_inv_border)/2;
 
 draw_set_colour(c_white);
@@ -85,7 +86,7 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
         0
     );
     draw_set_alpha(1);
-    if(click &amp;&amp; !right_click) {
+    if(click &amp;&amp; !right_click &amp;&amp; !shift) {
         //Wenn der Button ein Item enthält
         if(button_item != -1) {
             if(scr_check_item_inv_type(inventory_type, mouse_ind.mouse_item)) {
@@ -126,8 +127,20 @@ if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width))
             }
         }
     }
+    //Shift + Linksklick
+    if(click &amp;&amp; !right_click &amp;&amp; shift) {
+        if(button_item != -1) {
+            var success = scr_inventory_add_item_auto(button_item, button_count);
+            if(success) {
+                inventory_type.inv[slot] = -1;
+                inventory_type.count[slot] = 0;
+            } else if(is_string(success)) {
+                button_count = int64(success);
+            }
+        }
+    }
     //Rechtsklick
-    if(right_click &amp;&amp; !click) {
+    if(right_click &amp;&amp; !click &amp;&amp; !shift) {
         if(mouse_ind.mouse_item == -1 &amp;&amp; button_item != -1 &amp;&amp; button_count != 1) {
             var button_divide = button_count/2;
             var mouse_divide;

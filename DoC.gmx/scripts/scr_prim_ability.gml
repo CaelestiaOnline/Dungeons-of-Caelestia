@@ -1,20 +1,8 @@
 /*
-scr_prim_attack(
-    damage,
-    damage_crit,
+scr_prim_ability(
 */
 
 if(!admin.playing) exit;
-
-var damage_normal = argument0;
-var damage_crit = argument1;
-var chance_crit = player_stats.chance_crit;
-is_crit = false;
-var damage = 0;
-
-is_crit = scr_crit_attack(chance_crit);
-if(is_crit) damage = damage_crit;
-else damage = damage_normal;
 
 ///Angriff
 
@@ -32,5 +20,3 @@ if(admin.prim_attack_key_pressed || admin.prim_attack_key) {
     scr_attack_cooldown(cooldown);
     }
 }
-
-return damage;

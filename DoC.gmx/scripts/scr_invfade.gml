@@ -8,6 +8,8 @@ scr_invfade(
 if(instance_exists(obj_fade)) exit;
 if(!admin.in_game) exit;
 
+if(instance_exists(obj_mecha_hand)) obj_mecha_hand.phase2 = true;
+
 scr_keylock_ingamemenu(argument0);
 
 var circlefade;
