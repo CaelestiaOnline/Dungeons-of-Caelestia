@@ -152,6 +152,20 @@ enemy_stats[obj_trainingspuppe_unbreakable, enemy_stats_normal.attack_speed] = 0
 enemy_stats[obj_trainingspuppe_unbreakable, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_trainingspuppe_unbreakable, enemy_stats_normal.xp_drop] = 666;
 enemy_stats[obj_trainingspuppe_unbreakable, enemy_stats_normal.money_drop] = 666;
+
+//Passives Tier (4)
+enemy_stats[obj_passive_animal, 0] = "Passives Nutztier";
+enemy_stats[obj_passive_animal, 1] = "Macht rein garnichts.";
+enemy_stats[obj_passive_animal, 2] = false;
+enemy_stats[obj_passive_animal, 3] = false;
+enemy_stats[obj_passive_animal, 4] = "normal";
+
+enemy_stats[obj_passive_animal, enemy_stats_normal.hp] = 1;
+enemy_stats[obj_passive_animal, enemy_stats_normal.damage] = 0;
+enemy_stats[obj_passive_animal, enemy_stats_normal.attack_speed] = 0;
+enemy_stats[obj_passive_animal, enemy_stats_normal.max_speed] = 0;
+enemy_stats[obj_passive_animal, enemy_stats_normal.xp_drop] = 1;
+enemy_stats[obj_passive_animal, enemy_stats_normal.money_drop] = 1;
 </string>
           </argument>
         </arguments>

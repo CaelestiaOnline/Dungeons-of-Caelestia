@@ -73,5 +73,13 @@
     <frame index="50">images\spr_items_50.png</frame>
     <frame index="51">images\spr_items_51.png</frame>
     <frame index="52">images\spr_items_52.png</frame>
+    <frame index="53">images\spr_items_53.png</frame>
+    <frame index="54">images\spr_items_54.png</frame>
+    <frame index="55">images\spr_items_55.png</frame>
+    <frame index="56">images\spr_items_56.png</frame>
+    <frame index="57">images\spr_items_57.png</frame>
+    <frame index="58">images\spr_items_58.png</frame>
+    <frame index="59">images\spr_items_59.png</frame>
+    <frame index="60">images\spr_items_60.png</frame>
   </frames>
 </sprite>

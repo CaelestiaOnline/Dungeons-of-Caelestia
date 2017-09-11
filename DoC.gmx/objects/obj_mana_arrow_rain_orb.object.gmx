@@ -4,8 +4,8 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <persistent>-1</persistent>
+  <parentName>obj_mana_item_ability</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,9 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Alpha
-alpha = 1;
-scr_set_depth();
+            <string>///Stats
+index = items.mana_arrow_rain;
+scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
+type = obj_mana_bullet;
+mana = item_stats[index, item_stats_mag.mana_usage];
+
+confirmed = false;
+
+hit_list = noone;
 </string>
           </argument>
         </arguments>
@@ -36,12 +42,12 @@ scr_set_depth();
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>605</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
@@ -50,9 +56,7 @@ scr_set_depth();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Destroy
-instance_destroy();
-</string>
+            <string>alarm0</string>
           </argument>
         </arguments>
       </action>
@@ -74,15 +78,17 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Alarm
+            <string>///Angriff
+scr_mag_ability();
 
-if(alarm_get(0) &lt;= room_speed) {
-    alpha -= 1 / room_speed;
+if(confirmed) {
+    var real_damage = scr_mag_damage(damage);
+    confirmed = false;
 }
 
-alpha = clamp(alpha, 0, 1);
-
-image_alpha = alpha;
+if(hit_list != noone) {
+    //scr_effect(effect.xxxx, xxxx, hit_list);
+}
 </string>
           </argument>
         </arguments>

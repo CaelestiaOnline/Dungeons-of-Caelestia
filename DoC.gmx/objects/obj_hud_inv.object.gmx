@@ -1155,7 +1155,7 @@ var buffer = 2;
 
 var xp_scale;
 xp_scale = progress.xp / progress.level_up_xp;
-xp_xscale = clamp(xp_scale, 0, 1);
+xp_scale = clamp(xp_scale, 0, 1);
 
 //Hintergrund
 draw_set_colour(colour_trans);
