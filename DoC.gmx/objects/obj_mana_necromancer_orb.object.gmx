@@ -81,7 +81,7 @@ hit_list = noone;
 scr_mag_ability();
 
 if(confirmed) {
-    var friendly_enemy = instance_create(obj_player.x + irandom_range(-50, 50), obj_player.y + irandom_range(-50, 50), obj_friendly_enemy);
+    var friendly_enemy = instance_create(obj_player.x + irandom_range(-50, 50), obj_player.y + irandom_range(-50, 50), obj_random_guy);
 
     confirmed = false;
 }

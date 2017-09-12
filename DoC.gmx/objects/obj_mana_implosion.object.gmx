@@ -55,6 +55,15 @@ for(var i = 0; i &lt; array_length_1d(enemy); i++) {
         enemy[i].x -= 10000;
     }
 }
+
+//Pentagramm
+var ability_hitmark = instance_create(x, y, obj_ability_hitmark);
+ability_hitmark.sprite_index = spr_pentagram;
+ability_hitmark.alarm[0] = time;
+ability_hitmark.depth = 200;
+var x_factor = radius / sprite_get_width(spr_pentagram);
+ability_hitmark.image_xscale = x_factor;
+ability_hitmark.image_yscale = x_factor;
 </string>
           </argument>
         </arguments>
@@ -142,6 +151,8 @@ for(var i = 0; i &lt; array_length_1d(enemy); i++) {
         scr_deal_damage(enemy[i], damage/20);
     }
 }
+
+
 
 
 

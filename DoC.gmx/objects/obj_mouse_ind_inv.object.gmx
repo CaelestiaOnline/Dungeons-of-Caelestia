@@ -116,7 +116,6 @@ if(!inventory.show_inv) {
           <argument>
             <kind>1</kind>
             <string>///Item-Stats
-
 if(mouse_item != -1) {
     inventory.item_stats_title = item[mouse_item, 0];
     inventory.item_stats_desc = item[mouse_item, 1];

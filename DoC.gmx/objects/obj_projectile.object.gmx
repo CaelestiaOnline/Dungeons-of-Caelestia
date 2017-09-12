@@ -4,9 +4,9 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>spr_projectile_colbox</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -25,95 +25,32 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-scr_keylock_all(false);
-obj_player.visible = true;
-admin.playing = true;
-scr_reset_stats();
-instance_destroy();
-scr_enter_hub();
-*/
+            <string>///Geschwindigkeit
+hspeed = 0;
+fall_speed = 8;
+fall_y = y + random_range(20, 120);
+damage = 0;
+is_crit = false;
 
+//Depth
+scr_set_depth();
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Gehe ins Hub
-hub.in_hub = true;
-scr_effect_rem_all(obj_player);
-scr_effect_kill_all();
-scr_keylock_all(true);
-obj_player.visible = false;
+//Shadow
+shadow_width = sprite_get_width(sprite_index)/2;
+real_shadow_width = shadow_width/2;
 
-alarm_set(0, room_speed * 3);
+shadow_object = scr_init_shadow(self, real_shadow_width, 4, 0);
 
-var room_placer = instance_create(0, 0, obj_room_placer);
-room_placer.goal = rm_main_hub;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Beende Run
-if(admin.in_run) scr_leave_run(true);
+origin_object = 0;
+
+explosion_colour = c_red;
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>alarm0</string>
-          </argument>
-        </arguments>
-      </action>
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -130,10 +67,7 @@ if(admin.in_run) scr_leave_run(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_main_hub);
-obj_player.visible = true;
-player_stats.invincible = false;
-scr_reset_player_stats();
+            <string>effect_create_above(ef_explosion, x, y, 0, explosion_colour);
 </string>
           </argument>
         </arguments>
@@ -156,13 +90,103 @@ scr_reset_player_stats();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Gehe ins Todesmenü
-if(alarm_get(0) == -1) {
-    if(room == rm_main_hub) {
-        scr_enter_hub_menu(rm_hub_death_menu);
-        instance_destroy();
-    }
+            <string>///out of room
+if(x &lt; 0 || x &gt; room_width)
+{
+    instance_destroy();
 }
+
+fall_y -= fall_speed;
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Shadow
+if(real_shadow_width &lt; shadow_width) {
+    real_shadow_width += shadow_width/2 / round(fall_y/fall_speed);
+} else real_shadow_width = shadow_width;
+
+shadow_object.width = real_shadow_width;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Angriff
+
+if(fall_y &lt;= 0) {
+
+    var hitbox = instance_create(x - (sprite_get_width(mask_index))/2, y, obj_hitbox_melee);
+    hitbox.damage = damage;
+    hitbox.is_crit = is_crit;
+    hitbox.origin_object = origin_object;  
+    hitbox.mask_index = mask_index;
+
+//Zerstörung
+instance_destroy();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Bullet
+draw_sprite_ext(sprite_index, image_index, x, y - fall_y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+
+if(admin.show_hitbox) scr_draw_hitbox();
 </string>
           </argument>
         </arguments>

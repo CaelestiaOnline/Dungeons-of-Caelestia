@@ -253,6 +253,17 @@
           <sprite>sprites\spr_obj_passive_animal_dead</sprite>
         </sprites>
       </sprites>
+      <sprites name="Friendly Gegner">
+        <sprites name="Random Guy">
+          <sprite>sprites\spr_random_guy</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_random_guy_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_random_guy_dead</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Waffen">
       <sprite>sprites\spr_hitbox</sprite>
@@ -265,6 +276,7 @@
       <sprites name="Colbox">
         <sprite>sprites\spr_hanzo_bow_bullet_collision_box</sprite>
         <sprite>sprites\spr_bullet_collision_box</sprite>
+        <sprite>sprites\spr_projectile_colbox</sprite>
       </sprites>
       <sprites name="Bullets">
         <sprite>sprites\spr_sonic_wave</sprite>
@@ -285,6 +297,9 @@
       </sprites>
       <sprite>sprites\spr_pentagram</sprite>
       <sprite>sprites\spr_black_fire</sprite>
+      <sprites name="Projectiles">
+        <sprite>sprites\spr_arrow_rain_projectile</sprite>
+      </sprites>
     </sprites>
     <sprites name="Hindernis">
       <sprite>sprites\spr_kaktus</sprite>
@@ -604,6 +619,7 @@
         <scripts name="mag">
           <script>scripts\scr_mag_ability.gml</script>
           <script>scripts\scr_mag_damage.gml</script>
+          <script>scripts\scr_create_projectile.gml</script>
         </scripts>
         <script>scripts\scr_attack_cooldown.gml</script>
         <script>scripts\scr_get_item_damage.gml</script>
@@ -1029,8 +1045,12 @@
           <object>objects\obj_mana_implosion</object>
         </objects>
         <objects name="Necromancer">
-          <object>objects\obj_friendly_enemy</object>
           <object>objects\obj_mana_necromancer_orb</object>
+          <objects name="Friendly Enemies">
+            <object>objects\obj_friendly_enemy</object>
+            <object>objects\obj_friendly_enemy_nahkampf</object>
+            <object>objects\obj_random_guy</object>
+          </objects>
         </objects>
         <objects name="Invisibility">
           <object>objects\obj_mana_invisibility_orb</object>
@@ -1041,6 +1061,10 @@
         </objects>
         <objects name="Arrow-Rain">
           <object>objects\obj_mana_arrow_rain_orb</object>
+          <object>objects\obj_arrow_rain_projectile</object>
+        </objects>
+        <objects name="Projectiles">
+          <object>objects\obj_projectile</object>
         </objects>
       </objects>
       <objects name="item">
@@ -1088,6 +1112,7 @@
       <object>objects\obj_hub_shop</object>
       <object>objects\obj_hub_clear_items</object>
       <object>objects\obj_hub_clear_inv</object>
+      <object>objects\obj_hub_reset_stats</object>
       <object>objects\obj_mouse_ind_hub</object>
       <object>objects\obj_hub</object>
       <objects name="Buttons">

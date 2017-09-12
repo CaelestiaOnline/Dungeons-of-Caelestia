@@ -544,7 +544,7 @@ item_stats[items.war_hammer, item_stats_prim.ability] = "";
 item_stats[items.war_hammer, item_stats_prim.ability_chance] = 0;
 item_stats[items.war_hammer, item_stats_prim.ability_strength] = 0;
 item_stats[items.war_hammer, item_stats_prim.speed_bonus] = -0.25;
-item_stats[items.war_hammer, item_stats_prim.attack_speed] = player_stats.attack_speed * 4;
+item_stats[items.war_hammer, item_stats_prim.attack_speed] = player_stats.attack_speed * 3 * 3;
 item_stats[items.war_hammer, item_stats_prim.misc] = "";
 
 //Kettensäge (28)
@@ -1071,7 +1071,7 @@ item[items.mana_invisibility, 4] = 1;
 
 item_stats[items.mana_invisibility, item_stats_mag.ability] = "ability_mana_invisibility";
 item_stats[items.mana_invisibility, item_stats_mag.ability_strength] = 1;
-item_stats[items.mana_invisibility, item_stats_mag.mana_usage] = 4;
+item_stats[items.mana_invisibility, item_stats_mag.mana_usage] = 0.5;
 item_stats[items.mana_invisibility, item_stats_mag.cooldown] = player_stats.attack_speed*3*8;
 item_stats[items.mana_invisibility, item_stats_mag.misc] = "Mana wird /s verbraucht.";
 
@@ -1086,7 +1086,7 @@ item_stats[items.mana_enemy_morph, item_stats_mag.ability] = "attack_mana_enemy_
 item_stats[items.mana_enemy_morph, item_stats_mag.ability_strength] = 1;
 item_stats[items.mana_enemy_morph, item_stats_mag.mana_usage] = 50;
 item_stats[items.mana_enemy_morph, item_stats_mag.cooldown] = player_stats.attack_speed*3*10;
-item_stats[items.mana_enemy_morph, item_stats_mag.misc] = "Nur Gegner unter 25 HP";
+item_stats[items.mana_enemy_morph, item_stats_mag.misc] = "Nur Gegner unter 50 HP";
 
 
 </string>
@@ -1119,7 +1119,7 @@ item[items.mana_arrow_rain, 4] = 1;
 
 item_stats[items.mana_arrow_rain, item_stats_mag.ability] = "attack_mana_arrow_rain";
 item_stats[items.mana_arrow_rain, item_stats_mag.ability_strength] = 1;
-item_stats[items.mana_arrow_rain, item_stats_mag.mana_usage] = 50;
+item_stats[items.mana_arrow_rain, item_stats_mag.mana_usage] = 60;
 item_stats[items.mana_arrow_rain, item_stats_mag.cooldown] = player_stats.attack_speed*3*5;
 item_stats[items.mana_arrow_rain, item_stats_mag.misc] = "";
 </string>
