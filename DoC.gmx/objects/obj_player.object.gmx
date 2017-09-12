@@ -838,6 +838,12 @@ switch (x_axis) {
 
 
 sprite_index = sprite_front;
+
+if(player_stats.invisible) {
+    image_alpha = 0.5;
+} else {
+    image_alpha = 1;
+}
 //Vorder + Hinterseite
 /*
 switch (y_axis) {

@@ -108,6 +108,9 @@ attack_ready = true;
 //Invincible
 invincible = false;
 
+//Invisible
+invisible = false;
+
 //Effekte
 scr_init_effects();
 

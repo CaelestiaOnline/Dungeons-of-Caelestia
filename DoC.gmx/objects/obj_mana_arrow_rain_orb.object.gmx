@@ -28,8 +28,10 @@
             <string>///Stats
 index = items.mana_arrow_rain;
 scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
-type = obj_mana_bullet;
+type = obj_arrow_rain_projectile;
 mana = item_stats[index, item_stats_mag.mana_usage];
+
+distance = 200;
 
 confirmed = false;
 
@@ -83,12 +85,53 @@ scr_mag_ability();
 
 if(confirmed) {
     var real_damage = scr_mag_damage(damage);
+    
+    repeat(projectile_count) {
+        scr_create_projectile(
+            obj_player.x + (distance + irandom_range(-radius, radius))*obj_player.image_xscale,
+            obj_player.y + irandom_range(-radius, radius),
+            real_damage,
+            type,
+            obj_player.image_xscale,
+            is_crit
+            );
+    }
     confirmed = false;
 }
 
 if(hit_list != noone) {
     //scr_effect(effect.xxxx, xxxx, hit_list);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Position
+if(!admin.playing) exit;
+
+draw_set_alpha(0.5);
+draw_set_colour(c_black);
+var new_x = obj_player.x + (distance*obj_player.image_xscale);
+draw_ellipse(new_x - 5, obj_player.y - 3, new_x + 5, obj_player.y + 3, 0);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

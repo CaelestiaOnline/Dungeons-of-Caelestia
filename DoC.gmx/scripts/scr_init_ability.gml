@@ -258,7 +258,7 @@ switch(ability) {
         }
         break;
     case "attack_mana_black_fire":
-        stun_time = room_speed*2;
+        stun_time = room_speed;
         switch(ability_strength) {
             case 1:
                 radius = 400;
@@ -285,7 +285,16 @@ switch(ability) {
     case "attack_mana_enemy_morph":
         switch(ability_strength) {
             case 1:
-                max_enemy_hp = 25;
+                max_enemy_hp = 50;
+                break;
+        }
+        break;
+    case "attack_mana_arrow_rain":
+        switch(ability_strength) {
+            case 1:
+                damage = 12;
+                projectile_count = 28;
+                radius = 75;
                 break;
         }
         break;
