@@ -47,7 +47,7 @@ menu[0] = "Coming soon..."
 menu[1] = "Lautstaerke: 100"
 menu[2] = "Sprache: Deutsch/Englisch"
 menu[3] = "Credits"
-menu[4] = "--&gt; Main Menu"
+menu[4] = "&gt;&gt;&gt; Main Menu"
 
 draw_set_font(fnt_main_menu);
 
@@ -70,7 +70,7 @@ colour[4] = c_white;
 shadow = 3;
 
 //Farbe
-menucolour = c_red;
+menucolour = scr_get_random_colour();
 
 //Script
 script = scr_options_menu;
