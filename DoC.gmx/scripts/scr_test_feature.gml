@@ -1,1 +1,2 @@
-scr_loading_screen(rm_main_menu, -1, "");
+obj_main_menu.menupos = 0;
+url_open_ext("http://ducksarethebest.com/" , "_parent");
