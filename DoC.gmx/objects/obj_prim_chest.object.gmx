@@ -55,7 +55,7 @@ type = "prim";
             <string>scr_interaction("Kiste oeffnen?", "Weapon-Kiste");
 
 if(confirmed) {
-    repeat(irandom(1)) {
+    repeat(1) {
         do {
             item_index = irandom(items.count-1);
         } until(item[item_index, 3] == type);
