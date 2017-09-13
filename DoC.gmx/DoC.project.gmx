@@ -754,6 +754,11 @@
       <scripts name="Stats">
         <script>scripts\scr_reset_stats.gml</script>
       </scripts>
+      <scripts name="Save">
+        <script>scripts\scr_write_progress.gml</script>
+        <script>scripts\scr_write_stats.gml</script>
+        <script>scripts\scr_write_items.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Window">
       <script>scripts\scr_set_window.gml</script>
@@ -877,6 +882,7 @@
     </objects>
     <objects name="Splash-Screen">
       <object>objects\obj_splash_screen</object>
+      <object>objects\obj_warning_screen</object>
     </objects>
     <objects name="Inventory">
       <object>objects\obj_hud_inv</object>
@@ -1319,6 +1325,7 @@
     </rooms>
     <rooms name="Splash-Screen">
       <room>rooms\rm_splash_screen</room>
+      <room>rooms\rm_warning_screen</room>
     </rooms>
     <rooms name="Menu">
       <room>rooms\rm_main_menu</room>

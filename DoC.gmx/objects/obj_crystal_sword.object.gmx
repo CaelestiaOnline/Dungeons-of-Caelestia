@@ -30,7 +30,7 @@ index = items.crystal_sword;
 
 event_inherited();
 
-durability = 50;
+durability = 20;
 </string>
           </argument>
         </arguments>
