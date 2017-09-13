@@ -14,10 +14,6 @@ scr_reset_stats();
 death_stats.collected_run_money = progress.run_money;
 progress.run_money = 0;
 
-//XP
-death_stats.collected_xp = progress.xp;
-progress.xp = 0;
-
 //Clear Inv
 scr_inventory_clear_all();
 

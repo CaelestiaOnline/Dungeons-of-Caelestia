@@ -538,13 +538,13 @@ item[items.war_hammer, 2] = obj_war_hammer;
 item[items.war_hammer, 3] = "prim";
 item[items.war_hammer, 4] = 1;
 
-item_stats[items.war_hammer, item_stats_prim.damage] = round(player_stats.root_damage*4);
+item_stats[items.war_hammer, item_stats_prim.damage] = round(player_stats.root_damage*3);
 item_stats[items.war_hammer, item_stats_prim.damage_crit] = round(player_stats.root_damage*4) + round(player_stats.root_damage/2);
 item_stats[items.war_hammer, item_stats_prim.ability] = "";
 item_stats[items.war_hammer, item_stats_prim.ability_chance] = 0;
 item_stats[items.war_hammer, item_stats_prim.ability_strength] = 0;
-item_stats[items.war_hammer, item_stats_prim.speed_bonus] = -0.25;
-item_stats[items.war_hammer, item_stats_prim.attack_speed] = player_stats.attack_speed * 3 * 3;
+item_stats[items.war_hammer, item_stats_prim.speed_bonus] = -0.2;
+item_stats[items.war_hammer, item_stats_prim.attack_speed] = player_stats.attack_speed * 3 * 2;
 item_stats[items.war_hammer, item_stats_prim.misc] = "";
 
 //Kettensäge (28)
@@ -736,8 +736,8 @@ item[items.hanzo_bow, 2] = obj_hanzo_bow;
 item[items.hanzo_bow, 3] = "prim";
 item[items.hanzo_bow, 4] = 1;
 
-item_stats[items.hanzo_bow, item_stats_prim.damage] = round(player_stats.root_damage*3);
-item_stats[items.hanzo_bow, item_stats_prim.damage_crit] = round(player_stats.root_damage*3) + round(player_stats.root_damage/4);
+item_stats[items.hanzo_bow, item_stats_prim.damage] = round(player_stats.root_damage*1.8);
+item_stats[items.hanzo_bow, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.8) + round(player_stats.root_damage/4);
 item_stats[items.hanzo_bow, item_stats_prim.ability] = "";
 item_stats[items.hanzo_bow, item_stats_prim.ability_chance] = 0;
 item_stats[items.hanzo_bow, item_stats_prim.ability_strength] = 0;
@@ -907,7 +907,7 @@ item_stats[items.crystal_sword, item_stats_prim.ability_chance] = 0;
 item_stats[items.crystal_sword, item_stats_prim.ability_strength] = 0;
 item_stats[items.crystal_sword, item_stats_prim.speed_bonus] = 0;
 item_stats[items.crystal_sword, item_stats_prim.attack_speed] = player_stats.attack_speed*2;
-item_stats[items.crystal_sword, item_stats_prim.misc] = "Geht nach 50 Schlaegen kaputt.";
+item_stats[items.crystal_sword, item_stats_prim.misc] = "Geht nach 20 Schlaegen kaputt.";
 
 //Schlagring (50)
 item[items.knuckleduster, 0] = "Schlagring(e)";
@@ -986,13 +986,13 @@ item[items.tesla_gun, 2] = obj_tesla_gun;
 item[items.tesla_gun, 3] = "prim";
 item[items.tesla_gun, 4] = 1;
 
-item_stats[items.tesla_gun, item_stats_prim.damage] = round(player_stats.root_damage/4);
-item_stats[items.tesla_gun, item_stats_prim.damage_crit] = round(player_stats.root_damage/4) + round(player_stats.root_damage/4);
+item_stats[items.tesla_gun, item_stats_prim.damage] = player_stats.root_damage/12;
+item_stats[items.tesla_gun, item_stats_prim.damage_crit] = player_stats.root_damage/12 + player_stats.root_damage/24;
 item_stats[items.tesla_gun, item_stats_prim.ability] = "";
 item_stats[items.tesla_gun, item_stats_prim.ability_chance] = 0;
 item_stats[items.tesla_gun, item_stats_prim.ability_strength] = 0;
 item_stats[items.tesla_gun, item_stats_prim.speed_bonus] = 0;
-item_stats[items.tesla_gun, item_stats_prim.attack_speed] = 5;
+item_stats[items.tesla_gun, item_stats_prim.attack_speed] = 6;
 item_stats[items.tesla_gun, item_stats_prim.misc] = "Etwas anderes Bedienkonzept.";
 
 //Kettenblitz (54)

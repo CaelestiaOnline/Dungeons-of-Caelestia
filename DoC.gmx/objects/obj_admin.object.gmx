@@ -497,8 +497,8 @@ if(room == rm_main_menu) {
 if(keyboard_check_pressed(vk_f11)) {
     room_restart();
     if(room_stats[room, 0] == "game") {
-        obj_player.x = room_stats[room, 2];
-        obj_player.y = room_stats[room, 3];
+        var room_placer = instance_create(0, 0, obj_room_placer);
+        room_placer.goal = room;
     }
     
 }
@@ -519,6 +519,7 @@ if(is_ghost) {
 if(keyboard_check_pressed(vk_f8)) show_hitbox = 1 - show_hitbox;
 show_debug_overlay(show_hitbox);
 
+//Pause Menu when tabbing
 if(admin.playing &amp;&amp; !window_has_focus() &amp;&amp; !admin.game_paused) admin.pause_menu_key_pressed = 1;
 
 </string>
