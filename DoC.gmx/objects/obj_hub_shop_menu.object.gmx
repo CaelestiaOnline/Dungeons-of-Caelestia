@@ -58,7 +58,7 @@ exit_button_y = hub_menu_y1 + 32;
 exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit);
 
 //Shop Button DEBUG
-var max_slots = 10;
+var max_slots = 15;
 var hwidth = array_height_2d(item) div max_slots;
 
 for (j=0; j&lt;max_slots; j+=1)

@@ -45,13 +45,13 @@ false_heading = choose("Denguins if Caewlrstia", "Dugnoens off Caestiala");
 
 false_spelling_mode = false;
 
-if(scr_crit_attack(0.05)) false_spelling_mode = true;
+if(scr_crit_attack(0.01)) false_spelling_mode = true;
 
 if(false_spelling_mode) heading = false_heading;
 
 //Auswahlmöglichkeiten
 menu[0] = "Start Game";
-menu[1] = "Upgrade to Premium";
+menu[1] = "Buy DLCs";
 menu[2] = "Multiplayer";
 menu[3] = "Options";
 menu[4] = "Return to Earth";

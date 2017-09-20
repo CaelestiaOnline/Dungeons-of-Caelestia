@@ -9,10 +9,11 @@ admin.playing = true;
 scr_inventory_clear_all();
 scr_effect_rem_all(obj_player);
 
+run_admin = instance_create(0, 0, obj_run_admin);
+
 var game_room = rm_run_forest_init;
 
 scr_keylock_ingamemenu(true);
 scr_sidefade(game_room, 60);
 
-var room_placer = instance_create(0, 0, obj_room_placer);
-room_placer.goal = game_room;
+scr_room_placer(game_room);

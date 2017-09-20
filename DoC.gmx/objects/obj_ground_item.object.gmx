@@ -164,11 +164,9 @@ if(collision) {
 
 //Sprite
 if(ground_item != -1) {
-    draw_sprite_ext(spr_items, ground_item, x, y_item, scale, scale, 0, c_white, 1);
+    draw_sprite_ext(scr_get_item_sprite(ground_item), 0, x, y_item, scale, scale, 0, c_white, 1);
 }
-else {
-    draw_sprite_ext(spr_undefined, ground_item, x, y_item, scale, scale, 0, c_white, 1);
-}
+
 
 if(admin.show_hitbox) scr_draw_hitbox();
 </string>

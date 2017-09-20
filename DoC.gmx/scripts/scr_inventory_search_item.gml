@@ -1,5 +1,5 @@
 /*
-scr_inventory_sarch_item(
+scr_inventory_search_item(
     Inventar, in das das Item gesucht werden soll,
     Item,
 )

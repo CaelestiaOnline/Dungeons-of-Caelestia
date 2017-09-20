@@ -150,7 +150,7 @@ if(is_visible) {
             0
         );
     draw_set_alpha(1);
-        draw_sprite(spr_items, mouse_item, x, y);
+        draw_sprite(scr_get_item_sprite(mouse_item), 0, x, y);
         scr_draw_count(mouse_count, x, y);
     }
 }

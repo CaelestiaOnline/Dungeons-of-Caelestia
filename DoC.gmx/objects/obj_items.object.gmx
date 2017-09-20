@@ -88,6 +88,62 @@ enum items {
     mana_invisibility = 58,
     mana_enemy_morph = 59,
     mana_arrow_rain = 60,
+    food_bread = 61,
+    food_apple = 62,
+    food_bach_flowers = 63,
+    food_steak = 64,
+    food_potato = 65,
+    food_quark = 66,
+    revive_orb = 67,
+    regeneration_orb = 68,
+    mana_poison_orb = 69,
+    snowball = 70,
+    mana_chainbolt_v2 = 71,
+    mana_black_fire_v2 = 72,
+    mana_implosion_v2 = 73,
+    mana_necromancer_v2 = 74,
+    mana_invisibility_v2 = 75,
+    mana_enemy_morph_v2 = 76,
+    mana_arrow_rain_v2 = 77,
+    laser_battle_axe = 78,
+    laser_bow = 79,
+    titanium_staff = 80,
+    laser_chainsaw = 81,
+    fire_shotgun = 82,
+    leather_armour = 83,
+    iron_armour = 84,
+    titanium_armour = 85,
+    carbon_armour = 86,
+    titanium_knuckleduster = 87,
+    revolver = 88,
+    mana_reg_orb = 89,
+    anime_sword = 90,
+    regeneration_orb_v2 = 91,
+    swift_orb_v2 = 92,
+    mana_reg_orb_v2 = 93,
+    laser_lightsaber = 94,
+    mana_fist_of_the_north_star_orb = 95,
+    peacekeeper = 96,
+    ice_sword = 97,
+    mana_arcan_beam_orb = 98,
+    food_lucios = 99,
+    mana_invisibility_v3 = 100,
+    strength_orb = 101,
+    strength_orb_v2 = 102,
+    adrenalin_shock_orb = 103,
+    max_mana_orb = 104,
+    max_mana_orb_v2 = 105,
+    max_stamina_orb = 106,
+    max_stamina_orb_v2 = 107,
+    sprint_speed_orb = 108,
+    sprint_speed_orb_v2 = 109,
+    chest_chance_orb = 110,
+    chest_chance_orb_v2 = 111,
+    heal_orb_chance_orb = 112,
+    heal_orb_chance_orb_v2 = 113,
+    max_hp_orb = 114,
+    max_hp_orb_v2 = 115,
+    
     count
 }
 </string>
@@ -226,7 +282,7 @@ item_stats[items.shuriken, item_stats_sec.misc] = "";
 
 //Swift-Orb (5)
 item[items.swift_orb, 0] = "Orb der Schnelligkeit";
-item[items.swift_orb, 1] = "Speeeed - Booooooost!";
+item[items.swift_orb, 1] = "*sanic certified";
 item[items.swift_orb, 2] = obj_swift_orb;
 item[items.swift_orb, 3] = "item";
 item[items.swift_orb, 4] = 1;
@@ -328,7 +384,7 @@ item[items.absorption_potion, 0] = "Absorptions-Trank";
 item[items.absorption_potion, 1] = "Laesst eine dicke Hornhaut wachsen!";
 item[items.absorption_potion, 2] = obj_absorption_potion;
 item[items.absorption_potion, 3] = "pickup";
-item[items.absorption_potion, 4] = 4;
+item[items.absorption_potion, 4] = 2;
 
 item_stats[items.absorption_potion, item_stats_pickup.ability] = "absorption";
 item_stats[items.absorption_potion, item_stats_pickup.ability_strength] = 2;
@@ -339,7 +395,7 @@ item[items.absorption_potion_small, 0] = "Kleiner Absorptions-Trank";
 item[items.absorption_potion_small, 1] = "Laesst eine nicht ganz so dicke Hornhaut wachsen!";
 item[items.absorption_potion_small, 2] = obj_absorption_potion_small;
 item[items.absorption_potion_small, 3] = "pickup";
-item[items.absorption_potion_small, 4] = 8;
+item[items.absorption_potion_small, 4] = 4;
 
 item_stats[items.absorption_potion_small, item_stats_pickup.ability] = "absorption";
 item_stats[items.absorption_potion_small, item_stats_pickup.ability_strength] = 1;
@@ -372,7 +428,7 @@ item[items.resistance_potion, 0] = "Resistenz-Trank";
 item[items.resistance_potion, 1] = "Ein sehr OhmInoeser Effekt!";
 item[items.resistance_potion, 2] = obj_resistance_potion;
 item[items.resistance_potion, 3] = "pickup";
-item[items.resistance_potion, 4] = 4;
+item[items.resistance_potion, 4] = 2;
 
 item_stats[items.resistance_potion, item_stats_pickup.ability] = "resistance";
 item_stats[items.resistance_potion, item_stats_pickup.ability_strength] = 2;
@@ -383,7 +439,7 @@ item[items.resistance_potion_small, 0] = "Kleiner Resistenz-Trank";
 item[items.resistance_potion_small, 1] = "Ein etwas weniger sehr OhmInoeser Effekt!";
 item[items.resistance_potion_small, 2] = obj_resistance_potion_small;
 item[items.resistance_potion_small, 3] = "pickup";
-item[items.resistance_potion_small, 4] = 8;
+item[items.resistance_potion_small, 4] = 4;
 
 item_stats[items.resistance_potion_small, item_stats_pickup.ability] = "resistance";
 item_stats[items.resistance_potion_small, item_stats_pickup.ability_strength] = 1;
@@ -394,7 +450,7 @@ item[items.strength_potion, 0] = "Staerke-Trank";
 item[items.strength_potion, 1] = "UNLIMITED POWER!";
 item[items.strength_potion, 2] = obj_strength_potion;
 item[items.strength_potion, 3] = "pickup";
-item[items.strength_potion, 4] = 4;
+item[items.strength_potion, 4] = 2;
 
 item_stats[items.strength_potion, item_stats_pickup.ability] = "strength";
 item_stats[items.strength_potion, item_stats_pickup.ability_strength] = 2;
@@ -405,7 +461,7 @@ item[items.strength_potion_small, 0] = "Staerke-Trank";
 item[items.strength_potion_small, 1] = "UNLIMITED POWER!";
 item[items.strength_potion_small, 2] = obj_strength_potion_small;
 item[items.strength_potion_small, 3] = "pickup";
-item[items.strength_potion_small, 4] = 8;
+item[items.strength_potion_small, 4] = 4;
 
 item_stats[items.strength_potion_small, item_stats_pickup.ability] = "strength";
 item_stats[items.strength_potion_small, item_stats_pickup.ability_strength] = 1;
@@ -416,7 +472,7 @@ item[items.speed_potion, 0] = "Speed-Trank";
 item[items.speed_potion, 1] = "Gotta gooooh faaaast!11!";
 item[items.speed_potion, 2] = obj_speed_potion;
 item[items.speed_potion, 3] = "pickup";
-item[items.speed_potion, 4] = 4;
+item[items.speed_potion, 4] = 3;
 
 item_stats[items.speed_potion, item_stats_pickup.ability] = "speed";
 item_stats[items.speed_potion, item_stats_pickup.ability_strength] = 2;
@@ -427,7 +483,7 @@ item[items.speed_potion_small, 0] = "Speed-Trank";
 item[items.speed_potion_small, 1] = "Gotta gooooh faaaast!11!";
 item[items.speed_potion_small, 2] = obj_speed_potion_small;
 item[items.speed_potion_small, 3] = "pickup";
-item[items.speed_potion_small, 4] = 8;
+item[items.speed_potion_small, 4] = 6;
 
 item_stats[items.speed_potion_small, item_stats_pickup.ability] = "speed";
 item_stats[items.speed_potion_small, item_stats_pickup.ability_strength] = 1;
@@ -788,8 +844,8 @@ item[items.scythe, 2] = obj_scythe;
 item[items.scythe, 3] = "prim";
 item[items.scythe, 4] = 1;
 
-item_stats[items.scythe, item_stats_prim.damage] = round(player_stats.root_damage*2);
-item_stats[items.scythe, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/4);
+item_stats[items.scythe, item_stats_prim.damage] = round(player_stats.root_damage*1.5);
+item_stats[items.scythe, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.5) + round(player_stats.root_damage/4);
 item_stats[items.scythe, item_stats_prim.ability] = "blood";
 item_stats[items.scythe, item_stats_prim.ability_chance] = 1;
 item_stats[items.scythe, item_stats_prim.ability_strength] = 2;
@@ -814,13 +870,13 @@ item_stats[items.railgun, item_stats_prim.attack_speed] = player_stats.attack_sp
 item_stats[items.railgun, item_stats_prim.misc] = "Kritische Treffer sind besonders stark.";
 
 //Nerfgun (43)
-item[items.nerfgun, 0] = "Nerfgun";
+item[items.nerfgun, 0] = "Oerfgun";
 item[items.nerfgun, 1] = "Ein lustiges Kinderspielzeug und dank der Sicherheitsbestimmungen auch fast harmlos! Abgesehen von Treffern ins Auge.";
 item[items.nerfgun, 2] = obj_nerfgun;
 item[items.nerfgun, 3] = "prim";
 item[items.nerfgun, 4] = 1;
 
-item_stats[items.nerfgun, item_stats_prim.damage] = round(player_stats.root_damage/2);
+item_stats[items.nerfgun, item_stats_prim.damage] = round(player_stats.root_damage*0.75);
 item_stats[items.nerfgun, item_stats_prim.damage_crit] = round(player_stats.root_damage*3.5) + round(player_stats.root_damage/4);
 item_stats[items.nerfgun, item_stats_prim.ability] = "";
 item_stats[items.nerfgun, item_stats_prim.ability_chance] = 0;
@@ -986,8 +1042,8 @@ item[items.tesla_gun, 2] = obj_tesla_gun;
 item[items.tesla_gun, 3] = "prim";
 item[items.tesla_gun, 4] = 1;
 
-item_stats[items.tesla_gun, item_stats_prim.damage] = player_stats.root_damage/12;
-item_stats[items.tesla_gun, item_stats_prim.damage_crit] = player_stats.root_damage/12 + player_stats.root_damage/24;
+item_stats[items.tesla_gun, item_stats_prim.damage] = player_stats.root_damage/6;
+item_stats[items.tesla_gun, item_stats_prim.damage_crit] = player_stats.root_damage/12 + player_stats.root_damage/12;
 item_stats[items.tesla_gun, item_stats_prim.ability] = "";
 item_stats[items.tesla_gun, item_stats_prim.ability_chance] = 0;
 item_stats[items.tesla_gun, item_stats_prim.ability_strength] = 0;
@@ -1076,8 +1132,8 @@ item_stats[items.mana_invisibility, item_stats_mag.cooldown] = player_stats.atta
 item_stats[items.mana_invisibility, item_stats_mag.misc] = "Mana wird /s verbraucht.";
 
 //Enemy Morph (60)
-item[items.mana_enemy_morph, 0] = "Gegner - Verwandlung";
-item[items.mana_enemy_morph, 1] = "Verwandelt deinen Naechsten in ein lustiges Nutztier.";
+item[items.mana_enemy_morph, 0] = "Schafzauber";
+item[items.mana_enemy_morph, 1] = "Verwandelt deinen Naechsten in ein lustiges Schaefchen. Maeaeaeh!";
 item[items.mana_enemy_morph, 2] = obj_mana_enemy_morph_orb;
 item[items.mana_enemy_morph, 3] = "mag";
 item[items.mana_enemy_morph, 4] = 1;
@@ -1122,6 +1178,805 @@ item_stats[items.mana_arrow_rain, item_stats_mag.ability_strength] = 1;
 item_stats[items.mana_arrow_rain, item_stats_mag.mana_usage] = 60;
 item_stats[items.mana_arrow_rain, item_stats_mag.cooldown] = player_stats.attack_speed*3*5;
 item_stats[items.mana_arrow_rain, item_stats_mag.misc] = "";
+
+//Brot (62)
+item[items.food_bread, 0] = "Brot";
+item[items.food_bread, 1] = "Ein knuspriges Gebaeck, das dein Mana wieder so richtig in Schwung bringt!";
+item[items.food_bread, 2] = obj_mana_regeneration_potion_small;
+item[items.food_bread, 3] = "pickup";
+item[items.food_bread, 4] = 6;
+
+item_stats[items.food_bread, item_stats_pickup.ability] = "mana_regeneration";
+item_stats[items.food_bread, item_stats_pickup.ability_strength] = 1;
+item_stats[items.food_bread, item_stats_pickup.misc] = "";
+
+//Apfel (63)
+item[items.food_apple, 0] = "Apfel";
+item[items.food_apple, 1] = "An Apple a day keeps the death away! Or maybe two. Or three.";
+item[items.food_apple, 2] = obj_regeneration_potion_small;
+item[items.food_apple, 3] = "pickup";
+item[items.food_apple, 4] = 6;
+
+item_stats[items.food_apple, item_stats_pickup.ability] = "regeneration";
+item_stats[items.food_apple, item_stats_pickup.ability_strength] = 1;
+item_stats[items.food_apple, item_stats_pickup.misc] = "";
+
+//Bachblüten (64)
+item[items.food_bach_flowers, 0] = "Bachblueten";
+item[items.food_bach_flowers, 1] = "Bei der Macht der Bachblueten! Ich haabe die Kraaaaaft!";
+item[items.food_bach_flowers, 2] = obj_food_bach_flowers;
+item[items.food_bach_flowers, 3] = "pickup";
+item[items.food_bach_flowers, 4] = 3;
+
+item_stats[items.food_bach_flowers, item_stats_pickup.ability] = "rem_debuffs";
+item_stats[items.food_bach_flowers, item_stats_pickup.ability_strength] = 1;
+item_stats[items.food_bach_flowers, item_stats_pickup.misc] = "entfernt Debuffs";
+
+//Steak (65)
+item[items.food_steak, 0] = "Steak";
+item[items.food_steak, 1] = "Das hier zu essen macht dich so maennlich, dass du gleich ein bisschen mehr aushaelst!";
+item[items.food_steak, 2] = obj_absorption_potion_small;
+item[items.food_steak, 3] = "pickup";
+item[items.food_steak, 4] = 6;
+
+item_stats[items.food_steak, item_stats_pickup.ability] = "absorption";
+item_stats[items.food_steak, item_stats_pickup.ability_strength] = 1;
+item_stats[items.food_steak, item_stats_pickup.misc] = "";
+
+//Kartoffel (66)
+item[items.food_potato, 0] = "Kartoffel";
+item[items.food_potato, 1] = "Extrem hoher Staerkegehalt. Das sagt eigentlich schon alles.";
+item[items.food_potato, 2] = obj_strength_potion_small;
+item[items.food_potato, 3] = "pickup";
+item[items.food_potato, 4] = 6;
+
+item_stats[items.food_potato, item_stats_pickup.ability] = "strength";
+item_stats[items.food_potato, item_stats_pickup.ability_strength] = 1;
+item_stats[items.food_potato, item_stats_pickup.misc] = "";
+
+//Quark (67)
+item[items.food_quark, 0] = "Quark";
+item[items.food_quark, 1] = "Die Vorstufe von Milch. Enthaelt ausserdem viel Kalzium. Das ist gut fuer die Knochen.";
+item[items.food_quark, 2] = obj_resistance_potion_small;
+item[items.food_quark, 3] = "pickup";
+item[items.food_quark, 4] = 6;
+
+item_stats[items.food_quark, item_stats_pickup.ability] = "resistance";
+item_stats[items.food_quark, item_stats_pickup.ability_strength] = 1;
+item_stats[items.food_quark, item_stats_pickup.misc] = "";
+
+//Revive-Orb (68)
+item[items.revive_orb, 0] = "Wiederbelebung";
+item[items.revive_orb, 1] = "Helden sterben nicht!";
+item[items.revive_orb, 2] = obj_revive_orb;
+item[items.revive_orb, 3] = "item";
+item[items.revive_orb, 4] = 1;
+
+item_stats[items.revive_orb, item_stats_item.ability] = "ability_revive";
+item_stats[items.revive_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.revive_orb, item_stats_item.misc] = "";
+
+//Regeneration-Orb (69)
+item[items.regeneration_orb, 0] = "Orb der Regeneration";
+item[items.regeneration_orb, 1] = "Kurbelt dein Immunsystem ein bisschen an!";
+item[items.regeneration_orb, 2] = obj_regeneration_orb;
+item[items.regeneration_orb, 3] = "item";
+item[items.regeneration_orb, 4] = 1;
+
+item_stats[items.regeneration_orb, item_stats_item.ability] = "regeneration";
+item_stats[items.regeneration_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.regeneration_orb, item_stats_item.misc] = "";
+
+//Poison Orb (70)
+item[items.mana_poison_orb, 0] = "Magisches Poison-Orb";
+item[items.mana_poison_orb, 1] = "Verleiht die Faehigkeit, dunkles Mana in eine Kugel zu buendeln und zu verschiessen!";
+item[items.mana_poison_orb, 2] = obj_mana_poison_orb;
+item[items.mana_poison_orb, 3] = "mag";
+item[items.mana_poison_orb, 4] = 1;
+
+item_stats[items.mana_poison_orb, item_stats_mag.ability] = "attack_mana_poison";
+item_stats[items.mana_poison_orb, item_stats_mag.ability_strength] = 1;
+item_stats[items.mana_poison_orb, item_stats_mag.mana_usage] = 40;
+item_stats[items.mana_poison_orb, item_stats_mag.cooldown] = player_stats.attack_speed*4;
+item_stats[items.mana_poison_orb, item_stats_mag.misc] = "";
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items 71 - 80;
+//Schneeball (71)
+item[items.snowball, 0] = "Schneeball";
+item[items.snowball, 1] = "Vorsicht, es koennten Steine in der Mitte sein!";
+item[items.snowball, 2] = obj_snowball;
+item[items.snowball, 3] = "sec";
+item[items.snowball, 4] = 1;
+
+item_stats[items.snowball, item_stats_sec.damage] = round(player_stats.root_damage*1);
+item_stats[items.snowball, item_stats_sec.damage_crit] = round(player_stats.root_damage*1) + round(player_stats.root_damage/4);
+item_stats[items.snowball, item_stats_sec.ability] = "slowness";
+item_stats[items.snowball, item_stats_sec.ability_chance] = 1;
+item_stats[items.snowball, item_stats_sec.ability_strength] = 1;
+item_stats[items.snowball, item_stats_sec.cooldown] = room_speed*2;
+item_stats[items.snowball, item_stats_sec.misc] = "";
+
+//Kettenblitz v2 (72)
+item[items.mana_chainbolt_v2, 0] = "Kugelblitz";
+item[items.mana_chainbolt_v2, 1] = "Die Spannung ist so unertraeglich, dass sie sogar auf Andere ueberspringt!";
+item[items.mana_chainbolt_v2, 2] = obj_mana_chainbolt_orb_v2;
+item[items.mana_chainbolt_v2, 3] = "mag";
+item[items.mana_chainbolt_v2, 4] = 1;
+
+item_stats[items.mana_chainbolt_v2, item_stats_mag.ability] = "attack_mana_chainbolt";
+item_stats[items.mana_chainbolt_v2, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_chainbolt_v2, item_stats_mag.mana_usage] = 40;
+item_stats[items.mana_chainbolt_v2, item_stats_mag.cooldown] = player_stats.attack_speed*6;
+item_stats[items.mana_chainbolt_v2, item_stats_mag.misc] = "";
+
+//Schwarzes Feuer v2 (73)
+item[items.mana_black_fire_v2, 0] = "Dunkelschwarzes Feuer";
+item[items.mana_black_fire_v2, 1] = "Diese Flammen sind so lange schwarz, bis es was Dunkleres gibt.";
+item[items.mana_black_fire_v2, 2] = obj_mana_black_fire_orb_v2;
+item[items.mana_black_fire_v2, 3] = "mag";
+item[items.mana_black_fire_v2, 4] = 1;
+
+item_stats[items.mana_black_fire_v2, item_stats_mag.ability] = "attack_mana_black_fire";
+item_stats[items.mana_black_fire_v2, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_black_fire_v2, item_stats_mag.mana_usage] = 80;
+item_stats[items.mana_black_fire_v2, item_stats_mag.cooldown] = player_stats.attack_speed*3*6;
+item_stats[items.mana_black_fire_v2, item_stats_mag.misc] = "";
+
+//Implosion v2(74)
+item[items.mana_implosion_v2, 0] = "Arkana Kuglila";
+item[items.mana_implosion_v2, 1] = "Diese komprimierte Kugel aus arkaner Energie verzerrt die Realitaet! (Magie-Taste zum Ausloesen erneut druecken)";
+item[items.mana_implosion_v2, 2] = obj_mana_implosion_orb_v2;
+item[items.mana_implosion_v2, 3] = "mag";
+item[items.mana_implosion_v2, 4] = 1;
+
+item_stats[items.mana_implosion_v2, item_stats_mag.ability] = "attack_mana_implosion";
+item_stats[items.mana_implosion_v2, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_implosion_v2, item_stats_mag.mana_usage] = 80;
+item_stats[items.mana_implosion_v2, item_stats_mag.cooldown] = player_stats.attack_speed*3*5;
+item_stats[items.mana_implosion_v2, item_stats_mag.misc] = "Erneute Bestaetigung erforderlich.";
+
+//Nekromantie v2 (75)
+item[items.mana_necromancer_v2, 0] = "Nekromantus Verbesseritus";
+item[items.mana_necromancer_v2, 1] = "Die Toten steigen aus ihren Graebern auf, um deine Drecksarbeit zu erledigen!";
+item[items.mana_necromancer_v2, 2] = obj_mana_necromancer_orb;
+item[items.mana_necromancer_v2, 3] = "mag";
+item[items.mana_necromancer_v2, 4] = 1;
+
+item_stats[items.mana_necromancer_v2, item_stats_mag.ability] = "attack_mana_necromancer";
+item_stats[items.mana_necromancer_v2, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_necromancer_v2, item_stats_mag.mana_usage] = 80;
+item_stats[items.mana_necromancer_v2, item_stats_mag.cooldown] = player_stats.attack_speed*3*8;
+item_stats[items.mana_necromancer_v2, item_stats_mag.misc] = "";
+
+//Unsichtbarkeit v2 (76)
+item[items.mana_invisibility_v2, 0] = "Verbesserte Unsichtbarkeit";
+item[items.mana_invisibility_v2, 1] = "Von der Basic-Unsichtbarkeit hast du jetzt genug. Damit bist du noch unsichtbarer als je zuvor!";
+item[items.mana_invisibility_v2, 2] = obj_mana_invisibility_orb_v2;
+item[items.mana_invisibility_v2, 3] = "mag";
+item[items.mana_invisibility_v2, 4] = 1;
+
+item_stats[items.mana_invisibility_v2, item_stats_mag.ability] = "ability_mana_invisibility";
+item_stats[items.mana_invisibility_v2, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_invisibility_v2, item_stats_mag.mana_usage] = 0.25;
+item_stats[items.mana_invisibility_v2, item_stats_mag.cooldown] = player_stats.attack_speed*3*6;
+item_stats[items.mana_invisibility_v2, item_stats_mag.misc] = "Mana wird /s verbraucht.";
+
+//Enemy Morph v2(77)
+item[items.mana_enemy_morph_v2, 0] = "Kuhzauber";
+item[items.mana_enemy_morph_v2, 1] = "Verwandelt deinen Naechsten in eine lustige Kuh. Mehr oder weniger nuetzlich, ich weiss.";
+item[items.mana_enemy_morph_v2, 2] = obj_mana_enemy_morph_orb_v2;
+item[items.mana_enemy_morph_v2, 3] = "mag";
+item[items.mana_enemy_morph_v2, 4] = 1;
+
+item_stats[items.mana_enemy_morph_v2, item_stats_mag.ability] = "attack_mana_enemy_morph";
+item_stats[items.mana_enemy_morph_v2, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_enemy_morph_v2, item_stats_mag.mana_usage] = 50;
+item_stats[items.mana_enemy_morph_v2, item_stats_mag.cooldown] = player_stats.attack_speed*3*10;
+item_stats[items.mana_enemy_morph_v2, item_stats_mag.misc] = "Nur Gegner unter 50 HP";
+
+//Pfeilregen v2 (78)
+item[items.mana_arrow_rain_v2, 0] = "Super-Magischer Pfeilregen";
+item[items.mana_arrow_rain_v2, 1] = "Irgendwie sieht es regnerisch aus. Gefaehrlich regnerisch. Zieh lieber den Kopf etwas ein.";
+item[items.mana_arrow_rain_v2, 2] = obj_mana_arrow_rain_orb_v2;
+item[items.mana_arrow_rain_v2, 3] = "mag";
+item[items.mana_arrow_rain_v2, 4] = 1;
+
+item_stats[items.mana_arrow_rain_v2, item_stats_mag.ability] = "attack_mana_arrow_rain";
+item_stats[items.mana_arrow_rain_v2, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_arrow_rain_v2, item_stats_mag.mana_usage] = 80;
+item_stats[items.mana_arrow_rain_v2, item_stats_mag.cooldown] = player_stats.attack_speed*3*8;
+item_stats[items.mana_arrow_rain_v2, item_stats_mag.misc] = "";
+
+//Laser Battle Axe (79)
+item[items.laser_battle_axe, 0] = "Laser-Streitaxt";
+item[items.laser_battle_axe, 1] = "Mit Lasern macht eben alles viel mehr Spass!"
+item[items.laser_battle_axe, 2] = obj_laser_battle_axe;
+item[items.laser_battle_axe, 3] = "prim";
+item[items.laser_battle_axe, 4] = 1;
+
+item_stats[items.laser_battle_axe, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.laser_battle_axe, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/4);
+item_stats[items.laser_battle_axe, item_stats_prim.ability] = "fire";
+item_stats[items.laser_battle_axe, item_stats_prim.ability_chance] = 0.2;
+item_stats[items.laser_battle_axe, item_stats_prim.ability_strength] = 1;
+item_stats[items.laser_battle_axe, item_stats_prim.speed_bonus] = -0.2;
+item_stats[items.laser_battle_axe, item_stats_prim.attack_speed] = player_stats.attack_speed * 5/4;
+item_stats[items.laser_battle_axe, item_stats_prim.misc] = "";
+
+//Laser Bogen (80)
+item[items.laser_bow, 0] = "Laser-Bogen";
+item[items.laser_bow, 1] = "Immerhin besser als ein normaler Bogen. Aber den Sinn dahinter verstehe ich nicht ganz.";
+item[items.laser_bow, 2] = obj_laser_bow;
+item[items.laser_bow, 3] = "prim";
+item[items.laser_bow, 4] = 1;
+
+item_stats[items.laser_bow, item_stats_prim.damage] = round(player_stats.root_damage*2.5);
+item_stats[items.laser_bow, item_stats_prim.damage_crit] = round(player_stats.root_damage*2.5) + round(player_stats.root_damage/4);
+item_stats[items.laser_bow, item_stats_prim.ability] = "fire";
+item_stats[items.laser_bow, item_stats_prim.ability_chance] = 0.2;
+item_stats[items.laser_bow, item_stats_prim.ability_strength] = 1;
+item_stats[items.laser_bow, item_stats_prim.speed_bonus] = 0;
+item_stats[items.laser_bow, item_stats_prim.attack_speed] = player_stats.attack_speed*2;
+item_stats[items.laser_bow, item_stats_prim.misc] = "";
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items 81 - 90;
+//Titanium-Stab (81)
+item[items.titanium_staff, 0] = "Titanium-Stab";
+item[items.titanium_staff, 1] = "Hart wie Kruppstahl, aber ungefaehr so flink wie Nashorn im Weltraum.";
+item[items.titanium_staff, 2] = obj_titanium_staff;
+item[items.titanium_staff, 3] = "prim";
+item[items.titanium_staff, 4] = 1;
+
+item_stats[items.titanium_staff, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.titanium_staff, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/2);
+item_stats[items.titanium_staff, item_stats_prim.ability] = "";
+item_stats[items.titanium_staff, item_stats_prim.ability_chance] = 0;
+item_stats[items.titanium_staff, item_stats_prim.ability_strength] = 0;
+item_stats[items.titanium_staff, item_stats_prim.speed_bonus] = +0.05;
+item_stats[items.titanium_staff, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.titanium_staff, item_stats_prim.misc] = "Leicht erhoehte Krit-Chance.";
+
+//Laser-Kettensäge (82)
+item[items.laser_chainsaw, 0] = "Laser-Kettensaege";
+item[items.laser_chainsaw, 1] = "Forstwirtschaftlich eine Katastrophe. So eine bescheuerte Idee habe ich lange nicht gesehen.";
+item[items.laser_chainsaw, 2] = obj_laser_chainsaw;
+item[items.laser_chainsaw, 3] = "prim";
+item[items.laser_chainsaw, 4] = 1;
+
+item_stats[items.laser_chainsaw, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.laser_chainsaw, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/4);
+item_stats[items.laser_chainsaw, item_stats_prim.ability] = "fire";
+item_stats[items.laser_chainsaw, item_stats_prim.ability_chance] = 0.2;
+item_stats[items.laser_chainsaw, item_stats_prim.ability_strength] = 1;
+item_stats[items.laser_chainsaw, item_stats_prim.speed_bonus] = 0;
+item_stats[items.laser_chainsaw, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.laser_chainsaw, item_stats_prim.misc] = "";
+
+//Fire Shotgun (83)
+item[items.fire_shotgun, 0] = "Fire - Shotgun";
+item[items.fire_shotgun, 1] = "Dein Gegenueber sieht danach aus wie schweizer Kaese. Nur ohne den Kaese zwischen den Loechern. Und brennt licherloh.";
+item[items.fire_shotgun, 2] = obj_shotgun;
+item[items.fire_shotgun, 3] = "prim";
+item[items.fire_shotgun, 4] = 1;
+
+item_stats[items.fire_shotgun, item_stats_prim.damage] = round(player_stats.root_damage*2.5);
+item_stats[items.fire_shotgun, item_stats_prim.damage_crit] = round(player_stats.root_damage*2.5) + round(player_stats.root_damage/8);
+item_stats[items.fire_shotgun, item_stats_prim.ability] = "fire";
+item_stats[items.fire_shotgun, item_stats_prim.ability_chance] = 0.5;
+item_stats[items.fire_shotgun, item_stats_prim.ability_strength] = 2;
+item_stats[items.fire_shotgun, item_stats_prim.speed_bonus] = 0;
+item_stats[items.fire_shotgun, item_stats_prim.attack_speed] = player_stats.attack_speed*3;
+item_stats[items.fire_shotgun, item_stats_prim.misc] = "";
+
+//Leder Rüstung (84)
+item[items.leather_armour, 0] = "Leder - Armour";
+item[items.leather_armour, 1] = "Natuerlich aus Kunstleder. Was denkst du denn von mir.";
+item[items.leather_armour, 2] = obj_armour;
+item[items.leather_armour, 3] = "item";
+item[items.leather_armour, 4] = 1;
+
+item_stats[items.leather_armour, item_stats_item.ability] = "armour";
+item_stats[items.leather_armour, item_stats_item.ability_strength] = 1;
+item_stats[items.leather_armour, item_stats_item.misc] = "Nur erster Item-Slot";
+
+//Eisen Rüstung (84)
+item[items.iron_armour, 0] = "Eisen - Armour";
+item[items.iron_armour, 1] = "Jeder Ritter ist jetzt neidisch auf dich.";
+item[items.iron_armour, 2] = obj_armour;
+item[items.iron_armour, 3] = "item";
+item[items.iron_armour, 4] = 1;
+
+item_stats[items.iron_armour, item_stats_item.ability] = "armour";
+item_stats[items.iron_armour, item_stats_item.ability_strength] = 2;
+item_stats[items.iron_armour, item_stats_item.misc] = "Nur erster Item-Slot";
+
+//Titanium Rüstung (84)
+item[items.titanium_armour, 0] = "Titanium - Armour";
+item[items.titanium_armour, 1] = "Damit gibst du eine einwandfreie Mond-Flagge ab.";
+item[items.titanium_armour, 2] = obj_armour;
+item[items.titanium_armour, 3] = "item";
+item[items.titanium_armour, 4] = 1;
+
+item_stats[items.titanium_armour, item_stats_item.ability] = "armour";
+item_stats[items.titanium_armour, item_stats_item.ability_strength] = 3;
+item_stats[items.titanium_armour, item_stats_item.misc] = "Nur erster Item-Slot";
+
+//Carbon Rüstung (85)
+item[items.carbon_armour, 0] = "Carbon - Armour";
+item[items.carbon_armour, 1] = "Damit wirst du quasi zu Batman. Wo sind eigentlich deine Eltern nochmal?";
+item[items.carbon_armour, 2] = obj_armour;
+item[items.carbon_armour, 3] = "item";
+item[items.carbon_armour, 4] = 1;
+
+item_stats[items.carbon_armour, item_stats_item.ability] = "armour";
+item_stats[items.carbon_armour, item_stats_item.ability_strength] = 4;
+item_stats[items.carbon_armour, item_stats_item.misc] = "Nur erster Item-Slot";
+
+//Titanium Schlagring (86)
+item[items.titanium_knuckleduster, 0] = "Titanium - Schlagring(e)";
+item[items.titanium_knuckleduster, 1] = "Ziemlich effektiv, aber nur sehr kurze Reichweite. Hol dir am besten gleich 2 davon. (stackbar)";
+item[items.titanium_knuckleduster, 2] = obj_titanium_knuckleduster;
+item[items.titanium_knuckleduster, 3] = "prim";
+item[items.titanium_knuckleduster, 4] = 2;
+
+item_stats[items.titanium_knuckleduster, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.titanium_knuckleduster, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/8);
+item_stats[items.titanium_knuckleduster, item_stats_prim.ability] = "slowness";
+item_stats[items.titanium_knuckleduster, item_stats_prim.ability_chance] = 0.5;
+item_stats[items.titanium_knuckleduster, item_stats_prim.ability_strength] = 1;
+item_stats[items.titanium_knuckleduster, item_stats_prim.speed_bonus] = 0;
+item_stats[items.titanium_knuckleduster, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.titanium_knuckleduster, item_stats_prim.misc] = "2 Items = doppelter Schaden";
+
+//Revolver (87)
+item[items.revolver, 0] = "Revolver";
+item[items.revolver, 1] = "Ich bin nur ein schlechter Abklatsch der Pistole, aber wir brauchten eben mehr Waffen.";
+item[items.revolver, 2] = obj_revolver;
+item[items.revolver, 3] = "prim";
+item[items.revolver, 4] = 1;
+
+item_stats[items.revolver, item_stats_prim.damage] = round(player_stats.root_damage*1.7);
+item_stats[items.revolver, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.7) + round(player_stats.root_damage/4);
+item_stats[items.revolver, item_stats_prim.ability] = "";
+item_stats[items.revolver, item_stats_prim.ability_chance] = 0;
+item_stats[items.revolver, item_stats_prim.ability_strength] = 0;
+item_stats[items.revolver, item_stats_prim.speed_bonus] = 0;
+item_stats[items.revolver, item_stats_prim.attack_speed] = player_stats.attack_speed*2;
+item_stats[items.revolver, item_stats_prim.misc] = "";
+
+//Mana-Regeneration-Orb (88)
+item[items.mana_reg_orb, 0] = "Orb der Mana-Regeneration";
+item[items.mana_reg_orb, 1] = "Beschleunigt die natuerliche Regeneration von Mana.";
+item[items.mana_reg_orb, 2] = obj_mana_reg_orb;
+item[items.mana_reg_orb, 3] = "item";
+item[items.mana_reg_orb, 4] = 1;
+
+item_stats[items.mana_reg_orb, item_stats_item.ability] = "mana_regeneration";
+item_stats[items.mana_reg_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.mana_reg_orb, item_stats_item.misc] = "";
+
+//Anime Sword (89)
+item[items.anime_sword, 0] = "Anime - Schwert";
+item[items.anime_sword, 1] = "Sehr maechtig und ueberdimensioniert wie sonstwas. Ich denke man kann es sich gut vorstellen.";
+item[items.anime_sword, 2] = obj_anime_sword;
+item[items.anime_sword, 3] = "prim";
+item[items.anime_sword, 4] = 1;
+
+item_stats[items.anime_sword, item_stats_prim.damage] = round(player_stats.root_damage*3);
+item_stats[items.anime_sword, item_stats_prim.damage_crit] = round(player_stats.root_damage*3) + round(player_stats.root_damage/4);
+item_stats[items.anime_sword, item_stats_prim.ability] = "";
+item_stats[items.anime_sword, item_stats_prim.ability_chance] = 0;
+item_stats[items.anime_sword, item_stats_prim.ability_strength] = 0;
+item_stats[items.anime_sword, item_stats_prim.speed_bonus] = 0;
+item_stats[items.anime_sword, item_stats_prim.attack_speed] = player_stats.attack_speed*3;
+item_stats[items.anime_sword, item_stats_prim.misc] = "";
+
+//Heal-Orb v2 (90)
+item[items.regeneration_orb_v2, 0] = "Gen X";
+item[items.regeneration_orb_v2, 1] = "Wolverine und Deadpool waeren neidisch auf deine Zellregeneration. Naja, nicht ganz.";
+item[items.regeneration_orb_v2, 2] = obj_regeneration_orb_v2;
+item[items.regeneration_orb_v2, 3] = "item";
+item[items.regeneration_orb_v2, 4] = 1;
+
+item_stats[items.regeneration_orb_v2, item_stats_item.ability] = "regeneration";
+item_stats[items.regeneration_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.regeneration_orb_v2, item_stats_item.misc] = "";
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items 91 - 100;
+//Swift-Orb v2 (91)
+item[items.swift_orb_v2, 0] = "Verbessertes Orb der Schnelligkeit";
+item[items.swift_orb_v2, 1] = "*sanic certified";
+item[items.swift_orb_v2, 2] = obj_swift_orb_v2;
+item[items.swift_orb_v2, 3] = "item";
+item[items.swift_orb_v2, 4] = 1;
+
+item_stats[items.swift_orb_v2, item_stats_item.ability] = "speed";
+item_stats[items.swift_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.swift_orb_v2, item_stats_item.misc] = "";
+
+//Mana-Regeneration-Orb v2 (92)
+item[items.mana_reg_orb_v2, 0] = "Verbessertes Orb der Mana-Regeneration";
+item[items.mana_reg_orb_v2, 1] = "Beschleunigt die natuerliche Regeneration von Mana.";
+item[items.mana_reg_orb_v2, 2] = obj_mana_reg_orb_v2;
+item[items.mana_reg_orb_v2, 3] = "item";
+item[items.mana_reg_orb_v2, 4] = 1;
+
+item_stats[items.mana_reg_orb_v2, item_stats_item.ability] = "mana_regeneration";
+item_stats[items.mana_reg_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.mana_reg_orb_v2, item_stats_item.misc] = "";
+
+//Laser Lichtschwert (93)
+item[items.laser_lightsaber, 0] = "Laser-Lichtschwert";
+item[items.laser_lightsaber, 1] = "Herkoemmliche Lichtschwerter sind viel zu langweilig. Da muessen noch Laser dran.#-Gedankengang Jonathan Wurth";
+item[items.laser_lightsaber, 2] = obj_laser_lightsaber;
+item[items.laser_lightsaber, 3] = "prim";
+item[items.laser_lightsaber, 4] = 1;
+
+item_stats[items.laser_lightsaber, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.laser_lightsaber, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/4);
+item_stats[items.laser_lightsaber, item_stats_prim.ability] = "fire";
+item_stats[items.laser_lightsaber, item_stats_prim.ability_chance] = 0.2;
+item_stats[items.laser_lightsaber, item_stats_prim.ability_strength] = 2;
+item_stats[items.laser_lightsaber, item_stats_prim.speed_bonus] = 0;
+item_stats[items.laser_lightsaber, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.laser_lightsaber, item_stats_prim.misc] = "";
+
+//Fist of the North Star (94)
+item[items.mana_fist_of_the_north_star_orb, 0] = "Fist of the North Star";
+item[items.mana_fist_of_the_north_star_orb, 1] = "Your enemies are already dead.";
+item[items.mana_fist_of_the_north_star_orb, 2] = obj_mana_fist_of_the_north_star_orb;
+item[items.mana_fist_of_the_north_star_orb, 3] = "mag";
+item[items.mana_fist_of_the_north_star_orb, 4] = 1;
+
+item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.ability] = "attack_mana_fist_of_the_north_star";
+item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.ability_strength] = -1;
+item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.mana_usage] = 100;
+item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.cooldown] = player_stats.attack_speed*3*5;
+item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.misc] = "Nur ein Einsatz.";
+
+//Peacekeeper (95)
+item[items.peacekeeper, 0] = "Friedensstifter";
+item[items.peacekeeper, 1] = "Die Stunde hat schon laengst geschlagen.";
+item[items.peacekeeper, 2] = obj_peacekeeper;
+item[items.peacekeeper, 3] = "prim";
+item[items.peacekeeper, 4] = 1;
+
+item_stats[items.peacekeeper, item_stats_prim.damage] = round(player_stats.root_damage*2);
+item_stats[items.peacekeeper, item_stats_prim.damage_crit] = round(player_stats.root_damage*2) + round(player_stats.root_damage/4);
+item_stats[items.peacekeeper, item_stats_prim.ability] = "";
+item_stats[items.peacekeeper, item_stats_prim.ability_chance] = 0;
+item_stats[items.peacekeeper, item_stats_prim.ability_strength] = 0;
+item_stats[items.peacekeeper, item_stats_prim.speed_bonus] = 0;
+item_stats[items.peacekeeper, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.peacekeeper, item_stats_prim.misc] = "";
+
+//Eisschwert (96)
+item[items.ice_sword, 0] = "Eisschwert";
+item[items.ice_sword, 1] = "Kalt wie der Winter in den Brixx-Bergen!";
+item[items.ice_sword, 2] = obj_ice_sword;
+item[items.ice_sword, 3] = "prim";
+item[items.ice_sword, 4] = 1;
+
+item_stats[items.ice_sword, item_stats_prim.damage] = round(player_stats.root_damage*1.7);
+item_stats[items.ice_sword, item_stats_prim.damage_crit] = round(player_stats.root_damage*1.7) + round(player_stats.root_damage/4);
+item_stats[items.ice_sword, item_stats_prim.ability] = "slowness";
+item_stats[items.ice_sword, item_stats_prim.ability_chance] = 0.8;
+item_stats[items.ice_sword, item_stats_prim.ability_strength] = 1;
+item_stats[items.ice_sword, item_stats_prim.speed_bonus] = 0;
+item_stats[items.ice_sword, item_stats_prim.attack_speed] = player_stats.attack_speed;
+item_stats[items.ice_sword, item_stats_prim.misc] = "";
+
+//Arkaner Strahl (97)
+item[items.mana_arcan_beam_orb, 0] = "Fetter Arkan-Strahl (TM)";
+item[items.mana_arcan_beam_orb, 1] = "Du laesst quasi den ganzen Frust, der sich ueber dein laecherliches Leben angestaut hat, auf einmal hinaus.";
+item[items.mana_arcan_beam_orb, 2] = obj_mana_arcan_beam_orb;
+item[items.mana_arcan_beam_orb, 3] = "mag";
+item[items.mana_arcan_beam_orb, 4] = 1;
+
+item_stats[items.mana_arcan_beam_orb, item_stats_mag.ability] = "attack_mana_beam";
+item_stats[items.mana_arcan_beam_orb, item_stats_mag.ability_strength] = 10;
+item_stats[items.mana_arcan_beam_orb, item_stats_mag.mana_usage] = -1;
+item_stats[items.mana_arcan_beam_orb, item_stats_mag.cooldown] = player_stats.attack_speed*3*10;
+item_stats[items.mana_arcan_beam_orb, item_stats_mag.misc] = "Staerke von verbrauchtem Mana abhaengig.";
+
+//Lucios (98)
+item[items.food_lucios, 0] = "Lucio's";
+item[items.food_lucios, 1] = "Haha! Yeah! Speeeeed Booooost!";
+item[items.food_lucios, 2] = obj_speed_potion;
+item[items.food_lucios, 3] = "pickup";
+item[items.food_lucios, 4] = 6;
+
+item_stats[items.food_lucios, item_stats_pickup.ability] = "speed";
+item_stats[items.food_lucios, item_stats_pickup.ability_strength] = 1;
+item_stats[items.food_lucios, item_stats_pickup.misc] = "";
+
+//Unsichtbarkeit v3 (99)
+item[items.mana_invisibility_v3, 0] = "Unsichtbarkeitsmantel";
+item[items.mana_invisibility_v3, 1] = "Ist das etwas der unsichtbar-#machende Unsichtbarkeits-#mantel der Unsichtbarkeit? Der der unsichtbar macht?";
+item[items.mana_invisibility_v3, 2] = obj_mana_invisibility_orb_v3;
+item[items.mana_invisibility_v3, 3] = "mag";
+item[items.mana_invisibility_v3, 4] = 1;
+
+item_stats[items.mana_invisibility_v3, item_stats_mag.ability] = "ability_mana_invisibility";
+item_stats[items.mana_invisibility_v3, item_stats_mag.ability_strength] = 2;
+item_stats[items.mana_invisibility_v3, item_stats_mag.mana_usage] = 0.5;
+item_stats[items.mana_invisibility_v3, item_stats_mag.cooldown] = player_stats.attack_speed;
+item_stats[items.mana_invisibility_v3, item_stats_mag.misc] = "Mana wird /s verbraucht.";
+
+//Strength Orb (100)
+item[items.strength_orb, 0] = "Orb der Staerke";
+item[items.strength_orb, 1] = "Die Menschen nutzen nur 30% ihres Staerkepotentials, aber Hokuto no Ken meistert die restlichen 70%!";
+item[items.strength_orb, 2] = obj_strength_orb;
+item[items.strength_orb, 3] = "item";
+item[items.strength_orb, 4] = 1;
+
+item_stats[items.strength_orb, item_stats_item.ability] = "strength";
+item_stats[items.strength_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.strength_orb, item_stats_item.misc] = "";
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items 101 - 110;
+//Strength Orb v2 (101)
+item[items.strength_orb_v2, 0] = "Verbessertes Orb der Staerke";
+item[items.strength_orb_v2, 1] = "Die Menschen nutzen nur 30% ihres Staerkepotentials, aber Hokuto no Ken meistert die restlichen 70%!";
+item[items.strength_orb_v2, 2] = obj_strength_orb_v2;
+item[items.strength_orb_v2, 3] = "item";
+item[items.strength_orb_v2, 4] = 1;
+
+item_stats[items.strength_orb_v2, item_stats_item.ability] = "strength";
+item_stats[items.strength_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.strength_orb_v2, item_stats_item.misc] = "";
+
+//Strength Orb v2 (102)
+item[items.adrenalin_shock_orb, 0] = "Orb des Adrenalin-Schocks";
+item[items.adrenalin_shock_orb, 1] = "Wenn du wenig HP hast, wird deine Mana-Regeneration verstaerkt.";
+item[items.adrenalin_shock_orb, 2] = obj_adrenalin_shock_orb;
+item[items.adrenalin_shock_orb, 3] = "item";
+item[items.adrenalin_shock_orb, 4] = 1;
+
+item_stats[items.adrenalin_shock_orb, item_stats_item.ability] = "";
+item_stats[items.adrenalin_shock_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.adrenalin_shock_orb, item_stats_item.misc] = "";
+
+//Max Mana Orb (103)
+item[items.max_mana_orb, 0] = "Manaspeicher";
+item[items.max_mana_orb, 1] = "Dein kuenstlicher Koerper kann nur eine begrenzte Menge an Mana aufnehmen. Hiermit bist du besser dran.";
+item[items.max_mana_orb, 2] = obj_max_mana_orb;
+item[items.max_mana_orb, 3] = "item";
+item[items.max_mana_orb, 4] = 1;
+
+item_stats[items.max_mana_orb, item_stats_item.ability] = "";
+item_stats[items.max_mana_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.max_mana_orb, item_stats_item.misc] = "";
+
+//Max Mana Orb v2 (104)
+item[items.max_mana_orb_v2, 0] = "Arkaner Manaspeicher";
+item[items.max_mana_orb_v2, 1] = "Dein kuenstlicher Koerper kann nur eine begrenzte Menge an Mana aufnehmen. Dieser arkane Gegenstand wird dir dabei helfen!";
+item[items.max_mana_orb_v2, 2] = obj_max_mana_orb_v2;
+item[items.max_mana_orb_v2, 3] = "item";
+item[items.max_mana_orb_v2, 4] = 1;
+
+item_stats[items.max_mana_orb_v2, item_stats_item.ability] = "";
+item_stats[items.max_mana_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.max_mana_orb_v2, item_stats_item.misc] = "";
+
+//Max Stamina Orb (105)
+item[items.max_stamina_orb, 0] = "Schweissband";
+item[items.max_stamina_orb, 1] = "Absorbiert deinen mineralisierten Schweiss und stinkt dabei ein wenig. Aber du haelst laenger durch.";
+item[items.max_stamina_orb, 2] = obj_max_stamina_orb;
+item[items.max_stamina_orb, 3] = "item";
+item[items.max_stamina_orb, 4] = 1;
+
+item_stats[items.max_stamina_orb, item_stats_item.ability] = "";
+item_stats[items.max_stamina_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.max_stamina_orb, item_stats_item.misc] = "";
+
+//Max Stamina Orb v2 (106)
+item[items.max_stamina_orb_v2, 0] = "Laser-Schweissband";
+item[items.max_stamina_orb_v2, 1] = "Atomisiert deinen mineralisierten Schweiss und blinkt dabei ein wenig. Aber du haelst laenger durch.";
+item[items.max_stamina_orb_v2, 2] = obj_max_stamina_orb_v2;
+item[items.max_stamina_orb_v2, 3] = "item";
+item[items.max_stamina_orb_v2, 4] = 1;
+
+item_stats[items.max_stamina_orb_v2, item_stats_item.ability] = "";
+item_stats[items.max_stamina_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.max_stamina_orb_v2, item_stats_item.misc] = "";
+
+//Sprint Speed Orb (107)
+item[items.sprint_speed_orb, 0] = "Neik Laufschuhe";
+item[items.sprint_speed_orb, 1] = "Du kennst es aus der Werbung. Zieh sie an und werde Sprint-Weltmeister.";
+item[items.sprint_speed_orb, 2] = obj_sprint_speed_orb;
+item[items.sprint_speed_orb, 3] = "item";
+item[items.sprint_speed_orb, 4] = 1;
+
+item_stats[items.sprint_speed_orb, item_stats_item.ability] = "";
+item_stats[items.sprint_speed_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.sprint_speed_orb, item_stats_item.misc] = "Markenname rein zufaellig";
+
+//Sprint Speed Orb (108)
+item[items.sprint_speed_orb_v2, 0] = "Adadis Laufschuhe";
+item[items.sprint_speed_orb_v2, 1] = "Du kennst es aus der Werbung. Zieh sie an und werde Sprint-Weltmeister. Mit Gelpolster. Oder so.";
+item[items.sprint_speed_orb_v2, 2] = obj_sprint_speed_orb_v2;
+item[items.sprint_speed_orb_v2, 3] = "item";
+item[items.sprint_speed_orb_v2, 4] = 1;
+
+item_stats[items.sprint_speed_orb_v2, item_stats_item.ability] = "";
+item_stats[items.sprint_speed_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.sprint_speed_orb_v2, item_stats_item.misc] = "Markenname rein zufaellig";
+
+//Chest Chance Orb (109)
+item[items.chest_chance_orb, 0] = "Gewinner-Bonus";
+item[items.chest_chance_orb, 1] = "Du hast alle deine Gegner besiegt. Warum dann nicht noch etwas feiern?";
+item[items.chest_chance_orb, 2] = obj_chest_chance_orb;
+item[items.chest_chance_orb, 3] = "item";
+item[items.chest_chance_orb, 4] = 1;
+
+item_stats[items.chest_chance_orb, item_stats_item.ability] = "";
+item_stats[items.chest_chance_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.chest_chance_orb, item_stats_item.misc] = "Kisten-Drop-Chance";
+
+//Chest Chance Orb v2 (110)
+item[items.chest_chance_orb_v2, 0] = "Gewinner-Bonus v2";
+item[items.chest_chance_orb_v2, 1] = "Du hast alle deine Gegner besiegt. Warum dann nicht noch etwas feiern?";
+item[items.chest_chance_orb_v2, 2] = obj_chest_chance_orb;
+item[items.chest_chance_orb_v2, 3] = "item";
+item[items.chest_chance_orb_v2, 4] = 1;
+
+item_stats[items.chest_chance_orb_v2, item_stats_item.ability] = "";
+item_stats[items.chest_chance_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.chest_chance_orb_v2, item_stats_item.misc] = "Kisten-Drop-Chance";
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Items 111 - 120;
+//Heal Orb Chance Orb (111)
+item[items.heal_orb_chance_orb, 0] = "Seelenraub";
+item[items.heal_orb_chance_orb, 1] = "Die kreischenden Seelen der Gefallenen werden in kleine Raumfalten gestopft, damit du sie essen kannst. Appetit?";
+item[items.heal_orb_chance_orb, 2] = obj_heal_orb_chance_orb;
+item[items.heal_orb_chance_orb, 3] = "item";
+item[items.heal_orb_chance_orb, 4] = 1;
+
+item_stats[items.heal_orb_chance_orb, item_stats_item.ability] = "";
+item_stats[items.heal_orb_chance_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.heal_orb_chance_orb, item_stats_item.misc] = "Heal-Orb-Drop-Chance";
+
+//Heal Orb Chance Orb v2 (112)
+item[items.heal_orb_chance_orb_v2, 0] = "Arkaner Seelenraub";
+item[items.heal_orb_chance_orb_v2, 1] = "Die kreischenden Seelen der Gefallenen werden in kleine Raumfalten gestopft, damit du sie essen kannst. Appetit?";
+item[items.heal_orb_chance_orb_v2, 2] = obj_heal_orb_chance_orb_v2;
+item[items.heal_orb_chance_orb_v2, 3] = "item";
+item[items.heal_orb_chance_orb_v2, 4] = 1;
+
+item_stats[items.heal_orb_chance_orb_v2, item_stats_item.ability] = "";
+item_stats[items.heal_orb_chance_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.heal_orb_chance_orb_v2, item_stats_item.misc] = "Heal-Orb-Drop-Chance";
+
+//Max HP Orb (113)
+item[items.max_hp_orb, 0] = "Steroide";
+item[items.max_hp_orb, 1] = "Nicht grade gesund, aber du lebst ja eh nicht lange. Damit aber noch etwas laenger.";
+item[items.max_hp_orb, 2] = obj_max_hp_orb;
+item[items.max_hp_orb, 3] = "item";
+item[items.max_hp_orb, 4] = 1;
+
+item_stats[items.max_hp_orb, item_stats_item.ability] = "";
+item_stats[items.max_hp_orb, item_stats_item.ability_strength] = 1;
+item_stats[items.max_hp_orb, item_stats_item.misc] = "";
+
+//Max HP Orb (114)
+item[items.max_hp_orb_v2, 0] = "Harte Steroide";
+item[items.max_hp_orb_v2, 1] = "Nicht grade gesund, aber du lebst ja eh nicht lange. Damit aber noch etwas laenger.";
+item[items.max_hp_orb_v2, 2] = obj_max_hp_orb_v2;
+item[items.max_hp_orb_v2, 3] = "item";
+item[items.max_hp_orb_v2, 4] = 1;
+
+item_stats[items.max_hp_orb_v2, item_stats_item.ability] = "";
+item_stats[items.max_hp_orb_v2, item_stats_item.ability_strength] = 2;
+item_stats[items.max_hp_orb_v2, item_stats_item.misc] = "";
 </string>
           </argument>
         </arguments>

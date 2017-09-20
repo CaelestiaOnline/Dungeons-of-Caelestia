@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_menu</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,59 +25,87 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Menü-Array + Rest
+            <string>///Read File
+sep = 64;
+w = room_width - 100;
+start_x = 100;
+start_y = 100;
+y_speed = 2;
 
-//Anzahl der Auswahlmöglichkeiten
-menulength = 5;
+credits_file = file_text_open_read(working_directory + "Textdateien\" + "credits.txt");
 
-//Pixel in y-Richtung zwischen den Auswahlmöglichkeiten
-yspace = 80;
+credits_string = "";
 
-//Abstand zwischen Pfeil und Mitte der View[0] in Pixel in - x-Richtung 
-xspace = 50;
-
-//Aktuelle Position des Menüpfeils
-menupos  = 0;
-
-//Überschrift
-heading = "Credits";
-
-//Auswahlmöglichkeiten
-menu[0] = "Coming soon..."
-menu[1] = "pixabay.com"
-menu[2] = "shutterstock.com"
-menu[3] = "++++++++++++++"
-menu[4] = "--&gt; Options Menu"
-
-draw_set_font(fnt_main_menu);
-
-wtext = max(
-    string_width(menu[0]),
-    string_width(menu[1]),
-    string_width(menu[2]),
-    string_width(menu[3]),
-    string_width(menu[4]),
-    );
+while(!file_text_eof(credits_file)) {
+    new_line = file_text_readln(credits_file);
     
-//Farben der Auswahlmöglichkeiten
-colour[0] = c_white;
-colour[1] = c_white;
-colour[2] = c_white;
-colour[3] = c_white;
-colour[4] = c_white;
+    credits_string = credits_string + new_line;
+};
 
-//Schatten
-shadow = 3;
+file_text_close(credits_file);
 
-//Farbe
-menucolour = scr_get_random_colour();
+room_height = 200 + string_height_ext(credits_string, sep, w);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bewegung
 
-//Script
-script = scr_credits_menu;
+if(y &lt; room_height) y += y_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Credits
+draw_set_font(fnt_credits);
+draw_set_halign(fa_center);
 
-//Bewegter Hintergrund
-background_hspeed[0] = 0.5;
-background_vspeed[0] = 0.1;
+draw_set_alpha(0.5);
+draw_text_ext(room_width/2 + 3, start_y + 3, credits_string, sep, w);
+
+draw_set_alpha(1);
+draw_set_colour(c_white);
+
+draw_text_ext(room_width/2, start_y, credits_string, sep, w);
+
+draw_set_halign(fa_left);
+
 </string>
           </argument>
         </arguments>

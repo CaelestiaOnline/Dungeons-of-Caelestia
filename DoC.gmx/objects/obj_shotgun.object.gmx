@@ -112,6 +112,15 @@ if(
     }     
 }
 
+if(hit_list != noone) {
+    if(item_stats[index, item_stats_prim.ability] != "") {
+        if(scr_crit_attack(item_stats[index, item_stats_prim.ability_chance])) {
+            scr_effect(scr_effect_index(item_stats[index, item_stats_prim.ability]), item_stats[index, item_stats_prim.ability_strength], hit_list);
+        }
+    }
+    hit_list = noone;
+}
+
 </string>
           </argument>
         </arguments>

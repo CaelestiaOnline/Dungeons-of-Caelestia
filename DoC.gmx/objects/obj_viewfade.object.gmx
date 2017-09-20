@@ -61,12 +61,11 @@ stagethree = false;
 //Bewegung (Dynamischer Geschwindigkeits An- /Abstieg der Überblendung)
 view_xview[0] += xfactor;
 
-if(room == goal &amp;&amp; !stagethree) {
-    view_xview[0] = -(view_wview[0] + 50);
-    show_debug_message("_____TRUE_____");
-    stagethree = true;
+if((view_xview[0] &gt; display_get_gui_width() + 50) &amp;&amp; (!stagetwo)) {
+    room_goto(goal);
+    stagetwo = true;
+    view_xview[0] = 0;
 }
-
 
 if(view_xview[0] &lt;= xfactor &amp;&amp; view_xview[0] &gt;= 0 &amp;&amp; stagetwo) {
     show_debug_message("END: " + string(view_xview[0]));
@@ -74,11 +73,13 @@ if(view_xview[0] &lt;= xfactor &amp;&amp; view_xview[0] &gt;= 0 &amp;&amp; stage
     instance_destroy();
 }
 
-if((view_xview[0] &gt; display_get_gui_width() + 50) &amp;&amp; (!stagetwo)) {
-    room_goto(goal);
-    stagetwo = true;
-    view_xview[0] = 0;
+if(room == goal &amp;&amp; !stagethree) {
+    view_xview[0] = -(view_wview[0] + 50);
+    show_debug_message("_____TRUE_____");
+    stagethree = true;
 }
+
+
 
 
 </string>

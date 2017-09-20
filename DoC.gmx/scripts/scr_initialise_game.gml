@@ -106,6 +106,14 @@ inv_hud = instance_create(0, 0, obj_hud_inv);
 globalvar menu_in_game;
 menu_in_game = instance_create(0, 0, obj_menu_in_game);
 
+//In game Help
+globalvar help_in_game;
+help_in_game = instance_create(0, 0, obj_help_in_game);
+
+//In game Stats ext
+globalvar stats_ext_in_game;
+stats_ext_in_game = instance_create(0, 0, obj_stats_ext_in_game);
+
 //Progress
 globalvar progress;
 progress = instance_create(0, 0, obj_progress);
@@ -117,6 +125,10 @@ death_stats = instance_create(0, 0, obj_death_stats);
 //Hub object
 globalvar hub;
 hub = instance_create(0, 0, obj_hub);
+
+//Run Admin
+globalvar run_admin;
+run_admin = noone;
 
 //Test-Inventory
 //instance_create(0, 0, obj_test);

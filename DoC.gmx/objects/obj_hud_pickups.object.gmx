@@ -340,11 +340,11 @@ if(i == inventory.menupos) {
     draw_circle(slots_x[i], slots_y[i], pickups_radius - buffer, 0);
     
     var countdown = inventory.alarm[2] / inventory.pickup_countdown;
-    scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i]);
+    scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i], pickups_radius);
 }
 draw_set_alpha(1);
 if(inventory.inv_pickups.inv[i] != -1) {
-    draw_sprite(spr_items, inventory.inv_pickups.inv[i], slots_x[i], slots_y[i]);
+    draw_sprite(scr_get_item_sprite(inventory.inv_pickups.inv[i]), 0, slots_x[i], slots_y[i]);
 }
 
 draw_set_alpha(0.8);

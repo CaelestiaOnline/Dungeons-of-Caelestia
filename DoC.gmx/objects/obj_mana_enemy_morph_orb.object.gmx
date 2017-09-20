@@ -87,7 +87,7 @@ if(confirmed) {
     var enemy_y = enemy.y;
     if(enemy.hp &lt;= max_enemy_hp) {
         instance_destroy(enemy, false);
-    var animal = instance_create(enemy_x, enemy_y, obj_passive_animal);
+    var animal = instance_create(enemy_x, enemy_y, object);
     effect_create_above(ef_explosion, x, y, 1, c_white);
     }
     }

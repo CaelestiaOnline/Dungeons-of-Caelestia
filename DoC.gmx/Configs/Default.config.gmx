@@ -204,7 +204,7 @@
     <option_androidtv_use_test_ads>false</option_androidtv_use_test_ads>
     <option_argumenterrors>True</option_argumenterrors>
     <option_audioGroupCount>1</option_audioGroupCount>
-    <option_author></option_author>
+    <option_author>Caelestia Enterprise</option_author>
     <option_backimage>nil</option_backimage>
     <option_borderless>True</option_borderless>
     <option_changed>false</option_changed>
@@ -262,7 +262,8 @@
     <option_html5_usesplash>False</option_html5_usesplash>
     <option_icon>nil</option_icon>
     <option_in_app_purchase_sandbox_mode>0</option_in_app_purchase_sandbox_mode>
-    <option_information></option_information>
+    <option_information>Tag 1: Ich bin hier gestrandet und soll ein Spiel programmieren
+Tag 24.690: Ach du kacke</option_information>
     <option_interpolate>False</option_interpolate>
     <option_ios_adcolony_enable_V4VC>false</option_ios_adcolony_enable_V4VC>
     <option_ios_advertising_enable>false</option_ios_advertising_enable>
@@ -467,7 +468,7 @@
     <option_use_fast_collision>False</option_use_fast_collision>
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
-    <option_version>000</option_version>
+    <option_version>0.0.0.1 alpha</option_version>
     <option_version_build>1</option_version_build>
     <option_version_company></option_version_company>
     <option_version_copyright></option_version_copyright>

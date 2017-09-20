@@ -9,7 +9,7 @@ scr_heal_orb_drop(
 var heal_x = argument0;
 var heal_y = argument1;
 
-var drop_chance = 0.1;
+var drop_chance = player_stats.heal_orb_chance;
 
 if(!scr_crit_attack(drop_chance)) exit;
 
