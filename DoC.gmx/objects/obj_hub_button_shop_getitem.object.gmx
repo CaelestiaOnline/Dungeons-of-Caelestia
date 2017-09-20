@@ -169,7 +169,7 @@ draw_sprite(spr_inv_border, 0, x, y);
             <kind>1</kind>
             <string>///Draw Sprite + Anzahl
 if(button_item != -1) {
-    draw_sprite(spr_items, button_item, x, y);
+    draw_sprite(scr_get_item_sprite(button_item), 0, x, y);
 }
 
 //Anzahl der Item in den Slots

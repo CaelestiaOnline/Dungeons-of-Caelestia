@@ -191,7 +191,7 @@ draw_sprite(spr_inv_border, 0, x, y);
             <string>///Draw Sprite + Anzahl
 
 if(inventory_type.inv[slot] != -1) {
-    draw_sprite(spr_items, inventory_type.inv[slot], x, y);
+    draw_sprite(scr_get_item_sprite(inventory_type.inv[slot]), 0, x, y);
 }
 
 //Anzahl der Item in den Slots

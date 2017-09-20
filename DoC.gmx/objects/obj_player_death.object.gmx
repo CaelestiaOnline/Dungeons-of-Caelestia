@@ -25,69 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-scr_keylock_all(false);
-obj_player.visible = true;
-admin.playing = true;
-scr_reset_stats();
-instance_destroy();
-scr_enter_hub();
-*/
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Gehe ins Hub
-hub.in_hub = true;
-scr_effect_rem_all(obj_player);
-scr_effect_kill_all();
-scr_keylock_all(true);
 obj_player.visible = false;
+alarm_set(0, -2);
+scr_keylock_all(true);
+confirmed_dead = false;
+confirmed_revive = false;
+confirmed_google = false;
+player_stats.invincible = true;
+with(obj_gegner) {
+    freeze = true;
+}
 
-alarm_set(0, room_speed * 3);
+scr_invfade(true, "");
 
-var room_placer = instance_create(0, 0, obj_room_placer);
-room_placer.goal = rm_main_hub;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Beende Run
-if(admin.in_run) scr_leave_run(true);
+draw_alarm0 = false;
 </string>
           </argument>
         </arguments>
@@ -96,26 +48,6 @@ if(admin.in_run) scr_leave_run(true);
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>alarm0</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -130,10 +62,18 @@ if(admin.in_run) scr_leave_run(true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_main_hub);
+            <string>///Revive
 obj_player.visible = true;
 player_stats.invincible = false;
+admin.playing = true;
 scr_reset_player_stats();
+scr_effect_kill_all();
+scr_invfade(false, "");
+scr_keylock_all(false);
+with(obj_gegner) {
+    freeze = false;
+}
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -156,12 +96,260 @@ scr_reset_player_stats();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Gehe ins Todesmenü
-if(alarm_get(0) == -1) {
+            <string>if(!admin.in_game) instance_destroy();
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bestätigung Dead
+if(keyboard_check_pressed(ord("K"))) {
+    confirmed_dead = true;
+}
+
+if(confirmed_dead) {
+    room_goto(rm_main_hub);
+    obj_player.visible = true;
+    player_stats.invincible = false;
+    scr_reset_player_stats();
+    hub.in_hub = true;
+    scr_effect_kill_all();
+    if(admin.in_run) scr_leave_run(true);
+    scr_room_placer(rm_main_hub);
     if(room == rm_main_hub) {
         scr_enter_hub_menu(rm_hub_death_menu);
         instance_destroy();
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bestätigung Revive
+if(keyboard_check_pressed(ord("J")) &amp;&amp; player_stats.revive) {
+    confirmed_revive = true;
+    player_stats.revive = false;
+    scr_inventory_rem_item(inventory.inv_items, items.revive_orb, 1);
+}
+
+if(confirmed_revive) {
+    alarm_set(0, room_speed*3);
+    confirmed_revive = false;
+    draw_alarm0 = true;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bestätigung Google
+if(keyboard_check_pressed(ord("L"))) {
+    confirmed_google = true;
+}
+
+if(confirmed_google) {
+    url_open_ext( 'https://www.google.de/search?q=how+to+git+gud', '_blank');
+    confirmed_google = false;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Window
+//BG1
+draw_set_colour(global.co_blue_gray_1000);
+draw_set_alpha(0.8);
+
+var x1, y2, x2, y2, buffer1;
+buffer1 = 100;
+x1 = buffer1;
+x2 = display_get_gui_width() - buffer1;
+
+y1 = buffer1;
+y2 = display_get_gui_height()- buffer1;
+
+draw_roundrect(x1, y1, x2, y2, 0);
+
+//BG2
+draw_set_colour(global.co_blue_gray_900);
+draw_set_alpha(0.8);
+
+var x1, y2, x2, y2, buffer1;
+buffer1 = 120;
+x1 = buffer1;
+x2 = display_get_gui_width() - buffer1;
+
+y1 = buffer1;
+y2 = display_get_gui_height()- buffer1;
+
+draw_roundrect(x1, y1, x2, y2, 0);
+draw_set_alpha(1);
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Heading
+
+draw_set_alpha(1);
+draw_set_colour(choose(c_white, c_red, c_black));
+draw_set_halign(fa_center);
+draw_set_font(fnt_death_screen_heading);
+
+draw_text(display_get_gui_width()/2, 180, "MALFUNCTION");
+
+draw_set_colour(c_white);
+draw_set_font(fnt_death_screen_heading2);
+
+draw_text(display_get_gui_width()/2, 280, "Drone is not responding");
+
+draw_set_halign(fa_left);
+
+draw_set_font(fnt_death_screen_normal);
+
+var text = "Data will be synchronized to local server...";
+draw_text(500, 500, text);
+
+var text = "Uploading Data...";
+draw_text(500, 530, text);
+
+var text = "PRESS 'K' to finish upload";
+draw_text(300, 700, text);
+
+var text = "Drone will be destroyed.";
+draw_text(1000, 700, text);
+
+var text = "PRESS 'J' to run Windows Problembehandlung";
+draw_text(300, 800, text);
+
+var text = "Drone will be repaired, if possible.";
+draw_text(1000, 800, text);
+
+var repair_status;
+if(player_stats.revive) repair_status = "possible";
+else repair_status = "not possible";
+
+draw_set_colour(c_red);
+var text = "STATUS: " + repair_status;
+draw_text(1000, 830, text);
+draw_set_colour(c_white);
+
+var text = "PRESS 'L' to google Error";
+draw_text(300, 900, text);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Alarms
+
+if(draw_alarm0) {
+    draw_set_colour(c_red);
+    draw_set_font(fnt_death_screen_heading2);
+    draw_set_halign(fa_center);
+
+    draw_text(display_get_gui_width()/2, 400, "Revive in " + string(round(alarm_get(0)/room_speed)) + "s");
+    draw_set_halign(fa_left);
 }
 </string>
           </argument>

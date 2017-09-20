@@ -60,6 +60,7 @@ triggered = false;
 
 //Beweglich
 movable = enemy_stats[object_index, 2];
+freeze = false;
 
 //Hitbox
 mask_index = asset_get_index(string("spr_" + object_get_name(object_index) + "_colbox"));

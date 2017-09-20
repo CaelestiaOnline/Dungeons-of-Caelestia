@@ -49,14 +49,29 @@ switch(ability_string) {
     case "blood":
         return "Blutung";
         break;
+    case "ability_revive":
+        return "Wiederbelebung";
+        break;
+    case "ability_mana_teleport":
+        return "Mana-Teleport";
+        break;
+    case "ability_mana_invisibility":
+        return "Unsichtbarkeit";
+        break;
     case "attack_mana":
         return "Mana-Attack";
         break;
     case "attack_mana_fire":
         return "Mana-Fire-Attack";
         break;
-    case "ability_mana_teleport":
-        return "Mana-Teleport";
+    case "attack_mana_beam":
+        return "Mana-Strahl";
+        break;
+    case "attack_mana_chainbolt":
+        return "Kugelblitz";
+        break;
+    case "attack_mana_black_fire":
+        return "Schwarzes Feuer";
         break;
     default:
         return "-/-";

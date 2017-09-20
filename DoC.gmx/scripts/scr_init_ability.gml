@@ -219,6 +219,9 @@ switch(ability) {
             case 1:
                 radius = 50;
                 break;
+            case 2:
+                radius = 50;
+                break;
         }
         break;
     //Attacken
@@ -238,12 +241,24 @@ switch(ability) {
                 break;
         }
         break;
+    case "attack_mana_poison":
+        switch(ability_strength) {
+            case 1:
+                damage = round(player_stats.root_damage*3);
+                scr_init_ability("poison", 2);
+                break;
+        }
+        break;
     case "attack_mana_beam":
         stun_time = room_speed*2;
         switch(ability_strength) {
             case 666:
                 damage = round(player_stats.root_damage*8);
                 max_distance = 600;
+                break;
+            case 10:
+                damage = round(player_stats.root_damage*4);
+                max_distance = 1000;
                 break;
         }
         break;
@@ -255,6 +270,12 @@ switch(ability) {
                 weakening_mult = 0.25;
                 enemy_count = 5;
                 break;
+            case 2:
+                damage = round(player_stats.root_damage*3);
+                radius = 300;
+                weakening_mult = 0.5;
+                enemy_count = 8;
+                break;
         }
         break;
     case "attack_mana_black_fire":
@@ -263,8 +284,11 @@ switch(ability) {
             case 1:
                 radius = 400;
                 damage = round(player_stats.root_damage*6);
-                
                 break;
+            case 2:
+                radius = 500;
+                damage = round(player_stats.root_damage*6);
+                stun_time = room_speed/2;
         }
         break;
     case "attack_mana_implosion":
@@ -273,12 +297,21 @@ switch(ability) {
                 radius = 250;
                 damage = 4;
                 break;
+            case 2:
+                radius = 500;
+                damage = 3;
+                break;
         }
         break;
     case "attack_mana_necromancer":
         switch(ability_strength) {
             case 1:
                 nekromancer_count = 1;
+                object = obj_random_guy;
+                break;
+            case 2:
+                nekromancer_count = irandom(2);
+                object = obj_random_guy;
                 break;
         }
         break;
@@ -286,6 +319,11 @@ switch(ability) {
         switch(ability_strength) {
             case 1:
                 max_enemy_hp = 50;
+                object = obj_passive_animal;
+                break;
+            case 2:
+                max_enemy_hp = 50;
+                object = obj_passive_animal;
                 break;
         }
         break;
@@ -295,6 +333,24 @@ switch(ability) {
                 damage = 12;
                 projectile_count = 28;
                 radius = 75;
+                break;
+            case 2:
+                damage = 12;
+                projectile_count = 64;
+                radius = 150;
+                break;
+        }
+        break;
+    //Armour
+    case "armour":
+        switch(ability_strength) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 5:
                 break;
         }
         break;

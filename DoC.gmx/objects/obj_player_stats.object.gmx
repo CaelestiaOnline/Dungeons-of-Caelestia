@@ -32,23 +32,28 @@ name = "Subjekt \#" + string(stats.death_count);
 //HP
 hp = 100;
 max_hp = hp;
+old_max_hp = hp;
 old_hp = hp;
 absorption_hp = 0;
 max_absorption_hp = max_hp * 1.5;
 
 //Regeneration
 regeneration = 1;
+old_regeneration = regeneration;
 reg_time = room_speed*2;
+old_reg_time = reg_time;
 
 //Mana
 mana = 100;
 max_mana = mana;
+old_max_mana = max_mana;
 mana_reg = 1;
 mana_reg_time = room_speed/4;
 
 //Stamina
 stamina = 25;
 max_stamina = stamina;
+old_max_stamina = stamina;
 stamina_usage = 0.5;
 stamina_reg = 0.2;
 
@@ -65,10 +70,12 @@ attack_speed_mult_effect = 1;
 //Resistenz
 resistance_mult = 1;
 resistance_mult_effect = 1;
+resistance_mult_item = 1;
 
 //Stärke
 strength_mult = 1;
 strength_mult_effect = 1;
+strength_mult_item = 1;
 
 //Speed
 player_speed = 1;
@@ -78,6 +85,9 @@ speed_mult = 1;
 speed_mult_item = 1;
 speed_mult_prim = 1;
 speed_mult_effect = 1;
+
+sprint_speed_mult = 1;
+sprint_speed_mult_item = 1;
 
 //Beschleunigung
 player_acc = 0.4;
@@ -113,6 +123,15 @@ invisible = false;
 
 //Effekte
 scr_init_effects();
+
+//Revive
+revive = false;
+
+//Chest
+chest_chance = 0.5;
+
+//Heal Orb
+heal_orb_chance = 0.05;
 
 
 </string>
@@ -247,7 +266,8 @@ if(instance_exists(obj_player)) {
     }
     //Sprint
     //if(obj_player.isSprinting) {
-        max_player_sprint_speed = old_max_player_sprint_speed * speed_mult;
+        sprint_speed_mult = 1 * sprint_speed_mult_item;
+        max_player_sprint_speed = old_max_player_sprint_speed * (speed_mult * sprint_speed_mult);
         player_sprint_acc = old_player_sprint_acc * speed_mult;
         player_friction = old_player_friction * speed_mult;
     //}
@@ -304,7 +324,7 @@ attack_speed = attack_speed_old * attack_speed_mult;
             <kind>1</kind>
             <string>///Resistance Multiplictor
 
-resistance_mult = 1 * resistance_mult_effect;
+resistance_mult = 1 * resistance_mult_effect * resistance_mult_item;
 </string>
           </argument>
         </arguments>
@@ -327,7 +347,7 @@ resistance_mult = 1 * resistance_mult_effect;
             <kind>1</kind>
             <string>///Strength Multiplictor
 
-strength_mult = 1 * strength_mult_effect;
+strength_mult = 1 * strength_mult_effect * strength_mult_item;
 </string>
           </argument>
         </arguments>

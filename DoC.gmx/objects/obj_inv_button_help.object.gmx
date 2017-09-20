@@ -107,6 +107,21 @@ width = sprite_get_width(spr_inv_exit)/2;
 
 draw_set_alpha(1);
 
+if(help_in_game.show_help) {
+//Rechteck bei geöffnetem Inv
+        draw_set_colour(c_red);
+        draw_set_alpha(0.7);
+        draw_rectangle(
+            x - width,
+            y - width,
+            x + width,
+            y + width,
+            0
+        );
+        draw_set_colour(c_white);
+        draw_set_alpha(1);      
+}
+
 if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
     if(!click_hold) {
         //Rechteck bei Hovern
@@ -135,11 +150,11 @@ if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
         draw_set_alpha(1);
     }
     if(click) {
-        
+        scr_menu_to_inv_fade(1 - help_in_game.show_help, "help");
     }
 }
 
-draw_sprite(spr_undefined, 0, x, y);
+draw_sprite(spr_help, 0, x, y);
 </string>
           </argument>
         </arguments>

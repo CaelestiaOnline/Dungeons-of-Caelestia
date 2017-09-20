@@ -132,7 +132,7 @@ if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
         draw_set_alpha(1);
     }
     if(click) {
-        if(inventory.show_inv) {
+        if(inventory.show_inv || help_in_game.show_help || stats_ext_in_game.show_stats) {
             scr_invfade(false, "");
         } else {
             scr_menufade(false);

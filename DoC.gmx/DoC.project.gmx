@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="3" name="datafiles">
-    <datafiles number="3" name="Textdateien">
+  <datafiles number="4" name="datafiles">
+    <datafiles number="4" name="Textdateien">
       <datafile>
         <name>pro_tip.txt</name>
         <exists>-1</exists>
@@ -39,8 +39,25 @@
         </ConfigOptions>
         <filename>splash_screen.txt</filename>
       </datafile>
+      <datafile>
+        <name>credits.txt</name>
+        <exists>-1</exists>
+        <size>241</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>credits.txt</filename>
+      </datafile>
     </datafiles>
-    <datafiles number="3" name="SaveData">
+    <datafiles number="4" name="SaveData">
       <datafile>
         <name>savedata.ini</name>
         <exists>-1</exists>
@@ -67,6 +84,13 @@
     </sounds>
     <sounds name="Menu">
       <sound>sound\snd_click</sound>
+    </sounds>
+    <sounds name="Items">
+      <sounds name="Mag">
+        <sounds name="FistOfTheNorthStar">
+          <sound>sound\snd_fotns</sound>
+        </sounds>
+      </sounds>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -268,6 +292,7 @@
     <sprites name="Waffen">
       <sprite>sprites\spr_hitbox</sprite>
       <sprite>sprites\spr_ultra_mana_beam</sprite>
+      <sprite>sprites\spr_mana_arcan_beam</sprite>
       <sprite>sprites\spr_hitbox_enemy</sprite>
       <sprite>sprites\spr_explosion</sprite>
       <sprite>sprites\spr_hit</sprite>
@@ -288,17 +313,24 @@
         <sprite>sprites\spr_blowgun_bullet</sprite>
         <sprite>sprites\spr_throwing_dagger_bullet</sprite>
         <sprite>sprites\spr_shuriken_bullet</sprite>
+        <sprite>sprites\spr_tomahawk_bullet</sprite>
         <sprite>sprites\spr_mana_fire_bullet</sprite>
+        <sprite>sprites\spr_snowball_bullet</sprite>
+        <sprite>sprites\spr_mana_poison_bullet</sprite>
         <sprite>sprites\spr_mana_bullet</sprite>
         <sprite>sprites\spr_mana_implosion_bullet</sprite>
         <sprite>sprites\spr_mana_chainbolt_bullet</sprite>
         <sprite>sprites\spr_mini_bullet</sprite>
         <sprite>sprites\spr_shotgun_bullet</sprite>
       </sprites>
-      <sprite>sprites\spr_pentagram</sprite>
       <sprite>sprites\spr_black_fire</sprite>
       <sprites name="Projectiles">
         <sprite>sprites\spr_arrow_rain_projectile</sprite>
+      </sprites>
+      <sprites name="Circles">
+        <sprite>sprites\spr_pentagram3</sprite>
+        <sprite>sprites\spr_pentagram2</sprite>
+        <sprite>sprites\spr_pentagram</sprite>
       </sprites>
     </sprites>
     <sprites name="Hindernis">
@@ -376,11 +408,171 @@
         <sprite>sprites\spr_exit</sprite>
         <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_undefined</sprite>
+        <sprite>sprites\spr_help</sprite>
+        <sprite>sprites\spr_stats</sprite>
         <sprite>sprites\spr_back</sprite>
         <sprite>sprites\spr_triggered</sprite>
         <sprite>sprites\spr_dead</sprite>
       </sprites>
       <sprite>sprites\spr_ground_item_collision_box</sprite>
+      <sprites name="Items">
+        <sprites name="0-9;">
+          <sprite>sprites\spr_items_0</sprite>
+          <sprite>sprites\spr_items_1</sprite>
+          <sprite>sprites\spr_items_2</sprite>
+          <sprite>sprites\spr_items_3</sprite>
+          <sprite>sprites\spr_items_4</sprite>
+          <sprite>sprites\spr_items_5</sprite>
+          <sprite>sprites\spr_items_6</sprite>
+          <sprite>sprites\spr_items_7</sprite>
+          <sprite>sprites\spr_items_8</sprite>
+          <sprite>sprites\spr_items_9</sprite>
+        </sprites>
+        <sprites name="10-19;">
+          <sprite>sprites\spr_items_10</sprite>
+          <sprite>sprites\spr_items_11</sprite>
+          <sprite>sprites\spr_items_12</sprite>
+          <sprite>sprites\spr_items_13</sprite>
+          <sprite>sprites\spr_items_14</sprite>
+          <sprite>sprites\spr_items_15</sprite>
+          <sprite>sprites\spr_items_16</sprite>
+          <sprite>sprites\spr_items_17</sprite>
+          <sprite>sprites\spr_items_18</sprite>
+          <sprite>sprites\spr_items_19</sprite>
+        </sprites>
+        <sprites name="20-29;">
+          <sprite>sprites\spr_items_20</sprite>
+          <sprite>sprites\spr_items_21</sprite>
+          <sprite>sprites\spr_items_22</sprite>
+          <sprite>sprites\spr_items_23</sprite>
+          <sprite>sprites\spr_items_24</sprite>
+          <sprite>sprites\spr_items_25</sprite>
+          <sprite>sprites\spr_items_26</sprite>
+          <sprite>sprites\spr_items_27</sprite>
+          <sprite>sprites\spr_items_28</sprite>
+          <sprite>sprites\spr_items_29</sprite>
+        </sprites>
+        <sprites name="30-39;">
+          <sprite>sprites\spr_items_30</sprite>
+          <sprite>sprites\spr_items_31</sprite>
+          <sprite>sprites\spr_items_32</sprite>
+          <sprite>sprites\spr_items_33</sprite>
+          <sprite>sprites\spr_items_34</sprite>
+          <sprite>sprites\spr_items_35</sprite>
+          <sprite>sprites\spr_items_36</sprite>
+          <sprite>sprites\spr_items_37</sprite>
+          <sprite>sprites\spr_items_38</sprite>
+          <sprite>sprites\spr_items_39</sprite>
+        </sprites>
+        <sprites name="40-49;">
+          <sprite>sprites\spr_items_40</sprite>
+          <sprite>sprites\spr_items_41</sprite>
+          <sprite>sprites\spr_items_42</sprite>
+          <sprite>sprites\spr_items_43</sprite>
+          <sprite>sprites\spr_items_44</sprite>
+          <sprite>sprites\spr_items_45</sprite>
+          <sprite>sprites\spr_items_46</sprite>
+          <sprite>sprites\spr_items_47</sprite>
+          <sprite>sprites\spr_items_48</sprite>
+          <sprite>sprites\spr_items_49</sprite>
+        </sprites>
+        <sprites name="50-59;">
+          <sprite>sprites\spr_items_50</sprite>
+          <sprite>sprites\spr_items_51</sprite>
+          <sprite>sprites\spr_items_52</sprite>
+          <sprite>sprites\spr_items_53</sprite>
+          <sprite>sprites\spr_items_54</sprite>
+          <sprite>sprites\spr_items_55</sprite>
+          <sprite>sprites\spr_items_56</sprite>
+          <sprite>sprites\spr_items_57</sprite>
+          <sprite>sprites\spr_items_58</sprite>
+          <sprite>sprites\spr_items_59</sprite>
+        </sprites>
+        <sprites name="60-69;">
+          <sprite>sprites\spr_items_60</sprite>
+          <sprite>sprites\spr_items_61</sprite>
+          <sprite>sprites\spr_items_62</sprite>
+          <sprite>sprites\spr_items_63</sprite>
+          <sprite>sprites\spr_items_64</sprite>
+          <sprite>sprites\spr_items_65</sprite>
+          <sprite>sprites\spr_items_66</sprite>
+          <sprite>sprites\spr_items_67</sprite>
+          <sprite>sprites\spr_items_68</sprite>
+          <sprite>sprites\spr_items_69</sprite>
+        </sprites>
+        <sprites name="70-79;">
+          <sprite>sprites\spr_items_70</sprite>
+          <sprite>sprites\spr_items_71</sprite>
+          <sprite>sprites\spr_items_72</sprite>
+          <sprite>sprites\spr_items_73</sprite>
+          <sprite>sprites\spr_items_74</sprite>
+          <sprite>sprites\spr_items_75</sprite>
+          <sprite>sprites\spr_items_76</sprite>
+          <sprite>sprites\spr_items_77</sprite>
+          <sprite>sprites\spr_items_78</sprite>
+          <sprite>sprites\spr_items_79</sprite>
+        </sprites>
+        <sprites name="80-89;">
+          <sprite>sprites\spr_items_80</sprite>
+          <sprite>sprites\spr_items_81</sprite>
+          <sprite>sprites\spr_items_82</sprite>
+          <sprite>sprites\spr_items_83</sprite>
+          <sprite>sprites\spr_items_84</sprite>
+          <sprite>sprites\spr_items_85</sprite>
+          <sprite>sprites\spr_items_86</sprite>
+          <sprite>sprites\spr_items_87</sprite>
+          <sprite>sprites\spr_items_88</sprite>
+          <sprite>sprites\spr_items_89</sprite>
+        </sprites>
+        <sprites name="90-99;">
+          <sprite>sprites\spr_items_90</sprite>
+          <sprite>sprites\spr_items_91</sprite>
+          <sprite>sprites\spr_items_92</sprite>
+          <sprite>sprites\spr_items_93</sprite>
+          <sprite>sprites\spr_items_94</sprite>
+          <sprite>sprites\spr_items_95</sprite>
+          <sprite>sprites\spr_items_96</sprite>
+          <sprite>sprites\spr_items_97</sprite>
+          <sprite>sprites\spr_items_98</sprite>
+          <sprite>sprites\spr_items_99</sprite>
+        </sprites>
+        <sprites name="100-109;">
+          <sprite>sprites\spr_items_100</sprite>
+          <sprite>sprites\spr_items_101</sprite>
+          <sprite>sprites\spr_items_102</sprite>
+          <sprite>sprites\spr_items_103</sprite>
+          <sprite>sprites\spr_items_104</sprite>
+          <sprite>sprites\spr_items_105</sprite>
+          <sprite>sprites\spr_items_106</sprite>
+          <sprite>sprites\spr_items_107</sprite>
+          <sprite>sprites\spr_items_108</sprite>
+          <sprite>sprites\spr_items_109</sprite>
+        </sprites>
+        <sprites name="110-119;">
+          <sprite>sprites\spr_items_110</sprite>
+          <sprite>sprites\spr_items_111</sprite>
+          <sprite>sprites\spr_items_112</sprite>
+          <sprite>sprites\spr_items_113</sprite>
+          <sprite>sprites\spr_items_114</sprite>
+          <sprite>sprites\spr_items_115</sprite>
+          <sprite>sprites\spr_items_116</sprite>
+          <sprite>sprites\spr_items_117</sprite>
+          <sprite>sprites\spr_items_118</sprite>
+          <sprite>sprites\spr_items_119</sprite>
+        </sprites>
+        <sprites name="120-129;">
+          <sprite>sprites\spr_items_120</sprite>
+          <sprite>sprites\spr_items_121</sprite>
+          <sprite>sprites\spr_items_122</sprite>
+          <sprite>sprites\spr_items_123</sprite>
+          <sprite>sprites\spr_items_124</sprite>
+          <sprite>sprites\spr_items_125</sprite>
+          <sprite>sprites\spr_items_126</sprite>
+          <sprite>sprites\spr_items_127</sprite>
+          <sprite>sprites\spr_items_128</sprite>
+          <sprite>sprites\spr_items_129</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Mouse">
       <sprite>sprites\spr_mouse_icon</sprite>
@@ -623,6 +815,7 @@
         </scripts>
         <script>scripts\scr_attack_cooldown.gml</script>
         <script>scripts\scr_get_item_damage.gml</script>
+        <script>scripts\scr_get_item_sprite.gml</script>
       </scripts>
       <scripts name="Enemy">
         <script>scripts\scr_draw_death_enemy.gml</script>
@@ -663,6 +856,7 @@
       <scripts name="in game menu">
         <script>scripts\scr_explanation.gml</script>
         <script>scripts\scr_trigger_expl.gml</script>
+        <script>scripts\scr_set_in_game_menu_type.gml</script>
       </scripts>
       <scripts name="effect">
         <script>scripts\scr_effect_poison.gml</script>
@@ -759,15 +953,25 @@
         <script>scripts\scr_write_stats.gml</script>
         <script>scripts\scr_write_items.gml</script>
       </scripts>
+      <scripts name="RoomPlacer">
+        <script>scripts\scr_room_placer.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Window">
       <script>scripts\scr_set_window.gml</script>
+    </scripts>
+    <scripts name="View">
+      <script>scripts\scr_set_view.gml</script>
+    </scripts>
+    <scripts name="Timeline">
+      <script>scripts\scr_start_timeline.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <fonts name="Menu">
       <font>fonts\fnt_main_menu</font>
       <font>fonts\fnt_main_menu_heading</font>
+      <font>fonts\fnt_credits</font>
     </fonts>
     <fonts name="System">
       <font>fonts\fnt_fps</font>
@@ -797,7 +1001,9 @@
         <font>fonts\fnt_inv_heading_sec</font>
       </fonts>
       <fonts name="Death">
-        <font>fonts\fnt_death_message</font>
+        <font>fonts\fnt_death_screen_heading</font>
+        <font>fonts\fnt_death_screen_heading2</font>
+        <font>fonts\fnt_death_screen_normal</font>
         <font>fonts\fnt_death_menu_heading</font>
       </fonts>
       <fonts name="Explanation">
@@ -818,6 +1024,11 @@
     <fonts name="Splash-Screen">
       <font>fonts\fnt_splash</font>
       <font>fonts\fnt_splash_big</font>
+      <fonts name="Warning">
+        <font>fonts\fnt_warning_heading</font>
+        <font>fonts\fnt_warning_normal</font>
+        <font>fonts\fnt_warning_normal2</font>
+      </fonts>
     </fonts>
   </fonts>
   <objects name="objects">
@@ -910,6 +1121,7 @@
         <object>objects\obj_inv_button_empty</object>
         <object>objects\obj_inv_button_inv</object>
         <object>objects\obj_inv_button_help</object>
+        <object>objects\obj_inv_button_stats</object>
         <object>objects\obj_inv_button_main_menu</object>
       </objects>
       <objects name="Mouse">
@@ -929,19 +1141,26 @@
           <object>objects\obj_fist</object>
           <object>objects\obj_stone_sword</object>
           <object>objects\obj_knuckleduster</object>
+          <object>objects\obj_titanium_knuckleduster</object>
           <object>objects\obj_titanium_sword</object>
           <object>objects\obj_crystal_sword</object>
           <object>objects\obj_dagger</object>
           <object>objects\obj_iron_sword</object>
           <object>objects\obj_wooden_staff</object>
           <object>objects\obj_iron_staff</object>
+          <object>objects\obj_titanium_staff</object>
           <object>objects\obj_longsword</object>
+          <object>objects\obj_anime_sword</object>
           <object>objects\obj_master_sword</object>
           <object>objects\obj_katana</object>
           <object>objects\obj_battle_axe</object>
+          <object>objects\obj_laser_battle_axe</object>
           <object>objects\obj_war_hammer</object>
           <object>objects\obj_chainsaw</object>
+          <object>objects\obj_ice_sword</object>
+          <object>objects\obj_laser_chainsaw</object>
           <object>objects\obj_lightsaber</object>
+          <object>objects\obj_laser_lightsaber</object>
           <object>objects\obj_scythe</object>
           <objects name="Hitbox">
             <object>objects\obj_hitbox_melee</object>
@@ -989,6 +1208,22 @@
             <object>objects\obj_nerfgun</object>
             <object>objects\obj_nerfgun_bullet</object>
           </objects>
+          <objects name="Laser-Bow">
+            <object>objects\obj_laser_bow</object>
+            <object>objects\obj_laser_bow_bullet</object>
+          </objects>
+          <objects name="Fire-Shotgun">
+            <object>objects\obj_fire_shotgun</object>
+            <object>objects\obj_fire_shotgun_bullet</object>
+          </objects>
+          <objects name="Revolver">
+            <object>objects\obj_revolver</object>
+            <object>objects\obj_revolver_bullet</object>
+          </objects>
+          <objects name="PeaceKeeper">
+            <object>objects\obj_peacekeeper</object>
+            <object>objects\obj_peacekeeper_bullet</object>
+          </objects>
         </objects>
         <objects name="misc">
           <object>objects\obj_tesla_gun</object>
@@ -1013,6 +1248,10 @@
             <object>objects\obj_tomahawk</object>
             <object>objects\obj_tomahawk_bullet</object>
           </objects>
+          <objects name="Snowball">
+            <object>objects\obj_snowball</object>
+            <object>objects\obj_snowball_bullet</object>
+          </objects>
         </objects>
       </objects>
       <objects name="mag">
@@ -1029,6 +1268,7 @@
         </objects>
         <objects name="Ultra-Mana-Beam-Orb">
           <object>objects\obj_ultra_mana_beam_orb</object>
+          <object>objects\obj_mana_arcan_beam_orb</object>
         </objects>
         <objects name="Teleport-Orb">
           <object>objects\obj_mana_teleport_orb</object>
@@ -1040,41 +1280,106 @@
         <object>objects\obj_mana_item_ability</object>
         <objects name="Chainbolt">
           <object>objects\obj_mana_chainbolt_orb</object>
+          <object>objects\obj_mana_chainbolt_orb_v2</object>
           <object>objects\obj_mana_chainbolt_bullet</object>
         </objects>
         <objects name="Black-Fire">
           <object>objects\obj_mana_black_fire_orb</object>
+          <object>objects\obj_mana_black_fire_orb_v2</object>
         </objects>
         <objects name="Implosion">
           <object>objects\obj_mana_implosion_orb</object>
+          <object>objects\obj_mana_implosion_orb_v2</object>
           <object>objects\obj_mana_implosion_bullet</object>
           <object>objects\obj_mana_implosion</object>
         </objects>
         <objects name="Necromancer">
           <object>objects\obj_mana_necromancer_orb</object>
+          <object>objects\obj_mana_necromancer_orb_v2</object>
           <objects name="Friendly Enemies">
             <object>objects\obj_friendly_enemy</object>
-            <object>objects\obj_friendly_enemy_nahkampf</object>
+            <object>objects\obj_friendly_enemy_melee</object>
+            <object>objects\obj_friendly_enemy_bullet</object>
             <object>objects\obj_random_guy</object>
+            <object>objects\obj_random_guy_bullet</object>
           </objects>
         </objects>
         <objects name="Invisibility">
           <object>objects\obj_mana_invisibility_orb</object>
+          <object>objects\obj_mana_invisibility_orb_v2</object>
+          <object>objects\obj_mana_invisibility_orb_v3</object>
         </objects>
         <objects name="Enemy-Morph">
           <object>objects\obj_mana_enemy_morph_orb</object>
+          <object>objects\obj_mana_enemy_morph_orb_v2</object>
           <object>objects\obj_passive_animal</object>
         </objects>
         <objects name="Arrow-Rain">
           <object>objects\obj_mana_arrow_rain_orb</object>
+          <object>objects\obj_mana_arrow_rain_orb_v2</object>
           <object>objects\obj_arrow_rain_projectile</object>
         </objects>
         <objects name="Projectiles">
           <object>objects\obj_projectile</object>
         </objects>
+        <objects name="PoisonOrb">
+          <object>objects\obj_mana_poison_orb</object>
+          <object>objects\obj_mana_poison_bullet</object>
+        </objects>
+        <objects name="FistOfTheNorthStar">
+          <object>objects\obj_mana_fist_of_the_north_star_orb</object>
+        </objects>
       </objects>
       <objects name="item">
-        <object>objects\obj_swift_orb</object>
+        <objects name="SwiftOrb">
+          <object>objects\obj_swift_orb</object>
+          <object>objects\obj_swift_orb_v2</object>
+        </objects>
+        <objects name="RegenerationOrb">
+          <object>objects\obj_regeneration_orb</object>
+          <object>objects\obj_regeneration_orb_v2</object>
+        </objects>
+        <objects name="ReviveOrb">
+          <object>objects\obj_revive_orb</object>
+        </objects>
+        <objects name="Armour">
+          <object>objects\obj_armour</object>
+        </objects>
+        <objects name="ManaRegOrb">
+          <object>objects\obj_mana_reg_orb</object>
+          <object>objects\obj_mana_reg_orb_v2</object>
+        </objects>
+        <objects name="StrengthOrb">
+          <object>objects\obj_strength_orb</object>
+          <object>objects\obj_strength_orb_v2</object>
+        </objects>
+        <objects name="AdrenalinShockOrb">
+          <object>objects\obj_adrenalin_shock_orb</object>
+        </objects>
+        <objects name="MaxManaOrb">
+          <object>objects\obj_max_mana_orb</object>
+          <object>objects\obj_max_mana_orb_v2</object>
+        </objects>
+        <objects name="MaxStaminaOrb">
+          <object>objects\obj_max_stamina_orb</object>
+          <object>objects\obj_max_stamina_orb_v2</object>
+        </objects>
+        <objects name="SprintSpeedOrb">
+          <object>objects\obj_sprint_speed_orb</object>
+          <object>objects\obj_sprint_speed_orb_v2</object>
+        </objects>
+        <objects name="ChestChanceOrb">
+          <object>objects\obj_chest_chance_orb</object>
+          <object>objects\obj_chest_chance_orb_v2</object>
+        </objects>
+        <objects name="HealOrbChanceOrb">
+          <object>objects\obj_heal_orb_chance_orb</object>
+          <object>objects\obj_heal_orb_chance_orb_v2</object>
+        </objects>
+        <objects name="MaxHPOrb">
+          <object>objects\obj_max_hp_orb</object>
+          <object>objects\obj_max_hp_orb_v2</object>
+        </objects>
       </objects>
       <objects name="pickup">
         <objects name="Heal">
@@ -1109,6 +1414,9 @@
         <objects name="Mana-Regeneration">
           <object>objects\obj_mana_regeneration_potion</object>
           <object>objects\obj_mana_regeneration_potion_small</object>
+        </objects>
+        <objects name="Bachblüten">
+          <object>objects\obj_food_bach_flowers</object>
         </objects>
       </objects>
     </objects>
@@ -1152,6 +1460,7 @@
         <object>objects\obj_sec_chest</object>
         <object>objects\obj_mag_chest</object>
         <object>objects\obj_random_type_chest</object>
+        <object>objects\obj_chest_placeholder</object>
       </objects>
     </objects>
     <objects name="Menu">
@@ -1267,6 +1576,7 @@
     <objects name="in-game-menu">
       <object>objects\obj_menu_in_game</object>
       <object>objects\obj_help_in_game</object>
+      <object>objects\obj_stats_ext_in_game</object>
     </objects>
     <objects name="effect">
       <object>objects\obj_poison</object>
@@ -1318,7 +1628,13 @@
     <objects name="Mouse">
       <object>objects\obj_mouse</object>
     </objects>
+    <objects name="Run">
+      <object>objects\obj_run_admin</object>
+    </objects>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tm_fist_of_the_north_star</timeline>
+  </timelines>
   <rooms name="rooms">
     <rooms name="initalise_room">
       <room>rooms\rm_initialise</room>
@@ -1356,6 +1672,7 @@
       <rooms name="Forest">
         <room>rooms\rm_run_forest_init</room>
         <room>rooms\rm_run_forest1</room>
+        <room>rooms\rm_run_forest2</room>
       </rooms>
     </rooms>
   </rooms>

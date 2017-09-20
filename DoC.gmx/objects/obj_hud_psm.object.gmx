@@ -240,7 +240,8 @@ if(i == 0) {
         var countdown_alpha = countdown;
         countdown = clamp(countdown, 0, 1);
         
-        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i]);
+        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i], slots_bg_radius);
+        
     }
 }
 if(i == 1) {
@@ -254,7 +255,8 @@ if(i == 1) {
         var countdown_alpha = countdown;
         countdown = clamp(countdown, 0, 1);
         
-        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i]);
+        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i], slots_bg_radius);
+        
     }
 }
 if(i == 2) {
@@ -268,7 +270,7 @@ if(i == 2) {
         var countdown_alpha = countdown;
         countdown = clamp(countdown, 0, 1);
         
-        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i]);
+        scr_draw_slot_cooldown(countdown, slots_x[i], slots_y[i], slots_bg_radius);
     }
 }
 
@@ -276,9 +278,10 @@ draw_set_colour(colour_circle_bg);
 draw_set_alpha(inv_hud.alpha_bbg);
 draw_circle(slots_x[i], slots_y[i], slots_bg_radius, 0);
 draw_set_alpha(1);
+draw_set_colour(colour_circle_bg);
 
 if(inventory_type.inv[0] != -1) {
-    draw_sprite(spr_items, inventory_type.inv[0], slots_x[i], slots_y[i]);
+    draw_sprite(scr_get_item_sprite(inventory_type.inv[0]), 0, slots_x[i], slots_y[i]);
 }
 scr_draw_count(inventory_type.count[0], slots_x[i], slots_y[i]);
 

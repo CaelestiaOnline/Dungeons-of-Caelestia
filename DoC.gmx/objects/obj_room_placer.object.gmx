@@ -57,10 +57,9 @@ if(room == goal) {
     scr_keylock_all(false);
     scr_update_grid();
     
-    //View
-    view_object[0] = obj_player;
-    view_hborder[0] = 512;
-    view_vborder[0] = 512;
+    scr_set_view();
+    
+    if(admin.in_run) run_admin.portal_active = false;
     
     instance_destroy();
 }

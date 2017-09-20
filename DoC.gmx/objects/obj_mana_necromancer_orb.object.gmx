@@ -29,6 +29,7 @@
 index = items.mana_necromancer;
 scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
 mana = item_stats[index, item_stats_mag.mana_usage];
+object = choose(obj_random_guy, obj_random_guy_bullet);
 
 confirmed = false;
 
@@ -81,8 +82,9 @@ hit_list = noone;
 scr_mag_ability();
 
 if(confirmed) {
-    var friendly_enemy = instance_create(obj_player.x + irandom_range(-50, 50), obj_player.y + irandom_range(-50, 50), obj_random_guy);
-
+    repeat(irandom(nekromancer_count)+1) {
+        var friendly_enemy = instance_create(obj_player.x + irandom_range(-50, 50), obj_player.y + irandom_range(-50, 50), object);
+    }
     confirmed = false;
 }
 

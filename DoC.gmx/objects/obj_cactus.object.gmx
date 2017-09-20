@@ -30,11 +30,11 @@
 scr_initialise_obstacle_main(-1, true, 22);
 
 //Verursachter Schaden
-damage = 2;
+damage = 4;
 
 //Zeitl. Schadensabschnitt
 time = 0;
-countdown = 10;
+countdown = 5;
 
 </string>
           </argument>

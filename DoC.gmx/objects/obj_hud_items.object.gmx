@@ -221,7 +221,7 @@ draw_set_alpha(inv_hud.alpha_bbg);
 draw_circle(slots_x[i], slots_y[i], slots_bg_radius, 0);
 draw_set_alpha(1);
 if(inventory.inv_items.inv[i] != -1) {
-    draw_sprite(spr_items, inventory.inv_items.inv[i], slots_x[i], slots_y[i]);
+    draw_sprite(scr_get_item_sprite(inventory.inv_items.inv[i]), 0, slots_x[i], slots_y[i]);
 }
 scr_draw_count(inventory.inv_items.count[i], slots_x[i], slots_y[i]);
 
