@@ -32,34 +32,10 @@ audio_play_sound(snd_fotns, 1, false);
 with(obj_gegner) freeze = true;
 
 active = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-  </entry>
-  <entry>
-    <step>1</step>
-    <event>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Views
-view_hspeed[0] = point_distance(obj_player.x, obj_player.y, self.enemy.x, self.enemy.y)/30;
-view_vspeed[0] = point_distance(obj_player.x, obj_player.y, self.enemy.x, self.enemy.y)/30;
+
+if(obj_player.x &gt;= self.enemy.x) {
+    obj_player.image_xscale = 1;
+} else obj_player.image_xscale = -1;
 </string>
           </argument>
         </arguments>
@@ -87,8 +63,8 @@ view_vspeed[0] = point_distance(obj_player.x, obj_player.y, self.enemy.x, self.e
             <kind>1</kind>
             <string>///Nani
 view_object[0] = self.enemy;
-view_wview[0] = 320;
-view_hview[0] = 160;
+view_wview[0] = max(320, self.enemy.sprite_width*2 + 64);
+view_hview[0] = max(160, self.enemy.sprite_height*2 + 64);
 
 </string>
           </argument>
@@ -200,7 +176,7 @@ effect_create_above(ef_explosion, self.enemy.x, self.enemy.y, 2, c_red);
             <kind>1</kind>
             <string>///Die
 self.enemy.shadow_object.draw_mark = false;
-scr_deal_damage(self.enemy, self.enemy.hp);
+scr_deal_damage(self.enemy, 1000);
 
 
 </string>
@@ -233,15 +209,13 @@ admin.playing = true;
 player_stats.invincible = false;
 scr_keylock_all(false);
 
-
 timeline_running = false;
 timeline_index = -1;
-
-show_debug_message("TRUE");
 
 scr_inventory_rem_item_slot(inventory.inv_mag, 0);
 
 with(obj_gegner) freeze = false;
+with(obj_gegner) shadow_object.draw_mark = false;
 </string>
           </argument>
         </arguments>

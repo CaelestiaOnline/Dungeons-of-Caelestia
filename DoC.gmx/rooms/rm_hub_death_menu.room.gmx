@@ -8,7 +8,7 @@
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
-  <colour>2105376</colour>
+  <colour>4210816</colour>
   <showcolour>-1</showcolour>
   <code>instance_create(0, 0, obj_hub_death_menu);</code>
   <enableViews>-1</enableViews>

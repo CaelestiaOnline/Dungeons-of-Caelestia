@@ -64,7 +64,7 @@ switch (item[stats_item, 3]) {
         inv_hud.item_stats_heading_array[2] = "Mana usage: ";
         inv_hud.item_stats_array[2] = scr_mana_usage(item_stats[stats_item, item_stats_mag.mana_usage]);
         inv_hud.item_stats_heading_array[3] = "Cooldown: "
-        inv_hud.item_stats_array[3] = string((item_stats[stats_item, item_stats_mag.cooldown])/room_speed) + "s";
+        inv_hud.item_stats_array[3] = scr_mag_cooldown((item_stats[stats_item, item_stats_mag.cooldown]));
         inv_hud.item_stats_heading_array[4] = "Misc: ";
         inv_hud.item_stats_array[4] = string(item_stats[stats_item, item_stats_mag.misc]);
         break;

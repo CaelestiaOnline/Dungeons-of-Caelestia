@@ -34,6 +34,8 @@ button_count = 0;
 
 width = 0;
 
+item_sprite_number = 0;
+
 </string>
           </argument>
         </arguments>
@@ -191,7 +193,11 @@ draw_sprite(spr_inv_border, 0, x, y);
             <string>///Draw Sprite + Anzahl
 
 if(inventory_type.inv[slot] != -1) {
-    draw_sprite(scr_get_item_sprite(inventory_type.inv[slot]), 0, x, y);
+    draw_sprite(scr_get_item_sprite(inventory_type.inv[slot]), item_sprite_number, x, y);
+    item_sprite_number++;
+    if(item_sprite_number &gt; sprite_get_number(scr_get_item_sprite(inventory_type.inv[slot]))-1) {
+        item_sprite_number = 0;
+    };
 }
 
 //Anzahl der Item in den Slots

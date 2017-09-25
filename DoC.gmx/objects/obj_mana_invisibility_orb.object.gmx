@@ -86,18 +86,23 @@ if(!player_stats.invisible) {
 
 if(confirmed) {
     player_stats.invisible = true;
-}
-
-if(player_stats.invisible) {
     with(obj_gegner) {
         triggered = false;
         path_end();
     }
+}
+
+if(player_stats.invisible) {
+    
     var success = scr_player_rem_mana(mana);
     
     if(!success) player_stats.invisible = false;
     
-    if(admin.magic_key_pressed &amp;&amp; !confirmed) player_stats.invisible = false;
+    if(admin.magic_key_pressed &amp;&amp; !confirmed) {
+        player_stats.invisible = false;
+        alarm_set(0, 30);
+    }
+    
     confirmed = false;
 }
 </string>

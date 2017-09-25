@@ -903,7 +903,7 @@ item_stats[items.iron_sword, item_stats_prim.misc] = "";
 
 //Dolch (45)
 item[items.dagger, 0] = "Dolch";
-item[items.dagger, 1] = "'Was willst du mit dem vergifteten Dolche, sprich!', entgegnete finster der Wueterich!";
+item[items.dagger, 1] = "'Was wolltest du mit dem vergifteten Dolche, sprich!', entgegnet ihm finster der Wueterich!";
 item[items.dagger, 2] = obj_dagger;
 item[items.dagger, 3] = "prim";
 item[items.dagger, 4] = 1;
@@ -1326,8 +1326,8 @@ item[items.mana_chainbolt_v2, 4] = 1;
 
 item_stats[items.mana_chainbolt_v2, item_stats_mag.ability] = "attack_mana_chainbolt";
 item_stats[items.mana_chainbolt_v2, item_stats_mag.ability_strength] = 2;
-item_stats[items.mana_chainbolt_v2, item_stats_mag.mana_usage] = 40;
-item_stats[items.mana_chainbolt_v2, item_stats_mag.cooldown] = player_stats.attack_speed*6;
+item_stats[items.mana_chainbolt_v2, item_stats_mag.mana_usage] = 60;
+item_stats[items.mana_chainbolt_v2, item_stats_mag.cooldown] = player_stats.attack_speed*3*4;
 item_stats[items.mana_chainbolt_v2, item_stats_mag.misc] = "";
 
 //Schwarzes Feuer v2 (73)
@@ -1587,7 +1587,7 @@ item_stats[items.revolver, item_stats_prim.attack_speed] = player_stats.attack_s
 item_stats[items.revolver, item_stats_prim.misc] = "";
 
 //Mana-Regeneration-Orb (88)
-item[items.mana_reg_orb, 0] = "Orb der Mana-Regeneration";
+item[items.mana_reg_orb, 0] = "Orb der Magieerhaltung";
 item[items.mana_reg_orb, 1] = "Beschleunigt die natuerliche Regeneration von Mana.";
 item[items.mana_reg_orb, 2] = obj_mana_reg_orb;
 item[items.mana_reg_orb, 3] = "item";
@@ -1598,8 +1598,8 @@ item_stats[items.mana_reg_orb, item_stats_item.ability_strength] = 1;
 item_stats[items.mana_reg_orb, item_stats_item.misc] = "";
 
 //Anime Sword (89)
-item[items.anime_sword, 0] = "Anime - Schwert";
-item[items.anime_sword, 1] = "Sehr maechtig und ueberdimensioniert wie sonstwas. Ich denke man kann es sich gut vorstellen.";
+item[items.anime_sword, 0] = "Mein Verstand";
+item[items.anime_sword, 1] = "Sehr maechtig, scharf und ueberdimensioniert wie sonstwas. Ich will mich ja nicht selbst loben, aber ich bin halt so toll.";
 item[items.anime_sword, 2] = obj_anime_sword;
 item[items.anime_sword, 3] = "prim";
 item[items.anime_sword, 4] = 1;
@@ -1610,11 +1610,11 @@ item_stats[items.anime_sword, item_stats_prim.ability] = "";
 item_stats[items.anime_sword, item_stats_prim.ability_chance] = 0;
 item_stats[items.anime_sword, item_stats_prim.ability_strength] = 0;
 item_stats[items.anime_sword, item_stats_prim.speed_bonus] = 0;
-item_stats[items.anime_sword, item_stats_prim.attack_speed] = player_stats.attack_speed*3;
+item_stats[items.anime_sword, item_stats_prim.attack_speed] = player_stats.attack_speed*3*2;
 item_stats[items.anime_sword, item_stats_prim.misc] = "";
 
 //Heal-Orb v2 (90)
-item[items.regeneration_orb_v2, 0] = "Gen X";
+item[items.regeneration_orb_v2, 0] = "Gen XI";
 item[items.regeneration_orb_v2, 1] = "Wolverine und Deadpool waeren neidisch auf deine Zellregeneration. Naja, nicht ganz.";
 item[items.regeneration_orb_v2, 2] = obj_regeneration_orb_v2;
 item[items.regeneration_orb_v2, 3] = "item";
@@ -1648,8 +1648,8 @@ item_stats[items.regeneration_orb_v2, item_stats_item.misc] = "";
             <kind>1</kind>
             <string>///Items 91 - 100;
 //Swift-Orb v2 (91)
-item[items.swift_orb_v2, 0] = "Verbessertes Orb der Schnelligkeit";
-item[items.swift_orb_v2, 1] = "*sanic certified";
+item[items.swift_orb_v2, 0] = "Der Name des Windes";
+item[items.swift_orb_v2, 1] = "Mit der mystischen Kraft deiner Gedanken kannst du einen Win herbeirufen, der dir immer im Ruecken steht!";
 item[items.swift_orb_v2, 2] = obj_swift_orb_v2;
 item[items.swift_orb_v2, 3] = "item";
 item[items.swift_orb_v2, 4] = 1;
@@ -1659,8 +1659,8 @@ item_stats[items.swift_orb_v2, item_stats_item.ability_strength] = 2;
 item_stats[items.swift_orb_v2, item_stats_item.misc] = "";
 
 //Mana-Regeneration-Orb v2 (92)
-item[items.mana_reg_orb_v2, 0] = "Verbessertes Orb der Mana-Regeneration";
-item[items.mana_reg_orb_v2, 1] = "Beschleunigt die natuerliche Regeneration von Mana.";
+item[items.mana_reg_orb_v2, 0] = "Stein der Weisen";
+item[items.mana_reg_orb_v2, 1] = "Tausende Menschenleben wurden fuer diesen Stein geopfert. Nutze ihn weise.";
 item[items.mana_reg_orb_v2, 2] = obj_mana_reg_orb_v2;
 item[items.mana_reg_orb_v2, 3] = "item";
 item[items.mana_reg_orb_v2, 4] = 1;
@@ -1764,7 +1764,7 @@ item[items.mana_invisibility_v3, 4] = 1;
 item_stats[items.mana_invisibility_v3, item_stats_mag.ability] = "ability_mana_invisibility";
 item_stats[items.mana_invisibility_v3, item_stats_mag.ability_strength] = 2;
 item_stats[items.mana_invisibility_v3, item_stats_mag.mana_usage] = 0.5;
-item_stats[items.mana_invisibility_v3, item_stats_mag.cooldown] = player_stats.attack_speed;
+item_stats[items.mana_invisibility_v3, item_stats_mag.cooldown] = -2;
 item_stats[items.mana_invisibility_v3, item_stats_mag.misc] = "Mana wird /s verbraucht.";
 
 //Strength Orb (100)
@@ -1813,7 +1813,7 @@ item_stats[items.strength_orb_v2, item_stats_item.ability] = "strength";
 item_stats[items.strength_orb_v2, item_stats_item.ability_strength] = 2;
 item_stats[items.strength_orb_v2, item_stats_item.misc] = "";
 
-//Strength Orb v2 (102)
+//Adrenalin Schock (102)
 item[items.adrenalin_shock_orb, 0] = "Orb des Adrenalin-Schocks";
 item[items.adrenalin_shock_orb, 1] = "Wenn du wenig HP hast, wird deine Mana-Regeneration verstaerkt.";
 item[items.adrenalin_shock_orb, 2] = obj_adrenalin_shock_orb;

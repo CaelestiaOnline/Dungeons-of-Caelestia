@@ -75,6 +75,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Alarm
+if(alarm_get(0) != -2) {
 
 if(alarm_get(0) &lt;= room_speed) {
     alpha -= 1 / room_speed;
@@ -83,6 +84,8 @@ if(alarm_get(0) &lt;= room_speed) {
 alpha = clamp(alpha, 0, 1);
 
 image_alpha = alpha;
+
+}
 </string>
           </argument>
         </arguments>

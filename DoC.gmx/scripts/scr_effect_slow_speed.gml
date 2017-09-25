@@ -15,7 +15,7 @@ var effect_index = effect.slowness;
 if(!instance_exists(goal_object)) exit;
 if(string(goal_object.object_index) == string(obj_player)) goal_object = player_stats;
 
-if(multipl > 1) effect_index = effect.speed;
+if(multipl > 0) effect_index = effect.speed;
 else effect_index = effect.slowness;
 
 if(goal_object.effects[effect_index] != -1) {
@@ -31,5 +31,7 @@ slow.alarm[0] = time - 1;
 slow.goal_object = goal_object;
 slow.index = effect_index;
 
-if(goal_object == player_stats) player_stats.speed_mult_effect = multipl;
-else goal_object.speed_mult = multipl;
+if(goal_object == player_stats) player_stats.speed_mult_effect += multipl;
+else goal_object.speed_mult += multipl;
+
+

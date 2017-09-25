@@ -112,6 +112,9 @@ colour_money = make_colour_rgb(255, 193, 7);
 //Dealt-damage
 dealt_damage_scale = 0;
 old_hp = 0;
+
+//Circle
+hud_circle_angle = 0;
 </string>
           </argument>
         </arguments>
@@ -165,6 +168,10 @@ money_bar_x = lengthdir_x(bar_buffer, money_bar_angle) + hud_circle_bg_x;
 money_bar_y = lengthdir_y(bar_buffer, money_bar_angle) + hud_circle_bg_y;
 if(money_bar_angle &gt; 360) money_bar_angle -= 360;
 money_bar_angle += orbit_speed;
+
+//Hud Circle
+if(hud_circle_angle &gt; 360) hud_circle_angle -= 360;
+hud_circle_angle += orbit_speed;
 
 </string>
           </argument>
@@ -403,13 +410,13 @@ draw_set_valign(fa_top);
             <kind>1</kind>
             <string>///Charakter
 draw_sprite_ext(
-    spr_charakter,
+    spr_hud_circle,
     0,
     hud_circle_bg_x,
-    hud_circle_bg_y + sprite_get_height(spr_charakter)/2,
-    0.5,
-    0.5,
-    0,
+    hud_circle_bg_y,
+    0.8,
+    0.8,
+    hud_circle_angle,
     c_white,
     1
     );

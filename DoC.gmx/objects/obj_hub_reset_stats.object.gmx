@@ -55,6 +55,7 @@ scr_init_interaction();
 
 if(confirmed) {
     scr_reset_player_stats();
+    scr_effect_rem_all(player_stats);
     confirmed = false;
 }
 

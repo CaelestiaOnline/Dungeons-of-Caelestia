@@ -61,6 +61,8 @@ if(room == goal) {
     
     if(admin.in_run) run_admin.portal_active = false;
     
+    player_stats.invincible = false;
+    
     instance_destroy();
 }
 </string>

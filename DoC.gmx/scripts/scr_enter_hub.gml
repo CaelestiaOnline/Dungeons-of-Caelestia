@@ -8,6 +8,7 @@ var game_room = rm_main_hub;
 
 hub.in_hub = true;
 admin.playing = true;
+player_stats.invincible = true;
 scr_effect_rem_all(obj_player);
 scr_reset_player_stats();
 scr_keylock_all(true);

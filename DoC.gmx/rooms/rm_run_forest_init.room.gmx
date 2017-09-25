@@ -158,6 +158,7 @@
     <instance objName="obj_mag_chest" x="448" y="432" name="inst_AD640334" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_type_chest" x="576" y="432" name="inst_FD5FB5CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_chest" x="704" y="432" name="inst_AFEF1DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_altar" x="688" y="800" name="inst_295009AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
