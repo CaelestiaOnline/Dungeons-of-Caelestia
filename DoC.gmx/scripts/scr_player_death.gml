@@ -8,9 +8,6 @@ scr_keylock_all(true);
 admin.playing = false;
 player_stats.invincible = true;
 
-//Erhöhe Stats
-stats.death_count += 1;
-
 scr_draw_death_player(x, y, spr_charakter_dead);
 
 if(!instance_exists(obj_player_death)) {

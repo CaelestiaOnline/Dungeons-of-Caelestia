@@ -71,6 +71,7 @@ attack_speed_mult_effect = 1;
 resistance_mult = 1;
 resistance_mult_effect = 1;
 resistance_mult_item = 1;
+resistance_mult_armour = 1;
 
 //Stärke
 strength_mult = 1;
@@ -83,6 +84,7 @@ max_player_speed = 4;
 old_max_player_speed = max_player_speed;
 speed_mult = 1;
 speed_mult_item = 1;
+speed_mult_armour = 1;
 speed_mult_prim = 1;
 speed_mult_effect = 1;
 
@@ -255,7 +257,7 @@ old_hp = hp;
           <argument>
             <kind>1</kind>
             <string>///Speed-Multiplier
-speed_mult = speed_mult_item * speed_mult_prim * speed_mult_effect;
+speed_mult = speed_mult_item * speed_mult_prim * speed_mult_effect * speed_mult_armour;
 
 if(instance_exists(obj_player)) {
     if(!obj_player.isSprinting &amp;&amp; !obj_player.is_crouching) {
@@ -324,7 +326,7 @@ attack_speed = attack_speed_old * attack_speed_mult;
             <kind>1</kind>
             <string>///Resistance Multiplictor
 
-resistance_mult = 1 * resistance_mult_effect * resistance_mult_item;
+resistance_mult = 1 * resistance_mult_effect * resistance_mult_item * resistance_mult_armour;
 </string>
           </argument>
         </arguments>
@@ -370,6 +372,28 @@ strength_mult = 1 * strength_mult_effect * strength_mult_item;
             <kind>1</kind>
             <string>///Name aktualisieren
 name = "Subjekt \#" + string(stats.death_count);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///HP Grenze
+player_stats.hp = clamp(player_stats.hp, 0, player_stats.max_hp);
 </string>
           </argument>
         </arguments>

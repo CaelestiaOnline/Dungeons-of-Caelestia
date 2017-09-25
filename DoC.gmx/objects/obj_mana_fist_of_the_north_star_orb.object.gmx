@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Stats
 index = items.mana_fist_of_the_north_star_orb;
-scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
+//scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
 mana = item_stats[index, item_stats_mag.mana_usage];
 
 confirmed = false;

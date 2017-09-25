@@ -106,7 +106,7 @@ scr_draw_shadow(object, width, height, y_offset);
             <string>///Draw Mark
 
 if(draw_mark) {
-    draw_sprite_ext(spr_pentagram, 0, object.x, object.y, 0.2, 0.2, 0, c_white, 1);
+    draw_sprite_ext(spr_circle8, 0, object.x, object.y, 0.2, 0.2, 0, c_white, 1);
 }
 </string>
           </argument>

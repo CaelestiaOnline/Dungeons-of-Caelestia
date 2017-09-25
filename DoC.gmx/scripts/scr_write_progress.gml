@@ -4,15 +4,15 @@ scr_write_progress(
 );
 */
 
-ini_open("savedata.ini");
+ini_open(working_directory + "SaveData\" + "savedata.ini");
 
 //Hub Money
-ini_write_real("progress", "hub_money", progess.hub_money);
+ini_write_real("progress", "hub_money", progress.hub_money);
 
 //Level
-ini_write_real("progress", "level", progess.level);
+ini_write_real("progress", "level", progress.level);
 
-//XP
-ini_write_real("progress", "xp", progess.xp);
+//Level
+ini_write_real("progress", "skillpoints", progress.skillpoints);
 
 ini_close();

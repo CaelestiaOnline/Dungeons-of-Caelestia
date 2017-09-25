@@ -32,15 +32,47 @@ hub_menu_x2 = display_get_gui_width();
 hub_menu_y1 = 0;
 hub_menu_y2 = 64;
 
+//Circle
 death_menu_circle_bg_x = display_get_gui_width()/2;
-death_menu_circle_bg_y = display_get_gui_height()/2;
+death_menu_circle_bg_y = display_get_gui_height()/2 + 48;
 
-death_menu_circle_bg_radius = 250;
+death_menu_circle_bg_radius = 200;
 
-rectangle_width = 250;
+rectangle_width = 125;
+
+//Rechtecke
+//Left
+death_menu_rectangle_left_bg_x1 =  64;
+death_menu_rectangle_left_bg_y1 =  128;
+
+death_menu_rectangle_left_bg_x2 =  death_menu_rectangle_left_bg_x1 + 500;
+death_menu_rectangle_left_bg_y2 =  display_get_gui_height() - 64;
+
+//Right
+death_menu_rectangle_right_bg_x1 =  display_get_gui_width() - 64;
+death_menu_rectangle_right_bg_y1 =  128;
+
+death_menu_rectangle_right_bg_x2 =  death_menu_rectangle_right_bg_x1 - 500;
+death_menu_rectangle_right_bg_y2 =  display_get_gui_height() - 64;
+
+//Bottom
+death_menu_rectangle_bottom_bg_x1 =  death_menu_rectangle_left_bg_x2 + 128;
+death_menu_rectangle_bottom_bg_y1 =  display_get_gui_height() - 64;
+
+death_menu_rectangle_bottom_bg_x2 =  death_menu_rectangle_right_bg_x2 - 128;
+death_menu_rectangle_bottom_bg_y2 =  death_menu_rectangle_bottom_bg_y1 - 200;
+
+//Top
+death_menu_rectangle_top_bg_x1 =  death_menu_rectangle_left_bg_x2 + 128;
+death_menu_rectangle_top_bg_y1 =  128;
+
+death_menu_rectangle_top_bg_x2 =  death_menu_rectangle_right_bg_x2 - 128;
+death_menu_rectangle_top_bg_y2 =  death_menu_rectangle_top_bg_y1 + 200;
+
+
 
 //Farben
-colour_bg = global.co_blue_gray_900;
+colour_bg = make_colour_rgb(32,32,32);//global.co_blue_gray_900;
 colour_font1 = global.co_blue_gray_500;
 </string>
           </argument>
@@ -89,14 +121,27 @@ exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit)
           <argument>
             <kind>1</kind>
             <string>///Stats
+//Level
 var collected_xp = death_stats.collected_xp;
 var level_old = progress.level;
-while(collected_xp &gt;= progress.level_up_xp) {
-    collected_xp -= progress.level_up_xp;
-    progress.level += 1;
-}
+
+progress.level += collected_xp / progress.level_up_xp;
 
 new_level = progress.level - level_old;
+
+progress.skillpoints += round(new_level);
+
+//Hub Money
+var collected_xp = death_stats.collected_xp;
+
+new_hub_money = round(collected_xp/1024);
+
+progress.hub_money += new_hub_money;
+
+//Save Data
+scr_write_progress();
+scr_write_stats();
+scr_read_stats();
 </string>
           </argument>
         </arguments>
@@ -121,6 +166,8 @@ new_level = progress.level - level_old;
             <kind>1</kind>
             <string>///Setze Death- Stats zurück
 with(death_stats) event_perform(ev_create, 0);
+
+scr_reset_stats();
 </string>
           </argument>
         </arguments>
@@ -144,7 +191,31 @@ with(death_stats) event_perform(ev_create, 0);
           <argument>
             <kind>1</kind>
             <string>///Kontrolltasten
-if(admin.pause_menu_key_pressed) scr_leave_hub_menu(); 
+if(admin.pause_menu_key_pressed) scr_leave_hub_menu();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Instance Destroy
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -181,15 +252,16 @@ draw_set_alpha(1);
 
 draw_set_valign(fa_middle);
 draw_set_halign(fa_left);
-draw_set_colour(inv_hud.colour_font);
+draw_set_colour(c_red);
 draw_set_font(fnt_inv_heading_prim);
 draw_set_alpha(1);
 draw_text(
     hub_menu_x1 + 16,
     hub_menu_y2 - 32,
-    "DEATH MENU"
+    "YOU HAVE DIEDED"
 );
 draw_set_valign(fa_top);
+draw_set_colour(c_white);
 </string>
           </argument>
         </arguments>
@@ -214,7 +286,7 @@ draw_set_valign(fa_top);
 draw_set_colour(colour_bg);
 draw_set_alpha(1);
 
-draw_rectangle(
+draw_roundrect(
     death_menu_circle_bg_x - rectangle_width,
     death_menu_circle_bg_y - rectangle_width * 1.5,
     death_menu_circle_bg_x + rectangle_width,
@@ -222,7 +294,7 @@ draw_rectangle(
     false
     );
     
-draw_rectangle(
+draw_roundrect(
     death_menu_circle_bg_x - rectangle_width * 1.5,
     death_menu_circle_bg_y - rectangle_width,
     death_menu_circle_bg_x + rectangle_width * 1.5,
@@ -232,15 +304,346 @@ draw_rectangle(
     
 draw_circle(death_menu_circle_bg_x, death_menu_circle_bg_y, death_menu_circle_bg_radius, 0);
 
-draw_set_halign(fa_center);
-
 draw_set_alpha(1);
 draw_set_colour(colour_font1);
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Rechtecke
+draw_set_colour(colour_bg);
+draw_set_alpha(1);
+
+draw_roundrect(
+    death_menu_rectangle_left_bg_x1,
+    death_menu_rectangle_left_bg_y1,
+    death_menu_rectangle_left_bg_x2,
+    death_menu_rectangle_left_bg_y2,
+    false
+);
+
+draw_roundrect(
+    death_menu_rectangle_right_bg_x1,
+    death_menu_rectangle_right_bg_y1,
+    death_menu_rectangle_right_bg_x2,
+    death_menu_rectangle_right_bg_y2,
+    false
+);
+
+draw_roundrect(
+    death_menu_rectangle_bottom_bg_x1,
+    death_menu_rectangle_bottom_bg_y1,
+    death_menu_rectangle_bottom_bg_x2,
+    death_menu_rectangle_bottom_bg_y2,
+    false
+);
+
+draw_roundrect(
+    death_menu_rectangle_top_bg_x1,
+    death_menu_rectangle_top_bg_y1,
+    death_menu_rectangle_top_bg_x2,
+    death_menu_rectangle_top_bg_y2,
+    false
+);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Level
+
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
 draw_set_font(fnt_death_menu_heading);
-draw_text(death_menu_circle_bg_x, death_menu_circle_bg_y, string(progress.level));
+draw_set_colour(c_white);
+draw_text(death_menu_circle_bg_x, death_menu_circle_bg_y, "level" + string(round(progress.level)));
+
+if(new_level &gt;= 1) {
+    draw_set_font(fnt_death_menu_heading2);
+    draw_text(death_menu_circle_bg_x, death_menu_circle_bg_y + 100, "Levelaufstieg!");
+}
+
+draw_set_font(fnt_death_menu_heading3);
+draw_text(death_menu_circle_bg_x, death_menu_circle_bg_y + 164, "+" + string(new_level) + "Lv.");
 
 
+
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Geld + XP
+
+//Geld
+draw_set_font(fnt_death_menu_normal);
+draw_set_colour(c_yellow);
+
+draw_text(
+    death_menu_rectangle_bottom_bg_x1 + 32,
+    death_menu_rectangle_bottom_bg_y2 + 32,
+    "Collected Money: " + string(death_stats.collected_run_money) + "RM"
+    );
+    
+//Money
+draw_set_font(fnt_death_menu_normal);
+draw_set_colour(c_green);
+draw_set_halign(fa_right);
+
+draw_text(
+    death_menu_rectangle_bottom_bg_x2 - 32,
+    death_menu_rectangle_bottom_bg_y2 + 32,
+    "Collected XP: " + string(death_stats.collected_xp) + "xp"
+    );
+    
+draw_set_halign(fa_left);
+
+//Geld
+draw_set_font(fnt_death_menu_normal);
+draw_set_colour(c_yellow);
+
+draw_text(
+    death_menu_rectangle_bottom_bg_x1 + 32,
+    death_menu_rectangle_bottom_bg_y2 + 64,
+    "Gained Hub Money: " + "+" + string(new_hub_money) + "HM"
+    );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Run-Stats
+draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_font(fnt_death_menu_normal);
+
+//Bewegung
+//Pxl Travelled
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 0 * 32,
+    "Pixel travelled: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 0 * 32,
+    string(stats.pxl_travelled)
+    );
+//Pxl walked
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 1 * 32,
+    "Pixel walked: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 1 * 32,
+    string(stats.pxl_walked)
+    );
+//Pxl Sprinted
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 2 * 32,
+    "Pixel sprinted: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 2 * 32,
+    string(stats.pxl_sprinted)
+    );
+//Pxl crouched
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 3 * 32,
+    "Pixel crouched: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 3 * 32,
+    string(stats.pxl_crouched)
+    );
+    
+//HP
+//HP healed
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 5 * 32,
+    "HP healed: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 5 * 32,
+    string(stats.hp_healed)
+    );
+//Damage taken
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 6 * 32,
+    "Damage Taken: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 6 * 32,
+    string(stats.damage_taken)
+    );
+    
+//Angriff
+//Damage taken
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 8 * 32,
+    "Damage done: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 8 * 32,
+    string(stats.damage_done)
+    );
+    
+//Attacks done
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 9 * 32,
+    "Attacks done: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 9 * 32,
+    string(stats.attacks_done)
+    );
+//Prim attacks done
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 10 * 32,
+    "Prim Attacks done: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 10 * 32,
+    string(stats.prim_attacks_done)
+    );
+//Melee attacks done
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 11 * 32,
+    "Melee Attacks done: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 11 * 32,
+    string(stats.melee_attacks_done)
+    );
+//Bullet attacks done
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 12 * 32,
+    "Bullet Attacks done: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 12 * 32,
+    string(stats.bullet_attacks_done)
+    );
+//Prim attacks done
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 13 * 32,
+    "Sec Attacks done: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 13 * 32,
+    string(stats.sec_attacks_done)
+    );
+//Prim attacks done
+draw_text(
+    death_menu_rectangle_left_bg_x1 + 32,
+    death_menu_rectangle_left_bg_y1 + 32 + 14 * 32,
+    "Mag Attacks done: "
+    
+    );
+draw_text(
+    death_menu_rectangle_left_bg_x2 - 150,
+    death_menu_rectangle_left_bg_y1 + 32 + 14 * 32,
+    string(stats.mag_attacks_done)
+    );
 </string>
           </argument>
         </arguments>

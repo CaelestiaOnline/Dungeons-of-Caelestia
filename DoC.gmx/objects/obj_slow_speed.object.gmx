@@ -57,8 +57,8 @@ effect_time = 0;
             <kind>1</kind>
             <string>///Effekt läuft aus
 event_inherited();
-if(goal_object == player_stats) player_stats.speed_mult_effect = 1;
-else goal_object.speed_mult = 1;
+if(goal_object == player_stats) player_stats.speed_mult_effect -= multipl;
+else goal_object.speed_mult -= multipl;
 </string>
           </argument>
         </arguments>

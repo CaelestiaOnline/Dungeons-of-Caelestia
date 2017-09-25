@@ -269,12 +269,23 @@
         </sprites>
       </sprites>
       <sprites name="Tiere">
-        <sprite>sprites\spr_sheep</sprite>
-        <sprites name="Colbox">
-          <sprite>sprites\spr_obj_passive_animal_colbox</sprite>
+        <sprites name="Schaf">
+          <sprite>sprites\spr_sheep</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_sheep_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_sheep_dead</sprite>
+          </sprites>
         </sprites>
-        <sprites name="Dead">
-          <sprite>sprites\spr_obj_passive_animal_dead</sprite>
+        <sprites name="Kuh">
+          <sprite>sprites\spr_cow</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_cow_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_cow_dead</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Friendly Gegner">
@@ -285,6 +296,17 @@
           </sprites>
           <sprites name="Dead">
             <sprite>sprites\spr_obj_random_guy_dead</sprite>
+          </sprites>
+        </sprites>
+      </sprites>
+      <sprites name="Misc">
+        <sprites name="Abfuck">
+          <sprite>sprites\spr_abfuck</sprite>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_abfuck_dead</sprite>
+          </sprites>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_abfuck_colbox</sprite>
           </sprites>
         </sprites>
       </sprites>
@@ -327,10 +349,29 @@
       <sprites name="Projectiles">
         <sprite>sprites\spr_arrow_rain_projectile</sprite>
       </sprites>
+      <sprite>sprites\spr_chest_placeholder</sprite>
       <sprites name="Circles">
-        <sprite>sprites\spr_pentagram3</sprite>
-        <sprite>sprites\spr_pentagram2</sprite>
-        <sprite>sprites\spr_pentagram</sprite>
+        <sprite>sprites\spr_circle1</sprite>
+        <sprite>sprites\spr_circle2</sprite>
+        <sprite>sprites\spr_circle3</sprite>
+        <sprite>sprites\spr_circle4</sprite>
+        <sprite>sprites\spr_circle5</sprite>
+        <sprite>sprites\spr_circle6</sprite>
+        <sprite>sprites\spr_circle7</sprite>
+        <sprite>sprites\spr_circle8</sprite>
+        <sprite>sprites\spr_circle9</sprite>
+        <sprite>sprites\spr_circle10</sprite>
+        <sprite>sprites\spr_circle11</sprite>
+        <sprite>sprites\spr_circle12</sprite>
+        <sprite>sprites\spr_circle13</sprite>
+        <sprite>sprites\spr_circle14</sprite>
+        <sprite>sprites\spr_circle15</sprite>
+        <sprite>sprites\spr_circle16</sprite>
+      </sprites>
+      <sprites name="Altar">
+        <sprite>sprites\spr_altar_colbox</sprite>
+        <sprite>sprites\spr_altar1</sprite>
+        <sprite>sprites\spr_altar_circle1</sprite>
       </sprites>
     </sprites>
     <sprites name="Hindernis">
@@ -372,6 +413,7 @@
       <sprites name="Barrel">
         <sprite>sprites\spr_barrel</sprite>
       </sprites>
+      <sprite>sprites\spr_wall_test</sprite>
     </sprites>
     <sprites name="HUD">
       <sprites name="Bar">
@@ -383,6 +425,7 @@
         <sprite>sprites\spr_health_bar_damage</sprite>
       </sprites>
       <sprite>sprites\spr_slot_cooldown</sprite>
+      <sprite>sprites\spr_hud_circle</sprite>
     </sprites>
     <sprites name="Heal-Field">
       <sprite>sprites\spr_heal_field</sprite>
@@ -664,7 +707,6 @@
     </backgrounds>
     <backgrounds name="Ebene">
       <backgrounds name="Wald">
-        <background>background\bg_forest_tileset</background>
         <background>background\bg_forest2</background>
       </backgrounds>
     </backgrounds>
@@ -687,9 +729,6 @@
     </backgrounds>
     <backgrounds name="Hub">
       <background>background\bg_main_hub</background>
-    </backgrounds>
-    <backgrounds name="Test">
-      <background>background\bg_grid</background>
     </backgrounds>
   </backgrounds>
   <paths name="paths"/>
@@ -743,6 +782,7 @@
       </scripts>
       <scripts name="Reset Stats">
         <script>scripts\scr_reset_player_stats.gml</script>
+        <script>scripts\scr_reset_run_progress.gml</script>
       </scripts>
       <scripts name="Inventory">
         <scripts name="old">
@@ -787,6 +827,7 @@
         <script>scripts\scr_roman_number.gml</script>
         <script>scripts\scr_mana_usage.gml</script>
         <script>scripts\scr_ability_string.gml</script>
+        <script>scripts\scr_mag_cooldown.gml</script>
       </scripts>
       <scripts name="Initialise">
         <script>scripts\scr_initialise_game.gml</script>
@@ -949,12 +990,23 @@
         <script>scripts\scr_reset_stats.gml</script>
       </scripts>
       <scripts name="Save">
-        <script>scripts\scr_write_progress.gml</script>
-        <script>scripts\scr_write_stats.gml</script>
-        <script>scripts\scr_write_items.gml</script>
+        <scripts name="Write">
+          <script>scripts\scr_write_progress.gml</script>
+          <script>scripts\scr_write_stats.gml</script>
+          <script>scripts\scr_write_items.gml</script>
+          <script>scripts\scr_write_item.gml</script>
+        </scripts>
+        <scripts name="Read">
+          <script>scripts\scr_read_progress.gml</script>
+          <script>scripts\scr_read_stats.gml</script>
+          <script>scripts\scr_read_items.gml</script>
+        </scripts>
       </scripts>
       <scripts name="RoomPlacer">
         <script>scripts\scr_room_placer.gml</script>
+      </scripts>
+      <scripts name="Circle">
+        <script>scripts\scr_get_random_circle.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -1004,7 +1056,12 @@
         <font>fonts\fnt_death_screen_heading</font>
         <font>fonts\fnt_death_screen_heading2</font>
         <font>fonts\fnt_death_screen_normal</font>
-        <font>fonts\fnt_death_menu_heading</font>
+        <fonts name="Death-Menu">
+          <font>fonts\fnt_death_menu_heading</font>
+          <font>fonts\fnt_death_menu_heading2</font>
+          <font>fonts\fnt_death_menu_heading3</font>
+          <font>fonts\fnt_death_menu_normal</font>
+        </fonts>
       </fonts>
       <fonts name="Explanation">
         <font>fonts\fnt_explanation</font>
@@ -1312,7 +1369,11 @@
         <objects name="Enemy-Morph">
           <object>objects\obj_mana_enemy_morph_orb</object>
           <object>objects\obj_mana_enemy_morph_orb_v2</object>
-          <object>objects\obj_passive_animal</object>
+          <objects name="Passive Animal">
+            <object>objects\obj_passive_animal</object>
+            <object>objects\obj_sheep</object>
+            <object>objects\obj_cow</object>
+          </objects>
         </objects>
         <objects name="Arrow-Rain">
           <object>objects\obj_mana_arrow_rain_orb</object>
@@ -1462,6 +1523,9 @@
         <object>objects\obj_random_type_chest</object>
         <object>objects\obj_chest_placeholder</object>
       </objects>
+      <objects name="Altar">
+        <object>objects\obj_altar</object>
+      </objects>
     </objects>
     <objects name="Menu">
       <objects name="main_menu">
@@ -1526,6 +1590,7 @@
           <object>objects\obj_walking_snot</object>
           <object>objects\obj_fox</object>
           <object>objects\obj_walking_blade_of_grass</object>
+          <object>objects\obj_abfuck</object>
           <object>objects\obj_nahkampf_enemy</object>
         </objects>
         <objects name="Fernkampf">
@@ -1606,6 +1671,7 @@
       </objects>
     </objects>
     <objects name="Stats">
+      <object>objects\obj_savestats</object>
       <object>objects\obj_stats</object>
     </objects>
     <objects name="Room">

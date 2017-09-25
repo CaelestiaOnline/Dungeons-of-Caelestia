@@ -54,6 +54,7 @@ player_stats.max_hp += plus_max_hp;
             <kind>1</kind>
             <string>///Reset Speed-Mult
 player_stats.max_hp -= plus_max_hp;
+
 </string>
           </argument>
         </arguments>

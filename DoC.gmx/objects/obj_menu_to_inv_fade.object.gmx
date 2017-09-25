@@ -32,11 +32,24 @@ xfactor = 5;
 
 colour = global.co_blue_gray_800;
 
-pre_x1 = menu_in_game.inv_menu_x1;
-pre_y1 = menu_in_game.inv_menu_y2;
+type = irandom(1);
 
-pre_x2 = display_get_gui_width();
-pre_y2 =  display_get_gui_height();
+switch(type) {
+    case 0:
+        pre_x1 = menu_in_game.inv_menu_x1;
+        pre_y1 = menu_in_game.inv_menu_y2;
+
+        pre_x2 = display_get_gui_width();
+        pre_y2 =  display_get_gui_height();
+        break;
+    case 1:
+        pre_x1 = display_get_gui_width();
+        pre_y1 = menu_in_game.inv_menu_y2;
+
+        pre_x2 = 0;
+        pre_y2 = display_get_gui_height();
+        break;        
+}
 
 radius = 0;
 

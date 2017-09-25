@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Speed-Multiplier
 index = items.sprint_speed_orb_v2;
-plus_max_sprint_speed = player_stats.max_player_sprint_speed/4;
+plus_max_sprint_speed = player_stats.old_max_player_sprint_speed/4;
 
 player_stats.sprint_speed_mult_item += plus_max_sprint_speed;
 </string>

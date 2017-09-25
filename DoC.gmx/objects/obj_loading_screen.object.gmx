@@ -110,7 +110,7 @@ alarm_set(0, room_speed*2);
           <argument>
             <kind>1</kind>
             <string>///Pro-Tip
-pro_tip_file_length = 175;
+pro_tip_file_length = 188;
 pro_tip_index = irandom(pro_tip_file_length -1);
 
 pro_tip_file = file_text_open_read(working_directory + "Textdateien\" + "pro_tip.txt");
@@ -226,6 +226,14 @@ background_index[0] = choose(
     );
     
 if(epileptic_mode) background_visible[0] = false;
+
+if room_width != background_width[0] {
+    background_xscale[0] = 1 * (room_width / background_width[0]);
+}
+
+if room_height != background_height[0] {
+    background_yscale[0] = 1 * (room_height / background_height[0]);
+}
 </string>
           </argument>
         </arguments>

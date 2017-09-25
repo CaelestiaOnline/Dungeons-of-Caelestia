@@ -542,18 +542,18 @@ x += move_x;
 y += move_y;
 
 //Stats
-stats.pxl_travelled += sqrt(sqr(move_x) + sqr(move_y));
+stats.pxl_travelled += round(sqrt(sqr(move_x) + sqr(move_y)));
 
 if(!obj_player.isSprinting &amp;&amp; !obj_player.is_crouching) {
-    stats.pxl_walked += sqrt(sqr(move_x) + sqr(move_y));
+    stats.pxl_walked += round(sqrt(sqr(move_x) + sqr(move_y)));
 }
 
 if(obj_player.isSprinting) {
-    stats.pxl_sprinted += sqrt(sqr(move_x) + sqr(move_y));
+    stats.pxl_sprinted += round(sqrt(sqr(move_x) + sqr(move_y)));
 }
 
 if(obj_player.is_crouching) {
-    stats.pxl_crouched += sqrt(sqr(move_x) + sqr(move_y));
+    stats.pxl_crouched += round(sqrt(sqr(move_x) + sqr(move_y)));
 }
 </string>
           </argument>
@@ -618,10 +618,9 @@ if(is_crouching) {
     player_stats.max_player_speed = player_stats.max_player_crouch_speed;
     //Sprite
     sprite_front = spr_charakter_crouch;
-    sprite_back = spr_charakter_crouch_back;
 }
 
-if(admin.crouch_key_released) {
+if(admin.crouch_key_released || (!is_crouching &amp;&amp; admin.game_paused)) {
     sprite_front = sprite_front_old;
     sprite_back = sprite_back_old;
     player_stats.player_acc = player_stats.old_player_acc;
@@ -919,7 +918,7 @@ var smoke_colour = choose(c_dkgray, c_gray);
 if(isSprinting) smoke_colour = c_black; 
 if(alarm_get(2) == -1) {
 if(move_x != 0 || move_y != 0) {
-    effect_create_below(ef_smoke, x, y + 20, choose(0, 1), smoke_colour);
+    effect_create_below(ef_smoke, x, y - 5, 0, smoke_colour);
     alarm_set(2, irandom(15) + 1);
 }
 }

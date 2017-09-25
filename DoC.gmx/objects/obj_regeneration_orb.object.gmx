@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Reg-Multiplier
 index = items.regeneration_orb;
-regeneration = 3;
+regeneration = 1;
 
 player_stats.regeneration += regeneration;
 </string>

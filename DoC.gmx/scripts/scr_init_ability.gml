@@ -319,11 +319,11 @@ switch(ability) {
         switch(ability_strength) {
             case 1:
                 max_enemy_hp = 50;
-                object = obj_passive_animal;
+                object = obj_sheep;
                 break;
             case 2:
                 max_enemy_hp = 50;
-                object = obj_passive_animal;
+                object = obj_cow;
                 break;
         }
         break;
@@ -345,12 +345,20 @@ switch(ability) {
     case "armour":
         switch(ability_strength) {
             case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
                 break;
             case 2:
+                resistance_mult = -0.2;
+                speed_mult = -0.2;
                 break;
             case 3:
+                resistance_mult = -0.3;
+                speed_mult = -0.3;
                 break;
-            case 5:
+            case 4:
+                resistance_mult = -0.4;
+                speed_mult = +0.1;
                 break;
         }
         break;

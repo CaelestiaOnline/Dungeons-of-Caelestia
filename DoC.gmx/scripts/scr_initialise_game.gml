@@ -122,6 +122,11 @@ progress = instance_create(0, 0, obj_progress);
 globalvar death_stats;
 death_stats = instance_create(0, 0, obj_death_stats);
 
+//Savestats
+globalvar savestats;
+savestats = instance_create(0, 0, obj_savestats);
+scr_read_stats();
+
 //Hub object
 globalvar hub;
 hub = instance_create(0, 0, obj_hub);
@@ -132,5 +137,13 @@ run_admin = noone;
 
 //Test-Inventory
 //instance_create(0, 0, obj_test);
+
+//Read Savedata
+scr_read_progress();
+
+scr_read_stats();
+
+//scr_read_items();
+
 
 

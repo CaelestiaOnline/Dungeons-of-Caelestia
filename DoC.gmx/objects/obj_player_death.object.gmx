@@ -40,6 +40,9 @@ with(obj_gegner) {
 scr_invfade(true, "");
 
 draw_alarm0 = false;
+
+//Erhöhe Stats
+stats.death_count += 1;
 </string>
           </argument>
         </arguments>

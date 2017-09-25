@@ -36,7 +36,7 @@ run_money_count = 0;
 hub_money = 0;
 
 //Levelsystem
-level_up_xp = 1024;
+level_up_xp = 8192;
 //XP
 xp = 0;
 dealt_xp = 0;
@@ -44,7 +44,10 @@ dealt_xp_old = 0;
 xp_count = 0;
 
 //Level
-level = 0; 
+level = 0;
+
+//Skillpoints
+skillpoints = 0;
 </string>
           </argument>
         </arguments>
