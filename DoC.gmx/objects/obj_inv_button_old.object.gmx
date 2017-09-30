@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>-1</persistent>
-  <parentName>obj_button</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,16 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>///Variablen
-event_inherited();
 inventory_type = 0;
 slot = -1;
 
 button_item = -1;
 button_count = 0;
 
+width = 0;
+
 item_sprite_number = 0;
-
-
 
 </string>
           </argument>
@@ -62,12 +61,16 @@ item_sprite_number = 0;
             <string>///Drag &amp; Drop System
 button_item = inventory_type.inv[slot];
 button_count = inventory_type.count[slot];
+var click = admin.left_click_pressed;
+var right_click = admin.right_click_pressed;
+var shift = admin.shift_key;
+width = sprite_get_width(spr_inv_border)/2;
 
-scr_inv_button_interaction();
+draw_set_colour(c_white);
+draw_set_alpha(1);
 
-if(confirmed_hover) {
-    scr_draw_button_hover(-1, -1);
-    
+if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
+    //Item-Stats
     if(button_item != -1) {
         if(mouse_ind.mouse_item == -1) {
             inventory.item_stats_title = item[button_item, 0];
@@ -75,8 +78,17 @@ if(confirmed_hover) {
             scr_draw_item_stats(button_item);
         }
     }
-
-    if(confirmed_left) {
+    //Rechteck bei Hovern
+    draw_set_alpha(0.5);
+    draw_rectangle(
+        x - (width-2),
+        y - (width-2),
+        x + (width-2),
+        y + (width-2),
+        0
+    );
+    draw_set_alpha(1);
+    if(click &amp;&amp; !right_click &amp;&amp; !shift) {
         //Wenn der Button ein Item enthält
         if(button_item != -1) {
             if(scr_check_item_inv_type(inventory_type, mouse_ind.mouse_item)) {
@@ -117,20 +129,20 @@ if(confirmed_hover) {
             }
         }
     }
-
-    if(confirmed_shift_left) {
+    //Shift + Linksklick
+    if(click &amp;&amp; !right_click &amp;&amp; shift) {
         if(button_item != -1) {
-                    var success = scr_inventory_add_item_auto(button_item, button_count);
-                    if(success) {
-                        inventory_type.inv[slot] = -1;
-                        inventory_type.count[slot] = 0;
-                    } else if(is_string(success)) {
-                        button_count = int64(success);
-                    }
-                }
+            var success = scr_inventory_add_item_auto(button_item, button_count);
+            if(success) {
+                inventory_type.inv[slot] = -1;
+                inventory_type.count[slot] = 0;
+            } else if(is_string(success)) {
+                button_count = int64(success);
+            }
+        }
     }
-
-    if(confirmed_right) {
+    //Rechtsklick
+    if(right_click &amp;&amp; !click &amp;&amp; !shift) {
         if(mouse_ind.mouse_item == -1 &amp;&amp; button_item != -1 &amp;&amp; button_count != 1) {
             var button_divide = button_count/2;
             var mouse_divide;

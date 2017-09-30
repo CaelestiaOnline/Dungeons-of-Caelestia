@@ -123,13 +123,21 @@ exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit)
             <string>///Stats
 //Level
 var collected_xp = death_stats.collected_xp;
-var level_old = progress.level;
+level_old = progress.level;
 
 progress.level += collected_xp / progress.level_up_xp;
 
 new_level = progress.level - level_old;
 
-progress.skillpoints += round(new_level);
+
+
+level_up = false;
+if(floor(level_old) &lt; floor(progress.level)) {
+    level_up = true;
+}
+
+
+progress.skillpoints += round(level_up);
 
 //Hub Money
 var collected_xp = death_stats.collected_xp;
@@ -389,16 +397,15 @@ draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 draw_set_font(fnt_death_menu_heading);
 draw_set_colour(c_white);
-draw_text(death_menu_circle_bg_x, death_menu_circle_bg_y, "level" + string(round(progress.level)));
+draw_text(death_menu_circle_bg_x, death_menu_circle_bg_y, "level" + string(floor(progress.level)));
 
-if(new_level &gt;= 1) {
+if(level_up) {
     draw_set_font(fnt_death_menu_heading2);
     draw_text(death_menu_circle_bg_x, death_menu_circle_bg_y + 100, "Levelaufstieg!");
 }
 
 draw_set_font(fnt_death_menu_heading3);
 draw_text(death_menu_circle_bg_x, death_menu_circle_bg_y + 164, "+" + string(new_level) + "Lv.");
-
 
 
 draw_set_valign(fa_top);
@@ -457,6 +464,33 @@ draw_text(
     death_menu_rectangle_bottom_bg_y2 + 64,
     "Gained Hub Money: " + "+" + string(new_hub_money) + "HM"
     );
+    
+//Money
+draw_set_font(fnt_death_menu_normal);
+draw_set_colour(c_green);
+draw_set_halign(fa_right);
+
+draw_text(
+    death_menu_rectangle_bottom_bg_x2 - 32,
+    death_menu_rectangle_bottom_bg_y2 + 64,
+    "Gained Skillpoints: " + string(round(new_level)) + "sp"
+    );
+    
+draw_set_halign(fa_left);
+
+draw_set_halign(fa_center);
+draw_set_valign(fa_middle);
+
+draw_set_font(fnt_death_menu_heading3);
+draw_set_colour(c_white);
+draw_text(
+    (death_menu_rectangle_bottom_bg_x2+death_menu_rectangle_bottom_bg_x1)/2,
+    death_menu_rectangle_bottom_bg_y2 + 128,
+    (frac(progress.level)*100) + "%" + " to next level"
+    );
+
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>

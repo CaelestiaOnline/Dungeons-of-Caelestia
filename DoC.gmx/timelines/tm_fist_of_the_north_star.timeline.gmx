@@ -33,7 +33,7 @@ with(obj_gegner) freeze = true;
 
 active = false;
 
-if(obj_player.x &gt;= self.enemy.x) {
+if(obj_player.x &lt; self.enemy.x) {
     obj_player.image_xscale = 1;
 } else obj_player.image_xscale = -1;
 </string>

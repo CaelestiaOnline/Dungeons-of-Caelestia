@@ -29,6 +29,8 @@
 
 portal_active = false;
 no_enemies = false;
+
+run_room_count = 0;
 </string>
           </argument>
         </arguments>
