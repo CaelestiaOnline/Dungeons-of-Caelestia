@@ -31,6 +31,7 @@ index = items.titanium_knuckleduster;
 event_inherited();
 
 old_damage = damage;
+old_damage_crit = damage_crit;
 
 image_xscale = 0.5;
 </string>
@@ -61,7 +62,12 @@ event_inherited();
 
 if(inventory.inv_prim.count[0] == 2) {
     damage = old_damage * 2;
-} else damage = old_damage;
+    damage_crit = old_damage_crit * 2;
+    
+} else {
+    damage = old_damage;
+    damage_crit = old_damage_crit;
+}
 </string>
           </argument>
         </arguments>

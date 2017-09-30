@@ -408,14 +408,14 @@ draw_set_valign(fa_top);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Charakter
+            <string>///Circle
 draw_sprite_ext(
     spr_hud_circle,
     0,
     hud_circle_bg_x,
     hud_circle_bg_y,
-    0.8,
-    0.8,
+    1,
+    1,
     hud_circle_angle,
     c_white,
     1

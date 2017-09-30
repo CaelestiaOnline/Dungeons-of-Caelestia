@@ -9,4 +9,8 @@ scr_sidefade(game_room, 60);
 
 player_stats.invincible = true;
 
+if(admin.in_run) {
+    run_admin.run_room_count += 1;
+}
+
 scr_room_placer(game_room);

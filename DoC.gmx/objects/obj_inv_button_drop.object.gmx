@@ -5,33 +5,9 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Variablen
-width = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -50,24 +26,12 @@ width = 0;
           <argument>
             <kind>1</kind>
             <string>///Drag &amp; Drop System
-var click = mouse_check_button_released(mb_left);
-width = sprite_get_width(spr_inv_border)/2;
+scr_inv_button_interaction();
 
-draw_set_colour(c_blue);
-draw_set_alpha(1);
+if(confirmed_hover) {
+    scr_draw_button_hover(c_blue, -1);
 
-if(abs(mouse_ind.x - x) &lt; width &amp;&amp; (abs(mouse_ind.y - y) &lt; width)) {
-    //Rechteck bei Hovern
-    draw_set_alpha(0.8);
-    draw_rectangle(
-        x - (width-2),
-        y - (width-2),
-        x + (width-2),
-        y + (width-2),
-        0
-    );
-    draw_set_alpha(1);
-    if(click) {
+    if(confirmed_left_released) {
         repeat(mouse_ind.mouse_count) {
             scr_inventory_drop_item(mouse_ind.mouse_item);
         }

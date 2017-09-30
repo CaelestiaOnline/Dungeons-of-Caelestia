@@ -1008,6 +1008,10 @@
       <scripts name="Circle">
         <script>scripts\scr_get_random_circle.gml</script>
       </scripts>
+      <scripts name="Button">
+        <script>scripts\scr_inv_button_interaction.gml</script>
+        <script>scripts\scr_draw_button_hover.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Window">
       <script>scripts\scr_set_window.gml</script>
@@ -1076,6 +1080,9 @@
       </fonts>
       <fonts name="Effects">
         <font>fonts\fnt_effects</font>
+      </fonts>
+      <fonts name="HubMainMenu">
+        <font>fonts\fnt_stats_menu_normal</font>
       </fonts>
     </fonts>
     <fonts name="Splash-Screen">
@@ -1172,14 +1179,15 @@
       </objects>
       <objects name="Buttons">
         <object>objects\obj_inv_button</object>
+        <object>objects\obj_inv_button_old</object>
         <object>objects\obj_inv_button_delete</object>
         <object>objects\obj_inv_button_drop</object>
         <object>objects\obj_inv_button_exit</object>
-        <object>objects\obj_inv_button_empty</object>
         <object>objects\obj_inv_button_inv</object>
         <object>objects\obj_inv_button_help</object>
         <object>objects\obj_inv_button_stats</object>
         <object>objects\obj_inv_button_main_menu</object>
+        <object>objects\obj_button</object>
       </objects>
       <objects name="Mouse">
         <object>objects\obj_mouse_ind_inv</object>

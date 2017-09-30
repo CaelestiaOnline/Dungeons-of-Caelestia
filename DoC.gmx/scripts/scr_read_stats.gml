@@ -14,7 +14,7 @@ savestats.pxl_walked = ini_read_real("stats", "pxl_walked", 0);
 savestats.pxl_sprinted = ini_read_real("stats", "pxl_sprinted", 0);
 savestats.pxl_crouched = ini_read_real("stats", "pxl_crouched", 0);
 
-savestats.damage_done = ini_read_real("stats", "dammage_done", 0);
+savestats.damage_done = ini_read_real("stats", "damage_done", 0);
 savestats.attacks_done = ini_read_real("stats", "attacks_done", 0);
 savestats.prim_attacks_done = ini_read_real("stats", "prim_attacks_done", 0);
 savestats.melee_attacks_done = ini_read_real("stats", "melee_attacks_done", 0);
