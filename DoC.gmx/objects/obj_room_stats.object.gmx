@@ -100,8 +100,14 @@ room_stats[rm_hub_main_menu, 0] = "hub_menu";
 //Hub Shop Menu
 room_stats[rm_hub_shop_menu, 0] = "hub_menu";
 
+//Hub Skilltree Menu
+room_stats[rm_hub_skilltree_menu, 0] = "hub_menu";
+
 //Hub Death Menu
 room_stats[rm_hub_death_menu, 0] = "hub_menu";
+
+//Hub Stats Menu
+room_stats[rm_hub_stats_menu, 0] = "hub_menu";
 
 //Testroom1
 room_stats[rm_testroom1, 0] = "game";

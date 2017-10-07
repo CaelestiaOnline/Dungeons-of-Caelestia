@@ -32,19 +32,7 @@ start_x = 100;
 start_y = 100;
 y_speed = 2;
 
-credits_file = file_text_open_read(working_directory + "Textdateien\" + "credits.txt");
-
-credits_string = "";
-
-while(!file_text_eof(credits_file)) {
-    new_line = file_text_readln(credits_file);
-    
-    credits_string = credits_string + new_line;
-};
-
-file_text_close(credits_file);
-
-room_height = 200 + string_height_ext(credits_string, sep, w);
+room_height = 8192;
 </string>
           </argument>
         </arguments>
@@ -93,16 +81,213 @@ if(y &lt; room_height) y += y_speed;
           <argument>
             <kind>1</kind>
             <string>///Draw Credits
-draw_set_font(fnt_credits);
 draw_set_halign(fa_center);
-
-draw_set_alpha(0.5);
-draw_text_ext(room_width/2 + 3, start_y + 3, credits_string, sep, w);
-
 draw_set_alpha(1);
 draw_set_colour(c_white);
+var shadow_alpha = 0.4;
 
-draw_text_ext(room_width/2, start_y, credits_string, sep, w);
+//Credits
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading);
+var credits_string = "CREDITS";
+var credits_y = 300;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Titel
+draw_set_colour(c_white);
+draw_set_font(fnt_main_menu_heading);
+var credits_string = "Dungeons of Cælestia";
+var credits_y = view_hview[0]/2;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Text
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "MADE BY CAELESTIA ENTERPRISE";
+var credits_y = view_hview[0] - 300;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Text 2
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "MADE WITH GAME MAKER: STUDIO 1.4";
+var credits_y = view_hview[0] - 150;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Mitglieder
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "Mitarbeiter von Caelestia Enterprise";
+var credits_y = 2000;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Mitglieder
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "Timo Welz###Joschua Boeck###Nicolas Schmoelz###Jonathan Wurth";
+var credits_y = 2200;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Programming
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "PROGRAMMING";
+var credits_y = 2600;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Programming
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "Nicolas Schmoelz###Jonathan Wurth";
+var credits_y = 2800;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Graphics
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "GRAPHICS";
+var credits_y = 3200;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Graphics
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "Timo Welz###www.pixabay.com###www.shutterstock.com";
+var credits_y = 3400;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Sounds
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "SOUNDS";
+var credits_y = 3800;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Sounds
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "Joschua Boeck###www.xxxxyyyy.com";
+var credits_y = 4000;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Random
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "IRGENDWELCHES GELABER";
+var credits_y = 5000;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Random
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "
+Wird dieses Stueck Software#jemals fluessig und stabil laufen?#Ich bezweifle es sehr.###
+R.I.P in Pepperoni Schlaf und so weiter###
+Vielen Dank an die Entwickler#vieler anderer Spiele,#die uns motiviert und beeinflusst haben.##
+Dabei sind zu nennen:#
+Overwatch#
+Lost Castle#
+HotS#
+Binding of Isaac#
+Und noch viele mehr.###
+NOTE: Mach das weg, sonst merkt Herr Baumann noch dass wir###
+
+";
+var credits_y = 5200;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Danksagung
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "DANKSAGUNGEN";
+var credits_y = 6000;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Danksagung
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "
+Blablabla Familie blablabla Freunde##
+Vielen Dank an meinen PC,#dass er mich und meine endlosen Bugsuchen#ertragen hat. Du warst mir#ein wahrer Freund.##
+Noch mehr Danke an mich selbst,#dass ich einfach so toll bin.#Danke. Bitte.
+
+";
+var credits_y = 6200;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 draw_set_halign(fa_left);
 

@@ -68,9 +68,7 @@ if(confirmed) {
         scr_deal_player_damage(player_stats.max_hp/4);
         instance_destroy(ground_item);
         
-        do {
-            item_index = irandom(items.count-1);
-        } until(item[item_index, 3] == type);
+        var item_index = scr_get_random_valid_item(type);
         
         var item_count = 1;
         scr_inventory_drop_item_place_count(item_index, x + choose(irandom_range(20, 50), irandom_range(-20, -50)), y + irandom_range(20, 50), item_count);

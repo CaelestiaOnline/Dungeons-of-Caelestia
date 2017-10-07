@@ -6,6 +6,9 @@ Initialisiert das Spiel bzw erzeugt alle benötigten Objekte
 //Window
 scr_set_window();
 
+//Keylock Numpad
+keyboard_set_numlock(true);
+
 //Randomize
 randomize();
 
@@ -135,15 +138,29 @@ hub = instance_create(0, 0, obj_hub);
 globalvar run_admin;
 run_admin = noone;
 
+//Skilltree Stats
+globalvar skilltree_stats_object;
+skilltree_stats_object = instance_create(0, 0, obj_skilltree_stats);
+
+global.skilltree_status = -1;
+
+scr_read_skilltree();
+
 //Test-Inventory
 //instance_create(0, 0, obj_test);
+
+//Create File DEBUG
+scr_create_savefile_debug();
 
 //Read Savedata
 scr_read_progress();
 
 scr_read_stats();
 
-//scr_read_items();
+global.items_unlocked = -1;
+global.items_found = -1;
+
+scr_read_items();
 
 
 

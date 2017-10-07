@@ -53,7 +53,7 @@ player_stats.heal_orb_chance += plus_heal_orb_chance;
           <argument>
             <kind>1</kind>
             <string>///Reset Speed-Mult
-player_stats.heal_orb_chance -= plus_chest_chance;
+player_stats.heal_orb_chance -= plus_heal_orb_chance;
 </string>
           </argument>
         </arguments>

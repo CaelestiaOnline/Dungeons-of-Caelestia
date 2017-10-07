@@ -31,6 +31,38 @@
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hintergrund Koordinaten
+
+var buffer = 128;
+
+stats_menu_rectangle_left_bg_x1 = buffer;
+stats_menu_rectangle_left_bg_y1 = buffer;
+
+stats_menu_rectangle_left_bg_x2 = display_get_gui_width() - buffer;
+stats_menu_rectangle_left_bg_y2 = display_get_gui_height() - buffer;
+
+//Farben
+colour_bg = global.co_blue_gray_1000;
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="64">
       <action>
@@ -51,6 +83,83 @@
             <kind>1</kind>
             <string>///Exit
 if(!show_stats) exit;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hintergrund
+
+draw_set_alpha(0.8);
+draw_set_colour(colour_bg);
+
+draw_roundrect(
+    stats_menu_rectangle_left_bg_x1,
+    stats_menu_rectangle_left_bg_y1,
+    stats_menu_rectangle_left_bg_x2,
+    stats_menu_rectangle_left_bg_y2,
+    false
+);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Text
+
+var buffer = 64;
+
+draw_set_colour(c_white);
+draw_set_font(fnt_help_menu_heading);
+draw_set_alpha(1);
+
+draw_text(
+    stats_menu_rectangle_left_bg_x1 + buffer,
+    stats_menu_rectangle_left_bg_y1 + buffer,
+    "Ich bin eine Ueberschrift."
+    );
+    
+draw_set_font(fnt_help_menu_normal);
+
+var stats_string = "Und ich werde sicher mal mit Inhalt gefuellt. Yaaay, da freu ich mich schon drauf."
+
+draw_text_ext(
+    stats_menu_rectangle_left_bg_x1 + buffer,
+    stats_menu_rectangle_left_bg_y1 + buffer*2,
+    stats_string,
+    16,
+    stats_menu_rectangle_left_bg_x2 - 128 - buffer*2
+    );
 </string>
           </argument>
         </arguments>

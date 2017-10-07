@@ -7,6 +7,9 @@ scr_roman_numer(
 var number = argument0;
 
 switch(number) {
+    case 0:
+        return "0";
+        break;
     case 1: 
         return "I";
         break;

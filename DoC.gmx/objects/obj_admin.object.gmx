@@ -511,7 +511,11 @@ show_debug_overlay(show_hitbox);
 if(admin.playing &amp;&amp; !window_has_focus() &amp;&amp; !admin.game_paused) admin.pause_menu_key_pressed = 1;
 
 //Game restart
-if(keyboard_check_pressed(vk_f7)) game_restart();
+if(keyboard_check_pressed(vk_f7)) {
+    scr_read_stats();
+    scr_read_progress();
+    scr_read_items();
+}
 
 //Suicide
 if(keyboard_check_pressed(vk_f6) &amp;&amp; playing) player_stats.hp = 0;
@@ -539,7 +543,10 @@ if(keyboard_check_pressed(vk_f6) &amp;&amp; playing) player_stats.hp = 0;
             <kind>1</kind>
             <string>///Instance_count (DEBUG)
 if(admin.show_hitbox) {
-draw_text(display_get_gui_width() - 400, 16, "Count: "+string(instance_count));
+    draw_set_alpha(1);
+    draw_set_font(fnt_fps);
+    draw_set_colour(c_white);
+    draw_text(display_get_gui_width() - 400, 16, "IC: " + string(instance_count));
 }
 </string>
           </argument>

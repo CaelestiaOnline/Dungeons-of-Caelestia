@@ -58,6 +58,9 @@ draw_set_alpha(1);
 draw_set_font(fnt_warning_heading);
 draw_set_colour(c_red);
 
+draw_set_alpha(0.5);
+draw_text(display_get_gui_width()/2+3, 150+3, "WARNING");
+draw_set_alpha(1);
 draw_text(display_get_gui_width()/2, 150, "WARNING");
 </string>
           </argument>
@@ -83,17 +86,28 @@ draw_text(display_get_gui_width()/2, 150, "WARNING");
 
 draw_set_colour(c_white);
 draw_set_font(fnt_warning_normal);
+draw_set_alpha(1);
 
 var text_x = display_get_gui_width()/2;
 
 //Epilepsie
 
 var warning_text = "THIS FEATURE INCLUDES SCENES WHICH CONTAIN STROBING EFFECTS WHICH MAY AFFECT VIEWERS WITH PHOTO-SENSITIVE EPILEPSY OR OTHER SUCH CONDITIONS";
+draw_set_alpha(0.5);
+draw_text_ext(text_x+3, 300+3, warning_text, 64, 1000);
+draw_set_alpha(1);
 draw_text_ext(text_x, 300, warning_text, 64, 1000);
 
 //Sound
 var sound_text = "ALSO THE GAME MAY HAVE SOME VERDAMMT LOUD NOISES WHICH MAY AFFFECT YOUR TROMMELFELL";
+draw_set_alpha(0.5);
+draw_text_ext(text_x+3, 600+3, sound_text, 64, 1000);
+draw_set_alpha(1);
 draw_text_ext(text_x, 600, sound_text, 64, 1000);
+
+//Continue
+draw_set_font(fnt_warning_normal2);
+draw_text(text_x, 900, "Even if you do not think so, i am watching you.");
 
 //Continue
 draw_set_font(fnt_warning_normal2);

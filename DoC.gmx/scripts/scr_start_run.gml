@@ -11,6 +11,7 @@ scr_inventory_clear_all();
 scr_effect_rem_all(obj_player);
 
 scr_reset_stats();
+scr_reset_player_stats();
 
 scr_reset_run_progress();
 

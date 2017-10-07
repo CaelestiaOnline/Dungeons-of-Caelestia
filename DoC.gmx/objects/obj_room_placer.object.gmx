@@ -59,7 +59,9 @@ if(room == goal) {
     
     scr_set_view();
     
-    if(admin.in_run) run_admin.portal_active = false;
+    if(admin.in_run) {
+        run_admin.portal_active = false;
+    }
     
     player_stats.invincible = false;
     

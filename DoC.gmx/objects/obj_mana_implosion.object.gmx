@@ -145,8 +145,10 @@ instance_destroy();
 for(var i = 0; i &lt; array_length_1d(enemy); i++) {
     if(enemy[i] != noone &amp;&amp; instance_exists(enemy[i])) {
         with(enemy[i]) {
-            if(movable) move = 0;
-            move_towards_point(other.x, other.y, 0.5);
+            if(movable) {
+                move = 0;
+                move_towards_point(other.x, other.y, 0.5);
+            }
         }
         scr_deal_damage(enemy[i], damage/20);
     }

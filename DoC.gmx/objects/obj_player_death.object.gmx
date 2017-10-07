@@ -160,7 +160,7 @@ if(confirmed_dead) {
           <argument>
             <kind>1</kind>
             <string>///Bestätigung Revive
-if(keyboard_check_pressed(ord("J")) &amp;&amp; player_stats.revive) {
+if(keyboard_check_pressed(ord("J")) &amp;&amp; player_stats.revive &amp;&amp; !draw_alarm0) {
     confirmed_revive = true;
     player_stats.revive = false;
     scr_inventory_rem_item(inventory.inv_items, items.revive_orb, 1);
@@ -312,10 +312,15 @@ var text = "Drone will be repaired, if possible.";
 draw_text(1000, 800, text);
 
 var repair_status;
-if(player_stats.revive) repair_status = "possible";
-else repair_status = "not possible";
+if(player_stats.revive) {
+    repair_status = "possible";
+    draw_set_colour(c_green);
+}
+else {
+    repair_status = "not possible";
+    draw_set_colour(c_red);
+}
 
-draw_set_colour(c_red);
 var text = "STATUS: " + repair_status;
 draw_text(1000, 830, text);
 draw_set_colour(c_white);
