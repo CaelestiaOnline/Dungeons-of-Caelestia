@@ -144,7 +144,8 @@ enum items {
     max_hp_orb = 114,
     max_hp_orb_v2 = 115,
     
-    count
+    count,
+    no_valid_item
 }
 </string>
           </argument>
@@ -1977,6 +1978,17 @@ item[items.max_hp_orb_v2, 4] = 1;
 item_stats[items.max_hp_orb_v2, item_stats_item.ability] = "";
 item_stats[items.max_hp_orb_v2, item_stats_item.ability_strength] = 2;
 item_stats[items.max_hp_orb_v2, item_stats_item.misc] = "";
+
+//No Valid Item (115)
+item[items.no_valid_item, 0] = "Error 404";
+item[items.no_valid_item, 1] = "Item not found. Proceed with playing.#Ich bin nur ein Debug-Item, beachte mich also garnicht.";
+item[items.no_valid_item, 2] = obj_no_valid_item;
+item[items.no_valid_item, 3] = "debug";
+item[items.no_valid_item, 4] = 1;
+
+item_stats[items.no_valid_item, item_stats_item.ability] = "";
+item_stats[items.no_valid_item, item_stats_item.ability_strength] = 0;
+item_stats[items.no_valid_item, item_stats_item.misc] = "";
 </string>
           </argument>
         </arguments>

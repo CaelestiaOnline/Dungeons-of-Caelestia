@@ -56,9 +56,7 @@ type = "sec";
 
 if(confirmed) {
     repeat(1) {
-        do {
-            item_index = irandom(items.count-1);
-        } until(item[item_index, 3] == type);
+        item_index = scr_get_random_valid_item(type);
         
         var item_count = 1;
         

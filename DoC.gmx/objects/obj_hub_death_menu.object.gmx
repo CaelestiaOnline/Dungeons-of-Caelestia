@@ -136,8 +136,10 @@ if(floor(level_old) &lt; floor(progress.level)) {
     level_up = true;
 }
 
+new_skillpoints = int64(floor(progress.level) - floor(level_old));
 
-progress.skillpoints += round(level_up);
+progress.skillpoints += new_skillpoints;
+
 
 //Hub Money
 var collected_xp = death_stats.collected_xp;
@@ -473,7 +475,7 @@ draw_set_halign(fa_right);
 draw_text(
     death_menu_rectangle_bottom_bg_x2 - 32,
     death_menu_rectangle_bottom_bg_y2 + 64,
-    "Gained Skillpoints: " + string(round(new_level)) + "sp"
+    "Gained Skillpoints: " + "+" + string(new_skillpoints) + "sp"
     );
     
 draw_set_halign(fa_left);
@@ -486,7 +488,7 @@ draw_set_colour(c_white);
 draw_text(
     (death_menu_rectangle_bottom_bg_x2+death_menu_rectangle_bottom_bg_x1)/2,
     death_menu_rectangle_bottom_bg_y2 + 128,
-    (frac(progress.level)*100) + "%" + " to next level"
+    string(frac(progress.level)*100) + "%" + " of level completed"
     );
 
 draw_set_valign(fa_top);

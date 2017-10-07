@@ -32,12 +32,12 @@ event_inherited();
 path = path_add();
 
 //Distanz
-max_distance = 100;
-min_distance = 48;
+max_distance = 500;
+min_distance = 100;
 safety_distance = 200 + round(random_range(50, 0));
 min_distance_factor = 1;
 
-type = obj_mana_orb;
+type = obj_mana_bullet;
 </string>
           </argument>
         </arguments>

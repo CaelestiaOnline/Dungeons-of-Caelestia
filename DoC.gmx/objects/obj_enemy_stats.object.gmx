@@ -237,9 +237,9 @@ enemy_stats[obj_random_guy_bullet, 3] = true;
 enemy_stats[obj_random_guy_bullet, 4] = "friendly";
 
 enemy_stats[obj_random_guy_bullet, enemy_stats_normal.hp] = 20;
-enemy_stats[obj_random_guy_bullet, enemy_stats_normal.damage] = 12;
-enemy_stats[obj_random_guy_bullet, enemy_stats_normal.attack_speed] = 20;
-enemy_stats[obj_random_guy_bullet, enemy_stats_normal.max_speed] = 1.8;
+enemy_stats[obj_random_guy_bullet, enemy_stats_normal.damage] = 16;
+enemy_stats[obj_random_guy_bullet, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_random_guy_bullet, enemy_stats_normal.max_speed] = 1.2;
 enemy_stats[obj_random_guy_bullet, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_random_guy_bullet, enemy_stats_normal.money_drop] = 5;
 </string>

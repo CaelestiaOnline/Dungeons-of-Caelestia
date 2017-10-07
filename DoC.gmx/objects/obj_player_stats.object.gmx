@@ -62,7 +62,7 @@ stamina_reg = 0.2;
 root_damage = 5;
 chance_crit = 0.15;
 //Angriffsgeschwindigkeit
-attack_speed = 20;
+attack_speed = 60;
 attack_speed_old = attack_speed;
 attack_speed_mult = 1;
 attack_speed_mult_effect = 1;
@@ -80,7 +80,7 @@ strength_mult_item = 1;
 
 //Speed
 player_speed = 1;
-max_player_speed = 4;
+max_player_speed = 3.5;
 old_max_player_speed = max_player_speed;
 speed_mult = 1;
 speed_mult_item = 1;
@@ -92,7 +92,7 @@ sprint_speed_mult = 1;
 sprint_speed_mult_item = 1;
 
 //Beschleunigung
-player_acc = 0.4;
+player_acc = 0.5;
 old_player_acc = player_acc;
 
 //Sprinten

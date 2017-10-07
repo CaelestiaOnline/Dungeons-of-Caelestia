@@ -30,6 +30,8 @@ text = 0;
 
 //Alarm
 alarm_set(0, room_speed);
+
+draw_colour = c_red;
 </string>
           </argument>
         </arguments>
@@ -81,7 +83,7 @@ var alpha;
 alpha = alarm_get(0) / room_speed;
 draw_set_alpha(alpha);
 
-draw_set_colour(c_red);
+draw_set_colour(draw_colour);
 draw_set_halign(fa_center);
 draw_set_font(fnt_indicator);
 

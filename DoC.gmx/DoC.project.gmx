@@ -298,6 +298,15 @@
             <sprite>sprites\spr_obj_random_guy_dead</sprite>
           </sprites>
         </sprites>
+        <sprites name="RandomGuyBullet">
+          <sprite>sprites\spr_random_guy_bullet</sprite>
+          <sprites name="Colbox">
+            <sprite>sprites\spr_obj_random_guy_bullet_colbox</sprite>
+          </sprites>
+          <sprites name="Dead">
+            <sprite>sprites\spr_obj_random_guy_bullet_dead</sprite>
+          </sprites>
+        </sprites>
       </sprites>
       <sprites name="Misc">
         <sprites name="Abfuck">
@@ -445,6 +454,7 @@
         <sprite>sprites\spr_inv_border_2</sprite>
         <sprite>sprites\spr_inv_border_gui_countdown</sprite>
         <sprite>sprites\spr_inv_border_del_old</sprite>
+        <sprite>sprites\spr_hub_button_shop_buyitem_border</sprite>
       </sprites>
       <sprites name="Symbole">
         <sprite>sprites\spr_inv_exit</sprite>
@@ -700,6 +710,24 @@
         <sprite>sprites\spr_effect_mana</sprite>
       </sprites>
     </sprites>
+    <sprites name="Upgrades">
+      <sprite>sprites\spr_upgrades_0</sprite>
+      <sprite>sprites\spr_upgrades_1</sprite>
+      <sprite>sprites\spr_upgrades_2</sprite>
+      <sprite>sprites\spr_upgrades_3</sprite>
+      <sprite>sprites\spr_upgrades_4</sprite>
+      <sprite>sprites\spr_upgrades_5</sprite>
+      <sprite>sprites\spr_upgrades_6</sprite>
+      <sprite>sprites\spr_upgrades_7</sprite>
+      <sprite>sprites\spr_upgrades_8</sprite>
+      <sprite>sprites\spr_upgrades_9</sprite>
+      <sprite>sprites\spr_upgrades_10</sprite>
+      <sprite>sprites\spr_upgrades_11</sprite>
+      <sprite>sprites\spr_upgrades_12</sprite>
+      <sprite>sprites\spr_upgrades_13</sprite>
+      <sprite>sprites\spr_upgrades_14</sprite>
+      <sprite>sprites\spr_upgrades_15</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -823,6 +851,10 @@
             <script>scripts\scr_inventory_get_item_inv_type.gml</script>
             <script>scripts\scr_inventory_search_item.gml</script>
           </scripts>
+          <scripts name="get">
+            <script>scripts\scr_get_random_valid_item.gml</script>
+            <script>scripts\scr_get_item_type_string.gml</script>
+          </scripts>
         </scripts>
         <script>scripts\scr_roman_number.gml</script>
         <script>scripts\scr_mana_usage.gml</script>
@@ -925,7 +957,9 @@
         <script>scripts\scr_hub_interaction.gml</script>
         <script>scripts\scr_interaction_old.gml</script>
         <script>scripts\scr_interaction.gml</script>
+        <script>scripts\scr_interaction_ext.gml</script>
         <script>scripts\scr_show_question.gml</script>
+        <script>scripts\scr_show_question_ext.gml</script>
         <script>scripts\scr_show_info.gml</script>
         <script>scripts\scr_init_interaction.gml</script>
       </scripts>
@@ -934,7 +968,7 @@
           <script>scripts\scr_leave_hub_menu.gml</script>
           <script>scripts\scr_enter_hub_menu.gml</script>
           <scripts name="Shop">
-            <script>scripts\scr_create_shop_button.gml</script>
+            <script>scripts\scr_update_shop_button.gml</script>
           </scripts>
         </scripts>
         <script>scripts\scr_enter_hub.gml</script>
@@ -994,12 +1028,17 @@
           <script>scripts\scr_write_progress.gml</script>
           <script>scripts\scr_write_stats.gml</script>
           <script>scripts\scr_write_items.gml</script>
-          <script>scripts\scr_write_item.gml</script>
+          <script>scripts\scr_write_upgrades.gml</script>
+          <script>scripts\scr_write_item_unlocked.gml</script>
+          <script>scripts\scr_write_upgrade.gml</script>
+          <script>scripts\scr_write_item_found.gml</script>
+          <script>scripts\scr_create_savefile_debug.gml</script>
         </scripts>
         <scripts name="Read">
           <script>scripts\scr_read_progress.gml</script>
           <script>scripts\scr_read_stats.gml</script>
           <script>scripts\scr_read_items.gml</script>
+          <script>scripts\scr_read_skilltree.gml</script>
         </scripts>
       </scripts>
       <scripts name="RoomPlacer">
@@ -1010,7 +1049,16 @@
       </scripts>
       <scripts name="Button">
         <script>scripts\scr_inv_button_interaction.gml</script>
+        <script>scripts\scr_button_interaction_custom.gml</script>
         <script>scripts\scr_draw_button_hover.gml</script>
+        <script>scripts\scr_button_draw_invalid_action.gml</script>
+        <script>scripts\scr_button_check_input.gml</script>
+      </scripts>
+      <scripts name="ItemPrize">
+        <script>scripts\scr_get_item_prize.gml</script>
+      </scripts>
+      <scripts name="Upgrades">
+        <script>scripts\scr_get_upgrades_sprite.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -1027,7 +1075,9 @@
     <fonts name="Menu">
       <font>fonts\fnt_main_menu</font>
       <font>fonts\fnt_main_menu_heading</font>
-      <font>fonts\fnt_credits</font>
+      <font>fonts\fnt_credits_heading</font>
+      <font>fonts\fnt_credits_heading2</font>
+      <font>fonts\fnt_credits_normal</font>
     </fonts>
     <fonts name="System">
       <font>fonts\fnt_fps</font>
@@ -1083,6 +1133,13 @@
       </fonts>
       <fonts name="HubMainMenu">
         <font>fonts\fnt_stats_menu_normal</font>
+      </fonts>
+      <fonts name="HelpMenu">
+        <font>fonts\fnt_help_menu_heading</font>
+        <font>fonts\fnt_help_menu_normal</font>
+      </fonts>
+      <fonts name="HubSkilltreeMenu">
+        <font>fonts\fnt_hub_skilltree_menu_numbers</font>
       </fonts>
     </fonts>
     <fonts name="Splash-Screen">
@@ -1182,6 +1239,7 @@
         <object>objects\obj_inv_button_old</object>
         <object>objects\obj_inv_button_delete</object>
         <object>objects\obj_inv_button_drop</object>
+        <object>objects\obj_button_debug</object>
         <object>objects\obj_inv_button_exit</object>
         <object>objects\obj_inv_button_inv</object>
         <object>objects\obj_inv_button_help</object>
@@ -1449,6 +1507,9 @@
           <object>objects\obj_max_hp_orb</object>
           <object>objects\obj_max_hp_orb_v2</object>
         </objects>
+        <objects name="NoValidItem">
+          <object>objects\obj_no_valid_item</object>
+        </objects>
       </objects>
       <objects name="pickup">
         <objects name="Heal">
@@ -1492,23 +1553,37 @@
     <objects name="Hub">
       <object>objects\obj_hub_chair</object>
       <object>objects\obj_hub_terminal</object>
+      <object>objects\obj_hub_stats</object>
+      <object>objects\obj_hub_expl</object>
       <object>objects\obj_hub_shop</object>
+      <object>objects\obj_hub_skilltree</object>
       <object>objects\obj_hub_clear_items</object>
       <object>objects\obj_hub_clear_inv</object>
       <object>objects\obj_hub_reset_stats</object>
+      <object>objects\obj_hub_multitask</object>
       <object>objects\obj_mouse_ind_hub</object>
       <object>objects\obj_hub</object>
       <objects name="Buttons">
         <object>objects\obj_hub_button_exit</object>
-        <object>objects\obj_hub_button_shop_getitem</object>
-        <object>objects\obj_hub_button_shop_dropitem</object>
+        <objects name="Shop">
+          <object>objects\obj_hub_button_shop_dropitem</object>
+          <object>objects\obj_hub_button_shop_buyitem</object>
+          <object>objects\obj_hub_button_shop_gettype</object>
+          <object>objects\obj_hub_button_shop_getitem</object>
+        </objects>
+        <objects name="Skilltree">
+          <object>objects\obj_hub_button_skilltree_buyupgrade</object>
+          <object>objects\obj_hub_button_skilltree_getupgrade</object>
+        </objects>
       </objects>
       <object>objects\obj_leave_hub_menu</object>
       <object>objects\obj_enter_game</object>
       <objects name="Menu">
         <object>objects\obj_hub_main_menu</object>
+        <object>objects\obj_hub_stats_menu</object>
         <object>objects\obj_hub_death_menu</object>
         <object>objects\obj_hub_shop_menu</object>
+        <object>objects\obj_hub_skilltree_menu</object>
       </objects>
       <object>objects\obj_hindernis_interaction</object>
       <object>objects\obj_floor_interaction</object>
@@ -1581,6 +1656,7 @@
         <objects name="Damage-Indikator">
           <object>objects\obj_damage_ind</object>
           <object>objects\obj_text_ind</object>
+          <object>objects\obj_gui_text_ind</object>
           <object>objects\obj_xp_ind</object>
           <object>objects\obj_money_ind</object>
           <object>objects\obj_heal_ind</object>
@@ -1677,6 +1753,7 @@
       <objects name="Achievements">
         <object>objects\obj_achivements</object>
       </objects>
+      <object>objects\obj_skilltree_stats</object>
     </objects>
     <objects name="Stats">
       <object>objects\obj_savestats</object>
@@ -1697,6 +1774,7 @@
       <object>objects\obj_info_box</object>
       <object>objects\obj_mecha_hand</object>
       <object>objects\obj_question_box</object>
+      <object>objects\obj_question_ext_box</object>
       <object>objects\obj_box_confirm</object>
     </objects>
     <objects name="Mouse">
@@ -1729,8 +1807,10 @@
       <room>rooms\rm_main_hub</room>
       <rooms name="Hub-menu">
         <room>rooms\rm_hub_main_menu</room>
+        <room>rooms\rm_hub_stats_menu</room>
         <room>rooms\rm_hub_death_menu</room>
         <room>rooms\rm_hub_shop_menu</room>
+        <room>rooms\rm_hub_skilltree_menu</room>
       </rooms>
     </rooms>
     <rooms name="Testrooms">

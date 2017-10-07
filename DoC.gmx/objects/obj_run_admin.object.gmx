@@ -58,10 +58,12 @@ if(!admin.in_run) exit;
 
 enemies_exist = false;
 
+if(instance_exists(obj_gegner)) {
 with(obj_gegner) {
     if(triggerable) {
         other.enemies_exist = true;
     }
+}
 }
 
 if(!enemies_exist &amp;&amp; !portal_active) {
@@ -70,6 +72,35 @@ if(!enemies_exist &amp;&amp; !portal_active) {
         instance_create(obj_chest_placeholder.x, obj_chest_placeholder.y, obj_random_type_chest);
     
     }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Portal Active (DEBUG)
+if(admin.show_hitbox) {
+draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_font(fnt_fps);
+draw_text(display_get_gui_width() - 600, 16, "Portal: " + string(portal_active));
 }
 </string>
           </argument>

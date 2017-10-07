@@ -35,6 +35,7 @@ confirmed_left_released = false;
 confirmed_left_hold = false;
 confirmed_shift_left = false;
 confirmed_right = false;
+confirmed_right_hold = false;
 
 //Alarm
 alarm_set(0, -2);
@@ -67,6 +68,7 @@ confirmed_left_released = false;
 confirmed_left_hold = false;
 confirmed_shift_left = false;
 confirmed_right = false;
+confirmed_right_hold = false;
 </string>
           </argument>
         </arguments>
