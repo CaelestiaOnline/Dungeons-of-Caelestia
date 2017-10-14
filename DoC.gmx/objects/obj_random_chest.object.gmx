@@ -51,11 +51,11 @@ scr_init_interaction();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_interaction("Kiste oeffnen?", "Pickup-Kiste");
+            <string>scr_interaction("Kiste oeffnen?", "Random-Kiste");
 
 if(confirmed) {
     repeat(irandom(2)+2) {
-        item_index = irandom(items.count-1);
+        item_index = scr_get_random_valid_item("");
         
         var item_count = round(item[item_index, 4] * random(1));
         

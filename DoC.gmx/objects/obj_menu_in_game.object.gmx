@@ -71,6 +71,11 @@ main_menu_button_y = inv_menu_y1 + 32;
 inv_button = 0;
 inv_button_x = inv_menu_x2 - 8*5 - 24 - 48*4;
 inv_button_y = inv_menu_y1 + 32;
+
+//Stats Button
+stats_button = 0;
+stats_button_x = inv_menu_x2 - 8*6 - 24 - 48*5;
+stats_button_y = inv_menu_y1 + 32;
 </string>
           </argument>
         </arguments>
@@ -107,6 +112,9 @@ if(admin.game_paused) {
     if(inv_button = 0) {
         inv_button = instance_create(inv_button_x, inv_button_y, obj_inv_button_inv);
     }
+    if(stats_button = 0) {
+        stats_button = instance_create(stats_button_x, stats_button_y, obj_inv_button_stats);
+    }
     
 } else {
     with(exit_button) {
@@ -125,6 +133,10 @@ if(admin.game_paused) {
         instance_destroy();
     }
     inv_button = 0;
+    with(stats_button) {
+        instance_destroy();
+    }
+    stats_button = 0;
 }
 
 </string>
@@ -163,11 +175,14 @@ if(!admin.playing) {
 
 if(!admin.game_paused) {
     inventory.show_inv = false;
+    help_in_game.show_help = false;
+    stats_ext_in_game.show_stats = false;
 }
 
 if(admin.game_paused) {
     obj_player.is_crouching = false;
 }
+
 
 </string>
           </argument>
@@ -192,8 +207,8 @@ if(admin.game_paused) {
             <string>///Pause Key
 if(admin.playing) {
 if(admin.pause_menu_key_pressed) {
-    if(inventory.show_inv) {
-        scr_invfade(false, "inv");
+    if(inventory.show_inv || help_in_game.show_help || stats_ext_in_game.show_stats) {
+        scr_invfade(false, "");
     } else {
         scr_menufade(1 - admin.game_paused);
     }

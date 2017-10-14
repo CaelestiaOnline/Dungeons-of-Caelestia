@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_menu</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,59 +25,272 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Menü-Array + Rest
+            <string>///Read File
+sep = 64;
+w = room_width - 100;
+start_x = 100;
+start_y = 100;
+y_speed = 2;
 
-//Anzahl der Auswahlmöglichkeiten
-menulength = 5;
+room_height = 8192;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Bewegung
 
-//Pixel in y-Richtung zwischen den Auswahlmöglichkeiten
-yspace = 80;
+if(y &lt; room_height) y += y_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Credits
+draw_set_halign(fa_center);
+draw_set_alpha(1);
+draw_set_colour(c_white);
+var shadow_alpha = 0.4;
 
-//Abstand zwischen Pfeil und Mitte der View[0] in Pixel in - x-Richtung 
-xspace = 50;
+//Credits
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading);
+var credits_string = "CREDITS";
+var credits_y = 300;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-//Aktuelle Position des Menüpfeils
-menupos  = 0;
+//Titel
+draw_set_colour(c_white);
+draw_set_font(fnt_main_menu_heading);
+var credits_string = "Dungeons of Cælestia";
+var credits_y = view_hview[0]/2;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-//Überschrift
-heading = "Credits";
+//Text
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "MADE BY CAELESTIA ENTERPRISE";
+var credits_y = view_hview[0] - 300;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-//Auswahlmöglichkeiten
-menu[0] = "Coming soon..."
-menu[1] = "pixabay.com"
-menu[2] = "shutterstock.com"
-menu[3] = "++++++++++++++"
-menu[4] = "--&gt; Options Menu"
+//Text 2
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "MADE WITH GAME MAKER: STUDIO 1.4";
+var credits_y = view_hview[0] - 150;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-draw_set_font(fnt_main_menu);
+//Mitglieder
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "Mitarbeiter von Caelestia Enterprise";
+var credits_y = 2000;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-wtext = max(
-    string_width(menu[0]),
-    string_width(menu[1]),
-    string_width(menu[2]),
-    string_width(menu[3]),
-    string_width(menu[4]),
-    );
-    
-//Farben der Auswahlmöglichkeiten
-colour[0] = c_white;
-colour[1] = c_white;
-colour[2] = c_white;
-colour[3] = c_white;
-colour[4] = c_white;
+//Mitglieder
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "Timo Welz###Joschua Boeck###Nicolas Schmoelz###Jonathan Wurth";
+var credits_y = 2200;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-//Schatten
-shadow = 3;
+//Programming
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "PROGRAMMING";
+var credits_y = 2600;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-//Farbe
-menucolour = scr_get_random_colour();
+//Programming
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "Nicolas Schmoelz###Jonathan Wurth";
+var credits_y = 2800;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-//Script
-script = scr_credits_menu;
+//Graphics
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "GRAPHICS";
+var credits_y = 3200;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
 
-//Bewegter Hintergrund
-background_hspeed[0] = 0.5;
-background_vspeed[0] = 0.1;
+//Graphics
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "Timo Welz###www.pixabay.com###www.shutterstock.com";
+var credits_y = 3400;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Sounds
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "SOUNDS";
+var credits_y = 3800;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Sounds
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "Joschua Boeck###www.xxxxyyyy.com";
+var credits_y = 4000;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Random
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "IRGENDWELCHES GELABER";
+var credits_y = 5000;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Random
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "
+Wird dieses Stueck Software#jemals fluessig und stabil laufen?#Ich bezweifle es sehr.###
+R.I.P in Pepperoni Schlaf und so weiter###
+Vielen Dank an die Entwickler#vieler anderer Spiele,#die uns motiviert und beeinflusst haben.##
+Dabei sind zu nennen:#
+Overwatch#
+Lost Castle#
+HotS#
+Binding of Isaac#
+Und noch viele mehr.###
+NOTE: Mach das weg, sonst merkt Herr Baumann noch dass wir###
+
+";
+var credits_y = 5200;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Danksagung
+draw_set_colour(c_red);
+draw_set_font(fnt_credits_heading2);
+var credits_string = "DANKSAGUNGEN";
+var credits_y = 6000;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+//Danksagung
+draw_set_colour(c_white);
+draw_set_font(fnt_credits_normal);
+var credits_string = "
+Blablabla Familie blablabla Freunde##
+Vielen Dank an meinen PC,#dass er mich und meine endlosen Bugsuchen#ertragen hat. Du warst mir#ein wahrer Freund.##
+Noch mehr Danke an mich selbst,#dass ich einfach so toll bin.#Danke. Bitte.
+
+";
+var credits_y = 6200;
+draw_set_alpha(shadow_alpha);
+draw_text(room_width/2+3, credits_y+3, credits_string);
+draw_set_alpha(1);
+draw_text(room_width/2, credits_y, credits_string);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+draw_set_halign(fa_left);
+
 </string>
           </argument>
         </arguments>

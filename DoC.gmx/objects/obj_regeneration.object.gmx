@@ -58,6 +58,7 @@ alarm_set(0, -1);
           <argument>
             <kind>1</kind>
             <string>///Regeneration an Objekt
+if(!instance_exists(goal_object)) exit;
 if(goal_object == player_stats) scr_player_heal(regeneration_heal);
 else scr_heal(goal_object, regeneration_heal - 1);
 </string>

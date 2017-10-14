@@ -27,5 +27,5 @@ if(alarm_get(0) == attack_speed/2) {
         false
         );
         attack_ready = false;
-        alarm_set(1, attack_speed*2 + random_range(-30, 30));
+        alarm_set(1, attack_speed*6 + random_range(-60, 30));
 }

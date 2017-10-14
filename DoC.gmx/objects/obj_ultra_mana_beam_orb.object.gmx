@@ -34,6 +34,7 @@ hitbox_x = 0;
 x_factor = 0;
 real_damage = 0;
 old_mana = 0;
+sprite = spr_ultra_mana_beam;
 
 confirmed = false;
 
@@ -149,7 +150,7 @@ if(alarm_get(1) == stun_time/2) {
     hitbox.image_xscale = x_factor;
     
     var ability_hitmark = instance_create(hitbox_x, obj_player.y - obj_player.y_melee_offset, obj_ability_hitmark);
-    ability_hitmark.sprite_index = spr_ultra_mana_beam;
+    ability_hitmark.sprite_index = sprite;
     ability_hitmark.image_xscale = x_factor;
     ability_hitmark.alarm[0] = stun_time/2;
     

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-2</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,11 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Variablen
+event_inherited();
 
-button_item = -1;
+button_item = 0;
 button_count = 0;
 
-width = 0;
+testable = false;
+
 
 </string>
           </argument>
@@ -55,50 +57,36 @@ width = 0;
           <argument>
             <kind>1</kind>
             <string>///Drag &amp; Drop System
-var click = admin.left_click_pressed;
-var right_click = admin.right_click_pressed;
-width = sprite_get_width(spr_inv_border)/2;
+button_item = global.shop_item_index;
+button_count = item[button_item, 4];
 
-draw_set_colour(c_white);
-draw_set_alpha(1);
+testable = global.items_found[button_item];
 
-if(abs(mouse.x - x) &lt; width &amp;&amp; (abs(mouse.y - y) &lt; width)) {
-    //Item-Stats
-    if(button_item != -1) {
-        inventory.item_stats_title = item[button_item, 0];
-        inventory.item_stats_desc = item[button_item, 1];
+scr_inv_button_interaction();
+
+if(confirmed_hover) {
+    if(confirmed_left_hold) {
+        scr_draw_button_hover(c_red, 0.7);
+    } else {
+        scr_draw_button_hover(-1, 0.7);
     }
-    //Rechteck bei Hovern
-    draw_set_alpha(0.5);
-    draw_rectangle(
-        x - (width-2),
-        y - (width-2),
-        x + (width-2),
-        y + (width-2),
-        0
-    );
-    draw_set_alpha(1);
-    if(click &amp;&amp; !right_click) {
-        //Wenn der Button ein Item enthält
-        if(button_item == -1) {
-            button_item = mouse_ind_hub.mouse_item;
-            button_count = mouse_ind_hub.mouse_count;
-        
-            mouse_ind_hub.mouse_item = -1;
-            mouse_ind_hub.mouse_count = 0;
-            
+
+    if(confirmed_left_released) {
+        if(testable) {
             scr_inventory_drop_item_place_count(button_item, -1, -1, button_count);
-            
-            button_item = -1;
-            button_count = 0;
+            var text_ind = instance_create(x, y - 64, obj_gui_text_ind);
+            text_ind.draw_colour = c_green;
+            text_ind.text = "Item steht im HUB bereit!";
         } else {
+            scr_button_draw_invalid_action(0, -64);
         }
     }
-
 }
 
+
 draw_sprite(spr_inv_border_2, 0, x, y);
-draw_sprite(spr_inv_border_drop, 0, x, y);
+draw_sprite_ext(spr_inv_border_drop, 0, x, y, 1.4, 1.4, 0, c_white, 1);
+
 </string>
           </argument>
         </arguments>
@@ -121,11 +109,15 @@ draw_sprite(spr_inv_border_drop, 0, x, y);
             <kind>1</kind>
             <string>///Draw Sprite + Anzahl
 if(button_item != -1) {
-    draw_sprite(spr_items, button_item, x, y);
+    draw_sprite(scr_get_item_sprite(button_item), 0, x, y);
 }
 
 //Anzahl der Item in den Slots
 scr_draw_count(button_count, x, y);
+
+if(!testable) {
+    draw_sprite(spr_exit, 0, x, y);
+}
 </string>
           </argument>
         </arguments>

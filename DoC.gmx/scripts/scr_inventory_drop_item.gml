@@ -4,6 +4,9 @@ scr_inventory_drop_item(
 */
 
 var drop_item = argument0;
+
+if(drop_item == items.no_valid_item) exit;
+
 var ground_item;
 ground_item = instance_create(obj_player.x + random_range(-15, 15), obj_player.y + random_range(-15, 15), obj_ground_item);
 ground_item.ground_item = drop_item;

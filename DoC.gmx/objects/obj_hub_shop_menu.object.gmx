@@ -31,6 +31,38 @@ hub_menu_x2 = display_get_gui_width();
 
 hub_menu_y1 = 0;
 hub_menu_y2 = 64;
+
+
+
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Item Index
+global.shop_item_index = 0;
+global.shop_type_index = "prim";
+
+scr_draw_item_stats(global.shop_item_index);
+
+scr_read_items();
 </string>
           </argument>
         </arguments>
@@ -58,26 +90,64 @@ exit_button_y = hub_menu_y1 + 32;
 exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit);
 
 //Shop Button DEBUG
-var max_slots = 10;
+max_slots = 15;
 var hwidth = array_height_2d(item) div max_slots;
 
-for (j=0; j&lt;max_slots; j+=1)
-{
-for (i=0; i&lt;max_slots; i+=1)
-{
-shop_button_x[i, j] = 64 + 64*i;
-shop_button_y[i, j] = hub_menu_y1 + 128 + 64*j;
-var item_index = i + (max_slots*j);
-if(item_index &gt;= array_height_2d(item)) item_index = -1;
-shop_button[i, j] = scr_create_shop_button(shop_button_x[i, j], shop_button_y[i, j], item_index);
-//show_debug_message("Button (" + string(i) + "/" + string(j) + ")" + " mit Index " + string(item_index));
+for(var j = 0; j &lt; max_slots; j++) {
+for(var i = 0; i &lt; max_slots; i++) {
+    shop_button_x[i, j] = 64 + 64*i;
+    shop_button_y[i, j] = hub_menu_y1 + 128 + 64*j;
+    shop_button[i, j] = -1;
 }
 }
 
+///Item Stats Koordinaten
+item_stats_menu_x1 = shop_button_x[max_slots-1, max_slots-1] + 64;
+item_stats_menu_x2 = display_get_gui_width() - 64;
+
+item_stats_menu_y1 = shop_button_y[0, 0];
+item_stats_menu_y2 = display_get_gui_height() - 64;
+
 //Shop Button DropItem
-shop_button_dropitem_x = shop_button_x[max_slots-1, max_slots-1] + 64;
-shop_button_dropitem_y = shop_button_y[0, 0];
+shop_button_dropitem_x = item_stats_menu_x1 + 24 + 32;
+shop_button_dropitem_y = item_stats_menu_y1 + 700;
 shop_button_dropitem = instance_create(shop_button_dropitem_x, shop_button_dropitem_y, obj_hub_button_shop_dropitem);
+
+//Shop Button BuyItem
+shop_button_buyitem_x = item_stats_menu_x1 + 48 + 32;
+shop_button_buyitem_y = item_stats_menu_y1 + 500;
+shop_button_buyitem = instance_create(shop_button_buyitem_x, shop_button_buyitem_y, obj_hub_button_shop_buyitem);
+
+//Shop Button GetType
+for(var i = 0; i &lt; 5; i++) {
+
+shop_button_gettype_x[i] = item_stats_menu_x1 + 64 + (i*96);
+shop_button_gettype_y[i] = item_stats_menu_y2 - 64;
+shop_button_gettype[i] = instance_create(shop_button_gettype_x[i], shop_button_gettype_y[i], obj_hub_button_shop_gettype);
+
+var temp_item_type = "prim";
+
+switch(i) {
+    case 0:
+        temp_item_type = "prim";
+        break;
+    case 1:
+        temp_item_type = "sec";
+        break;
+    case 2:
+        temp_item_type = "mag";
+        break;
+    case 3:
+        temp_item_type = "item";
+        break;
+    case 4:
+        temp_item_type = "pickup";
+        break;
+}
+shop_button_gettype[i].button_item_type = temp_item_type;
+}
+
+scr_update_shop_button();
 </string>
           </argument>
         </arguments>
@@ -101,8 +171,30 @@ shop_button_dropitem = instance_create(shop_button_dropitem_x, shop_button_dropi
           <argument>
             <kind>1</kind>
             <string>///Kontrolltasten
-if(admin.pause_menu_key_pressed) scr_leave_hub_menu(); 
+if(admin.pause_menu_key_pressed) scr_leave_hub_menu();
+
+
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -147,6 +239,181 @@ draw_text(
     "HUB SHOP MENU"
 );
 draw_set_valign(fa_top);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hintergrund
+
+draw_set_alpha(1);
+draw_set_colour(global.co_blue_gray_1000);
+
+draw_roundrect(
+    item_stats_menu_x1,
+    item_stats_menu_y1,
+    item_stats_menu_x2,
+    item_stats_menu_y2,
+    0
+);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Item Stats
+
+draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_font(fnt_item_stats_title);
+
+draw_text(
+    item_stats_menu_x1 + 32,
+    item_stats_menu_y1 + 32,
+    item[global.shop_item_index, 0]
+    );
+    
+draw_set_font(fnt_inv_stats);
+draw_text_ext(
+    item_stats_menu_x1 + 32,
+    item_stats_menu_y1 + 32 + 32,
+    item[global.shop_item_index, 1],
+    20,
+    300
+    );
+    
+for(var i = 0; i &lt; array_length_1d(inv_hud.item_stats_heading_array); i++) {
+    if(inv_hud.item_stats_heading_array[i] != 0) {
+    draw_text(
+    item_stats_menu_x1 + 32,
+    item_stats_menu_y1 + 32*3 + 48 + 32*i,
+    inv_hud.item_stats_heading_array[i]
+    );
+    }
+}
+
+for(var i = 0; i &lt; array_length_1d(inv_hud.item_stats_array); i++) {
+    if(inv_hud.item_stats_heading_array[i] != 0) {
+    if(inv_hud.item_stats_array[i] == "" || inv_hud.item_stats_array[i] == 0) {
+        inv_hud.item_stats_array[i] = "-/-";
+    }
+    draw_text_ext(
+    item_stats_menu_x1 + 200,
+    item_stats_menu_y1 + 32*3 + 48 + 32*i,
+    inv_hud.item_stats_array[i],
+    20,
+    180
+    );
+    }
+}
+    
+var item_status;
+if(global.items_unlocked[global.shop_item_index]) {
+    item_status = "FREIGESCHALTEN";
+    draw_set_colour(c_green);
+} else {
+    item_status = "NICHT FREIGESCHALTEN";
+    draw_set_colour(c_red);
+}
+
+draw_text(
+    shop_button_buyitem_x + 48 + 32,
+    shop_button_buyitem_y + 16,
+    item_status
+);
+
+var item_status;
+if(global.items_found[global.shop_item_index]) {
+    item_status = "FREISCHALTBAR";
+    draw_set_colour(c_green);
+} else {
+    item_status = "NICHT FREISCHALTBAR";
+    draw_set_colour(c_red);
+}
+
+draw_text(
+    shop_button_buyitem_x + 48 + 32,
+    shop_button_buyitem_y - 16,
+    item_status
+);
+
+draw_set_colour(c_yellow);
+draw_text(
+    shop_button_buyitem_x + 48 + 32,
+    shop_button_buyitem_y - 16 - 32,
+    "HUB MONEY: " + string(progress.hub_money) + "HM"
+);
+
+draw_set_font(fnt_item_stats_title);
+draw_set_colour(c_red);
+draw_text(
+    item_stats_menu_x1 + 420,
+    item_stats_menu_y1 + 32,
+    "(" + scr_get_item_type_string(global.shop_type_index) + ")"
+);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ausprobieren
+draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_font(fnt_inv_stats);
+
+draw_text_ext(
+    shop_button_dropitem_x + 24 + 32,
+    shop_button_dropitem_y - 24,
+    "Hier kannst du freischaltbare Items im HUB ausprobieren.##Press the Button!",
+    16,
+    300
+);
 </string>
           </argument>
         </arguments>

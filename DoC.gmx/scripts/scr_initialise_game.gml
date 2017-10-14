@@ -6,6 +6,9 @@ Initialisiert das Spiel bzw erzeugt alle benötigten Objekte
 //Window
 scr_set_window();
 
+//Keylock Numpad
+keyboard_set_numlock(true);
+
 //Randomize
 randomize();
 
@@ -106,6 +109,14 @@ inv_hud = instance_create(0, 0, obj_hud_inv);
 globalvar menu_in_game;
 menu_in_game = instance_create(0, 0, obj_menu_in_game);
 
+//In game Help
+globalvar help_in_game;
+help_in_game = instance_create(0, 0, obj_help_in_game);
+
+//In game Stats ext
+globalvar stats_ext_in_game;
+stats_ext_in_game = instance_create(0, 0, obj_stats_ext_in_game);
+
 //Progress
 globalvar progress;
 progress = instance_create(0, 0, obj_progress);
@@ -114,11 +125,42 @@ progress = instance_create(0, 0, obj_progress);
 globalvar death_stats;
 death_stats = instance_create(0, 0, obj_death_stats);
 
+//Savestats
+globalvar savestats;
+savestats = instance_create(0, 0, obj_savestats);
+scr_read_stats();
+
 //Hub object
 globalvar hub;
 hub = instance_create(0, 0, obj_hub);
 
+//Run Admin
+globalvar run_admin;
+run_admin = noone;
+
+//Skilltree Stats
+globalvar skilltree_stats_object;
+skilltree_stats_object = instance_create(0, 0, obj_skilltree_stats);
+
+global.skilltree_status = -1;
+
+scr_read_skilltree();
+
 //Test-Inventory
 //instance_create(0, 0, obj_test);
+
+//Create File DEBUG
+scr_create_savefile_debug();
+
+//Read Savedata
+scr_read_progress();
+
+scr_read_stats();
+
+global.items_unlocked = -1;
+global.items_found = -1;
+
+scr_read_items();
+
 
 

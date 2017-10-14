@@ -33,6 +33,8 @@ y_offset = 0;
 
 colour = c_black;
 alpha = 0.6;
+
+draw_mark = false;
 </string>
           </argument>
         </arguments>
@@ -81,6 +83,31 @@ else visible = object.visible;
             <kind>1</kind>
             <string>///Draw shadow
 scr_draw_shadow(object, width, height, y_offset);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Mark
+
+if(draw_mark) {
+    draw_sprite_ext(spr_circle8, 0, object.x, object.y, 0.2, 0.2, 0, c_white, 1);
+}
 </string>
           </argument>
         </arguments>

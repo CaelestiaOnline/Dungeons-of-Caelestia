@@ -117,7 +117,7 @@ player_stats.speed_mult_item -= speed_mult;
 scr_prim_ability();
 
 if(confirmed) {
-    real_damage = scr_get_item_damage(damage, damage_crit);
+    real_damage = scr_get_item_damage(random(damage), damage_crit);
     
     confirmed = false;
     

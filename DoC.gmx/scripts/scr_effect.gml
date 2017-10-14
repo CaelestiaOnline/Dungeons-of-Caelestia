@@ -17,10 +17,10 @@ scr_init_ability(effects_name[effect_index], effect_strength);
 
 switch(effect_index) {
     case effect.speed:
-        scr_effect_slow_speed(1 + effect_speed_mult, effect_time, goal_object);
+        scr_effect_slow_speed(effect_speed_mult, effect_time, goal_object);
         break;
     case effect.slowness:
-        scr_effect_slow_speed(1 + effect_speed_mult, effect_time, goal_object);
+        scr_effect_slow_speed(effect_speed_mult, effect_time, goal_object);
         break;
     case effect.attack_speed:
         scr_effect_attack_speed(1 + effect_attack_speed_mult, effect_time, goal_object);

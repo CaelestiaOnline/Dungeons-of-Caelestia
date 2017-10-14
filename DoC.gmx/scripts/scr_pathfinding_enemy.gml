@@ -3,6 +3,12 @@ scr_pathfinding_enemy(
 
 );
 */
+if(freeze) {
+    path_end();
+    attack_ready = false;
+    exit;
+}
+
 
 scr_set_depth();
 

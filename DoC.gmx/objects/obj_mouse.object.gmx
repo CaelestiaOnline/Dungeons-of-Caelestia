@@ -30,6 +30,9 @@ is_visible = false;
 
 mouse_icon_normal = spr_mouse_icon;
 mouse_icon = mouse_icon_normal;
+
+fix_point_x = 0;
+fix_point_y = 0;
 </string>
           </argument>
         </arguments>
@@ -91,9 +94,14 @@ if(is_visible) {
         draw_set_font(fnt_debug);
         draw_set_alpha(0.8);
         draw_set_colour(c_white);
-        draw_text(x + 20, y - 20, string(x) + "/" + string(display_get_gui_width()));
-        draw_text(x + 20, y - 10, string(y) + "/" + string(display_get_gui_height()));
+        draw_text(x + 20, y - 20, string(x - fix_point_x) + "/" + string(display_get_gui_width() - fix_point_x));
+        draw_text(x + 20, y - 10, string(y - fix_point_y) + "/" + string(display_get_gui_height()- fix_point_y));  
         draw_set_alpha(1);
+        
+        if(keyboard_check(vk_control) &amp;&amp; mouse_check_button(mb_middle)) {
+            fix_point_x = x;
+            fix_point_y = y;
+        }
     }
 }
 </string>

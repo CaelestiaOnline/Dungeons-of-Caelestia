@@ -74,7 +74,7 @@ inv_item_stats_bg_x1 = inv_char_bg_x1;
 inv_item_stats_bg_x2 = inv_char_bg_x2;
 
 inv_item_stats_bg_y1 = inv_char_bg_y2 + 50;
-inv_item_stats_bg_y2 = inv_item_stats_bg_y1 + 450;
+inv_item_stats_bg_y2 = display_get_gui_height()-10;
 
 //Level
 inv_level_x1 = inv_slots_x1;
@@ -642,7 +642,7 @@ draw_text(
 draw_text(
     inv_char_bg_x2 - 100,
     inv_char_attack_stats_y1 + 32,
-    string(player_stats.root_damage)
+    string(player_stats.root_damage * player_stats.strength_mult)
     );
 //Krit-Chance
 draw_text(
@@ -1125,6 +1125,7 @@ draw_set_halign(fa_left);
 draw_set_alpha(1);
 
 //Level
+
 draw_text(
     inv_level_x1 + 32,
     text1_y,
@@ -1138,7 +1139,13 @@ draw_text(
     );
 
 //Prozent
-var percent_text = string((progress.xp / progress.level_up_xp)*100) + "%";
+var percent_text;
+if(admin.in_run) {
+    percent_text = string((progress.xp / progress.level_up_xp)*100) + "%";
+} else {
+    percent_text = string(frac(progress.level)*100) + "%";
+}
+
 draw_text(
     inv_level_x2 - string_width(percent_text) - 32,
     text1_y,
@@ -1176,21 +1183,21 @@ draw_set_halign(fa_left);
 draw_set_alpha(1);
 
 //Geld
-var money_value = string(progress.run_money) + ".00";
-var money_text = "Balance: " + money_value + " RM";
+var money_value;
+var currency;
+if(admin.in_run) {
+    money_value = string(progress.run_money) + ".00";
+    currency = "RM";
+} else {
+    money_value = string(progress.hub_money) + ".00";
+    currency = "HM";
+}
+var money_text = "Balance: " + money_value + currency;
 draw_text(
     inv_level_x1 + 32,
     text3_y,
     money_text
     );
-
-
-
-
-
-
-
-
 
 
 </string>

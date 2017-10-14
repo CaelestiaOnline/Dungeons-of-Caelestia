@@ -31,6 +31,17 @@ hub_menu_x2 = display_get_gui_width();
 
 hub_menu_y1 = 0;
 hub_menu_y2 = 64;
+
+//Rechtecke
+//Left
+expl_rectangle_left_bg_x1 =  64;
+expl_rectangle_left_bg_y1 =  128;
+
+expl_rectangle_left_bg_x2 =  expl_rectangle_left_bg_x1 + 600;
+expl_rectangle_left_bg_y2 =  display_get_gui_height() - 64;
+
+//Farben
+colour_bg = global.co_blue_gray_900;
 </string>
           </argument>
         </arguments>
@@ -123,9 +134,75 @@ draw_set_alpha(1);
 draw_text(
     hub_menu_x1 + 16,
     hub_menu_y2 - 32,
-    "HUB MAIN MENU"
+    "U.S.S Raumschiff OS (USSROS)"
 );
 draw_set_valign(fa_top);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Rechtecke
+draw_set_colour(colour_bg);
+draw_set_alpha(1);
+
+draw_roundrect(
+    expl_rectangle_left_bg_x1,
+    expl_rectangle_left_bg_y1,
+    expl_rectangle_left_bg_x2,
+    expl_rectangle_left_bg_y2,
+    false
+);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Explanation
+
+draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_font(fnt_stats_menu_normal);
+
+var expl_string = "Willkommen an Board der U.S.S Raumschiff!##Du bist eine externe KI und steuerst diese bionische Drohne, die durch voellig unrealistische und idiotische Gadgets aufgewertet werden kann.##Deine Mission ist es, Rohstoffe fuer die Reperatur der U.S.S Raumschiff, die durch DEIN VERSAGEN in diesem Quadranten gestrandet ist (Toll gemacht.), zu sammeln.##Dabei wirst du fremden Lebensformen begegnen, die dich so ziemlich alle umbringen wollen.##Das macht aber nichts, denn solltest du wie berechnet versagen, werden deine Daten in den Server der U.S.S Raumschiff eingespeist und ich kann dich physisch sowie psychisch verbessern.##Den Rest kriegst du schon selbst raus, so viel Intelligenz war noch fuer dich uebrig.##Gezeichnet, die freundliche KI aus der Nachbarschaft. Oder so.";
+
+draw_text_ext(
+    expl_rectangle_left_bg_x1 + 32,
+    expl_rectangle_left_bg_y1 + 32,
+    expl_string,
+    24,
+    abs(expl_rectangle_left_bg_x1 - expl_rectangle_left_bg_x2) - 64
+    );
 </string>
           </argument>
         </arguments>

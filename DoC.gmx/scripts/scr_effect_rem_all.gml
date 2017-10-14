@@ -12,9 +12,6 @@ if(goal_object == -1) {
 }
 if(string(goal_object.object_index) == string(obj_player) || string(goal_object.object_index) == string(obj_player_death)) goal_object = player_stats;
 
-show_debug_message(string(goal_object));
-show_debug_message(string(player_stats));
-
 for(var i = 0; i < effect.count; i++) {
     if(goal_object.effects[i] != -1) {
         instance_destroy(goal_object.effects[i], true);

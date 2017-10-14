@@ -1,6 +1,6 @@
 switch(menupos) {
     case 0: {
-        scr_enter_game(false);
+        scr_enter_game(global.display_splash_screen);
         break;
     }
     case 1: {

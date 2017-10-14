@@ -15,3 +15,5 @@ hitbox = instance_create(hitbox_x, hitbox_y, obj_hitbox_enemy);
 hitbox.damage = damage;
 hitbox.is_crit = is_crit;
 hitbox.origin_object = self;
+hitbox.image_xscale = hitbox_xscale;
+hitbox.image_yscale = hitbox_yscale;

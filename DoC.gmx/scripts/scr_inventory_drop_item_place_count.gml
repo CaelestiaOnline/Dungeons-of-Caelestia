@@ -10,6 +10,9 @@ var drop_item = argument0;
 var drop_x = argument1;
 var drop_y = argument2;
 var count = argument3;
+
+if(drop_item == items.no_valid_item) exit;
+
 var ground_item;
 
 if(!admin.playing) {

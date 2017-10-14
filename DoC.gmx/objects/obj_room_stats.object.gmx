@@ -64,6 +64,9 @@ room_stats[rm_initialise, 0] = "!game";
 //Splash - Screen
 room_stats[rm_splash_screen, 0] = "!game";
 
+//Splash - Screen
+room_stats[rm_warning_screen, 0] = "!game";
+
 //Loading Screen
 room_stats[rm_loading_screen, 0] = "!game";
 
@@ -97,8 +100,14 @@ room_stats[rm_hub_main_menu, 0] = "hub_menu";
 //Hub Shop Menu
 room_stats[rm_hub_shop_menu, 0] = "hub_menu";
 
+//Hub Skilltree Menu
+room_stats[rm_hub_skilltree_menu, 0] = "hub_menu";
+
 //Hub Death Menu
 room_stats[rm_hub_death_menu, 0] = "hub_menu";
+
+//Hub Stats Menu
+room_stats[rm_hub_stats_menu, 0] = "hub_menu";
 
 //Testroom1
 room_stats[rm_testroom1, 0] = "game";
@@ -135,6 +144,12 @@ room_stats[rm_run_forest1, 0] = "game";
 room_stats[rm_run_forest1, 1] = "default";
 room_stats[rm_run_forest1, 2] = 128;
 room_stats[rm_run_forest1, 3] = 688;
+
+//Forest 01
+room_stats[rm_run_forest2, 0] = "game";
+room_stats[rm_run_forest2, 1] = "default";
+room_stats[rm_run_forest2, 2] = 2688;
+room_stats[rm_run_forest2, 3] = 688;
 
 </string>
           </argument>

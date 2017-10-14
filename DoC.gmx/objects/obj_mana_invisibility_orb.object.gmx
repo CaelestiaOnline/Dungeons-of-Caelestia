@@ -80,16 +80,31 @@ hit_list = noone;
           <argument>
             <kind>1</kind>
             <string>///Angriff
-scr_mag_ability();
-
-if(confirmed) {
-    invisible = 1 - invisible;
-    confirmed = false;
+if(!player_stats.invisible) {
+    scr_mag_ability();
 }
 
-if(invisible) {
-    obj_player.image_alpha = 0.5;
-} else obj_player.image_alpha = 1;
+if(confirmed) {
+    player_stats.invisible = true;
+    with(obj_gegner) {
+        triggered = false;
+        path_end();
+    }
+}
+
+if(player_stats.invisible) {
+    
+    var success = scr_player_rem_mana(mana);
+    
+    if(!success) player_stats.invisible = false;
+    
+    if(admin.magic_key_pressed &amp;&amp; !confirmed) {
+        player_stats.invisible = false;
+        alarm_set(0, 30);
+    }
+    
+    confirmed = false;
+}
 </string>
           </argument>
         </arguments>

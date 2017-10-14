@@ -315,7 +315,6 @@ if(!prim_attack_key_locked) {
     prim_attack_key = keyboard_check(prim_attack_key_char);
     prim_attack_key_pressed = keyboard_check_pressed(prim_attack_key_char);
 } else {
-    keyboard_clear(prim_attack_key_char);
     prim_attack_key = 0;
     prim_attack_key_pressed = 0;
 }
@@ -325,7 +324,6 @@ if(!sec_attack_key_locked) {
     sec_attack_key = keyboard_check(sec_attack_key_char);
     sec_attack_key_pressed = keyboard_check_pressed(sec_attack_key_char);
 } else {
-    keyboard_clear(sec_attack_key_char);
     sec_attack_key = 0;
     sec_attack_key_pressed = 0;
 }
@@ -335,7 +333,6 @@ if(!magic_key_locked) {
     magic_key = keyboard_check(magic_key_char);
     magic_key_pressed = keyboard_check_pressed(magic_key_char);
 } else {
-    keyboard_clear(magic_key_char);
     magic_key = 0;
     magic_key_pressed = 0;
 }
@@ -357,7 +354,6 @@ if(!crouch_key_locked) {
     crouch_key_pressed = keyboard_check_pressed(crouch_key_char);
     crouch_key_released = keyboard_check_released(crouch_key_char);
 } else {
-    keyboard_clear(crouch_key_char);
     crouch_key = 0;
     crouch_key_pressed = 0;
     crouch_key_released = 0;
@@ -368,7 +364,6 @@ if(!action_key_locked) {
     action_key = keyboard_check(action_key_char);
     action_key_pressed = keyboard_check_pressed(action_key_char);
 } else {
-    keyboard_clear(action_key_char);
     action_key = 0;
     action_key_pressed = 0;
 }
@@ -379,7 +374,6 @@ if(!pickup_menu_left_key_locked) {
     pickup_menu_left_key = keyboard_check(pickup_menu_left_key_char);
     pickup_menu_left_key_pressed = keyboard_check_pressed(pickup_menu_left_key_char);
 } else {
-    keyboard_clear(pickup_menu_left_key_char);
     pickup_menu_left_key = 0;
     pickup_menu_left_key_pressed = 0;
 }
@@ -389,7 +383,6 @@ if(!pickup_menu_right_key_locked) {
     pickup_menu_right_key = keyboard_check(pickup_menu_right_key_char);
     pickup_menu_right_key_pressed = keyboard_check_pressed(pickup_menu_right_key_char);
 } else {
-    keyboard_clear(pickup_menu_right_key_char);
     pickup_menu_right_key = 0;
     pickup_menu_right_key_pressed = 0;
 }
@@ -399,7 +392,6 @@ if(!pickup_menu_confirm_key_locked) {
     pickup_menu_confirm_key = keyboard_check(pickup_menu_confirm_key_char);
     pickup_menu_confirm_key_pressed = keyboard_check_pressed(pickup_menu_confirm_key_char);
 } else {
-    keyboard_clear(pickup_menu_confirm_key_char);
     pickup_menu_confirm_key = 0;
     pickup_menu_confirm_key_pressed = 0;
 }
@@ -409,7 +401,6 @@ if(!left_click_locked) {
     left_click = mouse_check_button(left_click_char);
     left_click_pressed = mouse_check_button_pressed(left_click_char);
 } else {
-    mouse_clear(left_click_char);
     left_click = 0;
     left_click_pressed = 0;
 }
@@ -419,7 +410,6 @@ if(!right_click_locked) {
     right_click = mouse_check_button(right_click_char);
     right_click_pressed = mouse_check_button_pressed(right_click_char);
 } else {
-    keyboard_clear(right_click_char);
     right_click = 0;
     right_click_pressed = 0;
 }
@@ -438,7 +428,6 @@ if(!pause_menu_key_locked) {
     pause_menu_key = keyboard_check(pause_menu_key_char);
     pause_menu_key_pressed = keyboard_check_pressed(pause_menu_key_char);
 } else {
-    keyboard_clear(pause_menu_key_char);
     pause_menu_key = 0;
     pause_menu_key_pressed = 0;
 }
@@ -448,7 +437,6 @@ if(!inventory_key_locked) {
     inventory_key = keyboard_check(inventory_key_char);
     inventory_key_pressed = keyboard_check_pressed(inventory_key_char);
 } else {
-    keyboard_clear(inventory_key_char);
     inventory_key = 0;
     inventory_key_pressed = 0;
 }
@@ -497,8 +485,8 @@ if(room == rm_main_menu) {
 if(keyboard_check_pressed(vk_f11)) {
     room_restart();
     if(room_stats[room, 0] == "game") {
-        obj_player.x = room_stats[room, 2];
-        obj_player.y = room_stats[room, 3];
+        var room_placer = instance_create(0, 0, obj_room_placer);
+        room_placer.goal = room;
     }
     
 }
@@ -519,8 +507,18 @@ if(is_ghost) {
 if(keyboard_check_pressed(vk_f8)) show_hitbox = 1 - show_hitbox;
 show_debug_overlay(show_hitbox);
 
+//Pause Menu when tabbing
 if(admin.playing &amp;&amp; !window_has_focus() &amp;&amp; !admin.game_paused) admin.pause_menu_key_pressed = 1;
 
+//Game restart
+if(keyboard_check_pressed(vk_f7)) {
+    scr_read_stats();
+    scr_read_progress();
+    scr_read_items();
+}
+
+//Suicide
+if(keyboard_check_pressed(vk_f6) &amp;&amp; playing) player_stats.hp = 0;
 </string>
           </argument>
         </arguments>
@@ -545,7 +543,10 @@ if(admin.playing &amp;&amp; !window_has_focus() &amp;&amp; !admin.game_paused) a
             <kind>1</kind>
             <string>///Instance_count (DEBUG)
 if(admin.show_hitbox) {
-draw_text(display_get_gui_width() - 400, 16, "Count: "+string(instance_count));
+    draw_set_alpha(1);
+    draw_set_font(fnt_fps);
+    draw_set_colour(c_white);
+    draw_text(display_get_gui_width() - 400, 16, "IC: " + string(instance_count));
 }
 </string>
           </argument>

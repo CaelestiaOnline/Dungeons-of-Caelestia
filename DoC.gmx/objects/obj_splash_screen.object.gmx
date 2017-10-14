@@ -73,7 +73,7 @@ alpha_string = 0;
           <argument>
             <kind>1</kind>
             <string>///Gehe ins Menü 
-room_goto(rm_main_menu);
+room_goto(rm_warning_screen);
 menu_overlay = true;
 </string>
           </argument>
