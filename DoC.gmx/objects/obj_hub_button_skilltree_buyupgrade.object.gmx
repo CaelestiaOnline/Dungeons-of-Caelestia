@@ -82,6 +82,8 @@ if(confirmed_hover) {
             scr_write_upgrades();
             progress.skillpoints -= item_prize;
             scr_write_progress();
+            scr_upgrade_add_stats(button_upgrade, global.skilltree_status[button_upgrade]-1);
+            scr_update_item_stats();
             var text_ind = instance_create(x, y - 128, obj_gui_text_ind);
             text_ind.draw_colour = c_green;
             text_ind.text = "UPGRADE WURDE ANGEWENDET!";
@@ -95,6 +97,8 @@ if(confirmed_hover) {
 }
 
 draw_sprite(spr_hub_button_shop_buyitem_border, 0, x, y);
+
+draw_sprite_ext(scr_get_upgrades_sprite(button_upgrade), 0, x, y, 1.5, 1.5, 0, c_white, 1);
 
 
 </string>
@@ -127,6 +131,10 @@ draw_set_halign(fa_center);
 draw_text(x, y + 64, "KOSTEN: " + string(item_prize) + "SP");
 draw_text(x, y + 64 + 24, "Click to unlock.");
 draw_set_halign(fa_left);
+}
+
+if(!buyable) {
+    draw_sprite(spr_not_buyable, 0, x, y);
 }
 
 </string>

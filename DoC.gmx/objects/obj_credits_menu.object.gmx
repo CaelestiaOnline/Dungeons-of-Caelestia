@@ -28,8 +28,6 @@
             <string>///Read File
 sep = 64;
 w = room_width - 100;
-start_x = 100;
-start_y = 100;
 y_speed = 2;
 
 room_height = 8192;
@@ -56,8 +54,11 @@ room_height = 8192;
           <argument>
             <kind>1</kind>
             <string>///Bewegung
-
-if(y &lt; room_height) y += y_speed;
+if(y &lt; room_height - view_hview[0]/2) {
+    y += y_speed;
+} else {
+    scr_sidefade(rm_main_menu, 60);
+}
 </string>
           </argument>
         </arguments>

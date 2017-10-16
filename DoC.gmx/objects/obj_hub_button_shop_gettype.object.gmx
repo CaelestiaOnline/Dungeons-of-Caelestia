@@ -108,6 +108,7 @@ if(confirmed_hover) {
         global.shop_type_index = button_item_type;
         scr_update_shop_button();
         global.shop_item_index = obj_hub_shop_menu.shop_button[0, 0].button_item;
+        scr_draw_item_stats(global.shop_item_index);
     }
 }
 

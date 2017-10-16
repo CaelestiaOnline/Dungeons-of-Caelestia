@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="4" name="datafiles">
-    <datafiles number="4" name="Textdateien">
+  <datafiles number="5" name="datafiles">
+    <datafiles number="5" name="Textdateien">
       <datafile>
         <name>pro_tip.txt</name>
         <exists>-1</exists>
@@ -39,25 +39,8 @@
         </ConfigOptions>
         <filename>splash_screen.txt</filename>
       </datafile>
-      <datafile>
-        <name>credits.txt</name>
-        <exists>-1</exists>
-        <size>241</size>
-        <exportAction>2</exportAction>
-        <exportDir></exportDir>
-        <overwrite>0</overwrite>
-        <freeData>-1</freeData>
-        <removeEnd>0</removeEnd>
-        <store>0</store>
-        <ConfigOptions>
-          <Config name="Default">
-            <CopyToMask>9223372036854775807</CopyToMask>
-          </Config>
-        </ConfigOptions>
-        <filename>credits.txt</filename>
-      </datafile>
     </datafiles>
-    <datafiles number="4" name="SaveData">
+    <datafiles number="5" name="SaveData">
       <datafile>
         <name>savedata.ini</name>
         <exists>-1</exists>
@@ -75,6 +58,23 @@
         </ConfigOptions>
         <filename>savedata.ini</filename>
       </datafile>
+      <datafile>
+        <name>OPEN_ME_PLEASE.txt</name>
+        <exists>-1</exists>
+        <size>1145</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>OPEN_ME_PLEASE.txt</filename>
+      </datafile>
     </datafiles>
   </datafiles>
   <NewExtensions/>
@@ -84,11 +84,15 @@
     </sounds>
     <sounds name="Menu">
       <sound>sound\snd_click</sound>
+      <sound>sound\snd_volume_test</sound>
     </sounds>
     <sounds name="Items">
       <sounds name="Mag">
         <sounds name="FistOfTheNorthStar">
           <sound>sound\snd_fotns</sound>
+        </sounds>
+        <sounds name="ExplosionMagic">
+          <sound>sound\snd_explosion_magic</sound>
         </sounds>
       </sounds>
     </sounds>
@@ -133,6 +137,7 @@
           <sprite>sprites\spr_charakter_dead</sprite>
           <sprite>sprites\spr_charakter_crouch</sprite>
           <sprite>sprites\spr_charakter</sprite>
+          <sprite>sprites\spr_charakter_middle</sprite>
           <sprite>sprites\spr_charakter_ghost</sprite>
           <sprite>sprites\spr_charakter_no_eyes</sprite>
           <sprite>sprites\spr_charakter_crouch_back</sprite>
@@ -459,6 +464,7 @@
       <sprites name="Symbole">
         <sprite>sprites\spr_inv_exit</sprite>
         <sprite>sprites\spr_exit</sprite>
+        <sprite>sprites\spr_not_buyable</sprite>
         <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_undefined</sprite>
         <sprite>sprites\spr_help</sprite>
@@ -624,6 +630,34 @@
           <sprite>sprites\spr_items_127</sprite>
           <sprite>sprites\spr_items_128</sprite>
           <sprite>sprites\spr_items_129</sprite>
+        </sprites>
+        <sprites name="130-139;">
+          <sprite>sprites\spr_items_133</sprite>
+          <sprite>sprites\spr_items_135</sprite>
+          <sprite>sprites\spr_items_137</sprite>
+          <sprite>sprites\spr_items_138</sprite>
+          <sprite>sprites\spr_items_139</sprite>
+        </sprites>
+        <sprites name="140-149;">
+          <sprite>sprites\spr_items_142</sprite>
+          <sprite>sprites\spr_items_143</sprite>
+          <sprite>sprites\spr_items_144</sprite>
+          <sprite>sprites\spr_items_145</sprite>
+        </sprites>
+        <sprites name="150-159;">
+          <sprite>sprites\spr_items_150_</sprite>
+        </sprites>
+        <sprites name="160-169;">
+          <sprite>sprites\spr_items_160_</sprite>
+        </sprites>
+        <sprites name="170-179;">
+          <sprite>sprites\spr_items_170_</sprite>
+        </sprites>
+        <sprites name="180-189;">
+          <sprite>sprites\spr_items_180_</sprite>
+        </sprites>
+        <sprites name="190-199;">
+          <sprite>sprites\spr_items_190_</sprite>
         </sprites>
       </sprites>
     </sprites>
@@ -845,6 +879,7 @@
           <scripts name="drop">
             <script>scripts\scr_inventory_drop_item_place_count.gml</script>
             <script>scripts\scr_inventory_drop_item.gml</script>
+            <script>scripts\scr_inventory_drop_item_fragment.gml</script>
           </scripts>
           <scripts name="check">
             <script>scripts\scr_check_item_inv_type.gml</script>
@@ -889,6 +924,7 @@
         <script>scripts\scr_attack_cooldown.gml</script>
         <script>scripts\scr_get_item_damage.gml</script>
         <script>scripts\scr_get_item_sprite.gml</script>
+        <script>scripts\scr_update_item_stats.gml</script>
       </scripts>
       <scripts name="Enemy">
         <script>scripts\scr_draw_death_enemy.gml</script>
@@ -990,6 +1026,8 @@
           <script>scripts\scr_money_select_sprite.gml</script>
         </scripts>
         <script>scripts\scr_heal_orb_drop.gml</script>
+        <script>scripts\scr_get_level_up_xp.gml</script>
+        <script>scripts\scr_get_level_up_xp_custom.gml</script>
       </scripts>
       <scripts name="Allgemein">
         <script>scripts\scr_enter_game.gml</script>
@@ -1032,6 +1070,7 @@
           <script>scripts\scr_write_item_unlocked.gml</script>
           <script>scripts\scr_write_upgrade.gml</script>
           <script>scripts\scr_write_item_found.gml</script>
+          <script>scripts\scr_write_volume.gml</script>
           <script>scripts\scr_create_savefile_debug.gml</script>
         </scripts>
         <scripts name="Read">
@@ -1039,6 +1078,7 @@
           <script>scripts\scr_read_stats.gml</script>
           <script>scripts\scr_read_items.gml</script>
           <script>scripts\scr_read_skilltree.gml</script>
+          <script>scripts\scr_read_volume.gml</script>
         </scripts>
       </scripts>
       <scripts name="RoomPlacer">
@@ -1051,14 +1091,19 @@
         <script>scripts\scr_inv_button_interaction.gml</script>
         <script>scripts\scr_button_interaction_custom.gml</script>
         <script>scripts\scr_draw_button_hover.gml</script>
+        <script>scripts\scr_draw_item_rarity.gml</script>
         <script>scripts\scr_button_draw_invalid_action.gml</script>
         <script>scripts\scr_button_check_input.gml</script>
+        <script>scripts\scr_get_item_rarity_colour.gml</script>
+        <script>scripts\scr_get_item_rarity_string.gml</script>
       </scripts>
       <scripts name="ItemPrize">
         <script>scripts\scr_get_item_prize.gml</script>
       </scripts>
       <scripts name="Upgrades">
         <script>scripts\scr_get_upgrades_sprite.gml</script>
+        <script>scripts\scr_upgrade_add_stats.gml</script>
+        <script>scripts\scr_upgrade_init_stats.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -1069,6 +1114,9 @@
     </scripts>
     <scripts name="Timeline">
       <script>scripts\scr_start_timeline.gml</script>
+    </scripts>
+    <scripts name="Volume">
+      <script>scripts\scr_volume_add.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -1252,6 +1300,7 @@
       </objects>
       <objects name="Ground-Item">
         <object>objects\obj_ground_item</object>
+        <object>objects\obj_ground_item_fragment</object>
         <object>objects\obj_ground_item_holder</object>
         <objects name="Heal-Orb">
           <object>objects\obj_heal_orb</object>
@@ -1263,7 +1312,11 @@
         <objects name="nahkampf">
           <object>objects\obj_fist</object>
           <object>objects\obj_stone_sword</object>
+          <object>objects\obj_stick</object>
+          <object>objects\obj_chunchunmaru</object>
+          <object>objects\obj_flaming_sword</object>
           <object>objects\obj_knuckleduster</object>
+          <object>objects\obj_scissors_blade</object>
           <object>objects\obj_titanium_knuckleduster</object>
           <object>objects\obj_titanium_sword</object>
           <object>objects\obj_crystal_sword</object>
@@ -1347,6 +1400,14 @@
             <object>objects\obj_peacekeeper</object>
             <object>objects\obj_peacekeeper_bullet</object>
           </objects>
+          <objects name="Stone">
+            <object>objects\obj_stone</object>
+            <object>objects\obj_stone_bullet</object>
+          </objects>
+          <objects name="AkimboBow">
+            <object>objects\obj_akimbo_bow</object>
+            <object>objects\obj_akimbo_bow_bullet</object>
+          </objects>
         </objects>
         <objects name="misc">
           <object>objects\obj_tesla_gun</object>
@@ -1375,6 +1436,30 @@
             <object>objects\obj_snowball</object>
             <object>objects\obj_snowball_bullet</object>
           </objects>
+        </objects>
+        <objects name="Ground">
+          <object>objects\obj_sec_item_ground</object>
+          <object>objects\obj_glue</object>
+          <object>objects\obj_lego_trap</object>
+          <object>objects\obj_cabbage_soup_grenade</object>
+          <object>objects\obj_mine</object>
+          <object>objects\obj_hot_coffee</object>
+          <object>objects\obj_acid</object>
+          <object>objects\obj_bear_trap</object>
+          <object>objects\obj_c4</object>
+          <object>objects\obj_heal_totem_pole</object>
+        </objects>
+        <objects name="Misc">
+          <object>objects\obj_hook</object>
+          <object>objects\obj_chain</object>
+          <object>objects\obj_shield</object>
+          <object>objects\obj_teleporter</object>
+          <object>objects\obj_grenade</object>
+          <object>objects\obj_web</object>
+          <object>objects\obj_unisolated_cable</object>
+        </objects>
+        <objects name="Melee">
+          <object>objects\obj_fisthit</object>
         </objects>
       </objects>
       <objects name="mag">
@@ -1430,7 +1515,6 @@
         <objects name="Invisibility">
           <object>objects\obj_mana_invisibility_orb</object>
           <object>objects\obj_mana_invisibility_orb_v2</object>
-          <object>objects\obj_mana_invisibility_orb_v3</object>
         </objects>
         <objects name="Enemy-Morph">
           <object>objects\obj_mana_enemy_morph_orb</object>
@@ -1455,6 +1539,75 @@
         </objects>
         <objects name="FistOfTheNorthStar">
           <object>objects\obj_mana_fist_of_the_north_star_orb</object>
+        </objects>
+        <objects name="Spikes">
+          <object>objects\obj_mana_spikes_orb</object>
+        </objects>
+        <objects name="SpeedDamage">
+          <object>objects\obj_mana_speed_damage_orb</object>
+        </objects>
+        <objects name="SpeedOrb">
+          <object>objects\obj_mana_speed_orb</object>
+        </objects>
+        <objects name="ExplosionMagic">
+          <object>objects\obj_mana_explosion_magic_orb</object>
+        </objects>
+        <objects name="LaerPointerCatAirstrike">
+          <object>objects\obj_mana_laserairstrike_orb</object>
+        </objects>
+        <objects name="MeteorShower">
+          <object>objects\obj_mana_meteor_shower_orb</object>
+        </objects>
+        <objects name="LatinDictionary">
+          <object>objects\obj_mana_latin_dictionary</object>
+        </objects>
+        <objects name="IceWind">
+          <object>objects\obj_mana_ice_wind_orb</object>
+        </objects>
+        <objects name="MoneySteal">
+          <object>objects\obj_mana_money_steal_orb</object>
+        </objects>
+        <objects name="Loot">
+          <object>objects\obj_mana_loot_orb</object>
+        </objects>
+        <objects name="SpiderWeb">
+          <object>objects\obj_mana_spider_webs_orb</object>
+        </objects>
+        <objects name="Scream">
+          <object>objects\obj_mana_scream_orb</object>
+        </objects>
+        <objects name="Illusion">
+          <object>objects\obj_mana_illusion_orb</object>
+        </objects>
+        <objects name="HealSphere">
+          <object>objects\obj_mana_heal_sphere_orb</object>
+        </objects>
+        <objects name="MensaFood">
+          <object>objects\obj_mana_mensa_food_orb</object>
+        </objects>
+        <objects name="Earthquake">
+          <object>objects\obj_mana_earthquake_orb</object>
+        </objects>
+        <objects name="Tornado">
+          <object>objects\obj_mana_tornado_orb</object>
+        </objects>
+        <objects name="Tsunami">
+          <object>objects\obj_mana_tsunami_orb</object>
+        </objects>
+        <objects name="Inferno">
+          <object>objects\obj_mana_inferno_orb</object>
+        </objects>
+        <objects name="Dash">
+          <object>objects\obj_mana_dash_orb</object>
+        </objects>
+        <objects name="Sacrifice">
+          <object>objects\obj_mana_sacrifice_orb</object>
+        </objects>
+        <objects name="OmniHeal">
+          <object>objects\obj_mana_omni_heal_orb</object>
+        </objects>
+        <objects name="Hypnosis">
+          <object>objects\obj_mana_hypnosis_orb</object>
         </objects>
       </objects>
       <objects name="item">
@@ -1507,8 +1660,23 @@
           <object>objects\obj_max_hp_orb</object>
           <object>objects\obj_max_hp_orb_v2</object>
         </objects>
-        <objects name="NoValidItem">
-          <object>objects\obj_no_valid_item</object>
+        <objects name="TearsOrb">
+          <object>objects\obj_tears_orb</object>
+        </objects>
+        <objects name="V8GeneratorOrb">
+          <object>objects\obj_v8_generator_orb</object>
+        </objects>
+        <objects name="AntivirusProgramOrb">
+          <object>objects\obj_antivirus_program_orb</object>
+        </objects>
+        <objects name="Superhot">
+          <object>objects\obj_superhot_orb</object>
+        </objects>
+        <objects name="Roll">
+          <object>objects\obj_roll_orb</object>
+        </objects>
+        <objects name="Frostaura">
+          <object>objects\obj_frostaura_orb</object>
         </objects>
       </objects>
       <objects name="pickup">
@@ -1548,6 +1716,27 @@
         <objects name="Bachblüten">
           <object>objects\obj_food_bach_flowers</object>
         </objects>
+        <objects name="Onehit">
+          <object>objects\obj_onehit_potion</object>
+        </objects>
+        <objects name="Rage">
+          <object>objects\obj_rage_potion</object>
+        </objects>
+        <objects name="RiceBall">
+          <object>objects\obj_rice_ball</object>
+        </objects>
+        <objects name="DepriSun">
+          <object>objects\obj_depri_sun_potion</object>
+        </objects>
+        <objects name="CooldownReset">
+          <object>objects\obj_cooldown_reset_potion</object>
+        </objects>
+      </objects>
+      <objects name="NoValidItem">
+        <object>objects\obj_no_valid_item</object>
+      </objects>
+      <objects name="StatsStorer">
+        <object>objects\obj_item_object_stats_storer</object>
       </objects>
     </objects>
     <objects name="Hub">
@@ -1599,6 +1788,7 @@
       <objects name="Chests">
         <object>objects\obj_pickup_chest</object>
         <object>objects\obj_random_chest</object>
+        <object>objects\obj_fragment_chest</object>
         <object>objects\obj_item_chest</object>
         <object>objects\obj_prim_chest</object>
         <object>objects\obj_sec_chest</object>
@@ -1632,6 +1822,12 @@
           <object>objects\obj_ptr_menu</object>
         </objects>
         <object>objects\obj_menu</object>
+        <objects name="VolumeMenu">
+          <object>objects\obj_volume_menu</object>
+          <object>objects\obj_volume_button_test_volume</object>
+          <object>objects\obj_volume_button_add_volume</object>
+          <object>objects\obj_volume_button_sub_volume</object>
+        </objects>
       </objects>
     </objects>
     <objects name="admin">
@@ -1798,6 +1994,7 @@
     <rooms name="Menu">
       <room>rooms\rm_main_menu</room>
       <room>rooms\rm_options_menu</room>
+      <room>rooms\rm_volume_menu</room>
       <room>rooms\rm_credits</room>
       <room>rooms\rm_multiplayer</room>
       <room>rooms\rm_game_end</room>
@@ -1828,6 +2025,9 @@
         <room>rooms\rm_run_forest1</room>
         <room>rooms\rm_run_forest2</room>
       </rooms>
+    </rooms>
+    <rooms name="Crash">
+      <room>rooms\rm_game_crash</room>
     </rooms>
   </rooms>
   <help>

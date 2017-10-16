@@ -118,11 +118,11 @@ var skilltree_index = skilltree.max_hp;
 skilltree_stats[skilltree_index, 0] = "Maximale HP";
 skilltree_stats[skilltree_index, 1] = "Blablabla ich bin ein Platzhalter blablabla";
 skilltree_stats[skilltree_index, 2] = "Erhoeht die maximalen HP.";
-skilltree_stats[skilltree_index, 3] = 5;
+skilltree_stats[skilltree_index, 3] = 10;
 
 for(var i = 0; i &lt; skilltree_stats[skilltree_index, 3]; i++) {
-    skilltree_stats[skilltree_index, i + 10] = +1;
-    skilltree_stats[skilltree_index, i + 20] = i/10 + 0.5;
+    skilltree_stats[skilltree_index, i + 10] = +2;
+    skilltree_stats[skilltree_index, i + 20] = i/10 + 1;
 }
 
 //Regeneration (2)
@@ -154,11 +154,11 @@ var skilltree_index = skilltree.max_mana;
 skilltree_stats[skilltree_index, 0] = "Maximale Mana-Speicherung";
 skilltree_stats[skilltree_index, 1] = "Blablabla ich bin ein Platzhalter blablabla";
 skilltree_stats[skilltree_index, 2] = "Erhoeht die maximale Mana-Speicherung.";
-skilltree_stats[skilltree_index, 3] = 5;
+skilltree_stats[skilltree_index, 3] = 10;
 
 for(var i = 0; i &lt; skilltree_stats[skilltree_index, 3]; i++) {
-    skilltree_stats[skilltree_index, i + 10] = +1;
-    skilltree_stats[skilltree_index, i + 20] = i/10 + 0.5;
+    skilltree_stats[skilltree_index, i + 10] = +2;
+    skilltree_stats[skilltree_index, i + 20] = i/10 + 1;
 }
 
 //Mana Regeneration (5)
@@ -190,11 +190,11 @@ var skilltree_index = skilltree.max_stamina;
 skilltree_stats[skilltree_index, 0] = "Maximales Stamina";
 skilltree_stats[skilltree_index, 1] = "Blablabla ich bin ein Platzhalter blablabla";
 skilltree_stats[skilltree_index, 2] = "Erhoeht das maximale Stamina.";
-skilltree_stats[skilltree_index, 3] = 5;
+skilltree_stats[skilltree_index, 3] = 10;
 
 for(var i = 0; i &lt; skilltree_stats[skilltree_index, 3]; i++) {
     skilltree_stats[skilltree_index, i + 10] = +1;
-    skilltree_stats[skilltree_index, i + 20] = i/10 + 0.5;
+    skilltree_stats[skilltree_index, i + 20] = i/10 + 1;
 }
 
 //Stamina Regeneration (8)
@@ -247,10 +247,10 @@ var skilltree_index = skilltree.root_damage;
 skilltree_stats[skilltree_index, 0] = "Grund-Schaden";
 skilltree_stats[skilltree_index, 1] = "Blablabla ich bin ein Platzhalter blablabla";
 skilltree_stats[skilltree_index, 2] = "Erhoeht den grundlegenden Schadenoutput.";
-skilltree_stats[skilltree_index, 3] = 5;
+skilltree_stats[skilltree_index, 3] = 8;
 
 for(var i = 0; i &lt; skilltree_stats[skilltree_index, 3]; i++) {
-    skilltree_stats[skilltree_index, i + 10] = +1;
+    skilltree_stats[skilltree_index, i + 10] = +0.5;
     skilltree_stats[skilltree_index, i + 20] = i/10 + 0.5;
 }
 
@@ -259,10 +259,10 @@ var skilltree_index = skilltree.attack_speed;
 skilltree_stats[skilltree_index, 0] = "Angriffsgeschwindigkeit";
 skilltree_stats[skilltree_index, 1] = "Blablabla ich bin ein Platzhalter blablabla";
 skilltree_stats[skilltree_index, 2] = "Erhoeht die Angriffsgeschwindigkeit.";
-skilltree_stats[skilltree_index, 3] = 5;
+skilltree_stats[skilltree_index, 3] = 10;
 
 for(var i = 0; i &lt; skilltree_stats[skilltree_index, 3]; i++) {
-    skilltree_stats[skilltree_index, i + 10] = -1;
+    skilltree_stats[skilltree_index, i + 10] = -2;
     skilltree_stats[skilltree_index, i + 20] = i/10 + 0.5;
 }
 
@@ -286,7 +286,7 @@ skilltree_stats[skilltree_index, 2] = "Erhoeht die maximale Bewegungsgeschwindig
 skilltree_stats[skilltree_index, 3] = 5;
 
 for(var i = 0; i &lt; skilltree_stats[skilltree_index, 3]; i++) {
-    skilltree_stats[skilltree_index, i + 10] = +0.1;
+    skilltree_stats[skilltree_index, i + 10] = +0.2;
     skilltree_stats[skilltree_index, i + 20] = i/10 + 0.5;
 }
 

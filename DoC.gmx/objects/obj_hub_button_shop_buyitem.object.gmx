@@ -127,7 +127,13 @@ draw_set_halign(fa_center);
 draw_text(x, y + 64, "KOSTEN: " + string(item_prize) + "HM");
 draw_text(x, y + 64 + 24, "Click to unlock.");
 draw_set_halign(fa_left);
+
+if(!buyable) {
+    draw_sprite(spr_not_buyable, 0, x, y);
 }
+}
+
+
 
 </string>
           </argument>

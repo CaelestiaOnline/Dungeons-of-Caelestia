@@ -10,6 +10,7 @@ admin.in_game = false;
 admin.playing = false;
 hub.in_hub = false;
 hub.in_menu = false;
+mouse.is_visible = false;
 
 scr_effect_kill_all();
 
