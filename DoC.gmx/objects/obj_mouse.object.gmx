@@ -56,7 +56,9 @@ fix_point_y = 0;
           <argument>
             <kind>1</kind>
             <string>///Setze is_visible
-is_visible = max(admin.game_paused, hub.in_menu, 0);
+if(admin.playing) {
+    is_visible = max(admin.game_paused, hub.in_menu, 0);
+}
 if(is_visible) {
     visible = true;
     x = device_mouse_x_to_gui(0);

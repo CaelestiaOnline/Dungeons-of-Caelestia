@@ -86,7 +86,11 @@ if(confirmed_hover) {
     }
 
     if(confirmed_left_released) {
-        scr_leave_current_room();
+        if(admin.playing) { 
+            scr_leave_current_room();
+        } else {
+            scr_sidefade(rm_main_menu, 60);
+        }
     }
 }
 

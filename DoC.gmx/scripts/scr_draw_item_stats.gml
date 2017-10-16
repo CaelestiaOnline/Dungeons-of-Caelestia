@@ -16,6 +16,8 @@ for(var i = 0; i < array_length_1d( inv_hud.item_stats_array); i++) {
      inv_hud.item_stats_array[i] = 0;
 }
 
+inv_hud.item_stats_heading_colour = scr_get_item_rarity_colour(stats_item);
+
 switch (item[stats_item, 3]) {
     //prim
     case "prim":

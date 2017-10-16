@@ -1,8 +1,14 @@
 switch(menupos) {
     case 0: {
+        if(file_exists(working_directory + "SaveData\" + "savedata.ini")) {
+            file_delete(working_directory + "SaveData\" + "savedata.ini");
+            scr_create_savefile_debug();
+            game_restart();
+        }
         break;
     }
     case 1: {
+        scr_sidefade(rm_volume_menu, 60);
         break;
     }
     case 2: {

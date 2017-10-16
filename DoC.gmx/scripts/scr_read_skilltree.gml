@@ -12,7 +12,7 @@ for(var i = 0; i < items.count; i++) {
 */
 
 ini_open(working_directory + "SaveData\" + "savedata.ini");
-var debug = ini_read_real("debug", "debug_mode", 0);
+var debug = false;//ini_read_real("debug", "debug_mode", 0);
 
 for(var i = 0; i < skilltree.count; i++) {
     if(debug) {

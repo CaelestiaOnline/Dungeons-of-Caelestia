@@ -35,8 +35,6 @@ run_money_count = 0;
 //Spielübergreifendes Geld
 hub_money = 0;
 
-//Levelsystem
-level_up_xp = 8192;
 //XP
 xp = 0;
 dealt_xp = 0;

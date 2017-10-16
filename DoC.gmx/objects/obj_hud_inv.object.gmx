@@ -200,6 +200,8 @@ colour_heading = global.co_indigo_500;
 colour_trans = global.co_blue_gray_1000;
 alpha_bg = 0.5;
 alpha_bbg = 0.8;
+
+item_stats_heading_colour = c_white;
 </string>
           </argument>
         </arguments>
@@ -826,6 +828,7 @@ draw_text(
 draw_set_valign(fa_top);
 
 //Titel
+draw_set_colour(item_stats_heading_colour);
 draw_set_font(fnt_item_stats_title);
 draw_text_ext(
     inv_item_stats_bg_x1 + 32,
@@ -836,6 +839,7 @@ draw_text_ext(
     );
 
 //Beschreibung
+draw_set_colour(c_white);
 draw_set_font(fnt_inv_stats);
 draw_text_ext(
     inv_item_stats_bg_x1 + 32,
@@ -1125,6 +1129,7 @@ draw_set_halign(fa_left);
 draw_set_alpha(1);
 
 //Level
+var passive_xp = round(frac(progress.level) * scr_get_level_up_xp());
 
 draw_text(
     inv_level_x1 + 32,
@@ -1135,13 +1140,13 @@ draw_text(
 draw_text(
     (inv_level_x1 + inv_level_x2)/2 - 32,
     text1_y,
-    "XP: " + string(progress.xp) + " / " + string(progress.level_up_xp)
+    "XP: " + string(progress.xp+passive_xp) + " / " + string(scr_get_level_up_xp())
     );
 
 //Prozent
 var percent_text;
 if(admin.in_run) {
-    percent_text = string((progress.xp / progress.level_up_xp)*100) + "%";
+    percent_text = string(((progress.xp+passive_xp) / scr_get_level_up_xp())*100) + "%";
 } else {
     percent_text = string(frac(progress.level)*100) + "%";
 }
@@ -1161,7 +1166,7 @@ var bar_x = inv_level_x1 + bar_buffer;
 var buffer = 2;
 
 var xp_scale;
-xp_scale = progress.xp / progress.level_up_xp;
+xp_scale = progress.xp + passive_xp / scr_get_level_up_xp();
 xp_scale = clamp(xp_scale, 0, 1);
 
 //Hintergrund
@@ -1189,7 +1194,7 @@ if(admin.in_run) {
     money_value = string(progress.run_money) + ".00";
     currency = "RM";
 } else {
-    money_value = string(progress.hub_money) + ".00";
+    money_value = string(progress.hub_money) + "";
     currency = "HM";
 }
 var money_text = "Balance: " + money_value + currency;

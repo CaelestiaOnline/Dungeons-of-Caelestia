@@ -79,6 +79,9 @@ hit_list = noone;
           <argument>
             <kind>1</kind>
             <string>///Angriff
+var damage = player_stats.root_damage;
+var damage_crit = damage + round(damage/4);
+
 scr_prim_ability();
 
 if(confirmed) {

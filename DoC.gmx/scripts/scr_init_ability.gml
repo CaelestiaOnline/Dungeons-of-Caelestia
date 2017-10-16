@@ -342,23 +342,83 @@ switch(ability) {
         }
         break;
     //Armour
-    case "armour":
+    case "armour_leather":
         switch(ability_strength) {
             case 1:
                 resistance_mult = -0.1;
                 speed_mult = -0.1;
                 break;
-            case 2:
-                resistance_mult = -0.2;
-                speed_mult = -0.2;
+        }
+        break;
+    case "armour_iron":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
                 break;
-            case 3:
-                resistance_mult = -0.3;
-                speed_mult = -0.3;
+        }
+        break;
+    case "armour_titanium":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
                 break;
-            case 4:
-                resistance_mult = -0.4;
-                speed_mult = +0.1;
+        }
+        break;
+    case "armour_carbon":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
+                break;
+        }
+        break;
+    case "armour_senketsu":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
+                break;
+        }
+        break;
+    case "armour_junketsu":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
+                break;
+        }
+        break;
+    case "armour_wood":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
+                break;
+        }
+        break;
+    case "armour_feather":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
+                break;
+        }
+        break;
+    case "armour_fur":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
+                break;
+        }
+        break;
+    case "armour_ninja":
+        switch(ability_strength) {
+            case 1:
+                resistance_mult = -0.1;
+                speed_mult = -0.1;
                 break;
         }
         break;

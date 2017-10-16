@@ -22,6 +22,10 @@ scr_update_grid();
 //Splash - Screen
 global.display_splash_screen = false;
 
+//Sound
+scr_read_volume();
+sound_global_volume(global.volume);
+
 //Objekte
 //Erzeuge Admin-Objekt
 globalvar admin;
@@ -56,8 +60,8 @@ globalvar item_stats_object;
 item_stats_object = instance_create(0, 0, obj_item_stats);
 
 //Erzeuge Items
-globalvar item_object;
-item_object = instance_create(0, 0, obj_items);
+globalvar items_object;
+items_object = instance_create(0, 0, obj_items);
 
 //Erzeuge Inventar
 globalvar inventory;
@@ -161,6 +165,11 @@ global.items_unlocked = -1;
 global.items_found = -1;
 
 scr_read_items();
+
+//Init Upgrade
+scr_upgrade_init_stats();
+scr_update_item_stats();
+
 
 
 

@@ -165,75 +165,7 @@ for(m = 0; m &lt; array_length_1d(ping); m++) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Zeichne Auswahlmöglichkeiten + Titel
-draw_set_colour(c_white);
-
-//Überschrift
-draw_set_font(fnt_main_menu);
-draw_set_alpha(1);
-draw_set_halign(fa_center);
-draw_text(view_wview[0]/2,  view_hview[0]/4, heading);
-
-//Schatten
-draw_set_alpha(0.5);
-draw_set_colour(c_white);
-draw_text(view_wview[0]/2 + shadow*2, view_hview[0]/4 + shadow*2, heading);
-
-//Auswahlmöglichkeiten
-draw_set_alpha(1);
-draw_set_font(fnt_main_menu);
-draw_set_halign(fa_left);
-colour[menupos] = menucolour;
-
-var m;
-for(m = 0; m &lt; array_length_1d(menu); m++) {
-    draw_set_colour(colour[m]);
-    draw_set_alpha(1);
-    draw_text(
-        view_wview[0]/2 - wtext/2,
-        view_hview[0]/2 - 100 + (m * yspace),
-        menu[m],
-        );
-//Schatten
-    draw_set_alpha(0.5);
-    draw_text(
-        view_wview[0]/2 - wtext/2 + shadow,
-        view_hview[0]/2 - 100 + (m * yspace) + shadow,
-        menu[m],
-        );
-        colour[m] = c_white;
-}
-
-draw_set_colour(c_white);
-/*
-//Pfeil
-draw_sprite(
-    sprite_index,
-    0,
-    ((view_wview[0]/2) - wtext/2 - xspace),
-    ((view_hview[0]/2) - 100 + sprite_get_height(sprite_index)/2) + (menupos * yspace)
-    );
-    
-//Schatten des Pfeils
-draw_sprite(
-    sprite_index,
-    0,
-    ((view_wview[0]/2) - wtext/2 - xspace + shadow/2),
-    ((view_hview[0]/2) - 100 + sprite_get_height(sprite_index)/2) + (menupos * yspace) + shadow/2
-    );
-*/
-//Linie
-draw_set_font(fnt_main_menu);
-var yvalue = (view_hview[0]/2) - 100 + string_height(menu[menupos]) + (menupos * yspace);
-draw_line_width_colour(
-    (view_wview[0]/2) - wtext/2,
-    yvalue,
-    (view_wview[0]/2) - wtext/2 + string_width(menu[menupos]),
-    yvalue,
-    8,
-    c_white,
-    c_white
-    );
+            <string>event_inherited();
 </string>
           </argument>
         </arguments>

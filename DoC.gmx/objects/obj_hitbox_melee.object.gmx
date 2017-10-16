@@ -54,7 +54,9 @@ origin_object = 0;
             <kind>1</kind>
             <string>///Überprüfung eines Treffers
 var hit_list = instance_place_list(x, y, obj_gegner);
-origin_object.hit_list = hit_list;
+if(instance_exists(origin_object)) {
+    origin_object.hit_list = hit_list;
+}
 if(hit_list != noone) {
     var n = 0;
     while(n &lt; ds_list_size(hit_list)) {
