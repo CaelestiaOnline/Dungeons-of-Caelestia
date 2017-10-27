@@ -108,6 +108,9 @@
       <sprites name="Splash-Screen">
         <sprite>sprites\spr_cael_orb_highres</sprite>
       </sprites>
+      <sprites name="Credits">
+        <sprite>sprites\spr_credits_doge_meme</sprite>
+      </sprites>
     </sprites>
     <sprites name="Einheit">
       <sprites name="Trainingspuppe">

@@ -10,7 +10,7 @@ global.volume += volume_add;
 
 global.volume = clamp(global.volume, 0, 1);
 
-sound_global_volume(global.volume);
+audio_master_gain(global.volume);
 
 scr_write_volume();
 
