@@ -59,7 +59,6 @@ if(confirmed_hover) {
 
     if(confirmed_left) {
         var audio = audio_play_sound(snd_volume_test, 1, false);
-        sound_volume(audio, global.volume);
     }
 }
 

@@ -56,7 +56,7 @@ fix_point_y = 0;
           <argument>
             <kind>1</kind>
             <string>///Setze is_visible
-if(admin.playing) {
+if(admin.in_game) {
     is_visible = max(admin.game_paused, hub.in_menu, 0);
 }
 if(is_visible) {

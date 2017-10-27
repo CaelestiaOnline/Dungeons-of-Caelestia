@@ -20,7 +20,7 @@ global.grid = 0;
 scr_update_grid();
 
 //Splash - Screen
-global.display_splash_screen = false;
+global.display_splash_screen = true;
 
 //Sound
 scr_read_volume();

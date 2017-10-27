@@ -2524,7 +2524,7 @@ item_stats[items.scissor_blade, item_stats_prim.misc] = "2 Items = Buffs";
 
 //Explosionsmagie (135)
 item[items.mana_explosion_magic_orb, 0] = "Explosionsmagie";
-item[items.mana_explosion_magic_orb, 1] = "Bei der Macht der blutroten Daemonen: Eeeeksebloooooshon!!!";
+item[items.mana_explosion_magic_orb, 1] = "Bei der Macht der blutroten Daemonen: Eeeekesbloooooshon!!!";
 item[items.mana_explosion_magic_orb, 2] = obj_mana_explosion_magic_orb;
 item[items.mana_explosion_magic_orb, 3] = "mag";
 item[items.mana_explosion_magic_orb, 4] = 1;
@@ -2569,7 +2569,7 @@ item_stats[items.mana_laserairstrike_orb, item_stats_mag.misc] = "";
 
 //Legostein (138)
 item[items.lego_trap, 0] = "Legosteine";
-item[items.lego_trap, 1] = "Diese sagenumwobenen Gegenstaende erreichen ihren haeochsten Wirkungsgrad zwar erst im Dunkeln, aber auch hier sind sie noch verheerend.";
+item[items.lego_trap, 1] = "Diese sagenumwobenen Gegenstaende erreichen ihren haeochsten Wirkungsgrad zufaellig auf dem Boden verteilt.";
 item[items.lego_trap, 2] = obj_lego_trap;
 item[items.lego_trap, 3] = "sec";
 item[items.lego_trap, 4] = 1;
@@ -2601,7 +2601,7 @@ item_stats[items.cabbage_soup_grenade, item_stats_sec.misc] = "";
 
 //Meteoritenhagel (140)
 item[items.mana_meteor_shower_orb, 0] = "Meteoritenhagel";
-item[items.mana_meteor_shower_orb, 1] = "Dieses Item verleiht dir nicht die Faehigkeit, Meteoriten heraufzubeschworen, sondern macht das Unwahrscheinliche nur wahrscheinlich.";
+item[items.mana_meteor_shower_orb, 1] = "";
 item[items.mana_meteor_shower_orb, 2] = obj_mana_meteor_shower_orb;
 item[items.mana_meteor_shower_orb, 3] = "mag";
 item[items.mana_meteor_shower_orb, 4] = 1;
@@ -2893,7 +2893,7 @@ item_stats[items.mana_money_steal_orb, item_stats_mag.cooldown] = player_stats.a
 item_stats[items.mana_money_steal_orb, item_stats_mag.misc] = "";
 
 //Loot (156)
-item[items.mana_loot_orb, 0] = "Lootgeilheit";
+item[items.mana_loot_orb, 0] = "Lootlucker";
 item[items.mana_loot_orb, 1] = "Loot? Hat jemand Loot gesagt? Wo? Wann? Wer? Was? Wie?";
 item[items.mana_loot_orb, 2] = obj_mana_loot_orb;
 item[items.mana_loot_orb, 3] = "mag";
@@ -3181,7 +3181,7 @@ item_stats[items.frostaura_orb, item_stats_item.misc] = "";
 
 //Stein (174)
 item[items.stone, 0] = "Stein";
-item[items.stone, 1] = "";
+item[items.stone, 1] = "Der legendaere Gegenstand, von John Muesli prophezeit im Jahre 666 nach 1349 n. Chr.!";
 item[items.stone, 2] = obj_stone;
 item[items.stone, 3] = "prim";
 item[items.stone, 4] = 1;
@@ -3198,7 +3198,7 @@ item_stats[items.stone, item_stats_prim.misc] = "";
 
 //Stock (175)
 item[items.stick, 0] = "Stock";
-item[items.stick, 1] = "";
+item[items.stick, 1] = "Wie jeder weiss sind Stoecke nicht braun. Das ist Allgemeinbildung.";
 item[items.stick, 2] = obj_stick;
 item[items.stick, 3] = "prim";
 item[items.stick, 4] = 1;
@@ -3215,7 +3215,7 @@ item_stats[items.stick, item_stats_prim.misc] = "";
 
 //Faustschlag (176)
 item[items.fisthit, 0] = "Faustschlag";
-item[items.fisthit, 1] = "";
+item[items.fisthit, 1] = "Da kommt deine dritte Faust zum Vorschein!";
 item[items.fisthit, 2] = obj_fisthit;
 item[items.fisthit, 3] = "sec";
 item[items.fisthit, 4] = 1;
