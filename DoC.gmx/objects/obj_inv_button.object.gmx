@@ -158,6 +158,10 @@ if(confirmed_hover) {
 
 draw_sprite(spr_inv_border_2, 0, x, y);
 draw_sprite(spr_inv_border, 0, x, y);
+
+if(button_item != -1) {
+    scr_draw_item_rarity(button_item);
+}
 </string>
           </argument>
         </arguments>

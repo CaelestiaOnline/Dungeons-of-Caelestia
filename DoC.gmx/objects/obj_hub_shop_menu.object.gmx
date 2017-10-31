@@ -294,7 +294,8 @@ draw_roundrect(
             <string>///Item Stats
 
 draw_set_alpha(1);
-draw_set_colour(c_white);
+
+draw_set_colour(inv_hud.item_stats_heading_colour);
 draw_set_font(fnt_item_stats_title);
 
 draw_text(
@@ -304,6 +305,7 @@ draw_text(
     );
     
 draw_set_font(fnt_inv_stats);
+draw_set_colour(c_white);
 draw_text_ext(
     item_stats_menu_x1 + 32,
     item_stats_menu_y1 + 32 + 32,
@@ -339,10 +341,10 @@ for(var i = 0; i &lt; array_length_1d(inv_hud.item_stats_array); i++) {
     
 var item_status;
 if(global.items_unlocked[global.shop_item_index]) {
-    item_status = "FREIGESCHALTEN";
+    item_status = "ITEM ERFOLGREICH ERSCHAFFEN";
     draw_set_colour(c_green);
 } else {
-    item_status = "NICHT FREIGESCHALTEN";
+    item_status = "ITEMSTATUS UNBEKANNT";
     draw_set_colour(c_red);
 }
 
@@ -353,18 +355,18 @@ draw_text(
 );
 
 var item_status;
-if(global.items_found[global.shop_item_index]) {
-    item_status = "FREISCHALTBAR";
+if(global.items_found[global.shop_item_index] == 1) {
+    item_status = "SUCESSFULLY RESEARCHED";
     draw_set_colour(c_green);
 } else {
-    item_status = "NICHT FREISCHALTBAR";
+    item_status = "RESEARCH PROGRESS";
     draw_set_colour(c_red);
 }
 
 draw_text(
     shop_button_buyitem_x + 48 + 32,
     shop_button_buyitem_y - 16,
-    item_status
+    item_status + " [ " + string(global.items_found[global.shop_item_index]*100) + "% ]"
 );
 
 draw_set_colour(c_yellow);
@@ -379,7 +381,15 @@ draw_set_colour(c_red);
 draw_text(
     item_stats_menu_x1 + 420,
     item_stats_menu_y1 + 32,
-    "(" + scr_get_item_type_string(global.shop_type_index) + ")"
+    "[ " + scr_get_item_type_string(global.shop_type_index) + " ]"
+);
+
+draw_set_font(fnt_item_stats_title);
+draw_set_colour(scr_get_item_rarity_colour(global.shop_item_index));
+draw_text(
+    item_stats_menu_x1 + 420,
+    item_stats_menu_y1 + 72,
+    "[ " + scr_get_item_rarity_string(global.shop_item_index) + " ]"
 );
 
 </string>

@@ -25,8 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setze Mana auf 0
-player_stats.mana = 0;
+            <string>///Save Cooldown
+if(alarm_get(0) &gt; -1) {
+    var item_object_stats_storer = instance_create(0, 0, obj_item_object_stats_storer);
+    item_object_stats_storer.object = self.object_index;
+    item_object_stats_storer.alarm[0] = self.alarm[0];
+}
 </string>
           </argument>
         </arguments>

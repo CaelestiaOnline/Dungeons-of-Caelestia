@@ -202,8 +202,8 @@ var y_pos = 11;
 upgrade_button[x_pos, y_pos] = instance_create(upgrade_button_x[x_pos, y_pos], upgrade_button_y[x_pos, y_pos], obj_hub_button_skilltree_getupgrade);
 upgrade_button[x_pos, y_pos].button_upgrade = skilltree.heal_orb_chance;
 
-
 /*
+
 //Auffüllen
 for(var j = 0; j &lt; max_slots; j++) {
 for(var i = 0; i &lt; max_slots; i++) {
@@ -215,8 +215,8 @@ for(var i = 0; i &lt; max_slots; i++) {
     }
 }
 }
-*/
 
+*/
 
 </string>
           </argument>
@@ -397,7 +397,7 @@ draw_text(
             <kind>1</kind>
             <string>///Char
 
-draw_sprite(spr_charakter,0 ,upgrade_button_x[7, 7], upgrade_button_y[7, 7]);
+draw_sprite(spr_charakter_middle, 0, upgrade_button_x[7, 7], upgrade_button_y[7, 7]);
 </string>
           </argument>
         </arguments>

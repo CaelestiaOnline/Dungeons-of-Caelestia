@@ -21,7 +21,7 @@ for(var i = 0; i < items.count; i++) {
     } else {
         var status = int64(ini_read_real("items_unlocked", string(i), 0));
         global.items_unlocked[i] = status;
-        var status = int64(ini_read_real("items_found", string(i), 0));
+        var status = ini_read_real("items_found", string(i), 0);
         global.items_found[i] = status;
     }
 }

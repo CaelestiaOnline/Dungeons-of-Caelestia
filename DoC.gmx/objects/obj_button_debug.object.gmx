@@ -30,6 +30,9 @@ event_inherited();
 
 grid = false;
 marked = false;
+
+xpos = "?";
+y_pos = "?";
 </string>
           </argument>
         </arguments>

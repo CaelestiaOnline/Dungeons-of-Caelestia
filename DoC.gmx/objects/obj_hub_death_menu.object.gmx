@@ -56,10 +56,10 @@ death_menu_rectangle_right_bg_x2 =  death_menu_rectangle_right_bg_x1 - 500;
 death_menu_rectangle_right_bg_y2 =  display_get_gui_height() - 64;
 
 //Bottom
-death_menu_rectangle_bottom_bg_x1 =  death_menu_rectangle_left_bg_x2 + 128;
+death_menu_rectangle_bottom_bg_x1 =  death_menu_rectangle_left_bg_x2 + 64;
 death_menu_rectangle_bottom_bg_y1 =  display_get_gui_height() - 64;
 
-death_menu_rectangle_bottom_bg_x2 =  death_menu_rectangle_right_bg_x2 - 128;
+death_menu_rectangle_bottom_bg_x2 =  death_menu_rectangle_right_bg_x2 - 64;
 death_menu_rectangle_bottom_bg_y2 =  death_menu_rectangle_bottom_bg_y1 - 200;
 
 //Top
@@ -123,13 +123,20 @@ exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit)
             <string>///Stats
 //Level
 var collected_xp = death_stats.collected_xp;
+var collected_xp_copy = collected_xp;
 level_old = progress.level;
 
-progress.level += collected_xp / progress.level_up_xp;
+while(collected_xp_copy &gt; 0) {
+    if(collected_xp_copy &gt;= scr_get_level_up_xp()) {
+        collected_xp_copy -= scr_get_level_up_xp();
+        progress.level++;
+    } else {
+        progress.level += collected_xp_copy / scr_get_level_up_xp();
+        break;
+    }
+}
 
 new_level = progress.level - level_old;
-
-
 
 level_up = false;
 if(floor(level_old) &lt; floor(progress.level)) {
@@ -140,13 +147,10 @@ new_skillpoints = int64(floor(progress.level) - floor(level_old));
 
 progress.skillpoints += new_skillpoints;
 
-
-//Hub Money
-var collected_xp = death_stats.collected_xp;
-
-new_hub_money = round(collected_xp/1024);
+new_hub_money = stats.collected_run_money/128;
 
 progress.hub_money += new_hub_money;
+
 
 //Save Data
 scr_write_progress();
@@ -441,7 +445,7 @@ draw_set_colour(c_yellow);
 draw_text(
     death_menu_rectangle_bottom_bg_x1 + 32,
     death_menu_rectangle_bottom_bg_y2 + 32,
-    "Collected Money: " + string(death_stats.collected_run_money) + "RM"
+    "Collected Money: " + string(stats.collected_run_money) + "RM"
     );
     
 //Money
@@ -462,9 +466,9 @@ draw_set_font(fnt_death_menu_normal);
 draw_set_colour(c_yellow);
 
 draw_text(
-    death_menu_rectangle_bottom_bg_x1 + 32,
+    death_menu_rectangle_bottom_bg_x1 + 24,
     death_menu_rectangle_bottom_bg_y2 + 64,
-    "Gained Hub Money: " + "+" + string(new_hub_money) + "HM"
+    "Gained HUB Money: " + "+" + string(new_hub_money) + "HM"
     );
     
 //Money
@@ -473,7 +477,7 @@ draw_set_colour(c_green);
 draw_set_halign(fa_right);
 
 draw_text(
-    death_menu_rectangle_bottom_bg_x2 - 32,
+    death_menu_rectangle_bottom_bg_x2 - 24,
     death_menu_rectangle_bottom_bg_y2 + 64,
     "Gained Skillpoints: " + "+" + string(new_skillpoints) + "sp"
     );

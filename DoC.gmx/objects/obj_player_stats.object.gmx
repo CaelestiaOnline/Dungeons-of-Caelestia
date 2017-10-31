@@ -48,22 +48,28 @@ mana = 100;
 max_mana = mana;
 old_max_mana = max_mana;
 mana_reg = 1;
+old_mana_reg = mana_reg;
 mana_reg_time = room_speed/4;
+old_mana_reg_time = mana_reg_time;
 
 //Stamina
 stamina = 25;
 max_stamina = stamina;
 old_max_stamina = stamina;
-stamina_usage = 0.5;
 stamina_reg = 0.2;
+old_stamina_reg = stamina_reg;
+stamina_usage = 0.5;
+old_stamina_usage = stamina_usage;
 
 //Angriff
 //Schaden, der auf Waffenschaden addiert wird
 root_damage = 5;
+old_root_damage = root_damage;
 chance_crit = 0.15;
+old_chance_crit = chance_crit;
 //Angriffsgeschwindigkeit
 attack_speed = 60;
-attack_speed_old = attack_speed;
+old_attack_speed = attack_speed;
 attack_speed_mult = 1;
 attack_speed_mult_effect = 1;
 
@@ -131,9 +137,11 @@ revive = false;
 
 //Chest
 chest_chance = 0.5;
+old_chest_chance = chest_chance;
 
 //Heal Orb
 heal_orb_chance = 0.05;
+old_heal_orb_chance = heal_orb_chance;
 
 
 </string>
@@ -303,7 +311,7 @@ if(instance_exists(obj_player)) {
             <string>///AttackSpeed-Multiplier
 attack_speed_mult = 1 * attack_speed_mult_effect;
 
-attack_speed = attack_speed_old * attack_speed_mult;
+attack_speed = old_attack_speed * attack_speed_mult;
 </string>
           </argument>
         </arguments>

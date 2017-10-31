@@ -61,6 +61,9 @@ globalvar room_stats;
 //Initialise
 room_stats[rm_initialise, 0] = "!game";
 
+//Initialise
+room_stats[rm_game_crash, 0] = "!game";
+
 //Splash - Screen
 room_stats[rm_splash_screen, 0] = "!game";
 
@@ -75,6 +78,9 @@ room_stats[rm_main_menu, 0] = "menu";
 
 //Options Menu
 room_stats[rm_options_menu, 0] = "menu";
+
+//Options Menu
+room_stats[rm_volume_menu, 0] = "menu";
 
 //Credits Menu
 room_stats[rm_credits, 0] = "menu";

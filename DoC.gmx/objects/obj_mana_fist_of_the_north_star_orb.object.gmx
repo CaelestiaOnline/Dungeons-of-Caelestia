@@ -82,6 +82,7 @@ hit_list = noone;
           <argument>
             <kind>1</kind>
             <string>///Angriff
+if(!admin.playing) exit;
 if(active) {
 enemy = instance_nearest(obj_player.x, obj_player.y, obj_gegner);
 with(obj_gegner) shadow_object.draw_mark = false;
