@@ -181,7 +181,7 @@ enemy_stats[obj_cow, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_cow, enemy_stats_normal.xp_drop] = 1;
 enemy_stats[obj_cow, enemy_stats_normal.money_drop] = 1;
 
-//Abfuck
+//Abfuck (6)
 enemy_stats[obj_abfuck, 0] = "Der reine Abfuck";
 enemy_stats[obj_abfuck, 1] = "...";
 enemy_stats[obj_abfuck, 2] = true;
@@ -191,7 +191,7 @@ enemy_stats[obj_abfuck, 4] = "normal";
 enemy_stats[obj_abfuck, enemy_stats_normal.hp] = 100;
 enemy_stats[obj_abfuck, enemy_stats_normal.damage] = 1;
 enemy_stats[obj_abfuck, enemy_stats_normal.attack_speed] = 10;
-enemy_stats[obj_abfuck, enemy_stats_normal.max_speed] = 10;
+enemy_stats[obj_abfuck, enemy_stats_normal.max_speed] = 30;
 enemy_stats[obj_abfuck, enemy_stats_normal.xp_drop] = 1;
 enemy_stats[obj_abfuck, enemy_stats_normal.money_drop] = 1;
 </string>
@@ -480,6 +480,153 @@ enemy_stats[obj_fox, enemy_stats_normal.attack_speed] = 40;
 enemy_stats[obj_fox, enemy_stats_normal.max_speed] = 2.7;
 enemy_stats[obj_fox, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_fox, enemy_stats_normal.money_drop] = 19;
+
+//Sumpfleiche(15)
+enemy_stats[obj_swampcorpse, 0] = "Sumpfleiche";
+enemy_stats[obj_swampcorpse, 1] = "Stinkt wie die Pest, aber will einfach nicht duschen";
+enemy_stats[obj_swampcorpse, 2] = true;
+enemy_stats[obj_swampcorpse, 3] = true;
+enemy_stats[obj_swampcorpse, 4] = "normal";
+
+enemy_stats[obj_swampcorpse, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_swampcorpse, enemy_stats_normal.damage] = 15;
+enemy_stats[obj_swampcorpse, enemy_stats_normal.attack_speed] = 30;
+enemy_stats[obj_swampcorpse, enemy_stats_normal.max_speed] = 1.4;
+enemy_stats[obj_swampcorpse, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_swampcorpse, enemy_stats_normal.money_drop] = 20;
+
+//Mosquito(16)
+enemy_stats[obj_mosquito, 0] = "Mosquito";
+enemy_stats[obj_mosquito, 1] = "Da ist Malaria vorprogrammiert";
+enemy_stats[obj_mosquito, 2] = true;
+enemy_stats[obj_mosquito, 3] = true;
+enemy_stats[obj_mosquito, 4] = "normal";
+
+enemy_stats[obj_mosquito, enemy_stats_normal.hp] = 20;
+enemy_stats[obj_mosquito, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_mosquito, enemy_stats_normal.attack_speed] = 4;
+enemy_stats[obj_mosquito, enemy_stats_normal.max_speed] = 4;
+enemy_stats[obj_mosquito, enemy_stats_normal.xp_drop] = 8;
+enemy_stats[obj_mosquito, enemy_stats_normal.money_drop] = 2;
+
+//Schlingpflanze(17)
+enemy_stats[obj_creeper, 0] = "Schlingpflanze";
+enemy_stats[obj_creeper, 1] = "Und schon kannst du dich nicht mehr bewegen";
+enemy_stats[obj_creeper, 2] = false;
+enemy_stats[obj_creeper, 3] = true;
+enemy_stats[obj_creeper, 4] = "normal";
+
+enemy_stats[obj_creeper, enemy_stats_normal.hp] = 40;
+enemy_stats[obj_creeper, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_creeper, enemy_stats_normal.attack_speed] = 20;
+enemy_stats[obj_creeper, enemy_stats_normal.max_speed] = 0;
+enemy_stats[obj_creeper, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_creeper, enemy_stats_normal.money_drop] = 10;
+
+//Radioaktiver Schlick(18)
+enemy_stats[obj_radioactive_mud, 0] = "Radioaktiver Schlick";
+enemy_stats[obj_radioactive_mud, 1] = "Der strahlt so freundlich";
+enemy_stats[obj_radioactive_mud, 2] = true;
+enemy_stats[obj_radioactive_mud, 3] = true;
+enemy_stats[obj_radioactive_mud, 4] = "normal";
+
+enemy_stats[obj_radioactive_mud, enemy_stats_normal.hp] = 40;
+enemy_stats[obj_radioactive_mud, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_radioactive_mud, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_radioactive_mud, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_radioactive_mud, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_radioactive_mud, enemy_stats_normal.money_drop] = 18;
+
+//Sumpfbaum(19)
+enemy_stats[obj_swamp_tree, 0] = "Sumpfbaum";
+enemy_stats[obj_swamp_tree, 1] = "Ein naher Verwandter des wandelnden Baums";
+enemy_stats[obj_swamp_tree, 2] = true;
+enemy_stats[obj_swamp_tree, 3] = true;
+enemy_stats[obj_swamp_tree, 4] = "normal";
+
+enemy_stats[obj_swamp_tree, enemy_stats_normal.hp] = 80;
+enemy_stats[obj_swamp_tree, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_swamp_tree, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_swamp_tree, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_swamp_tree, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_swamp_tree, enemy_stats_normal.money_drop] = 20;
+
+//Lebendiger Schlamm(20)
+enemy_stats[obj_living_mud, 0] = "Lebendiger Schlamm";
+enemy_stats[obj_living_mud, 1] = "Er ist nass und kalt!";
+enemy_stats[obj_living_mud, 2] = true;
+enemy_stats[obj_living_mud, 3] = true;
+enemy_stats[obj_living_mud, 4] = "normal";
+
+enemy_stats[obj_living_mud, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_living_mud, enemy_stats_normal.damage] = 25;
+enemy_stats[obj_living_mud, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_living_mud, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_living_mud, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_living_mud, enemy_stats_normal.money_drop] = 21;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gegner 21-30
+
+//Sumpfbiene(21)
+enemy_stats[obj_swamp_bee, 0] = "Sumpfbiene";
+enemy_stats[obj_swamp_bee, 1] = "Für Allergiker tödlich!";
+enemy_stats[obj_swamp_bee, 2] = true;
+enemy_stats[obj_swamp_bee, 3] = true;
+enemy_stats[obj_swamp_bee, 4] = "normal";
+
+enemy_stats[obj_swamp_bee, enemy_stats_normal.hp] = 20;
+enemy_stats[obj_swamp_bee, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_swamp_bee, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_swamp_bee, enemy_stats_normal.max_speed] = 1.9;
+enemy_stats[obj_swamp_bee, enemy_stats_normal.xp_drop] = 32;
+enemy_stats[obj_swamp_bee, enemy_stats_normal.money_drop] = 15;
+
+//Treibsand(22)
+enemy_stats[obj_quicksand, 0] = "Treibsand";
+enemy_stats[obj_quicksand, 1] = "Ziemlich langsam";
+enemy_stats[obj_quicksand, 2] = false;
+enemy_stats[obj_quicksand, 3] = true;
+enemy_stats[obj_quicksand, 4] = "normal";
+
+enemy_stats[obj_quicksand, enemy_stats_normal.hp] = 100000;
+enemy_stats[obj_quicksand, enemy_stats_normal.damage] = 2;
+enemy_stats[obj_quicksand, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_quicksand, enemy_stats_normal.max_speed] = 0;
+enemy_stats[obj_quicksand, enemy_stats_normal.xp_drop] = 32;
+enemy_stats[obj_quicksand, enemy_stats_normal.money_drop] = 15;
+
+//Schlammgolem(23)
+enemy_stats[obj_mud_golem, 0] = "Schlammgolem";
+enemy_stats[obj_mud_golem, 1] = "Matschig bis zum geht-nicht-mehr";
+enemy_stats[obj_mud_golem, 2] = true;
+enemy_stats[obj_mud_golem, 3] = true;
+enemy_stats[obj_mud_golem, 4] = "normal";
+
+enemy_stats[obj_mud_golem, enemy_stats_normal.hp] = 100;
+enemy_stats[obj_mud_golem, enemy_stats_normal.damage] = 30;
+enemy_stats[obj_mud_golem, enemy_stats_normal.attack_speed] = 80;
+enemy_stats[obj_mud_golem, enemy_stats_normal.max_speed] = 1.1;
+enemy_stats[obj_mud_golem, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_mud_golem, enemy_stats_normal.money_drop] = 20;
 </string>
           </argument>
         </arguments>
