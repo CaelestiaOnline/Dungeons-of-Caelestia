@@ -4,8 +4,8 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <persistent>0</persistent>
+  <parentName>obj_fallen_unbewegliche_objekte</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,10 +25,49 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
-index = items.web;
-
+            <string>///Effekt
 event_inherited();
+
+radius = 100;
+
+max_y = 100;
+max_x = 200;
+
+effc = effect.attack_speed;
+stage = -2;
+
+effc2 = effect.slowness;
+stage = 2;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>obj_mushroom</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Angriff
+event_inherited();
+
+if(attack_ready){
+    scr_enemy_effect(damage, effc, stage);
+    scr_enemy_effect(0, effc2, stage2);
+    instance_destroy();
+}
 
 </string>
           </argument>
