@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_fallen_unbewegliche_objekte</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -26,13 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Effekt
-event_inherited();
-
-radius = 300;
-
-max_y = 150;
-max_x = 250;
-
 effc = effect.attack_speed;
 stage = -2;
 
@@ -43,7 +36,7 @@ stage = 2;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="4" ename="obj_gegner">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -54,21 +47,40 @@ stage = 2;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_mushroom</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Angriff
-event_inherited();
+            <string>///Effekt
 
-if(attack_ready){
-    scr_enemy_effect(damage, effc, stage);
-    scr_enemy_effect(0, effc2, stage2);
-    instance_destroy();
-}
+scr_effect(effc, stage, other)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Effekt
 
+scr_effect(effc, stage, other)
 </string>
           </argument>
         </arguments>

@@ -600,21 +600,7 @@ enemy_stats[obj_swamp_bee, enemy_stats_normal.max_speed] = 1.9;
 enemy_stats[obj_swamp_bee, enemy_stats_normal.xp_drop] = 32;
 enemy_stats[obj_swamp_bee, enemy_stats_normal.money_drop] = 15;
 
-//Treibsand(22)
-enemy_stats[obj_quicksand, 0] = "Treibsand";
-enemy_stats[obj_quicksand, 1] = "Ziemlich langsam";
-enemy_stats[obj_quicksand, 2] = false;
-enemy_stats[obj_quicksand, 3] = true;
-enemy_stats[obj_quicksand, 4] = "normal";
-
-enemy_stats[obj_quicksand, enemy_stats_normal.hp] = 100000;
-enemy_stats[obj_quicksand, enemy_stats_normal.damage] = 2;
-enemy_stats[obj_quicksand, enemy_stats_normal.attack_speed] = 40;
-enemy_stats[obj_quicksand, enemy_stats_normal.max_speed] = 0;
-enemy_stats[obj_quicksand, enemy_stats_normal.xp_drop] = 32;
-enemy_stats[obj_quicksand, enemy_stats_normal.money_drop] = 15;
-
-//Schlammgolem(23)
+//Schlammgolem(22)
 enemy_stats[obj_mud_golem, 0] = "Schlammgolem";
 enemy_stats[obj_mud_golem, 1] = "Matschig bis zum geht-nicht-mehr";
 enemy_stats[obj_mud_golem, 2] = true;
@@ -627,6 +613,118 @@ enemy_stats[obj_mud_golem, enemy_stats_normal.attack_speed] = 80;
 enemy_stats[obj_mud_golem, enemy_stats_normal.max_speed] = 1.1;
 enemy_stats[obj_mud_golem, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_mud_golem, enemy_stats_normal.money_drop] = 20;
+
+//Kamikatze(23)
+enemy_stats[obj_kamicat, 0] = "Kamikatze";
+enemy_stats[obj_kamicat, 1] = "Hat einen starken Todeswunsch";
+enemy_stats[obj_kamicat, 2] = true;
+enemy_stats[obj_kamicat, 3] = true;
+enemy_stats[obj_kamicat, 4] = "normal";
+
+enemy_stats[obj_kamicat, enemy_stats_normal.hp] = 30;
+enemy_stats[obj_kamicat, enemy_stats_normal.damage] = 50;
+enemy_stats[obj_kamicat, enemy_stats_normal.attack_speed] = 20;
+enemy_stats[obj_kamicat, enemy_stats_normal.max_speed] = 4;
+enemy_stats[obj_kamicat, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_kamicat, enemy_stats_normal.money_drop] = 10;
+
+//Mutierter Pilz(24)
+enemy_stats[obj_mutated_mushroom, 0] = "Mutierter Pilz";
+enemy_stats[obj_mutated_mushroom, 1] = "Der kann sogar laufen";
+enemy_stats[obj_mutated_mushroom, 2] = true;
+enemy_stats[obj_mutated_mushroom, 3] = true;
+enemy_stats[obj_mutated_mushroom, 4] = "normal";
+
+enemy_stats[obj_mutated_mushroom, enemy_stats_normal.hp] = 35;
+enemy_stats[obj_mutated_mushroom, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_mutated_mushroom, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_mutated_mushroom, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_mutated_mushroom, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_mutated_mushroom, enemy_stats_normal.money_drop] = 13;
+
+//Maskenmann(25)
+enemy_stats[obj_mask_man, 0] = "Maskenmann";
+enemy_stats[obj_mask_man, 1] = "Er wird Rache üben";
+enemy_stats[obj_mask_man, 2] = true;
+enemy_stats[obj_mask_man, 3] = true;
+enemy_stats[obj_mask_man, 4] = "normal";
+
+enemy_stats[obj_mask_man, enemy_stats_normal.hp] = 30;
+enemy_stats[obj_mask_man, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_mask_man, enemy_stats_normal.attack_speed] = 70;
+enemy_stats[obj_mask_man, enemy_stats_normal.max_speed] = 2.4;
+enemy_stats[obj_mask_man, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_mask_man, enemy_stats_normal.money_drop] = 14;
+
+//Fliegende Maske(26)
+enemy_stats[obj_flying_mask, 0] = "Fliegende Maske";
+enemy_stats[obj_flying_mask, 1] = "Die Rache des Maskenmanns";
+enemy_stats[obj_flying_mask, 2] = true;
+enemy_stats[obj_flying_mask, 3] = true;
+enemy_stats[obj_flying_mask, 4] = "normal";
+
+enemy_stats[obj_flying_mask, enemy_stats_normal.hp] = 15;
+enemy_stats[obj_flying_mask, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_flying_mask, enemy_stats_normal.attack_speed] = 30;
+enemy_stats[obj_flying_mask, enemy_stats_normal.max_speed] = 2.4;
+enemy_stats[obj_flying_mask, enemy_stats_normal.xp_drop] = 8;
+enemy_stats[obj_flying_mask, enemy_stats_normal.money_drop] = 2;
+
+//Schamane(27)
+enemy_stats[obj_shaman, 0] = "Schamane";
+enemy_stats[obj_shaman, 1] = "Heilt deine Gegner";
+enemy_stats[obj_shaman, 2] = true;
+enemy_stats[obj_shaman, 3] = true;
+enemy_stats[obj_shaman, 4] = "normal";
+
+enemy_stats[obj_shaman, enemy_stats_normal.hp] = 60;
+enemy_stats[obj_shaman, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_shaman, enemy_stats_normal.attack_speed] = 30;
+enemy_stats[obj_shaman, enemy_stats_normal.max_speed] = 3;
+enemy_stats[obj_shaman, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_shaman, enemy_stats_normal.money_drop] = 15;
+
+//Symphatischer Vogel(28)
+enemy_stats[obj_symphalic_bird, 0] = "Symphatischer Vogel";
+enemy_stats[obj_symphalic_bird, 1] = "Sie sind sehr laut";
+enemy_stats[obj_symphalic_bird, 2] = true;
+enemy_stats[obj_symphalic_bird, 3] = true;
+enemy_stats[obj_symphalic_bird, 4] = "normal";
+
+enemy_stats[obj_symphalic_bird, enemy_stats_normal.hp] = 30;
+enemy_stats[obj_symphalic_bird, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_symphalic_bird, enemy_stats_normal.attack_speed] = 30;
+enemy_stats[obj_symphalic_bird, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_symphalic_bird, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_symphalic_bird, enemy_stats_normal.money_drop] = 6;
+
+//Bärenfalle(29)
+enemy_stats[obj_trap, 0] = "Bärenfalle";
+enemy_stats[obj_trap, 1] = "Vorsicht! Nicht reintreten!";
+enemy_stats[obj_trap, 2] = false;
+enemy_stats[obj_trap, 3] = true;
+enemy_stats[obj_trap, 4] = "normal";
+
+enemy_stats[obj_trap, enemy_stats_normal.hp] = 15;
+enemy_stats[obj_trap, enemy_stats_normal.damage] = 30;
+enemy_stats[obj_trap, enemy_stats_normal.attack_speed] = 30;
+enemy_stats[obj_trap, enemy_stats_normal.max_speed] = 0;
+enemy_stats[obj_trap, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_trap, enemy_stats_normal.money_drop] = 14;
+
+//Lianenfalle(30)
+enemy_stats[obj_liane, 0] = "Lianenfalle";
+enemy_stats[obj_liane, 1] = "Und schon kannst du dich nicht mehr bewegen";
+enemy_stats[obj_liane, 2] = false;
+enemy_stats[obj_liane, 3] = true;
+enemy_stats[obj_liane, 4] = "normal";
+
+enemy_stats[obj_liane, enemy_stats_normal.hp] = 40;
+enemy_stats[obj_liane, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_liane, enemy_stats_normal.attack_speed] = 20;
+enemy_stats[obj_liane, enemy_stats_normal.max_speed] = 0;
+enemy_stats[obj_liane, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_liane, enemy_stats_normal.money_drop] = 10;
 </string>
           </argument>
         </arguments>

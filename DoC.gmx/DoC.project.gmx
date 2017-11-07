@@ -1248,6 +1248,9 @@
           <object>objects\obj_barrel</object>
         </objects>
       </objects>
+      <objects name="Falle">
+        <object>objects\obj_quicksand</object>
+      </objects>
     </objects>
     <objects name="HUD">
       <object>objects\obj_hud</object>
@@ -1852,7 +1855,8 @@
           <object>objects\obj_fallen_unbewegliche_objekte</object>
           <object>objects\obj_mushroom</object>
           <object>objects\obj_creeper</object>
-          <object>objects\obj_quicksand</object>
+          <object>objects\obj_liane</object>
+          <object>objects\obj_trap</object>
         </objects>
         <objects name="Damage-Indikator">
           <object>objects\obj_damage_ind</object>
@@ -1888,6 +1892,12 @@
             <object>objects\obj_swamp_tree</object>
             <object>objects\obj_mud_golem</object>
           </objects>
+          <objects name="Ruinen">
+            <object>objects\obj_kamicat</object>
+            <object>objects\obj_flying_mask</object>
+            <object>objects\obj_mask_man</object>
+            <object>objects\obj_mutated_mushroom</object>
+          </objects>
         </objects>
         <objects name="Fernkampf">
           <object>objects\obj_fernkampf_enemy</object>
@@ -1896,6 +1906,10 @@
             <object>objects\obj_forest_penguin_bullet</object>
             <object>objects\obj_evil_budgerigar_of_the_forest</object>
             <object>objects\obj_slug</object>
+          </objects>
+          <objects name="Ruinen">
+            <object>objects\obj_shaman</object>
+            <object>objects\obj_symphalic_bird</object>
           </objects>
         </objects>
         <objects name="Training">
@@ -1910,6 +1924,8 @@
           <object>objects\obj_sonic_wave_bullet_enemy</object>
           <object>objects\obj_slug_snot_bullet</object>
           <object>objects\obj_bullet_carnivora</object>
+          <object>objects\obj_shaman_bullet</object>
+          <object>objects\obj_poison_fog</object>
           <object>objects\obj_bullet_enemy</object>
           <object>objects\obj_hitbox_enemy</object>
         </objects>
