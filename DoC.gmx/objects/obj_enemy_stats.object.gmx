@@ -745,6 +745,111 @@ enemy_stats[obj_liane, enemy_stats_normal.money_drop] = 10;
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Gegner 31-40
+
+//Sirene(31)
+enemy_stats[obj_siren, 0] = "Sirene";
+enemy_stats[obj_siren, 1] = "Nein, nicht die von der Feuerwehr";
+enemy_stats[obj_siren, 2] = true;
+enemy_stats[obj_siren, 3] = true;
+enemy_stats[obj_siren, 4] = "normal";
+
+enemy_stats[obj_siren, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_siren, enemy_stats_normal.damage] = 8;
+enemy_stats[obj_siren, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_siren, enemy_stats_normal.max_speed] = 2.3;
+enemy_stats[obj_siren, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_siren, enemy_stats_normal.money_drop] = 14;
+
+//Würgeschlinge(32)
+enemy_stats[obj_twist_knot, 0] = "Würgeschlinge";
+enemy_stats[obj_twist_knot, 1] = "Die bewegliche Variante der Liane";
+enemy_stats[obj_twist_knot, 2] = true;
+enemy_stats[obj_twist_knot, 3] = true;
+enemy_stats[obj_twist_knot, 4] = "normal";
+
+enemy_stats[obj_twist_knot, enemy_stats_normal.hp] = 30;
+enemy_stats[obj_twist_knot, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_twist_knot, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_twist_knot, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_twist_knot, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_twist_knot, enemy_stats_normal.money_drop] = 13;
+
+//Alienkleriker(33)
+enemy_stats[obj_alien_cleric, 0] = "Alienkleriker";
+enemy_stats[obj_alien_cleric, 1] = "Tut nichts außer die Gegner zu heilen";
+enemy_stats[obj_alien_cleric, 2] = true;
+enemy_stats[obj_alien_cleric, 3] = true;
+enemy_stats[obj_alien_cleric, 4] = "normal";
+
+enemy_stats[obj_alien_cleric, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_alien_cleric, enemy_stats_normal.damage] = 25;
+enemy_stats[obj_alien_cleric, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_alien_cleric, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_alien_cleric, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_alien_cleric, enemy_stats_normal.money_drop] = 13;
+
+//Skelett(Schwert)(34)
+enemy_stats[obj_skeleton_sword, 0] = "Schwertskelett";
+enemy_stats[obj_skeleton_sword, 1] = "Ich glaub nicht, dass man ein Schwert so verwendet";
+enemy_stats[obj_skeleton_sword, 2] = true;
+enemy_stats[obj_skeleton_sword, 3] = true;
+enemy_stats[obj_skeleton_sword, 4] = "normal";
+
+enemy_stats[obj_skeleton_sword, enemy_stats_normal.hp] = 35;
+enemy_stats[obj_skeleton_sword, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_skeleton_sword, enemy_stats_normal.attack_speed] = 30;
+enemy_stats[obj_skeleton_sword, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_skeleton_sword, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_skeleton_sword, enemy_stats_normal.money_drop] = 11;
+
+//Skelett(Bogen)(35)
+enemy_stats[obj_skeleton_bow, 0] = "Bogenskelett";
+enemy_stats[obj_skeleton_bow, 1] = "Ich glaub auch nicht, dass man einen Bogen so verwendet";
+enemy_stats[obj_skeleton_bow, 2] = true;
+enemy_stats[obj_skeleton_bow, 3] = true;
+enemy_stats[obj_skeleton_bow, 4] = "normal";
+
+enemy_stats[obj_skeleton_bow, enemy_stats_normal.hp] = 45;
+enemy_stats[obj_skeleton_bow, enemy_stats_normal.damage] = 15;
+enemy_stats[obj_skeleton_bow, enemy_stats_normal.attack_speed] = 70;
+enemy_stats[obj_skeleton_bow, enemy_stats_normal.max_speed] = 2.6;
+enemy_stats[obj_skeleton_bow, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_skeleton_bow, enemy_stats_normal.money_drop] = 13;
+
+//Verzogenes Gör(36)
+enemy_stats[obj_spoiled_brat, 0] = "Verzogenes Gör";
+enemy_stats[obj_spoiled_brat, 1] = "Sitzt bloß da und heult";
+enemy_stats[obj_spoiled_brat, 2] = false;
+enemy_stats[obj_spoiled_brat, 3] = true;
+enemy_stats[obj_spoiled_brat, 4] = "normal";
+
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.hp] = 70;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.max_speed] = 0;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.money_drop] = 18;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Minibosse 1-10
 
 //Fleischfressene Pflanze(1)

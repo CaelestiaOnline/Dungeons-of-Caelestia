@@ -21,5 +21,5 @@ var object = collision_ellipse(
     
 if(object != noone){
     scr_deal_player_damage(damage);
-    scr_effect(effc, stage, obj_player);
+    if(effc != 0) scr_effect(effc, stage, obj_player);
 }

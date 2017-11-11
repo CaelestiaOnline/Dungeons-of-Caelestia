@@ -1850,6 +1850,7 @@
           <object>objects\obj_creeper</object>
           <object>objects\obj_liane</object>
           <object>objects\obj_trap</object>
+          <object>objects\obj_spoiled_brat</object>
         </objects>
         <objects name="Damage-Indikator">
           <object>objects\obj_damage_ind</object>
@@ -1890,6 +1891,11 @@
             <object>objects\obj_flying_mask</object>
             <object>objects\obj_mask_man</object>
             <object>objects\obj_mutated_mushroom</object>
+            <object>objects\obj_siren</object>
+            <object>objects\obj_twist_knot</object>
+          </objects>
+          <objects name="Dungeon">
+            <object>objects\obj_skeleton_bow</object>
           </objects>
         </objects>
         <objects name="Fernkampf">
@@ -1903,6 +1909,10 @@
           <objects name="Ruinen">
             <object>objects\obj_shaman</object>
             <object>objects\obj_symphalic_bird</object>
+          </objects>
+          <objects name="Dungeon">
+            <object>objects\obj_skeleton_sword</object>
+            <object>objects\obj_alien_cleric</object>
           </objects>
         </objects>
         <objects name="Training">
@@ -1918,6 +1928,7 @@
           <object>objects\obj_slug_snot_bullet</object>
           <object>objects\obj_bullet_carnivora</object>
           <object>objects\obj_shaman_bullet</object>
+          <object>objects\obj_skeleton_sword_bullet</object>
           <object>objects\obj_poison_fog</object>
           <object>objects\obj_bullet_enemy</object>
           <object>objects\obj_hitbox_enemy</object>
