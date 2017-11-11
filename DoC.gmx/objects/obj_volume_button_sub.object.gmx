@@ -58,11 +58,11 @@ if(confirmed_hover) {
     }
 
     if(confirmed_left) {
-        scr_volume_add(global.volume_stage);
+        scr_volume_add(-global.volume_stage);
     }
 }
 
-draw_sprite(spr_undefined, 0, x, y);
+draw_sprite(spr_volume_sub, 0, x, y);
 </string>
           </argument>
         </arguments>

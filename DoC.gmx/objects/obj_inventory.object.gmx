@@ -99,8 +99,10 @@ show_inv = false;
           <argument>
             <kind>1</kind>
             <string>///Item-Stats
-item_stats_title = "Hallo, Fremder!";
-item_stats_desc = "Mit dem Mauszeiger ueber Item hovern, um momentan total unvollstaendige Beschreibung anzuzeigen!";
+item_stats_title_old = "Hallo, Fremder!";
+item_stats_title = item_stats_title_old;
+item_stats_desc_old = "Mit dem Mauszeiger ueber Item hovern, um momentan total unvollstaendige Beschreibung anzuzeigen!";
+item_stats_desc = item_stats_desc_old;
 </string>
           </argument>
         </arguments>

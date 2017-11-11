@@ -58,11 +58,11 @@ if(confirmed_hover) {
     }
 
     if(confirmed_left) {
-        var audio = audio_play_sound(snd_volume_test, 1, false);
+        scr_volume_add(global.volume_stage);
     }
 }
 
-draw_sprite(spr_undefined, 0, x, y);
+draw_sprite(spr_volume_add, 0, x, y);
 </string>
           </argument>
         </arguments>
