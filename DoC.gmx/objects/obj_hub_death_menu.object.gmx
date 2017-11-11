@@ -147,7 +147,7 @@ new_skillpoints = int64(floor(progress.level) - floor(level_old));
 
 progress.skillpoints += new_skillpoints;
 
-new_hub_money = stats.collected_run_money/128;
+new_hub_money = stats.collected_run_money/64;
 
 progress.hub_money += new_hub_money;
 

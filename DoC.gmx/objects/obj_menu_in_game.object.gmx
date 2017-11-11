@@ -76,6 +76,11 @@ inv_button_y = inv_menu_y1 + 32;
 stats_button = 0;
 stats_button_x = inv_menu_x2 - 8*6 - 24 - 48*5;
 stats_button_y = inv_menu_y1 + 32;
+
+//Volume Button
+volume_button = 0;
+volume_button_x = inv_menu_x2 - 8*11 - 24 - 48*10;
+volume_button_y = inv_menu_y1 + 32;
 </string>
           </argument>
         </arguments>
@@ -115,6 +120,9 @@ if(admin.game_paused) {
     if(stats_button = 0) {
         stats_button = instance_create(stats_button_x, stats_button_y, obj_inv_button_stats);
     }
+    if(volume_button = 0) {
+        volume_button = instance_create(volume_button_x, volume_button_y, obj_volume_button);
+    }
     
 } else {
     with(exit_button) {
@@ -137,6 +145,10 @@ if(admin.game_paused) {
         instance_destroy();
     }
     stats_button = 0;
+    with(volume_button) {
+        instance_destroy();
+    }
+    volume_button = 0;
 }
 
 </string>

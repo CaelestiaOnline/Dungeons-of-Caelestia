@@ -1907,7 +1907,7 @@ item[items.mana_fist_of_the_north_star_orb, 5] = "legendary";
 item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.ability] = "attack_mana_fist_of_the_north_star";
 item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.ability_strength] = 666;
 item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.mana_usage] = 100;
-item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.cooldown] = room_speed*666;
+item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.cooldown] = room_speed*66.6;
 item_stats[items.mana_fist_of_the_north_star_orb, item_stats_mag.misc] = "Nur ein Einsatz.";
 
 //Peacekeeper (95)

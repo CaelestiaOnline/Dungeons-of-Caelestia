@@ -82,6 +82,7 @@ if(radius &gt; sqrt(power( display_get_gui_width()/2  - 100, 2) + power( display
     stagetwo = true;
     admin.game_paused = status;
     scr_set_in_game_menu_type(type, status);
+    if(status) scr_reset_item_stats();
     
     radius = sqrt(power( display_get_gui_width()/2  - 100, 2) + power( display_get_gui_height()/2, 2)) + 200;
 } 
