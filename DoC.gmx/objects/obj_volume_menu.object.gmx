@@ -36,23 +36,18 @@ exit_button = instance_create(exit_button_x, exit_button_y, obj_inv_button_main_
 test_button_x = display_get_gui_width()/2 + 400;
 test_button_y = display_get_gui_height()/2;
 
-test_button = instance_create(test_button_x, test_button_y, obj_volume_button_test_volume);
+test_button = instance_create(test_button_x, test_button_y, obj_volume_button_test);
 
-//Add_button
-add_button_x = display_get_gui_width()/2 + 200;
-add_button_y = display_get_gui_height()/2;
+//Volume_button
+volume_button_x = display_get_gui_width()/2;
+volume_button_y = display_get_gui_height()/2 + 150;
 
-add_button = instance_create(add_button_x, add_button_y, obj_volume_button_add_volume);
+volume_button = instance_create(volume_button_x, volume_button_y, obj_volume_button);
 
-//Test_button
-sub_button_x = display_get_gui_width()/2 - 200;
-sub_button_y = display_get_gui_height()/2;
-
-sub_button = instance_create(sub_button_x, sub_button_y, obj_volume_button_sub_volume);
 
 //Volume Text
 volume_x = display_get_gui_width()/2;
-volume_y = display_get_gui_height()/2;
+volume_y = display_get_gui_height()/2 - 150;
 </string>
           </argument>
         </arguments>
@@ -73,41 +68,8 @@ volume_y = display_get_gui_height()/2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Volume
-global.volume_stage = 0.05;
-
+            <string>///Mouse
 mouse.is_visible = true;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Mausrad
-
-if(mouse_wheel_up()) {
-    scr_volume_add(global.volume_stage);
-}
-
-if(mouse_wheel_down()) {
-    scr_volume_add(-global.volume_stage);
-}
 </string>
           </argument>
         </arguments>
@@ -133,48 +95,9 @@ if(mouse_wheel_down()) {
             <string>///Destroy Buttons
 instance_destroy(exit_button);
 instance_destroy(test_button);
-instance_destroy(add_button);
-instance_destroy(sub_button);
+instance_destroy(volume_button);
 
 mouse.is_visible = false;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw volume
-draw_set_font(fnt_main_menu);
-draw_set_colour(c_white);
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-
-var volume = string(global.volume*100) + "%";
-
-draw_set_alpha(0.5);
-draw_text(volume_x, volume_y, volume);
-
-draw_set_alpha(1);
-draw_text(volume_x, volume_y, volume);
-
-draw_set_halign(fa_left);
-draw_set_valign(fa_top);
 </string>
           </argument>
         </arguments>

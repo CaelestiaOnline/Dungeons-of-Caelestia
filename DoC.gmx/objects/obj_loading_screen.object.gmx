@@ -171,21 +171,30 @@ loading_percent = 0;
             <kind>1</kind>
             <string>///Skript Variablen
 
+
 //Goal
-goal = obj_loading_screen_stats.loading_screen_goal;
+if(instance_exists(obj_loading_screen_stats)) {
+    goal = obj_loading_screen_stats.loading_screen_goal;
+} else goal = rm_main_menu;
 
 //Time
-loading_screen_time = obj_loading_screen_stats.loading_screen_time;
+if(instance_exists(obj_loading_screen_stats)) {
+    loading_screen_time = obj_loading_screen_stats.loading_screen_time;
+} else loading_screen_time = 600;
 pre_loading_screen_time = loading_screen_time;
 alarm_set(1, loading_screen_time);
 
 //Heading
+if(instance_exists(obj_loading_screen_stats)) {
 loading_screen_heading = obj_loading_screen_stats.loading_screen_heading;
+} else loading_screen_heading = "";
 if(loading_screen_heading == "") loading_screen_heading = "LOADING";
 
 points = "";
 
 if(epileptic_mode) loading_screen_heading = "DELETING BRAIN CELLS";
+
+
 </string>
           </argument>
         </arguments>

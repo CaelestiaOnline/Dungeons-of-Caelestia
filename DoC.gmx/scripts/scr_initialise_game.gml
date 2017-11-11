@@ -20,11 +20,12 @@ global.grid = 0;
 scr_update_grid();
 
 //Splash - Screen
-global.display_splash_screen = true;
+global.display_splash_screen = false;
 
 //Sound
+global.volume_stage = 5;
 scr_read_volume();
-sound_global_volume(global.volume);
+scr_set_global_volume();
 
 //Objekte
 //Erzeuge Admin-Objekt
