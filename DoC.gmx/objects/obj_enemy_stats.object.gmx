@@ -830,6 +830,139 @@ enemy_stats[obj_spoiled_brat, enemy_stats_normal.attack_speed] = 40;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.money_drop] = 18;
+
+//Steingolem(37)
+enemy_stats[obj_stone_golem, 0] = "Steingolem";
+enemy_stats[obj_stone_golem, 1] = "Was ist das? Stein!";
+enemy_stats[obj_stone_golem, 2] = true;
+enemy_stats[obj_stone_golem, 3] = true;
+enemy_stats[obj_stone_golem, 4] = "normal";
+
+enemy_stats[obj_stone_golem, enemy_stats_normal.hp] = 150;
+enemy_stats[obj_stone_golem, enemy_stats_normal.damage] = 15;
+enemy_stats[obj_stone_golem, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_stone_golem, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_stone_golem, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_stone_golem, enemy_stats_normal.money_drop] = 15;
+
+//Erdgolem(38)
+enemy_stats[obj_earth_golem, 0] = "Erdgolem";
+enemy_stats[obj_earth_golem, 1] = "Ziemlich dreckig";
+enemy_stats[obj_earth_golem, 2] = true;
+enemy_stats[obj_earth_golem, 3] = true;
+enemy_stats[obj_earth_golem, 4] = "normal";
+
+enemy_stats[obj_earth_golem, enemy_stats_normal.hp] = 100;
+enemy_stats[obj_earth_golem, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_earth_golem, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_earth_golem, enemy_stats_normal.max_speed] = 2.1;
+enemy_stats[obj_earth_golem, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_earth_golem, enemy_stats_normal.money_drop] = 15;
+
+//Eisgolem(38)
+enemy_stats[obj_ice_golem, 0] = "Eisgolem";
+enemy_stats[obj_ice_golem, 1] = "K...kalt";
+enemy_stats[obj_ice_golem, 2] = true;
+enemy_stats[obj_ice_golem, 3] = true;
+enemy_stats[obj_ice_golem, 4] = "normal";
+
+enemy_stats[obj_ice_golem, enemy_stats_normal.hp] = 90;
+enemy_stats[obj_ice_golem, enemy_stats_normal.damage] = 17;
+enemy_stats[obj_ice_golem, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_ice_golem, enemy_stats_normal.max_speed] = 1.9;
+enemy_stats[obj_ice_golem, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_ice_golem, enemy_stats_normal.money_drop] = 15;
+
+//Feuergolem(39)
+enemy_stats[obj_fire_golem, 0] = "Feuergolem";
+enemy_stats[obj_fire_golem, 1] = "Heiß!";
+enemy_stats[obj_fire_golem, 2] = true;
+enemy_stats[obj_fire_golem, 3] = true;
+enemy_stats[obj_fire_golem, 4] = "normal";
+
+enemy_stats[obj_fire_golem, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_fire_golem, enemy_stats_normal.damage] = 25;
+enemy_stats[obj_fire_golem, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_fire_golem, enemy_stats_normal.max_speed] = 2.9;
+enemy_stats[obj_fire_golem, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_fire_golem, enemy_stats_normal.money_drop] = 15;
+
+//Wassergolem(40)
+enemy_stats[obj_water_golem, 0] = "Wassergolem";
+enemy_stats[obj_water_golem, 1] = "Heilt Gegner";
+enemy_stats[obj_water_golem, 2] = true;
+enemy_stats[obj_water_golem, 3] = true;
+enemy_stats[obj_water_golem, 4] = "normal";
+
+enemy_stats[obj_water_golem, enemy_stats_normal.hp] = 70;
+enemy_stats[obj_water_golem, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_water_golem, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_water_golem, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_water_golem, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_water_golem, enemy_stats_normal.money_drop] = 15;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gegner 41-50
+
+//Luftgolem(41)
+enemy_stats[obj_air_golem, 0] = "Luftgolem";
+enemy_stats[obj_air_golem, 1] = "Speedboost!";
+enemy_stats[obj_air_golem, 2] = true;
+enemy_stats[obj_air_golem, 3] = true;
+enemy_stats[obj_air_golem, 4] = "normal";
+
+enemy_stats[obj_air_golem, enemy_stats_normal.hp] = 80;
+enemy_stats[obj_air_golem, enemy_stats_normal.damage] = 17;
+enemy_stats[obj_air_golem, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_air_golem, enemy_stats_normal.max_speed] = 3;
+enemy_stats[obj_air_golem, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_air_golem, enemy_stats_normal.money_drop] = 15;
+
+//Holzgolem(42)
+enemy_stats[obj_wood_golem, 0] = "Holzgolem";
+enemy_stats[obj_wood_golem, 1] = "Er ist stärker, als er sich anhört";
+enemy_stats[obj_wood_golem, 2] = true;
+enemy_stats[obj_wood_golem, 3] = true;
+enemy_stats[obj_wood_golem, 4] = "normal";
+
+enemy_stats[obj_wood_golem, enemy_stats_normal.hp] = 100;
+enemy_stats[obj_wood_golem, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_wood_golem, enemy_stats_normal.attack_speed] = 70;
+enemy_stats[obj_wood_golem, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_wood_golem, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_wood_golem, enemy_stats_normal.money_drop] = 15;
+
+//Aethergolem(43)
+enemy_stats[obj_aether_golem, 0] = "Aethergolem";
+enemy_stats[obj_aether_golem, 1] = "Beinahe schon transzendent";
+enemy_stats[obj_aether_golem, 2] = true;
+enemy_stats[obj_aether_golem, 3] = true;
+enemy_stats[obj_aether_golem, 4] = "normal";
+
+enemy_stats[obj_aether_golem, enemy_stats_normal.hp] = 120;
+enemy_stats[obj_aether_golem, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_aether_golem, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_aether_golem, enemy_stats_normal.max_speed] = 2.8;
+enemy_stats[obj_aether_golem, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_aether_golem, enemy_stats_normal.money_drop] = 15;
 </string>
           </argument>
         </arguments>
