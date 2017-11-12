@@ -143,6 +143,12 @@ switch(ability) {
             case 2:
                 strength_mult = +0.4;
                 break;
+            case -1:
+                strength_mult = -0.2;
+                break;
+            case -2:
+                strength_mult = -0.4;
+                break;
         }
         break;
     //Stun?
