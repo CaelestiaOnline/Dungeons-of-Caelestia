@@ -963,6 +963,76 @@ enemy_stats[obj_aether_golem, enemy_stats_normal.attack_speed] = 40;
 enemy_stats[obj_aether_golem, enemy_stats_normal.max_speed] = 2.8;
 enemy_stats[obj_aether_golem, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_aether_golem, enemy_stats_normal.money_drop] = 15;
+
+//Gorgone(44)
+enemy_stats[obj_gorgon, 0] = "Gorgone";
+enemy_stats[obj_gorgon, 1] = "Sie ist so hässlich, dass du beim Anblick versteinert wirst";
+enemy_stats[obj_gorgon, 2] = true;
+enemy_stats[obj_gorgon, 3] = true;
+enemy_stats[obj_gorgon, 4] = "normal";
+
+enemy_stats[obj_gorgon, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_gorgon, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_gorgon, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_gorgon, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_gorgon, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_gorgon, enemy_stats_normal.money_drop] = 10;
+
+//Gargoyle(45)
+enemy_stats[obj_gargoyle, 0] = "Gargoyle";
+enemy_stats[obj_gargoyle, 1] = "Steinerne Abbilder von der Kirchenfassade";
+enemy_stats[obj_gargoyle, 2] = true;
+enemy_stats[obj_gargoyle, 3] = true;
+enemy_stats[obj_gargoyle, 4] = "normal";
+
+enemy_stats[obj_gargoyle, enemy_stats_normal.hp] = 100;
+enemy_stats[obj_gargoyle, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_gargoyle, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_gargoyle, enemy_stats_normal.max_speed] = 1.8;
+enemy_stats[obj_gargoyle, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_gargoyle, enemy_stats_normal.money_drop] = 12;
+
+//Nemeischer Löwe(46)
+enemy_stats[obj_nemeian_lion, 0] = "Nemeischer Löwe";
+enemy_stats[obj_nemeian_lion, 1] = "Mit ziemlich dickem Pelz";
+enemy_stats[obj_nemeian_lion, 2] = true;
+enemy_stats[obj_nemeian_lion, 3] = true;
+enemy_stats[obj_nemeian_lion, 4] = "normal";
+
+enemy_stats[obj_nemeian_lion, enemy_stats_normal.hp] = 120;
+enemy_stats[obj_nemeian_lion, enemy_stats_normal.damage] = 12;
+enemy_stats[obj_nemeian_lion, enemy_stats_normal.attack_speed] = 56;
+enemy_stats[obj_nemeian_lion, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_nemeian_lion, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_nemeian_lion, enemy_stats_normal.money_drop] = 18;
+
+//Fleischfressendes Pferd(47)
+enemy_stats[obj_carnivorous_horse, 0] = "Fleischfressendes Pferd";
+enemy_stats[obj_carnivorous_horse, 1] = "Hat dich zum Fressen gern";
+enemy_stats[obj_carnivorous_horse, 2] = true;
+enemy_stats[obj_carnivorous_horse, 3] = true;
+enemy_stats[obj_carnivorous_horse, 4] = "normal";
+
+enemy_stats[obj_carnivorous_horse, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_carnivorous_horse, enemy_stats_normal.damage] = 15;
+enemy_stats[obj_carnivorous_horse, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_carnivorous_horse, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_carnivorous_horse, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_carnivorous_horse, enemy_stats_normal.money_drop] = 18;
+
+//Einhorn(48)
+enemy_stats[obj_unicorn, 0] = "Einhorn";
+enemy_stats[obj_unicorn, 1] = "Wirkt Stärkezauber auf Gegner";
+enemy_stats[obj_unicorn, 2] = true;
+enemy_stats[obj_unicorn, 3] = true;
+enemy_stats[obj_unicorn, 4] = "normal";
+
+enemy_stats[obj_unicorn, enemy_stats_normal.hp] = 60;
+enemy_stats[obj_unicorn, enemy_stats_normal.damage] = 8;
+enemy_stats[obj_unicorn, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_unicorn, enemy_stats_normal.max_speed] = 2.8;
+enemy_stats[obj_unicorn, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_unicorn, enemy_stats_normal.money_drop] = 18;
 </string>
           </argument>
         </arguments>
