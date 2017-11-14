@@ -58,7 +58,7 @@ instance_destroy();
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -75,12 +75,9 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Überprüfung eines Treffers
+            <string>///Vergiftung
 if(instance_exists(origin_object)) {
-var hit = instance_place(x, y, obj_player);
-if(hit != noone) {
-    scr_effect(effect.poison, 2, obj_player)
-}
+    scr_effect(effect.poison, 2, obj_player);
 }
 </string>
           </argument>

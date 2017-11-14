@@ -1904,6 +1904,8 @@
           <objects name="Höhle">
             <object>objects\obj_gargoyle</object>
             <object>objects\obj_nemeian_lion</object>
+            <object>objects\obj_diamond_skeleton</object>
+            <object>objects\obj_automat</object>
             <object>objects\obj_unicorn</object>
             <object>objects\obj_carnivorous_horse</object>
           </objects>
@@ -1930,6 +1932,7 @@
           </objects>
           <objects name="Höhle">
             <object>objects\obj_gorgon</object>
+            <object>objects\obj_iron_bishop</object>
           </objects>
         </objects>
         <objects name="Training">
@@ -1951,6 +1954,7 @@
           <object>objects\obj_lightning</object>
           <object>objects\obj_snake</object>
           <object>objects\obj_poison_fog</object>
+          <object>objects\obj_explosion</object>
           <object>objects\obj_bullet_enemy</object>
           <object>objects\obj_hitbox_enemy</object>
         </objects>

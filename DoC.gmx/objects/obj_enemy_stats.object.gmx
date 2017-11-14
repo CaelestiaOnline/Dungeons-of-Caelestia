@@ -1033,6 +1033,83 @@ enemy_stats[obj_unicorn, enemy_stats_normal.attack_speed] = 40;
 enemy_stats[obj_unicorn, enemy_stats_normal.max_speed] = 2.8;
 enemy_stats[obj_unicorn, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_unicorn, enemy_stats_normal.money_drop] = 18;
+
+//Erzbischof(49)
+enemy_stats[obj_iron_bishop, 0] = "Erzbischof";
+enemy_stats[obj_iron_bishop, 1] = "Er bekämpft dich eisern";
+enemy_stats[obj_iron_bishop, 2] = true;
+enemy_stats[obj_iron_bishop, 3] = true;
+enemy_stats[obj_iron_bishop, 4] = "normal";
+
+enemy_stats[obj_iron_bishop, enemy_stats_normal.hp] = 80;
+enemy_stats[obj_iron_bishop, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_iron_bishop, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_iron_bishop, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_iron_bishop, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_iron_bishop, enemy_stats_normal.money_drop] = 20;
+
+//Diamantskelett(50)
+enemy_stats[obj_diamond_skeleton, 0] = "Diamantskelett";
+enemy_stats[obj_diamond_skeleton, 1] = "Hält mehr aus als die anderen Gegner";
+enemy_stats[obj_diamond_skeleton, 2] = true;
+enemy_stats[obj_diamond_skeleton, 3] = true;
+enemy_stats[obj_diamond_skeleton, 4] = "normal";
+
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.hp] = 100;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.money_drop] = 25;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Gegner 51-60
+
+//Quarzcharger(51)
+//enemy_stats[obj_diamond_skeleton, 0] = "Diamantskelett";
+//enemy_stats[obj_diamond_skeleton, 1] = "Hält mehr aus als die anderen Gegner";
+//enemy_stats[obj_diamond_skeleton, 2] = true;
+//enemy_stats[obj_diamond_skeleton, 3] = true;
+//enemy_stats[obj_diamond_skeleton, 4] = "normal";
+
+//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.hp] = 100;
+//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.damage] = 5;
+//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.attack_speed] = 40;
+//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.max_speed] = 2;
+//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.xp_drop] = 128;
+//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.money_drop] = 25;
+
+//Automat(52)
+enemy_stats[obj_automat, 0] = "Automat";
+enemy_stats[obj_automat, 1] = "Sehr instabil";
+enemy_stats[obj_automat, 2] = true;
+enemy_stats[obj_automat, 3] = true;
+enemy_stats[obj_automat, 4] = "normal";
+
+enemy_stats[obj_automat, enemy_stats_normal.hp] = 100;
+enemy_stats[obj_automat, enemy_stats_normal.damage] = 50;
+enemy_stats[obj_automat, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_automat, enemy_stats_normal.max_speed] = 3;
+enemy_stats[obj_automat, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_automat, enemy_stats_normal.money_drop] = 22;
 </string>
           </argument>
         </arguments>
