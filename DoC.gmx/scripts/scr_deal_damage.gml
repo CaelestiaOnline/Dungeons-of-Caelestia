@@ -13,7 +13,7 @@ if(string(self.object_index) == string(obj_hitbox_melee) || string(self.object_i
     damage *= player_stats.strength_mult;
 }
 
-if(object.damage_reduction != 0){
+if(object.damage_reduction != -1){
     damage *= object.damage_reduction;
 }
 

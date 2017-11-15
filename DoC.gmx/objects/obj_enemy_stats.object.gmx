@@ -1084,18 +1084,18 @@ enemy_stats[obj_diamond_skeleton, enemy_stats_normal.money_drop] = 25;
             <string>///Gegner 51-60
 
 //Quarzcharger(51)
-//enemy_stats[obj_diamond_skeleton, 0] = "Diamantskelett";
-//enemy_stats[obj_diamond_skeleton, 1] = "Hält mehr aus als die anderen Gegner";
-//enemy_stats[obj_diamond_skeleton, 2] = true;
-//enemy_stats[obj_diamond_skeleton, 3] = true;
-//enemy_stats[obj_diamond_skeleton, 4] = "normal";
+/*enemy_stats[obj_diamond_skeleton, 0] = "Diamantskelett";
+enemy_stats[obj_diamond_skeleton, 1] = "Hält mehr aus als die anderen Gegner";
+enemy_stats[obj_diamond_skeleton, 2] = true;
+enemy_stats[obj_diamond_skeleton, 3] = true;
+enemy_stats[obj_diamond_skeleton, 4] = "normal";
 
-//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.hp] = 100;
-//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.damage] = 5;
-//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.attack_speed] = 40;
-//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.max_speed] = 2;
-//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.xp_drop] = 128;
-//enemy_stats[obj_diamond_skeleton, enemy_stats_normal.money_drop] = 25;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.hp] = 100;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.max_speed] = 2;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_diamond_skeleton, enemy_stats_normal.money_drop] = 25;*/
 
 //Automat(52)
 enemy_stats[obj_automat, 0] = "Automat";
@@ -1110,6 +1110,76 @@ enemy_stats[obj_automat, enemy_stats_normal.attack_speed] = 60;
 enemy_stats[obj_automat, enemy_stats_normal.max_speed] = 3;
 enemy_stats[obj_automat, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_automat, enemy_stats_normal.money_drop] = 22;
+
+//Glasmensch(53)
+enemy_stats[obj_glass_human, 0] = "Glasmensch";
+enemy_stats[obj_glass_human, 1] = "Äußerst zerbrechlich";
+enemy_stats[obj_glass_human, 2] = true;
+enemy_stats[obj_glass_human, 3] = true;
+enemy_stats[obj_glass_human, 4] = "normal";
+
+enemy_stats[obj_glass_human, enemy_stats_normal.hp] = 30;
+enemy_stats[obj_glass_human, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_glass_human, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_glass_human, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_glass_human, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_glass_human, enemy_stats_normal.money_drop] = 15;
+
+//Böser Zwerg(54)
+enemy_stats[obj_evil_dwarf, 0] = "Böser Zwerg";
+enemy_stats[obj_evil_dwarf, 1] = "Stellt Geschütztürme auf";
+enemy_stats[obj_evil_dwarf, 2] = true;
+enemy_stats[obj_evil_dwarf, 3] = true;
+enemy_stats[obj_evil_dwarf, 4] = "normal";
+
+enemy_stats[obj_evil_dwarf, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_evil_dwarf, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_evil_dwarf, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_evil_dwarf, enemy_stats_normal.max_speed] = 2.8;
+enemy_stats[obj_evil_dwarf, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_evil_dwarf, enemy_stats_normal.money_drop] = 17;
+
+//Geschützturm(55)
+enemy_stats[obj_tower, 0] = "Geschützturm";
+enemy_stats[obj_tower, 1] = "Wird vom Zwerg aufgestellt";
+enemy_stats[obj_tower, 2] = true;
+enemy_stats[obj_tower, 3] = true;
+enemy_stats[obj_tower, 4] = "normal";
+
+enemy_stats[obj_tower, enemy_stats_normal.hp] = 30;
+enemy_stats[obj_tower, enemy_stats_normal.damage] = 25;
+enemy_stats[obj_tower, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_tower, enemy_stats_normal.max_speed] = 0;
+enemy_stats[obj_tower, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_tower, enemy_stats_normal.money_drop] = 12;
+
+//Ghul(56)
+enemy_stats[obj_ghul, 0] = "Ghul";
+enemy_stats[obj_ghul, 1] = "Der war schonmal tot";
+enemy_stats[obj_ghul, 2] = true;
+enemy_stats[obj_ghul, 3] = true;
+enemy_stats[obj_ghul, 4] = "normal";
+
+enemy_stats[obj_ghul, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_ghul, enemy_stats_normal.damage] = 25;
+enemy_stats[obj_ghul, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_ghul, enemy_stats_normal.max_speed] = 3.1;
+enemy_stats[obj_ghul, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_ghul, enemy_stats_normal.money_drop] = 20;
+
+//Banshee(57)
+/*enemy_stats[obj_ghul, 0] = "Banshee";
+enemy_stats[obj_ghul, 1] = "Eine Todesfee";
+enemy_stats[obj_ghul, 2] = true;
+enemy_stats[obj_ghul, 3] = true;
+enemy_stats[obj_ghul, 4] = "normal";
+
+enemy_stats[obj_ghul, enemy_stats_normal.hp] = 70;
+enemy_stats[obj_ghul, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_ghul, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_ghul, enemy_stats_normal.max_speed] = 2.8;
+enemy_stats[obj_ghul, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_ghul, enemy_stats_normal.money_drop] = 18;
 </string>
           </argument>
         </arguments>

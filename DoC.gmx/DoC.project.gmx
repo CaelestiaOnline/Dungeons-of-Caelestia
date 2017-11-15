@@ -1242,6 +1242,7 @@
       </objects>
       <objects name="Falle">
         <object>objects\obj_quicksand</object>
+        <object>objects\obj_glass</object>
       </objects>
     </objects>
     <objects name="HUD">
@@ -1851,6 +1852,7 @@
           <object>objects\obj_liane</object>
           <object>objects\obj_trap</object>
           <object>objects\obj_spoiled_brat</object>
+          <object>objects\obj_tower</object>
         </objects>
         <objects name="Damage-Indikator">
           <object>objects\obj_damage_ind</object>
@@ -1906,8 +1908,12 @@
             <object>objects\obj_nemeian_lion</object>
             <object>objects\obj_diamond_skeleton</object>
             <object>objects\obj_automat</object>
+            <object>objects\obj_glass_human</object>
             <object>objects\obj_unicorn</object>
             <object>objects\obj_carnivorous_horse</object>
+          </objects>
+          <objects name="Hölle">
+            <object>objects\obj_ghul</object>
           </objects>
         </objects>
         <objects name="Fernkampf">
@@ -1932,6 +1938,7 @@
           </objects>
           <objects name="Höhle">
             <object>objects\obj_gorgon</object>
+            <object>objects\obj_evil_dwarf</object>
             <object>objects\obj_iron_bishop</object>
           </objects>
         </objects>
@@ -1953,6 +1960,8 @@
           <object>objects\obj_water</object>
           <object>objects\obj_lightning</object>
           <object>objects\obj_snake</object>
+          <object>objects\obj_shotgun_bullet_enemy</object>
+          <object>objects\obj_bullet_tower</object>
           <object>objects\obj_poison_fog</object>
           <object>objects\obj_explosion</object>
           <object>objects\obj_bullet_enemy</object>

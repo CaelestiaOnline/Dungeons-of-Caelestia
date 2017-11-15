@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_gegner</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,20 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
-event_inherited();
-
-//Größe der Effektellipse
-max_y = 50;
-max_x = 75;
-
-radius = 100;
+            <string>///Effekt
+effc = effect.poison;
+stage = 2;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="4" ename="obj_player">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,51 +50,9 @@ radius = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Triggered
-event_inherited();
+            <string>///Effekt
 
-scr_trigger_enemy(radius);
-if(!triggered) exit;
-
-if(freeze) exit;
-
-if(alarm_get(0) == -1 &amp;&amp; collision_circle(x, y, radius*2, obj_player, false, true) != noone) {
-    attack_ready = true;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
-
-if(admin.show_hitbox) {
-    draw_set_colour(c_blue);
-    draw_set_alpha(0.2);
-    draw_circle(x, y, radius, 0);
-    
-    draw_set_alpha(0.4);
-    draw_ellipse(self.x - self.max_x,self.y - self.max_y, self.x + self.max_x, self.y + self.max_y, 0);
-    
-    draw_set_alpha(1); 
-}
+scr_effect(effc, stage, other)
 </string>
           </argument>
         </arguments>
