@@ -36,11 +36,6 @@ max_distance = 500 + round(random_range(-50, 50));
 min_distance = 100 + round(random_range(-10, 10));
 safety_distance = 200 + round(random_range(50, 0));
 min_distance_factor = 1;
-
-//Bullet Type
-
-effc = effect.absorption;
-stage = 2;
 </string>
           </argument>
         </arguments>
@@ -92,7 +87,7 @@ if(!triggered) exit;
 scr_pathfinding_enemy();
 
 if(attack_ready) {
-    scr_effect(effc, stage, collision_ellipse(x+200, y-150, x-200, y+150, obj_gegner, false, false));
+    scr_heal(collision_ellipse(x+200, y-150, x-200, y+150, obj_gegner, false, false), damage);
 }
 </string>
           </argument>

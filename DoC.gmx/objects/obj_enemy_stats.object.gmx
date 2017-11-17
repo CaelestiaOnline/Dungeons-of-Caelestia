@@ -1167,19 +1167,61 @@ enemy_stats[obj_ghul, enemy_stats_normal.max_speed] = 3.1;
 enemy_stats[obj_ghul, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_ghul, enemy_stats_normal.money_drop] = 20;
 
-//Banshee(57)
-/*enemy_stats[obj_ghul, 0] = "Banshee";
-enemy_stats[obj_ghul, 1] = "Eine Todesfee";
-enemy_stats[obj_ghul, 2] = true;
-enemy_stats[obj_ghul, 3] = true;
-enemy_stats[obj_ghul, 4] = "normal";
+//Sukkubus(57)
+enemy_stats[obj_succubus, 0] = "Sukkubus";
+enemy_stats[obj_succubus, 1] = "Sie ist wortwörtlich heiß";
+enemy_stats[obj_succubus, 2] = true;
+enemy_stats[obj_succubus, 3] = true;
+enemy_stats[obj_succubus, 4] = "normal";
 
-enemy_stats[obj_ghul, enemy_stats_normal.hp] = 70;
-enemy_stats[obj_ghul, enemy_stats_normal.damage] = 10;
-enemy_stats[obj_ghul, enemy_stats_normal.attack_speed] = 50;
-enemy_stats[obj_ghul, enemy_stats_normal.max_speed] = 2.8;
-enemy_stats[obj_ghul, enemy_stats_normal.xp_drop] = 128;
-enemy_stats[obj_ghul, enemy_stats_normal.money_drop] = 18;
+enemy_stats[obj_succubus, enemy_stats_normal.hp] = 70;
+enemy_stats[obj_succubus, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_succubus, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_succubus, enemy_stats_normal.max_speed] = 2.8;
+enemy_stats[obj_succubus, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_succubus, enemy_stats_normal.money_drop] = 18;
+
+//Wiedergänger(58)
+enemy_stats[obj_revenant, 0] = "Wiedergänger";
+enemy_stats[obj_revenant, 1] = "Kommt vielleicht wieder";
+enemy_stats[obj_revenant, 2] = true;
+enemy_stats[obj_revenant, 3] = true;
+enemy_stats[obj_revenant, 4] = "normal";
+
+enemy_stats[obj_revenant, enemy_stats_normal.hp] = 50;
+enemy_stats[obj_revenant, enemy_stats_normal.damage] = 12;
+enemy_stats[obj_revenant, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_revenant, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_revenant, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_revenant, enemy_stats_normal.money_drop] = 10;
+
+//Irrlicht(59)
+enemy_stats[obj_ghost_light, 0] = "Irrlicht";
+enemy_stats[obj_ghost_light, 1] = "Gibt eien Heilimpuls ab";
+enemy_stats[obj_ghost_light, 2] = true;
+enemy_stats[obj_ghost_light, 3] = true;
+enemy_stats[obj_ghost_light, 4] = "normal";
+
+enemy_stats[obj_ghost_light, enemy_stats_normal.hp] = 20;
+enemy_stats[obj_ghost_light, enemy_stats_normal.damage] = 50;
+enemy_stats[obj_ghost_light, enemy_stats_normal.attack_speed] = 30;
+enemy_stats[obj_ghost_light, enemy_stats_normal.max_speed] = 3;
+enemy_stats[obj_ghost_light, enemy_stats_normal.xp_drop] = 64;
+enemy_stats[obj_ghost_light, enemy_stats_normal.money_drop] = 12;
+
+//Gefallener Engel(60)
+enemy_stats[obj_fallen_angel, 0] = "Gefallener Engel";
+enemy_stats[obj_fallen_angel, 1] = "Stärkt Gegner";
+enemy_stats[obj_fallen_angel, 2] = true;
+enemy_stats[obj_fallen_angel, 3] = true;
+enemy_stats[obj_fallen_angel, 4] = "normal";
+
+enemy_stats[obj_fallen_angel, enemy_stats_normal.hp] = 70;
+enemy_stats[obj_fallen_angel, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_fallen_angel, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_fallen_angel, enemy_stats_normal.max_speed] = 3;
+enemy_stats[obj_fallen_angel, enemy_stats_normal.xp_drop] = 128;
+enemy_stats[obj_fallen_angel, enemy_stats_normal.money_drop] = 20;
 </string>
           </argument>
         </arguments>

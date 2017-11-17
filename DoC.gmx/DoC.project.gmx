@@ -1914,6 +1914,9 @@
           </objects>
           <objects name="Hölle">
             <object>objects\obj_ghul</object>
+            <object>objects\obj_revenant</object>
+            <object>objects\obj_succubus</object>
+            <object>objects\obj_fallen_angel</object>
           </objects>
         </objects>
         <objects name="Fernkampf">
@@ -1940,6 +1943,9 @@
             <object>objects\obj_gorgon</object>
             <object>objects\obj_evil_dwarf</object>
             <object>objects\obj_iron_bishop</object>
+          </objects>
+          <objects name="Hölle">
+            <object>objects\obj_ghost_light</object>
           </objects>
         </objects>
         <objects name="Training">

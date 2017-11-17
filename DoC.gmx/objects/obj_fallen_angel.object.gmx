@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_gegner</parentName>
+  <parentName>obj_nahkampf_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,21 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
+            <string>///Effekt
 event_inherited();
 
-//Weg erzeugen
-path = path_add();
-
-//Distanz
-max_distance = 500 + round(random_range(-50, 50));
-min_distance = 100 + round(random_range(-10, 10));
-safety_distance = 200 + round(random_range(50, 0));
-min_distance_factor = 1;
-
-//Bullet Type
-
-effc = effect.absorption;
+effc = effect.strength;
 stage = 2;
 </string>
           </argument>
@@ -63,36 +52,11 @@ stage = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Triggered
+            <string>///Angriff
 event_inherited();
-scr_trigger_enemy(-1);
-if(!triggered) exit;
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Angriff + Bewegung
-
-scr_pathfinding_enemy();
 
 if(attack_ready) {
-    scr_effect(effc, stage, collision_ellipse(x+200, y-150, x-200, y+150, obj_gegner, false, false));
+    scr_effect(effc, stage, collision_ellipse(x+200, y-150, x-200, y+150, obj_gegner, false, false);
 }
 </string>
           </argument>
