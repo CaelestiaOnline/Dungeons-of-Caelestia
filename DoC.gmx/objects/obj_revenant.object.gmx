@@ -5,10 +5,10 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_fallen_unbewegliche_objekte</parentName>
+  <parentName>obj_nahkampf_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="1" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,50 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Effekt
-event_inherited();
-
-radius = 300;
-
-max_y = 150;
-max_x = 250;
-
-effc = effect.stun;
-stage = 2;
-
-effc2 = effect.slowness;
-stage = 1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Angriff
-event_inherited();
-
-if(attack_ready){
-    scr_enemy_effect(damage, effc, stage);
-    scr_enemy_effect(0, effc2, stage2);
-    alarm_set(0, attack_speed);
-    attack_ready = false;
-}
+            <string>///Wiederbelebung
+rnd = round(random(1))
+if(rnd == 0)instance_create(x, y, obj_revenant)
 </string>
           </argument>
         </arguments>
