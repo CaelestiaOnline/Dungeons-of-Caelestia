@@ -59,10 +59,13 @@ min_distance_factor = 1;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Triggered
-event_inherited();
-scr_trigger_enemy(-1);
-if(!triggered) exit;
+            <string>///Angriff + Bewegung
+
+scr_pathfinding_enemy();
+
+if(attack_ready) {
+    scr_melee_attack_enemy(damage);
+}
 </string>
           </argument>
         </arguments>
@@ -83,13 +86,10 @@ if(!triggered) exit;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Angriff + Bewegung
-
-scr_pathfinding_enemy();
-
-if(attack_ready) {
-    scr_melee_attack_enemy(damage);
-}
+            <string>///Triggered
+event_inherited();
+scr_trigger_enemy(-1);
+if(!triggered) exit;
 </string>
           </argument>
         </arguments>

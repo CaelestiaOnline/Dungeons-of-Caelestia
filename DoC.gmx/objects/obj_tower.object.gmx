@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_gegner</parentName>
+  <parentName>obj_fallen_unbewegliche_objekte</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,14 +25,38 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stats
+            <string>///Triggered
 event_inherited();
+scr_trigger_enemy(-1);
+if(!triggered) exit;
 
-//Größe der Effektellipse
-max_y = 50;
-max_x = 75;
+type = obj_bullet_tower
 
-radius = 100;
+alarm_set(3, 120);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Zerstörung
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -55,51 +79,20 @@ radius = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Triggered
+            <string>///Angriff
 event_inherited();
 
-scr_trigger_enemy(radius);
-if(!triggered) exit;
+attack_ready = false;
 
-if(freeze) exit;
-
-if(alarm_get(0) == -1 &amp;&amp; collision_circle(x, y, radius*2, obj_player, false, true) != noone) {
-    attack_ready = true;
+if(alarm_get(0) == 0 
+    &amp;&amp; !collision_line(obj_player.x, obj_player.y - player_colbox_height, x, y - colbox_height, obj_hindernis, false, false)
+    &amp;&amp; !collision_line(obj_player.x, obj_player.y + player_colbox_height, x, y + colbox_height, obj_hindernis, false, false)){
+        attack_ready = true;
+        }
+if(attack_ready){
+    scr_bullet_attack_enemy(damage, type);;
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>event_inherited();
 
-if(admin.show_hitbox) {
-    draw_set_colour(c_blue);
-    draw_set_alpha(0.2);
-    draw_circle(x, y, radius, 0);
-    
-    draw_set_alpha(0.4);
-    draw_ellipse(self.x - self.max_x,self.y - self.max_y, self.x + self.max_x, self.y + self.max_y, 0);
-    
-    draw_set_alpha(1); 
-}
 </string>
           </argument>
         </arguments>

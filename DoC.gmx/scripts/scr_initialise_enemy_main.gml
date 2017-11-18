@@ -8,6 +8,7 @@ scr_initialise_enemy_main(
 hp = enemy_stats[object_index, enemy_stats_normal.hp];
 max_hp = hp;
 absorption_hp = 0;
+damage_reduction = -1;
 
 dealt_damage = 0;
 old_dealt_damage = 0;
