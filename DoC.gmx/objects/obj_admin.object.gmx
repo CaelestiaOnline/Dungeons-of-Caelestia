@@ -548,6 +548,8 @@ if(admin.show_hitbox) {
     draw_set_colour(c_white);
     draw_text(display_get_gui_width() - 400, 16, "IC: " + string(instance_count));
 }
+
+
 </string>
           </argument>
         </arguments>

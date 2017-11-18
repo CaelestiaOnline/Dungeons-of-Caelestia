@@ -762,6 +762,9 @@
       <backgrounds name="Wald">
         <background>background\bg_forest2</background>
       </backgrounds>
+      <backgrounds name="Line">
+        <background>background\bg_line_tileset</background>
+      </backgrounds>
     </backgrounds>
     <backgrounds name="loading_screen">
       <background>background\bg_loading_screen1</background>
@@ -879,6 +882,7 @@
           </scripts>
           <scripts name="get">
             <script>scripts\scr_get_random_valid_item.gml</script>
+            <script>scripts\scr_get_random_rarity_type_item.gml</script>
             <script>scripts\scr_get_item_type_string.gml</script>
           </scripts>
         </scripts>
@@ -1088,6 +1092,7 @@
         <script>scripts\scr_button_draw_invalid_action.gml</script>
         <script>scripts\scr_button_check_input.gml</script>
         <script>scripts\scr_get_item_rarity_colour.gml</script>
+        <script>scripts\scr_get_item_rarity_string_colour.gml</script>
         <script>scripts\scr_get_item_rarity_string.gml</script>
       </scripts>
       <scripts name="ItemPrize">
