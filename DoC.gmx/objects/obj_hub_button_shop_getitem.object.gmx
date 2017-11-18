@@ -118,6 +118,33 @@ draw_sprite(spr_inv_border, 0, x, y);
 
 scr_draw_item_rarity(button_item);
 
+//Freigeschalten?
+if(global.items_unlocked[button_item]) button_colour = c_green;
+else button_colour = c_red;
+draw_set_colour(button_colour);
+draw_set_alpha(0.3);
+draw_rectangle(
+    x - (width-4),
+    y - (width-4),
+    x + (width-4),
+    y + (width-4),
+    1
+);
+draw_set_alpha(1);
+
+//Freischaltbar?
+if(global.items_found[button_item]) button_colour = c_green;
+else button_colour = c_red;
+draw_set_colour(button_colour);
+draw_set_alpha(0.3);
+draw_rectangle(
+    x - (width-6),
+    y - (width-6),
+    x + (width-6),
+    y + (width-6),
+    1
+);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

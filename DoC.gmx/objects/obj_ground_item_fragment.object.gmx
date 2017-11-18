@@ -77,6 +77,7 @@ if(place_meeting(x, y, obj_player)) {
     if(pickup) {
         if(global.items_found[ground_item] &lt; 1) {
             global.items_found[ground_item] += fragment;
+            global.items_found[ground_item] = clamp(global.items_found[ground_item], 0, 1);
             scr_write_item_found(ground_item, fragment);
             var text_ind = instance_create(x, obj_player.y - 48, obj_text_ind);
             text_ind.draw_colour = c_green;
