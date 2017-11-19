@@ -87,6 +87,9 @@ if(place_meeting(x, y, obj_player)) {
             text_ind.draw_colour = c_red;
             text_ind.text = "ITEM ALREADY RESEARCHED"; 
         }
+        var text_ind = instance_create(x, obj_player.y - 72, obj_text_ind);
+            text_ind.draw_colour = c_blue;
+            text_ind.text = item[ground_item, 0];
         instance_destroy();
     }
 } else shadow_object.colour = c_black;
