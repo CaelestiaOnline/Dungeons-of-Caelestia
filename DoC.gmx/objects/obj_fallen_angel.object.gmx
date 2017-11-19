@@ -56,7 +56,7 @@ stage = 2;
 event_inherited();
 
 if(attack_ready) {
-    scr_effect(effc, stage, collision_ellipse(x+200, y-150, x-200, y+150, obj_gegner, false, false);
+    scr_effect(effc, stage, collision_ellipse(x+200, y-150, x-200, y+150, obj_gegner, false, false));
 }
 </string>
           </argument>

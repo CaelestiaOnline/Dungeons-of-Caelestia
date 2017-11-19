@@ -134,6 +134,10 @@
           <sprite>sprites\spr_charakter_crouch_back</sprite>
           <sprite>sprites\spr_charakter_back</sprite>
           <sprite>sprites\spr_charakter_collision_box</sprite>
+          <sprites name="Animations">
+            <sprite>sprites\spr_char1_top_melee</sprite>
+            <sprite>sprites\spr_char1_bottom_run</sprite>
+          </sprites>
         </sprites>
         <sprites name="Mage">
           <sprite>sprites\spr_mage2</sprite>
@@ -392,6 +396,13 @@
         <sprite>sprites\spr_rock4</sprite>
         <sprite>sprites\spr_rock5</sprite>
         <sprite>sprites\spr_rock6</sprite>
+        <sprite>sprites\spr_rock_7_deco</sprite>
+        <sprite>sprites\spr_rock8</sprite>
+        <sprite>sprites\spr_rock9</sprite>
+        <sprite>sprites\spr_rock10_deco</sprite>
+        <sprite>sprites\spr_rock11</sprite>
+        <sprite>sprites\spr_rock12_deco</sprite>
+        <sprite>sprites\spr_rock13</sprite>
       </sprites>
       <sprites name="Bush">
         <sprite>sprites\spr_bush1</sprite>
@@ -408,17 +419,27 @@
           <sprite>sprites\spr_dead_tree_black</sprite>
         </sprites>
         <sprites name="Tree">
-          <sprite>sprites\spr_tree_green</sprite>
-          <sprite>sprites\spr_tree_yellow</sprite>
-          <sprite>sprites\spr_tree_white</sprite>
-          <sprite>sprites\spr_tree_blue</sprite>
-          <sprite>sprites\spr_tree_red</sprite>
+          <sprite>sprites\spr_tree1_green</sprite>
+          <sprite>sprites\spr_tree1_yellow</sprite>
+          <sprite>sprites\spr_tree1_white</sprite>
+          <sprite>sprites\spr_tree1_blue</sprite>
+          <sprite>sprites\spr_tree1_red</sprite>
+          <sprite>sprites\spr_tree2</sprite>
+          <sprite>sprites\spr_tree3</sprite>
+          <sprite>sprites\spr_tree4</sprite>
+          <sprite>sprites\spr_tree5</sprite>
+          <sprite>sprites\spr_tree6</sprite>
+          <sprite>sprites\spr_tree7</sprite>
+          <sprite>sprites\spr_tree8</sprite>
         </sprites>
       </sprites>
       <sprites name="Barrel">
         <sprite>sprites\spr_barrel</sprite>
       </sprites>
       <sprite>sprites\spr_wall_test</sprite>
+      <sprites name="Wall">
+        <sprite>sprites\spr_wall1</sprite>
+      </sprites>
     </sprites>
     <sprites name="HUD">
       <sprites name="Bar">
@@ -1215,8 +1236,15 @@
             <object>objects\obj_rock2</object>
             <object>objects\obj_rock3</object>
             <object>objects\obj_rock4</object>
-            <object>objects\obj_rock6</object>
             <object>objects\obj_rock5</object>
+            <object>objects\obj_rock6</object>
+            <object>objects\obj_rock7_deco</object>
+            <object>objects\obj_rock8</object>
+            <object>objects\obj_rock9</object>
+            <object>objects\obj_rock10_deco</object>
+            <object>objects\obj_rock11</object>
+            <object>objects\obj_rock12_deco</object>
+            <object>objects\obj_rock13</object>
           </objects>
           <objects name="Bush">
             <object>objects\obj_bush1</object>
@@ -1233,11 +1261,18 @@
           </objects>
           <object>objects\obj_cactus</object>
           <objects name="Tree">
-            <object>objects\obj_tree_green</object>
-            <object>objects\obj_tree_yellow</object>
-            <object>objects\obj_tree_white</object>
-            <object>objects\obj_tree_blue</object>
-            <object>objects\obj_tree_red</object>
+            <object>objects\obj_tree1_green</object>
+            <object>objects\obj_tree1_yellow</object>
+            <object>objects\obj_tree1_white</object>
+            <object>objects\obj_tree1_blue</object>
+            <object>objects\obj_tree1_red</object>
+            <object>objects\obj_tree2</object>
+            <object>objects\obj_tree3</object>
+            <object>objects\obj_tree4</object>
+            <object>objects\obj_tree5</object>
+            <object>objects\obj_tree6</object>
+            <object>objects\obj_tree7</object>
+            <object>objects\obj_tree8</object>
           </objects>
         </objects>
         <objects name="Breakable">
