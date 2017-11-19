@@ -26,9 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>scr_init_interaction();
-
-stage = "forest";
-run_room_count = 2;
 </string>
           </argument>
         </arguments>
@@ -56,7 +53,7 @@ if(!run_admin.portal_active) exit;
 scr_interaction("Run-Raum betreten?", "--&gt; Run-Raum");
 
 if(confirmed) {
-    scr_change_run_room();
+    scr_next_run_room();
     confirmed = -1;
 }
 </string>

@@ -1051,7 +1051,7 @@
         <script>scripts\scr_enter_game.gml</script>
         <script>scripts\scr_leave_game.gml</script>
         <script>scripts\scr_leave_current_room.gml</script>
-        <script>scripts\scr_change_run_room.gml</script>
+        <script>scripts\scr_next_run_room.gml</script>
       </scripts>
       <scripts name="Schatten">
         <script>scripts\scr_draw_shadow.gml</script>
@@ -1123,6 +1123,9 @@
         <script>scripts\scr_get_upgrades_sprite.gml</script>
         <script>scripts\scr_upgrade_add_stats.gml</script>
         <script>scripts\scr_upgrade_init_stats.gml</script>
+      </scripts>
+      <scripts name="Fragment">
+        <script>scripts\scr_create_fragment_chest.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -2142,6 +2145,29 @@
         <room>rooms\rm_run_forest_init</room>
         <room>rooms\rm_run_forest1</room>
         <room>rooms\rm_run_forest2</room>
+      </rooms>
+      <rooms name="Swamp">
+        <room>rooms\rm_run_swamp1</room>
+        <room>rooms\rm_run_swamp2</room>
+      </rooms>
+      <rooms name="Ruins">
+        <room>rooms\rm_run_ruins1</room>
+        <room>rooms\rm_run_ruins2</room>
+      </rooms>
+      <rooms name="Dungeon">
+        <room>rooms\rm_run_dungeon1</room>
+        <room>rooms\rm_run_dungeon2</room>
+      </rooms>
+      <rooms name="Cave">
+        <room>rooms\rm_run_cave1</room>
+        <room>rooms\rm_run_cave2</room>
+      </rooms>
+      <rooms name="Hell">
+        <room>rooms\rm_run_hell1</room>
+        <room>rooms\rm_run_hell2</room>
+      </rooms>
+      <rooms name="End">
+        <room>rooms\rm_run_end</room>
       </rooms>
     </rooms>
     <rooms name="Crash">
