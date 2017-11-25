@@ -143,6 +143,9 @@ old_chest_chance = chest_chance;
 heal_orb_chance = 0.05;
 old_heal_orb_chance = heal_orb_chance;
 
+//Dead
+dead = false;
+
 
 </string>
           </argument>

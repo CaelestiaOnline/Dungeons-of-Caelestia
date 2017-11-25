@@ -1198,6 +1198,7 @@
       <fonts name="Textbox">
         <font>fonts\fnt_textbox_heading</font>
         <font>fonts\fnt_questionbox_heading</font>
+        <font>fonts\fnt_questionsbox_ext_heading</font>
         <font>fonts\fnt_questionbox_text</font>
       </fonts>
       <fonts name="Effects">
@@ -2141,30 +2142,62 @@
       <room>rooms\rm_loading_screen</room>
     </rooms>
     <rooms name="Run">
-      <rooms name="Forest">
+      <rooms name="Init">
         <room>rooms\rm_run_forest_init</room>
-        <room>rooms\rm_run_forest1</room>
-        <room>rooms\rm_run_forest2</room>
+      </rooms>
+      <rooms name="Forest">
+        <rooms name="Normal">
+          <room>rooms\rm_run_forest1</room>
+          <room>rooms\rm_run_forest2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_forest_boss1</room>
+        </rooms>
       </rooms>
       <rooms name="Swamp">
-        <room>rooms\rm_run_swamp1</room>
-        <room>rooms\rm_run_swamp2</room>
+        <rooms name="Normal">
+          <room>rooms\rm_run_swamp1</room>
+          <room>rooms\rm_run_swamp2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_swamp_boss1</room>
+        </rooms>
       </rooms>
       <rooms name="Ruins">
-        <room>rooms\rm_run_ruins1</room>
-        <room>rooms\rm_run_ruins2</room>
+        <rooms name="Normal">
+          <room>rooms\rm_run_ruins1</room>
+          <room>rooms\rm_run_ruins2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_ruins_boss1</room>
+        </rooms>
       </rooms>
       <rooms name="Dungeon">
-        <room>rooms\rm_run_dungeon1</room>
-        <room>rooms\rm_run_dungeon2</room>
+        <rooms name="Normal">
+          <room>rooms\rm_run_dungeon1</room>
+          <room>rooms\rm_run_dungeon2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_dungeon_boss1</room>
+        </rooms>
       </rooms>
       <rooms name="Cave">
-        <room>rooms\rm_run_cave1</room>
-        <room>rooms\rm_run_cave2</room>
+        <rooms name="Normal">
+          <room>rooms\rm_run_cave1</room>
+          <room>rooms\rm_run_cave2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_cave_boss1</room>
+        </rooms>
       </rooms>
       <rooms name="Hell">
-        <room>rooms\rm_run_hell1</room>
-        <room>rooms\rm_run_hell2</room>
+        <rooms name="Normal">
+          <room>rooms\rm_run_hell1</room>
+          <room>rooms\rm_run_hell2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_hell_boss1</room>
+        </rooms>
       </rooms>
       <rooms name="End">
         <room>rooms\rm_run_end</room>

@@ -160,14 +160,41 @@ room_stats[rm_testroom4, 3] = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Run Room Eingänge
+            <string>///Run Room Init+End
 //Forest Init
 room_stats[rm_run_forest_init, 0] = "game";
 room_stats[rm_run_forest_init, 1] = "default";
 room_stats[rm_run_forest_init, 2] = 128;
 room_stats[rm_run_forest_init, 3] = 512;
 
-//Forest
+//End Room
+room_stats[rm_run_end, 0] = "game";
+room_stats[rm_run_end, 1] = "default";
+room_stats[rm_run_end, 2] = 128;
+room_stats[rm_run_end, 3] = 512;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Forest
+//Normal
 //Forest 01
 room_stats[rm_run_forest1, 0] = "game";
 room_stats[rm_run_forest1, 1] = "default";
@@ -180,7 +207,34 @@ room_stats[rm_run_forest2, 1] = "default";
 room_stats[rm_run_forest2, 2] = 2768;
 room_stats[rm_run_forest2, 3] = 704;
 
-//Swamp
+//Boss
+//Boss 01
+room_stats[rm_run_forest_boss1, 0] = "game";
+room_stats[rm_run_forest_boss1, 1] = "boss";
+room_stats[rm_run_forest_boss1, 2] = 160;
+room_stats[rm_run_forest_boss1, 3] = 672;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Swamp
+//Normal
 //Swamp 01
 room_stats[rm_run_swamp1, 0] = "game";
 room_stats[rm_run_swamp1, 1] = "default";
@@ -193,7 +247,34 @@ room_stats[rm_run_swamp2, 1] = "default";
 room_stats[rm_run_swamp2, 2] = 2768;
 room_stats[rm_run_swamp2, 3] = 704;
 
-//Ruins
+//Boss
+//Boss 01
+room_stats[rm_run_swamp_boss1, 0] = "game";
+room_stats[rm_run_swamp_boss1, 1] = "boss";
+room_stats[rm_run_swamp_boss1, 2] = 160;
+room_stats[rm_run_swamp_boss1, 3] = 672;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ruins
+//Normal
 //Ruins 01
 room_stats[rm_run_ruins1, 0] = "game";
 room_stats[rm_run_ruins1, 1] = "default";
@@ -206,7 +287,34 @@ room_stats[rm_run_ruins2, 1] = "default";
 room_stats[rm_run_ruins2, 2] = 2768;
 room_stats[rm_run_ruins2, 3] = 704;
 
-//Dungeon
+//Boss
+//Boss 01
+room_stats[rm_run_ruins_boss1, 0] = "game";
+room_stats[rm_run_ruins_boss1, 1] = "boss";
+room_stats[rm_run_ruins_boss1, 2] = 160;
+room_stats[rm_run_ruins_boss1, 3] = 672;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Dungeon
+//Normal
 //Dungeon 01
 room_stats[rm_run_dungeon1, 0] = "game";
 room_stats[rm_run_dungeon1, 1] = "default";
@@ -219,7 +327,34 @@ room_stats[rm_run_dungeon2, 1] = "default";
 room_stats[rm_run_dungeon2, 2] = 2768;
 room_stats[rm_run_dungeon2, 3] = 704;
 
-//Cave
+//Boss
+//Boss 01
+room_stats[rm_run_dungeon_boss1, 0] = "game";
+room_stats[rm_run_dungeon_boss1, 1] = "boss";
+room_stats[rm_run_dungeon_boss1, 2] = 160;
+room_stats[rm_run_dungeon_boss1, 3] = 672;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Cave
+//Normal
 //Cave 01
 room_stats[rm_run_cave1, 0] = "game";
 room_stats[rm_run_cave1, 1] = "default";
@@ -232,7 +367,34 @@ room_stats[rm_run_cave2, 1] = "default";
 room_stats[rm_run_cave2, 2] = 2768;
 room_stats[rm_run_cave2, 3] = 704;
 
-//Hell
+//Boss
+//Boss 01
+room_stats[rm_run_cave_boss1, 0] = "game";
+room_stats[rm_run_cave_boss1, 1] = "boss";
+room_stats[rm_run_cave_boss1, 2] = 160;
+room_stats[rm_run_cave_boss1, 3] = 672;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Hell
+//Normal
 //Hell 01
 room_stats[rm_run_hell1, 0] = "game";
 room_stats[rm_run_hell1, 1] = "default";
@@ -245,12 +407,12 @@ room_stats[rm_run_hell2, 1] = "default";
 room_stats[rm_run_hell2, 2] = 2768;
 room_stats[rm_run_hell2, 3] = 704;
 
-//End Room
-room_stats[rm_run_end, 0] = "game";
-room_stats[rm_run_end, 1] = "default";
-room_stats[rm_run_end, 2] = 128;
-room_stats[rm_run_end, 3] = 512;
-
+//Boss
+//Boss 01
+room_stats[rm_run_hell_boss1, 0] = "game";
+room_stats[rm_run_hell_boss1, 1] = "boss";
+room_stats[rm_run_hell_boss1, 2] = 160;
+room_stats[rm_run_hell_boss1, 3] = 672;
 </string>
           </argument>
         </arguments>
