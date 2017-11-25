@@ -20,6 +20,10 @@ run_admin = instance_create(0, 0, obj_run_admin);
 var game_room = rm_run_forest_init;
 
 scr_keylock_ingamemenu(true);
-scr_sidefade(game_room, 60);
+if(global.display_splash_screen) {
+    scr_loading_screen(game_room, irandom(5) + 2, "TRANSFERRING TO PlANET X");
+} else {
+    scr_sidefade(game_room, 60);
+}
 
 scr_room_placer(game_room);

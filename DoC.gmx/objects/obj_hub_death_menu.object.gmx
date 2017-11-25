@@ -182,6 +182,8 @@ scr_read_stats();
 with(death_stats) event_perform(ev_create, 0);
 
 scr_reset_stats();
+
+player_stats.dead = false;
 </string>
           </argument>
         </arguments>

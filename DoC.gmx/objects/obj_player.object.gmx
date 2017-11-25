@@ -945,7 +945,9 @@ if(move_x != 0 || move_y != 0) {
           <argument>
             <kind>1</kind>
             <string>///Draw self
-draw_self();
+if(!player_stats.invisible) {
+    draw_self();
+}
 //draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, scr_get_random_colour(), image_alpha);
 
 if(admin.show_hitbox) scr_draw_hitbox();

@@ -3,10 +3,8 @@ scr_player_death(
 
 );
 */
-obj_player.visible = false;
-scr_keylock_all(true);
+
 admin.playing = false;
-player_stats.invincible = true;
 
 scr_draw_death_player(x, y, spr_charakter_dead);
 

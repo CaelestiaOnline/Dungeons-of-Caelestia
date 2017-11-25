@@ -495,10 +495,8 @@ if(keyboard_check_pressed(vk_f11)) {
 if(playing) {
 if(keyboard_check_pressed(vk_f9)) is_ghost = 1 - is_ghost;
 if(is_ghost) {
-    obj_player.image_alpha = 0.3;
     player_stats.invincible = true;
 } else {
-    obj_player.image_alpha = 1;
     player_stats.invincible = false;
 }
 }

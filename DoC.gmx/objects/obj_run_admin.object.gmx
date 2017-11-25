@@ -54,19 +54,30 @@ run_level_index = 0;
           <argument>
             <kind>1</kind>
             <string>///Generate Map
-max_rooms_per_level = 12;
+max_rooms_per_level = 2;
 
 //Counts
 forest_room_count = 2;
+forest_boss_room_count = 1;
+
 swamp_room_count = 2;
+swamp_boss_room_count = 1;
+
 ruins_room_count = 2;
+ruins_boss_room_count = 1;
+
 dungeon_room_count = 2;
+dungeon_boss_room_count = 1;
+
 cave_room_count = 2;
+cave_boss_room_count = 1;
+
 hell_room_count = 2;
+hell_boss_room_count = 1;
 
 //Global Map
 for(var i = 0; i &lt; 5; i++) {
-for(var j = 0; j &lt; max_rooms_per_level+1; j++) {
+for(var j = 0; j &lt;= max_rooms_per_level+1; j++) {
     map[i, j] = -1;
 }
 }
@@ -79,7 +90,7 @@ for(var i = 0; i &lt; max_rooms_per_level; i++) {
         map[level_index, i] = asset_get_index("rm_run_forest" + string(room_index));
     } until (i == 0 || map[level_index, i] != map[level_index, i-1]);
 }
-var boss_room_index = irandom_range(1, 2);
+var boss_room_index = irandom_range(1, forest_boss_room_count);
 map[level_index, max_rooms_per_level] = asset_get_index("rm_run_forest_boss" + string(boss_room_index));
 
 //Swamp
@@ -90,7 +101,7 @@ for(var i = 0; i &lt; max_rooms_per_level; i++) {
         map[level_index, i] = asset_get_index("rm_run_swamp" + string(room_index));
     } until (i == 0 || map[level_index, i] != map[level_index, i-1]);
 }
-var boss_room_index = irandom_range(1, 2);
+var boss_room_index = irandom_range(1, swamp_boss_room_count);
 map[level_index, max_rooms_per_level] = asset_get_index("rm_run_swamp_boss" + string(boss_room_index));
 
 //Ruins
@@ -101,7 +112,7 @@ for(var i = 0; i &lt; max_rooms_per_level; i++) {
         map[level_index, i] = asset_get_index("rm_run_ruins" + string(room_index));
     } until (i == 0 || map[level_index, i] != map[level_index, i-1]);
 }
-var boss_room_index = irandom_range(1, 2);
+var boss_room_index = irandom_range(1, ruins_boss_room_count);
 map[level_index, max_rooms_per_level] = asset_get_index("rm_run_ruins_boss" + string(boss_room_index));
 
 //Dungeon
@@ -112,7 +123,7 @@ for(var i = 0; i &lt; max_rooms_per_level; i++) {
         map[level_index, i] = asset_get_index("rm_run_dungeon" + string(room_index));
     } until (i == 0 || map[level_index, i] != map[level_index, i-1]);
 }
-var boss_room_index = irandom_range(1, 2);
+var boss_room_index = irandom_range(1, dungeon_boss_room_count);
 map[level_index, max_rooms_per_level] = asset_get_index("rm_run_dungeon_boss" + string(boss_room_index));
 
 //Cave
@@ -123,7 +134,7 @@ for(var i = 0; i &lt; max_rooms_per_level; i++) {
         map[level_index, i] = asset_get_index("rm_run_cave" + string(room_index));
     } until (i == 0 || map[level_index, i] != map[level_index, i-1]);
 }
-var boss_room_index = irandom_range(1, 2);
+var boss_room_index = irandom_range(1, cave_boss_room_count);
 map[level_index, max_rooms_per_level] = asset_get_index("rm_run_cave_boss" + string(boss_room_index));
 
 //Hell
@@ -134,7 +145,7 @@ for(var i = 0; i &lt; max_rooms_per_level; i++) {
         map[level_index, i] = asset_get_index("rm_run_hell" + string(room_index));
     } until (i == 0 || map[level_index, i] != map[level_index, i-1]);
 }
-var boss_room_index = irandom_range(1, 2);
+var boss_room_index = irandom_range(1, hell_boss_room_count);
 map[level_index, max_rooms_per_level] = asset_get_index("rm_run_hell_boss" + string(boss_room_index));
 
 //End
