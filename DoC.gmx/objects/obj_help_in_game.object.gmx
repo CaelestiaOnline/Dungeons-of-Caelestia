@@ -337,7 +337,7 @@ draw_text(
 draw_set_font(fnt_help_menu_normal);
 control_string = 
 "
-axaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxaxa
+Ich hab doch selbst keine Ahnung was hier hin soll. Danke fuer Ihre Aufmerksamkeit.
 ";
 
 draw_text_ext(

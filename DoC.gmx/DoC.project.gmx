@@ -476,6 +476,8 @@
       <sprites name="Symbole">
         <sprite>sprites\spr_inv_exit</sprite>
         <sprite>sprites\spr_exit</sprite>
+        <sprite>sprites\spr_locked</sprite>
+        <sprite>sprites\spr_unlocked</sprite>
         <sprite>sprites\spr_not_buyable</sprite>
         <sprite>sprites\spr_inventory</sprite>
         <sprite>sprites\spr_undefined</sprite>
@@ -1201,7 +1203,7 @@
       <fonts name="Textbox">
         <font>fonts\fnt_textbox_heading</font>
         <font>fonts\fnt_questionbox_heading</font>
-        <font>fonts\fnt_questionsbox_ext_heading</font>
+        <font>fonts\fnt_questionbox_ext_heading</font>
         <font>fonts\fnt_questionbox_text</font>
       </fonts>
       <fonts name="Effects">

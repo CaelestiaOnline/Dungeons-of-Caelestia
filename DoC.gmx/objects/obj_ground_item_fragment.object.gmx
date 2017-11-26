@@ -83,6 +83,7 @@ if(place_meeting(x, y, obj_player)) {
             text_ind.draw_colour = c_green;
             text_ind.text = "ADDED " + string(fragment*100) + " % PROGRESS TO RESEARCH";
         } else {
+            global.items_found[ground_item] = 1;
             var text_ind = instance_create(x, obj_player.y - 48, obj_text_ind);
             text_ind.draw_colour = c_red;
             text_ind.text = "ITEM ALREADY RESEARCHED"; 
