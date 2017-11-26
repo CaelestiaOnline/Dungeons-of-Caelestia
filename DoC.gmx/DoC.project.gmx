@@ -774,6 +774,9 @@
       <sprite>sprites\spr_upgrades_14</sprite>
       <sprite>sprites\spr_upgrades_15</sprite>
     </sprites>
+    <sprites name="Help">
+      <sprite>sprites\spr_keyboard_controls</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
@@ -1209,6 +1212,7 @@
       </fonts>
       <fonts name="HelpMenu">
         <font>fonts\fnt_help_menu_heading</font>
+        <font>fonts\fnt_help_menu_heading2</font>
         <font>fonts\fnt_help_menu_normal</font>
       </fonts>
       <fonts name="HubSkilltreeMenu">
