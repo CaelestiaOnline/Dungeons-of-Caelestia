@@ -355,8 +355,8 @@ draw_text(
 );
 
 var item_status;
-if(global.items_found[global.shop_item_index] == 1) {
-    item_status = "SUCESSFULLY RESEARCHED";
+if(global.items_found[global.shop_item_index] &gt;= 1) {
+    item_status = "SUCCESSFULLY RESEARCHED";
     draw_set_colour(c_green);
 } else {
     item_status = "RESEARCH PROGRESS";

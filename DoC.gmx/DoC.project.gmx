@@ -134,6 +134,10 @@
           <sprite>sprites\spr_charakter_crouch_back</sprite>
           <sprite>sprites\spr_charakter_back</sprite>
           <sprite>sprites\spr_charakter_collision_box</sprite>
+          <sprites name="Animations">
+            <sprite>sprites\spr_char1_top_melee</sprite>
+            <sprite>sprites\spr_char1_bottom_run</sprite>
+          </sprites>
         </sprites>
         <sprites name="Mage">
           <sprite>sprites\spr_mage2</sprite>
@@ -392,6 +396,13 @@
         <sprite>sprites\spr_rock4</sprite>
         <sprite>sprites\spr_rock5</sprite>
         <sprite>sprites\spr_rock6</sprite>
+        <sprite>sprites\spr_rock_7_deco</sprite>
+        <sprite>sprites\spr_rock8</sprite>
+        <sprite>sprites\spr_rock9</sprite>
+        <sprite>sprites\spr_rock10_deco</sprite>
+        <sprite>sprites\spr_rock11</sprite>
+        <sprite>sprites\spr_rock12_deco</sprite>
+        <sprite>sprites\spr_rock13</sprite>
       </sprites>
       <sprites name="Bush">
         <sprite>sprites\spr_bush1</sprite>
@@ -408,17 +419,27 @@
           <sprite>sprites\spr_dead_tree_black</sprite>
         </sprites>
         <sprites name="Tree">
-          <sprite>sprites\spr_tree_green</sprite>
-          <sprite>sprites\spr_tree_yellow</sprite>
-          <sprite>sprites\spr_tree_white</sprite>
-          <sprite>sprites\spr_tree_blue</sprite>
-          <sprite>sprites\spr_tree_red</sprite>
+          <sprite>sprites\spr_tree1_green</sprite>
+          <sprite>sprites\spr_tree1_yellow</sprite>
+          <sprite>sprites\spr_tree1_white</sprite>
+          <sprite>sprites\spr_tree1_blue</sprite>
+          <sprite>sprites\spr_tree1_red</sprite>
+          <sprite>sprites\spr_tree2</sprite>
+          <sprite>sprites\spr_tree3</sprite>
+          <sprite>sprites\spr_tree4</sprite>
+          <sprite>sprites\spr_tree5</sprite>
+          <sprite>sprites\spr_tree6</sprite>
+          <sprite>sprites\spr_tree7</sprite>
+          <sprite>sprites\spr_tree8</sprite>
         </sprites>
       </sprites>
       <sprites name="Barrel">
         <sprite>sprites\spr_barrel</sprite>
       </sprites>
       <sprite>sprites\spr_wall_test</sprite>
+      <sprites name="Wall">
+        <sprite>sprites\spr_wall1</sprite>
+      </sprites>
     </sprites>
     <sprites name="HUD">
       <sprites name="Bar">
@@ -762,6 +783,9 @@
       <backgrounds name="Wald">
         <background>background\bg_forest2</background>
       </backgrounds>
+      <backgrounds name="Line">
+        <background>background\bg_line_tileset</background>
+      </backgrounds>
     </backgrounds>
     <backgrounds name="loading_screen">
       <background>background\bg_loading_screen1</background>
@@ -879,6 +903,7 @@
           </scripts>
           <scripts name="get">
             <script>scripts\scr_get_random_valid_item.gml</script>
+            <script>scripts\scr_get_random_rarity_type_item.gml</script>
             <script>scripts\scr_get_item_type_string.gml</script>
           </scripts>
         </scripts>
@@ -1026,7 +1051,7 @@
         <script>scripts\scr_enter_game.gml</script>
         <script>scripts\scr_leave_game.gml</script>
         <script>scripts\scr_leave_current_room.gml</script>
-        <script>scripts\scr_change_run_room.gml</script>
+        <script>scripts\scr_next_run_room.gml</script>
       </scripts>
       <scripts name="Schatten">
         <script>scripts\scr_draw_shadow.gml</script>
@@ -1088,6 +1113,7 @@
         <script>scripts\scr_button_draw_invalid_action.gml</script>
         <script>scripts\scr_button_check_input.gml</script>
         <script>scripts\scr_get_item_rarity_colour.gml</script>
+        <script>scripts\scr_get_item_rarity_string_colour.gml</script>
         <script>scripts\scr_get_item_rarity_string.gml</script>
       </scripts>
       <scripts name="ItemPrize">
@@ -1097,6 +1123,9 @@
         <script>scripts\scr_get_upgrades_sprite.gml</script>
         <script>scripts\scr_upgrade_add_stats.gml</script>
         <script>scripts\scr_upgrade_init_stats.gml</script>
+      </scripts>
+      <scripts name="Fragment">
+        <script>scripts\scr_create_fragment_chest.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -1169,6 +1198,7 @@
       <fonts name="Textbox">
         <font>fonts\fnt_textbox_heading</font>
         <font>fonts\fnt_questionbox_heading</font>
+        <font>fonts\fnt_questionsbox_ext_heading</font>
         <font>fonts\fnt_questionbox_text</font>
       </fonts>
       <fonts name="Effects">
@@ -1210,8 +1240,15 @@
             <object>objects\obj_rock2</object>
             <object>objects\obj_rock3</object>
             <object>objects\obj_rock4</object>
-            <object>objects\obj_rock6</object>
             <object>objects\obj_rock5</object>
+            <object>objects\obj_rock6</object>
+            <object>objects\obj_rock7_deco</object>
+            <object>objects\obj_rock8</object>
+            <object>objects\obj_rock9</object>
+            <object>objects\obj_rock10_deco</object>
+            <object>objects\obj_rock11</object>
+            <object>objects\obj_rock12_deco</object>
+            <object>objects\obj_rock13</object>
           </objects>
           <objects name="Bush">
             <object>objects\obj_bush1</object>
@@ -1228,11 +1265,18 @@
           </objects>
           <object>objects\obj_cactus</object>
           <objects name="Tree">
-            <object>objects\obj_tree_green</object>
-            <object>objects\obj_tree_yellow</object>
-            <object>objects\obj_tree_white</object>
-            <object>objects\obj_tree_blue</object>
-            <object>objects\obj_tree_red</object>
+            <object>objects\obj_tree1_green</object>
+            <object>objects\obj_tree1_yellow</object>
+            <object>objects\obj_tree1_white</object>
+            <object>objects\obj_tree1_blue</object>
+            <object>objects\obj_tree1_red</object>
+            <object>objects\obj_tree2</object>
+            <object>objects\obj_tree3</object>
+            <object>objects\obj_tree4</object>
+            <object>objects\obj_tree5</object>
+            <object>objects\obj_tree6</object>
+            <object>objects\obj_tree7</object>
+            <object>objects\obj_tree8</object>
           </objects>
         </objects>
         <objects name="Breakable">
@@ -2098,10 +2142,65 @@
       <room>rooms\rm_loading_screen</room>
     </rooms>
     <rooms name="Run">
-      <rooms name="Forest">
+      <rooms name="Init">
         <room>rooms\rm_run_forest_init</room>
-        <room>rooms\rm_run_forest1</room>
-        <room>rooms\rm_run_forest2</room>
+      </rooms>
+      <rooms name="Forest">
+        <rooms name="Normal">
+          <room>rooms\rm_run_forest1</room>
+          <room>rooms\rm_run_forest2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_forest_boss1</room>
+        </rooms>
+      </rooms>
+      <rooms name="Swamp">
+        <rooms name="Normal">
+          <room>rooms\rm_run_swamp1</room>
+          <room>rooms\rm_run_swamp2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_swamp_boss1</room>
+        </rooms>
+      </rooms>
+      <rooms name="Ruins">
+        <rooms name="Normal">
+          <room>rooms\rm_run_ruins1</room>
+          <room>rooms\rm_run_ruins2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_ruins_boss1</room>
+        </rooms>
+      </rooms>
+      <rooms name="Dungeon">
+        <rooms name="Normal">
+          <room>rooms\rm_run_dungeon1</room>
+          <room>rooms\rm_run_dungeon2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_dungeon_boss1</room>
+        </rooms>
+      </rooms>
+      <rooms name="Cave">
+        <rooms name="Normal">
+          <room>rooms\rm_run_cave1</room>
+          <room>rooms\rm_run_cave2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_cave_boss1</room>
+        </rooms>
+      </rooms>
+      <rooms name="Hell">
+        <rooms name="Normal">
+          <room>rooms\rm_run_hell1</room>
+          <room>rooms\rm_run_hell2</room>
+        </rooms>
+        <rooms name="Boss">
+          <room>rooms\rm_run_hell_boss1</room>
+        </rooms>
+      </rooms>
+      <rooms name="End">
+        <room>rooms\rm_run_end</room>
       </rooms>
     </rooms>
     <rooms name="Crash">

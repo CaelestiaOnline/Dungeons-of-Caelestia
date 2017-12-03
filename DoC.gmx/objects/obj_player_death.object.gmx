@@ -26,12 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///Gehe ins Hub
-obj_player.visible = false;
 alarm_set(0, -2);
 scr_keylock_all(true);
 confirmed_dead = false;
 confirmed_revive = false;
 confirmed_google = false;
+player_stats.invisible = true;
 player_stats.invincible = true;
 with(obj_gegner) {
     freeze = true;
@@ -66,7 +66,7 @@ stats.death_count += 1;
           <argument>
             <kind>1</kind>
             <string>///Revive
-obj_player.visible = true;
+player_stats.invisible = false;
 player_stats.invincible = false;
 admin.playing = true;
 scr_reset_player_stats();
@@ -126,8 +126,9 @@ if(keyboard_check_pressed(ord("K"))) {
 }
 
 if(confirmed_dead) {
+    player_stats.dead = true;
     room_goto(rm_main_hub);
-    obj_player.visible = true;
+    player_stats.invisible = false;
     player_stats.invincible = false;
     scr_reset_player_stats();
     hub.in_hub = true;

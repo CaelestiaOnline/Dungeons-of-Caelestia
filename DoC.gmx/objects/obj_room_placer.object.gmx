@@ -52,8 +52,10 @@ number = 1;
             <string>///Initialisiere
 if(!instance_exists(obj_player)) exit;
 if(room == goal) {
+    if(!player_stats.dead) admin.playing = true;
     obj_player.x = room_stats[goal, (2 * number)];
     obj_player.y = room_stats[goal, (2 * number)+1];
+    player_stats.invisible = false;
     scr_keylock_all(false);
     scr_update_grid();
     

@@ -1972,7 +1972,7 @@ item_stats[items.food_lucios, item_stats_pickup.misc] = "";
 
 //Giftschwert (99)
 item[items.poison_sword, 0] = "Vergiftete Klinge";
-item[items.poison_sword, 1] = "Dieses Schwert ist so toxic, dass sogar LoL-Spieler vergiftet werden";
+item[items.poison_sword, 1] = "Dieses Schwert ist so toxic, dass sogar LoL-Spieler vergiftet werden.";
 item[items.poison_sword, 2] = obj_ice_sword;
 item[items.poison_sword, 3] = "prim";
 item[items.poison_sword, 4] = 1;

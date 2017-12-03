@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Init
+
 scr_initialise_obstacle_main(-1, false, -1);
 scr_init_interaction();
 
