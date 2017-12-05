@@ -109,6 +109,12 @@ room_stats[rm_hub_shop_menu, 0] = "hub_menu";
 //Hub Skilltree Menu
 room_stats[rm_hub_skilltree_menu, 0] = "hub_menu";
 
+//Hub Monsterdex Menu
+room_stats[rm_hub_monsterdex_menu, 0] = "hub_menu";
+
+//Hub Char Menu
+room_stats[rm_hub_char_menu, 0] = "hub_menu";
+
 //Hub Death Menu
 room_stats[rm_hub_death_menu, 0] = "hub_menu";
 

@@ -28,11 +28,12 @@
             <string>///Variablen
 event_inherited();
 
-button_item = 0;
-button_count = 0;
+button_upgrade = 0;
 
-testable = false;
+buyable = false;
+upgrade_prize = 0;
 
+width = 32;
 
 </string>
           </argument>
@@ -57,12 +58,13 @@ testable = false;
           <argument>
             <kind>1</kind>
             <string>///Drag &amp; Drop System
-button_item = global.shop_item_index;
-button_count = item[button_item, 4];
+button_char = global.char_menu_index;
 
-testable = global.items_found[button_item] == 1;
+item_prize = 1;//char_stats[button_char, 1];
 
-scr_inv_button_interaction();
+buyable = (global.char_status[button_char] != 1 &amp;&amp; progress.hub_money &gt;= item_prize);
+
+scr_button_interaction_custom();
 
 if(confirmed_hover) {
     if(confirmed_left_hold) {
@@ -72,18 +74,27 @@ if(confirmed_hover) {
     }
 
     if(confirmed_left_released) {
-        if(testable) {
-            scr_inventory_drop_item_place_count(button_item, -1, -1, button_count);
-            
+        if(buyable) {
+            global.char_status[button_char] = 1;
+            scr_write_chars();
+            progress.hub_money -= item_prize;
+            scr_write_progress();
+            var text_ind = instance_create(x, y - 128, obj_gui_text_ind);
+            text_ind.draw_colour = c_green;
+            text_ind.text = "CHAR WURDE FREIGESCHALTEN!";
+            var text_ind = instance_create(x, y - 152, obj_gui_text_ind);
+            text_ind.draw_colour = c_red;
+            text_ind.text = "-" + string(item_prize) + "HM";
         } else {
             scr_button_draw_invalid_action(0, -64);
         }
     }
 }
 
+draw_sprite(spr_hub_button_shop_buyitem_border, 0, x, y);
 
-draw_sprite(spr_inv_border_2, 0, x, y);
-draw_sprite_ext(spr_inv_border_drop, 0, x, y, 1.4, 1.4, 0, c_white, 1);
+draw_sprite_ext(scr_get_upgrades_sprite(button_upgrade), 0, x, y, 1.5, 1.5, 0, c_white, 1);
+
 
 </string>
           </argument>
@@ -106,16 +117,21 @@ draw_sprite_ext(spr_inv_border_drop, 0, x, y, 1.4, 1.4, 0, c_white, 1);
           <argument>
             <kind>1</kind>
             <string>///Draw Sprite + Anzahl
-if(button_item != -1) {
-    draw_sprite(scr_get_item_sprite(button_item), 0, x, y);
+
+if(global.char_status[button_char] != 1) {
+draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_font(fnt_inv_stats);
+draw_set_halign(fa_center);
+draw_text(x, y + 64, "KOSTEN: " + string(item_prize) + "HM");
+draw_text(x, y + 64 + 24, "Click to unlock.");
+draw_set_halign(fa_left);
 }
 
-//Anzahl der Item in den Slots
-scr_draw_count(button_count, x, y);
-
-if(!testable) {
-    draw_sprite(spr_exit, 0, x, y);
+if(!buyable) {
+    draw_sprite(spr_not_buyable, 0, x, y);
 }
+
 </string>
           </argument>
         </arguments>

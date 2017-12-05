@@ -54,7 +54,7 @@ run_level_index = 0;
           <argument>
             <kind>1</kind>
             <string>///Generate Map
-max_rooms_per_level = 2;
+max_rooms_per_level = 6;
 
 //Counts
 forest_room_count = 2;
@@ -191,9 +191,18 @@ enemies_exist = false;
 
 if(!enemies_exist &amp;&amp; !portal_active) {
     portal_active = true;
-    if(scr_crit_attack(player_stats.chest_chance) &amp;&amp; instance_exists(obj_chest_placeholder)) {
-        instance_create(obj_chest_placeholder.x, obj_chest_placeholder.y, obj_random_type_chest);
-    
+    if(room_stats[room, 2] == "default") {
+        if(scr_crit_attack(player_stats.chest_chance) &amp;&amp; instance_exists(obj_chest_placeholder)) {
+            instance_create(obj_chest_placeholder.x, obj_chest_placeholder.y, obj_random_type_chest);
+        }
+    }
+    if(room_stats[room, 2] == "boss") {
+        var item_rarity = choose("magic", "epic", "legendary");
+        scr_create_fragment_chest("", item_rarity, obj_fragment_chest_placeholder.chest1_x, obj_fragment_chest_placeholder.chest1_y);
+        scr_create_fragment_chest("", item_rarity, obj_fragment_chest_placeholder.chest2_x, obj_fragment_chest_placeholder.chest2_y);
+    }
+    if(room_stats[room, 2] == "miniboss") {
+        scr_create_fragment_chest("", "", obj_chest_placeholder.x, obj_chest_placeholder.y);
     }
 }
 </string>

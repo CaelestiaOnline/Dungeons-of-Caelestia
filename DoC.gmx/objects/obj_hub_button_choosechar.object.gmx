@@ -28,12 +28,59 @@
             <string>///Variablen
 event_inherited();
 
-button_item = 0;
-button_count = 0;
+button_item = -1;
 
-testable = false;
+button_upgrade = 0;
 
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="75">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Erklärung
+if(button_item != -1) {
+    var expl_text = string(skilltree_stats[button_upgrade, 0]);
+    scr_trigger_expl(expl_text);
+}
 </string>
           </argument>
         </arguments>
@@ -57,65 +104,34 @@ testable = false;
           <argument>
             <kind>1</kind>
             <string>///Drag &amp; Drop System
-button_item = global.shop_item_index;
-button_count = item[button_item, 4];
-
-testable = global.items_found[button_item] == 1;
-
 scr_inv_button_interaction();
 
-if(confirmed_hover) {
-    if(confirmed_left_hold) {
-        scr_draw_button_hover(c_red, 0.7);
-    } else {
-        scr_draw_button_hover(-1, 0.7);
-    }
+var chooseable = global.char_status[global.char_menu_index] == 1;
 
-    if(confirmed_left_released) {
-        if(testable) {
-            scr_inventory_drop_item_place_count(button_item, -1, -1, button_count);
-            
+if(confirmed_hover) {
+    scr_draw_button_hover(-1, -1);
+
+    if(confirmed_left_hold) {
+        if(chooseable) {
+            scr_init_char(global.char_menu_index);
+            var text_ind = instance_create(x, y - 64, obj_gui_text_ind);
+            text_ind.draw_colour = c_green;
+            text_ind.text = "Character wurde ausgewaehlt!";
         } else {
             scr_button_draw_invalid_action(0, -64);
         }
+        
     }
 }
 
-
 draw_sprite(spr_inv_border_2, 0, x, y);
-draw_sprite_ext(spr_inv_border_drop, 0, x, y, 1.4, 1.4, 0, c_white, 1);
+draw_sprite(spr_inv_border, 0, x, y);
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw Sprite + Anzahl
-if(button_item != -1) {
-    draw_sprite(scr_get_item_sprite(button_item), 0, x, y);
-}
+if(player_stats.char_index == button_upgrade) scr_draw_button_hover(c_red, -1);
 
-//Anzahl der Item in den Slots
-scr_draw_count(button_count, x, y);
+//draw_sprite(scr_get_char_sprite(button_upgrade), 0, x, y);
 
-if(!testable) {
-    draw_sprite(spr_exit, 0, x, y);
-}
+
 </string>
           </argument>
         </arguments>

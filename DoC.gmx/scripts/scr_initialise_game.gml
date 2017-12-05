@@ -44,6 +44,15 @@ stats = instance_create(0, 0, obj_stats);
 globalvar player_stats;
 player_stats = instance_create(0, 0, obj_player_stats);
 
+//Erzeuge char_stats
+globalvar char_stats;
+char_stats = instance_create(0, 0, obj_character_stats);
+
+global.char_stats = -1;
+var last_char = scr_read_chars();
+
+scr_init_char(last_char);
+
 //Mouse-Indikator
 globalvar mouse;
 mouse = instance_create(0, 0, obj_mouse);
@@ -167,9 +176,7 @@ global.items_found = -1;
 
 scr_read_items();
 
-//Init Upgrade
-scr_upgrade_init_stats();
-scr_update_item_stats();
+
 
 
 
