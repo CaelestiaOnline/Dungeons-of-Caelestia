@@ -839,6 +839,9 @@
     <sprites name="Help">
       <sprite>sprites\spr_keyboard_controls</sprite>
     </sprites>
+    <sprites name="Test">
+      <sprite>sprites\spr_test</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <backgrounds name="Menu">
