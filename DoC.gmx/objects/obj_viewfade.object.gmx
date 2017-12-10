@@ -28,7 +28,7 @@
             <string>///Variablen
 goal = 0;
 
-xfactor = 20;
+xfactor = 30;
 
 stagetwo = false;
 stagethree = false;
@@ -55,33 +55,64 @@ stagethree = false;
           <argument>
             <kind>1</kind>
             <string>///Slide-Effekt
-
-//Ecken
-
 //Bewegung (Dynamischer Geschwindigkeits An- /Abstieg der Überblendung)
-view_xview[0] += xfactor;
+view_xview[1] += xfactor;
 
-if((view_xview[0] &gt; display_get_gui_width() + 50) &amp;&amp; (!stagetwo)) {
+if((view_xview[1] &gt; room_width + 120) &amp;&amp; (!stagetwo)) {
     room_goto(goal);
     stagetwo = true;
-    view_xview[0] = 0;
 }
 
-if(view_xview[0] &lt;= xfactor &amp;&amp; view_xview[0] &gt;= 0 &amp;&amp; stagetwo) {
-    show_debug_message("END: " + string(view_xview[0]));
-    view_xview[0] = 0;
+if(stagetwo &amp;&amp; !stagethree &amp;&amp; room == goal) {
+    view_xview[1] = -(view_wview[1] + 120);
+    view_visible[0] = false;
+    view_visible[1] = true;
+    view_wview[1] = 1920;
+    view_hview[1] = 1080;
+    stagethree = true;
+    
+}
+
+if(view_xview[1] &gt;= (obj_player.x - 800) &amp;&amp; stagetwo &amp;&amp; stagethree) {
+
+    view_xview[1] = 0;
+    
+    view_visible[1] = false;
+    view_visible[0] = true;
+    scr_set_view();
+    
     instance_destroy();
 }
 
-if(room == goal &amp;&amp; !stagethree) {
-    view_xview[0] = -(view_wview[0] + 50);
-    show_debug_message("_____TRUE_____");
-    stagethree = true;
-}
+show_debug_message("X: " + string(view_xview[1]));
 
-
-
-
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///DEBUG
+draw_set_alpha(1);
+draw_set_font(fnt_fps);
+draw_set_colour(c_white);
+draw_text(display_get_gui_width() - 600, 16, string(view_xview[1]) + " | " + string(stagetwo) + " | " + string(stagethree));
 </string>
           </argument>
         </arguments>

@@ -74,7 +74,9 @@ if(confirmed_hover) {
     if(confirmed_left_released) {
         if(testable) {
             scr_inventory_drop_item_place_count(button_item, -1, -1, button_count);
-            
+            var text_ind = instance_create(x, y - 128, obj_gui_text_ind);
+            text_ind.draw_colour = c_green;
+            text_ind.text = "ITEM LIEGT IM HUB BEREIT!";
         } else {
             scr_button_draw_invalid_action(0, -64);
         }

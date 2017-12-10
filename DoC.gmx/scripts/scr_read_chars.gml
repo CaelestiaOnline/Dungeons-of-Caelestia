@@ -16,14 +16,14 @@ var debug = false;//ini_read_real("debug", "debug_mode", 0);
 
 for(var i = 0; i < char.count; i++) {
     if(debug) {
-        global.char_status[i] = 1;
+        global.char_unlocked[i] = 1;
     } else {
         var status = int64(ini_read_real("character", string(i), 0));
-        global.char_status[i] = status;
+        global.char_unlocked[i] = status;
     }
 }
 
-var last_char = ini_read_string("character", "last", "");
+var last_char = ini_read_real("character", "last", 0);
 
 ini_close();
 

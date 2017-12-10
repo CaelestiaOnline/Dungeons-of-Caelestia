@@ -26,14 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-
-//Schatten
 //Schatten
 shadow_object = scr_init_shadow(
     self,
-    sprite_get_width(sprite_index)/2,
-    sprite_get_width(sprite_index)/5,
-    sprite_get_height(sprite_index)/2 - 3,
+    64/2,
+    64/5,
+    64/2 - 3,
     );
 
 //Höhe und Breite des Sprite
@@ -66,16 +64,6 @@ dealt_heal = 0;
 heal_count = 0;
 old_dealt_heal = 0;
 
-//Sprites
-sprite_front = spr_charakter;
-sprite_back = spr_charakter_back;
-
-sprite_front_old = sprite_front;
-sprite_back_old = sprite_back;
-
-//y_offset
-y_bullet_offset = 30;
-y_melee_offset = 30;
 
 
 
@@ -84,28 +72,6 @@ y_melee_offset = 30;
 
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Setze Animations-Speed
-image_speed = 8;
 </string>
           </argument>
         </arguments>
@@ -616,15 +582,6 @@ if(is_crouching) {
     //Speed
     player_stats.player_acc = player_stats.player_crouch_acc;
     player_stats.max_player_speed = player_stats.max_player_crouch_speed;
-    //Sprite
-    sprite_front = spr_charakter_crouch;
-}
-
-if(admin.crouch_key_released || (!is_crouching &amp;&amp; admin.game_paused)) {
-    sprite_front = sprite_front_old;
-    sprite_back = sprite_back_old;
-    player_stats.player_acc = player_stats.old_player_acc;
-    player_stats.max_player_speed = player_stats.old_max_player_speed;
 }
 </string>
           </argument>
@@ -837,34 +794,56 @@ switch (x_axis) {
         image_xscale = x_axis_old;
 }
 
+//Animation
+scr_update_char_sprite();
 
-sprite_index = sprite_front;
-
-if(player_stats.invisible) {
-    image_alpha = 0.5;
-} else {
-    image_alpha = 1;
-}
-//Vorder + Hinterseite
-/*
-switch (y_axis) {
-    case 1: 
-        sprite_index = sprite_front;
-        break;
-    case -1:
-        sprite_index = sprite_back;
-        break;
-    case 0:
-        switch (y_axis_old) {
-            case 1:
-                sprite_index = sprite_front;
-                break;
-            case -1:
-                sprite_index = sprite_back;
+for(var i = 0; i &lt; char_parts.count; i++) {
+    if(player_stats.char_sprite_image_index[i] != 1) {
+        player_stats.char_sprite_image_number[i]+= (player_stats.char_sprite_image_speed[i] * player_stats.char_sprite_image_speed_mult[i]);
+        if(player_stats.char_sprite_image_number[i] &gt;= player_stats.char_sprite_image_index[i]) {
+            player_stats.char_sprite_image_number[i] = 0;
         }
-}
-*/
+    }
+};
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Music
+
+switch(player_stats.char_index) {
+    case char.sanic:
+        if(isSprinting) {
+            if(audio_is_paused(player_stats.sprinting_music)) {
+                audio_resume_sound(player_stats.sprinting_music);
+            } else if(!audio_is_playing(player_stats.sprinting_music)) {
+                player_stats.sprinting_music = audio_play_sound(snd_music_sanic_theme, 10, true);
+            }
+        } else {
+            if(!audio_is_paused(player_stats.sprinting_music)) {
+                audio_pause_sound(player_stats.sprinting_music);
+            }
+        }
+    break;
+}
 </string>
           </argument>
         </arguments>
@@ -946,9 +925,8 @@ if(move_x != 0 || move_y != 0) {
             <kind>1</kind>
             <string>///Draw self
 if(!player_stats.invisible) {
-    draw_self();
+    scr_draw_char();
 }
-//draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, scr_get_random_colour(), image_alpha);
 
 if(admin.show_hitbox) scr_draw_hitbox();
 </string>

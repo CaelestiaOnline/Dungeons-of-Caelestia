@@ -32,9 +32,26 @@ enum char {
     mage = 1,
     succubus = 2,
     sanic = 3,
+    //player = 4,
+    //developer = 5,
     
     count
 };
+
+enum char_parts {
+    body = 0,
+    mouth = 1,
+    left_eye = 2,
+    right_eye = 3,
+    hat = 4,
+    left_arm = 5,
+    right_arm = 6,
+    left_leg = 7,
+    right_leg = 8,
+    overlay = 9,
+    
+    count
+}
 </string>
           </argument>
         </arguments>
@@ -56,17 +73,37 @@ enum char {
           <argument>
             <kind>1</kind>
             <string>///Character Stats
+globalvar char_stats;
 //Cyborg (1)
-char_stats[char.cyborg, 0] = "";
+var char_index = char.cyborg;
+char_stats[char_index, 0] = "Cyborg";
+char_stats[char_index, 1] = "Eine toedliche Mischung aus Mensch und Maschine! Ich kann aber nicht garantieren, dass der Maschinenteil Bugfrei ist. Vom menschlichen Teil will ich erst gar nicht anfangen...";
 
 //Mage (2)
-char_stats[char.mage, 0] = "";
+var char_index = char.mage;
+char_stats[char_index, 0] = "Magier";
+char_stats[char_index, 1] = "Ein wandelnder Topf gefuellt mit magischer Energie. Allerdings ein richtiger Stubenhocker, deswegen haelt er nicht wirklich viel aus.";
 
 //Succubus (3)
-char_stats[char.succubus, 0] = "";
+var char_index = char.succubus;
+char_stats[char_index, 0] = "Sukkubus";
+char_stats[char_index, 1] = "Wir haben seine DNA zufaellig an der Hauptatmosphaerenschutzscheibe gefunden. Eigentlich sehr stark, aber bei Mach 3 bleibt eben von niemanden sehr viel uebrig.";
 
 //Sanic (4)
-char_stats[char.sanic, 0] = "";
+var char_index = char.sanic;
+char_stats[char_index, 0] = "Sanic";
+char_stats[char_index, 1] = "He never skips leg day. Fastest being in the entire universe. Gotta go reallly faaast!";
+
+/*
+//Player (4)
+var char_index = char.player;
+char_stats[char_index, 0] = "Du";
+char_stats[char_index, 1] = "Beim Starten des Spiels bist du einen Blutpakt mit uns eingegangen. Zu deiner DNA: Naja, schau dich selbst mal an. Absolute Enttaeuschung ist noch deutlich untertrieben.";
+
+var char_index = char.developer;
+char_stats[char_index, 0] = "Developer";
+char_stats[char_index, 1] = "Du kommst in den Hochgenuss, einen Entwickler dieses Spiels spielen zu duerfen. Erzittere vor der Macht der Admins!";
+*/
 </string>
           </argument>
         </arguments>

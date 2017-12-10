@@ -62,7 +62,7 @@ button_char = global.char_menu_index;
 
 item_prize = 1;//char_stats[button_char, 1];
 
-buyable = (global.char_status[button_char] != 1 &amp;&amp; progress.hub_money &gt;= item_prize);
+buyable = (!global.char_unlocked[button_char] &amp;&amp; progress.hub_money &gt;= item_prize);
 
 scr_button_interaction_custom();
 
@@ -75,7 +75,7 @@ if(confirmed_hover) {
 
     if(confirmed_left_released) {
         if(buyable) {
-            global.char_status[button_char] = 1;
+            global.char_unlocked[button_char] = 1;
             scr_write_chars();
             progress.hub_money -= item_prize;
             scr_write_progress();
@@ -93,7 +93,7 @@ if(confirmed_hover) {
 
 draw_sprite(spr_hub_button_shop_buyitem_border, 0, x, y);
 
-draw_sprite_ext(scr_get_upgrades_sprite(button_upgrade), 0, x, y, 1.5, 1.5, 0, c_white, 1);
+scr_draw_char_sprite(scr_get_char_sprite(global.char_menu_index), x, y + 32, 1.2, 1.2);
 
 
 </string>
@@ -118,7 +118,7 @@ draw_sprite_ext(scr_get_upgrades_sprite(button_upgrade), 0, x, y, 1.5, 1.5, 0, c
             <kind>1</kind>
             <string>///Draw Sprite + Anzahl
 
-if(global.char_status[button_char] != 1) {
+if(global.char_unlocked[button_char] != 1) {
 draw_set_alpha(1);
 draw_set_colour(c_white);
 draw_set_font(fnt_inv_stats);
@@ -128,7 +128,7 @@ draw_text(x, y + 64 + 24, "Click to unlock.");
 draw_set_halign(fa_left);
 }
 
-if(!buyable) {
+if(!global.char_unlocked[button_char] &amp;&amp; progress.hub_money &lt; item_prize) {
     draw_sprite(spr_not_buyable, 0, x, y);
 }
 

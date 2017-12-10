@@ -64,10 +64,16 @@
   <sounds name="sound">
     <sounds name="Music">
       <sound>sound\snd_music_elevator</sound>
+      <sound>sound\snd_music_sanic_theme</sound>
+      <sound>sound\snd_music_rapsody_rage</sound>
+      <sound>sound\snd_music_dejavu</sound>
+      <sound>sound\snd_music_running_in_the_90s</sound>
     </sounds>
     <sounds name="Menu">
       <sound>sound\snd_click</sound>
       <sound>sound\snd_volume_test</sound>
+      <sound>sound\snd_confirm_1</sound>
+      <sound>sound\snd_confirm_2</sound>
     </sounds>
     <sounds name="Items">
       <sounds name="Mag">
@@ -78,6 +84,15 @@
           <sound>sound\snd_explosion_magic</sound>
         </sounds>
       </sounds>
+    </sounds>
+    <sounds name="Background Sounds">
+      <sound>sound\snd_background_spaceship_1</sound>
+      <sound>sound\snd_background_spaceship_2</sound>
+      <sound>sound\snd_background_spaceship_3</sound>
+      <sound>sound\snd_background_spaceship_4</sound>
+      <sound>sound\snd_background_spaceship_5</sound>
+      <sound>sound\snd_background_spaceship_6</sound>
+      <sound>sound\snd_background_spaceship_7</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -123,30 +138,74 @@
         </sprites>
       </sprites>
       <sprites name="Charakter">
-        <sprites name="old">
-          <sprite>sprites\spr_charakter_ghost_back</sprite>
-          <sprite>sprites\spr_charakter_dead</sprite>
-          <sprite>sprites\spr_charakter_crouch</sprite>
-          <sprite>sprites\spr_charakter</sprite>
-          <sprite>sprites\spr_charakter_middle</sprite>
-          <sprite>sprites\spr_charakter_ghost</sprite>
-          <sprite>sprites\spr_charakter_no_eyes</sprite>
-          <sprite>sprites\spr_charakter_crouch_back</sprite>
-          <sprite>sprites\spr_charakter_back</sprite>
-          <sprite>sprites\spr_charakter_collision_box</sprite>
-          <sprites name="Animations">
-            <sprite>sprites\spr_char1_top_melee</sprite>
-            <sprite>sprites\spr_char1_bottom_run</sprite>
-          </sprites>
+        <sprites name="Cyborg">
+          <sprite>sprites\spr_char_0_0</sprite>
+          <sprite>sprites\spr_char_0_1</sprite>
+          <sprite>sprites\spr_char_0_2</sprite>
+          <sprite>sprites\spr_char_0_3</sprite>
+          <sprite>sprites\spr_char_0_4</sprite>
+          <sprite>sprites\spr_char_0_5</sprite>
+          <sprite>sprites\spr_char_0_6</sprite>
+          <sprite>sprites\spr_char_0_7</sprite>
+          <sprite>sprites\spr_char_0_7_crouch</sprite>
+          <sprite>sprites\spr_char_0_8</sprite>
+          <sprite>sprites\spr_char_0_8_crouch</sprite>
+          <sprite>sprites\spr_char_0_9</sprite>
         </sprites>
         <sprites name="Mage">
-          <sprite>sprites\spr_mage2</sprite>
-          <sprite>sprites\spr_mage</sprite>
+          <sprite>sprites\spr_char_1_0</sprite>
+          <sprite>sprites\spr_char_1_1</sprite>
+          <sprite>sprites\spr_char_1_2</sprite>
+          <sprite>sprites\spr_char_1_3</sprite>
+          <sprite>sprites\spr_char_1_4</sprite>
+          <sprite>sprites\spr_char_1_5</sprite>
+          <sprite>sprites\spr_char_1_6</sprite>
+          <sprite>sprites\spr_char_1_7</sprite>
+          <sprite>sprites\spr_char_1_7_crouch</sprite>
+          <sprite>sprites\spr_char_1_8</sprite>
+          <sprite>sprites\spr_char_1_8_crouch</sprite>
+          <sprite>sprites\spr_char_1_9</sprite>
+        </sprites>
+        <sprites name="Succubus">
+          <sprite>sprites\spr_char_2_0</sprite>
+          <sprite>sprites\spr_char_2_1</sprite>
+          <sprite>sprites\spr_char_2_2</sprite>
+          <sprite>sprites\spr_char_2_3</sprite>
+          <sprite>sprites\spr_char_2_4</sprite>
+          <sprite>sprites\spr_char_2_5</sprite>
+          <sprite>sprites\spr_char_2_6</sprite>
+          <sprite>sprites\spr_char_2_7</sprite>
+          <sprite>sprites\spr_char_2_7_crouch</sprite>
+          <sprite>sprites\spr_char_2_8</sprite>
+          <sprite>sprites\spr_char_2_8_crouch</sprite>
+          <sprite>sprites\spr_char_2_9</sprite>
         </sprites>
         <sprites name="Sanic">
-          <sprite>sprites\spr_sanic</sprite>
-          <sprite>sprites\spr_sanic_gif</sprite>
+          <sprite>sprites\spr_char_3_0</sprite>
+          <sprite>sprites\spr_char_3_1</sprite>
+          <sprite>sprites\spr_char_3_2</sprite>
+          <sprite>sprites\spr_char_3_3</sprite>
+          <sprite>sprites\spr_char_3_4</sprite>
+          <sprite>sprites\spr_char_3_5</sprite>
+          <sprite>sprites\spr_char_3_6</sprite>
+          <sprite>sprites\spr_char_3_7</sprite>
+          <sprite>sprites\spr_char_3_7_crouch</sprite>
+          <sprite>sprites\spr_char_3_8</sprite>
+          <sprite>sprites\spr_char_3_8_crouch</sprite>
+          <sprite>sprites\spr_char_3_9</sprite>
         </sprites>
+        <sprites name="old">
+          <sprite>sprites\spr_charakter_crouch</sprite>
+          <sprite>sprites\spr_charakter_dead</sprite>
+          <sprite>sprites\spr_charakter_middle</sprite>
+          <sprite>sprites\spr_charakter_no_eyes</sprite>
+          <sprite>sprites\spr_charakter</sprite>
+          <sprites name="Animations">
+            <sprite>sprites\spr_char1_bottom_run</sprite>
+            <sprite>sprites\spr_char1_top_melee</sprite>
+          </sprites>
+        </sprites>
+        <sprite>sprites\spr_charakter_collision_box</sprite>
       </sprites>
       <sprites name="Gegner">
         <sprite>sprites\spr_gegner</sprite>
@@ -680,7 +739,7 @@
     </sprites>
     <sprites name="Hub">
       <sprites name="Portal">
-        <sprite>sprites\spr_hub_portal_light_blue</sprite>
+        <sprite>sprites\spr_hub_portal_test</sprite>
         <sprite>sprites\spr_hub_portal_yellow</sprite>
         <sprite>sprites\spr_hub_portal_green</sprite>
         <sprite>sprites\spr_hub_portal_blue</sprite>
@@ -735,6 +794,7 @@
     <sprites name="Box">
       <sprite>sprites\spr_box</sprite>
       <sprite>sprites\spr_question_box</sprite>
+      <sprite>sprites\spr_question_box_terminal</sprite>
       <sprite>sprites\spr_info_box</sprite>
       <sprite>sprites\spr_sign_box</sprite>
       <sprite>sprites\spr_button_accept</sprite>
@@ -969,7 +1029,6 @@
       </scripts>
       <scripts name="depth">
         <script>scripts\scr_set_depth.gml</script>
-        <script>scripts\scr_set_depth_inv_button.gml</script>
       </scripts>
       <scripts name="Indicator">
         <script>scripts\scr_draw_dealt_damage.gml</script>
@@ -1091,6 +1150,7 @@
           <script>scripts\scr_write_items.gml</script>
           <script>scripts\scr_write_upgrades.gml</script>
           <script>scripts\scr_write_chars.gml</script>
+          <script>scripts\scr_write_last_char.gml</script>
           <script>scripts\scr_write_item_unlocked.gml</script>
           <script>scripts\scr_write_upgrade.gml</script>
           <script>scripts\scr_write_item_found.gml</script>
@@ -1137,6 +1197,10 @@
       <scripts name="Char">
         <script>scripts\scr_init_char.gml</script>
         <script>scripts\scr_get_char_string.gml</script>
+        <script>scripts\scr_get_char_sprite.gml</script>
+        <script>scripts\scr_update_char_sprite.gml</script>
+        <script>scripts\scr_draw_char_sprite.gml</script>
+        <script>scripts\scr_draw_char.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -1225,6 +1289,9 @@
       </fonts>
       <fonts name="HubSkilltreeMenu">
         <font>fonts\fnt_hub_skilltree_menu_numbers</font>
+      </fonts>
+      <fonts name="Terminal">
+        <font>fonts\fnt_terminal</font>
       </fonts>
     </fonts>
     <fonts name="Splash-Screen">
@@ -1820,7 +1887,7 @@
         </objects>
         <objects name="Char">
           <object>objects\obj_hub_button_char_getchar</object>
-          <object>objects\obj_hub_button_choosechar</object>
+          <object>objects\obj_hub_button_char_choosechar</object>
           <object>objects\obj_hub_button_char_buychar</object>
         </objects>
       </objects>
@@ -1845,6 +1912,7 @@
         <object>objects\obj_hub_portal_testroom2</object>
         <object>objects\obj_hub_portal_testroom4</object>
         <object>objects\obj_hub_enter_menu</object>
+        <object>objects\obj_portal</object>
       </objects>
       <objects name="Chests">
         <object>objects\obj_pickup_chest</object>
@@ -2130,8 +2198,8 @@
       <room>rooms\rm_initialise</room>
     </rooms>
     <rooms name="Splash-Screen">
-      <room>rooms\rm_splash_screen</room>
       <room>rooms\rm_warning_screen</room>
+      <room>rooms\rm_splash_screen</room>
     </rooms>
     <rooms name="Menu">
       <room>rooms\rm_main_menu</room>

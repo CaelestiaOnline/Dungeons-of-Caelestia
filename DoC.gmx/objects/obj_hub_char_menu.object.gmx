@@ -32,18 +32,29 @@ hub_menu_x2 = display_get_gui_width();
 hub_menu_y1 = 0;
 hub_menu_y2 = 64;
 
-//Rechtecke
-//Left
-expl_rectangle_left_bg_x1 =  64;
-expl_rectangle_left_bg_y1 =  128;
 
-expl_rectangle_left_bg_x2 =  expl_rectangle_left_bg_x1 + 600;
-expl_rectangle_left_bg_y2 =  display_get_gui_height() - 64;
-
-//Farben
-colour_bg = global.co_blue_gray_900;
-
-global.char_menu_index = char.cyborg;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Char Index
+global.char_menu_index = player_stats.char_index;
 </string>
           </argument>
         </arguments>
@@ -69,6 +80,45 @@ global.char_menu_index = char.cyborg;
 exit_button_x = hub_menu_x2 - 8*1 - 24 - 48*0;
 exit_button_y = hub_menu_y1 + 32;
 exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit);
+
+//Char Buttons DEBUG
+max_slots = 15;
+var hwidth = array_height_2d(item) div max_slots;
+
+for(var j = 0; j &lt; max_slots; j++) {
+for(var i = 0; i &lt; max_slots; i++) {
+    char_button_x[i, j] = 64 + 64*i;
+    char_button_y[i, j] = hub_menu_y1 + 128 + 64*j;
+    char_button[i, j] = -1;
+}
+}
+
+///Char Stats Koordinaten
+char_stats_menu_x1 = char_button_x[max_slots-1, max_slots-1] + 64;
+char_stats_menu_x2 = display_get_gui_width() - 64;
+
+char_stats_menu_y1 = char_button_y[0, 0];
+char_stats_menu_y2 = display_get_gui_height() - 64;
+
+//Char Button ChooseChar
+char_button_choosechar_x = char_stats_menu_x1 + 24 + 32;
+char_button_choosechar_y = char_stats_menu_y1 + 700;
+char_button_choosechar = instance_create(char_button_choosechar_x, char_button_choosechar_y, obj_hub_button_char_choosechar);
+
+//Char Button BuyChar
+char_button_buychar_x = char_stats_menu_x1 + 48 + 32;
+char_button_buychar_y = char_stats_menu_y1 + 500;
+char_button_buychar = instance_create(char_button_buychar_x, char_button_buychar_y, obj_hub_button_char_buychar);
+
+//Ordne Arraystelle zu Slotstelle zu
+for(var i = 0; i &lt; char.count; i++) {
+    var x_pos = i mod max_slots;
+    var y_pos = i div max_slots;
+    if(i != -1) {
+        char_button[x_pos, y_pos] = instance_create(char_button_x[x_pos, y_pos], char_button_y[x_pos, y_pos], obj_hub_button_char_getchar);
+        char_button[x_pos, y_pos].button_char = i;
+    }
+}
 
 </string>
           </argument>
@@ -136,7 +186,7 @@ draw_set_alpha(1);
 draw_text(
     hub_menu_x1 + 16,
     hub_menu_y2 - 32,
-    "U.S.S Raumschiff OS (USSROS)"
+    "CLONE TANK v0.1 | DO NOT USE WITHOUT PERMISSION"
 );
 draw_set_valign(fa_top);
 </string>
@@ -159,16 +209,17 @@ draw_set_valign(fa_top);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Rechtecke
-draw_set_colour(colour_bg);
+            <string>///Hintergrund
+
 draw_set_alpha(1);
+draw_set_colour(global.co_blue_gray_1000);
 
 draw_roundrect(
-    expl_rectangle_left_bg_x1,
-    expl_rectangle_left_bg_y1,
-    expl_rectangle_left_bg_x2,
-    expl_rectangle_left_bg_y2,
-    false
+    char_stats_menu_x1,
+    char_stats_menu_y1,
+    char_stats_menu_x2,
+    char_stats_menu_y2,
+    0
 );
 </string>
           </argument>
@@ -190,21 +241,81 @@ draw_roundrect(
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Explanation
+            <string>///Char Stats
+draw_set_alpha(1);
 
+draw_set_colour(c_white);
+draw_set_font(fnt_item_stats_title);
+
+draw_text(
+    char_stats_menu_x1 + 32,
+    char_stats_menu_y1 + 32,
+    char_stats[global.char_menu_index, 0]
+    );
+
+draw_set_font(fnt_inv_stats);
+draw_text_ext(
+    char_stats_menu_x1 + 32,
+    char_stats_menu_y1 + 32 + 32,
+    char_stats[global.char_menu_index, 1],
+    20,
+    600
+    );
+
+var char_status;
+if(global.char_unlocked[global.char_menu_index]) {
+    char_status = "CHARACTER DNA COMPLETELY RESEARCHED";
+    draw_set_colour(c_green);
+} else {
+    char_status = "CHARACTER DNA UNKNOWN";
+    draw_set_colour(c_red);
+}
+
+draw_text(
+    char_button_buychar_x + 48 + 32,
+    char_button_buychar_y + 16,
+    char_status
+);
+
+draw_set_colour(c_yellow);
+draw_text(
+    char_button_buychar_x + 48 + 32,
+    char_button_buychar_y - 16 - 32,
+    "HUB MONEY: " + string(progress.hub_money) + "HM"
+);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Ausprobieren
 draw_set_alpha(1);
 draw_set_colour(c_white);
-draw_set_font(fnt_stats_menu_normal);
-
-var expl_string = "KLONTANK ALPHA 0.0.0.1";
+draw_set_font(fnt_inv_stats);
 
 draw_text_ext(
-    expl_rectangle_left_bg_x1 + 32,
-    expl_rectangle_left_bg_y1 + 32,
-    expl_string,
-    24,
-    abs(expl_rectangle_left_bg_x1 - expl_rectangle_left_bg_x2) - 64
-    );
+    char_button_choosechar_x + 24 + 32,
+    char_button_choosechar_y - 24,
+    "Hier kannst du freigeschaltene Charaktere ausruesten.##Press the Button!",
+    16,
+    300
+);
 </string>
           </argument>
         </arguments>

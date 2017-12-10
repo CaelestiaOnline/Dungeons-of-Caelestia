@@ -109,7 +109,11 @@ if(image_xscale == -1) {
     x = goal_object.x - sprite_get_width(goal_object.sprite_index)/2 - sprite_get_width(sprite_index)/2 - 20;
 }
 
+if(goal_object.object_index != obj_player) {
 y = goal_object.y - goal_object.y_melee_offset;
+} else {
+y = goal_object.y - player_stats.y_melee_offset;
+}
 } else instance_destroy();
 </string>
           </argument>

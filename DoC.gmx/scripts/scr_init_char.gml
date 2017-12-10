@@ -1,10 +1,18 @@
 /*
 scr_init_char(
-    char_index
+    char_index,
+    update?
 );
 */
 
 player_stats.char_index = argument0;
+
+var update = argument1;
+
+//Music
+if(audio_is_paused(player_stats.sprinting_music)) {
+    audio_stop_sound(player_stats.sprinting_music);
+}
 
 with(player_stats) {
 
@@ -66,19 +74,19 @@ switch(char_index) {
     break;
     case char.mage:
         //HP
-        hp = 100;
+        hp = 80;
         
         //Regeneration
         regeneration = 1;
         reg_time = room_speed*2;
         
         //Mana
-        mana = 100;
+        mana = 120;
         mana_reg = 1;
-        mana_reg_time = room_speed/4;
+        mana_reg_time = room_speed/2;
         
         //Stamina
-        stamina = 25;
+        stamina = 20;
         stamina_reg = 0.2;
         stamina_usage = 0.5;
         
@@ -116,7 +124,7 @@ switch(char_index) {
     break;
     case char.succubus:
         //HP
-        hp = 100;
+        hp = 90;
         
         //Regeneration
         regeneration = 1;
@@ -128,7 +136,7 @@ switch(char_index) {
         mana_reg_time = room_speed/4;
         
         //Stamina
-        stamina = 25;
+        stamina = 30;
         stamina_reg = 0.2;
         stamina_usage = 0.5;
         
@@ -137,11 +145,11 @@ switch(char_index) {
         root_damage = 5;
         chance_crit = 0.15;
         //Angriffsgeschwindigkeit
-        attack_speed = 60;
+        attack_speed = 50;
         
         //Speed
         player_speed = 1;
-        max_player_speed = 3.5;
+        max_player_speed = 4;
         
         //Beschleunigung
         player_acc = 0.5;
@@ -178,7 +186,7 @@ switch(char_index) {
         mana_reg_time = room_speed/4;
         
         //Stamina
-        stamina = 25;
+        stamina = 50;
         stamina_reg = 0.2;
         stamina_usage = 0.5;
         
@@ -191,14 +199,14 @@ switch(char_index) {
         
         //Speed
         player_speed = 1;
-        max_player_speed = 3.5;
+        max_player_speed = 10;
         
         //Beschleunigung
         player_acc = 0.5;
         
         //Sprinten
-        max_player_sprint_speed = max_player_speed * 1.8;
-        player_sprint_acc = player_acc * 1.8;
+        max_player_sprint_speed = max_player_speed * 3;
+        player_sprint_acc = player_acc * 3;
         
         //Reibung
         player_friction = 0.4;
@@ -308,7 +316,27 @@ scr_init_effects();
 //Dead
 dead = false;
 
+//Sprite
+player_stats.char_sprite = scr_get_char_sprite(player_stats.char_index);
+scr_update_char_sprite();
+
+//Animation
+for(var i = 0; i < char_parts.count; i++) {
+    char_sprite_image_index[i] = 1;
+    char_sprite_image_number[i] = 0;
+    char_sprite_image_speed_mult[i] = 1;
+    char_sprite_image_speed[i] = 1;
+    char_sprite_x_offset[i] = 0;
+    char_sprite_y_offset[i] = 0;
 }
 
+//y_offset
+y_bullet_offset = 30;
+y_melee_offset = 30;
+
+}
+
+if(update) {
 scr_upgrade_init_stats();
 scr_update_item_stats();
+}

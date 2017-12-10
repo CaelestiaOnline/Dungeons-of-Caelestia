@@ -30,7 +30,7 @@ event_inherited();
 
 button_item = -1;
 
-button_upgrade = 0;
+button_char = 0;
 
 </string>
           </argument>
@@ -59,33 +59,6 @@ button_upgrade = 0;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="75">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Erklärung
-if(button_item != -1) {
-    var expl_text = string(skilltree_stats[button_upgrade, 0]);
-    scr_trigger_expl(expl_text);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -106,17 +79,18 @@ if(button_item != -1) {
             <string>///Drag &amp; Drop System
 scr_inv_button_interaction();
 
-var chooseable = global.char_status[global.char_menu_index] == 1;
+var chooseable = global.char_unlocked[global.char_menu_index] == 1 &amp;&amp; global.char_menu_index != player_stats.char_index;
 
 if(confirmed_hover) {
     scr_draw_button_hover(-1, -1);
 
-    if(confirmed_left_hold) {
+    if(confirmed_left) {
         if(chooseable) {
-            scr_init_char(global.char_menu_index);
+            scr_init_char(global.char_menu_index, true);
+            scr_write_last_char();
             var text_ind = instance_create(x, y - 64, obj_gui_text_ind);
             text_ind.draw_colour = c_green;
-            text_ind.text = "Character wurde ausgewaehlt!";
+            text_ind.text = "CHAR WURDE AUSGEWAHLT!";
         } else {
             scr_button_draw_invalid_action(0, -64);
         }
@@ -127,7 +101,9 @@ if(confirmed_hover) {
 draw_sprite(spr_inv_border_2, 0, x, y);
 draw_sprite(spr_inv_border, 0, x, y);
 
-if(player_stats.char_index == button_upgrade) scr_draw_button_hover(c_red, -1);
+if(!chooseable) {
+    draw_sprite(spr_exit, 0, x, y);
+}
 
 //draw_sprite(scr_get_char_sprite(button_upgrade), 0, x, y);
 

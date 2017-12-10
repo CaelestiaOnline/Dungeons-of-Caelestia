@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///Stats
-
+//Music
+sprinting_music = -1;
 </string>
           </argument>
         </arguments>
