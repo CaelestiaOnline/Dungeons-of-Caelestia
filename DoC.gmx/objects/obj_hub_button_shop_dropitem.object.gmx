@@ -60,7 +60,7 @@ testable = false;
 button_item = global.shop_item_index;
 button_count = item[button_item, 4];
 
-testable = global.items_found[button_item];
+testable = global.items_found[button_item] == 1;
 
 scr_inv_button_interaction();
 
@@ -74,9 +74,9 @@ if(confirmed_hover) {
     if(confirmed_left_released) {
         if(testable) {
             scr_inventory_drop_item_place_count(button_item, -1, -1, button_count);
-            var text_ind = instance_create(x, y - 64, obj_gui_text_ind);
+            var text_ind = instance_create(x, y - 128, obj_gui_text_ind);
             text_ind.draw_colour = c_green;
-            text_ind.text = "Item steht im HUB bereit!";
+            text_ind.text = "ITEM LIEGT IM HUB BEREIT!";
         } else {
             scr_button_draw_invalid_action(0, -64);
         }

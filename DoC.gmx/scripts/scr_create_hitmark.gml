@@ -6,7 +6,7 @@ scr_create_hitmark(
     goal_object
 */
 var hitmark_x = argument0;
-var hitmark_y = argument1 - obj_player.y_melee_offset;
+var hitmark_y = argument1 - player_stats.y_melee_offset;
 var is_crit = argument2;
 var dir = argument3;
 var goal_object = argument4;

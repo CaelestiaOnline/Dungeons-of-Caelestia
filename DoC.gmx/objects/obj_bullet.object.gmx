@@ -201,7 +201,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Draw Bullet
-draw_sprite_ext(sprite_index, image_index, x, y - obj_player.y_bullet_offset, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+draw_sprite_ext(sprite_index, image_index, x, y - player_stats.y_bullet_offset, image_xscale, image_yscale, image_angle, c_white, image_alpha);
 
 if(admin.show_hitbox) scr_draw_hitbox();
 </string>

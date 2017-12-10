@@ -122,7 +122,7 @@ if(!collision_rectangle(origin_object.intbox[0], origin_object.intbox[1], origin
 draw_sprite(spr_question_box, 0, x, y);
 
 draw_set_alpha(0.8);
-draw_set_font(fnt_questionbox_heading);
+draw_set_font(fnt_questionbox_ext_heading);
 draw_set_colour(c_white);
 draw_set_halign(fa_center);
 draw_text_ext(x + sprite_get_width(spr_question_box)/2, y - 64, text, 20, 350);

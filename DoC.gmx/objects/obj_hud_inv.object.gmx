@@ -983,8 +983,6 @@ var eye1_y = eye1_y_old + sign(device_mouse_y_to_gui(0) - middle_y);
 var eye2_x = eye2_x_old + sign(device_mouse_x_to_gui(0) - middle_x);
 var eye2_y = eye2_y_old + sign(device_mouse_y_to_gui(0) - middle_y);
 
-
-
 draw_set_colour(c_black);
 draw_circle(eye1_x, eye1_y, 4, 0);
 draw_circle(eye2_x, eye2_y, 4, 0);
@@ -995,7 +993,7 @@ draw_set_colour(colour_font);
 draw_set_halign(fa_center);
 draw_set_font(fnt_inv_heading);
 var text_y = middle_y - 432;
-draw_text(middle_x, text_y, "Species: " + "CYBORG");
+draw_text(middle_x, text_y, "Species: " + scr_get_char_string(player_stats.char_index));
 draw_text(middle_x, text_y + 32, "Origin: " + "HUMAN");
 draw_text(middle_x, text_y + 64, "- " + player_stats.name + " -");
 draw_set_halign(fa_left);
