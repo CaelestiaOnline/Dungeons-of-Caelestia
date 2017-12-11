@@ -32,16 +32,30 @@ hub_menu_x2 = display_get_gui_width();
 hub_menu_y1 = 0;
 hub_menu_y2 = 64;
 
-//Rechtecke
-//Left
-expl_rectangle_left_bg_x1 =  64;
-expl_rectangle_left_bg_y1 =  128;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Monster Index
+global.monsterdex_index = 0;
+global.monsterdex_index = "forest";
 
-expl_rectangle_left_bg_x2 =  expl_rectangle_left_bg_x1 + 600;
-expl_rectangle_left_bg_y2 =  display_get_gui_height() - 64;
-
-//Farben
-colour_bg = global.co_blue_gray_900;
 </string>
           </argument>
         </arguments>
@@ -68,6 +82,56 @@ exit_button_x = hub_menu_x2 - 8*1 - 24 - 48*0;
 exit_button_y = hub_menu_y1 + 32;
 exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit);
 
+//Monsterdex Button DEBUG
+max_slots = 15;
+var hwidth = array_height_2d(item) div max_slots;
+
+for(var j = 0; j &lt; max_slots; j++) {
+for(var i = 0; i &lt; max_slots; i++) {
+    monsterdex_button_x[i, j] = 64 + 64*i;
+    monsterdex_button_y[i, j] = hub_menu_y1 + 128 + 64*j;
+    monsterdex_button[i, j] = -1;
+}
+}
+
+///Monsterdex Stats Koordinaten
+monsterdex_stats_menu_x1 = monsterdex_button_x[max_slots-1, max_slots-1] + 64;
+monsterdex_stats_menu_x2 = display_get_gui_width() - 64;
+
+monsterdex_stats_menu_y1 = monsterdex_button_y[0, 0];
+monsterdex_stats_menu_y2 = display_get_gui_height() - 64;
+
+//Monsterdex Button GetType
+for(var i = 0; i &lt; 6; i++) {
+
+monsterdex_button_gettype_x[i] = monsterdex_stats_menu_x1 + 64 + (i*96);
+monsterdexp_button_gettype_y[i] = monsterdex_stats_menu_y2 - 64;
+monsterdex_button_gettype[i] = instance_create(monsterdex_button_gettype_x[i], monsterdex_button_gettype_y[i], obj_hub_button_monsterdex_gettype);
+
+var temp_monsterdex_type = "forest";
+
+switch(i) {
+    case 0:
+        temp_monsterdex_type = "forest";
+        break;
+    case 1:
+        temp_monsterdex_type = "swamp";
+        break;
+    case 2:
+        temp_monsterdex_type = "ruins";
+        break;
+    case 3:
+        temp_monsterdex_type = "dungeon";
+        break;
+    case 4:
+        temp_monsterdex_type = "cave";
+        break;
+    case 5:
+        temp_monsterdex_type = "hell";
+        break;
+}
+monsterdex_button_gettype[i].button_monsterdex_type = temp_monsterdex_type;
+}
 </string>
           </argument>
         </arguments>
@@ -157,52 +221,18 @@ draw_set_valign(fa_top);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Rechtecke
-draw_set_colour(colour_bg);
+            <string>///Hintergrund
+
 draw_set_alpha(1);
+draw_set_colour(global.co_blue_gray_1000);
 
 draw_roundrect(
-    expl_rectangle_left_bg_x1,
-    expl_rectangle_left_bg_y1,
-    expl_rectangle_left_bg_x2,
-    expl_rectangle_left_bg_y2,
-    false
+    monsterdex_stats_menu_x1,
+    monsterdex_stats_menu_y1,
+    monsterdex_stats_menu_x2,
+    monsterdex_stats_menu_y2,
+    0
 );
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Explanation
-
-draw_set_alpha(1);
-draw_set_colour(c_white);
-draw_set_font(fnt_stats_menu_normal);
-
-var expl_string = "MONSTER.DEX ALPHA 0.0.0.1";
-
-draw_text_ext(
-    expl_rectangle_left_bg_x1 + 32,
-    expl_rectangle_left_bg_y1 + 32,
-    expl_string,
-    24,
-    abs(expl_rectangle_left_bg_x1 - expl_rectangle_left_bg_x2) - 64
-    );
 </string>
           </argument>
         </arguments>
