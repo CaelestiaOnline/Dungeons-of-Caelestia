@@ -37,12 +37,12 @@ enemy_stats[obj_xxxx, 4] = type (string); (boss, normal, miniboss, friendly)
 */
 
 enum enemy_stats_normal {
-    hp = 5,
-    damage = 6,
-    attack_speed = 7,
-    max_speed = 8,
-    xp_drop = 9,
-    money_drop = 10,
+    hp = 6,
+    damage = 7,
+    attack_speed = 8,
+    max_speed = 9,
+    xp_drop = 10,
+    money_drop = 11,
 }
 
 /*
@@ -53,6 +53,12 @@ enemy_stats[obj_xxxx, enemy_stats_normal.max_speed] = 0 (float/int);
 enemy_stats[obj_xxxx, enemy_stats_normal.xp_drop] = 0 (int);
 enemy_stats[obj_xxxx, enemy_stats_normal.money_drop] = 0 (int);
 */
+
+enum enemy {
+    forest_penguin = obj_forest_penguin,
+    forest_penguin_small = obj_forest_penguin_small,
+    //... etc für alle Gegner, also den Objektnamen zuordnen;
+}
 </string>
           </argument>
         </arguments>
@@ -270,6 +276,7 @@ enemy_stats[obj_forest_penguin, 1] = "Die gruene Gefahr aus dem Unterholz!";
 enemy_stats[obj_forest_penguin, 2] = true;
 enemy_stats[obj_forest_penguin, 3] = true;
 enemy_stats[obj_forest_penguin, 4] = "normal";
+//enemy_stats[obj_forest_penguin, 5] = "forest"; //also für jeden Gegner ein (priorisiertes) Gebiet, dient nur zur Einteilung im Monsterdex
 
 enemy_stats[obj_forest_penguin, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_forest_penguin, enemy_stats_normal.damage] = 12;
