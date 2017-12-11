@@ -36,7 +36,7 @@ max_speed_old = max_speed;
 speed_mult = 1;
 
 //Sprite death
-sprite_death = asset_get_index(string("spr_" + object_get_name(object_index) + "_dead"));
+sprite_death = /*asset_get_index(string("spr_" + object_get_name(object_index) + "_dead"));*/ spr_test;
 
 //Loot
 drop_xp = enemy_stats[object_index, enemy_stats_normal.xp_drop];
