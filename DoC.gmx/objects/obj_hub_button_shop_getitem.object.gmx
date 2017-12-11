@@ -118,33 +118,6 @@ draw_sprite(spr_inv_border, 0, x, y);
 
 scr_draw_item_rarity(button_item);
 
-//Freigeschalten?
-if(global.items_unlocked[button_item]) button_colour = c_green;
-else button_colour = c_red;
-draw_set_colour(button_colour);
-draw_set_alpha(0.3);
-draw_rectangle(
-    x - (width-4),
-    y - (width-4),
-    x + (width-4),
-    y + (width-4),
-    1
-);
-draw_set_alpha(1);
-
-//Freischaltbar?
-if(global.items_found[button_item]) button_colour = c_green;
-else button_colour = c_red;
-draw_set_colour(button_colour);
-draw_set_alpha(0.3);
-draw_rectangle(
-    x - (width-6),
-    y - (width-6),
-    x + (width-6),
-    y + (width-6),
-    1
-);
-draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
@@ -166,9 +139,28 @@ draw_set_alpha(1);
           <argument>
             <kind>1</kind>
             <string>///Draw Sprite + Anzahl
-if(button_item != -1) {
-    draw_sprite(scr_get_item_sprite(button_item), 0, x, y);
+var sprite_colour, sprite_alpha, button_sprite;
+if(global.items_unlocked[button_item] &amp;&amp; global.items_found[button_item] &gt;= 1) {
+    sprite_colour = c_white;
+    sprite_alpha = 1;
+    button_sprite = spr_unlocked;
 }
+if(!global.items_unlocked[button_item] &amp;&amp; global.items_found[button_item] &gt;= 1) {
+    sprite_colour = c_white;
+    sprite_alpha = 1;
+    button_sprite = spr_locked;
+}
+if(!global.items_unlocked[button_item] &amp;&amp; global.items_found[button_item] &lt; 1) {
+    sprite_colour = c_black;
+    sprite_alpha = 0.5;
+    button_sprite = spr_locked;
+}
+
+if(button_item != -1) {
+    draw_sprite_ext(scr_get_item_sprite(button_item), 0, x, y, 1, 1, 0, sprite_colour, sprite_alpha);
+}
+
+draw_sprite(button_sprite, 0, x + (width-6), y - (width-6));
 </string>
           </argument>
         </arguments>

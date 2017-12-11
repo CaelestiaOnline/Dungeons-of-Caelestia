@@ -8,11 +8,11 @@ scr_create_fragment_chest(
 */
 
 var item_type = argument0;
-//choose("prim", "sec", "mag", "item", "pickup");
+if(item_type == "") item_type = choose("prim", "sec", "mag", "item", "pickup");
 var chest_sprite_index = asset_get_index("spr_chest_" + item_type);
 
 var item_rarity = argument1;
-//choose("normal", "rare", "magic", "epic", "legendary");
+if(item_rarity == "") item_rarity = choose("normal", "rare", "magic", "epic", "legendary");
 var chest_image_blend = scr_get_item_rarity_string_colour(item_rarity);
 
 var chest_x = argument2;

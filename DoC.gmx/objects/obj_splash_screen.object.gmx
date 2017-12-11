@@ -28,7 +28,7 @@
             <string>///Initialisiere 
 
 //Alarm
-var splash_time = 5*room_speed;
+var splash_time = 6*room_speed;
 alarm_set(2, splash_time);
 
 //Phasen
@@ -73,7 +73,7 @@ alpha_string = 0;
           <argument>
             <kind>1</kind>
             <string>///Gehe ins Menü 
-room_goto(rm_warning_screen);
+room_goto(rm_main_menu);
 menu_overlay = true;
 </string>
           </argument>
@@ -164,7 +164,7 @@ if(alpha_orb &lt; 1 &amp;&amp; orb1) {
 }
 
 if(orb2) {
-    alpha_orb -= 0.01;
+    alpha_orb -= 0.005;
 }
 
 }
@@ -255,7 +255,7 @@ y2 = display_get_gui_height();
 draw_set_alpha(alpha_bg);
 draw_set_colour(c_black);
 draw_rectangle(x1, y1, x2, y2, 0);
-alpha_bg -= 0.01;
+alpha_bg -= 0.005;
 draw_set_alpha(1);
 
 if(alpha_bg == 0) instance_destroy();

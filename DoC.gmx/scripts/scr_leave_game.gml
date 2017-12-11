@@ -12,6 +12,14 @@ hub.in_hub = false;
 hub.in_menu = false;
 mouse.is_visible = false;
 
+//Save
+scr_write_progress();
+scr_write_items();
+scr_write_upgrades();
+scr_write_chars();
+scr_write_last_char();
+scr_write_volume();
+
 scr_effect_kill_all();
 
 scr_keylock_ingamemenu(false);

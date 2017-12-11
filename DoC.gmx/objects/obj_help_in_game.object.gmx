@@ -49,14 +49,14 @@ show_help = false;
           <argument>
             <kind>1</kind>
             <string>///Hintergrund Koordinaten
-
-var buffer = 128;
-
+buffer = 32;
 help_menu_rectangle_left_bg_x1 = buffer;
-help_menu_rectangle_left_bg_y1 = buffer;
+help_menu_rectangle_left_bg_y1 = buffer*3;
 
 help_menu_rectangle_left_bg_x2 = display_get_gui_width() - buffer;
 help_menu_rectangle_left_bg_y2 = display_get_gui_height() - buffer;
+
+middle_x = (help_menu_rectangle_left_bg_x2-help_menu_rectangle_left_bg_x1)/2;
 
 //Farben
 colour_bg = global.co_blue_gray_1000;
@@ -136,9 +136,7 @@ draw_roundrect(
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Text
-
-var buffer = 64;
+            <string>///Heading
 
 draw_set_colour(c_white);
 draw_set_font(fnt_help_menu_heading);
@@ -147,19 +145,207 @@ draw_set_alpha(1);
 draw_text(
     help_menu_rectangle_left_bg_x1 + buffer,
     help_menu_rectangle_left_bg_y1 + buffer,
-    "HOW TO DUNGEONS OF CAELESTIA 101"
+    "HOW TO DUNGEONS OF CAELESTIA 101 - BEGINNERS GUIDE"
     );
-    
-draw_set_font(fnt_help_menu_normal);
 
-var help_string = "Jetzt mal ernsthaft. Ich weiss es wird dir nicht gefallen, aber dieser Menuepunkt ist sowas von unnoetig, dass er eigentlich schon laengst haette rausgepatched werden muessen, wenn das loeschen nicht aufwendiger gewesen waere als dieses haessliche Layout zu erstellen (jetzt mal ehrlich, was anderes als Graustufen gibt es in diesem Spiel ja wohl nicht) und diesen voellig ueberfluessigen Text hier zu verfassen, der zudem noch die Grenzen des Texteditors bei weitem sprengt. Weil mein Gelaber wahrscheinlich sowieso niemand mehr liest, weil alle vor ihrem Rechner entweder eingeschlafen sind oder einen Schlaganfall hatten, kann ich ja jetzt auch mal auf den Punkt kommen.#Du bist hoffentlich ein autonomes Wesen, das eigenstaendig Entscheidungen treffen und denken kann. Come on, das hier ist ein 2D - Dungeon Crawler, einem Genre, das geradezu ueberflutet wird. Und dieses Spiel hier ist auch nicht viel anders als seine Artgenossen. Es laesst sich quasi mit dem Grundsatz zusammenfassen, dass du einfach alles auf irgendeine Art und Weise umbringen musst. Wenn du das jetzt nicht verstehst, bist du eindeutig nicht in der Zielgruppe. Blablabla unnoetiger Text warum liest du mich ueberhaupt noch ich hoffe das passt alles noch auf eine Seite ne warte mal ich hab DIE Idee ich mach die Schrift einfach so klein dass das alles irgendwie passt. Am Anfang hat der Text ja noch so ganz bisschen Sinn gemacht, aber der ist auf der Strecke ueberfahren worden. So. Jetzt wo ich mich schon eingeredet habe kann ich ja auch noch weitermachen, ich hab ja schliesslich eine Seite zu fuellen. Da wir uns gerade ja schon ueber den Sinn dieses Textes unterhalten haben, kann ich ja damit gleich weitermachen. Ich muss ja schliesslich eine Seite fuellen. Wie du schon gemerkt haben duerftest, macht dieser Menuepunkt ueberhaupt keinen Sinn. Also mal so garkeinen Sinn. Also, und ich sags gerne nochmal und werde es in Zukunft auch immer wieder sagen: Dieser Text ist einfach absolut sinnlos. Wenn man mal so drueber nachdenkt, dann sollte man zu dem Schluss kommen dass dieser Text einfach absolut so richtig sinnlos. Also so riiiiiiiiiiiiiiiiiiiiiiiiichtig sinnlos. Hast du gemerkt wie lange ich das 'richtig' gezogen habe? Das hast du wahrscheinlich, denn wenn du diese Stelle hier liest wirst du die vorherige Stelle wohl auch gelesen haben. Jetzt frag dich aber mal ganz tief in deinem tiefsten Inneren. Siehst du in diesem Text auch nur den kleinsten Sinn? Also ich meine nur den Allerkleinsten? Kannst du dir vorstellen, dass jemand diesen Text hier freiwillig verfasst hat? Ich nicht, und ich muss es ja wissen. Um die Frage zu beantworten, die du dir vorhin so nachdenklich gestellt hast: Nein, natuerlich macht dieser Text keinen Sinn. Falls jemand grade erst dazugeschalten hat, will ich jetzt nochmal wiederholen, was wir beide gerade gedanklich so vollbracht haben. Also. Dieser Text hier, und da will ich drauf hinweisen dass mit 'dieser Text' natuerlich der Text gemeint ist, den du grade liest, einfach so vollkommen, naja wie soll man es sagen, also sinnlos ist. Und ich spreche hier nicht etwa von der normalen Sinnlosigkeit, nein. Hier kann der Begriff der Sinnlosigkeit nicht einmal ansatzweise ausdruecken, wie sinnlos dieser Text hier eigentlich ist. Deswegen will ich hier ein neues Wort einfuehren, das die Eigenschaft dieses Textes beschreiben kann. Naeherungsweise kann das Wort als synonym mit dem Wort 'sinnlos' betrachtet werden, aber es geht noch viel viel weiter. Obwohl ich das dir wohl nicht mehr erklaeren musst, weil du bis hier hin durchgehalten hast. Ich sags dir zum hunderttausendsten Mal: Dieser Text ist sinnlos. Fragst du dich nicht auch gerade, was in deinem Leben eigentlich alles schiefgelaufen ist, dass du diesen Text immernoch liest. Um zu pruefen, ob du diesen Text auch wirklich ganz gelesen hast, werde ich jetzt eine Frage stellen, auf die du richtig antworten musst, solltest du dieses Meisterstueck von Text gelesen haben, obwohl er, wie wir schon herausgefunden haben, voellig sinnlos ist. Also, sollte dich jemals jemand fragen, wie du dieses Spiel findest, wirst du darauf antworten, dass dieser Text hier voellig sinnlos ist. Hast du etwa gedacht, jetzt wuerde etwas sinnvolles kommen? Falsch gedacht. Bitte hoer einfach auf zu lesen. Ist das schon ne Seite? Verdammt jetzt muss ich das auch noch pruefen. Ist dir klar welche Buerden ich hier auf mich nehme, nur damit du mit qualitativ hochwertig sinnlosen Texten versorgt bist? Nein? Dann werde ich dir jetzt erklaeren, wieso dieser Text alle Grenzen der Sinnlosigkeit sprengt. Kannst du dich noch daran erinnern, dass ich ein Wort deklarieren wollte, dass die Sinnlosigkeit dieses Textes ausdrueckt? Ich auch nicht. Und das sagt eigentlich schon alles, was man ueber diesen Text wissen muss. Es kann eventuell vorkommen, dass ich mich in diesem Text, der uebrigens vollkommen sinnlos ist, ein oder zweimal wiederholt habe. Aber wie ich immer zu sagen pflege: dieser Text ist vollkommen sinnlos. Manchmal sage ich aber auch, dass dieser Text absolut sinnnlos ist. Oder dass dieser Text voellig sinnlos ist. Hallo? Bist du noch da? Nicht einschlafen, denn dieser Text ist absolut sinnlos. Um ein Fazit zu ziehen: Dieser Text ist meiner und wahrscheinlich auch deiner Meinung nach, die uebrigens dank deiner Wesensart hoechstes Ansehen oder auch nicht besitzt, voellig, manche wuerden sagen, absolut oder sogar vollkommen sinnlos ist. Sinnlos. Amen. Und jetzt noch ein kleiner Exkurs aus dem Manual von GameMaker: Studio, um auch wirklich eine Seite vollzukriegen. Der Inhalt dieses Exkurses wird naechste Stunde natuerlich abgefragt.#For an object to actually do something, we need to give it actions, but we also need to tell it when to complete these actions. To do that we use EVENTS. An EVENT is a special moment in which we can place certain actions and be sure that those actions will only happen when that EVENT is triggered. There are a large number of different events that can take place and a large number of different actions that you can let your objects take too. For example, there is a Create Event that is performed only when the object gets created. Actually, that's not quite true! Objects are never created, rather they are used to create instances... An instance is a copy of the base object, complete with all the same events and actions, and it's these that are used in your games. Think of an object as the blueprint, and the instance as a manifestation of that blueprint. For example, to add motion to a ball object when we create an instance of it in a room, we would add a motion action to the create event of the object.Another example of an event is the Collision Event. This is triggered when two instances of any objects collide in the game room. In such a case you can make the instance stop or reverse direction or any number of other actions, like play a sound effect or add points to a score. Further events include the Keyboard Event (for when the player presses a key), Mouse Event to detect mouse buttons, and the Draw Event which is where we can tell each instance of an object to draw whatever we want. There are still more events for each object and these are covered further along in the manual. Once you have defined your objects it is time to define the rooms in which they will be placed. Rooms can be used for levels in your game or to show information or even to hold a start menu. There are actions to go from room to room so that you can create button objects that, when pressed, will move the player from one room of the game to another. It should also be noted that if you do not have any rooms in your game then GameMaker: Studio will not run your game. But how do you create a room? GameMaker: Studio has a complete editor for creating these areas and in the editor you can add and change many aspects of how the room will look and play. For example, you can add backgrounds in that can be either a simple colour or an actual image. Such background images can be created in GameMaker: Studio with its own editor, or you can load them into the resources from files. Backgrounds can actually be made to do a lot of things but for the time being, just consider it as something that makes the rooms look nice. Next, you can place one (or multiple!) instances of any objects you have created into the room. For example, you want to have a large walled area in your game, so you would define one wall object and then place multiple instances of that object in your room to create large, complex walled areas. The same can be done for enemy objects too! Just make one enemy object, and then place multiple instances within your room to get a whole level created from only a few base objects."
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Controls Left
+draw_set_font(fnt_help_menu_heading2);
+//Heading
+draw_text(
+    help_menu_rectangle_left_bg_x1 + buffer,
+    help_menu_rectangle_left_bg_y1 + 100,
+    "CONTROLS"
+    );
+
+//Text
+draw_set_font(fnt_help_menu_normal);
+control_string = 
+"
+Steuerung des Spielers:
+
+
+                      
+Walk Up :                       W
+Walk Down :                     S
+Walk Left :                     A
+Walk Right :                    D
+Sprint :                        Shift
+Crouch :                        Ctrl
+
+Primary Attack :                Space
+Secondary Attack :              F
+Magic Attack :                  Q
+
+Interaction :                   E (+ !Ctrl)
+Pick up Items :                 Ctrl + E
+
+Open Inventory :                I
+Open Pause Menu :               Esc
+
+Use selected Pickup :           K
+Scroll left in Pickup-Bar :     J
+Scroll right in Pickup-Bar :    L
+
+Steuerung der Menues: Maus oder explizit angeschrieben
+
+Inventar: LK = Linksklick | RK = Rechtsklick
+Item aus Slot nehmen / in Slot platzieren: LK
+Item-Stack aufteilen / Einzelnes Item in Slot platzieren: RK
+Item automatisch einsortieren: Shift + LK
+";
 
 draw_text_ext(
     help_menu_rectangle_left_bg_x1 + buffer,
-    help_menu_rectangle_left_bg_y1 + buffer*2,
-    help_string,
-    16,
-    help_menu_rectangle_left_bg_x2 - 128 - buffer*2
+    help_menu_rectangle_left_bg_y1 + 150,
+    control_string,
+    24,
+    700
+    );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Controls Right
+//Text
+draw_set_font(fnt_help_menu_normal);
+draw_set_halign(fa_right);
+control_string = 
+"
+Fuer Beginner: 
+Vorschlag der Fingerplatzierung
+LH = Linke Hand | RH = Rechte Hand
+                                        
+LH: Mittelfinger
+LH: Mittelfinger
+LH: Ringfinger
+LH: Zeigefinger
+LH: Kleiner Finger
+LH: Kleiner Finger
+
+LH: Daumen
+LH: Zeigefinger
+LH: Ringfinger
+
+LH: Zeigefinger
+LH: Kleiner- + Zeigefinger
+
+RH: Mittelfinger
+-/-
+
+RH: Mittelfinger
+RH: Zeigefinger
+RH: Ringfinger
+";
+
+draw_text_ext(
+    middle_x - 250 - buffer,
+    help_menu_rectangle_left_bg_y1 + 150,
+    control_string,
+    24,
+    500
+    );
+    
+draw_set_halign(fa_left);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>other</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Tastatur
+draw_sprite(spr_keyboard_controls, 0, help_menu_rectangle_left_bg_x1 + 650, help_menu_rectangle_left_bg_y1 + 600);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Explanation
+draw_set_font(fnt_help_menu_heading2);
+//Heading
+draw_text(
+    middle_x + buffer,
+    help_menu_rectangle_left_bg_y1 + 100,
+    "EXPLANATION"
+    );
+  
+//Text
+draw_set_font(fnt_help_menu_normal);
+control_string = 
+"
+Ich hab doch selbst keine Ahnung was hier hin soll. Danke fuer Ihre Aufmerksamkeit.
+";
+
+draw_text_ext(
+    middle_x + buffer,
+    help_menu_rectangle_left_bg_y1 + 150,
+    control_string,
+    24,
+    700
     );
 </string>
           </argument>
