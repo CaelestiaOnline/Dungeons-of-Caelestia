@@ -184,8 +184,8 @@
     <instance objName="obj_rock3" x="2880" y="192" name="inst_3F721AFF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock3" x="2688" y="64" name="inst_2DE5DACA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_portal_hub" x="2816" y="96" name="inst_03188EF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unicorn" x="640" y="512" name="inst_A44CEC3E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_unicorn" x="704" y="448" name="inst_2FF9D11B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_alien_cleric" x="896" y="352" name="inst_6E3641F6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_alien_cleric" x="864" y="448" name="inst_2698FC87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
