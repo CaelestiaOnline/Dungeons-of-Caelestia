@@ -54,7 +54,7 @@ enemy_stats[obj_xxxx, enemy_stats_normal.xp_drop] = 0 (int);
 enemy_stats[obj_xxxx, enemy_stats_normal.money_drop] = 0 (int);
 */
 
-enum enemy {
+enum enemy_enum {
     forest_penguin = obj_forest_penguin,
     forest_penguin_small = obj_forest_penguin_small,
     //... etc für alle Gegner, also den Objektnamen zuordnen;
