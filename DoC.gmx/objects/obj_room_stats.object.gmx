@@ -115,6 +115,9 @@ room_stats[rm_hub_monsterdex_menu, 0] = "hub_menu";
 //Hub Char Menu
 room_stats[rm_hub_char_menu, 0] = "hub_menu";
 
+//Hub Achievements Menu
+room_stats[rm_hub_achievements_menu, 0] = "hub_menu";
+
 //Hub Death Menu
 room_stats[rm_hub_death_menu, 0] = "hub_menu";
 

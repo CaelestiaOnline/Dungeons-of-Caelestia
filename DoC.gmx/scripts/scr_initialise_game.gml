@@ -159,6 +159,14 @@ global.skilltree_status = -1;
 
 scr_read_skilltree();
 
+//Achievements
+globalvar achievements_object;
+achievements_object = instance_create(0, 0, obj_achievements);
+
+global.achievements_unlocked = -1;
+
+scr_read_achievements();
+
 //Test-Inventory
 //instance_create(0, 0, obj_test);
 

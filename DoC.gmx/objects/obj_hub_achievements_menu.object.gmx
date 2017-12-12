@@ -32,6 +32,10 @@ hub_menu_x2 = display_get_gui_width();
 hub_menu_y1 = 0;
 hub_menu_y2 = 64;
 
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -52,10 +56,10 @@ hub_menu_y2 = 64;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Monster Index
-global.monsterdex_monster_index = 0;
-global.monsterdex_type_index = "forest";
+            <string>///Item Index
+global.achievements_achievement_index = 0;
 
+scr_read_achievements();
 </string>
           </argument>
         </arguments>
@@ -82,57 +86,30 @@ exit_button_x = hub_menu_x2 - 8*1 - 24 - 48*0;
 exit_button_y = hub_menu_y1 + 32;
 exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit);
 
-//Monsterdex Button DEBUG
+//Shop Button DEBUG
 max_slots = 15;
-var hwidth = array_height_2d(item) div max_slots;
 
 for(var j = 0; j &lt; max_slots; j++) {
 for(var i = 0; i &lt; max_slots; i++) {
-    monsterdex_button_x[i, j] = 64 + 64*i;
-    monsterdex_button_y[i, j] = hub_menu_y1 + 128 + 64*j;
-    monsterdex_button[i, j] = -1;
+    achievements_button_x[i, j] = 64 + 64*i;
+    achievements_button_y[i, j] = hub_menu_y1 + 128 + 64*j;
+    achievements_button[i, j] = -1;
 }
 }
 
-///Monsterdex Stats Koordinaten
-monsterdex_stats_menu_x1 = monsterdex_button_x[max_slots-1, max_slots-1] + 64;
-monsterdex_stats_menu_x2 = display_get_gui_width() - 64;
+///Item Stats Koordinaten
+achievements_stats_menu_x1 = achievements_button_x[max_slots-1, max_slots-1] + 64;
+achievements_stats_menu_x2 = display_get_gui_width() - 64;
 
-monsterdex_stats_menu_y1 = monsterdex_button_y[0, 0];
-monsterdex_stats_menu_y2 = display_get_gui_height() - 64;
+achievements_stats_menu_y1 = achievements_button_y[0, 0];
+achievements_stats_menu_y2 = display_get_gui_height() - 64;
 
-//Monsterdex Button GetType
-for(var i = 0; i &lt; 6; i++) {
+///Achievements Button GetAchievement
+//achievements_button[i, j] = instance_create(achievements_button_x[i, j], achievements_button_y[i, j], obj_hub_button_achievements_getachievement);
 
-monsterdex_button_gettype_x[i] = monsterdex_stats_menu_x1 + 64 + (i*96);
-monsterdexp_button_gettype_y[i] = monsterdex_stats_menu_y2 - 64;
-monsterdex_button_gettype[i] = instance_create(monsterdex_button_gettype_x[i], monsterdex_button_gettype_y[i], obj_hub_button_monsterdex_gettype);
-
-var temp_monsterdex_type = "forest";
-
-switch(i) {
-    case 0:
-        temp_monsterdex_type = "forest";
-        break;
-    case 1:
-        temp_monsterdex_type = "swamp";
-        break;
-    case 2:
-        temp_monsterdex_type = "ruins";
-        break;
-    case 3:
-        temp_monsterdex_type = "dungeon";
-        break;
-    case 4:
-        temp_monsterdex_type = "cave";
-        break;
-    case 5:
-        temp_monsterdex_type = "hell";
-        break;
-}
-monsterdex_button_gettype[i].button_monsterdex_type = temp_monsterdex_type;
-}
-scr_update_monsterdex_button();
+//Dying x1
+achievements_button[0, 0] = instance_create(achievements_button_x[0, 0], achievements_button_y[0, 0], obj_hub_button_achievements_getachievement);
+achievements_button[0, 0].button_achievement = achievement.dying_x1;
 </string>
           </argument>
         </arguments>
@@ -156,7 +133,9 @@ scr_update_monsterdex_button();
           <argument>
             <kind>1</kind>
             <string>///Kontrolltasten
-if(admin.pause_menu_key_pressed) scr_leave_hub_menu(); 
+if(admin.pause_menu_key_pressed) scr_leave_hub_menu();
+
+
 </string>
           </argument>
         </arguments>
@@ -199,7 +178,7 @@ draw_set_alpha(1);
 draw_text(
     hub_menu_x1 + 16,
     hub_menu_y2 - 32,
-    "MONSTERDEX v0.1 | DO NOT USE WITHOUT PERMISSION"
+    "ACHIEVEMENTS"
 );
 draw_set_valign(fa_top);
 </string>
@@ -228,10 +207,10 @@ draw_set_alpha(1);
 draw_set_colour(global.co_blue_gray_1000);
 
 draw_roundrect(
-    monsterdex_stats_menu_x1,
-    monsterdex_stats_menu_y1,
-    monsterdex_stats_menu_x2,
-    monsterdex_stats_menu_y2,
+    achievements_stats_menu_x1,
+    achievements_stats_menu_y1,
+    achievements_stats_menu_x2,
+    achievements_stats_menu_y2,
     0
 );
 </string>
@@ -254,7 +233,7 @@ draw_roundrect(
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Monster Stats
+            <string>///Achievements Stats
 
 draw_set_alpha(1);
 
@@ -262,74 +241,35 @@ draw_set_colour(inv_hud.item_stats_heading_colour);
 draw_set_font(fnt_item_stats_title);
 
 draw_text(
-    item_stats_menu_x1 + 32,
-    item_stats_menu_y1 + 32,
-    enemy_stats[global.monsterdex_monster_index, 0]
+    achievements_stats_menu_x1 + 32,
+    achievements_stats_menu_y1 + 32,
+    achievements_stats[global.achievements_achievement_index, 0]
     );
     
 draw_set_font(fnt_inv_stats);
 draw_set_colour(c_white);
 draw_text_ext(
-    item_stats_menu_x1 + 32,
-    item_stats_menu_y1 + 32 + 32,
-    enemy_stats[global.monsterdex_monster_index, 1],
+    achievements_stats_menu_x1 + 32,
+    achievements_stats_menu_y1 + 32 + 32,
+    achievements_stats[global.achievements_achievement_index, 1],
     20,
-    600
+    300
     );
-/*
-for(var i = 0; i &lt; array_length_1d(inv_hud.item_stats_heading_array); i++) {
-    if(inv_hud.item_stats_heading_array[i] != 0) {
-    draw_text(
-    item_stats_menu_x1 + 32,
-    item_stats_menu_y1 + 32*3 + 48 + 32*i,
-    inv_hud.item_stats_heading_array[i]
-    );
-    }
-}
-
-for(var i = 0; i &lt; array_length_1d(inv_hud.item_stats_array); i++) {
-    if(inv_hud.item_stats_heading_array[i] != 0) {
-    if(inv_hud.item_stats_array[i] == "" || inv_hud.item_stats_array[i] == 0) {
-        inv_hud.item_stats_array[i] = "-/-";
-    }
-    draw_text_ext(
-    item_stats_menu_x1 + 200,
-    item_stats_menu_y1 + 32*3 + 48 + 32*i,
-    inv_hud.item_stats_array[i],
-    20,
-    180
-    );
-    }
-}
-*/  
-var monster_status;
-if(global.monster_unlocked[global.monsterdex_monster_index]) {
-    monster_status = "SUCCESSFULLY RESEARCHED";
+    
+var achievement_status;
+if(global.achievements_unlocked[global.achievements_achievement_index]) {
+    achievement_status = "ACHIEVEMENT ABGESCHLOSSEN";
     draw_set_colour(c_green);
 } else {
-    monster_status = "ORIGIN UNKNOWN";
+    achievement_status = "ACHIEVEMENT NICHT ABGESCHLOSSEN";
     draw_set_colour(c_red);
 }
 
 draw_text(
-    48 + 32,
-    500 + 16,
-    monster_status
+    achievements_button_buyitem_x + 48 + 32,
+    achievements_button_buyitem_y + 16,
+    achievement_status
 );
-
-//Draw Monster
-if(global.monsterdex_monster_index != -1) {
-    var temp_sprite = object_get_sprite(global.monsterdex_monster_index);
-    if(sprite_get_width(temp_sprite) &gt; sprite_get_height(temp_sprite)) {
-        var factor = 128/sprite_get_width(temp_sprite);
-    } else {
-        var factor = 128/sprite_get_height(temp_sprite);
-    }
-    draw_sprite_ext(temp_sprite, 0,
-        (item_stats_menu_x1+item_stats_menu_x2)/2,
-        item_stats_menu_x2 - 64,
-        factor, factor, 0, sprite_colour, sprite_alpha);
-}
 </string>
           </argument>
         </arguments>

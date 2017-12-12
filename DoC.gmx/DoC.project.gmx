@@ -972,7 +972,9 @@
           <scripts name="get">
             <script>scripts\scr_get_random_valid_item.gml</script>
             <script>scripts\scr_get_random_rarity_type_item.gml</script>
+            <script>scripts\scr_get_random_valid_rarity_type_item.gml</script>
             <script>scripts\scr_get_item_type_string.gml</script>
+            <script>scripts\scr_get_custom_rarity.gml</script>
           </scripts>
         </scripts>
         <script>scripts\scr_roman_number.gml</script>
@@ -1091,6 +1093,9 @@
           <scripts name="Shop">
             <script>scripts\scr_update_shop_button.gml</script>
           </scripts>
+          <scripts name="Monsterdex">
+            <script>scripts\scr_update_monsterdex_button.gml</script>
+          </scripts>
         </scripts>
         <script>scripts\scr_enter_hub.gml</script>
         <script>scripts\scr_leave_hub.gml</script>
@@ -1153,6 +1158,7 @@
           <script>scripts\scr_write_items.gml</script>
           <script>scripts\scr_write_upgrades.gml</script>
           <script>scripts\scr_write_chars.gml</script>
+          <script>scripts\scr_write_achievements.gml</script>
           <script>scripts\scr_write_last_char.gml</script>
           <script>scripts\scr_write_item_unlocked.gml</script>
           <script>scripts\scr_write_upgrade.gml</script>
@@ -1166,6 +1172,7 @@
           <script>scripts\scr_read_items.gml</script>
           <script>scripts\scr_read_skilltree.gml</script>
           <script>scripts\scr_read_chars.gml</script>
+          <script>scripts\scr_read_achievements.gml</script>
           <script>scripts\scr_read_volume.gml</script>
         </scripts>
       </scripts>
@@ -1204,6 +1211,9 @@
         <script>scripts\scr_update_char_sprite.gml</script>
         <script>scripts\scr_draw_char_sprite.gml</script>
         <script>scripts\scr_draw_char.gml</script>
+      </scripts>
+      <scripts name="Achievements">
+        <script>scripts\scr_check_achievements.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -1872,6 +1882,7 @@
       <object>objects\obj_hub_shop</object>
       <object>objects\obj_hub_skilltree</object>
       <object>objects\obj_hub_monsterdex</object>
+      <object>objects\obj_hub_achievements</object>
       <object>objects\obj_hub_char</object>
       <object>objects\obj_hub_multitask</object>
       <object>objects\obj_mouse_ind_hub</object>
@@ -1893,6 +1904,13 @@
           <object>objects\obj_hub_button_char_choosechar</object>
           <object>objects\obj_hub_button_char_buychar</object>
         </objects>
+        <objects name="Monsterdex">
+          <object>objects\obj_hub_button_monsterdex_gettype</object>
+          <object>objects\obj_hub_button_monsterdex_getmonster</object>
+        </objects>
+        <objects name="Achievements">
+          <object>objects\obj_hub_button_achievements_getachievement</object>
+        </objects>
       </objects>
       <object>objects\obj_leave_hub_menu</object>
       <object>objects\obj_enter_game</object>
@@ -1903,6 +1921,7 @@
         <object>objects\obj_hub_stats_menu</object>
         <object>objects\obj_hub_death_menu</object>
         <object>objects\obj_hub_shop_menu</object>
+        <object>objects\obj_hub_achievements_menu</object>
         <object>objects\obj_hub_skilltree_menu</object>
       </objects>
       <object>objects\obj_hindernis_interaction</object>
@@ -2160,7 +2179,7 @@
         <object>objects\obj_xp_orb</object>
       </objects>
       <objects name="Achievements">
-        <object>objects\obj_achivements</object>
+        <object>objects\obj_achievements</object>
       </objects>
       <object>objects\obj_skilltree_stats</object>
     </objects>
@@ -2222,6 +2241,7 @@
         <room>rooms\rm_hub_shop_menu</room>
         <room>rooms\rm_hub_monsterdex_menu</room>
         <room>rooms\rm_hub_char_menu</room>
+        <room>rooms\rm_hub_achievements_menu</room>
         <room>rooms\rm_hub_skilltree_menu</room>
       </rooms>
     </rooms>
