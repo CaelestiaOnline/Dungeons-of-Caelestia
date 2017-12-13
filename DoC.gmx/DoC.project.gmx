@@ -236,11 +236,13 @@
         </sprites>
         <sprites name="Attack-Tree">
           <sprite>sprites\spr_attack_tree</sprite>
+          <sprite>sprites\spr_swamp_tree</sprite>
           <sprites name="Colbox">
             <sprite>sprites\spr_obj_attack_tree_colbox</sprite>
           </sprites>
           <sprites name="Dead">
             <sprite>sprites\spr_obj_attack_tree_dead</sprite>
+            <sprite>sprites\spr_obj_swamp_tree_dead</sprite>
           </sprites>
         </sprites>
         <sprites name="Mushrooms">
@@ -250,6 +252,7 @@
           </sprites>
           <sprites name="Dead">
             <sprite>sprites\spr_obj_mushroom_dead</sprite>
+            <sprite>sprites\spr_mutated_mushroom_dead</sprite>
           </sprites>
         </sprites>
         <sprites name="Budgerigar">
@@ -325,6 +328,23 @@
           <sprites name="Dead">
             <sprite>sprites\spr_obj_walking_blade_of_grass_dead</sprite>
           </sprites>
+        </sprites>
+        <sprites name="Bee">
+          <sprite>sprites\spr_bee</sprite>
+          <sprite>sprites\spr_obj_swamp_bee_dead</sprite>
+        </sprites>
+        <sprites name="cat">
+          <sprite>sprites\spr_cat</sprite>
+          <sprite>sprites\spr_obj_kamicat_dead</sprite>
+        </sprites>
+        <sprites name="siren">
+          <sprite>sprites\spr_siren</sprite>
+          <sprite>sprites\spr_siren_dead</sprite>
+        </sprites>
+        <sprites name="golem">
+          <sprite>sprites\spr_earth_golem</sprite>
+          <sprite>sprites\spr_obj_earth_golem_dead</sprite>
+          <sprite>sprites\spr_stone_golem</sprite>
         </sprites>
       </sprites>
       <sprites name="Tiere">
