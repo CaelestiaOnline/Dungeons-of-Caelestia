@@ -105,7 +105,7 @@ monsterdex_stats_menu_y2 = display_get_gui_height() - 64;
 for(var i = 0; i &lt; 6; i++) {
 
 monsterdex_button_gettype_x[i] = monsterdex_stats_menu_x1 + 64 + (i*96);
-monsterdexp_button_gettype_y[i] = monsterdex_stats_menu_y2 - 64;
+monsterdex_button_gettype_y[i] = monsterdex_stats_menu_y2 - 64;
 monsterdex_button_gettype[i] = instance_create(monsterdex_button_gettype_x[i], monsterdex_button_gettype_y[i], obj_hub_button_monsterdex_gettype);
 
 var temp_monsterdex_type = "forest";
@@ -312,8 +312,8 @@ if(global.monster_unlocked[global.monsterdex_monster_index]) {
 }
 
 draw_text(
-    48 + 32,
-    500 + 16,
+    monsterdex_stats_menu_x1 + 48 + 32,
+    monsterdex_stats_menu_y1 + 500 + 16,
     monster_status
 );
 

@@ -40,14 +40,14 @@ xspace = 50;
 menupos  = 0;
 
 //Überschrift
-heading = "Optionen";
+heading = "Erweiterte (Debug-)Optionen";
 
 //Auswahlmöglichkeiten
-menu[0] = "Erweiterte (Debug-)Optionen"
-menu[1] = "Lautstaerke"
-menu[2] = "Sprache: Deutsch/Englisch"
-menu[3] = "Credits"
-menu[4] = "&gt;&gt;&gt; Main Menu"
+menu[0] = "Reset Progress"
+menu[1] = "Generate Error"
+menu[2] = "Freeze Game"
+menu[3] = "I'm feelin lucky..."
+menu[4] = "&gt;&gt;&gt; Options Menu"
 
 draw_set_font(fnt_main_menu);
 
@@ -73,35 +73,11 @@ shadow = 3;
 menucolour = scr_get_random_colour();
 
 //Script
-script = scr_options_menu;
+script = scr_ext_options_menu;
 
 //Bewegter Hintergrund
 background_hspeed[0] = 0.5;
 background_vspeed[0] = 0.1;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Volume
-event_inherited();
 </string>
           </argument>
         </arguments>

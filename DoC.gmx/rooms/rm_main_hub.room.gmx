@@ -277,6 +277,7 @@
     <instance objName="obj_hub_monsterdex" x="928" y="1056" name="inst_82084FF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_char" x="784" y="1056" name="inst_9781E735" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_achievements" x="1072" y="1056" name="inst_69608946" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_in_run_shop" x="1264" y="1472" name="inst_6892504C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

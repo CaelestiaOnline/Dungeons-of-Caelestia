@@ -60,6 +60,10 @@ hub_menu_y2 = 64;
 global.achievements_achievement_index = 0;
 
 scr_read_achievements();
+
+scr_check_achievements();
+
+scr_write_achievements();
 </string>
           </argument>
         </arguments>
@@ -266,8 +270,8 @@ if(global.achievements_unlocked[global.achievements_achievement_index]) {
 }
 
 draw_text(
-    achievements_button_buyitem_x + 48 + 32,
-    achievements_button_buyitem_y + 16,
+    achievements_stats_menu_x1 + 48 + 32,
+    achievements_stats_menu_y1 + 500 + 16,
     achievement_status
 );
 </string>

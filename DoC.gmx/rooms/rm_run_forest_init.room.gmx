@@ -156,7 +156,6 @@
     <instance objName="obj_mag_chest" x="352" y="256" name="inst_AD640334" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_type_chest" x="608" y="256" name="inst_FD5FB5CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_chest" x="736" y="288" name="inst_AFEF1DCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_altar" x="624" y="816" name="inst_295009AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fragment_chest" x="224" y="288" name="inst_A8AAC099" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1328" y="944" name="inst_D650CDEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1648" y="880" name="inst_E61E7ACD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -183,6 +182,8 @@
     <instance objName="obj_rock10_deco" x="928" y="1136" name="inst_6F2CC490" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock10_deco" x="1312" y="1264" name="inst_FBC9DA22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock10_deco" x="1664" y="1088" name="inst_D326900D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_in_run_shop" x="464" y="352" name="inst_B5356CC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_altar_1" x="608" y="736" name="inst_6997AC5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_line_tileset" x="0" y="320" w="64" h="64" xo="128" yo="0" id="10000284" name="inst_5526CA6E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

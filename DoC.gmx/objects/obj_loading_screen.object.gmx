@@ -48,7 +48,7 @@ loading_screen_music = audio_play_sound(snd_music_elevator, 1, true);
           <argument>
             <kind>1</kind>
             <string>///Epileptic Mode
-epileptic_mode = scr_crit_attack(0.005);
+epileptic_mode = scr_crit_attack(0.02);
 </string>
           </argument>
         </arguments>

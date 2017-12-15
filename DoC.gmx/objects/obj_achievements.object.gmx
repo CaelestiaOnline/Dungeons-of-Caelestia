@@ -31,6 +31,8 @@ enum achievement {
     count
 }
 
+globalvar achievements_stats;
+
 </string>
           </argument>
         </arguments>

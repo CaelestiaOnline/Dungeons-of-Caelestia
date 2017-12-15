@@ -27,11 +27,16 @@
             <kind>1</kind>
             <string>///Effekt Coordinates
 
-effect_hud_effects_x_old = display_get_gui_width() - 32;
+effect_hud_effects_x_old = display_get_gui_width() - 128;
 effect_hud_effects_y_old = 32;
 
-for(var i = 0; i &lt; effect.count; i++) {
+for(var i = 0; i &lt; effect.count/2; i++) {
     effect_hud_effects_x[i] = effect_hud_effects_x_old;
+    effect_hud_effects_y[i] = effect_hud_effects_y_old + (i*64);
+}
+
+for(var i = effect.count/2; i &lt; effect.count; i++) {
+    effect_hud_effects_x[i] = effect_hud_effects_x_old + 64;
     effect_hud_effects_y[i] = effect_hud_effects_y_old + (i*64);
 }
 

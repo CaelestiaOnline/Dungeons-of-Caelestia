@@ -79,7 +79,10 @@ room_stats[rm_main_menu, 0] = "menu";
 //Options Menu
 room_stats[rm_options_menu, 0] = "menu";
 
-//Options Menu
+//Ext Options Menu
+room_stats[rm_ext_options_menu, 0] = "menu";
+
+//Volume Menu
 room_stats[rm_volume_menu, 0] = "menu";
 
 //Credits Menu

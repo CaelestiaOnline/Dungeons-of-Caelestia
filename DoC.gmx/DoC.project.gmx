@@ -881,6 +881,7 @@
     <scripts name="Menu">
       <script>scripts\scr_main_menu.gml</script>
       <script>scripts\scr_options_menu.gml</script>
+      <script>scripts\scr_ext_options_menu.gml</script>
       <script>scripts\scr_credits_menu.gml</script>
       <script>scripts\scr_multiplayer_menu.gml</script>
       <script>scripts\scr_game_end.gml</script>
@@ -894,6 +895,7 @@
       <script>scripts\scr_viewfade.gml</script>
       <script>scripts\scr_circlefade.gml</script>
       <script>scripts\scr_invfade.gml</script>
+      <script>scripts\scr_playing_menu_fade.gml</script>
       <script>scripts\scr_menufade.gml</script>
       <script>scripts\scr_menu_to_inv_fade.gml</script>
     </scripts>
@@ -975,6 +977,7 @@
             <script>scripts\scr_get_random_valid_rarity_type_item.gml</script>
             <script>scripts\scr_get_item_type_string.gml</script>
             <script>scripts\scr_get_custom_rarity.gml</script>
+            <script>scripts\scr_get_item_rarity_level.gml</script>
           </scripts>
         </scripts>
         <script>scripts\scr_roman_number.gml</script>
@@ -1103,6 +1106,10 @@
           <script>scripts\scr_start_run.gml</script>
           <script>scripts\scr_leave_run.gml</script>
         </scripts>
+        <scripts name="PlayingMenu">
+          <script>scripts\scr_enter_playing_menu.gml</script>
+          <script>scripts\scr_leave_playing_menu.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Progress">
         <scripts name="XP">
@@ -1156,6 +1163,7 @@
           <script>scripts\scr_write_progress.gml</script>
           <script>scripts\scr_write_stats.gml</script>
           <script>scripts\scr_write_items.gml</script>
+          <script>scripts\scr_write_monster.gml</script>
           <script>scripts\scr_write_upgrades.gml</script>
           <script>scripts\scr_write_chars.gml</script>
           <script>scripts\scr_write_achievements.gml</script>
@@ -1173,6 +1181,7 @@
           <script>scripts\scr_read_skilltree.gml</script>
           <script>scripts\scr_read_chars.gml</script>
           <script>scripts\scr_read_achievements.gml</script>
+          <script>scripts\scr_read_monster.gml</script>
           <script>scripts\scr_read_volume.gml</script>
         </scripts>
       </scripts>
@@ -1911,6 +1920,13 @@
         <objects name="Achievements">
           <object>objects\obj_hub_button_achievements_getachievement</object>
         </objects>
+        <objects name="PlayingMenu">
+          <object>objects\obj_playing_menu_button_exit</object>
+          <objects name="RunShop">
+            <object>objects\obj_run_shop_button_getitem</object>
+            <object>objects\obj_run_shop_button_buyitem</object>
+          </objects>
+        </objects>
       </objects>
       <object>objects\obj_leave_hub_menu</object>
       <object>objects\obj_enter_game</object>
@@ -1948,8 +1964,13 @@
         <object>objects\obj_chest_placeholder</object>
         <object>objects\obj_fragment_chest_placeholder</object>
       </objects>
-      <objects name="Altar">
-        <object>objects\obj_altar</object>
+      <objects name="PlayingMenu">
+        <object>objects\obj_altar_old</object>
+        <object>objects\obj_in_run_shop</object>
+        <object>objects\obj_altar_1</object>
+        <object>objects\obj_playing_menu</object>
+        <object>objects\obj_in_run_shop_menu</object>
+        <object>objects\obj_altar_1_menu</object>
       </objects>
     </objects>
     <objects name="Menu">
@@ -1980,6 +2001,9 @@
           <object>objects\obj_volume_button</object>
           <object>objects\obj_volume_button_sub</object>
           <object>objects\obj_volume_button_test</object>
+        </objects>
+        <objects name="ExtOptionsMenu">
+          <object>objects\obj_ext_options_menu</object>
         </objects>
       </objects>
     </objects>
@@ -2143,6 +2167,7 @@
       <object>objects\obj_viewfade</object>
       <object>objects\obj_circlefade</object>
       <object>objects\obj_invfade</object>
+      <object>objects\obj_playing_menu_fade</object>
       <object>objects\obj_menufade</object>
       <object>objects\obj_menu_to_inv_fade</object>
       <object>objects\obj_fade</object>
@@ -2226,6 +2251,7 @@
     <rooms name="Menu">
       <room>rooms\rm_main_menu</room>
       <room>rooms\rm_options_menu</room>
+      <room>rooms\rm_ext_options_menu</room>
       <room>rooms\rm_volume_menu</room>
       <room>rooms\rm_credits</room>
       <room>rooms\rm_multiplayer</room>
