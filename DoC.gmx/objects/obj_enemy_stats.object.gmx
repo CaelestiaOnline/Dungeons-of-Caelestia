@@ -54,11 +54,66 @@ enemy_stats[obj_xxxx, enemy_stats_normal.xp_drop] = 0 (int);
 enemy_stats[obj_xxxx, enemy_stats_normal.money_drop] = 0 (int);
 */
 
-enum enemy {
-    forest_penguin = obj_forest_penguin,
-    forest_penguin_small = obj_forest_penguin_small,
-    //... etc für alle Gegner, also den Objektnamen zuordnen;
-}
+enemy_objects [0] = obj_forest_penguin;
+enemy_objects [1] = obj_forest_penguin_small;
+enemy_objects [2] = obj_forest_penguin_bullet;
+enemy_objects [3] = obj_attack_tree;
+enemy_objects [4] = obj_blueberry;
+enemy_objects [5] = obj_evil_budgerigar_of_the_forest;
+enemy_objects [6] = obj_evil_budgerigar_of_the_forest_speed;
+enemy_objects [7] = obj_native;
+enemy_objects [8] = obj_mushroom;
+enemy_objects [9] = obj_boar;
+enemy_objects [10] = obj_walking_snot;
+enemy_objects [11] = obj_slug;
+enemy_objects [12] = obj_walking_blade_of_grass;
+enemy_objects [13] = obj_fox;
+enemy_objects [14] = obj_swampcorpse;
+enemy_objects [15] = obj_mosquito;
+enemy_objects [16] = obj_creeper;
+enemy_objects [17] = obj_radioactive_mud;
+enemy_objects [18] = obj_swamp_tree;
+enemy_objects [19] = obj_living_mud;
+enemy_objects [20] = obj_swamp_bee;
+enemy_objects [21] = obj_mud_golem;
+enemy_objects [22] = obj_kamicat;
+enemy_objects [23] = obj_mutated_mushroom;
+enemy_objects [24] = obj_mask_man;
+enemy_objects [25] = obj_flying_mask;
+enemy_objects [26] = obj_shaman;
+enemy_objects [27] = obj_symphalic_bird;
+enemy_objects [28] = obj_trap;
+enemy_objects [29] = obj_liane;
+enemy_objects [30] = obj_siren;
+enemy_objects [31] = obj_twist_knot;
+enemy_objects [32] = obj_alien_cleric;
+enemy_objects [33] = obj_skeleton_sword;
+enemy_objects [34] = obj_skeleton_bow;
+enemy_objects [35] = obj_spoiled_brat;
+enemy_objects [36] = obj_stone_golem;
+enemy_objects [37] = obj_earth_golem;
+enemy_objects [38] = obj_ice_golem;
+enemy_objects [39] = obj_fire_golem;
+enemy_objects [40] = obj_water_golem;
+enemy_objects [41] = obj_air_golem;
+enemy_objects [42] = obj_wood_golem;
+enemy_objects [43] = obj_aether_golem;
+enemy_objects [44] = obj_gorgon;
+enemy_objects [45] = obj_gargoyle;
+enemy_objects [46] = obj_nemeian_lion;
+enemy_objects [47] = obj_carnivorous_horse;
+enemy_objects [48] = obj_unicorn;
+enemy_objects [49] = obj_iron_bishop;
+enemy_objects [50] = obj_diamond_skeleton;
+enemy_objects [51] = obj_automat;
+enemy_objects [52] = obj_glass_human;
+enemy_objects [53] = obj_evil_dwarf;
+enemy_objects [54] = obj_tower;
+enemy_objects [55] = obj_ghul;
+enemy_objects [56] = obj_succubus;
+enemy_objects [57] = obj_revenant;
+enemy_objects [58] = obj_ghost_light;
+enemy_objects [59] = obj_fallen_angel;
 </string>
           </argument>
         </arguments>
@@ -276,7 +331,7 @@ enemy_stats[obj_forest_penguin, 1] = "Die gruene Gefahr aus dem Unterholz!";
 enemy_stats[obj_forest_penguin, 2] = true;
 enemy_stats[obj_forest_penguin, 3] = true;
 enemy_stats[obj_forest_penguin, 4] = "normal";
-//enemy_stats[obj_forest_penguin, 5] = "forest"; //also für jeden Gegner ein (priorisiertes) Gebiet, dient nur zur Einteilung im Monsterdex
+enemy_stats[obj_forest_penguin, 5] = "forest"; //also für jeden Gegner ein (priorisiertes) Gebiet, dient nur zur Einteilung im Monsterdex
 
 enemy_stats[obj_forest_penguin, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_forest_penguin, enemy_stats_normal.damage] = 12;
@@ -291,6 +346,7 @@ enemy_stats[obj_forest_penguin_small, 1] = "Die kleine gruene Gefahr aus dem Unt
 enemy_stats[obj_forest_penguin_small, 2] = true;
 enemy_stats[obj_forest_penguin_small, 3] = true;
 enemy_stats[obj_forest_penguin_small, 4] = "normal";
+enemy_stats[obj_forest_penguin_small, 5] = "forest";
 
 enemy_stats[obj_forest_penguin_small, enemy_stats_normal.hp] = 25;
 enemy_stats[obj_forest_penguin_small, enemy_stats_normal.damage] = 8;
@@ -305,6 +361,7 @@ enemy_stats[obj_forest_penguin_bullet, 1] = "Die gruene Fernkampf-Gefahr aus dem
 enemy_stats[obj_forest_penguin_bullet, 2] = true;
 enemy_stats[obj_forest_penguin_bullet, 3] = true;
 enemy_stats[obj_forest_penguin_bullet, 4] = "normal";
+enemy_stats[obj_forest_penguin_bullet, 5] = "forest";
 
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_forest_penguin_bullet, enemy_stats_normal.damage] = 20;
@@ -319,6 +376,7 @@ enemy_stats[obj_attack_tree, 1] = "Das raumuebergreifende Grossgruen!";
 enemy_stats[obj_attack_tree, 2] = true;
 enemy_stats[obj_attack_tree, 3] = true;
 enemy_stats[obj_attack_tree, 4] = "normal";
+enemy_stats[obj_attack_tree, 5] = "forest";
 
 enemy_stats[obj_attack_tree, enemy_stats_normal.hp] = 70;
 enemy_stats[obj_attack_tree, enemy_stats_normal.damage] = 20;
@@ -333,6 +391,7 @@ enemy_stats[obj_blueberry, 1] = "Das schnelle blaue Rudeltier";
 enemy_stats[obj_blueberry, 2] = true;
 enemy_stats[obj_blueberry, 3] = true;
 enemy_stats[obj_blueberry, 4] = "normal";
+enemy_stats[obj_blueberry, 5] = "forest";
 
 enemy_stats[obj_blueberry, enemy_stats_normal.hp] = 20;
 enemy_stats[obj_blueberry, enemy_stats_normal.damage] = 10;
@@ -347,6 +406,7 @@ enemy_stats[obj_evil_budgerigar_of_the_forest, 1] = "Die furiose Fernkampfgefahr
 enemy_stats[obj_evil_budgerigar_of_the_forest, 2] = true;
 enemy_stats[obj_evil_budgerigar_of_the_forest, 3] = true;
 enemy_stats[obj_evil_budgerigar_of_the_forest, 4] = "normal";
+enemy_stats[obj_evil_budgerigar_of_the_forest, 5] = "forest";
 
 enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.hp] = 30;
 enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.damage] = 20;
@@ -361,6 +421,7 @@ enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 1] = "Die nervige Nahkampfg
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 2] = true;
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 3] = true;
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 4] = "normal";
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 5] = "forest";
 
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.hp] = 25;
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.damage] = 20;
@@ -375,6 +436,7 @@ enemy_stats[obj_native, 1] = "Vorsicht! Sie haben vergiftete Pfeile!";
 enemy_stats[obj_native, 2] = true;
 enemy_stats[obj_native, 3] = true;
 enemy_stats[obj_native, 4] = "normal";
+enemy_stats[obj_native, 5] = "forest";
 
 enemy_stats[obj_native, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_native, enemy_stats_normal.damage] = 10;
@@ -389,6 +451,7 @@ enemy_stats[obj_mushroom, 1] = "Sie sondern giftiges Gas ab, wenn du ihnen zu na
 enemy_stats[obj_mushroom, 2] = false;
 enemy_stats[obj_mushroom, 3] = true;
 enemy_stats[obj_mushroom, 4] = "normal";
+enemy_stats[obj_mushroom, 5] = "forest";
 
 enemy_stats[obj_mushroom, enemy_stats_normal.hp] = 80;
 enemy_stats[obj_mushroom, enemy_stats_normal.damage] = 8;
@@ -403,6 +466,7 @@ enemy_stats[obj_boar, 1] = "Die Hauer sind spitz!";
 enemy_stats[obj_boar, 2] = true;
 enemy_stats[obj_boar, 3] = true;
 enemy_stats[obj_boar, 4] = "normal";
+enemy_stats[obj_boar, 5] = "forest";
 
 enemy_stats[obj_boar, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_boar, enemy_stats_normal.damage] = 10;
@@ -438,6 +502,7 @@ enemy_stats[obj_walking_snot, 1] = "Vorsicht ansteckend!";
 enemy_stats[obj_walking_snot, 2] = true;
 enemy_stats[obj_walking_snot, 3] = true;
 enemy_stats[obj_walking_snot, 4] = "normal";
+enemy_stats[obj_walking_snot, 5] = "forest";
 
 enemy_stats[obj_walking_snot, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_walking_snot, enemy_stats_normal.damage] = 12;
@@ -452,6 +517,7 @@ enemy_stats[obj_slug, 1] = "Sie macht auch dich langsam!";
 enemy_stats[obj_slug, 2] = true;
 enemy_stats[obj_slug, 3] = true;
 enemy_stats[obj_slug, 4] = "normal";
+enemy_stats[obj_slug, 5] = "forest";
 
 enemy_stats[obj_slug, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_slug, enemy_stats_normal.damage] = 15;
@@ -466,6 +532,7 @@ enemy_stats[obj_walking_blade_of_grass, 1] = "Tritt nur in sehr grossen Rudeln a
 enemy_stats[obj_walking_blade_of_grass, 2] = true;
 enemy_stats[obj_walking_blade_of_grass, 3] = true;
 enemy_stats[obj_walking_blade_of_grass, 4] = "normal";
+enemy_stats[obj_walking_blade_of_grass, 5] = "forest";
 
 enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.hp] = 15;
 enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.damage] = 8;
@@ -480,6 +547,7 @@ enemy_stats[obj_fox, 1] = "Er liebt es, die Tollwut zu verbreiten";
 enemy_stats[obj_fox, 2] = true;
 enemy_stats[obj_fox, 3] = true;
 enemy_stats[obj_fox, 4] = "normal";
+enemy_stats[obj_fox, 5] = "forest";
 
 enemy_stats[obj_fox, enemy_stats_normal.hp] = 65;
 enemy_stats[obj_fox, enemy_stats_normal.damage] = 20;
@@ -494,6 +562,7 @@ enemy_stats[obj_swampcorpse, 1] = "Stinkt wie die Pest, aber will einfach nicht 
 enemy_stats[obj_swampcorpse, 2] = true;
 enemy_stats[obj_swampcorpse, 3] = true;
 enemy_stats[obj_swampcorpse, 4] = "normal";
+enemy_stats[obj_swampcorpse, 5] = "swamp";
 
 enemy_stats[obj_swampcorpse, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_swampcorpse, enemy_stats_normal.damage] = 15;
@@ -508,6 +577,7 @@ enemy_stats[obj_mosquito, 1] = "Da ist Malaria vorprogrammiert";
 enemy_stats[obj_mosquito, 2] = true;
 enemy_stats[obj_mosquito, 3] = true;
 enemy_stats[obj_mosquito, 4] = "normal";
+enemy_stats[obj_mosquito, 5] = "swamp";
 
 enemy_stats[obj_mosquito, enemy_stats_normal.hp] = 20;
 enemy_stats[obj_mosquito, enemy_stats_normal.damage] = 5;
@@ -522,6 +592,7 @@ enemy_stats[obj_creeper, 1] = "Und schon kannst du dich nicht mehr bewegen";
 enemy_stats[obj_creeper, 2] = false;
 enemy_stats[obj_creeper, 3] = true;
 enemy_stats[obj_creeper, 4] = "normal";
+enemy_stats[obj_creeper, 5] = "swamp";
 
 enemy_stats[obj_creeper, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_creeper, enemy_stats_normal.damage] = 5;
@@ -536,6 +607,7 @@ enemy_stats[obj_radioactive_mud, 1] = "Der strahlt so freundlich";
 enemy_stats[obj_radioactive_mud, 2] = true;
 enemy_stats[obj_radioactive_mud, 3] = true;
 enemy_stats[obj_radioactive_mud, 4] = "normal";
+enemy_stats[obj_radioactive_mud, 5] = "swamp";
 
 enemy_stats[obj_radioactive_mud, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_radioactive_mud, enemy_stats_normal.damage] = 20;
@@ -550,6 +622,7 @@ enemy_stats[obj_swamp_tree, 1] = "Ein naher Verwandter des wandelnden Baums";
 enemy_stats[obj_swamp_tree, 2] = true;
 enemy_stats[obj_swamp_tree, 3] = true;
 enemy_stats[obj_swamp_tree, 4] = "normal";
+enemy_stats[obj_swamp_tree, 5] = "swamp";
 
 enemy_stats[obj_swamp_tree, enemy_stats_normal.hp] = 80;
 enemy_stats[obj_swamp_tree, enemy_stats_normal.damage] = 10;
@@ -564,6 +637,7 @@ enemy_stats[obj_living_mud, 1] = "Er ist nass und kalt!";
 enemy_stats[obj_living_mud, 2] = true;
 enemy_stats[obj_living_mud, 3] = true;
 enemy_stats[obj_living_mud, 4] = "normal";
+enemy_stats[obj_living_mud, 5] = "swamp";
 
 enemy_stats[obj_living_mud, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_living_mud, enemy_stats_normal.damage] = 25;
@@ -599,6 +673,7 @@ enemy_stats[obj_swamp_bee, 1] = "Für Allergiker tödlich!";
 enemy_stats[obj_swamp_bee, 2] = true;
 enemy_stats[obj_swamp_bee, 3] = true;
 enemy_stats[obj_swamp_bee, 4] = "normal";
+enemy_stats[obj_swamp_bee, 5] = "swamp";
 
 enemy_stats[obj_swamp_bee, enemy_stats_normal.hp] = 20;
 enemy_stats[obj_swamp_bee, enemy_stats_normal.damage] = 20;
@@ -613,6 +688,7 @@ enemy_stats[obj_mud_golem, 1] = "Matschig bis zum geht-nicht-mehr";
 enemy_stats[obj_mud_golem, 2] = true;
 enemy_stats[obj_mud_golem, 3] = true;
 enemy_stats[obj_mud_golem, 4] = "normal";
+enemy_stats[obj_mud_golem, 5] = "swamp";
 
 enemy_stats[obj_mud_golem, enemy_stats_normal.hp] = 100;
 enemy_stats[obj_mud_golem, enemy_stats_normal.damage] = 30;
@@ -627,6 +703,7 @@ enemy_stats[obj_kamicat, 1] = "Hat einen starken Todeswunsch";
 enemy_stats[obj_kamicat, 2] = true;
 enemy_stats[obj_kamicat, 3] = true;
 enemy_stats[obj_kamicat, 4] = "normal";
+enemy_stats[obj_kamicat, 5] = "ruins";
 
 enemy_stats[obj_kamicat, enemy_stats_normal.hp] = 30;
 enemy_stats[obj_kamicat, enemy_stats_normal.damage] = 50;
@@ -641,6 +718,7 @@ enemy_stats[obj_mutated_mushroom, 1] = "Der kann sogar laufen";
 enemy_stats[obj_mutated_mushroom, 2] = true;
 enemy_stats[obj_mutated_mushroom, 3] = true;
 enemy_stats[obj_mutated_mushroom, 4] = "normal";
+enemy_stats[obj_mutated_mushroom, 5] = "ruins";
 
 enemy_stats[obj_mutated_mushroom, enemy_stats_normal.hp] = 35;
 enemy_stats[obj_mutated_mushroom, enemy_stats_normal.damage] = 10;
@@ -655,6 +733,7 @@ enemy_stats[obj_mask_man, 1] = "Er wird Rache üben";
 enemy_stats[obj_mask_man, 2] = true;
 enemy_stats[obj_mask_man, 3] = true;
 enemy_stats[obj_mask_man, 4] = "normal";
+enemy_stats[obj_mask_man, 5] = "ruins";
 
 enemy_stats[obj_mask_man, enemy_stats_normal.hp] = 30;
 enemy_stats[obj_mask_man, enemy_stats_normal.damage] = 20;
@@ -669,6 +748,7 @@ enemy_stats[obj_flying_mask, 1] = "Die Rache des Maskenmanns";
 enemy_stats[obj_flying_mask, 2] = true;
 enemy_stats[obj_flying_mask, 3] = true;
 enemy_stats[obj_flying_mask, 4] = "normal";
+enemy_stats[obj_flying_mask, 5] = "ruins";
 
 enemy_stats[obj_flying_mask, enemy_stats_normal.hp] = 15;
 enemy_stats[obj_flying_mask, enemy_stats_normal.damage] = 10;
@@ -683,6 +763,7 @@ enemy_stats[obj_shaman, 1] = "Heilt deine Gegner";
 enemy_stats[obj_shaman, 2] = true;
 enemy_stats[obj_shaman, 3] = true;
 enemy_stats[obj_shaman, 4] = "normal";
+enemy_stats[obj_shaman, 5] = "ruins";
 
 enemy_stats[obj_shaman, enemy_stats_normal.hp] = 60;
 enemy_stats[obj_shaman, enemy_stats_normal.damage] = 10;
@@ -697,6 +778,7 @@ enemy_stats[obj_symphalic_bird, 1] = "Sie sind sehr laut";
 enemy_stats[obj_symphalic_bird, 2] = true;
 enemy_stats[obj_symphalic_bird, 3] = true;
 enemy_stats[obj_symphalic_bird, 4] = "normal";
+enemy_stats[obj_symphalic_bird, 5] = "ruins";
 
 enemy_stats[obj_symphalic_bird, enemy_stats_normal.hp] = 30;
 enemy_stats[obj_symphalic_bird, enemy_stats_normal.damage] = 20;
@@ -711,6 +793,7 @@ enemy_stats[obj_trap, 1] = "Vorsicht! Nicht reintreten!";
 enemy_stats[obj_trap, 2] = false;
 enemy_stats[obj_trap, 3] = true;
 enemy_stats[obj_trap, 4] = "normal";
+enemy_stats[obj_trap, 5] = "ruins";
 
 enemy_stats[obj_trap, enemy_stats_normal.hp] = 15;
 enemy_stats[obj_trap, enemy_stats_normal.damage] = 30;
@@ -725,6 +808,7 @@ enemy_stats[obj_liane, 1] = "Und schon kannst du dich nicht mehr bewegen";
 enemy_stats[obj_liane, 2] = false;
 enemy_stats[obj_liane, 3] = true;
 enemy_stats[obj_liane, 4] = "normal";
+enemy_stats[obj_liane, 5] = "ruins";
 
 enemy_stats[obj_liane, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_liane, enemy_stats_normal.damage] = 5;
@@ -760,6 +844,7 @@ enemy_stats[obj_siren, 1] = "Nein, nicht die von der Feuerwehr";
 enemy_stats[obj_siren, 2] = true;
 enemy_stats[obj_siren, 3] = true;
 enemy_stats[obj_siren, 4] = "normal";
+enemy_stats[obj_siren, 5] = "ruins";
 
 enemy_stats[obj_siren, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_siren, enemy_stats_normal.damage] = 8;
@@ -774,6 +859,7 @@ enemy_stats[obj_twist_knot, 1] = "Die bewegliche Variante der Liane";
 enemy_stats[obj_twist_knot, 2] = true;
 enemy_stats[obj_twist_knot, 3] = true;
 enemy_stats[obj_twist_knot, 4] = "normal";
+enemy_stats[obj_twist_knot, 5] = "ruins";
 
 enemy_stats[obj_twist_knot, enemy_stats_normal.hp] = 30;
 enemy_stats[obj_twist_knot, enemy_stats_normal.damage] = 20;
@@ -788,6 +874,7 @@ enemy_stats[obj_alien_cleric, 1] = "Tut nichts außer die Gegner zu heilen";
 enemy_stats[obj_alien_cleric, 2] = true;
 enemy_stats[obj_alien_cleric, 3] = true;
 enemy_stats[obj_alien_cleric, 4] = "normal";
+enemy_stats[obj_alien_cleric, 5] = "dungeon";
 
 enemy_stats[obj_alien_cleric, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_alien_cleric, enemy_stats_normal.damage] = 25;
@@ -802,6 +889,7 @@ enemy_stats[obj_skeleton_sword, 1] = "Ich glaub nicht, dass man ein Schwert so v
 enemy_stats[obj_skeleton_sword, 2] = true;
 enemy_stats[obj_skeleton_sword, 3] = true;
 enemy_stats[obj_skeleton_sword, 4] = "normal";
+enemy_stats[obj_skeleton_sword, 5] = "dungeon";
 
 enemy_stats[obj_skeleton_sword, enemy_stats_normal.hp] = 35;
 enemy_stats[obj_skeleton_sword, enemy_stats_normal.damage] = 20;
@@ -816,6 +904,7 @@ enemy_stats[obj_skeleton_bow, 1] = "Ich glaub auch nicht, dass man einen Bogen s
 enemy_stats[obj_skeleton_bow, 2] = true;
 enemy_stats[obj_skeleton_bow, 3] = true;
 enemy_stats[obj_skeleton_bow, 4] = "normal";
+enemy_stats[obj_skeleton_bow, 5] = "dungeon";
 
 enemy_stats[obj_skeleton_bow, enemy_stats_normal.hp] = 45;
 enemy_stats[obj_skeleton_bow, enemy_stats_normal.damage] = 15;
@@ -830,6 +919,7 @@ enemy_stats[obj_spoiled_brat, 1] = "Sitzt bloß da und heult";
 enemy_stats[obj_spoiled_brat, 2] = false;
 enemy_stats[obj_spoiled_brat, 3] = true;
 enemy_stats[obj_spoiled_brat, 4] = "normal";
+enemy_stats[obj_spoiled_brat, 5] = "dungeon";
 
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.hp] = 70;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.damage] = 20;
@@ -844,6 +934,7 @@ enemy_stats[obj_stone_golem, 1] = "Was ist das? Stein!";
 enemy_stats[obj_stone_golem, 2] = true;
 enemy_stats[obj_stone_golem, 3] = true;
 enemy_stats[obj_stone_golem, 4] = "normal";
+enemy_stats[obj_stone_golem, 5] = "dungeon";
 
 enemy_stats[obj_stone_golem, enemy_stats_normal.hp] = 150;
 enemy_stats[obj_stone_golem, enemy_stats_normal.damage] = 15;
@@ -858,6 +949,7 @@ enemy_stats[obj_earth_golem, 1] = "Ziemlich dreckig";
 enemy_stats[obj_earth_golem, 2] = true;
 enemy_stats[obj_earth_golem, 3] = true;
 enemy_stats[obj_earth_golem, 4] = "normal";
+enemy_stats[obj_earth_golem, 5] = "dungeon";
 
 enemy_stats[obj_earth_golem, enemy_stats_normal.hp] = 100;
 enemy_stats[obj_earth_golem, enemy_stats_normal.damage] = 20;
@@ -872,6 +964,7 @@ enemy_stats[obj_ice_golem, 1] = "K...kalt";
 enemy_stats[obj_ice_golem, 2] = true;
 enemy_stats[obj_ice_golem, 3] = true;
 enemy_stats[obj_ice_golem, 4] = "normal";
+enemy_stats[obj_ice_golem, 5] = "dungeon";
 
 enemy_stats[obj_ice_golem, enemy_stats_normal.hp] = 90;
 enemy_stats[obj_ice_golem, enemy_stats_normal.damage] = 17;
@@ -886,6 +979,7 @@ enemy_stats[obj_fire_golem, 1] = "Heiß!";
 enemy_stats[obj_fire_golem, 2] = true;
 enemy_stats[obj_fire_golem, 3] = true;
 enemy_stats[obj_fire_golem, 4] = "normal";
+enemy_stats[obj_fire_golem, 5] = "dungeon";
 
 enemy_stats[obj_fire_golem, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_fire_golem, enemy_stats_normal.damage] = 25;
@@ -900,6 +994,7 @@ enemy_stats[obj_water_golem, 1] = "Heilt Gegner";
 enemy_stats[obj_water_golem, 2] = true;
 enemy_stats[obj_water_golem, 3] = true;
 enemy_stats[obj_water_golem, 4] = "normal";
+enemy_stats[obj_water_golem, 5] = "dungeon";
 
 enemy_stats[obj_water_golem, enemy_stats_normal.hp] = 70;
 enemy_stats[obj_water_golem, enemy_stats_normal.damage] = 10;
@@ -935,6 +1030,7 @@ enemy_stats[obj_air_golem, 1] = "Speedboost!";
 enemy_stats[obj_air_golem, 2] = true;
 enemy_stats[obj_air_golem, 3] = true;
 enemy_stats[obj_air_golem, 4] = "normal";
+enemy_stats[obj_air_golem, 5] = "dungeon";
 
 enemy_stats[obj_air_golem, enemy_stats_normal.hp] = 80;
 enemy_stats[obj_air_golem, enemy_stats_normal.damage] = 17;
@@ -949,6 +1045,7 @@ enemy_stats[obj_wood_golem, 1] = "Er ist stärker, als er sich anhört";
 enemy_stats[obj_wood_golem, 2] = true;
 enemy_stats[obj_wood_golem, 3] = true;
 enemy_stats[obj_wood_golem, 4] = "normal";
+enemy_stats[obj_wood_golem, 5] = "dungeon";
 
 enemy_stats[obj_wood_golem, enemy_stats_normal.hp] = 100;
 enemy_stats[obj_wood_golem, enemy_stats_normal.damage] = 20;
@@ -963,6 +1060,7 @@ enemy_stats[obj_aether_golem, 1] = "Beinahe schon transzendent";
 enemy_stats[obj_aether_golem, 2] = true;
 enemy_stats[obj_aether_golem, 3] = true;
 enemy_stats[obj_aether_golem, 4] = "normal";
+enemy_stats[obj_aether_golem, 5] = "dungeon";
 
 enemy_stats[obj_aether_golem, enemy_stats_normal.hp] = 120;
 enemy_stats[obj_aether_golem, enemy_stats_normal.damage] = 20;
@@ -977,6 +1075,7 @@ enemy_stats[obj_gorgon, 1] = "Sie ist so hässlich, dass du beim Anblick verstei
 enemy_stats[obj_gorgon, 2] = true;
 enemy_stats[obj_gorgon, 3] = true;
 enemy_stats[obj_gorgon, 4] = "normal";
+enemy_stats[obj_gorgon, 5] = "cave";
 
 enemy_stats[obj_gorgon, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_gorgon, enemy_stats_normal.damage] = 20;
@@ -991,6 +1090,7 @@ enemy_stats[obj_gargoyle, 1] = "Steinerne Abbilder von der Kirchenfassade";
 enemy_stats[obj_gargoyle, 2] = true;
 enemy_stats[obj_gargoyle, 3] = true;
 enemy_stats[obj_gargoyle, 4] = "normal";
+enemy_stats[obj_gargoyle, 5] = "cave";
 
 enemy_stats[obj_gargoyle, enemy_stats_normal.hp] = 100;
 enemy_stats[obj_gargoyle, enemy_stats_normal.damage] = 10;
@@ -1005,6 +1105,7 @@ enemy_stats[obj_nemeian_lion, 1] = "Mit ziemlich dickem Pelz";
 enemy_stats[obj_nemeian_lion, 2] = true;
 enemy_stats[obj_nemeian_lion, 3] = true;
 enemy_stats[obj_nemeian_lion, 4] = "normal";
+enemy_stats[obj_nemeian_lion, 5] = "cave";
 
 enemy_stats[obj_nemeian_lion, enemy_stats_normal.hp] = 120;
 enemy_stats[obj_nemeian_lion, enemy_stats_normal.damage] = 12;
@@ -1019,6 +1120,7 @@ enemy_stats[obj_carnivorous_horse, 1] = "Hat dich zum Fressen gern";
 enemy_stats[obj_carnivorous_horse, 2] = true;
 enemy_stats[obj_carnivorous_horse, 3] = true;
 enemy_stats[obj_carnivorous_horse, 4] = "normal";
+enemy_stats[obj_carnivorous_horse, 5] = "cave";
 
 enemy_stats[obj_carnivorous_horse, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_carnivorous_horse, enemy_stats_normal.damage] = 15;
@@ -1033,6 +1135,7 @@ enemy_stats[obj_unicorn, 1] = "Wirkt Stärkezauber auf Gegner";
 enemy_stats[obj_unicorn, 2] = true;
 enemy_stats[obj_unicorn, 3] = true;
 enemy_stats[obj_unicorn, 4] = "normal";
+enemy_stats[obj_unicorn, 5] = "cave";
 
 enemy_stats[obj_unicorn, enemy_stats_normal.hp] = 60;
 enemy_stats[obj_unicorn, enemy_stats_normal.damage] = 8;
@@ -1047,6 +1150,7 @@ enemy_stats[obj_iron_bishop, 1] = "Er bekämpft dich eisern";
 enemy_stats[obj_iron_bishop, 2] = true;
 enemy_stats[obj_iron_bishop, 3] = true;
 enemy_stats[obj_iron_bishop, 4] = "normal";
+enemy_stats[obj_iron_bishop, 5] = "cave";
 
 enemy_stats[obj_iron_bishop, enemy_stats_normal.hp] = 80;
 enemy_stats[obj_iron_bishop, enemy_stats_normal.damage] = 10;
@@ -1061,6 +1165,7 @@ enemy_stats[obj_diamond_skeleton, 1] = "Hält mehr aus als die anderen Gegner";
 enemy_stats[obj_diamond_skeleton, 2] = true;
 enemy_stats[obj_diamond_skeleton, 3] = true;
 enemy_stats[obj_diamond_skeleton, 4] = "normal";
+enemy_stats[obj_diamond_skeleton, 5] = "cave";
 
 enemy_stats[obj_diamond_skeleton, enemy_stats_normal.hp] = 100;
 enemy_stats[obj_diamond_skeleton, enemy_stats_normal.damage] = 5;
@@ -1110,6 +1215,7 @@ enemy_stats[obj_automat, 1] = "Sehr instabil";
 enemy_stats[obj_automat, 2] = true;
 enemy_stats[obj_automat, 3] = true;
 enemy_stats[obj_automat, 4] = "normal";
+enemy_stats[obj_automat, 5] = "cave";
 
 enemy_stats[obj_automat, enemy_stats_normal.hp] = 100;
 enemy_stats[obj_automat, enemy_stats_normal.damage] = 50;
@@ -1124,6 +1230,7 @@ enemy_stats[obj_glass_human, 1] = "Äußerst zerbrechlich";
 enemy_stats[obj_glass_human, 2] = true;
 enemy_stats[obj_glass_human, 3] = true;
 enemy_stats[obj_glass_human, 4] = "normal";
+enemy_stats[obj_glass_human, 5] = "cave";
 
 enemy_stats[obj_glass_human, enemy_stats_normal.hp] = 30;
 enemy_stats[obj_glass_human, enemy_stats_normal.damage] = 20;
@@ -1138,6 +1245,7 @@ enemy_stats[obj_evil_dwarf, 1] = "Stellt Geschütztürme auf";
 enemy_stats[obj_evil_dwarf, 2] = true;
 enemy_stats[obj_evil_dwarf, 3] = true;
 enemy_stats[obj_evil_dwarf, 4] = "normal";
+enemy_stats[obj_evil_dwarf, 5] = "cave";
 
 enemy_stats[obj_evil_dwarf, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_evil_dwarf, enemy_stats_normal.damage] = 20;
@@ -1152,6 +1260,7 @@ enemy_stats[obj_tower, 1] = "Wird vom Zwerg aufgestellt";
 enemy_stats[obj_tower, 2] = true;
 enemy_stats[obj_tower, 3] = true;
 enemy_stats[obj_tower, 4] = "normal";
+enemy_stats[obj_tower, 5] = "cave";
 
 enemy_stats[obj_tower, enemy_stats_normal.hp] = 30;
 enemy_stats[obj_tower, enemy_stats_normal.damage] = 25;
@@ -1166,6 +1275,7 @@ enemy_stats[obj_ghul, 1] = "Der war schonmal tot";
 enemy_stats[obj_ghul, 2] = true;
 enemy_stats[obj_ghul, 3] = true;
 enemy_stats[obj_ghul, 4] = "normal";
+enemy_stats[obj_ghul, 5] = "cave";
 
 enemy_stats[obj_ghul, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_ghul, enemy_stats_normal.damage] = 25;
@@ -1180,6 +1290,7 @@ enemy_stats[obj_succubus, 1] = "Sie ist wortwörtlich heiß";
 enemy_stats[obj_succubus, 2] = true;
 enemy_stats[obj_succubus, 3] = true;
 enemy_stats[obj_succubus, 4] = "normal";
+enemy_stats[obj_succubus, 5] = "hell";
 
 enemy_stats[obj_succubus, enemy_stats_normal.hp] = 70;
 enemy_stats[obj_succubus, enemy_stats_normal.damage] = 10;
@@ -1194,6 +1305,7 @@ enemy_stats[obj_revenant, 1] = "Kommt vielleicht wieder";
 enemy_stats[obj_revenant, 2] = true;
 enemy_stats[obj_revenant, 3] = true;
 enemy_stats[obj_revenant, 4] = "normal";
+enemy_stats[obj_revenant, 5] = "hell";
 
 enemy_stats[obj_revenant, enemy_stats_normal.hp] = 50;
 enemy_stats[obj_revenant, enemy_stats_normal.damage] = 12;
@@ -1208,6 +1320,7 @@ enemy_stats[obj_ghost_light, 1] = "Gibt eien Heilimpuls ab";
 enemy_stats[obj_ghost_light, 2] = true;
 enemy_stats[obj_ghost_light, 3] = true;
 enemy_stats[obj_ghost_light, 4] = "normal";
+enemy_stats[obj_ghost_light, 5] = "hell";
 
 enemy_stats[obj_ghost_light, enemy_stats_normal.hp] = 20;
 enemy_stats[obj_ghost_light, enemy_stats_normal.damage] = 50;
@@ -1222,6 +1335,7 @@ enemy_stats[obj_fallen_angel, 1] = "Stärkt Gegner";
 enemy_stats[obj_fallen_angel, 2] = true;
 enemy_stats[obj_fallen_angel, 3] = true;
 enemy_stats[obj_fallen_angel, 4] = "normal";
+enemy_stats[obj_fallen_angel, 5] = "hell";
 
 enemy_stats[obj_fallen_angel, enemy_stats_normal.hp] = 70;
 enemy_stats[obj_fallen_angel, enemy_stats_normal.damage] = 20;
