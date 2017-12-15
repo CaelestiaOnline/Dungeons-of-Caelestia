@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1001</depth>
-  <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <depth>-2</depth>
+  <persistent>0</persistent>
+  <parentName>obj_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,20 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///is_visible
-is_visible = false;
+            <string>///Variablen
+event_inherited();
 
-mouse_icon_normal = spr_mouse_icon;
-mouse_icon = mouse_icon_normal;
+button_item = 0;
+button_count = 0;
 
-fix_point_x = 0;
-fix_point_y = 0;
+buyable = false;
+item_prize = 0;
+
+width = 32;
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,57 +58,83 @@ fix_point_y = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setze is_visible
-if(admin.in_game) {
-    is_visible = max(admin.game_paused, hub.in_menu, instance_exists(obj_playing_menu), 0);
-}
-if(is_visible) {
-    visible = true;
-    x = device_mouse_x_to_gui(0);
-    y = device_mouse_y_to_gui(0);
-}
-else {
-    visible = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="75">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw Mouse Icon
-if(is_visible) {
-    draw_sprite(mouse_icon, 0, x, y);
-    if(admin.show_hitbox) {
-        draw_set_font(fnt_debug);
-        draw_set_alpha(0.8);
-        draw_set_colour(c_white);
-        draw_text(x + 20, y - 20, string(x - fix_point_x) + "/" + string(display_get_gui_width() - fix_point_x));
-        draw_text(x + 20, y - 10, string(y - fix_point_y) + "/" + string(display_get_gui_height()- fix_point_y));  
-        draw_set_alpha(1);
-        
-        if(keyboard_check(vk_control) &amp;&amp; mouse_check_button(mb_middle)) {
-            fix_point_x = x;
-            fix_point_y = y;
+            <string>///Drag &amp; Drop System
+button_item = global.run_shop_menu_item_index;
+button_count = global.run_shop_menu_item_count;
+
+item_prize = round(scr_get_item_prize(button_item) * global.run_shop_menu_prize_mult);
+
+buyable = (progress.run_money &gt;= item_prize);
+
+scr_button_interaction_custom();
+
+if(confirmed_hover) {
+    if(confirmed_left_hold) {
+        scr_draw_button_hover(c_red, 0.7);
+    } else {
+        scr_draw_button_hover(-1, 0.7);
+    }
+
+    if(confirmed_left_released) {
+        if(buyable) {
+            progress.run_money -= item_prize;
+            var hitmark = origin_object.run_shop_object.ability_hitmark;
+            scr_inventory_drop_item_place_count(button_item, hitmark.x, hitmark.y, button_count);
+            var text_ind = instance_create(x, y - 128, obj_gui_text_ind);
+            text_ind.draw_colour = c_green;
+            text_ind.text = "ITEM WURDE GEKAUFT!";
+            var text_ind = instance_create(x, y - 152, obj_gui_text_ind);
+            text_ind.draw_colour = c_red;
+            text_ind.text = "-" + string(item_prize) + "RM";
+        } else {
+            scr_button_draw_invalid_action(0, -64);
         }
     }
 }
+
+draw_sprite(spr_hub_button_shop_buyitem_border, 0, x, y);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Sprite + Anzahl
+draw_sprite_ext(scr_get_item_sprite(button_item), 0, x, y, 1.5, 1.5, 0, c_white, 1);
+
+//Anzahl der Item in den Slots
+scr_draw_count(button_count, x, y);
+
+draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_font(fnt_inv_stats);
+draw_set_halign(fa_center);
+draw_text(x, y + 64, "KOSTEN: " + string(item_prize) + "RM");
+draw_text(x, y + 64 + 24, "Click to buy.");
+draw_set_halign(fa_left);
+
+if(!buyable) {
+    draw_sprite(spr_not_buyable, 0, x, y);
+}
+
+
+
 </string>
           </argument>
         </arguments>

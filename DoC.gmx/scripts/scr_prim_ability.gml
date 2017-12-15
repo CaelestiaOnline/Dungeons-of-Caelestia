@@ -13,7 +13,7 @@ if(admin.prim_attack_key_pressed || admin.prim_attack_key) {
     stats.prim_attacks_done += 1;
     var cooldown = 0;
     if(index != -10) {
-        cooldown = item_stats[index, item_stats_prim.attack_speed];
+        cooldown = round(item_stats[index, item_stats_prim.attack_speed] * player_stats.attack_speed_mult);
     } else cooldown = player_stats.attack_speed;
     alarm_set(0, cooldown);
     if(player_stats.attack_speed <= cooldown) cooldown = -1;

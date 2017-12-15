@@ -83,7 +83,6 @@ exit_button = instance_create(exit_button_x, exit_button_y, obj_hub_button_exit)
 
 //Char Buttons DEBUG
 max_slots = 15;
-var hwidth = array_height_2d(item) div max_slots;
 
 for(var j = 0; j &lt; max_slots; j++) {
 for(var i = 0; i &lt; max_slots; i++) {

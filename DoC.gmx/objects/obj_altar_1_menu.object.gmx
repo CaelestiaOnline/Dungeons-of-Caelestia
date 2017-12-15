@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1001</depth>
-  <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <depth>0</depth>
+  <persistent>0</persistent>
+  <parentName>obj_playing_menu</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,20 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///is_visible
-is_visible = false;
+            <string>///Init
+event_inherited();
 
-mouse_icon_normal = spr_mouse_icon;
-mouse_icon = mouse_icon_normal;
 
-fix_point_x = 0;
-fix_point_y = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -55,57 +51,25 @@ fix_point_y = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setze is_visible
-if(admin.in_game) {
-    is_visible = max(admin.game_paused, hub.in_menu, instance_exists(obj_playing_menu), 0);
-}
-if(is_visible) {
-    visible = true;
-    x = device_mouse_x_to_gui(0);
-    y = device_mouse_y_to_gui(0);
-}
-else {
-    visible = false;
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="75">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw Mouse Icon
-if(is_visible) {
-    draw_sprite(mouse_icon, 0, x, y);
-    if(admin.show_hitbox) {
-        draw_set_font(fnt_debug);
-        draw_set_alpha(0.8);
-        draw_set_colour(c_white);
-        draw_text(x + 20, y - 20, string(x - fix_point_x) + "/" + string(display_get_gui_width() - fix_point_x));
-        draw_text(x + 20, y - 10, string(y - fix_point_y) + "/" + string(display_get_gui_height()- fix_point_y));  
-        draw_set_alpha(1);
-        
-        if(keyboard_check(vk_control) &amp;&amp; mouse_check_button(mb_middle)) {
-            fix_point_x = x;
-            fix_point_y = y;
-        }
-    }
-}
+            <string>///Draw Text
+event_inherited();
+
+var buffer = 32;
+draw_set_alpha(1);
+draw_set_colour(c_white);
+draw_set_font(fnt_inv_heading_prim);
+
+draw_text(playing_menu_x1 + buffer, playing_menu_y1 + buffer, "ALTAR");
+
+draw_set_font(fnt_item_stats_direct);
+
+draw_text_ext(
+    playing_menu_x1 + buffer,
+    playing_menu_y1 + 32 + buffer,
+    "Hier kannst du Items opfern, um xxxx zu erhalten!",
+    24,
+    1000
+);
 </string>
           </argument>
         </arguments>

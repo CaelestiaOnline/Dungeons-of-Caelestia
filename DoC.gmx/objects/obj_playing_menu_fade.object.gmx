@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1001</depth>
+  <depth>-10</depth>
   <persistent>-1</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_fade</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,48 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///is_visible
-is_visible = false;
+            <string>///Variablen
+stagetwo = false;
 
-mouse_icon_normal = spr_mouse_icon;
-mouse_icon = mouse_icon_normal;
+xfactor = 5;
 
-fix_point_x = 0;
-fix_point_y = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Setze is_visible
-if(admin.in_game) {
-    is_visible = max(admin.game_paused, hub.in_menu, instance_exists(obj_playing_menu), 0);
-}
-if(is_visible) {
-    visible = true;
-    x = device_mouse_x_to_gui(0);
-    y = device_mouse_y_to_gui(0);
-}
-else {
-    visible = false;
-}
+colour = global.co_blue_gray_800;
+
+pre_x1 = display_get_gui_width()/2 - 100;
+pre_y1 =  display_get_gui_height()/2;
+
+radius = 0;
+
+status = 0;
+alpha = 1;
+
+type = -1;
 </string>
           </argument>
         </arguments>
@@ -89,23 +63,36 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw Mouse Icon
-if(is_visible) {
-    draw_sprite(mouse_icon, 0, x, y);
-    if(admin.show_hitbox) {
-        draw_set_font(fnt_debug);
-        draw_set_alpha(0.8);
-        draw_set_colour(c_white);
-        draw_text(x + 20, y - 20, string(x - fix_point_x) + "/" + string(display_get_gui_width() - fix_point_x));
-        draw_text(x + 20, y - 10, string(y - fix_point_y) + "/" + string(display_get_gui_height()- fix_point_y));  
-        draw_set_alpha(1);
-        
-        if(keyboard_check(vk_control) &amp;&amp; mouse_check_button(mb_middle)) {
-            fix_point_x = x;
-            fix_point_y = y;
-        }
-    }
+            <string>///Circlefade Effekt
+
+draw_set_colour(colour);
+draw_set_alpha(alpha);
+
+
+if(!stagetwo) {
+    radius += xfactor;
 }
+else {
+    alpha -= 0.05;
+}
+
+draw_circle(pre_x1, pre_y1, radius, 0);
+
+if(radius &gt; sqrt(power( display_get_gui_width()/2  - 100, 2) + power( display_get_gui_height()/2, 2)) + 200 &amp;&amp; !stagetwo) {
+    stagetwo = true;
+    if(status) {
+        if(!instance_exists(obj_playing_menu)) var playing_menu = instance_create(0, 0, type);
+        playing_menu.run_shop_object = run_shop_object;
+    } else {
+        if(instance_exists(type)) instance_destroy(type);
+    }
+    
+    radius = sqrt(power( display_get_gui_width()/2  - 100, 2) + power( display_get_gui_height()/2, 2)) + 200;
+} 
+
+if(alpha &lt;= 0 &amp;&amp; stagetwo) instance_destroy();
+
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>

@@ -901,6 +901,7 @@
     <scripts name="Menu">
       <script>scripts\scr_main_menu.gml</script>
       <script>scripts\scr_options_menu.gml</script>
+      <script>scripts\scr_ext_options_menu.gml</script>
       <script>scripts\scr_credits_menu.gml</script>
       <script>scripts\scr_multiplayer_menu.gml</script>
       <script>scripts\scr_game_end.gml</script>
@@ -914,6 +915,7 @@
       <script>scripts\scr_viewfade.gml</script>
       <script>scripts\scr_circlefade.gml</script>
       <script>scripts\scr_invfade.gml</script>
+      <script>scripts\scr_playing_menu_fade.gml</script>
       <script>scripts\scr_menufade.gml</script>
       <script>scripts\scr_menu_to_inv_fade.gml</script>
     </scripts>
@@ -992,7 +994,10 @@
           <scripts name="get">
             <script>scripts\scr_get_random_valid_item.gml</script>
             <script>scripts\scr_get_random_rarity_type_item.gml</script>
+            <script>scripts\scr_get_random_valid_rarity_type_item.gml</script>
             <script>scripts\scr_get_item_type_string.gml</script>
+            <script>scripts\scr_get_custom_rarity.gml</script>
+            <script>scripts\scr_get_item_rarity_level.gml</script>
           </scripts>
         </scripts>
         <script>scripts\scr_roman_number.gml</script>
@@ -1111,12 +1116,19 @@
           <scripts name="Shop">
             <script>scripts\scr_update_shop_button.gml</script>
           </scripts>
+          <scripts name="Monsterdex">
+            <script>scripts\scr_update_monsterdex_button.gml</script>
+          </scripts>
         </scripts>
         <script>scripts\scr_enter_hub.gml</script>
         <script>scripts\scr_leave_hub.gml</script>
         <scripts name="Run">
           <script>scripts\scr_start_run.gml</script>
           <script>scripts\scr_leave_run.gml</script>
+        </scripts>
+        <scripts name="PlayingMenu">
+          <script>scripts\scr_enter_playing_menu.gml</script>
+          <script>scripts\scr_leave_playing_menu.gml</script>
         </scripts>
       </scripts>
       <scripts name="Progress">
@@ -1171,8 +1183,10 @@
           <script>scripts\scr_write_progress.gml</script>
           <script>scripts\scr_write_stats.gml</script>
           <script>scripts\scr_write_items.gml</script>
+          <script>scripts\scr_write_monster.gml</script>
           <script>scripts\scr_write_upgrades.gml</script>
           <script>scripts\scr_write_chars.gml</script>
+          <script>scripts\scr_write_achievements.gml</script>
           <script>scripts\scr_write_last_char.gml</script>
           <script>scripts\scr_write_item_unlocked.gml</script>
           <script>scripts\scr_write_upgrade.gml</script>
@@ -1186,6 +1200,8 @@
           <script>scripts\scr_read_items.gml</script>
           <script>scripts\scr_read_skilltree.gml</script>
           <script>scripts\scr_read_chars.gml</script>
+          <script>scripts\scr_read_achievements.gml</script>
+          <script>scripts\scr_read_monster.gml</script>
           <script>scripts\scr_read_volume.gml</script>
         </scripts>
       </scripts>
@@ -1224,6 +1240,9 @@
         <script>scripts\scr_update_char_sprite.gml</script>
         <script>scripts\scr_draw_char_sprite.gml</script>
         <script>scripts\scr_draw_char.gml</script>
+      </scripts>
+      <scripts name="Achievements">
+        <script>scripts\scr_check_achievements.gml</script>
       </scripts>
     </scripts>
     <scripts name="Window">
@@ -1892,6 +1911,7 @@
       <object>objects\obj_hub_shop</object>
       <object>objects\obj_hub_skilltree</object>
       <object>objects\obj_hub_monsterdex</object>
+      <object>objects\obj_hub_achievements</object>
       <object>objects\obj_hub_char</object>
       <object>objects\obj_hub_multitask</object>
       <object>objects\obj_mouse_ind_hub</object>
@@ -1913,6 +1933,20 @@
           <object>objects\obj_hub_button_char_choosechar</object>
           <object>objects\obj_hub_button_char_buychar</object>
         </objects>
+        <objects name="Monsterdex">
+          <object>objects\obj_hub_button_monsterdex_gettype</object>
+          <object>objects\obj_hub_button_monsterdex_getmonster</object>
+        </objects>
+        <objects name="Achievements">
+          <object>objects\obj_hub_button_achievements_getachievement</object>
+        </objects>
+        <objects name="PlayingMenu">
+          <object>objects\obj_playing_menu_button_exit</object>
+          <objects name="RunShop">
+            <object>objects\obj_run_shop_button_getitem</object>
+            <object>objects\obj_run_shop_button_buyitem</object>
+          </objects>
+        </objects>
       </objects>
       <object>objects\obj_leave_hub_menu</object>
       <object>objects\obj_enter_game</object>
@@ -1923,6 +1957,7 @@
         <object>objects\obj_hub_stats_menu</object>
         <object>objects\obj_hub_death_menu</object>
         <object>objects\obj_hub_shop_menu</object>
+        <object>objects\obj_hub_achievements_menu</object>
         <object>objects\obj_hub_skilltree_menu</object>
       </objects>
       <object>objects\obj_hindernis_interaction</object>
@@ -1949,8 +1984,13 @@
         <object>objects\obj_chest_placeholder</object>
         <object>objects\obj_fragment_chest_placeholder</object>
       </objects>
-      <objects name="Altar">
-        <object>objects\obj_altar</object>
+      <objects name="PlayingMenu">
+        <object>objects\obj_altar_old</object>
+        <object>objects\obj_in_run_shop</object>
+        <object>objects\obj_altar_1</object>
+        <object>objects\obj_playing_menu</object>
+        <object>objects\obj_in_run_shop_menu</object>
+        <object>objects\obj_altar_1_menu</object>
       </objects>
     </objects>
     <objects name="Menu">
@@ -1981,6 +2021,9 @@
           <object>objects\obj_volume_button</object>
           <object>objects\obj_volume_button_sub</object>
           <object>objects\obj_volume_button_test</object>
+        </objects>
+        <objects name="ExtOptionsMenu">
+          <object>objects\obj_ext_options_menu</object>
         </objects>
       </objects>
     </objects>
@@ -2144,6 +2187,7 @@
       <object>objects\obj_viewfade</object>
       <object>objects\obj_circlefade</object>
       <object>objects\obj_invfade</object>
+      <object>objects\obj_playing_menu_fade</object>
       <object>objects\obj_menufade</object>
       <object>objects\obj_menu_to_inv_fade</object>
       <object>objects\obj_fade</object>
@@ -2180,7 +2224,7 @@
         <object>objects\obj_xp_orb</object>
       </objects>
       <objects name="Achievements">
-        <object>objects\obj_achivements</object>
+        <object>objects\obj_achievements</object>
       </objects>
       <object>objects\obj_skilltree_stats</object>
     </objects>
@@ -2227,6 +2271,7 @@
     <rooms name="Menu">
       <room>rooms\rm_main_menu</room>
       <room>rooms\rm_options_menu</room>
+      <room>rooms\rm_ext_options_menu</room>
       <room>rooms\rm_volume_menu</room>
       <room>rooms\rm_credits</room>
       <room>rooms\rm_multiplayer</room>
@@ -2242,6 +2287,7 @@
         <room>rooms\rm_hub_shop_menu</room>
         <room>rooms\rm_hub_monsterdex_menu</room>
         <room>rooms\rm_hub_char_menu</room>
+        <room>rooms\rm_hub_achievements_menu</room>
         <room>rooms\rm_hub_skilltree_menu</room>
       </rooms>
     </rooms>

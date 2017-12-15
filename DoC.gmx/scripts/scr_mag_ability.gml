@@ -18,7 +18,7 @@ if(admin.magic_key_pressed || admin.magic_key) {
         confirmed = true;
         stats.attacks_done += 1;
         stats.mag_attacks_done += 1;
-        alarm_set(0, item_stats[index, item_stats_mag.cooldown]);
+        alarm_set(0, round(item_stats[index, item_stats_mag.cooldown] * player_stats.attack_speed_mult));
         scr_attack_cooldown(-1);
     }
     }
