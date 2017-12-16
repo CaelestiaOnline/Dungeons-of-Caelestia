@@ -43,7 +43,7 @@ menupos  = 0;
 heading = "Optionen";
 
 //Auswahlmöglichkeiten
-menu[0] = "Reset Progress"
+menu[0] = "Erweiterte (Debug-)Optionen"
 menu[1] = "Lautstaerke"
 menu[2] = "Sprache: Deutsch/Englisch"
 menu[3] = "Credits"

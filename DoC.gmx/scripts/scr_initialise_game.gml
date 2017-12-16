@@ -20,7 +20,7 @@ global.grid = 0;
 scr_update_grid();
 
 //Splash - Screen
-global.display_splash_screen = false;
+global.display_splash_screen = true;
 
 //Sound
 global.volume_stage = 5;
@@ -91,6 +91,8 @@ room_stats_object = instance_create(0, 0, obj_room_stats);
 globalvar enemy_stats_object;
 enemy_stats_object = instance_create(0, 0, obj_enemy_stats);
 
+global.monster_unlocked = -1;
+
 //Enemy_stats
 globalvar effect_stats_object;
 effect_stats_object = instance_create(0, 0, obj_effect_stats);
@@ -158,6 +160,14 @@ skilltree_stats_object = instance_create(0, 0, obj_skilltree_stats);
 global.skilltree_status = -1;
 
 scr_read_skilltree();
+
+//Achievements
+globalvar achievements_object;
+achievements_object = instance_create(0, 0, obj_achievements);
+
+global.achievements_unlocked = -1;
+
+scr_read_achievements();
 
 //Test-Inventory
 //instance_create(0, 0, obj_test);

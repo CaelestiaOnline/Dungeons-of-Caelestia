@@ -57,11 +57,11 @@ menu[3] = "Options";
 menu[4] = "Return to Earth";
 
 if(false_spelling_mode) {
-menu[0] = choose("stat gaim", "schdard gem");
-menu[1] = choose("Ubgraid too Bremium", "i need ze moneys pls");
-menu[2] = choose("Maltyplaia", "Bley wif odders");
-menu[3] = choose("Obtschns", "Einsdellungs");
-menu[4] = choose("Ridoern du Oerf", "Schuessi");
+menu[0] = choose("stat gaim", "stard gem", "emaG tratS");
+menu[1] = choose("Ubgrait 2 Braymium", "i need ze moneys pls", "Bui DCLs");
+menu[2] = choose("Maltiplaiar", "Pley width otters");
+menu[3] = choose("Optshens", "Eynsdelungs");
+menu[4] = choose("Ridoern 2 Erth", "bb");
 }
 
 draw_set_font(fnt_main_menu);

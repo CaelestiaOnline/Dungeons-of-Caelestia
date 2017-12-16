@@ -3,8 +3,8 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1001</depth>
-  <persistent>-1</persistent>
+  <depth>0</depth>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,14 +25,73 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///is_visible
-is_visible = false;
+            <string>///Init
+admin.playing = false;
+//mouse.is_visible = true;
 
-mouse_icon_normal = spr_mouse_icon;
-mouse_icon = mouse_icon_normal;
+var buffer = 128;
+playing_menu_x1 = buffer;
+playing_menu_y1 = buffer;
+playing_menu_x2 = display_get_width() - buffer;
+playing_menu_y2 = display_get_height() - buffer;
 
-fix_point_x = 0;
-fix_point_y = 0;
+//Farben
+colour_bg = global.co_blue_gray_1000;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Button
+//Exit_button
+exit_button_x = playing_menu_x2 - 64;
+exit_button_y = playing_menu_y1 + 64;
+
+exit_button = instance_create(exit_button_x, exit_button_y, obj_playing_menu_button_exit);
+exit_button.origin_object = object_index;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy
+admin.playing = true;
+//mouse.is_visible = false;
+
+//Buttons
+instance_destroy(exit_button);
 </string>
           </argument>
         </arguments>
@@ -55,24 +114,13 @@ fix_point_y = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Setze is_visible
-if(admin.in_game) {
-    is_visible = max(admin.game_paused, hub.in_menu, instance_exists(obj_playing_menu), 0);
-}
-if(is_visible) {
-    visible = true;
-    x = device_mouse_x_to_gui(0);
-    y = device_mouse_y_to_gui(0);
-}
-else {
-    visible = false;
-}
+            <string>if(admin.pause_menu_key_pressed) scr_leave_playing_menu(object_index);
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="75">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -89,23 +137,18 @@ else {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw Mouse Icon
-if(is_visible) {
-    draw_sprite(mouse_icon, 0, x, y);
-    if(admin.show_hitbox) {
-        draw_set_font(fnt_debug);
-        draw_set_alpha(0.8);
-        draw_set_colour(c_white);
-        draw_text(x + 20, y - 20, string(x - fix_point_x) + "/" + string(display_get_gui_width() - fix_point_x));
-        draw_text(x + 20, y - 10, string(y - fix_point_y) + "/" + string(display_get_gui_height()- fix_point_y));  
-        draw_set_alpha(1);
-        
-        if(keyboard_check(vk_control) &amp;&amp; mouse_check_button(mb_middle)) {
-            fix_point_x = x;
-            fix_point_y = y;
-        }
-    }
-}
+            <string>///Hintergrund
+
+draw_set_alpha(0.9);
+draw_set_colour(colour_bg);
+
+draw_roundrect(
+    playing_menu_x1,
+    playing_menu_y1,
+    playing_menu_x2,
+    playing_menu_y2,
+    false
+);
 </string>
           </argument>
         </arguments>

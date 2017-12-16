@@ -16,4 +16,6 @@ scr_xp_drop(x, y, drop_xp);
 scr_money_drop(x, y, drop_money);
 scr_heal_orb_drop(x, y);
 
+//Monsterdex
+//if(global.monster_unlocked[object_index] != 1) global.monster_unlocked[object_index] = 1;
 

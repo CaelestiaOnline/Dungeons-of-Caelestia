@@ -1,10 +1,6 @@
 switch(menupos) {
     case 0: {
-        if(file_exists(working_directory + "SaveData\" + "savedata.ini")) {
-            var status = file_delete(working_directory + "SaveData\" + "savedata.ini");
-            scr_create_savefile_debug();
-            game_restart();
-        }
+        scr_sidefade(rm_ext_options_menu, 60);
         break;
     }
     case 1: {

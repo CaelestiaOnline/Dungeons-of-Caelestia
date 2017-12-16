@@ -151,7 +151,7 @@
     <instance objName="obj_invisible_wall" x="1904" y="560" name="inst_712D4E12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1904" y="496" name="inst_366E91BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tree1_green" x="1520" y="320" name="inst_1B1DD186" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_altar" x="624" y="816" name="inst_295009AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_altar_old" x="624" y="816" name="inst_295009AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1328" y="944" name="inst_D650CDEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1648" y="880" name="inst_E61E7ACD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1904" y="688" name="inst_15124F31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
