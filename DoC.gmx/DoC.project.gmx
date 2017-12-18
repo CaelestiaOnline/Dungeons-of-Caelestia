@@ -345,6 +345,7 @@
           <sprite>sprites\spr_earth_golem</sprite>
           <sprite>sprites\spr_obj_earth_golem_dead</sprite>
           <sprite>sprites\spr_stone_golem</sprite>
+          <sprite>sprites\spr_obj_stone_golem_dead</sprite>
         </sprites>
       </sprites>
       <sprites name="Tiere">
