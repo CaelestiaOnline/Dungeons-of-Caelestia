@@ -173,7 +173,7 @@ map[level_index, 0] = rm_run_end;
           <argument>
             <kind>1</kind>
             <string>///Music
-run_music = audio_play_sound(snd_music_rapsody_rage, 5, true);
+run_music = audio_play_sound(snd_music_rapsody_rage, 5, false);
 audio_sound_gain(run_music, 0.4, 0);
 </string>
           </argument>

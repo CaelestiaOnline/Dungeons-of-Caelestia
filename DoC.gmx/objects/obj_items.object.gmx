@@ -145,41 +145,41 @@ enum items {
     max_hp_orb_v2 = 115,
     ///////////////////////////////////
     glue = 116,
-    onehit_potion = 117, ///
+    onehit_potion = 117, 
     mana_spikes_orb = 118,
     tears_orb = 119,
-    rage_potion = 120, ///
-    mana_speed_damage_orb = 121, ///
+    rage_potion = 120,
+    mana_speed_damage_orb = 121,
     v8_generator_orb = 122, ///
     antivirus_program_orb = 123,
     hook = 124,
-    akimbo_bow = 125, ///
-    mana_speed_orb = 126, ///
+    akimbo_bow = 125, 
+    mana_speed_orb = 126,
     senketsu_armour = 127,
     junketsu_armour = 128,
-    wooden_armour = 129, ///
-    feather_acmour = 130, ///
-    fur_armour = 131, ///
-    ninja_armour = 132, ///
+    wooden_armour = 129,
+    feather_acmour = 130,
+    fur_armour = 131,
+    ninja_armour = 132,
     food_rice_ball = 133,
-    depri_sun_potion = 134, ///
+    depri_sun_potion = 134,
     scissor_blade = 135,
-    mana_explosion_magic_orb = 136, ///
+    mana_explosion_magic_orb = 136,
     chunchunmaru = 137,
     mana_laserairstrike_orb = 138,
     lego_trap = 139,
-    cabbage_soup_grenade = 140, ///
-    mana_meteor_shower_orb = 141, ///
+    cabbage_soup_grenade = 140,
+    mana_meteor_shower_orb = 141,
     grenade = 142,
     mine = 143,
     hot_coffee = 144,
     acid = 145,
-    shield = 146, ///
-    teleporter = 147, ///
-    bear_trap = 148, ///
-    c4 = 149, ///
-    web = 150, ///
-    heal_totem_pole = 151, ///
+    shield = 146,
+    teleporter = 147,
+    bear_trap = 148,
+    c4 = 149,
+    web = 150,
+    heal_totem_pole = 151,
     unisolated_cable = 152, ///
     chain = 153, ///
     mana_latin_dictionary_orb = 154, ///
@@ -2601,7 +2601,7 @@ item_stats[items.cabbage_soup_grenade, item_stats_sec.misc] = "";
 
 //Meteoritenhagel (140)
 item[items.mana_meteor_shower_orb, 0] = "Meteoritenhagel";
-item[items.mana_meteor_shower_orb, 1] = "";
+item[items.mana_meteor_shower_orb, 1] = "In einer Hoehe von 7000km in der Atmosphaere des Saturn herrschen die gleichen Bedinungen wie in dieser Druckpresse. Dessen Inhalt dich gleich trifft.";
 item[items.mana_meteor_shower_orb, 2] = obj_mana_meteor_shower_orb;
 item[items.mana_meteor_shower_orb, 3] = "mag";
 item[items.mana_meteor_shower_orb, 4] = 1;
@@ -2719,7 +2719,7 @@ item_stats[items.shield, item_stats_sec.misc] = "";
 
 //Teleporter (146)
 item[items.teleporter, 0] = "Teleporter";
-item[items.teleporter, 1] = "";
+item[items.teleporter, 1] = "Schwupp die Wupps und du bist woanders. Das gibt es schon, sagst du? Ich weiss von nichts.";
 item[items.teleporter, 2] = obj_teleporter;
 item[items.teleporter, 3] = "sec";
 item[items.teleporter, 4] = 1;
@@ -2734,8 +2734,8 @@ item_stats[items.teleporter, item_stats_sec.cooldown] = player_stats.attack_spee
 item_stats[items.teleporter, item_stats_sec.misc] = "";
 
 //Baerenfalle (147)
-item[items.bear_trap, 0] = "Barenfalle";
-item[items.bear_trap, 1] = "";
+item[items.bear_trap, 0] = "Baerenfalle";
+item[items.bear_trap, 1] = "Damit kannst du eine wilde Ananas fangen. Waehrend du diese zerlegst, wirst du nebenbei von Erdbeeren ausgelacht.";
 item[items.bear_trap, 2] = obj_bear_trap;
 item[items.bear_trap, 3] = "sec";
 item[items.bear_trap, 4] = 1;
@@ -2751,7 +2751,7 @@ item_stats[items.bear_trap, item_stats_sec.misc] = "";
 
 //C4 (148)
 item[items.c4, 0] = "C4";
-item[items.c4, 1] = "";
+item[items.c4, 1] = "Bomb has been planted. The terrorists win.";
 item[items.c4, 2] = obj_c4;
 item[items.c4, 3] = "sec";
 item[items.c4, 4] = 1;
@@ -2767,7 +2767,7 @@ item_stats[items.c4, item_stats_sec.misc] = "";
 
 //Netz (149)
 item[items.web, 0] = "Netz";
-item[items.web, 1] = "";
+item[items.web, 1] = "Du gehst jetzt auf Fischfang. Nach Monstern. Auf dem Trockenen.";
 item[items.web, 2] = obj_web;
 item[items.web, 3] = "sec";
 item[items.web, 4] = 1;
@@ -2783,7 +2783,7 @@ item_stats[items.web, item_stats_sec.misc] = "";
 
 //Heiltotem (150)
 item[items.heal_totem_pole, 0] = "Heiltotem";
-item[items.heal_totem_pole, 1] = "";
+item[items.heal_totem_pole, 1] = "Dreist aus Paladins geklaut. Ich gebe es zu, ja.";
 item[items.heal_totem_pole, 2] = obj_heal_totem_pole;
 item[items.heal_totem_pole, 3] = "sec";
 item[items.heal_totem_pole, 4] = 1;
@@ -2836,7 +2836,7 @@ item_stats[items.unisolated_cable, item_stats_sec.misc] = "";
 
 //Kette (152)
 item[items.chain, 0] = "Kette";
-item[items.chain, 1] = "";
+item[items.chain, 1] = "Das schwaechste Glied dieser Kette bist eindeutig du. Jedes einzelne Glied wuerde dich beim Armdruecken in den Boden stampfen.";
 item[items.chain, 2] = obj_chain;
 item[items.chain, 3] = "sec";
 item[items.chain, 4] = 1;
@@ -2866,7 +2866,7 @@ item_stats[items.mana_latin_dictionary_orb, item_stats_mag.misc] = "";
 
 //Eiswind (154)
 item[items.mana_ice_wind_orb, 0] = "Eiswind";
-item[items.mana_ice_wind_orb, 1] = "";
+item[items.mana_ice_wind_orb, 1] = "Wuuuuusch! Und alles ist kalt! Ich hasse dich, Sommer!";
 item[items.mana_ice_wind_orb, 2] = obj_mana_ice_wind_orb;
 item[items.mana_ice_wind_orb, 3] = "mag";
 item[items.mana_ice_wind_orb, 4] = 1;
@@ -2908,7 +2908,7 @@ item_stats[items.mana_loot_orb, item_stats_mag.misc] = "";
 
 //Spinnennetz (157)
 item[items.mana_spider_webs_orb, 0] = "Spinnennetz";
-item[items.mana_spider_webs_orb, 1] = "";
+item[items.mana_spider_webs_orb, 1] = "Damit fuehlst du dich wie Spuderman. Sag mal, hiess dein Onkel eigentlich Ben?";
 item[items.mana_spider_webs_orb, 2] = obj_mana_spider_webs_orb;
 item[items.mana_spider_webs_orb, 3] = "mag";
 item[items.mana_spider_webs_orb, 4] = 1;
@@ -2921,8 +2921,8 @@ item_stats[items.mana_spider_webs_orb, item_stats_mag.cooldown] = player_stats.a
 item_stats[items.mana_spider_webs_orb, item_stats_mag.misc] = "";
 
 //Schrei (158)
-item[items.mana_scream_orb, 0] = "Schrei des Drachen";
-item[items.mana_scream_orb, 1] = "";
+item[items.mana_scream_orb, 0] = "Scream of the dragon";
+item[items.mana_scream_orb, 1] = "Aaaaahhhhhh! AAAAAAAaaaahhh! AAAAAAAAHHHHH!";
 item[items.mana_scream_orb, 2] = obj_mana_scream_orb;
 item[items.mana_scream_orb, 3] = "mag";
 item[items.mana_scream_orb, 4] = 1;
@@ -2936,7 +2936,7 @@ item_stats[items.mana_scream_orb, item_stats_mag.misc] = "";
 
 //Cooldown Reset Trank (159)
 item[items.cooldown_reset_potion, 0] = "CR-Trank";
-item[items.cooldown_reset_potion, 1] = "";
+item[items.cooldown_reset_potion, 1] = "Resetted deine Cooldowz, wie die coolen Kidz heutzutage sagen wuerden.";
 item[items.cooldown_reset_potion, 2] = obj_cooldown_reset_potion;
 item[items.cooldown_reset_potion, 3] = "pickup";
 item[items.cooldown_reset_potion, 4] = 2;
@@ -2948,7 +2948,7 @@ item_stats[items.cooldown_reset_potion, item_stats_pickup.misc] = "";
 
 //Illusion (160)
 item[items.mana_illusion_orb, 0] = "Illusion";
-item[items.mana_illusion_orb, 1] = "";
+item[items.mana_illusion_orb, 1] = "Dieses Item existiert gar nicht. Das ist nur eine Illusion. Mach einfach weiter, beachte mich nicht.";
 item[items.mana_illusion_orb, 2] = obj_mana_illusion_orb;
 item[items.mana_illusion_orb, 3] = "mag";
 item[items.mana_illusion_orb, 4] = 1;
@@ -2984,7 +2984,7 @@ item_stats[items.mana_illusion_orb, item_stats_mag.misc] = "";
             <string>///Items 161 - 170;
 //Heilsphaere (161)
 item[items.mana_heal_sphere_orb, 0] = "Heilsphaere";
-item[items.mana_heal_sphere_orb, 1] = "";
+item[items.mana_heal_sphere_orb, 1] = "Jetzt mal ehrlich, was muss ich hier noch erklaeren. Eine Sphaere. Die heilt. Ende.";
 item[items.mana_heal_sphere_orb, 2] = obj_mana_heal_sphere_orb;
 item[items.mana_heal_sphere_orb, 3] = "mag";
 item[items.mana_heal_sphere_orb, 4] = 1;
@@ -2998,7 +2998,7 @@ item_stats[items.mana_heal_sphere_orb, item_stats_mag.misc] = "";
 
 //Mensaessen (162)
 item[items.mana_mensa_food_orb, 0] = "Mensaessen";
-item[items.mana_mensa_food_orb, 1] = "";
+item[items.mana_mensa_food_orb, 1] = "Hat dir oft genug den Magen verdorben. Aber jetzt ist Schluss, mit diesem biologischen Kampfstoff bist du unbesiegbar.";
 item[items.mana_mensa_food_orb, 2] = obj_mana_mensa_food_orb;
 item[items.mana_mensa_food_orb, 3] = "mag";
 item[items.mana_mensa_food_orb, 4] = 1;
@@ -3012,7 +3012,7 @@ item_stats[items.mana_mensa_food_orb, item_stats_mag.misc] = "";
 
 //Erdbeben (163)
 item[items.mana_earthquake_orb, 0] = "Erdbeben";
-item[items.mana_earthquake_orb, 1] = "";
+item[items.mana_earthquake_orb, 1] = "Ach, auf so ein leckeres Eis mit Erdbeben haette ich jetzt auch Lust. Ne warte mal...";
 item[items.mana_earthquake_orb, 2] = obj_mana_earthquake_orb;
 item[items.mana_earthquake_orb, 3] = "mag";
 item[items.mana_earthquake_orb, 4] = 1;
@@ -3026,7 +3026,7 @@ item_stats[items.mana_earthquake_orb, item_stats_mag.misc] = "";
 
 //Tornado (164)
 item[items.mana_tornado_orb, 0] = "Tornado";
-item[items.mana_tornado_orb, 1] = "";
+item[items.mana_tornado_orb, 1] = "Ein CPU-Luefter hat mal wieder versucht, einen AMD-Prozessor zu kuehlen und ist dabei auf Mach 3 beschleunigt. Kommt irgendwie oft vor.";
 item[items.mana_tornado_orb, 2] = obj_mana_tornado_orb;
 item[items.mana_tornado_orb, 3] = "mag";
 item[items.mana_tornado_orb, 4] = 1;
@@ -3040,7 +3040,7 @@ item_stats[items.mana_tornado_orb, item_stats_mag.misc] = "";
 
 //Tsunami (165)
 item[items.mana_tsunami_orb, 0] = "Tsunami";
-item[items.mana_tsunami_orb, 1] = "";
+item[items.mana_tsunami_orb, 1] = "Shhh. Shhhh. WUUUUUUUSCH!!! Ich hoffe, ich konnte es demonstrieren.";
 item[items.mana_tsunami_orb, 2] = obj_mana_tsunami_orb;
 item[items.mana_tsunami_orb, 3] = "mag";
 item[items.mana_tsunami_orb, 4] = 1;
@@ -3054,7 +3054,7 @@ item_stats[items.mana_tsunami_orb, item_stats_mag.misc] = "";
 
 //Inferno (166)
 item[items.mana_inferno_orb, 0] = "Inferno";
-item[items.mana_inferno_orb, 1] = "";
+item[items.mana_inferno_orb, 1] = "Ein Flammenmeer mit Badestrand, Coktail-Bar und Palmen. Alles ein 'bisschen' angekokelt.";
 item[items.mana_inferno_orb, 2] = obj_mana_inferno_orb;
 item[items.mana_inferno_orb, 3] = "mag";
 item[items.mana_inferno_orb, 4] = 1;
@@ -3068,7 +3068,7 @@ item_stats[items.mana_inferno_orb, item_stats_mag.misc] = "";
 
 //Dash (167)
 item[items.mana_dash_orb, 0] = "Dash";
-item[items.mana_dash_orb, 1] = "";
+item[items.mana_dash_orb, 1] = "Ein sprunghafter Vorwaertshieb, der nicht unwesenlichen Schaden austeilt.";
 item[items.mana_dash_orb, 2] = obj_mana_dash_orb;
 item[items.mana_dash_orb, 3] = "mag";
 item[items.mana_dash_orb, 4] = 1;
@@ -3082,7 +3082,7 @@ item_stats[items.mana_dash_orb, item_stats_mag.misc] = "";
 
 //Aufopferung (168)
 item[items.mana_sacrifice_orb, 0] = "Aufopferung";
-item[items.mana_sacrifice_orb, 1] = "";
+item[items.mana_sacrifice_orb, 1] = "Leider habe ich selbst vergessen, was dieses Item tut.";
 item[items.mana_sacrifice_orb, 2] = obj_mana_sacrifice_orb;
 item[items.mana_sacrifice_orb, 3] = "mag";
 item[items.mana_sacrifice_orb, 4] = 1;
@@ -3096,7 +3096,7 @@ item_stats[items.mana_sacrifice_orb, item_stats_mag.misc] = "";
 
 //Omni-Heilung (169)
 item[items.mana_omni_heal_orb, 0] = "Omni-Heilung";
-item[items.mana_omni_heal_orb, 1] = "";
+item[items.mana_omni_heal_orb, 1] = "Du heilst alles. Also wirklich alles. Selbst den Tomatensproessling um die Ecke.";
 item[items.mana_omni_heal_orb, 2] = obj_mana_omni_heal_orb;
 item[items.mana_omni_heal_orb, 3] = "mag";
 item[items.mana_omni_heal_orb, 4] = 1;
@@ -3110,7 +3110,7 @@ item_stats[items.mana_omni_heal_orb, item_stats_mag.misc] = "";
 
 //Hypnose (170)
 item[items.mana_hypnosis_orb, 0] = "Hypnose";
-item[items.mana_hypnosis_orb, 1] = "";
+item[items.mana_hypnosis_orb, 1] = "Du bist ein Wildschwein. Oder war ich es? Sind wir nicht alle ein Wildschwein?";
 item[items.mana_hypnosis_orb, 2] = obj_mana_hypnosis_orb;
 item[items.mana_hypnosis_orb, 3] = "mag";
 item[items.mana_hypnosis_orb, 4] = 1;
@@ -3169,7 +3169,7 @@ item_stats[items.roll_orb, item_stats_item.misc] = "";
 
 //Frostaura (173)
 item[items.frostaura_orb, 0] = "Frostaura";
-item[items.frostaura_orb, 1] = "";
+item[items.frostaura_orb, 1] = "Frosty der Schnowman ist vorbeigekommen, um Hallo zu sagen.";
 item[items.frostaura_orb, 2] = obj_frostaura_orb;
 item[items.frostaura_orb, 3] = "item";
 item[items.frostaura_orb, 4] = 1;

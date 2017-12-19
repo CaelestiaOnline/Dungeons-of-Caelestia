@@ -20,7 +20,7 @@ global.grid = 0;
 scr_update_grid();
 
 //Splash - Screen
-global.display_splash_screen = true;
+global.display_splash_screen = false;
 
 //Sound
 global.volume_stage = 5;
@@ -96,6 +96,9 @@ global.monster_unlocked = -1;
 //Enemy_stats
 globalvar effect_stats_object;
 effect_stats_object = instance_create(0, 0, obj_effect_stats);
+
+global.monster_unlocked = -1;
+scr_read_monster();
 
 //HUD
 globalvar hud;

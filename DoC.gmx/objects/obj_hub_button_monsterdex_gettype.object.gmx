@@ -57,30 +57,6 @@ button_monster_type = -1;
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="75">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Erklärung
-scr_trigger_expl(scr_get_item_type_string(button_item_type));
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
@@ -105,7 +81,7 @@ if(confirmed_hover) {
     scr_draw_button_hover(-1, -1);
 
     if(confirmed_left_hold) {
-        global.monsterdex_type_index = button_monster_type;
+        global.monsterdex_type_index = button_monsterdex_type;
         scr_update_monsterdex_button();
         global.monsterdex_monster_index = obj_hub_monsterdex_menu.monsterdex_button[0, 0].button_monster;
         //scr_draw_enemy_stats(global.monsterdex_monster_index);
