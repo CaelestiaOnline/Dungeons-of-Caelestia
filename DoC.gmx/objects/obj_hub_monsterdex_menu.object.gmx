@@ -53,7 +53,7 @@ hub_menu_y2 = 64;
           <argument>
             <kind>1</kind>
             <string>///Monster Index
-global.monsterdex_monster_index = 0;
+global.monsterdex_monster_index = obj_forest_penguin;
 global.monsterdex_type_index = "forest";
 
 </string>
@@ -262,16 +262,16 @@ draw_set_colour(inv_hud.item_stats_heading_colour);
 draw_set_font(fnt_item_stats_title);
 
 draw_text(
-    item_stats_menu_x1 + 32,
-    item_stats_menu_y1 + 32,
+    monsterdex_stats_menu_x1 + 32,
+    monsterdex_stats_menu_y1 + 32,
     enemy_stats[global.monsterdex_monster_index, 0]
     );
     
 draw_set_font(fnt_inv_stats);
 draw_set_colour(c_white);
 draw_text_ext(
-    item_stats_menu_x1 + 32,
-    item_stats_menu_y1 + 32 + 32,
+    monsterdex_stats_menu_x1 + 32,
+    monsterdex_stats_menu_y1 + 32 + 32,
     enemy_stats[global.monsterdex_monster_index, 1],
     20,
     600
@@ -320,15 +320,17 @@ draw_text(
 //Draw Monster
 if(global.monsterdex_monster_index != -1) {
     var temp_sprite = object_get_sprite(global.monsterdex_monster_index);
+    if(temp_sprite != -1) {
     if(sprite_get_width(temp_sprite) &gt; sprite_get_height(temp_sprite)) {
         var factor = 128/sprite_get_width(temp_sprite);
     } else {
         var factor = 128/sprite_get_height(temp_sprite);
     }
     draw_sprite_ext(temp_sprite, 0,
-        (item_stats_menu_x1+item_stats_menu_x2)/2,
-        item_stats_menu_x2 - 64,
-        factor, factor, 0, sprite_colour, sprite_alpha);
+        monsterdex_stats_menu_x2 - 200,
+        monsterdex_stats_menu_y1 + 200,
+        factor, factor, 0, c_white, 1);
+    }
 }
 </string>
           </argument>

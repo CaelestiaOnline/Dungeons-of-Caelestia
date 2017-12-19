@@ -27,6 +27,10 @@ switch(menupos) {
         break;
     }
     case 4: {
+        scr_sidefade(rm_graphics_menu, 60);
+        break;
+    }
+    case 5: {
         scr_sidefade(rm_options_menu, 60);
         break;
     }
