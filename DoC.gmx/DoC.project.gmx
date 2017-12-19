@@ -345,6 +345,33 @@
           <sprite>sprites\spr_earth_golem</sprite>
           <sprite>sprites\spr_obj_earth_golem_dead</sprite>
           <sprite>sprites\spr_stone_golem</sprite>
+          <sprite>sprites\spr_obj_stone_golem_dead</sprite>
+          <sprite>sprites\spr_mud_golem</sprite>
+          <sprite>sprites\spr_air_golem</sprite>
+          <sprite>sprites\spr_fire_golem</sprite>
+          <sprite>sprites\spr_ice_golem</sprite>
+          <sprite>sprites\spr_water_golem</sprite>
+          <sprite>sprites\spr_wood_golem</sprite>
+          <sprite>sprites\spr_aether_golem</sprite>
+        </sprites>
+        <sprites name="Pferde">
+          <sprite>sprites\spr_unicorn</sprite>
+          <sprite>sprites\spr_carnivourus_horse</sprite>
+        </sprites>
+        <sprites name="Zwerg">
+          <sprite>sprites\spr_evil_dwarf</sprite>
+        </sprites>
+        <sprites name="Gefallener Engel">
+          <sprite>sprites\spr_fallen_angel</sprite>
+        </sprites>
+        <sprites name="Geschutzturm">
+          <sprite>sprites\spr_tower</sprite>
+        </sprites>
+        <sprites name="Bärenfalle">
+          <sprite>sprites\spr_trap</sprite>
+        </sprites>
+        <sprites name="Sukkubus">
+          <sprite>sprites\spr_succubus</sprite>
         </sprites>
       </sprites>
       <sprites name="Tiere">
