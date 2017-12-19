@@ -38,7 +38,7 @@ ability_hitmark.alarm[0] = -2;
 ability_hitmark.depth = 200;
 
 //Stats
-prize_mult = 0.5;//round(random_range(3, 8)*100)/100;
+prize_mult = round(random_range(3, 8)*100)/100;
 
 temp_item_index = -1;
 temp_item_type = -1;

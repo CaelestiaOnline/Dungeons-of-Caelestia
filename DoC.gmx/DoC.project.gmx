@@ -778,20 +778,33 @@
           <sprite>sprites\spr_items_129</sprite>
         </sprites>
         <sprites name="130-139;">
+          <sprite>sprites\spr_items_130</sprite>
+          <sprite>sprites\spr_items_131</sprite>
+          <sprite>sprites\spr_items_132</sprite>
           <sprite>sprites\spr_items_133</sprite>
+          <sprite>sprites\spr_items_134</sprite>
           <sprite>sprites\spr_items_135</sprite>
+          <sprite>sprites\spr_items_136</sprite>
           <sprite>sprites\spr_items_137</sprite>
           <sprite>sprites\spr_items_138</sprite>
           <sprite>sprites\spr_items_139</sprite>
         </sprites>
         <sprites name="140-149;">
+          <sprite>sprites\spr_items_140</sprite>
+          <sprite>sprites\spr_items_141</sprite>
           <sprite>sprites\spr_items_142</sprite>
           <sprite>sprites\spr_items_143</sprite>
           <sprite>sprites\spr_items_144</sprite>
           <sprite>sprites\spr_items_145</sprite>
+          <sprite>sprites\spr_items_146</sprite>
+          <sprite>sprites\spr_items_147</sprite>
+          <sprite>sprites\spr_items_148</sprite>
+          <sprite>sprites\spr_items_149</sprite>
         </sprites>
         <sprites name="150-159;">
-          <sprite>sprites\spr_items_150_</sprite>
+          <sprite>sprites\spr_items_150</sprite>
+          <sprite>sprites\spr_items_151</sprite>
+          <sprite>sprites\spr_items_152</sprite>
         </sprites>
         <sprites name="160-169;">
           <sprite>sprites\spr_items_160_</sprite>
@@ -955,6 +968,7 @@
       <script>scripts\scr_main_menu.gml</script>
       <script>scripts\scr_options_menu.gml</script>
       <script>scripts\scr_ext_options_menu.gml</script>
+      <script>scripts\scr_graphics_menu.gml</script>
       <script>scripts\scr_credits_menu.gml</script>
       <script>scripts\scr_multiplayer_menu.gml</script>
       <script>scripts\scr_game_end.gml</script>
@@ -2078,6 +2092,9 @@
         <objects name="ExtOptionsMenu">
           <object>objects\obj_ext_options_menu</object>
         </objects>
+        <objects name="GraphicMenu">
+          <object>objects\obj_graphics_menu</object>
+        </objects>
       </objects>
     </objects>
     <objects name="admin">
@@ -2325,6 +2342,7 @@
       <room>rooms\rm_main_menu</room>
       <room>rooms\rm_options_menu</room>
       <room>rooms\rm_ext_options_menu</room>
+      <room>rooms\rm_graphics_menu</room>
       <room>rooms\rm_volume_menu</room>
       <room>rooms\rm_credits</room>
       <room>rooms\rm_multiplayer</room>

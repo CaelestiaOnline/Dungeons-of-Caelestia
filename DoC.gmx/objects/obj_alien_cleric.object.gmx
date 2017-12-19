@@ -90,9 +90,9 @@ if(!triggered) exit;
 scr_pathfinding_enemy();
 
 if(attack_ready) {
-instance = instance_find(obj_gegner, 0);
-    for(i = 0; i &lt; instance_count; i += 1){
-        if(instance == 0) instance = instance_find(obj_gegner, i);
+instance = noone;
+    for(i = 0; i &lt; instance_number(obj_gegner); i += 1){
+        if(instance == noone) instance = instance_find(obj_gegner, i);
         else {    
             if(instance.hp / instance.max_hp &gt;= instance_find(obj_gegner, i).hp/instance_find(obj_gegner, i).max_hp)
                 {

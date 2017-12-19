@@ -75,7 +75,7 @@ button_monster = -1;
           <argument>
             <kind>1</kind>
             <string>///Erklärung
-if(button_item != -1) {
+if(button_monster != -1) {
     var expl_text = string(enemy_stats[button_monster, 0]);
     scr_trigger_expl(expl_text);
 }
@@ -138,25 +138,27 @@ draw_sprite(spr_inv_border, 0, x, y);
             <kind>1</kind>
             <string>///Draw Sprite + Anzahl
 var sprite_colour, sprite_alpha, button_sprite;
-if(global.monster_unlocked[button_item]) {
+if(global.monster_unlocked[button_monster]) {
     sprite_colour = c_white;
     sprite_alpha = 1;
     button_sprite = spr_unlocked;
 }
-if(!global.monster_unlocked[button_item]) {
+if(!global.monster_unlocked[button_monster]) {
     sprite_colour = c_black;
     sprite_alpha = 0.5;
     button_sprite = spr_locked;
 }
 
-if(button_item != -1) {
+if(button_monster != -1) {
     var temp_sprite = object_get_sprite(button_monster);
+    if(temp_sprite != -1) {
     if(sprite_get_width(temp_sprite) &gt; sprite_get_height(temp_sprite)) {
         var factor = 48/sprite_get_width(temp_sprite);
     } else {
         var factor = 48/sprite_get_height(temp_sprite);
     }
-    draw_sprite_ext(temp_sprite, 0, x, y, factor, factor, 0, sprite_colour, sprite_alpha);
+    draw_sprite_ext(temp_sprite, 0, x, y + 24, factor, factor, 0, sprite_colour, sprite_alpha);
+    }
 }
 
 draw_sprite(button_sprite, 0, x + (width-6), y - (width-6));

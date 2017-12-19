@@ -60,18 +60,16 @@ if(place_meeting(obj_player.x + real_min_distance, obj_player.y, obj_hindernis)
     x_axis_mirror *= -1;
     real_min_distance = (new_min_distance+1) * x_axis_mirror;
 }
-//show_debug_message("START");
+
 for(var i = real_min_distance; i != 0; i-= sign(x_axis_mirror)) {
     if(    collision_line(obj_player.x, obj_player.y - player_colbox_height, x, y - colbox_height, obj_hindernis, false, false)
         || collision_line(obj_player.x, obj_player.y + player_colbox_height, x, y + colbox_height, obj_hindernis, false, false)) {
         real_min_distance -= x_axis_mirror;
-        //show_debug_message("DISTANCE: " + string(real_min_distance));
+        
     } else {
-        //show_debug_message("BEENDE");
         break;
     }
 }
-//show_debug_message("STOP");
 
 if(mp_grid_path(global.grid, path, x, y, obj_player.x + real_min_distance, obj_player.y, true))
 {

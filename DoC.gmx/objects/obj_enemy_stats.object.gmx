@@ -53,7 +53,7 @@ enemy_stats[obj_xxxx, enemy_stats_normal.max_speed] = 0 (float/int);
 enemy_stats[obj_xxxx, enemy_stats_normal.xp_drop] = 0 (int);
 enemy_stats[obj_xxxx, enemy_stats_normal.money_drop] = 0 (int);
 */
-
+globalvar enemy_objects;
 enemy_objects [0] = obj_forest_penguin;
 enemy_objects [1] = obj_forest_penguin_small;
 enemy_objects [2] = obj_forest_penguin_bullet;

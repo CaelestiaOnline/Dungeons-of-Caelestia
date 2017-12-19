@@ -28,7 +28,7 @@
             <string>///Menü-Array + Rest
 
 //Anzahl der Auswahlmöglichkeiten
-menulength = 5;
+menulength = 6;
 
 //Pixel in y-Richtung zwischen den Auswahlmöglichkeiten
 yspace = 80;
@@ -47,7 +47,8 @@ menu[0] = "Reset Progress"
 menu[1] = "Generate Error"
 menu[2] = "Freeze Game"
 menu[3] = "I'm feelin lucky..."
-menu[4] = "&gt;&gt;&gt; Options Menu"
+menu[4] = "Graphic Settings"
+menu[5] = "&gt;&gt;&gt; Options Menu";
 
 draw_set_font(fnt_main_menu);
 
@@ -65,6 +66,7 @@ colour[1] = c_white;
 colour[2] = c_white;
 colour[3] = c_white;
 colour[4] = c_white;
+colour[5] = c_white;
 
 //Schatten
 shadow = 3;
