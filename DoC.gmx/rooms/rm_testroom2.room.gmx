@@ -187,6 +187,7 @@
     <instance objName="obj_creeper" x="256" y="128" name="inst_302E26D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spoiled_brat" x="512" y="448" name="inst_06BE39AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_mushroom" x="224" y="896" name="inst_0ABFE304" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_evil_dwarf" x="1024" y="512" name="inst_AA0A2DED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
