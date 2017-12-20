@@ -88,6 +88,7 @@ if(attack_ready){
     bullet = instance_create(x, y, type);
     if(obj_player.x &gt; x) bullet.hspeed = 10;
     if(obj_player.x &lt; x) bullet.hspeed = -10;
+    bullet.damage = damage;
 }
 </string>
           </argument>

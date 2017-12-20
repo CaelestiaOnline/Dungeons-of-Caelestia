@@ -1254,7 +1254,7 @@ enemy_stats[obj_tower, 4] = "normal";
 enemy_stats[obj_tower, 5] = "cave";
 
 enemy_stats[obj_tower, enemy_stats_normal.hp] = 30;
-enemy_stats[obj_tower, enemy_stats_normal.damage] = 25;
+enemy_stats[obj_tower, enemy_stats_normal.damage] = 2;
 enemy_stats[obj_tower, enemy_stats_normal.attack_speed] = 60;
 enemy_stats[obj_tower, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_tower, enemy_stats_normal.xp_drop] = 64;
