@@ -602,7 +602,7 @@ enemy_stats[obj_creeper, 5] = "swamp";
 
 enemy_stats[obj_creeper, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_creeper, enemy_stats_normal.damage] = 5;
-enemy_stats[obj_creeper, enemy_stats_normal.attack_speed] = 20;
+enemy_stats[obj_creeper, enemy_stats_normal.attack_speed] = 60;
 enemy_stats[obj_creeper, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_creeper, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_creeper, enemy_stats_normal.money_drop] = 10;
@@ -818,7 +818,7 @@ enemy_stats[obj_liane, 5] = "ruins";
 
 enemy_stats[obj_liane, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_liane, enemy_stats_normal.damage] = 5;
-enemy_stats[obj_liane, enemy_stats_normal.attack_speed] = 20;
+enemy_stats[obj_liane, enemy_stats_normal.attack_speed] = 60;
 enemy_stats[obj_liane, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_liane, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_liane, enemy_stats_normal.money_drop] = 10;
@@ -913,8 +913,8 @@ enemy_stats[obj_spoiled_brat, 4] = "normal";
 enemy_stats[obj_spoiled_brat, 5] = "dungeon";
 
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.hp] = 70;
-enemy_stats[obj_spoiled_brat, enemy_stats_normal.damage] = 20;
-enemy_stats[obj_spoiled_brat, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.attack_speed] = 90;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.money_drop] = 18;

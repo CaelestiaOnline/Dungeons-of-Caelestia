@@ -37,7 +37,7 @@ effc = effect.stun;
 stage = 2;
 
 effc2 = effect.slowness;
-stage = 1;
+stage2 = 1;
 </string>
           </argument>
         </arguments>
