@@ -153,8 +153,12 @@ switch(ability) {
         break;
     //Stun?
     case "stun":
-        effect_time = room_speed;
-        //switch(ability_strength) {}
+        switch(ability_strength) {
+            case 1:
+                effect_time = 15;
+            case 2:
+                effect_time = 30;
+                }
         break;
     //Poison
     case "poison":

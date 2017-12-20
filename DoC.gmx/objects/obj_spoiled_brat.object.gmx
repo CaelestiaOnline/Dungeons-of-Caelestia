@@ -59,6 +59,8 @@ event_inherited();
 
 if(attack_ready){
     scr_enemy_effect(damage, 0, 0);
+    alarm_set(0, attack_speed);
+    attack_ready = false;
 }
 
 </string>
