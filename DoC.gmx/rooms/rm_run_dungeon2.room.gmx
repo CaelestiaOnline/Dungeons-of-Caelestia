@@ -181,19 +181,6 @@
     <instance objName="obj_bush4" x="1424" y="1104" name="inst_929C9280" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock5" x="2160" y="496" name="inst_056641A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock5" x="2384" y="960" name="inst_1F6D2682" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_attack_tree" x="2032" y="1088" name="inst_D254BADF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_attack_tree" x="496" y="1104" name="inst_C1F27E02" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boar" x="912" y="1024" name="inst_CB19EBCA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boar" x="2400" y="400" name="inst_1793496B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boar" x="1904" y="800" name="inst_9E010674" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_walking_blade_of_grass" x="2272" y="672" name="inst_B6D92D2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_walking_blade_of_grass" x="1936" y="640" name="inst_256A944B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_walking_blade_of_grass" x="1792" y="544" name="inst_7566D7A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_native" x="1792" y="400" name="inst_8AAA3CC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_native" x="1168" y="1040" name="inst_69CC78C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_slug" x="1744" y="960" name="inst_1A57D4D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_slug" x="1408" y="736" name="inst_47EDE510" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_walking_snot" x="752" y="576" name="inst_45EA02A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_cactus" x="2400" y="1072" name="inst_F5ED6574" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_portal_run_room" x="128" y="720" name="inst_E06EBD3B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chest_placeholder" x="1040" y="240" name="inst_8729E14A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -230,6 +217,24 @@
     <instance objName="obj_rock5" x="2640" y="1312" name="inst_D8A2D989" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock5" x="96" y="1088" name="inst_F838AE64" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock5" x="960" y="1328" name="inst_D0D3B6D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_skeleton_sword" x="1312" y="864" name="inst_AE39CAF1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_skeleton_sword" x="1520" y="624" name="inst_8CD1F22E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_skeleton_sword" x="1840" y="704" name="inst_BC168516" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_skeleton_sword" x="960" y="528" name="inst_3D931EAA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wood_golem" x="1136" y="1056" name="inst_696A47CF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wood_golem" x="1856" y="496" name="inst_B9DFDCF0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wood_golem" x="1088" y="448" name="inst_5267114C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stone_golem" x="2240" y="688" name="inst_DF5B3378" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_stone_golem" x="656" y="992" name="inst_CFF7C6E4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_earth_golem" x="720" y="736" name="inst_511653C3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_earth_golem" x="2016" y="928" name="inst_9153354A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_golem" x="1664" y="560" name="inst_ECCAEEDE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_golem" x="1024" y="1056" name="inst_06A760B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_golem" x="880" y="592" name="inst_76B5C011" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_fire_golem" x="1280" y="688" name="inst_F2A0648E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_aether_golem" x="880" y="768" name="inst_36D3C490" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_aether_golem" x="1200" y="304" name="inst_F420AF28" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_alien_cleric" x="1568" y="912" name="inst_2BAF136F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_line_tileset" x="0" y="576" w="64" h="64" xo="128" yo="0" id="10000145" name="inst_57ECC188" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

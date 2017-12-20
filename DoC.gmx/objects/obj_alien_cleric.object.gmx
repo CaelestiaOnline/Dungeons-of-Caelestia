@@ -39,6 +39,7 @@ min_distance_factor = 1;
 
 //Bullet Type
 type = obj_pistol_bullet_enemy;
+
 </string>
           </argument>
         </arguments>
@@ -89,18 +90,18 @@ if(!triggered) exit;
 
 scr_pathfinding_enemy();
 
-if(attack_ready) {
+if(attack_ready){
 instance = noone;
-    for(i = 0; i &lt; instance_number(obj_gegner); i += 1){
-        if(instance == noone) instance = instance_find(obj_gegner, i);
-        else {    
-            if(instance.hp / instance.max_hp &gt;= instance_find(obj_gegner, i).hp/instance_find(obj_gegner, i).max_hp)
-                {
-                    instance = instance_find(obj_gegner, i);
-                }
-            }
+for(i = 0; i &lt; instance_number(obj_gegner); i += 1){
+    if(instance == noone) instance = instance_find(obj_gegner, i);
+    else{    
+        if(instance.hp / instance.max_hp &gt;= instance_find(obj_gegner, i).hp/instance_find(obj_gegner, i).max_hp){
+            instance = instance_find(obj_gegner, i);
         }
-    scr_heal(instance, damage);
+    }
+}
+if(instance == self) exit;
+scr_heal(instance, damage);
 }
 </string>
           </argument>

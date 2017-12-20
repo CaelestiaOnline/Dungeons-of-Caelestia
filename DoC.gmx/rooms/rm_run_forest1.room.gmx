@@ -226,6 +226,9 @@
     <instance objName="obj_rock8" x="1600" y="1296" name="inst_A2873847" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock8" x="96" y="1280" name="inst_B6D0BF1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock8" x="160" y="944" name="inst_12F59B5D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="1056" y="880" name="inst_C1A46614" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="1552" y="704" name="inst_EF0BF71F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trap" x="1568" y="880" name="inst_9BA309B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_line_tileset" x="80" y="512" w="64" h="64" xo="0" yo="0" id="10000001" name="inst_1F4ADECC" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
