@@ -173,7 +173,7 @@ map[level_index, 0] = rm_run_end;
           <argument>
             <kind>1</kind>
             <string>///Music
-run_music = audio_play_sound(snd_music_rapsody_rage, 5, false);
+run_music = audio_play_sound(asset_get_index("snd_music_run" + string(irandom(2)+1)), 10, false);
 audio_sound_gain(run_music, 0.4, 0);
 </string>
           </argument>
@@ -273,6 +273,11 @@ if(!enemies_exist &amp;&amp; !portal_active) {
           <argument>
             <kind>1</kind>
             <string>///Music
+if(!audio_is_playing(run_music)) {
+run_music = audio_play_sound(asset_get_index("snd_music_run" + string(irandom(2)+1)), 10, false);
+audio_sound_gain(run_music, 0.4, 0);
+}
+
 if(!admin.playing) {
     if(!audio_is_paused(run_music)) {
         audio_pause_sound(run_music);
@@ -280,6 +285,8 @@ if(!admin.playing) {
 } else if(audio_is_paused(run_music)) {
     audio_resume_sound(run_music);
 }
+
+
 </string>
           </argument>
         </arguments>

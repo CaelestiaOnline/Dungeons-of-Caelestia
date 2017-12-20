@@ -119,7 +119,7 @@ enemy_objects [61] = obj_swamp_boss;
 enemy_objects [62] = obj_ruin_boss;
 enemy_objects [63] = obj_dungeon_boss;
 enemy_objects [64] = obj_cave_boss;
-enemy_objects [63] = obj_hell_boss;
+enemy_objects [65] = obj_hell_boss;
 </string>
           </argument>
         </arguments>

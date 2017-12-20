@@ -70,6 +70,8 @@ volume_y = display_get_gui_height()/2 - 150;
             <kind>1</kind>
             <string>///Mouse
 mouse.is_visible = true;
+
+menu_music = -1;
 </string>
           </argument>
         </arguments>

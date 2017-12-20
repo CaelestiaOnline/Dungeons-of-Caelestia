@@ -65,9 +65,16 @@
     <sounds name="Music">
       <sound>sound\snd_music_elevator</sound>
       <sound>sound\snd_music_sanic_theme</sound>
-      <sound>sound\snd_music_rapsody_rage</sound>
       <sound>sound\snd_music_dejavu</sound>
       <sound>sound\snd_music_running_in_the_90s</sound>
+      <sound>sound\snd_music_credits</sound>
+      <sound>sound\snd_music_main_menu</sound>
+      <sound>sound\snd_music_menu</sound>
+      <sound>sound\snd_music_run1</sound>
+      <sound>sound\snd_music_run2</sound>
+      <sound>sound\snd_music_run3</sound>
+      <sound>sound\snd_music_rapsody_rage</sound>
+      <sound>sound\snd_music_hub</sound>
     </sounds>
     <sounds name="Menu">
       <sound>sound\snd_click</sound>
@@ -937,12 +944,35 @@
           <sprite>sprites\spr_items_150</sprite>
           <sprite>sprites\spr_items_151</sprite>
           <sprite>sprites\spr_items_152</sprite>
+          <sprite>sprites\spr_items_153</sprite>
+          <sprite>sprites\spr_items_154</sprite>
+          <sprite>sprites\spr_items_155</sprite>
+          <sprite>sprites\spr_items_156</sprite>
+          <sprite>sprites\spr_items_157</sprite>
+          <sprite>sprites\spr_items_158</sprite>
+          <sprite>sprites\spr_items_159</sprite>
         </sprites>
         <sprites name="160-169;">
-          <sprite>sprites\spr_items_160_</sprite>
+          <sprite>sprites\spr_items_160</sprite>
+          <sprite>sprites\spr_items_161</sprite>
+          <sprite>sprites\spr_items_162</sprite>
+          <sprite>sprites\spr_items_163</sprite>
+          <sprite>sprites\spr_items_164</sprite>
+          <sprite>sprites\spr_items_165</sprite>
+          <sprite>sprites\spr_items_166</sprite>
+          <sprite>sprites\spr_items_167</sprite>
+          <sprite>sprites\spr_items_168</sprite>
+          <sprite>sprites\spr_items_169</sprite>
         </sprites>
         <sprites name="170-179;">
-          <sprite>sprites\spr_items_170_</sprite>
+          <sprite>sprites\spr_items_170</sprite>
+          <sprite>sprites\spr_items_171</sprite>
+          <sprite>sprites\spr_items_172</sprite>
+          <sprite>sprites\spr_items_173</sprite>
+          <sprite>sprites\spr_items_174</sprite>
+          <sprite>sprites\spr_items_175</sprite>
+          <sprite>sprites\spr_items_176</sprite>
+          <sprite>sprites\spr_items_177</sprite>
         </sprites>
         <sprites name="180-189;">
           <sprite>sprites\spr_items_180_</sprite>
