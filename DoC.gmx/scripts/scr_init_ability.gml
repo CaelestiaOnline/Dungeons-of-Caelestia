@@ -347,6 +347,22 @@ switch(ability) {
                 break;
         }
         break;
+    case "attack_mana_explosion":
+        switch(ability_strength) {
+            case 666:
+                damage = 20;
+                radius = 5;
+                break;
+        }
+        break;
+    case "attack_mana_cat_airstrike":
+        switch(ability_strength) {
+            case 10:
+                damage = 25;
+                radius = 5;
+                break;
+        }
+        break;
     //Armour
     case "armour_leather":
         switch(ability_strength) {

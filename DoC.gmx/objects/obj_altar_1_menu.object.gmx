@@ -28,7 +28,73 @@
             <string>///Init
 event_inherited();
 
+altar_object = obj_altar_1;
 
+global.altar_item_index = -1;
+global.altar_prize_mult = altar_object.prize_mult;
+
+//Buttons
+button_menu_x1 = playing_menu_x1 + 32;
+button_menu_x2 = playing_menu_x1 + 900;
+button_menu_y1 = playing_menu_y1 + 300;
+button_menu_y2 = playing_menu_y2 - 32;
+
+//Item Stats
+item_stats_menu_x1 = playing_menu_x1 + 1150;
+item_stats_menu_x2 = playing_menu_x2 - 128;
+item_stats_menu_y1 = playing_menu_y1 + 32;
+item_stats_menu_y2 = playing_menu_y2 - 128;
+
+//Altar Button ScanItem
+altar_button_scanitem_x = playing_menu_x1 + 200;
+altar_button_scanitem_y = playing_menu_y1 + 400;
+altar_button_scanitem = instance_create(altar_button_scanitem_x, altar_button_scanitem_y, obj_altar_button_scanitem);
+altar_button_scanitem.origin_object = self;
+
+//Altar Button GenItem
+altar_button_genitem_x = playing_menu_x1 + 400;
+altar_button_genitem_y = playing_menu_y1 + 400;
+altar_button_genitem = instance_create(altar_button_genitem_x, altar_button_genitem_y, obj_altar_button_genitem);
+altar_button_genitem.origin_object = self;
+
+//Altar Button DropItem
+altar_button_dropitem_x = playing_menu_x1 + 600;
+altar_button_dropitem_y = playing_menu_y1 + 400;
+altar_button_dropitem = instance_create(altar_button_dropitem_x, altar_button_dropitem_y, obj_altar_button_dropitem);
+altar_button_dropitem.origin_object = self;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy Buttons
+event_inherited();
+
+instance_destroy(altar_button_scanitem);
+instance_destroy(altar_button_genitem);
+instance_destroy(altar_button_dropitem);
+
+if(global.altar_item_index != -1) {
+    var hitmark = run_shop_object.ability_hitmark;
+    scr_inventory_drop_item_place_count(global.altar_item_index, hitmark.x, hitmark.y, 1);
+}
 </string>
           </argument>
         </arguments>
@@ -51,8 +117,48 @@ event_inherited();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Draw Text
+            <string>///Hintergrund
 event_inherited();
+
+draw_set_alpha(0.9);
+draw_set_colour(colour_bg);
+
+draw_roundrect(
+    item_stats_menu_x1,
+    item_stats_menu_y1,
+    item_stats_menu_x2,
+    item_stats_menu_y2,
+    false
+);
+
+draw_roundrect(
+    button_menu_x1,
+    button_menu_y1,
+    button_menu_x2,
+    button_menu_y2,
+    false
+);
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Text
 
 var buffer = 32;
 draw_set_alpha(1);
@@ -66,10 +172,104 @@ draw_set_font(fnt_item_stats_direct);
 draw_text_ext(
     playing_menu_x1 + buffer,
     playing_menu_y1 + 32 + buffer,
-    "Hier kannst du Items opfern, um xxxx zu erhalten!",
+    "Hier kannst du Items opfern, um andere Items zu erhalten!",
     24,
     1000
 );
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Item Stats
+
+if(global.altar_item_index != -1) {
+draw_set_alpha(1);
+
+draw_set_colour(inv_hud.item_stats_heading_colour);
+draw_set_font(fnt_item_stats_title);
+
+draw_text(
+    item_stats_menu_x1 + 32,
+    item_stats_menu_y1 + 32,
+    item[global.altar_item_index, 0]
+    );
+    
+draw_set_font(fnt_inv_stats);
+draw_set_colour(c_white);
+draw_text_ext(
+    item_stats_menu_x1 + 32,
+    item_stats_menu_y1 + 32 + 32,
+    item[global.altar_item_index, 1],
+    20,
+    300
+    );
+    
+for(var i = 0; i &lt; array_length_1d(inv_hud.item_stats_heading_array); i++) {
+    if(inv_hud.item_stats_heading_array[i] != 0) {
+    draw_text(
+    item_stats_menu_x1 + 32,
+    item_stats_menu_y1 + 32*3 + 48 + 32*i,
+    inv_hud.item_stats_heading_array[i]
+    );
+    }
+}
+
+for(var i = 0; i &lt; array_length_1d(inv_hud.item_stats_array); i++) {
+    if(inv_hud.item_stats_heading_array[i] != 0) {
+    if(inv_hud.item_stats_array[i] == "" || inv_hud.item_stats_array[i] == 0) {
+        inv_hud.item_stats_array[i] = "-/-";
+    }
+    draw_text_ext(
+    item_stats_menu_x1 + 200,
+    item_stats_menu_y1 + 32*3 + 48 + 32*i,
+    inv_hud.item_stats_array[i],
+    20,
+    180
+    );
+    }
+}
+
+draw_set_font(fnt_item_stats_title);
+draw_set_colour(c_red);
+draw_text(
+    item_stats_menu_x1 + 32,
+    item_stats_menu_y2 - 128,
+    "[ " + scr_get_item_type_string(item[global.altar_item_index, 3]) + " ]"
+);
+
+draw_set_font(fnt_item_stats_title);
+draw_set_colour(scr_get_item_rarity_colour(global.altar_item_index));
+draw_text(
+    item_stats_menu_x1 + 32,
+    item_stats_menu_y2 - 64,
+    "[ " + scr_get_item_rarity_string(global.altar_item_index) + " ]"
+);
+}
+draw_set_font(fnt_item_stats_title);
+draw_set_colour(c_yellow);
+draw_text(
+    button_menu_x1 + 64,
+    button_menu_y1 + 400,
+    "RUN MONEY: " + string(progress.run_money) + "RM"
+);
+
+
 </string>
           </argument>
         </arguments>

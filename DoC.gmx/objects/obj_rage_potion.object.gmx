@@ -28,7 +28,7 @@
             <string>///Addiere HP
 index = items.rage_potion;
 
-
+scr_draw_uncomplete_item();
 
 instance_destroy();
 </string>

@@ -182,8 +182,7 @@
     <instance objName="obj_rock10_deco" x="928" y="1136" name="inst_6F2CC490" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock10_deco" x="1312" y="1264" name="inst_FBC9DA22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock10_deco" x="1664" y="1088" name="inst_D326900D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_in_run_shop" x="464" y="352" name="inst_B5356CC8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_altar_1" x="608" y="736" name="inst_6997AC5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_portal_end_run" x="480" y="384" name="inst_1F3ECDCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_line_tileset" x="0" y="320" w="64" h="64" xo="128" yo="0" id="10000284" name="inst_5526CA6E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

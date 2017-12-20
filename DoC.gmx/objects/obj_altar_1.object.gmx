@@ -32,10 +32,12 @@ scr_init_interaction();
 sprite = spr_altar_circle1;
 
 //Pentagramm
-var ability_hitmark = instance_create(x, y + 48, obj_ability_hitmark);
+ability_hitmark = instance_create(x, y + 48, obj_ability_hitmark);
 ability_hitmark.sprite_index = sprite;
 ability_hitmark.alarm[0] = -2;
 ability_hitmark.depth = 200;
+
+prize_mult = round(random_range(4, 6)*100)/100;
 </string>
           </argument>
         </arguments>

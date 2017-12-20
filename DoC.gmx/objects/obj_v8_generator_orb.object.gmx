@@ -28,6 +28,8 @@
             <string>///Speed-Multiplier
 index = items.v8_generator_orb;
 scr_init_ability(item_stats[index, item_stats_item.ability], item_stats[index, item_stats_item.ability_strength]);
+
+scr_draw_uncomplete_item();
 </string>
           </argument>
         </arguments>

@@ -82,7 +82,7 @@ if(radius &gt; sqrt(power( display_get_gui_width()/2  - 100, 2) + power( display
     stagetwo = true;
     if(status) {
         if(!instance_exists(obj_playing_menu)) var playing_menu = instance_create(0, 0, type);
-        playing_menu.run_shop_object = run_shop_object;
+        type.run_shop_object = run_shop_object;
     } else {
         if(instance_exists(type)) instance_destroy(type);
     }

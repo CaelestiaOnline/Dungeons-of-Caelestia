@@ -144,14 +144,13 @@
     <instance objName="obj_bush2" x="1136" y="400" name="inst_0C27901D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bush2" x="976" y="544" name="inst_104382D1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock5" x="1248" y="864" name="inst_2DA9664B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rock5" x="1424" y="544" name="inst_17F8AC5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rock5" x="1472" y="464" name="inst_17F8AC5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock5" x="640" y="672" name="inst_E0CAAF9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="-16" y="496" name="inst_A51497B0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="-16" y="560" name="inst_160BF1CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1904" y="560" name="inst_712D4E12" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1904" y="496" name="inst_366E91BA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_tree1_green" x="1520" y="320" name="inst_1B1DD186" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_altar_old" x="624" y="816" name="inst_295009AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1328" y="944" name="inst_D650CDEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1648" y="880" name="inst_E61E7ACD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_invisible_wall" x="1904" y="688" name="inst_15124F31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -177,7 +176,8 @@
     <instance objName="obj_rock10_deco" x="928" y="1136" name="inst_6F2CC490" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock10_deco" x="1312" y="1264" name="inst_FBC9DA22" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock10_deco" x="1664" y="1088" name="inst_D326900D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_cactus" x="1744" y="560" name="inst_8F194233" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_cactus" x="640" y="816" name="inst_8F194233" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_portal_end_run" x="1536" y="560" name="inst_57F64402" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_line_tileset" x="0" y="320" w="64" h="64" xo="128" yo="0" id="10000284" name="inst_5526CA6E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

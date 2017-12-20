@@ -549,7 +549,6 @@ if(admin.show_hitbox) {
     draw_set_colour(c_white);
     draw_text(display_get_gui_width() - 400, 16, "IC: " + string(instance_count));
     
-    draw_text(display_get_gui_width() - 600, 16, string(audio_is_playing(player_stats.sprinting_music)) + " | " + string(audio_is_paused(player_stats.sprinting_music)));
 }
 
 

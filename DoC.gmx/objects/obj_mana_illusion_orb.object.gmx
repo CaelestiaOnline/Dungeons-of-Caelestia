@@ -33,6 +33,8 @@ mana = item_stats[index, item_stats_mag.mana_usage];
 confirmed = false;
 
 hit_list = noone;
+
+scr_draw_uncomplete_item();
 </string>
           </argument>
         </arguments>
