@@ -336,66 +336,192 @@
         <sprites name="Bee">
           <sprite>sprites\spr_bee</sprite>
           <sprite>sprites\spr_obj_swamp_bee_dead</sprite>
+          <sprite>sprites\spr_obj_swamp_bee_colbox</sprite>
         </sprites>
         <sprites name="cat">
           <sprite>sprites\spr_cat</sprite>
           <sprite>sprites\spr_obj_kamicat_dead</sprite>
+          <sprite>sprites\spr_obj_kamicat_colbox</sprite>
         </sprites>
         <sprites name="siren">
           <sprite>sprites\spr_siren</sprite>
           <sprite>sprites\spr_siren_dead</sprite>
+          <sprite>sprites\spr_obj_siren_colbox</sprite>
         </sprites>
         <sprites name="golem">
           <sprite>sprites\spr_earth_golem</sprite>
           <sprite>sprites\spr_obj_earth_golem_dead</sprite>
+          <sprite>sprites\spr_earth_golem_colbox</sprite>
           <sprite>sprites\spr_stone_golem</sprite>
           <sprite>sprites\spr_obj_stone_golem_dead</sprite>
+          <sprite>sprites\spr_obj_stone_golem_colbox</sprite>
           <sprite>sprites\spr_mud_golem</sprite>
           <sprite>sprites\spr_obj_mud_golem_dead</sprite>
+          <sprite>sprites\spr_obj_mud_golem_colbox</sprite>
           <sprite>sprites\spr_air_golem</sprite>
           <sprite>sprites\spr_obj_air_golem_dead</sprite>
+          <sprite>sprites\spr_obj_air_golem_colbox</sprite>
           <sprite>sprites\spr_fire_golem</sprite>
           <sprite>sprites\spr_obj_fire_golem_dead</sprite>
+          <sprite>sprites\spr_obj_fire_golem_colbox</sprite>
           <sprite>sprites\spr_ice_golem</sprite>
           <sprite>sprites\spr_obj_ice_golem_dead</sprite>
+          <sprite>sprites\spr_obj_ice_golem_colbox</sprite>
           <sprite>sprites\spr_water_golem</sprite>
           <sprite>sprites\spr_obj_water_golem_dead</sprite>
+          <sprite>sprites\spr_obj_water_golem_colbox</sprite>
           <sprite>sprites\spr_wood_golem</sprite>
           <sprite>sprites\spr_obj_wood_golem_dead</sprite>
+          <sprite>sprites\spr_obj_wood_golem_colbox</sprite>
           <sprite>sprites\spr_aether_golem</sprite>
           <sprite>sprites\spr_obj_aether_golem_dead</sprite>
+          <sprite>sprites\spr_obj_aether_golem_colbox</sprite>
         </sprites>
         <sprites name="Pferde">
           <sprite>sprites\spr_unicorn</sprite>
           <sprite>sprites\spr_obj_unicorn_dead</sprite>
+          <sprite>sprites\spr_obj_unicorn_colbox</sprite>
           <sprite>sprites\spr_carnivourus_horse</sprite>
           <sprite>sprites\spr_obj_carnivorous_horse_dead</sprite>
+          <sprite>sprites\spr_obj_carnivorous_horse_colbox</sprite>
         </sprites>
         <sprites name="Zwerg">
           <sprite>sprites\spr_evil_dwarf</sprite>
           <sprite>sprites\spr_obj_evil_dwarf_dead</sprite>
+          <sprite>sprites\spr_obj_evil_dwarf_colbox</sprite>
         </sprites>
         <sprites name="Gefallener Engel">
           <sprite>sprites\spr_fallen_angel</sprite>
           <sprite>sprites\spr_obj_fallen_angel_dead</sprite>
+          <sprite>sprites\spr_obj_fallen_angel_colbox</sprite>
         </sprites>
         <sprites name="Geschutzturm">
           <sprite>sprites\spr_tower</sprite>
           <sprite>sprites\spr_obj_tower_dead</sprite>
+          <sprite>sprites\spr_obj_tower_colbox</sprite>
         </sprites>
         <sprites name="Bärenfalle">
           <sprite>sprites\spr_trap</sprite>
           <sprite>sprites\spr_obj_trap_dead</sprite>
+          <sprite>sprites\spr_obj_trap_colbox</sprite>
         </sprites>
         <sprites name="Sukkubus">
           <sprite>sprites\spr_succubus</sprite>
           <sprite>sprites\spr_obj_succubus_dead</sprite>
+          <sprite>sprites\spr_obj_succubus_colbox</sprite>
         </sprites>
         <sprites name="Treibsand">
           <sprite>sprites\spr_quicksand</sprite>
         </sprites>
         <sprites name="Glasscherben">
           <sprite>sprites\spr_broken_glass</sprite>
+        </sprites>
+        <sprites name="Wiedergänger">
+          <sprite>sprites\spr_revenant</sprite>
+          <sprite>sprites\spr_obj_revenant_dead</sprite>
+          <sprite>sprites\spr_obj_revenant_colbox</sprite>
+        </sprites>
+        <sprites name="Skelett">
+          <sprite>sprites\spr_bow_skeleton</sprite>
+          <sprite>sprites\spr_obj_skeleton_bow_dead</sprite>
+          <sprite>sprites\spr_obj_skeleton_bow_colbox</sprite>
+          <sprite>sprites\spr_skeleton_sword</sprite>
+          <sprite>sprites\spr_obj_skeleton_sword_dead</sprite>
+          <sprite>sprites\spr_obj_skeleton_sword_colbox</sprite>
+          <sprite>sprites\spr_diamond_skeleton</sprite>
+          <sprite>sprites\spr_obj_diamond_skeleton_dead</sprite>
+          <sprite>sprites\spr_obj_diamond_skeleton_colbox</sprite>
+        </sprites>
+        <sprites name="Alienkleriker">
+          <sprite>sprites\spr_alien_cleric</sprite>
+          <sprite>sprites\spr_obj_alien_cleric_dead</sprite>
+          <sprite>sprites\spr_obj_alien_cleric_colbox</sprite>
+        </sprites>
+        <sprites name="Ghul">
+          <sprite>sprites\spr_ghul</sprite>
+          <sprite>sprites\spr_obj_ghul_dead</sprite>
+          <sprite>sprites\spr_obj_ghul_colbox</sprite>
+        </sprites>
+        <sprites name="Maske">
+          <sprite>sprites\spr_maskman</sprite>
+          <sprite>sprites\spr_obj_mask_man_dead</sprite>
+          <sprite>sprites\spr_obj_mask_man_colbox</sprite>
+          <sprite>sprites\spr_flying_mask</sprite>
+          <sprite>sprites\spr_obj_flying_mask_dead</sprite>
+          <sprite>sprites\spr_obj_flying_mask_colbox</sprite>
+        </sprites>
+        <sprites name="Lichtgeist">
+          <sprite>sprites\spr_ghost_light</sprite>
+          <sprite>sprites\spr_obj_ghost_light_dead</sprite>
+          <sprite>sprites\spr_obj_ghost_light_colbox</sprite>
+        </sprites>
+        <sprites name="Eisenbischof">
+          <sprite>sprites\spr_iron_bishop</sprite>
+          <sprite>sprites\spr_obj_iron_bishop_dead</sprite>
+          <sprite>sprites\spr_obj_iron_bishop_colbox</sprite>
+        </sprites>
+        <sprites name="Gorgone">
+          <sprite>sprites\spr_gorgon</sprite>
+          <sprite>sprites\spr_obj_gorgon_dead</sprite>
+          <sprite>sprites\spr_obj_gorgon_colbox</sprite>
+        </sprites>
+        <sprites name="Schamane">
+          <sprite>sprites\spr_shaman</sprite>
+          <sprite>sprites\spr_obj_shaman_dead</sprite>
+          <sprite>sprites\spr_obj_shaman_colbox</sprite>
+        </sprites>
+        <sprites name="Liane">
+          <sprite>sprites\spr_liane</sprite>
+          <sprite>sprites\spr_obj_liane_dead</sprite>
+          <sprite>sprites\spr_obj_creeper_dead</sprite>
+          <sprite>sprites\spr_obj_creeper_colbox</sprite>
+          <sprite>sprites\spr_obj_liane_colbox</sprite>
+          <sprite>sprites\spr_twist_knot</sprite>
+          <sprite>sprites\spr_obj_twist_knot_dead</sprite>
+          <sprite>sprites\spr_obj_twist_knot_colbox</sprite>
+        </sprites>
+        <sprites name="Gargoyle">
+          <sprite>sprites\spr_gargoyle</sprite>
+          <sprite>sprites\spr_obj_gargoyle_dead</sprite>
+          <sprite>sprites\spr_obj_gargoyle_colbox</sprite>
+        </sprites>
+        <sprites name="Heulendes Mädchen">
+          <sprite>sprites\spr_spoiled_brat</sprite>
+          <sprite>sprites\spr_obj_spoiled_brat_dead</sprite>
+          <sprite>sprites\spr_obj_spoiled_brat_colbox</sprite>
+        </sprites>
+        <sprites name="Löwe">
+          <sprite>sprites\spr_nemeian_lion</sprite>
+          <sprite>sprites\spr_obj_nemeian_lion_dead</sprite>
+          <sprite>sprites\spr_obj_nemeian_lion_colbox</sprite>
+        </sprites>
+        <sprites name="Automat">
+          <sprite>sprites\spr_automat</sprite>
+          <sprite>sprites\spr_obj_automat_dead</sprite>
+          <sprite>sprites\spr_obj_automat_colbox</sprite>
+        </sprites>
+        <sprites name="Glasmensch">
+          <sprite>sprites\spr_glass_human</sprite>
+          <sprite>sprites\spr_obj_glass_human_dead</sprite>
+          <sprite>sprites\spr_obj_glass_human_colbox</sprite>
+        </sprites>
+        <sprites name="Schlamm">
+          <sprite>sprites\spr_living_mud</sprite>
+          <sprite>sprites\spr_obj_living_mud_dead</sprite>
+          <sprite>sprites\spr_obj_living_mud_colbox</sprite>
+          <sprite>sprites\spr_radioactive_mud</sprite>
+          <sprite>sprites\spr_obj_radioactive_mud_dead</sprite>
+          <sprite>sprites\spr_obj_radioactive_mud_colbox</sprite>
+        </sprites>
+        <sprites name="Mücke">
+          <sprite>sprites\spr_mosquito</sprite>
+          <sprite>sprites\spr_obj_mosquito_dead</sprite>
+          <sprite>sprites\spr_obj_mosquito_colbox</sprite>
+        </sprites>
+        <sprites name="Sumpfleiche">
+          <sprite>sprites\spr_swampcorpse</sprite>
+          <sprite>sprites\spr_obj_swampcorpse_dead</sprite>
+          <sprite>sprites\spr_obj_swampcorpse_colbox</sprite>
         </sprites>
       </sprites>
       <sprites name="Tiere">
