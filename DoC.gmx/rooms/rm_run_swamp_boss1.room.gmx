@@ -257,7 +257,6 @@
     <instance objName="obj_rock2" x="3200" y="432" name="inst_2EBE9ECF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock8" x="2400" y="976" name="inst_9DBDEC29" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_rock8" x="3568" y="464" name="inst_790D6DC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_attack_tree" x="3040" y="752" name="inst_0EE89CCD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bush3" x="208" y="1440" name="inst_92E56902" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bush3" x="688" y="1376" name="inst_B0F1475F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_bush3" x="1696" y="1456" name="inst_DCCCB217" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -274,6 +273,7 @@
     <instance objName="obj_wall_old" x="3344" y="336" name="inst_2A5BBEAC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_portal_run_room" x="3680" y="736" name="inst_6300BB42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_fragment_chest_placeholder" x="3328" y="624" name="inst_915BD223" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_swamp_boss" x="2992" y="800" name="inst_E87F3713" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_line_tileset" x="0" y="352" w="64" h="64" xo="128" yo="0" id="10000399" name="inst_5CF28D88" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

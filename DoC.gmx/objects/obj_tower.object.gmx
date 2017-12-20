@@ -30,9 +30,9 @@ event_inherited();
 scr_trigger_enemy(-1);
 if(!triggered) exit;
 
-type = obj_bullet_tower
+type = obj_bullet_tower;
 
-alarm_set(3, 120);
+alarm_set(3, 600);
 </string>
           </argument>
         </arguments>
@@ -82,17 +82,13 @@ instance_destroy();
             <string>///Angriff
 event_inherited();
 
-attack_ready = false;
+attack_ready = true
 
-if(alarm_get(0) == 0 
-    &amp;&amp; !collision_line(obj_player.x, obj_player.y - player_colbox_height, x, y - colbox_height, obj_hindernis, false, false)
-    &amp;&amp; !collision_line(obj_player.x, obj_player.y + player_colbox_height, x, y + colbox_height, obj_hindernis, false, false)){
-        attack_ready = true;
-        }
 if(attack_ready){
-    scr_bullet_attack_enemy(damage, type);;
+    bullet = instance_create(x, y, type);
+    if(obj_player.x &gt; x) bullet.hspeed = 10;
+    if(obj_player.x &lt; x) bullet.hspeed = -10;
 }
-
 </string>
           </argument>
         </arguments>

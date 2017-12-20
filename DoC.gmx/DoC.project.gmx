@@ -247,6 +247,8 @@
         </sprites>
         <sprites name="Mushrooms">
           <sprite>sprites\spr_mushroom</sprite>
+          <sprite>sprites\spr_mutated_mushroom</sprite>
+          <sprite>sprites\spr_obj_mutated_mushroom_dead</sprite>
           <sprites name="Colbox">
             <sprite>sprites\spr_obj_mushroom_colbox</sprite>
           </sprites>
@@ -267,6 +269,8 @@
           </sprites>
           <sprites name="Bullet">
             <sprite>sprites\spr_evil_budgerigar_of_the_forest</sprite>
+            <sprite>sprites\spr_syphalic_bird</sprite>
+            <sprite>sprites\spr_obj_symphalic_bird_dead</sprite>
             <sprites name="Colbox">
               <sprite>sprites\spr_obj_evil_budgerigar_of_the_forest_colbox</sprite>
             </sprites>
@@ -2246,6 +2250,12 @@
           <object>objects\obj_miniboss</object>
           <object>objects\obj_boss</object>
           <object>objects\obj_carnivora</object>
+          <object>objects\obj_hell_boss</object>
+          <object>objects\obj_cave_boss</object>
+          <object>objects\obj_dungeon_boss</object>
+          <object>objects\obj_ruin_boss</object>
+          <object>objects\obj_swamp_boss</object>
+          <object>objects\obj_forest_boss</object>
         </objects>
       </objects>
       <objects name="Heilungsfeld">

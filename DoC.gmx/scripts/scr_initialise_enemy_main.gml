@@ -37,6 +37,7 @@ speed_mult = 1;
 
 //Sprite death
 sprite_death = asset_get_index(string("spr_" + object_get_name(object_index) + "_dead"));
+if(sprite_get_name(sprite_index) == "spr_test") sprite_death = spr_test;
 
 //Loot
 drop_xp = enemy_stats[object_index, enemy_stats_normal.xp_drop];
