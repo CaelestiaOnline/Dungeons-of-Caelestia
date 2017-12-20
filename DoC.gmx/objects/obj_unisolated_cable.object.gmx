@@ -30,6 +30,7 @@ index = items.unisolated_cable;
 
 event_inherited();
 
+scr_draw_uncomplete_item();
 </string>
           </argument>
         </arguments>

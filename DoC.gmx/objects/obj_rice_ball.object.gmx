@@ -28,7 +28,7 @@
             <string>///Init
 index = items.food_rice_ball;
 
-
+scr_draw_uncomplete_item();
 
 instance_destroy();
 

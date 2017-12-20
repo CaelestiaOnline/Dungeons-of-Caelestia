@@ -493,6 +493,7 @@
       <sprite>sprites\spr_black_fire</sprite>
       <sprites name="Projectiles">
         <sprite>sprites\spr_arrow_rain_projectile</sprite>
+        <sprite>sprites\spr_laserairstrike_projectile</sprite>
       </sprites>
       <sprite>sprites\spr_chest_placeholder</sprite>
       <sprites name="Circles">
@@ -600,6 +601,7 @@
         <sprite>sprites\spr_inv_border_old</sprite>
         <sprite>sprites\spr_inv_border_drop_old</sprite>
         <sprite>sprites\spr_inv_border</sprite>
+        <sprite>sprites\spr_inv_border_shutdown</sprite>
         <sprite>sprites\spr_inv_border_del</sprite>
         <sprite>sprites\spr_inv_border_drop</sprite>
         <sprite>sprites\spr_inv_border_bg</sprite>
@@ -1288,6 +1290,7 @@
         <script>scripts\scr_draw_button_hover.gml</script>
         <script>scripts\scr_draw_item_rarity.gml</script>
         <script>scripts\scr_button_draw_invalid_action.gml</script>
+        <script>scripts\scr_draw_uncomplete_item.gml</script>
         <script>scripts\scr_button_check_input.gml</script>
         <script>scripts\scr_get_item_rarity_colour.gml</script>
         <script>scripts\scr_get_item_rarity_string_colour.gml</script>
@@ -1382,6 +1385,7 @@
       </fonts>
       <fonts name="Indicator">
         <font>fonts\fnt_indicator</font>
+        <font>fonts\fnt_indicator_big</font>
       </fonts>
       <fonts name="Textbox">
         <font>fonts\fnt_textbox_heading</font>
@@ -1786,9 +1790,11 @@
         </objects>
         <objects name="ExplosionMagic">
           <object>objects\obj_mana_explosion_magic_orb</object>
+          <object>objects\obj_explosion_magic_projectile</object>
         </objects>
         <objects name="LaerPointerCatAirstrike">
           <object>objects\obj_mana_laserairstrike_orb</object>
+          <object>objects\obj_laserairstrike_projectile</object>
         </objects>
         <objects name="MeteorShower">
           <object>objects\obj_mana_meteor_shower_orb</object>
@@ -2017,6 +2023,14 @@
             <object>objects\obj_run_shop_button_getitem</object>
             <object>objects\obj_run_shop_button_buyitem</object>
           </objects>
+          <objects name="Altar1">
+            <object>objects\obj_altar_button_dropitem</object>
+            <object>objects\obj_altar_button_scanitem</object>
+            <object>objects\obj_altar_button_genitem</object>
+          </objects>
+          <objects name="ShutdownMenu">
+            <object>objects\obj_shutdown_button_endrun</object>
+          </objects>
         </objects>
       </objects>
       <object>objects\obj_leave_hub_menu</object>
@@ -2035,6 +2049,7 @@
       <object>objects\obj_floor_interaction</object>
       <objects name="Portals">
         <object>objects\obj_hub_portal_hub</object>
+        <object>objects\obj_portal_end_run</object>
         <object>objects\obj_hub_start_run</object>
         <object>objects\obj_portal_run_room</object>
         <object>objects\obj_hub_portal_testroom1</object>
@@ -2061,6 +2076,7 @@
         <object>objects\obj_altar_1</object>
         <object>objects\obj_playing_menu</object>
         <object>objects\obj_in_run_shop_menu</object>
+        <object>objects\obj_shutdown_menu</object>
         <object>objects\obj_altar_1_menu</object>
       </objects>
     </objects>
@@ -2130,6 +2146,7 @@
           <object>objects\obj_damage_ind</object>
           <object>objects\obj_text_ind</object>
           <object>objects\obj_gui_text_ind</object>
+          <object>objects\obj_gui_big_text_ind</object>
           <object>objects\obj_xp_ind</object>
           <object>objects\obj_money_ind</object>
           <object>objects\obj_heal_ind</object>
@@ -2339,6 +2356,7 @@
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tm_fist_of_the_north_star</timeline>
+    <timeline>timelines\tm_explosion_magic</timeline>
   </timelines>
   <rooms name="rooms">
     <rooms name="initalise_room">

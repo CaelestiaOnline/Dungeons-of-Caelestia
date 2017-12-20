@@ -250,7 +250,7 @@
     <instance objName="obj_random_type_chest" x="1744" y="1488" name="inst_946169CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_type_chest" x="1856" y="1488" name="inst_FD71437E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_random_type_chest" x="1968" y="1488" name="inst_FA91DCB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_trainingspuppe_unbreakable" x="1168" y="1328" name="inst_6252F134" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_trainingspuppe_unbreakable" x="1056" y="1328" name="inst_6252F134" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="3552" y="1632" name="inst_5526A3B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="3472" y="1456" name="inst_1CD85D7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_barrel" x="3424" y="1664" name="inst_5A3D50A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -277,7 +277,8 @@
     <instance objName="obj_hub_monsterdex" x="928" y="1056" name="inst_82084FF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_char" x="784" y="1056" name="inst_9781E735" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hub_achievements" x="1072" y="1056" name="inst_69608946" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_in_run_shop" x="1264" y="1472" name="inst_6892504C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_in_run_shop" x="1472" y="1312" name="inst_6892504C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_altar_1" x="1216" y="1312" name="inst_AE2488F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

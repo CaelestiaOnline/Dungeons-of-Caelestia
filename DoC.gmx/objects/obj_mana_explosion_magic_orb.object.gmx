@@ -29,10 +29,16 @@
 index = items.mana_explosion_magic_orb;
 scr_init_ability(item_stats[index, item_stats_mag.ability], item_stats[index, item_stats_mag.ability_strength]);
 mana = item_stats[index, item_stats_mag.mana_usage];
+type = obj_explosion_magic_projectile;
 
 confirmed = false;
 
+distance = 200;
+
 hit_list = noone;
+
+screen_shake = false;
+screen_leap = false;
 </string>
           </argument>
         </arguments>
@@ -81,13 +87,55 @@ hit_list = noone;
 scr_mag_ability();
 
 if(confirmed) {
-    audio_play_sound(snd_explosion_magic, 1, false);
+    real_damage = scr_mag_damage(damage);
+
+    scr_start_timeline(tm_explosion_magic);
     confirmed = false;
 }
 
 if(hit_list != noone) {
     //scr_effect(effect.xxxx, xxxx, hit_list);
 }
+
+if(screen_shake) {
+    view_xview[0] = old_x_view + irandom_range(-10, 10);
+    view_yview[0] = old_y_view + irandom_range(-10, 10);
+}
+
+if(screen_leap) {
+    view_wview[0] = old_w_view + irandom_range(-5, 5);
+    view_hview[0] = old_h_view + irandom_range(-5, 5);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Draw Position
+if(!admin.playing) exit;
+
+draw_set_alpha(0.5);
+draw_set_colour(c_black);
+var new_x = obj_player.x + (distance*obj_player.image_xscale);
+draw_ellipse(new_x - 5, obj_player.y - 3, new_x + 5, obj_player.y + 3, 0);
+draw_set_alpha(1);
 </string>
           </argument>
         </arguments>
