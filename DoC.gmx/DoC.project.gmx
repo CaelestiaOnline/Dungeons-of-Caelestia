@@ -247,6 +247,8 @@
         </sprites>
         <sprites name="Mushrooms">
           <sprite>sprites\spr_mushroom</sprite>
+          <sprite>sprites\spr_mutated_mushroom</sprite>
+          <sprite>sprites\spr_obj_mutated_mushroom_dead</sprite>
           <sprites name="Colbox">
             <sprite>sprites\spr_obj_mushroom_colbox</sprite>
           </sprites>
@@ -267,6 +269,8 @@
           </sprites>
           <sprites name="Bullet">
             <sprite>sprites\spr_evil_budgerigar_of_the_forest</sprite>
+            <sprite>sprites\spr_syphalic_bird</sprite>
+            <sprite>sprites\spr_obj_symphalic_bird_dead</sprite>
             <sprites name="Colbox">
               <sprite>sprites\spr_obj_evil_budgerigar_of_the_forest_colbox</sprite>
             </sprites>
@@ -347,31 +351,51 @@
           <sprite>sprites\spr_stone_golem</sprite>
           <sprite>sprites\spr_obj_stone_golem_dead</sprite>
           <sprite>sprites\spr_mud_golem</sprite>
+          <sprite>sprites\spr_obj_mud_golem_dead</sprite>
           <sprite>sprites\spr_air_golem</sprite>
+          <sprite>sprites\spr_obj_air_golem_dead</sprite>
           <sprite>sprites\spr_fire_golem</sprite>
+          <sprite>sprites\spr_obj_fire_golem_dead</sprite>
           <sprite>sprites\spr_ice_golem</sprite>
+          <sprite>sprites\spr_obj_ice_golem_dead</sprite>
           <sprite>sprites\spr_water_golem</sprite>
+          <sprite>sprites\spr_obj_water_golem_dead</sprite>
           <sprite>sprites\spr_wood_golem</sprite>
+          <sprite>sprites\spr_obj_wood_golem_dead</sprite>
           <sprite>sprites\spr_aether_golem</sprite>
+          <sprite>sprites\spr_obj_aether_golem_dead</sprite>
         </sprites>
         <sprites name="Pferde">
           <sprite>sprites\spr_unicorn</sprite>
+          <sprite>sprites\spr_obj_unicorn_dead</sprite>
           <sprite>sprites\spr_carnivourus_horse</sprite>
+          <sprite>sprites\spr_obj_carnivorous_horse_dead</sprite>
         </sprites>
         <sprites name="Zwerg">
           <sprite>sprites\spr_evil_dwarf</sprite>
+          <sprite>sprites\spr_obj_evil_dwarf_dead</sprite>
         </sprites>
         <sprites name="Gefallener Engel">
           <sprite>sprites\spr_fallen_angel</sprite>
+          <sprite>sprites\spr_obj_fallen_angel_dead</sprite>
         </sprites>
         <sprites name="Geschutzturm">
           <sprite>sprites\spr_tower</sprite>
+          <sprite>sprites\spr_obj_tower_dead</sprite>
         </sprites>
         <sprites name="Bärenfalle">
           <sprite>sprites\spr_trap</sprite>
+          <sprite>sprites\spr_obj_trap_dead</sprite>
         </sprites>
         <sprites name="Sukkubus">
           <sprite>sprites\spr_succubus</sprite>
+          <sprite>sprites\spr_obj_succubus_dead</sprite>
+        </sprites>
+        <sprites name="Treibsand">
+          <sprite>sprites\spr_quicksand</sprite>
+        </sprites>
+        <sprites name="Glasscherben">
+          <sprite>sprites\spr_broken_glass</sprite>
         </sprites>
       </sprites>
       <sprites name="Tiere">
@@ -459,6 +483,12 @@
         <sprite>sprites\spr_mana_chainbolt_bullet</sprite>
         <sprite>sprites\spr_mini_bullet</sprite>
         <sprite>sprites\spr_shotgun_bullet</sprite>
+        <sprite>sprites\spr_ice</sprite>
+        <sprite>sprites\spr_water</sprite>
+        <sprite>sprites\spr_lightning</sprite>
+        <sprite>sprites\spr_snake</sprite>
+        <sprite>sprites\spr_shotgun</sprite>
+        <sprite>sprites\spr_exp</sprite>
       </sprites>
       <sprite>sprites\spr_black_fire</sprite>
       <sprites name="Projectiles">
@@ -2237,6 +2267,12 @@
           <object>objects\obj_miniboss</object>
           <object>objects\obj_boss</object>
           <object>objects\obj_carnivora</object>
+          <object>objects\obj_hell_boss</object>
+          <object>objects\obj_cave_boss</object>
+          <object>objects\obj_dungeon_boss</object>
+          <object>objects\obj_ruin_boss</object>
+          <object>objects\obj_swamp_boss</object>
+          <object>objects\obj_forest_boss</object>
         </objects>
       </objects>
       <objects name="Heilungsfeld">

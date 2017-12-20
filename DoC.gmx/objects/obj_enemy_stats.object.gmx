@@ -114,6 +114,12 @@ enemy_objects [56] = obj_succubus;
 enemy_objects [57] = obj_revenant;
 enemy_objects [58] = obj_ghost_light;
 enemy_objects [59] = obj_fallen_angel;
+enemy_objects [60] = obj_forest_boss;
+enemy_objects [61] = obj_swamp_boss;
+enemy_objects [62] = obj_ruin_boss;
+enemy_objects [63] = obj_dungeon_boss;
+enemy_objects [64] = obj_cave_boss;
+enemy_objects [63] = obj_hell_boss;
 </string>
           </argument>
         </arguments>
@@ -387,7 +393,7 @@ enemy_stats[obj_attack_tree, enemy_stats_normal.money_drop] = 12;
 
 //Blaubeere(5)
 enemy_stats[obj_blueberry, 0] = "Blaubaere";
-enemy_stats[obj_blueberry, 1] = "Das schnelle blaue Rudeltier";
+enemy_stats[obj_blueberry, 1] = "Das schnelle blaue Rudeltier!";
 enemy_stats[obj_blueberry, 2] = true;
 enemy_stats[obj_blueberry, 3] = true;
 enemy_stats[obj_blueberry, 4] = "normal";
@@ -401,8 +407,8 @@ enemy_stats[obj_blueberry, enemy_stats_normal.xp_drop] = 32;
 enemy_stats[obj_blueberry, enemy_stats_normal.money_drop] = 2;
 
 //Böse Fernkampf-Wellensittche des Waldes(6)
-enemy_stats[obj_evil_budgerigar_of_the_forest, 0] = "Der böse Wellensittich des Waldes";
-enemy_stats[obj_evil_budgerigar_of_the_forest, 1] = "Die furiose Fernkampfgefahr aus dem fantastischen Wald";
+enemy_stats[obj_evil_budgerigar_of_the_forest, 0] = "Der boese Wellensittich des Waldes";
+enemy_stats[obj_evil_budgerigar_of_the_forest, 1] = "Die furiose Fernkampfgefahr aus dem fantastischen Wald!";
 enemy_stats[obj_evil_budgerigar_of_the_forest, 2] = true;
 enemy_stats[obj_evil_budgerigar_of_the_forest, 3] = true;
 enemy_stats[obj_evil_budgerigar_of_the_forest, 4] = "normal";
@@ -416,8 +422,8 @@ enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_evil_budgerigar_of_the_forest, enemy_stats_normal.money_drop] = 6;
 
 //Böse Nahkampf-Wellensittiche des Waldes(7)
-enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 0] = "Der böse und schnelle Wellensittich des Waldes";
-enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 1] = "Die nervige Nahkampfgefahr aus dem nächstgelegenen Wald";
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 0] = "Der boese und schnelle Wellensittich des Waldes";
+enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 1] = "Die nervige Nahkampfgefahr aus dem naechstgelegenen Wald!";
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 2] = true;
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 3] = true;
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, 4] = "normal";
@@ -431,7 +437,7 @@ enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.xp_drop]
 enemy_stats[obj_evil_budgerigar_of_the_forest_speed, enemy_stats_normal.money_drop] = 6;
 
 //Ureinwohner(8)
-enemy_stats[obj_native, 0] = "Der gemeingefährliche Ureinwohner";
+enemy_stats[obj_native, 0] = "Der gemeingefaehrliche Ureinwohner";
 enemy_stats[obj_native, 1] = "Vorsicht! Sie haben vergiftete Pfeile!";
 enemy_stats[obj_native, 2] = true;
 enemy_stats[obj_native, 3] = true;
@@ -528,7 +534,7 @@ enemy_stats[obj_slug, enemy_stats_normal.money_drop] = 11;
 
 //Grashalm(13)
 enemy_stats[obj_walking_blade_of_grass, 0] = "Laufender Grashalm";
-enemy_stats[obj_walking_blade_of_grass, 1] = "Tritt nur in sehr grossen Rudeln auf";
+enemy_stats[obj_walking_blade_of_grass, 1] = "Tritt nur in sehr grossen Rudeln auf!";
 enemy_stats[obj_walking_blade_of_grass, 2] = true;
 enemy_stats[obj_walking_blade_of_grass, 3] = true;
 enemy_stats[obj_walking_blade_of_grass, 4] = "normal";
@@ -543,7 +549,7 @@ enemy_stats[obj_walking_blade_of_grass, enemy_stats_normal.money_drop] = 2;
 
 //Fuchs(14)
 enemy_stats[obj_fox, 0] = "Fuchs";
-enemy_stats[obj_fox, 1] = "Er liebt es, die Tollwut zu verbreiten";
+enemy_stats[obj_fox, 1] = "Er liebt es, die Tollwut zu verbreiten!";
 enemy_stats[obj_fox, 2] = true;
 enemy_stats[obj_fox, 3] = true;
 enemy_stats[obj_fox, 4] = "normal";
@@ -558,7 +564,7 @@ enemy_stats[obj_fox, enemy_stats_normal.money_drop] = 19;
 
 //Sumpfleiche(15)
 enemy_stats[obj_swampcorpse, 0] = "Sumpfleiche";
-enemy_stats[obj_swampcorpse, 1] = "Stinkt wie die Pest, aber will einfach nicht duschen";
+enemy_stats[obj_swampcorpse, 1] = "Stinkt wie die Pest, aber will einfach nicht duschen!";
 enemy_stats[obj_swampcorpse, 2] = true;
 enemy_stats[obj_swampcorpse, 3] = true;
 enemy_stats[obj_swampcorpse, 4] = "normal";
@@ -573,7 +579,7 @@ enemy_stats[obj_swampcorpse, enemy_stats_normal.money_drop] = 20;
 
 //Mosquito(16)
 enemy_stats[obj_mosquito, 0] = "Mosquito";
-enemy_stats[obj_mosquito, 1] = "Da ist Malaria vorprogrammiert";
+enemy_stats[obj_mosquito, 1] = "Da ist Malaria vorprogrammiert!";
 enemy_stats[obj_mosquito, 2] = true;
 enemy_stats[obj_mosquito, 3] = true;
 enemy_stats[obj_mosquito, 4] = "normal";
@@ -588,7 +594,7 @@ enemy_stats[obj_mosquito, enemy_stats_normal.money_drop] = 2;
 
 //Schlingpflanze(17)
 enemy_stats[obj_creeper, 0] = "Schlingpflanze";
-enemy_stats[obj_creeper, 1] = "Und schon kannst du dich nicht mehr bewegen";
+enemy_stats[obj_creeper, 1] = "Und schon kannst du dich nicht mehr bewegen!";
 enemy_stats[obj_creeper, 2] = false;
 enemy_stats[obj_creeper, 3] = true;
 enemy_stats[obj_creeper, 4] = "normal";
@@ -596,14 +602,14 @@ enemy_stats[obj_creeper, 5] = "swamp";
 
 enemy_stats[obj_creeper, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_creeper, enemy_stats_normal.damage] = 5;
-enemy_stats[obj_creeper, enemy_stats_normal.attack_speed] = 20;
+enemy_stats[obj_creeper, enemy_stats_normal.attack_speed] = 60;
 enemy_stats[obj_creeper, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_creeper, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_creeper, enemy_stats_normal.money_drop] = 10;
 
 //Radioaktiver Schlick(18)
 enemy_stats[obj_radioactive_mud, 0] = "Radioaktiver Schlick";
-enemy_stats[obj_radioactive_mud, 1] = "Der strahlt so freundlich";
+enemy_stats[obj_radioactive_mud, 1] = "Der strahlt so freundlich!";
 enemy_stats[obj_radioactive_mud, 2] = true;
 enemy_stats[obj_radioactive_mud, 3] = true;
 enemy_stats[obj_radioactive_mud, 4] = "normal";
@@ -618,7 +624,7 @@ enemy_stats[obj_radioactive_mud, enemy_stats_normal.money_drop] = 18;
 
 //Sumpfbaum(19)
 enemy_stats[obj_swamp_tree, 0] = "Sumpfbaum";
-enemy_stats[obj_swamp_tree, 1] = "Ein naher Verwandter des wandelnden Baums";
+enemy_stats[obj_swamp_tree, 1] = "Ein naher Verwandter des wandelnden Baums!";
 enemy_stats[obj_swamp_tree, 2] = true;
 enemy_stats[obj_swamp_tree, 3] = true;
 enemy_stats[obj_swamp_tree, 4] = "normal";
@@ -669,7 +675,7 @@ enemy_stats[obj_living_mud, enemy_stats_normal.money_drop] = 21;
 
 //Sumpfbiene(21)
 enemy_stats[obj_swamp_bee, 0] = "Sumpfbiene";
-enemy_stats[obj_swamp_bee, 1] = "Für Allergiker tödlich!";
+enemy_stats[obj_swamp_bee, 1] = "Für Allergiker toedlich!";
 enemy_stats[obj_swamp_bee, 2] = true;
 enemy_stats[obj_swamp_bee, 3] = true;
 enemy_stats[obj_swamp_bee, 4] = "normal";
@@ -684,7 +690,7 @@ enemy_stats[obj_swamp_bee, enemy_stats_normal.money_drop] = 15;
 
 //Schlammgolem(22)
 enemy_stats[obj_mud_golem, 0] = "Schlammgolem";
-enemy_stats[obj_mud_golem, 1] = "Matschig bis zum geht-nicht-mehr";
+enemy_stats[obj_mud_golem, 1] = "Matschig bis zum geht-nicht-mehr!";
 enemy_stats[obj_mud_golem, 2] = true;
 enemy_stats[obj_mud_golem, 3] = true;
 enemy_stats[obj_mud_golem, 4] = "normal";
@@ -699,7 +705,7 @@ enemy_stats[obj_mud_golem, enemy_stats_normal.money_drop] = 20;
 
 //Kamikatze(23)
 enemy_stats[obj_kamicat, 0] = "Kamikatze";
-enemy_stats[obj_kamicat, 1] = "Hat einen starken Todeswunsch";
+enemy_stats[obj_kamicat, 1] = "Hat einen starken Todeswunsch!";
 enemy_stats[obj_kamicat, 2] = true;
 enemy_stats[obj_kamicat, 3] = true;
 enemy_stats[obj_kamicat, 4] = "normal";
@@ -714,7 +720,7 @@ enemy_stats[obj_kamicat, enemy_stats_normal.money_drop] = 10;
 
 //Mutierter Pilz(24)
 enemy_stats[obj_mutated_mushroom, 0] = "Mutierter Pilz";
-enemy_stats[obj_mutated_mushroom, 1] = "Der kann sogar laufen";
+enemy_stats[obj_mutated_mushroom, 1] = "Der kann sogar laufen!";
 enemy_stats[obj_mutated_mushroom, 2] = true;
 enemy_stats[obj_mutated_mushroom, 3] = true;
 enemy_stats[obj_mutated_mushroom, 4] = "normal";
@@ -729,7 +735,7 @@ enemy_stats[obj_mutated_mushroom, enemy_stats_normal.money_drop] = 13;
 
 //Maskenmann(25)
 enemy_stats[obj_mask_man, 0] = "Maskenmann";
-enemy_stats[obj_mask_man, 1] = "Er wird Rache üben";
+enemy_stats[obj_mask_man, 1] = "Er wird Rache üben!";
 enemy_stats[obj_mask_man, 2] = true;
 enemy_stats[obj_mask_man, 3] = true;
 enemy_stats[obj_mask_man, 4] = "normal";
@@ -744,7 +750,7 @@ enemy_stats[obj_mask_man, enemy_stats_normal.money_drop] = 14;
 
 //Fliegende Maske(26)
 enemy_stats[obj_flying_mask, 0] = "Fliegende Maske";
-enemy_stats[obj_flying_mask, 1] = "Die Rache des Maskenmanns";
+enemy_stats[obj_flying_mask, 1] = "Die Rache des Maskenmanns!";
 enemy_stats[obj_flying_mask, 2] = true;
 enemy_stats[obj_flying_mask, 3] = true;
 enemy_stats[obj_flying_mask, 4] = "normal";
@@ -759,7 +765,7 @@ enemy_stats[obj_flying_mask, enemy_stats_normal.money_drop] = 2;
 
 //Schamane(27)
 enemy_stats[obj_shaman, 0] = "Schamane";
-enemy_stats[obj_shaman, 1] = "Heilt deine Gegner";
+enemy_stats[obj_shaman, 1] = "Heilt deine Gegner!";
 enemy_stats[obj_shaman, 2] = true;
 enemy_stats[obj_shaman, 3] = true;
 enemy_stats[obj_shaman, 4] = "normal";
@@ -774,7 +780,7 @@ enemy_stats[obj_shaman, enemy_stats_normal.money_drop] = 15;
 
 //Symphatischer Vogel(28)
 enemy_stats[obj_symphalic_bird, 0] = "Symphatischer Vogel";
-enemy_stats[obj_symphalic_bird, 1] = "Sie sind sehr laut";
+enemy_stats[obj_symphalic_bird, 1] = "Sie sind sehr laut!";
 enemy_stats[obj_symphalic_bird, 2] = true;
 enemy_stats[obj_symphalic_bird, 3] = true;
 enemy_stats[obj_symphalic_bird, 4] = "normal";
@@ -804,7 +810,7 @@ enemy_stats[obj_trap, enemy_stats_normal.money_drop] = 14;
 
 //Lianenfalle(30)
 enemy_stats[obj_liane, 0] = "Lianenfalle";
-enemy_stats[obj_liane, 1] = "Und schon kannst du dich nicht mehr bewegen";
+enemy_stats[obj_liane, 1] = "Und schon kannst du dich nicht mehr bewegen!";
 enemy_stats[obj_liane, 2] = false;
 enemy_stats[obj_liane, 3] = true;
 enemy_stats[obj_liane, 4] = "normal";
@@ -812,7 +818,7 @@ enemy_stats[obj_liane, 5] = "ruins";
 
 enemy_stats[obj_liane, enemy_stats_normal.hp] = 40;
 enemy_stats[obj_liane, enemy_stats_normal.damage] = 5;
-enemy_stats[obj_liane, enemy_stats_normal.attack_speed] = 20;
+enemy_stats[obj_liane, enemy_stats_normal.attack_speed] = 60;
 enemy_stats[obj_liane, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_liane, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_liane, enemy_stats_normal.money_drop] = 10;
@@ -840,7 +846,7 @@ enemy_stats[obj_liane, enemy_stats_normal.money_drop] = 10;
 
 //Sirene(31)
 enemy_stats[obj_siren, 0] = "Sirene";
-enemy_stats[obj_siren, 1] = "Nein, nicht die von der Feuerwehr";
+enemy_stats[obj_siren, 1] = "Nein, nicht die von der Feuerwehr!";
 enemy_stats[obj_siren, 2] = true;
 enemy_stats[obj_siren, 3] = true;
 enemy_stats[obj_siren, 4] = "normal";
@@ -854,8 +860,8 @@ enemy_stats[obj_siren, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_siren, enemy_stats_normal.money_drop] = 14;
 
 //Würgeschlinge(32)
-enemy_stats[obj_twist_knot, 0] = "Würgeschlinge";
-enemy_stats[obj_twist_knot, 1] = "Die bewegliche Variante der Liane";
+enemy_stats[obj_twist_knot, 0] = "Wuergeschlinge";
+enemy_stats[obj_twist_knot, 1] = "Die bewegliche Variante der Liane!";
 enemy_stats[obj_twist_knot, 2] = true;
 enemy_stats[obj_twist_knot, 3] = true;
 enemy_stats[obj_twist_knot, 4] = "normal";
@@ -870,22 +876,7 @@ enemy_stats[obj_twist_knot, enemy_stats_normal.money_drop] = 13;
 
 //Alienkleriker(33)
 enemy_stats[obj_alien_cleric, 0] = "Alienkleriker";
-enemy_stats[obj_alien_cleric, 1] = "Tut nichts außer die Gegner zu heilen";
-enemy_stats[obj_alien_cleric, 2] = true;
-enemy_stats[obj_alien_cleric, 3] = true;
-enemy_stats[obj_alien_cleric, 4] = "normal";
-enemy_stats[obj_alien_cleric, 5] = "dungeon";
-
-enemy_stats[obj_alien_cleric, enemy_stats_normal.hp] = 50;
-enemy_stats[obj_alien_cleric, enemy_stats_normal.damage] = 25;
-enemy_stats[obj_alien_cleric, enemy_stats_normal.attack_speed] = 50;
-enemy_stats[obj_alien_cleric, enemy_stats_normal.max_speed] = 2.5;
-enemy_stats[obj_alien_cleric, enemy_stats_normal.xp_drop] = 64;
-enemy_stats[obj_alien_cleric, enemy_stats_normal.money_drop] = 13;
-
-//Skelett(Schwert)(34)
-enemy_stats[obj_skeleton_sword, 0] = "Schwertskelett";
-enemy_stats[obj_skeleton_sword, 1] = "Ich glaub nicht, dass man ein Schwert so verwendet";
+enemy_stats[obj_alien_cleric, 1] = "Tut nichts außer die Gegner zu heilen!";
 enemy_stats[obj_skeleton_sword, 2] = true;
 enemy_stats[obj_skeleton_sword, 3] = true;
 enemy_stats[obj_skeleton_sword, 4] = "normal";
@@ -900,7 +891,7 @@ enemy_stats[obj_skeleton_sword, enemy_stats_normal.money_drop] = 11;
 
 //Skelett(Bogen)(35)
 enemy_stats[obj_skeleton_bow, 0] = "Bogenskelett";
-enemy_stats[obj_skeleton_bow, 1] = "Ich glaub auch nicht, dass man einen Bogen so verwendet";
+enemy_stats[obj_skeleton_bow, 1] = "Ich glaub auch nicht, dass man einen Bogen so verwendet!";
 enemy_stats[obj_skeleton_bow, 2] = true;
 enemy_stats[obj_skeleton_bow, 3] = true;
 enemy_stats[obj_skeleton_bow, 4] = "normal";
@@ -914,16 +905,16 @@ enemy_stats[obj_skeleton_bow, enemy_stats_normal.xp_drop] = 64;
 enemy_stats[obj_skeleton_bow, enemy_stats_normal.money_drop] = 13;
 
 //Verzogenes Gör(36)
-enemy_stats[obj_spoiled_brat, 0] = "Verzogenes Gör";
-enemy_stats[obj_spoiled_brat, 1] = "Sitzt bloß da und heult";
+enemy_stats[obj_spoiled_brat, 0] = "Verzogenes Goer";
+enemy_stats[obj_spoiled_brat, 1] = "Sitzt bloß da und heult!";
 enemy_stats[obj_spoiled_brat, 2] = false;
 enemy_stats[obj_spoiled_brat, 3] = true;
 enemy_stats[obj_spoiled_brat, 4] = "normal";
 enemy_stats[obj_spoiled_brat, 5] = "dungeon";
 
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.hp] = 70;
-enemy_stats[obj_spoiled_brat, enemy_stats_normal.damage] = 20;
-enemy_stats[obj_spoiled_brat, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_spoiled_brat, enemy_stats_normal.attack_speed] = 90;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.max_speed] = 0;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_spoiled_brat, enemy_stats_normal.money_drop] = 18;
@@ -945,7 +936,7 @@ enemy_stats[obj_stone_golem, enemy_stats_normal.money_drop] = 15;
 
 //Erdgolem(38)
 enemy_stats[obj_earth_golem, 0] = "Erdgolem";
-enemy_stats[obj_earth_golem, 1] = "Ziemlich dreckig";
+enemy_stats[obj_earth_golem, 1] = "Ziemlich dreckig!";
 enemy_stats[obj_earth_golem, 2] = true;
 enemy_stats[obj_earth_golem, 3] = true;
 enemy_stats[obj_earth_golem, 4] = "normal";
@@ -960,7 +951,7 @@ enemy_stats[obj_earth_golem, enemy_stats_normal.money_drop] = 15;
 
 //Eisgolem(38)
 enemy_stats[obj_ice_golem, 0] = "Eisgolem";
-enemy_stats[obj_ice_golem, 1] = "K...kalt";
+enemy_stats[obj_ice_golem, 1] = "K...kalt!";
 enemy_stats[obj_ice_golem, 2] = true;
 enemy_stats[obj_ice_golem, 3] = true;
 enemy_stats[obj_ice_golem, 4] = "normal";
@@ -990,7 +981,7 @@ enemy_stats[obj_fire_golem, enemy_stats_normal.money_drop] = 15;
 
 //Wassergolem(40)
 enemy_stats[obj_water_golem, 0] = "Wassergolem";
-enemy_stats[obj_water_golem, 1] = "Heilt Gegner";
+enemy_stats[obj_water_golem, 1] = "Heilt Gegner!";
 enemy_stats[obj_water_golem, 2] = true;
 enemy_stats[obj_water_golem, 3] = true;
 enemy_stats[obj_water_golem, 4] = "normal";
@@ -1041,7 +1032,7 @@ enemy_stats[obj_air_golem, enemy_stats_normal.money_drop] = 15;
 
 //Holzgolem(42)
 enemy_stats[obj_wood_golem, 0] = "Holzgolem";
-enemy_stats[obj_wood_golem, 1] = "Er ist stärker, als er sich anhört";
+enemy_stats[obj_wood_golem, 1] = "Er ist staerker, als er sich anhoert!";
 enemy_stats[obj_wood_golem, 2] = true;
 enemy_stats[obj_wood_golem, 3] = true;
 enemy_stats[obj_wood_golem, 4] = "normal";
@@ -1056,7 +1047,7 @@ enemy_stats[obj_wood_golem, enemy_stats_normal.money_drop] = 15;
 
 //Aethergolem(43)
 enemy_stats[obj_aether_golem, 0] = "Aethergolem";
-enemy_stats[obj_aether_golem, 1] = "Beinahe schon transzendent";
+enemy_stats[obj_aether_golem, 1] = "Beinahe schon transzendent!";
 enemy_stats[obj_aether_golem, 2] = true;
 enemy_stats[obj_aether_golem, 3] = true;
 enemy_stats[obj_aether_golem, 4] = "normal";
@@ -1071,7 +1062,7 @@ enemy_stats[obj_aether_golem, enemy_stats_normal.money_drop] = 15;
 
 //Gorgone(44)
 enemy_stats[obj_gorgon, 0] = "Gorgone";
-enemy_stats[obj_gorgon, 1] = "Sie ist so hässlich, dass du beim Anblick versteinert wirst";
+enemy_stats[obj_gorgon, 1] = "Sie ist so haesslich, dass du beim Anblick versteinert wirst!";
 enemy_stats[obj_gorgon, 2] = true;
 enemy_stats[obj_gorgon, 3] = true;
 enemy_stats[obj_gorgon, 4] = "normal";
@@ -1086,7 +1077,7 @@ enemy_stats[obj_gorgon, enemy_stats_normal.money_drop] = 10;
 
 //Gargoyle(45)
 enemy_stats[obj_gargoyle, 0] = "Gargoyle";
-enemy_stats[obj_gargoyle, 1] = "Steinerne Abbilder von der Kirchenfassade";
+enemy_stats[obj_gargoyle, 1] = "Steinerne Abbilder von der Kirchenfassade!";
 enemy_stats[obj_gargoyle, 2] = true;
 enemy_stats[obj_gargoyle, 3] = true;
 enemy_stats[obj_gargoyle, 4] = "normal";
@@ -1101,7 +1092,7 @@ enemy_stats[obj_gargoyle, enemy_stats_normal.money_drop] = 12;
 
 //Nemeischer Löwe(46)
 enemy_stats[obj_nemeian_lion, 0] = "Nemeischer Löwe";
-enemy_stats[obj_nemeian_lion, 1] = "Mit ziemlich dickem Pelz";
+enemy_stats[obj_nemeian_lion, 1] = "Mit ziemlich dickem Pelz!";
 enemy_stats[obj_nemeian_lion, 2] = true;
 enemy_stats[obj_nemeian_lion, 3] = true;
 enemy_stats[obj_nemeian_lion, 4] = "normal";
@@ -1116,7 +1107,7 @@ enemy_stats[obj_nemeian_lion, enemy_stats_normal.money_drop] = 18;
 
 //Fleischfressendes Pferd(47)
 enemy_stats[obj_carnivorous_horse, 0] = "Fleischfressendes Pferd";
-enemy_stats[obj_carnivorous_horse, 1] = "Hat dich zum Fressen gern";
+enemy_stats[obj_carnivorous_horse, 1] = "Hat dich zum Fressen gern!";
 enemy_stats[obj_carnivorous_horse, 2] = true;
 enemy_stats[obj_carnivorous_horse, 3] = true;
 enemy_stats[obj_carnivorous_horse, 4] = "normal";
@@ -1131,7 +1122,7 @@ enemy_stats[obj_carnivorous_horse, enemy_stats_normal.money_drop] = 18;
 
 //Einhorn(48)
 enemy_stats[obj_unicorn, 0] = "Einhorn";
-enemy_stats[obj_unicorn, 1] = "Wirkt Stärkezauber auf Gegner";
+enemy_stats[obj_unicorn, 1] = "Wirkt Staerkezauber auf Gegner!";
 enemy_stats[obj_unicorn, 2] = true;
 enemy_stats[obj_unicorn, 3] = true;
 enemy_stats[obj_unicorn, 4] = "normal";
@@ -1146,7 +1137,7 @@ enemy_stats[obj_unicorn, enemy_stats_normal.money_drop] = 18;
 
 //Erzbischof(49)
 enemy_stats[obj_iron_bishop, 0] = "Erzbischof";
-enemy_stats[obj_iron_bishop, 1] = "Er bekämpft dich eisern";
+enemy_stats[obj_iron_bishop, 1] = "Er bekaempft dich eisern!";
 enemy_stats[obj_iron_bishop, 2] = true;
 enemy_stats[obj_iron_bishop, 3] = true;
 enemy_stats[obj_iron_bishop, 4] = "normal";
@@ -1161,7 +1152,7 @@ enemy_stats[obj_iron_bishop, enemy_stats_normal.money_drop] = 20;
 
 //Diamantskelett(50)
 enemy_stats[obj_diamond_skeleton, 0] = "Diamantskelett";
-enemy_stats[obj_diamond_skeleton, 1] = "Hält mehr aus als die anderen Gegner";
+enemy_stats[obj_diamond_skeleton, 1] = "Haelt mehr aus als die anderen Gegner!";
 enemy_stats[obj_diamond_skeleton, 2] = true;
 enemy_stats[obj_diamond_skeleton, 3] = true;
 enemy_stats[obj_diamond_skeleton, 4] = "normal";
@@ -1211,7 +1202,7 @@ enemy_stats[obj_diamond_skeleton, enemy_stats_normal.money_drop] = 25;*/
 
 //Automat(52)
 enemy_stats[obj_automat, 0] = "Automat";
-enemy_stats[obj_automat, 1] = "Sehr instabil";
+enemy_stats[obj_automat, 1] = "Sehr instabil!";
 enemy_stats[obj_automat, 2] = true;
 enemy_stats[obj_automat, 3] = true;
 enemy_stats[obj_automat, 4] = "normal";
@@ -1226,7 +1217,7 @@ enemy_stats[obj_automat, enemy_stats_normal.money_drop] = 22;
 
 //Glasmensch(53)
 enemy_stats[obj_glass_human, 0] = "Glasmensch";
-enemy_stats[obj_glass_human, 1] = "Äußerst zerbrechlich";
+enemy_stats[obj_glass_human, 1] = "Aeußerst zerbrechlich!";
 enemy_stats[obj_glass_human, 2] = true;
 enemy_stats[obj_glass_human, 3] = true;
 enemy_stats[obj_glass_human, 4] = "normal";
@@ -1240,8 +1231,8 @@ enemy_stats[obj_glass_human, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_glass_human, enemy_stats_normal.money_drop] = 15;
 
 //Böser Zwerg(54)
-enemy_stats[obj_evil_dwarf, 0] = "Böser Zwerg";
-enemy_stats[obj_evil_dwarf, 1] = "Stellt Geschütztürme auf";
+enemy_stats[obj_evil_dwarf, 0] = "Boeser Zwerg";
+enemy_stats[obj_evil_dwarf, 1] = "Stellt Geschuetztuerme auf!";
 enemy_stats[obj_evil_dwarf, 2] = true;
 enemy_stats[obj_evil_dwarf, 3] = true;
 enemy_stats[obj_evil_dwarf, 4] = "normal";
@@ -1255,8 +1246,8 @@ enemy_stats[obj_evil_dwarf, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_evil_dwarf, enemy_stats_normal.money_drop] = 17;
 
 //Geschützturm(55)
-enemy_stats[obj_tower, 0] = "Geschützturm";
-enemy_stats[obj_tower, 1] = "Wird vom Zwerg aufgestellt";
+enemy_stats[obj_tower, 0] = "Geschuetzturm";
+enemy_stats[obj_tower, 1] = "Wird vom Zwerg aufgestellt!";
 enemy_stats[obj_tower, 2] = true;
 enemy_stats[obj_tower, 3] = true;
 enemy_stats[obj_tower, 4] = "normal";
@@ -1271,7 +1262,7 @@ enemy_stats[obj_tower, enemy_stats_normal.money_drop] = 12;
 
 //Ghul(56)
 enemy_stats[obj_ghul, 0] = "Ghul";
-enemy_stats[obj_ghul, 1] = "Der war schonmal tot";
+enemy_stats[obj_ghul, 1] = "Der war schonmal tot!";
 enemy_stats[obj_ghul, 2] = true;
 enemy_stats[obj_ghul, 3] = true;
 enemy_stats[obj_ghul, 4] = "normal";
@@ -1286,7 +1277,7 @@ enemy_stats[obj_ghul, enemy_stats_normal.money_drop] = 20;
 
 //Sukkubus(57)
 enemy_stats[obj_succubus, 0] = "Sukkubus";
-enemy_stats[obj_succubus, 1] = "Sie ist wortwörtlich heiß";
+enemy_stats[obj_succubus, 1] = "Sie ist wortwoertlich heiß!";
 enemy_stats[obj_succubus, 2] = true;
 enemy_stats[obj_succubus, 3] = true;
 enemy_stats[obj_succubus, 4] = "normal";
@@ -1300,8 +1291,8 @@ enemy_stats[obj_succubus, enemy_stats_normal.xp_drop] = 128;
 enemy_stats[obj_succubus, enemy_stats_normal.money_drop] = 18;
 
 //Wiedergänger(58)
-enemy_stats[obj_revenant, 0] = "Wiedergänger";
-enemy_stats[obj_revenant, 1] = "Kommt vielleicht wieder";
+enemy_stats[obj_revenant, 0] = "Wiedergaenger";
+enemy_stats[obj_revenant, 1] = "Kommt vielleicht wieder!";
 enemy_stats[obj_revenant, 2] = true;
 enemy_stats[obj_revenant, 3] = true;
 enemy_stats[obj_revenant, 4] = "normal";
@@ -1316,7 +1307,7 @@ enemy_stats[obj_revenant, enemy_stats_normal.money_drop] = 10;
 
 //Irrlicht(59)
 enemy_stats[obj_ghost_light, 0] = "Irrlicht";
-enemy_stats[obj_ghost_light, 1] = "Gibt eien Heilimpuls ab";
+enemy_stats[obj_ghost_light, 1] = "Gibt eien Heilimpuls ab!";
 enemy_stats[obj_ghost_light, 2] = true;
 enemy_stats[obj_ghost_light, 3] = true;
 enemy_stats[obj_ghost_light, 4] = "normal";
@@ -1331,7 +1322,7 @@ enemy_stats[obj_ghost_light, enemy_stats_normal.money_drop] = 12;
 
 //Gefallener Engel(60)
 enemy_stats[obj_fallen_angel, 0] = "Gefallener Engel";
-enemy_stats[obj_fallen_angel, 1] = "Stärkt Gegner";
+enemy_stats[obj_fallen_angel, 1] = "Staerkt Gegner!";
 enemy_stats[obj_fallen_angel, 2] = true;
 enemy_stats[obj_fallen_angel, 3] = true;
 enemy_stats[obj_fallen_angel, 4] = "normal";
@@ -1365,19 +1356,96 @@ enemy_stats[obj_fallen_angel, enemy_stats_normal.money_drop] = 20;
             <kind>1</kind>
             <string>///Minibosse 1-10
 
-//Fleischfressene Pflanze(1)
-enemy_stats[obj_carnivora, 0] = "Fleischfressende Pflanze";
-enemy_stats[obj_carnivora, 1] = "Sie hat mehr als nur einen Angriff!";
-enemy_stats[obj_carnivora, 2] = false;
-enemy_stats[obj_carnivora, 3] = true;
-enemy_stats[obj_carnivora, 4] = "normal";
+//Höllenboss(1)
+enemy_stats[obj_hell_boss, 0] = "Hoellenboss";
+enemy_stats[obj_hell_boss, 1] = "Der Endendgegner.";
+enemy_stats[obj_hell_boss, 2] = false;
+enemy_stats[obj_hell_boss, 3] = true;
+enemy_stats[obj_hell_boss, 4] = "normal";
+enemy_stats[obj_hell_boss, 5] = "hell";
 
-enemy_stats[obj_carnivora, enemy_stats_normal.hp] = 125;
-enemy_stats[obj_carnivora, enemy_stats_normal.damage] = 17;
-enemy_stats[obj_carnivora, enemy_stats_normal.attack_speed] = 90;
-enemy_stats[obj_carnivora, enemy_stats_normal.max_speed] = 2;
-enemy_stats[obj_carnivora, enemy_stats_normal.xp_drop] = 512;
-enemy_stats[obj_carnivora, enemy_stats_normal.money_drop] = 30;
+enemy_stats[obj_hell_boss, enemy_stats_normal.hp] = 200;
+enemy_stats[obj_hell_boss, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_hell_boss, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_hell_boss, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_hell_boss, enemy_stats_normal.xp_drop] = 10000;
+enemy_stats[obj_hell_boss, enemy_stats_normal.money_drop] = 500;
+
+//Höhlenboss
+enemy_stats[obj_cave_boss, 0] = "Hoehlenboss";
+enemy_stats[obj_cave_boss, 1] = "Maggie Pilzcremesuppe nomnomnom kaufen kaufen kaufen!";
+enemy_stats[obj_cave_boss, 2] = false;
+enemy_stats[obj_cave_boss, 3] = true;
+enemy_stats[obj_cave_boss, 4] = "normal";
+enemy_stats[obj_cave_boss, 5] = "cave";
+
+enemy_stats[obj_cave_boss, enemy_stats_normal.hp] = 500;
+enemy_stats[obj_cave_boss, enemy_stats_normal.damage] = 20;
+enemy_stats[obj_cave_boss, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_cave_boss, enemy_stats_normal.max_speed] = 2.5;
+enemy_stats[obj_cave_boss, enemy_stats_normal.xp_drop] = 1000;
+enemy_stats[obj_cave_boss, enemy_stats_normal.money_drop] = 250;
+
+//Dungeonboss
+enemy_stats[obj_dungeon_boss, 0] = "Dungeonboss";
+enemy_stats[obj_dungeon_boss, 1] = "Seidenbacher Bio-Basisoel des Bio-Basisoel von Seidenbacher.";
+enemy_stats[obj_dungeon_boss, 2] = false;
+enemy_stats[obj_dungeon_boss, 3] = true;
+enemy_stats[obj_dungeon_boss, 4] = "normal";
+enemy_stats[obj_dungeon_boss, 5] = "dungeon";
+
+enemy_stats[obj_dungeon_boss, enemy_stats_normal.hp] = 300;
+enemy_stats[obj_dungeon_boss, enemy_stats_normal.damage] = 25;
+enemy_stats[obj_dungeon_boss, enemy_stats_normal.attack_speed] = 40;
+enemy_stats[obj_dungeon_boss, enemy_stats_normal.max_speed] = 3;
+enemy_stats[obj_dungeon_boss, enemy_stats_normal.xp_drop] = 1000;
+enemy_stats[obj_dungeon_boss, enemy_stats_normal.money_drop] = 250;
+
+//Ruinenboss
+enemy_stats[obj_ruin_boss, 0] = "Ruinenboss";
+enemy_stats[obj_ruin_boss, 1] = "Nein, die naechsten Bosse enthalten keine Werbung als Beschreibung, weil mir nichts besseres eingefallen ist.";
+enemy_stats[obj_ruin_boss, 2] = false;
+enemy_stats[obj_ruin_boss, 3] = true;
+enemy_stats[obj_ruin_boss, 4] = "normal";
+enemy_stats[obj_ruin_boss, 5] = "ruins";
+
+enemy_stats[obj_ruin_boss, enemy_stats_normal.hp] = 400;
+enemy_stats[obj_ruin_boss, enemy_stats_normal.damage] = 5;
+enemy_stats[obj_ruin_boss, enemy_stats_normal.attack_speed] = 50;
+enemy_stats[obj_ruin_boss, enemy_stats_normal.max_speed] = 3.2;
+enemy_stats[obj_ruin_boss, enemy_stats_normal.xp_drop] = 1000;
+enemy_stats[obj_ruin_boss, enemy_stats_normal.money_drop] = 250;
+
+//Sumpfboss
+enemy_stats[obj_swamp_boss, 0] = "Sumpfboss";
+enemy_stats[obj_swamp_boss, 1] = "So langsam sollte man gemerkt haben, dass das einfach nur verbesserte normale Gegner sind.";
+enemy_stats[obj_swamp_boss, 2] = false;
+enemy_stats[obj_swamp_boss, 3] = true;
+enemy_stats[obj_swamp_boss, 4] = "normal";
+enemy_stats[obj_swamp_boss, 5] = "swamp";
+
+enemy_stats[obj_swamp_boss, enemy_stats_normal.hp] = 250;
+enemy_stats[obj_swamp_boss, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_swamp_boss, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_swamp_boss, enemy_stats_normal.max_speed] = 2.2;
+enemy_stats[obj_swamp_boss, enemy_stats_normal.xp_drop] = 1000;
+enemy_stats[obj_swamp_boss, enemy_stats_normal.money_drop] = 250;
+
+//Waldboss
+enemy_stats[obj_forest_boss, 0] = "Waldboss";
+enemy_stats[obj_forest_boss, 1] = "So, das ist dein erster Boss.";
+enemy_stats[obj_forest_boss, 2] = false;
+enemy_stats[obj_forest_boss, 3] = true;
+enemy_stats[obj_forest_boss, 4] = "normal";
+enemy_stats[obj_forest_boss, 5] = "forest";
+
+enemy_stats[obj_forest_boss, enemy_stats_normal.hp] = 100;
+enemy_stats[obj_forest_boss, enemy_stats_normal.damage] = 10;
+enemy_stats[obj_forest_boss, enemy_stats_normal.attack_speed] = 60;
+enemy_stats[obj_forest_boss, enemy_stats_normal.max_speed] = 2.9;
+enemy_stats[obj_forest_boss, enemy_stats_normal.xp_drop] = 1000;
+enemy_stats[obj_forest_boss, enemy_stats_normal.money_drop] = 250;
+
 </string>
           </argument>
         </arguments>
